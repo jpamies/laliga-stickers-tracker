@@ -1,0 +1,515 @@
+﻿id,imagen_url,digital_sticker_id,digital_recurso,digital_label,digital_group,metodo_coincidencia,confianza_imagen,notas_imagen
+DEPORTIVO-ALAVES-01,https://tmssl.akamaized.net/images/wappen/head/1108.png,1108,,Deportivo Alavés,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+DEPORTIVO-ALAVES-02,https://assets.paninidigitalcollections.com/assets/22/stickers/403-38f6a4e6b5e765d445d1afd1b821d84f7e9a2058.png,8780,403,QUIQUE SÁNCHEZ FLORES,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-03,https://assets.paninidigitalcollections.com/assets/22/stickers/83-5d5a04b2991f387230b5e997187f621e8801594b.png,8460,83,ANTONIO SIVERA,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-04,,,,,,sin_imagen,,Hueco pendiente de publicación.
+DEPORTIVO-ALAVES-05,https://assets.paninidigitalcollections.com/assets/22/stickers/84-3b2a9fa1afc9a90497c965a81f1eba21f2359c1b.png,8461,84,JONNY,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-06,https://assets.paninidigitalcollections.com/assets/22/stickers/86-ae45b856ef2bc4d954bd4f135bcb3161085a124e.png,8463,86,VILLE KOSKI,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-07,https://assets.paninidigitalcollections.com/assets/22/stickers/85-e185e795dae2f580f59f48e60131411d85d0c5f1.png,8462,85,NAHUEL TENAGLIA,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-08,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DEPORTIVO-ALAVES-09,https://assets.paninidigitalcollections.com/assets/22/stickers/88-562300a93b74fdd828f162447803c8a10df13996.png,8465,88,YUSI,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-10,,,,,,sin_imagen,,Hueco pendiente de publicación.
+DEPORTIVO-ALAVES-11,https://assets.paninidigitalcollections.com/assets/22/stickers/89-638700e1b8396d0bb91fb4db294244cbfd35e51e.png,8466,89,CARLOS BENAVÍDEZ,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-12,https://assets.paninidigitalcollections.com/assets/22/stickers/90-cdc4b4e256d3c53e44310f7bbf62d93fda9cc313.png,8467,90,ANTONIO BLANCO,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-13,https://assets.paninidigitalcollections.com/assets/22/stickers/91-ab671a4c790f5154bd172db36b673e52b7936636.png,8468,91,ANDER GUEVARA,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-14,https://assets.paninidigitalcollections.com/assets/22/stickers/92-a6f4e1da4c6cf90df7632bd14b9b4a0ac71faa75.png,8469,92,CARLES ALEÑÁ,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-15,https://assets.paninidigitalcollections.com/assets/22/stickers/93-30f27257431d110e70891e52cbc5477c12244760.png,8470,93,PABLO IBÁÑEZ,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-16,https://assets.paninidigitalcollections.com/assets/22/stickers/94-5646cda599f3548111083aa6648af69104cd671b.png,8471,94,DENIS SUÁREZ,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-17,https://assets.paninidigitalcollections.com/assets/22/stickers/95-52f2faf49c13d76c2640c94d720da22a9d6e5d99.png,8472,95,ÁNGEL PÉREZ,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-18,https://assets.paninidigitalcollections.com/assets/22/stickers/96-c6fba4ff7a85e04a2b605281fc393b598e851511.png,8473,96,ABDE REBBACH,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-19,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DEPORTIVO-ALAVES-20,https://assets.paninidigitalcollections.com/assets/22/stickers/97-a756ea017a5ed8693493534ed60db784f4fb9cb6.png,8474,97,TONI MARTÍNEZ,ALAVÉS,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-ALAVES-21,https://assets.paninidigitalcollections.com/assets/22/stickers/98-eb2d839d2ff90121d6cf8ce967d9271dce188442.png,8475,98,LUCAS BOYÉ,ALAVÉS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-01,https://tmssl.akamaized.net/images/wappen/head/621.png,621,,Athletic Club,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+ATHLETIC-CLUB-DE-BILBAO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/404-bf7fce42a5f4f963c8b42aeca1c8a2df233922a8.png,8781,404,EDIN TERZIC,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/99-f77f963575e5d44d18da1fc95d33f6c41a644985.png,8476,99,UNAI SIMÓN,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATHLETIC-CLUB-DE-BILBAO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/100-2a2d8936516b4e39108b9f1f6240074bb02e858b.png,8477,100,JESÚS ARESO,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-06,https://assets.paninidigitalcollections.com/assets/22/stickers/102-02eebf84664b1b7b05fa9c6465e44c3c19d4aaf6.png,8479,102,AITOR PAREDES,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-07,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATHLETIC-CLUB-DE-BILBAO-08,https://assets.paninidigitalcollections.com/assets/22/stickers/101-17a98ed4c58bdea1a6cd9be83921f9720cda0d12.png,8478,101,DANIEL VIVIAN,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-09,https://assets.paninidigitalcollections.com/assets/22/stickers/103-3030937dbd63aee4c019516f9011944db47d9b3d.png,8480,103,AYMERIC LAPORTE,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-10,https://assets.paninidigitalcollections.com/assets/22/stickers/104-ad51ae0983baef9d4d8f28a9a3f3971e4a72c910.png,8481,104,YURI BERCHICHE,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-11,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATHLETIC-CLUB-DE-BILBAO-12,https://assets.paninidigitalcollections.com/assets/22/stickers/106-b222ee894e0ae90ea769d305b49a4019ea5b92e7.png,8483,106,MIKEL JAUREGIZAR,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-13,https://assets.paninidigitalcollections.com/assets/22/stickers/105-a109e4a416d41610187e39f8b3b2d44984aa0ac0.png,8482,105,IÑIGO RUIZ DE GALARRETA,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-14,https://assets.paninidigitalcollections.com/assets/22/stickers/107-4c40328d3cc7efab6eb7a360f1ee5a5b652df83b.png,8484,107,ALEJANDRO REGO,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATHLETIC-CLUB-DE-BILBAO-16,https://assets.paninidigitalcollections.com/assets/22/stickers/108-ae7cb2b7157697395ee28dd174f15ab3dbcc3012.png,8485,108,OIHAN SANCET,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-17,https://assets.paninidigitalcollections.com/assets/22/stickers/109-be99e79e9b51b86f18952439575aad50f621d328.png,8486,109,NICO SERRANO,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-18,https://assets.paninidigitalcollections.com/assets/22/stickers/110-24a624524655c28a959360fbaea1b84d75176b69.png,8487,110,ALEJANDRO BERENGUER,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-19,https://assets.paninidigitalcollections.com/assets/22/stickers/111-0271eb203de8e00627a28628125e95b9df2a6770.png,8488,111,ROBERT NAVARRO,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-20,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATHLETIC-CLUB-DE-BILBAO-21,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-22,https://assets.paninidigitalcollections.com/assets/22/stickers/112-fd0323a29b9ef16c7dc814c03c978c6f049548ca.png,8489,112,IÑAKI WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATHLETIC-CLUB-DE-BILBAO-23,https://assets.paninidigitalcollections.com/assets/22/stickers/113-17324966118cb84ca379e077296cd98cccc2266d.png,8490,113,GORKA GURUZETA,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-01,https://tmssl.akamaized.net/images/wappen/head/13.png,13,,Atlético de Madrid,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+ATLETICO-DE-MADRID-02,https://assets.paninidigitalcollections.com/assets/22/stickers/405-68f11a0ca46fc4b465851a053b16fb4c3a8e2440.png,8782,405,DIEGO PABLO SIMEONE,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-03,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATLETICO-DE-MADRID-05,https://assets.paninidigitalcollections.com/assets/22/stickers/116-c1c622ac736d067e24ea2c9ce757e89291eae5db.png,8493,116,MARCOS LLORENTE,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ATLETICO-DE-MADRID-07,https://assets.paninidigitalcollections.com/assets/22/stickers/118-5fafddb3586b49b1b54580d367a51919abaa5599.png,8495,118,MARC PUBILL,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-08,https://assets.paninidigitalcollections.com/assets/22/stickers/117-e63cbffb0db4fda8a8378ff574d5448a3b98fda2.png,8494,117,ROBIN LE NORMAND,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-09,https://assets.paninidigitalcollections.com/assets/22/stickers/119-0424a4bc2a766d4d0aa42197a71f55416b22e25b.png,8496,119,JOSÉ MARÍA GIMÉNEZ,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-10,https://assets.paninidigitalcollections.com/assets/22/stickers/120-fb8d9d91d2c0c726027dac24f6573a56f12b1e15.png,8497,120,DÁVID HANCKO,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-11,https://assets.paninidigitalcollections.com/assets/22/stickers/121-f1faf7616b17611997db46fa662bd2e95e6cddce.png,8498,121,MATTEO RUGGERI,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-12,https://assets.paninidigitalcollections.com/assets/22/stickers/122-9a96168de3c2c69b4598142f345f5c17f5f5d2ff.png,8499,122,KOKE,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-13,https://assets.paninidigitalcollections.com/assets/22/stickers/123-c349a2831afc8970068c386cd5d55110b42b4d93.png,8500,123,PABLO BARRIOS,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-14,https://assets.paninidigitalcollections.com/assets/22/stickers/124-87ef24f68313bd0f4f0c69b6acc5fc9d79f57a2f.png,8501,124,JOHNNY CARDOSO,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-15,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,exacta_catalogo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-16,https://assets.paninidigitalcollections.com/assets/22/stickers/80-c49c8c291216d5d03c973c06e8399e0a9eefca49.png,8457,80,OBED VARGAS_SR,SUPER ROOKIES,exacta_catalogo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-17,https://assets.paninidigitalcollections.com/assets/22/stickers/125-989fb7d24a7f92facc6d21ced716370f2605f3dd.png,8502,125,ÁLEX BAENA,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-18,https://assets.paninidigitalcollections.com/assets/22/stickers/126-07ab7878e6951885ce7578983298b529dc6b4c30.png,8503,126,THIAGO ALMADA,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-19,https://assets.paninidigitalcollections.com/assets/22/stickers/127-730415758e8b4799217228e5787f76bbb1b83ba1.png,8504,127,GIULIANO SIMEONE,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-20,https://assets.paninidigitalcollections.com/assets/22/stickers/128-b80ce1f02287949ae9a13fae73fe6d72beb9ccf8.png,8505,128,ADEMOLA LOOKMAN,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-21,https://assets.paninidigitalcollections.com/assets/22/stickers/130-246a686916940026a111c18e68961447d128c75d.png,8507,130,ALEXANDER SORLOTH,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ATLETICO-DE-MADRID-22,https://assets.paninidigitalcollections.com/assets/22/stickers/129-550477ecf6d102f831e9dcdf2e68d1e0376efddc.png,8506,129,JULIÁN ALVAREZ,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-01,https://tmssl.akamaized.net/images/wappen/head/131.png,131,,FC Barcelona,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+FC-BARCELONA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/406-d70ab12f499fc98d263ad65a62700c74e575f70e.png,8783,406,HANSI FLICK,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/131-e398cc2bb10178cf896994ce31da723f398ef917.png,8508,131,JOAN GARCÍA,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-04,https://assets.paninidigitalcollections.com/assets/22/stickers/25-8cf464eccc35fe5bae28dc6156391f77c4366e21.png,8402,25,SZCZESNY_SC,SUPER CAMPEON,exacta_catalogo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/132-cb5ab6901c665433af8c56fd08dca2d7571f5175.png,8509,132,JULES KOUNDÉ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-06,https://assets.paninidigitalcollections.com/assets/22/stickers/136-28b3f8055e30bb4b22bbe118e145068422343b05.png,8513,136,RONALD ARAÚJO,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-07,https://assets.paninidigitalcollections.com/assets/22/stickers/30-cd343544f478b82b07d522d3f164246edd1ed049.png,8407,30,CHRISTENSEN_SC,SUPER CAMPEON,exacta_catalogo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-08,https://assets.paninidigitalcollections.com/assets/22/stickers/134-afd7625f8db2f6768d66e4ab0725393d68118964.png,8511,134,PAU CUBARSÍ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-09,https://assets.paninidigitalcollections.com/assets/22/stickers/133-b69b6e99f6171e473b3f4961f4cc7129d2ba4a61.png,8510,133,GERARD MARTÍN,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-10,https://assets.paninidigitalcollections.com/assets/22/stickers/32-d530245959c58ad745813dd42e7d02b3e4fe48d4.png,8409,32,CANCELO_SC,SUPER CAMPEON,exacta_catalogo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-11,https://assets.paninidigitalcollections.com/assets/22/stickers/137-34c30195ad094fbf57ee325099b116cb072af3de.png,8514,137,ALEJANDRO BALDE,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-12,https://assets.paninidigitalcollections.com/assets/22/stickers/135-a396be2e8b2cbdb277f05c6b0126cd1a39e4c833.png,8512,135,ERIC GARCÍA,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-13,https://assets.paninidigitalcollections.com/assets/22/stickers/138-27b064bd225330bad148d0262d13839795436eb0.png,8515,138,FRENKIE DE JONG,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-14,https://assets.paninidigitalcollections.com/assets/22/stickers/140-e58031344c32d5b8337e12ef32169e4f1087a40d.png,8517,140,GAVI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-15,https://assets.paninidigitalcollections.com/assets/22/stickers/139-6e6a0e55a771722d16f7b00b345ec97473c4c284.png,8516,139,MARC BERNAL,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-16,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-17,https://assets.paninidigitalcollections.com/assets/22/stickers/142-0521d21fdd8936bb60138297b1f3583e6d8c9685.png,8519,142,FERMÍN LÓPEZ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+FC-BARCELONA-18,https://assets.paninidigitalcollections.com/assets/22/stickers/143-206533b74787a89562932d0dbb42939b172a0545.png,8520,143,DANI OLMO,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-19,https://assets.paninidigitalcollections.com/assets/22/stickers/146-7adc0a1d6470cf7985ee8724a289982102675164.png,8523,146,FERRAN TORRES,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-20,https://assets.paninidigitalcollections.com/assets/22/stickers/144-ef4c7fae66d9884d5ff1ba33b4f5f1cbb92c7246.png,8521,144,RAPHINHA,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+FC-BARCELONA-21,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-01,https://tmssl.akamaized.net/images/wappen/head/150.png,150,,Real Betis,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+REAL-BETIS-02,https://assets.paninidigitalcollections.com/assets/22/stickers/407-f4f7e924fe4ed5b42882b3a5a8482e50b1169a62.png,8784,407,MANUEL PELLEGRINI,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-03,https://assets.paninidigitalcollections.com/assets/22/stickers/147-aa96c294588f9ce4fea32442fc26b6c9b3df89c4.png,8524,147,ÁLVARO VALLES,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-BETIS-05,https://assets.paninidigitalcollections.com/assets/22/stickers/148-2e78adc83d5cd09a1f35f998ca8461a1dce67d5a.png,8525,148,AITOR RUIBAL,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-BETIS-07,https://assets.paninidigitalcollections.com/assets/22/stickers/150-8db0e33ceaf48280ab2012615a3cc4060fe9d4ce.png,8527,150,DIEGO LLORENTE,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-08,https://assets.paninidigitalcollections.com/assets/22/stickers/149-aadd32bb371c0ff27cd75853c2375738b879b84f.png,8526,149,MARC BARTRA,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-09,https://assets.paninidigitalcollections.com/assets/22/stickers/151-4bdfcebacccab0f206cd912e50e132d74e6cec66.png,8528,151,NATAN DE SOUZA,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-10,https://assets.paninidigitalcollections.com/assets/22/stickers/152-14b8059886605e711fd6cb3ea9d496da2a9ecb42.png,8529,152,VALENTÍN GÓMEZ,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-11,https://assets.paninidigitalcollections.com/assets/22/stickers/153-1ed59e3301604024a962030465bac49892f517ab.png,8530,153,MARC ROCA,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-12,https://assets.paninidigitalcollections.com/assets/22/stickers/154-094abbae7f92eaff73e0e2b4400930e11609320f.png,8531,154,SOFYAN AMRABAT,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-13,https://assets.paninidigitalcollections.com/assets/22/stickers/155-47428da1ef0a58aabb980c388dfd592a96c90bb5.png,8532,155,ÁLVARO FIDALGO,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-14,,,,,,sin_imagen,,Hueco pendiente de publicación.
+REAL-BETIS-15,https://assets.paninidigitalcollections.com/assets/22/stickers/157-e450ab32234994a9626dceccd7a51b2bdbc90505.png,8534,157,GIOVANI LO CELSO,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-16,https://assets.paninidigitalcollections.com/assets/22/stickers/156-6e6248d4865c6af0d0cdac6acbc046f3f191f038.png,8533,156,PABLO FORNALS,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-17,https://assets.paninidigitalcollections.com/assets/22/stickers/158-dfbf757a3a2122ac331ffcd90c9671a35b2251d5.png,8535,158,ISCO,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-18,https://assets.paninidigitalcollections.com/assets/22/stickers/159-e2fa97c0042fca41e5b3a6eced5fac706858ce18.png,8536,159,RODRIGO RIQUELME,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-19,https://assets.paninidigitalcollections.com/assets/22/stickers/160-5cebe6a6d163c6114b98979cd37109e20817291c.png,8537,160,ANTONY DOS SANTOS,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-20,https://assets.paninidigitalcollections.com/assets/22/stickers/161-a3d55e2c0b81cab86f90c8c2860ea0678759c3d6.png,8538,161,CUCHO HERNÁNDEZ,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-BETIS-21,https://assets.paninidigitalcollections.com/assets/22/stickers/162-4ab1046109bedb5347567eba10c09458246c74a4.png,8539,162,ABDE,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-01,https://tmssl.akamaized.net/images/wappen/head/940.png,940,,RC Celta de Vigo,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+RC-CELTA-DE-VIGO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/408-30e2ca93a3b0041c7a426b9bfbdf818fc4864cae.png,8785,408,CLAUDIO GIRÁLDEZ,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/163-4d0e495e944af6449ec457d91366af1135328d24.png,8540,163,ANDREI RADU,RC CELTA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RC-CELTA-DE-VIGO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/165-df89550c915c04a9b98bd37c2841c9fd3c9234c5.png,8542,165,ÁLVARO NÚÑEZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-06,https://assets.paninidigitalcollections.com/assets/22/stickers/164-01315e113f2dfd170e5502c81e84663bad843a52.png,8541,164,JAVI RUEDA,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-07,https://assets.paninidigitalcollections.com/assets/22/stickers/166-e3c86a14a68fc359c7ca6d85e9cd9a8aa6d43dab.png,8543,166,JAVI RODRÍGUEZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-08,https://assets.paninidigitalcollections.com/assets/22/stickers/167-efe390a7ff1fe350731211b985d3605b77ef4fd1.png,8544,167,CARL STARFELT,RC CELTA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-09,https://assets.paninidigitalcollections.com/assets/22/stickers/168-d2047009372754b0bbab9b4e31395f54125f75a5.png,8545,168,MARCOS ALONSO,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-10,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RC-CELTA-DE-VIGO-11,https://assets.paninidigitalcollections.com/assets/22/stickers/169-eb5c0cad711c22ae135ff5febbf70ff14b783a38.png,8546,169,SERGIO CARREIRA,RC CELTA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-12,https://assets.paninidigitalcollections.com/assets/22/stickers/170-7ffd41ad712ad22ea2b2bcae0c9b3c700282434f.png,8547,170,ILAIX MORIBA,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-13,https://assets.paninidigitalcollections.com/assets/22/stickers/171-ba7e90d242c56f1f2867eb128a672bd7d50638a3.png,8548,171,MIGUEL ROMÁN,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-14,https://assets.paninidigitalcollections.com/assets/22/stickers/172-9761b7fd1d8046a4c71b100d61c477c518502019.png,8549,172,HUGO ÁLVAREZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RC-CELTA-DE-VIGO-16,https://assets.paninidigitalcollections.com/assets/22/stickers/173-aab4f73bf1e7d0e6fbb0079ecce33fcc1128e743.png,8550,173,FER LÓPEZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-17,https://assets.paninidigitalcollections.com/assets/22/stickers/174-1f0c682f68d6c368a1b9a30be8a5c46a83dbe6a7.png,8551,174,WILLIOT SWEDBERG,RC CELTA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-18,https://assets.paninidigitalcollections.com/assets/22/stickers/176-377c1ccbf5fef764919d18da6d47a105bc3bd806.png,8553,176,IAGO ASPAS,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-19,https://assets.paninidigitalcollections.com/assets/22/stickers/175-c715fe669cbfb7b01aa0859eddf62dee0840ad72.png,8552,175,PABLO DURÁN,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+RC-CELTA-DE-VIGO-20,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RC-CELTA-DE-VIGO-21,https://assets.paninidigitalcollections.com/assets/22/stickers/178-17cd6b0b8d8d5792eb703172a960ddfcf4852d2a.png,8555,178,FERRAN JUTGLÀ,RC CELTA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-22,https://assets.paninidigitalcollections.com/assets/22/stickers/177-b578599df1929ab1e69ca5e45da7e688a80fee7c.png,8554,177,BORJA IGLESIAS,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-01,https://tmssl.akamaized.net/images/wappen/head/897.png,897,,Deportivo de La Coruña,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+DEPORTIVO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/409-263136d26956ccb208b865d2214b36634f69fd70.png,8786,409,ANTONIO HIDALGO,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/179-bfb11950d79a166768346010bdc8d36f18113dd6.png,8556,179,ÁLVARO FERNÁNDEZ,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DEPORTIVO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/180-8838bd9915e203ec98fb91abfb64bb3b0af4cc41.png,8557,180,ADRIÀ ALTIMIRA,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-06,https://assets.paninidigitalcollections.com/assets/22/stickers/181-fc77ad2c4ba2fbe06688f0ef828a6e2593eec229.png,8558,181,MIGUEL LOUREIRO,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-07,https://assets.paninidigitalcollections.com/assets/22/stickers/182-f60301ae08b19968addf303ce972eeaa3d8b04ba.png,8559,182,LUCAS NOUBI,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-08,https://assets.paninidigitalcollections.com/assets/22/stickers/183-e13d646c78afb432866659e7ef549198d756935e.png,8560,183,DANI BARCIA,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-09,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DEPORTIVO-10,https://assets.paninidigitalcollections.com/assets/22/stickers/184-e2a89a1cc618c4cf1230d5ab8ee5c90b2c0e82f6.png,8561,184,ARNAU COMAS,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-11,https://assets.paninidigitalcollections.com/assets/22/stickers/185-60e0db50659fae117af8631a48d02b02be835759.png,8562,185,GIACOMO QUAGLIATA,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-12,https://assets.paninidigitalcollections.com/assets/22/stickers/186-bed271af50412bdeee4ce3523f1ed9d309f75f7c.png,8563,186,DIEGO VILLARES,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-13,https://assets.paninidigitalcollections.com/assets/22/stickers/187-8e72c0c60c4c59d13055c94587c8b9b50051d153.png,8564,187,RIKI,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-14,https://assets.paninidigitalcollections.com/assets/22/stickers/188-e2aaf165f7b6f2d807130ccd7da278775b4a6722.png,8565,188,MARIO SORIANO,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-15,https://assets.paninidigitalcollections.com/assets/22/stickers/189-c25e6542d232591b0f98740512cc0d454177957e.png,8566,189,JOSÉ ÁNGEL JURADO,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-16,https://assets.paninidigitalcollections.com/assets/22/stickers/190-4c274fd9df0fc96e35a85fa030d3775e28712403.png,8567,190,LUISMI CRUZ,DEPORTIVO,exacta_grupo,1.0000,Nombre exacto normalizado.
+DEPORTIVO-17,https://assets.paninidigitalcollections.com/assets/22/stickers/191-69a2e56d7652b359c15a58f5c1a6a4ab74c8aa44.png,8568,191,DAVID MELLA,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-18,,,,,,sin_imagen,,Hueco pendiente de publicación.
+DEPORTIVO-19,https://assets.paninidigitalcollections.com/assets/22/stickers/192-8167dd2ab4bd1db58eae53e7fd0861d0e3513817.png,8569,192,YEREMAY HERNÁNDEZ,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-20,https://assets.paninidigitalcollections.com/assets/22/stickers/193-702beb1f2afc0145ced22ce8cd249b4e8e5842d0.png,8570,193,ZAKARIA EDDAHCHOURI,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DEPORTIVO-21,https://assets.paninidigitalcollections.com/assets/22/stickers/194-70d69d965156b5237506ca8f403621540d791bd1.png,8571,194,BIL NSONGO,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-01,https://tmssl.akamaized.net/images/wappen/head/1531.png,1531,,Elche CF,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+ELCHE-CF-02,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ELCHE-CF-03,https://assets.paninidigitalcollections.com/assets/22/stickers/195-39bdb58bc358512f2de15b14d9a2f9977f218a37.png,8572,195,MATÍAS DITURO,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-04,,,,,,sin_imagen,,Hueco pendiente de publicación.
+ELCHE-CF-05,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ELCHE-CF-06,https://assets.paninidigitalcollections.com/assets/22/stickers/197-09d975989b15813a35d86884ff794838969d6999.png,8574,197,VÍCTOR CHUST,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-07,https://assets.paninidigitalcollections.com/assets/22/stickers/198-6b9bc6632bc641160fb8f0f4dfb889955c707ec4.png,8575,198,PEDRO BIGAS,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-08,https://assets.paninidigitalcollections.com/assets/22/stickers/199-6e7079257e541b791c2d6b265f7bf5fbc57e5f9c.png,8576,199,DAVID AFFENGRUBER,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-09,https://assets.paninidigitalcollections.com/assets/22/stickers/200-205656453101353b7c6d398e7c4ef16bdcf079f1.png,8577,200,ADRIÀ PEDROSA,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-10,https://assets.paninidigitalcollections.com/assets/22/stickers/196-2399e7d4c799d3faeb1a9a66e012657f2916579e.png,8573,196,ABOUBACAR SANGARÉ,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-11,https://assets.paninidigitalcollections.com/assets/22/stickers/201-ba5cd35a8f9f8b7ea0b3e93a0a353803d64d5bac.png,8578,201,GERMÁN VALERA,ELCHE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+ELCHE-CF-12,https://assets.paninidigitalcollections.com/assets/22/stickers/203-98459f738f71564f61d04943900a1143c38dfd50.png,8580,203,MARTIM NETO,ELCHE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+ELCHE-CF-13,https://assets.paninidigitalcollections.com/assets/22/stickers/202-bbdee50f67a0f40be75cd5464e0c5dbb955efdc7.png,8579,202,GONZALO VILLAR,ELCHE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+ELCHE-CF-14,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ELCHE-CF-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ELCHE-CF-16,https://assets.paninidigitalcollections.com/assets/22/stickers/204-fec8ea758cefffecb7644537d489643610a7db06.png,8581,204,MARC AGUADO,ELCHE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+ELCHE-CF-17,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+ELCHE-CF-18,https://assets.paninidigitalcollections.com/assets/22/stickers/206-ece2e1f80d22ff38da667d4076064a44eb4275d1.png,8583,206,JOSÉ ANTONIO MORENTE,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-19,,,,,,sin_imagen,,Hueco pendiente de publicación.
+ELCHE-CF-20,https://assets.paninidigitalcollections.com/assets/22/stickers/207-3c3fecb470678b27f4661766e42e3e31832a84a2.png,8584,207,LUCAS CEPEDA,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-21,https://assets.paninidigitalcollections.com/assets/22/stickers/208-ba0e538bb0911ae5f9e80d686adf0a22ba04957a.png,8585,208,GRADY DIANGANA,ELCHE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ELCHE-CF-22,https://assets.paninidigitalcollections.com/assets/22/stickers/209-7e6c9b4093a1977ac6c50369f72b6a706e21e5a9.png,8586,209,YAGO SANTIAGO,ELCHE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-01,https://tmssl.akamaized.net/images/wappen/head/714.png,714,,RCD Espanyol,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+RCD-ESPANYOL-02,https://assets.paninidigitalcollections.com/assets/22/stickers/411-691e4dbb58fc30cca88835bf71777d2c2a9d9c4e.png,8788,411,MANOLO GONZÁLEZ,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-03,https://assets.paninidigitalcollections.com/assets/22/stickers/211-c3f29ad5e5a435d33f49b561560e5ced71491791.png,8588,211,MARKO DMITROVIC,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RCD-ESPANYOL-05,https://assets.paninidigitalcollections.com/assets/22/stickers/212-727e0381f9d336abef29ab61897344f221f516b8.png,8589,212,OMAR EL HILALI,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-06,https://assets.paninidigitalcollections.com/assets/22/stickers/213-fde45eb683f4955b3b53def45337252ac01420c7.png,8590,213,RUBÉN SÁNCHEZ,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-07,https://assets.paninidigitalcollections.com/assets/22/stickers/214-00f523cca0dbf37906b78d8fdebec65db45a5bad.png,8591,214,CLEMENS RIEDEL,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-08,https://assets.paninidigitalcollections.com/assets/22/stickers/215-5e3f89f82fa289ac995d66f5a8edd674cdd36b21.png,8592,215,LEANDRO CABRERA,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-09,https://assets.paninidigitalcollections.com/assets/22/stickers/216-6d8cbcae2fcd50773f2308d148d2c8f975a1ec53.png,8593,216,MIGUEL RUBIO,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-10,,,,,,sin_imagen,,Hueco pendiente de publicación.
+RCD-ESPANYOL-11,https://assets.paninidigitalcollections.com/assets/22/stickers/219-19858426cfbbfeb1f1d57b2974dfbf60c8e05e19.png,8596,219,POL LOZANO,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-12,https://assets.paninidigitalcollections.com/assets/22/stickers/218-43726b83aa56a20df666558993f0f19813ebb6ad.png,8595,218,URKO GONZÁLEZ,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-13,https://assets.paninidigitalcollections.com/assets/22/stickers/220-39ffe0594f4a648e823f7769f21919989cc97926.png,8597,220,EDU EXPÓSITO,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-14,https://assets.paninidigitalcollections.com/assets/22/stickers/221-80b05940c51525707457973c7083083679284be4.png,8598,221,JOFRE CARRERAS,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-15,,,,,,sin_imagen,,Hueco pendiente de publicación.
+RCD-ESPANYOL-16,https://assets.paninidigitalcollections.com/assets/22/stickers/222-f0540e549b7adf96c498182351a5c155f181a1d1.png,8599,222,TYRHYS DOLAN,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-17,https://assets.paninidigitalcollections.com/assets/22/stickers/226-59d595038dd6c5745449a3b1877e3d6bb5061ef4.png,8603,226,PERE MILLA,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-18,https://assets.paninidigitalcollections.com/assets/22/stickers/223-4dfbc2f25fadd98bf64a6d6597bb35e453cf87ae.png,8600,223,JAVIER PUADO,RCD ESPANYOL,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-19,https://assets.paninidigitalcollections.com/assets/22/stickers/225-b2254fc7ebfd14a94711f3fa3aad13338c5618d2.png,8602,225,KIKE GARCÍA,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+RCD-ESPANYOL-20,https://assets.paninidigitalcollections.com/assets/22/stickers/224-07a780dea9aa01800d3786997bc68de44aec166d.png,8601,224,ROBERTO FERNÁNDEZ,RCD ESPANYOL,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-01,https://tmssl.akamaized.net/images/wappen/head/3709.png,3709,,Getafe CF,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+GETAFE-CF-02,https://assets.paninidigitalcollections.com/assets/22/stickers/412-4dd54ba89bfdf4bdf184fea16a763399533108fe.png,8789,412,JOSÉ BORDALÁS,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-03,https://assets.paninidigitalcollections.com/assets/22/stickers/227-dbacd0554616cd7d85334953811f084f2db9894c.png,8604,227,DAVID SORIA,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+GETAFE-CF-05,https://assets.paninidigitalcollections.com/assets/22/stickers/228-26547e3d3be0a309e8b9b0cdc5c0a98064d8a442.png,8605,228,KIKO FEMENÍA,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-06,https://assets.paninidigitalcollections.com/assets/22/stickers/229-43630f8cb6b8998b8ec83c1deb36d8b16638c842.png,8606,229,DJENÉ DAKONAM,GETAFE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+GETAFE-CF-07,https://assets.paninidigitalcollections.com/assets/22/stickers/230-8cec6a9971ec83eb519f45860d5347547a05544e.png,8607,230,SEBASTIÁN BOSELLI,GETAFE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+GETAFE-CF-08,https://assets.paninidigitalcollections.com/assets/22/stickers/231-d054ed35f73e778f5567f692a0152aa062c83fa5.png,8608,231,ABDELKABIR ABQAR,GETAFE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+GETAFE-CF-09,https://assets.paninidigitalcollections.com/assets/22/stickers/232-53f1512707b160f7e94b68e13f189cd4546092cd.png,8609,232,ZAID ROMERO,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-10,https://assets.paninidigitalcollections.com/assets/22/stickers/233-cfde42282aee48b76292c7ffc136c34417c7341d.png,8610,233,DAVINCHI,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-11,https://assets.paninidigitalcollections.com/assets/22/stickers/234-db2e8beb2cc7f829a6ed23abebd61f6a65134bae.png,8611,234,MARIO MARTÍN,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-12,https://assets.paninidigitalcollections.com/assets/22/stickers/235-1dd1501a8cbbeb92036021e62c444b93ceac3e51.png,8612,235,JAVI MUÑOZ,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-13,,,,,,sin_imagen,,Hueco pendiente de publicación.
+GETAFE-CF-14,,,,,,sin_imagen,,Hueco pendiente de publicación.
+GETAFE-CF-15,,,,,,sin_imagen,,Hueco pendiente de publicación.
+GETAFE-CF-16,,,,,,sin_imagen,,Hueco pendiente de publicación.
+GETAFE-CF-17,https://assets.paninidigitalcollections.com/assets/22/stickers/242-319f0c2a849a5dbe7356e841711b3997d018cfe8.png,8619,242,ÁLEX SANCRIS,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-18,https://assets.paninidigitalcollections.com/assets/22/stickers/239-101461781fa2352198c1d2a84a8fadd47871bcb5.png,8616,239,BORJA MAYORAL,GETAFE CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+GETAFE-CF-19,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+GETAFE-CF-20,https://assets.paninidigitalcollections.com/assets/22/stickers/241-70d0f14e1c34b85f8fb77e483f95e8bb7a924393.png,8618,241,MARTÍN SATRIANO,GETAFE CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-01,https://tmssl.akamaized.net/images/wappen/head/3368.png,3368,,Levante UD,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+LEVANTE-UD-02,https://assets.paninidigitalcollections.com/assets/22/stickers/413-ba77860958b76fd2482da18dc7c425a1b70ab5fe.png,8790,413,LUÍS CASTRO,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-03,https://assets.paninidigitalcollections.com/assets/22/stickers/243-5f3d689c35ca836da98a19de25b6fd639b9785dd.png,8620,243,MATHEW RYAN,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+LEVANTE-UD-05,https://assets.paninidigitalcollections.com/assets/22/stickers/244-5f303db06b77e106f2c0201c1a20644458e4a736.png,8621,244,JEREMY TOLJAN,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-06,https://assets.paninidigitalcollections.com/assets/22/stickers/246-2a8f6758050c54803910303e3be0a9c2c2f02420.png,8623,246,UNAI ELGEZABAL,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-07,https://assets.paninidigitalcollections.com/assets/22/stickers/245-19a10f9d7eb27ab02433c7a6583e770fa07635e7.png,8622,245,DELA,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-08,,,,,,sin_imagen,,Hueco pendiente de publicación.
+LEVANTE-UD-09,https://assets.paninidigitalcollections.com/assets/22/stickers/248-45bf73a9363b30eebfbcb5ad61280eca721e55f1.png,8625,248,MANU SÁNCHEZ,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-10,https://assets.paninidigitalcollections.com/assets/22/stickers/250-ec8c2f767f3bb200e75a1a8a200bcbdaf63b2d11.png,8627,250,KERVIN ARRIAGA,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-11,https://assets.paninidigitalcollections.com/assets/22/stickers/249-4b5bdc7fcbd8002ab1046eac0d27119940c6c1f5.png,8626,249,ORIOL REY,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-12,https://assets.paninidigitalcollections.com/assets/22/stickers/251-bebe9da688d21d5b34a1ced3525f96baa6866b9f.png,8628,251,JON ANDER OLASAGASTI,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-13,,,,,,sin_imagen,,Hueco pendiente de publicación.
+LEVANTE-UD-14,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+LEVANTE-UD-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+LEVANTE-UD-16,https://assets.paninidigitalcollections.com/assets/22/stickers/253-216b22d7d6b93f6a2810403dc2a82f86356dcce1.png,8630,253,CARLOS ÁLVAREZ,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-17,https://assets.paninidigitalcollections.com/assets/22/stickers/254-4fd28e55d54e326d4f14c5874cf8304104a16714.png,8631,254,KAREEM TUNDE,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-18,https://assets.paninidigitalcollections.com/assets/22/stickers/255-89eff549d8e3cddf42ffa1c4c04f4499502a41d2.png,8632,255,ROGER BRUGUÉ,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-19,https://assets.paninidigitalcollections.com/assets/22/stickers/256-5b8b7af6bb012a86d4d10906c00f221d0e65144c.png,8633,256,IVÁN ROMERO,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+LEVANTE-UD-20,https://assets.paninidigitalcollections.com/assets/22/stickers/258-9edf7e9a843bd38057ccc0b3e3881202259b6aee.png,8635,258,KARL ETTA EYONG,LEVANTE UD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LEVANTE-UD-21,https://assets.paninidigitalcollections.com/assets/22/stickers/257-1616fc8a1b0f6e9aa7337c54bf28f1d0b1288622.png,8634,257,CARLOS ESPÍ,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-01,https://tmssl.akamaized.net/images/wappen/head/418.png,418,,Real Madrid,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+REAL-MADRID-CF-02,https://assets.paninidigitalcollections.com/assets/22/stickers/414-3d33b0701489485054a33a630b353f1de1b2297d.png,8791,414,JOSÉ MOURINHO,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-03,https://assets.paninidigitalcollections.com/assets/22/stickers/259-56f452188ba1742f6629ca8bd1533d1c86713df5.png,8636,259,THIBAUT COURTOIS,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-05,https://assets.paninidigitalcollections.com/assets/22/stickers/260-ca6a6ef0a5b66a5a956fe4679a58688f797e6e5c.png,8637,260,TRENT ALEXANDER-ARNOLD,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-06,https://assets.paninidigitalcollections.com/assets/22/stickers/261-cbf61de00a38f457df0acb1a60e7b68053df5fe0.png,8638,261,EDER MILITAO,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-07,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-08,https://assets.paninidigitalcollections.com/assets/22/stickers/263-560a6f5667be4a908a837f52ef365125abb06eeb.png,8640,263,ANTONIO RÜDIGER,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-09,https://assets.paninidigitalcollections.com/assets/22/stickers/262-50fb7f2015d3103bee1da5f6d67d9a2b842b7ea4.png,8639,262,DEAN HUIJSEN,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-10,https://assets.paninidigitalcollections.com/assets/22/stickers/264-e8f4b493e33b6b4c6056779f81eb40bb5afb3c6b.png,8641,264,ÁLVARO CARRERAS,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-11,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-12,https://assets.paninidigitalcollections.com/assets/22/stickers/265-952c8ff356429641436663a45c8bdf748f296672.png,8642,265,AURÉLIEN TCHOUAMÉNI,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-13,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-14,https://assets.paninidigitalcollections.com/assets/22/stickers/267-bba66389ca2286ed88d4044412a0ef2b96947c7a.png,8644,267,EDUARDO CAMAVINGA,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-15,https://assets.paninidigitalcollections.com/assets/22/stickers/268-1ba9566eb021956a44836688255c6a204c942e52.png,8645,268,JUDE BELLINGHAM,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-16,https://assets.paninidigitalcollections.com/assets/22/stickers/269-534e4e116b5a58f4e7beb38c092793b8b407d0bb.png,8646,269,ARDA GÜLER,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-17,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-18,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-MADRID-CF-19,https://assets.paninidigitalcollections.com/assets/22/stickers/270-0e647ce13760559eb86580177e8b2bd92ebb2059.png,8647,270,BRAHIM DÍAZ,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-20,https://assets.paninidigitalcollections.com/assets/22/stickers/273-c8ded7d4549be8717384bce15b3889776ce5cbe0.png,8650,273,GONZALO GARCÍA,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-21,https://assets.paninidigitalcollections.com/assets/22/stickers/271-72f397f9a8706b222da16387ea16061507657757.png,8648,271,RODRYGO GOES,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-22,https://assets.paninidigitalcollections.com/assets/22/stickers/274-0f735972205bb5955440ca92596984eddde9533c.png,8651,274,VINÍCIUS JÚNIOR,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-MADRID-CF-23,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-01,https://tmssl.akamaized.net/images/wappen/head/1084.png,1084,,Málaga CF,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+MALAGA-CF-02,https://assets.paninidigitalcollections.com/assets/22/stickers/415-7aad65a44b49f85e557bdcaee7bd365ac405a659.png,8792,415,JUAN FRANCISCO FUNES,ENTRENADORES,aproximada_grupo,0.9744,Coincidencia aproximada de alta confianza.
+MALAGA-CF-03,https://assets.paninidigitalcollections.com/assets/22/stickers/275-11a39df34d19c8f41f32db818cc842aff15ebc64.png,8652,275,ALFONSO HERRERO,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+MALAGA-CF-05,https://assets.paninidigitalcollections.com/assets/22/stickers/276-8ad5586a1723e8ee28eb09d73078aa6f59d3422a.png,8653,276,CARLOS PUGA,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-06,https://assets.paninidigitalcollections.com/assets/22/stickers/277-73b0baaa84e9960a6d37f85c762f4a44dd07b47e.png,8654,277,DIEGO MURILLO,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-07,,,,,,sin_imagen,,Hueco pendiente de publicación.
+MALAGA-CF-08,https://assets.paninidigitalcollections.com/assets/22/stickers/279-6633e50cb6526366d5a4e760775598617c752375.png,8656,279,EINAR GALILEA,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-09,https://assets.paninidigitalcollections.com/assets/22/stickers/280-41d2a0c9f81e80b0ef2a3bb649b23faff87bb772.png,8657,280,RAFITA,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-10,,,,,,sin_imagen,,Hueco pendiente de publicación.
+MALAGA-CF-11,https://assets.paninidigitalcollections.com/assets/22/stickers/282-25db8f2ead3bfd02f38e716f0f9fcf9ad9be185a.png,8659,282,IZAN MERINO,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-12,https://assets.paninidigitalcollections.com/assets/22/stickers/283-93346528f7ad0f53d7aba694549d40a5d38759ce.png,8660,283,DANI LORENZO,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-13,https://assets.paninidigitalcollections.com/assets/22/stickers/284-ef35c546b7197ce63838c7411f8c94ee956e74fc.png,8661,284,RAFA RODRÍGUEZ,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-14,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+MALAGA-CF-15,https://assets.paninidigitalcollections.com/assets/22/stickers/285-4c698126791062638c59c3a65883d60364a4cb47.png,8662,285,CARLOS DOTOR,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-16,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+MALAGA-CF-17,https://assets.paninidigitalcollections.com/assets/22/stickers/286-c21169620822099c26d8e04fc96ef09caa2b6a5d.png,8663,286,DAVID LARRUBIA,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-18,https://assets.paninidigitalcollections.com/assets/22/stickers/287-4670328f30cc6004080e7cef3760c16c1a847046.png,8664,287,JULEN LOBETE,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-19,https://assets.paninidigitalcollections.com/assets/22/stickers/288-2f68d0c485c3dfabc11fee0ca630479c966311e5.png,8665,288,ADRIÁN NIÑO,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+MALAGA-CF-20,https://assets.paninidigitalcollections.com/assets/22/stickers/289-dbc993d0baadf6ec1aa0f52a50586805848d47e1.png,8666,289,JOAQUÍN MUÑOZ,MALAGA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+MALAGA-CF-21,https://assets.paninidigitalcollections.com/assets/22/stickers/290-e7a2f7342c722a0272c2dd52e5a87326773a6d28.png,8667,290,CHUPE,MALAGA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-01,https://tmssl.akamaized.net/images/wappen/head/331.png,331,,CA Osasuna,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+OSASUNA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/416-3d96447bbc9e21f3ec0e855bbeeb956ee6643e0d.png,8793,416,LUIS MIGUEL RAMIS,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/291-73cc7c0ed26e74cef50ef968fdaa2fe5f2f39b48.png,8668,291,SERGIO HERRERA,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+OSASUNA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/292-b156218e974b4a9c02aa8c5814d9e85a11b00802.png,8669,292,VALENTÍN ROSIER,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+OSASUNA-07,https://assets.paninidigitalcollections.com/assets/22/stickers/293-060c3d210e8251d45cfb0203bc607e0b4725563a.png,8670,293,ENZO BOYOMO,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-08,https://assets.paninidigitalcollections.com/assets/22/stickers/295-2119c12926357358a0c6b5655f85c3dff646f6f3.png,8672,295,JORGE HERRANDO,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-09,https://assets.paninidigitalcollections.com/assets/22/stickers/294-d6a841c5ea028be9b2251403c17c3071e7e9fb20.png,8671,294,ALEJANDRO CATENA,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-10,https://assets.paninidigitalcollections.com/assets/22/stickers/297-57e4825bf6a5b756ff1e6def25721306af335094.png,8674,297,ABEL BRETONES,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-11,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+OSASUNA-12,https://assets.paninidigitalcollections.com/assets/22/stickers/298-8048e1b28025d54df797bd721d280f3b0ccde6d0.png,8675,298,LUCAS TORRÓ,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-13,https://assets.paninidigitalcollections.com/assets/22/stickers/299-2df51e5789af0a7f6852b7ef252f4b71fff30d39.png,8676,299,JON MONCAYOLA,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+OSASUNA-14,https://assets.paninidigitalcollections.com/assets/22/stickers/300-415abbd40bdafa4baaf48a80729ef3819e3a8e95.png,8677,300,MOI GÓMEZ,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+OSASUNA-16,https://assets.paninidigitalcollections.com/assets/22/stickers/301-cfa03cf23c5c2abc7812afb1e107586ec8ab3d92.png,8678,301,RUBÉN GARCÍA,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-17,https://assets.paninidigitalcollections.com/assets/22/stickers/302-4a24b87f2fad513135c9ef3c29b2d911e26eacb8.png,8679,302,AIMAR OROZ,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-18,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+OSASUNA-19,https://assets.paninidigitalcollections.com/assets/22/stickers/303-09984c5ebe77ab87366c421228de840809ecc5da.png,8680,303,RAÚL MORO,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-20,https://assets.paninidigitalcollections.com/assets/22/stickers/305-12385f14ca87ac3c4124684d8c9c91ccbd0055cc.png,8682,305,RAÚL GARCÍA,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-21,https://assets.paninidigitalcollections.com/assets/22/stickers/304-9a2f81a096282eb62498d6ab5c1aa6aaa60c5844.png,8681,304,KIKE BARJA,CA OSASUNA,exacta_grupo,1.0000,Nombre exacto normalizado.
+OSASUNA-22,https://assets.paninidigitalcollections.com/assets/22/stickers/306-9227c415c5d8589f436550bb5ccb8b898bd41427.png,8683,306,ANTE BUDIMIR,CA OSASUNA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-01,https://tmssl.akamaized.net/images/wappen/head/630.png,630,,Racing de Santander,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+RACING-DE-SANTANDER-02,https://assets.paninidigitalcollections.com/assets/22/stickers/417-c98657dbc9b9708d84cb2454f14ad4252b397216.png,8794,417,JOSÉ ALBERTO LÓPEZ,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-03,,,,,,sin_imagen,,Hueco pendiente de publicación.
+RACING-DE-SANTANDER-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-05,https://assets.paninidigitalcollections.com/assets/22/stickers/308-5010756319a461ab372d92dd2df179ea441bc4bc.png,8685,308,ÁLVARO MANTILLA,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-06,https://assets.paninidigitalcollections.com/assets/22/stickers/309-bb9a6661ea796c5b4aa4d530cd230bb7ccb8dc79.png,8686,309,MARCO SANGALLI,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-07,https://assets.paninidigitalcollections.com/assets/22/stickers/310-9d088624c761be6e97cf85f78b4c771a9d37ee42.png,8687,310,FACU GONZÁLEZ,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-08,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-09,https://assets.paninidigitalcollections.com/assets/22/stickers/312-025f2ea356864f8602b3af83c6eb6afe8d10eafb.png,8689,312,MANU HERNANDO,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-10,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-11,https://assets.paninidigitalcollections.com/assets/22/stickers/313-048a3be3df35b221ce21fc357d8f3588359cc40c.png,8690,313,JORGE SALINAS,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-12,https://assets.paninidigitalcollections.com/assets/22/stickers/314-3011adffcde58fee70ae48c014208a18889b6119.png,8691,314,GUEYE MAGUETTE,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-13,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-14,https://assets.paninidigitalcollections.com/assets/22/stickers/315-9940e0605fdb8c368bfdef629e5e98634c670b1c.png,8692,315,GUSTAVO PUERTA,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-16,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-17,https://assets.paninidigitalcollections.com/assets/22/stickers/318-7fb783d09d97e5f83d7f7c95fac2cfaae1de789f.png,8695,318,SULEIMAN CAMARA,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-18,https://assets.paninidigitalcollections.com/assets/22/stickers/319-0b6ec1f9231b8267629537e48134125fc9737398.png,8696,319,ANDRÉS MARTÍN,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-19,https://assets.paninidigitalcollections.com/assets/22/stickers/320-3a991e6b20e2ec917c591cc9d22ed5f82e8f4fe3.png,8697,320,GIORGI GULIASHVILI,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-20,https://assets.paninidigitalcollections.com/assets/22/stickers/322-ba19d7be8f9d424832824285c23b63e0b361343a.png,8699,322,ÍÑIGO VICENTE,RACING,exacta_grupo,1.0000,Nombre exacto normalizado.
+RACING-DE-SANTANDER-21,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RACING-DE-SANTANDER-22,https://assets.paninidigitalcollections.com/assets/22/stickers/321-2d3fd8d0efd60335b87df31173d8438455b41737.png,8698,321,ASIER VILLALIBRE,RACING,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-01,https://tmssl.akamaized.net/images/wappen/head/367.png,367,,Rayo Vallecano,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+RAYO-VALLECANO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/418-0f5a530050be4bd9bf667acd847569defbef7b87.png,8795,418,BEÑAT SAN JOSÉ,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/323-b8a528db09ac561094f497f9975824d78b04d26b.png,8700,323,AUGUSTO BATALLA,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RAYO-VALLECANO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/324-ae23f346bf3f7a24254e806765ee0fa757100949.png,8701,324,ANDREI RATIU,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-06,https://assets.paninidigitalcollections.com/assets/22/stickers/325-fe6914758ce189453e923a9ad50e8a9519927892.png,8702,325,IVÁN BALLIU,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-07,https://assets.paninidigitalcollections.com/assets/22/stickers/327-e68020934f16620983811f19f639106719a9172b.png,8704,327,NOBEL MENDY,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-08,https://assets.paninidigitalcollections.com/assets/22/stickers/326-a49e1f1359e07f63e070eed3d2a005fcb912e55a.png,8703,326,FLORIAN LEJEUNE,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-09,https://assets.paninidigitalcollections.com/assets/22/stickers/328-d723a0e2984a2c93fc7915de549399b78f1d6c79.png,8705,328,LUIZ FELIPE,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-10,https://assets.paninidigitalcollections.com/assets/22/stickers/329-2dd25c707ed43e219112d9c52814344651c14ebe.png,8706,329,PEP CHAVARRÍA,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-11,https://assets.paninidigitalcollections.com/assets/22/stickers/330-8b5f76253d73a52404403d9d2b46eca945d728c4.png,8707,330,PEDRO DÍAZ,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-12,https://assets.paninidigitalcollections.com/assets/22/stickers/331-436fd7f74c36f63aef2e393d3b7e714ab3c772db.png,8708,331,PATHÉ CISS,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-13,https://assets.paninidigitalcollections.com/assets/22/stickers/332-32c46fbe2b522fbdaad34630c2f734089487231b.png,8709,332,ÓSCAR VALENTÍN,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-14,https://assets.paninidigitalcollections.com/assets/22/stickers/333-68e54560784df550024f2d50b14b448a71245812.png,8710,333,UNAI LÓPEZ,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RAYO-VALLECANO-16,https://assets.paninidigitalcollections.com/assets/22/stickers/336-d623d53d594ed51b03b9ff000d73913aacee7f93.png,8713,336,JORGE DE FRUTOS,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-17,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+RAYO-VALLECANO-18,https://assets.paninidigitalcollections.com/assets/22/stickers/335-6735668457edc7500044c1f5e78a5ddc77ae2ea6.png,8712,335,ÁLVARO GARCÍA,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+RAYO-VALLECANO-19,https://assets.paninidigitalcollections.com/assets/22/stickers/337-4a357bd2c79ecbd7d7c1e81dde7224ecc31ad5cd.png,8714,337,SERGIO CAMELLO,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-20,https://assets.paninidigitalcollections.com/assets/22/stickers/338-f177a24baebcf9da7b41d74d2651b260d9d46609.png,8715,338,ALEMAO,RAYO VALLECANO,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-01,https://tmssl.akamaized.net/images/wappen/head/681.png,681,,Real Sociedad,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+REAL-SOCIEDAD-02,https://assets.paninidigitalcollections.com/assets/22/stickers/419-377167903df0f7bd2e75f2abc9657a669a58475f.png,8796,419,PELLEGRINO MATARAZZO,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-03,https://assets.paninidigitalcollections.com/assets/22/stickers/339-ec3ab1660cf8a6938f1ef8798535196b98b4b14e.png,8716,339,ÁLEX REMIRO,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-SOCIEDAD-05,https://assets.paninidigitalcollections.com/assets/22/stickers/340-dd25002a76d0f6bc9eb329f394e87d542c142bc7.png,8717,340,JON ARAMBURU,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-06,https://assets.paninidigitalcollections.com/assets/22/stickers/342-19f60cef603648577e3667143e358964437f4632.png,8719,342,IGOR ZUBELDIA,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-07,https://assets.paninidigitalcollections.com/assets/22/stickers/341-8bea5179ce8babf96dd56455749959d081789b08.png,8718,341,JON MARTÍN,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-08,https://assets.paninidigitalcollections.com/assets/22/stickers/343-bd096bac2789c60d1ae00e8ecdf100aa81205a6f.png,8720,343,SERGIO GÓMEZ,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-09,https://assets.paninidigitalcollections.com/assets/22/stickers/344-dfee4f8a84a25ca2f6ed98c9c7fdf86720442583.png,8721,344,AIHEN MUÑOZ,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-10,https://assets.paninidigitalcollections.com/assets/22/stickers/345-0eb2d53327ce65227ace61fdb82ef9ebf7912f0b.png,8722,345,JON GORROTXATEGI,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-11,https://assets.paninidigitalcollections.com/assets/22/stickers/347-8dfe1c34cf5b89e705283ec4039501775352bf5b.png,8724,347,PABLO MARÍN,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-12,https://assets.paninidigitalcollections.com/assets/22/stickers/346-9fff5d998a4a579431e075ff8c871a285a194194.png,8723,346,BEÑAT TURRIENTES,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-13,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-SOCIEDAD-14,,,,,,sin_imagen,,Hueco pendiente de publicación.
+REAL-SOCIEDAD-15,https://assets.paninidigitalcollections.com/assets/22/stickers/349-c5571a4376ed8b55a27d890b48ebd57363e2cc49.png,8726,349,CARLOS SOLER,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+REAL-SOCIEDAD-16,https://assets.paninidigitalcollections.com/assets/22/stickers/350-e371062d018c6d2346d240455d7b73948296c3d4.png,8727,350,LUKA SUCIC,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-17,https://assets.paninidigitalcollections.com/assets/22/stickers/351-9706342029bcf1512ad78d61e6514a8d2bbcd8d3.png,8728,351,ANDER BARRENETXEA,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-18,https://assets.paninidigitalcollections.com/assets/22/stickers/353-55d1e2ae23e4bd93753d40daf297b5ce340b43f4.png,8730,353,TAKEFUSA KUBO,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-19,https://assets.paninidigitalcollections.com/assets/22/stickers/352-728048e591dfa6e4f95044cf2c7939c501336a9b.png,8729,352,GONÇALO GUEDES,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-20,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+REAL-SOCIEDAD-21,https://assets.paninidigitalcollections.com/assets/22/stickers/354-814a49d8e692964e4eb6d152f06049035b8552f4.png,8731,354,MIKEL OYARZABAL,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-01,https://tmssl.akamaized.net/images/wappen/head/368.png,368,,Sevilla FC,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+SEVILLA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/420-34eb82cd6c144f2733c7e67208490db4bcf2c46b.png,8797,420,LUIS GARCÍA PLAZA,ENTRENADORES,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/355-a1b5aab00f5f19cd32b47e2c3cfeaa990f918db6.png,8732,355,ODYSSEAS VLACHODIMOS,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-04,,,,,,sin_imagen,,Hueco pendiente de publicación.
+SEVILLA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/356-e31f79cb3ab35cfc3a187511bccddbbd7e21de1d.png,8733,356,JOSÉ ÁNGEL CARMONA,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-06,https://assets.paninidigitalcollections.com/assets/22/stickers/357-25f0bc2b904f262f0ab4db3cfd300042d991f5fc.png,8734,357,JUANLU,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+SEVILLA-07,https://assets.paninidigitalcollections.com/assets/22/stickers/358-7eece44f51732ea422f5e39731e2a3254321bc27.png,8735,358,KIKE SALAS,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+SEVILLA-08,https://assets.paninidigitalcollections.com/assets/22/stickers/359-e14c61d6bec1547d0146f4b1fb539a55e4eba75a.png,8736,359,TANGUY NIANZOU,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-09,https://assets.paninidigitalcollections.com/assets/22/stickers/360-fe445dd81021435193482670e2af0704034d1fc0.png,8737,360,CASTRÍN,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+SEVILLA-10,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+SEVILLA-11,https://assets.paninidigitalcollections.com/assets/22/stickers/361-2b54365178a611e6e886382f92dd08fb6c08494f.png,8738,361,GABRIEL SUAZO,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-12,https://assets.paninidigitalcollections.com/assets/22/stickers/362-b9aad2f8077cd2954ac68cce910ebf1eb59d473b.png,8739,362,OSO,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+SEVILLA-13,https://assets.paninidigitalcollections.com/assets/22/stickers/363-4e198921cd932f1465b0d3cd5b75e186119c00a4.png,8740,363,LUCIEN AGOUMÉ,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-14,,,,,,sin_imagen,,Hueco pendiente de publicación.
+SEVILLA-15,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+SEVILLA-16,https://assets.paninidigitalcollections.com/assets/22/stickers/365-b4b100602f4c4d653dd9a46f481901a909d566cf.png,8742,365,RUBÉN VARGAS,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-17,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+SEVILLA-18,https://assets.paninidigitalcollections.com/assets/22/stickers/366-6c8ca9e78b498d5f20c1f21a38ac22b76a3cb627.png,8743,366,PEQUE,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+SEVILLA-19,https://assets.paninidigitalcollections.com/assets/22/stickers/368-3b333a8922478a73806ffa66574119594eb1695f.png,8745,368,CHIDERA EJUKE,SEVILLA FC,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+SEVILLA-20,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+SEVILLA-21,https://assets.paninidigitalcollections.com/assets/22/stickers/370-fec4774fccee562cfcd3a9e7f68ae75e572fac96.png,8747,370,ISAAC ROMERO,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-01,https://tmssl.akamaized.net/images/wappen/head/1049.png,1049,,Valencia CF,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+VALENCIA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/421-2b20f6d6a8905898f13af70c410faae69e1a4ca6.png,8798,421,CARLOS CORBERÁN,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/371-426462e204b39c8464d69aebecfc4509f565aaac.png,8748,371,STOLE DIMITRIEVSKI,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VALENCIA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/372-c5641c6902da327aab8144414fade98b3a6f4f2c.png,8749,372,DIMITRI FOULQUIER,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-06,https://assets.paninidigitalcollections.com/assets/22/stickers/375-9cdcaee0397792382139a8fcd27e30feea4140ed.png,8752,375,JOSÉ COPETE,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-07,https://assets.paninidigitalcollections.com/assets/22/stickers/374-b89fa62df61dd2091bfba4a68a8e79b4fbd90a19.png,8751,374,CÉSAR TÁRREGA,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-08,https://assets.paninidigitalcollections.com/assets/22/stickers/376-05abf342bfaadb81b8d6c264c9c44e7564905eef.png,8753,376,ERAY CÖMERT,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-09,https://assets.paninidigitalcollections.com/assets/22/stickers/373-96e8fb53fa34fe97e4cc940fc86b96f395df1223.png,8750,373,MOUCTAR DIAKHABY,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-10,https://assets.paninidigitalcollections.com/assets/22/stickers/377-600b7eb0765f90db87bc59ff9ff0251d6b0fc633.png,8754,377,JOSÉ LUIS GAYÀ,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-11,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VALENCIA-12,https://assets.paninidigitalcollections.com/assets/22/stickers/378-f9252f69556ae18d208f215dc8d480b888c3ec89.png,8755,378,PEPELU,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-13,https://assets.paninidigitalcollections.com/assets/22/stickers/379-eed3dcf348359a0d06d2652afcc24c8da95c78ce.png,8756,379,GUIDO RODRÍGUEZ,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-14,https://assets.paninidigitalcollections.com/assets/22/stickers/380-fd73f0c319f6014472a720009843864b660735b7.png,8757,380,JAVI GUERRA,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-15,https://assets.paninidigitalcollections.com/assets/22/stickers/381-4f3d69baded1b58a42f3f747ffb64cdd1ee34bc1.png,8758,381,LUIS RIOJA,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-16,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VALENCIA-17,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VALENCIA-18,https://assets.paninidigitalcollections.com/assets/22/stickers/384-87155092c491b18595ccb16a053cca53b35972a2.png,8761,384,HUGO DURO,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-19,https://assets.paninidigitalcollections.com/assets/22/stickers/382-7ef9e7f89b3db02ef3b1f7c62e3dbcce48cb5d37.png,8759,382,DIEGO LÓPEZ,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VALENCIA-20,https://assets.paninidigitalcollections.com/assets/22/stickers/383-654bcd80592ed12c9912d4de69f5816f895c2e97.png,8760,383,LARGIE RAMAZANI,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-21,https://assets.paninidigitalcollections.com/assets/22/stickers/386-50935ecd7a7e573933e3775bebcbd1027f044ccd.png,8763,386,UMAR SADIQ,VALENCIA CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VALENCIA-22,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-01,https://tmssl.akamaized.net/images/wappen/head/1050.png,1050,,Villarreal CF,ESCUDO,escudo_transfermarkt,1.0000,Escudo oficial del club obtenido desde Transfermarkt.
+VILLARREAL-02,https://assets.paninidigitalcollections.com/assets/22/stickers/422-75883770900f835995827139fe69becd273c870f.png,8799,422,ÍÑIGO PÉREZ,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-03,https://assets.paninidigitalcollections.com/assets/22/stickers/387-3f749f507b8e4e352a2d1beb87bdb1f84eb34a96.png,8764,387,LUIZ JÚNIOR,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-04,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-05,https://assets.paninidigitalcollections.com/assets/22/stickers/388-4305ecd761e595a5b624236f2d904238a7c04468.png,8765,388,SANTIAGO MOURIÑO,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-06,https://assets.paninidigitalcollections.com/assets/22/stickers/389-526c488dda9b562080924cb553b369d943b24918.png,8766,389,PAU NAVARRO,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-07,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-08,https://assets.paninidigitalcollections.com/assets/22/stickers/390-a9a771bd7c4d8f4fcc56c625cb97cd01d0ff81be.png,8767,390,JUAN FOYTH,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-09,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-10,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-11,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-12,https://assets.paninidigitalcollections.com/assets/22/stickers/392-5dbb27535d87849784f08c693d8d768d42ff40b7.png,8769,392,RENATO VEIGA,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-13,https://assets.paninidigitalcollections.com/assets/22/stickers/393-27927cd2444fbad441d425af71c15a9f4367cb72.png,8770,393,SERGI CARDONA,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-14,https://assets.paninidigitalcollections.com/assets/22/stickers/396-34a0e6ce986ec5ce7f7a9904a3c2bae26bfaa4f2.png,8773,396,PAPE GUEYE,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-15,https://assets.paninidigitalcollections.com/assets/22/stickers/394-13deea242b8e2ba9820cf9b31196e2349dcc9064.png,8771,394,SANTI COMESAÑA,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-16,https://assets.paninidigitalcollections.com/assets/22/stickers/395-6d009d51818bdbaf75e6cdd9fb23426de93e1bb1.png,8772,395,CARLOS MACIÁ,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-17,https://assets.paninidigitalcollections.com/assets/22/stickers/397-da4578583d84385e35bd144e9062e862210cd9cd.png,8774,397,ALBERTO MOLEIRO,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-18,https://assets.paninidigitalcollections.com/assets/22/stickers/398-382dfa5ea3566550217c1ddda56ec0fe895f455d.png,8775,398,TAJON BUCHANAN,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-19,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+VILLARREAL-20,https://assets.paninidigitalcollections.com/assets/22/stickers/401-eff664de954c32c21e2027ebd81cc8e4300e8221.png,8778,401,AYOZE PÉREZ,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-21,https://assets.paninidigitalcollections.com/assets/22/stickers/399-94ed28815cf7dbfdad18425a23e1be20f989f23a.png,8776,399,NICOLAS PÉPÉ,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+VILLARREAL-22,https://assets.paninidigitalcollections.com/assets/22/stickers/400-85f48b984d1e81410543eb4f64adae1cc3343dc2.png,8777,400,GEORGES MIKAUTADZE,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+VILLARREAL-23,https://assets.paninidigitalcollections.com/assets/22/stickers/402-f12fb66275abe1d8c0b638e5f1d633106a57cf57.png,8779,402,GERARD MORENO,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-01,https://assets.paninidigitalcollections.com/assets/22/stickers/160-5cebe6a6d163c6114b98979cd37109e20817291c.png,8537,160,ANTONY DOS SANTOS,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-02,https://assets.paninidigitalcollections.com/assets/22/stickers/268-1ba9566eb021956a44836688255c6a204c942e52.png,8645,268,JUDE BELLINGHAM,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-03,https://assets.paninidigitalcollections.com/assets/22/stickers/259-56f452188ba1742f6629ca8bd1533d1c86713df5.png,8636,259,THIBAUT COURTOIS,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-04,https://assets.paninidigitalcollections.com/assets/22/stickers/142-0521d21fdd8936bb60138297b1f3583e6d8c9685.png,8519,142,FERMÍN LÓPEZ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-05,https://assets.paninidigitalcollections.com/assets/22/stickers/129-550477ecf6d102f831e9dcdf2e68d1e0376efddc.png,8506,129,JULIÁN ALVAREZ,ATLÉTICO DE MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-06,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-07,https://assets.paninidigitalcollections.com/assets/22/stickers/128-b80ce1f02287949ae9a13fae73fe6d72beb9ccf8.png,8505,128,ADEMOLA LOOKMAN,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-08,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-09,https://assets.paninidigitalcollections.com/assets/22/stickers/397-da4578583d84385e35bd144e9062e862210cd9cd.png,8774,397,ALBERTO MOLEIRO,VILLARREAL CF,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-10,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-11,https://assets.paninidigitalcollections.com/assets/22/stickers/354-814a49d8e692964e4eb6d152f06049035b8552f4.png,8731,354,MIKEL OYARZABAL,REAL SOCIEDAD,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-12,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-13,https://assets.paninidigitalcollections.com/assets/22/stickers/144-ef4c7fae66d9884d5ff1ba33b4f5f1cbb92c7246.png,8521,144,RAPHINHA,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-14,https://assets.paninidigitalcollections.com/assets/22/stickers/99-f77f963575e5d44d18da1fc95d33f6c41a644985.png,8476,99,UNAI SIMÓN,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+ADN-LALIGA-PRIME-15,https://assets.paninidigitalcollections.com/assets/22/stickers/274-0f735972205bb5955440ca92596984eddde9533c.png,8651,274,VINÍCIUS JÚNIOR,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+LALIGA-FANTASY-01,https://assets.paninidigitalcollections.com/assets/22/stickers/406-d70ab12f499fc98d263ad65a62700c74e575f70e.png,8783,406,HANSI FLICK,ENTRENADORES,exacta_grupo,1.0000,Nombre exacto normalizado.
+LALIGA-FANTASY-02,https://assets.paninidigitalcollections.com/assets/22/stickers/131-e398cc2bb10178cf896994ce31da723f398ef917.png,8508,131,JOAN GARCÍA,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+LALIGA-FANTASY-03,https://assets.paninidigitalcollections.com/assets/22/stickers/326-a49e1f1359e07f63e070eed3d2a005fcb912e55a.png,8703,326,FLORIAN LEJEUNE,RAYO VALLECANO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-04,https://assets.paninidigitalcollections.com/assets/22/stickers/156-6e6248d4865c6af0d0cdac6acbc046f3f191f038.png,8533,156,PABLO FORNALS,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-05,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+LALIGA-FANTASY-06,https://assets.paninidigitalcollections.com/assets/22/stickers/70-47c8ed4d9b24e29167e21df072bd714d53d72f82.png,8447,70,MILLA_SE,SUPER EVOLUTION,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-07,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+LALIGA-FANTASY-08,https://assets.paninidigitalcollections.com/assets/22/stickers/70-47c8ed4d9b24e29167e21df072bd714d53d72f82.png,8447,70,MILLA_SE,SUPER EVOLUTION,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-09,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-01,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-02,https://assets.paninidigitalcollections.com/assets/22/stickers/137-34c30195ad094fbf57ee325099b116cb072af3de.png,8514,137,ALEJANDRO BALDE,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-03,https://assets.paninidigitalcollections.com/assets/22/stickers/123-c349a2831afc8970068c386cd5d55110b42b4d93.png,8500,123,PABLO BARRIOS,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-04,https://assets.paninidigitalcollections.com/assets/22/stickers/257-1616fc8a1b0f6e9aa7337c54bf28f1d0b1288622.png,8634,257,CARLOS ESPÍ,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-05,https://assets.paninidigitalcollections.com/assets/22/stickers/264-e8f4b493e33b6b4c6056779f81eb40bb5afb3c6b.png,8641,264,ÁLVARO CARRERAS,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-06,https://assets.paninidigitalcollections.com/assets/22/stickers/134-afd7625f8db2f6768d66e4ab0725393d68118964.png,8511,134,PAU CUBARSÍ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-07,https://assets.paninidigitalcollections.com/assets/22/stickers/173-aab4f73bf1e7d0e6fbb0079ecce33fcc1128e743.png,8550,173,FER LÓPEZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-08,https://assets.paninidigitalcollections.com/assets/22/stickers/140-e58031344c32d5b8337e12ef32169e4f1087a40d.png,8517,140,GAVI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-09,https://assets.paninidigitalcollections.com/assets/22/stickers/273-c8ded7d4549be8717384bce15b3889776ce5cbe0.png,8650,273,GONZALO GARCÍA,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-10,https://assets.paninidigitalcollections.com/assets/22/stickers/262-50fb7f2015d3103bee1da5f6d67d9a2b842b7ea4.png,8639,262,DEAN HUIJSEN,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-11,https://assets.paninidigitalcollections.com/assets/22/stickers/106-b222ee894e0ae90ea769d305b49a4019ea5b92e7.png,8483,106,MIKEL JAUREGIZAR,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-12,https://assets.paninidigitalcollections.com/assets/22/stickers/380-fd73f0c319f6014472a720009843864b660735b7.png,8757,380,JAVI GUERRA,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-13,https://assets.paninidigitalcollections.com/assets/22/stickers/341-8bea5179ce8babf96dd56455749959d081789b08.png,8718,341,JON MARTÍN,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-14,https://assets.paninidigitalcollections.com/assets/22/stickers/357-25f0bc2b904f262f0ab4db3cfd300042d991f5fc.png,8734,357,JUANLU,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-15,https://assets.paninidigitalcollections.com/assets/22/stickers/139-6e6a0e55a771722d16f7b00b345ec97473c4c284.png,8516,139,MARC BERNAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-16,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-17,https://assets.paninidigitalcollections.com/assets/22/stickers/362-b9aad2f8077cd2954ac68cce910ebf1eb59d473b.png,8739,362,OSO,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-18,https://assets.paninidigitalcollections.com/assets/22/stickers/389-526c488dda9b562080924cb553b369d943b24918.png,8766,389,PAU NAVARRO,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-19,https://assets.paninidigitalcollections.com/assets/22/stickers/118-5fafddb3586b49b1b54580d367a51919abaa5599.png,8495,118,MARC PUBILL,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-20,https://assets.paninidigitalcollections.com/assets/22/stickers/392-5dbb27535d87849784f08c693d8d768d42ff40b7.png,8769,392,RENATO VEIGA,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-21,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,exacta_catalogo,1.0000,Nombre exacto normalizado.
+DRAFT-23-22,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-23,https://assets.paninidigitalcollections.com/assets/22/stickers/192-8167dd2ab4bd1db58eae53e7fd0861d0e3513817.png,8569,192,YEREMAY HERNÁNDEZ,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-01,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-KROMIX-02,https://assets.paninidigitalcollections.com/assets/22/stickers/137-34c30195ad094fbf57ee325099b116cb072af3de.png,8514,137,ALEJANDRO BALDE,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-03,https://assets.paninidigitalcollections.com/assets/22/stickers/123-c349a2831afc8970068c386cd5d55110b42b4d93.png,8500,123,PABLO BARRIOS,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-04,https://assets.paninidigitalcollections.com/assets/22/stickers/257-1616fc8a1b0f6e9aa7337c54bf28f1d0b1288622.png,8634,257,CARLOS ESPÍ,LEVANTE UD,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-05,https://assets.paninidigitalcollections.com/assets/22/stickers/264-e8f4b493e33b6b4c6056779f81eb40bb5afb3c6b.png,8641,264,ÁLVARO CARRERAS,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-06,https://assets.paninidigitalcollections.com/assets/22/stickers/134-afd7625f8db2f6768d66e4ab0725393d68118964.png,8511,134,PAU CUBARSÍ,FC BARCELONA,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-07,https://assets.paninidigitalcollections.com/assets/22/stickers/173-aab4f73bf1e7d0e6fbb0079ecce33fcc1128e743.png,8550,173,FER LÓPEZ,RC CELTA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-08,https://assets.paninidigitalcollections.com/assets/22/stickers/140-e58031344c32d5b8337e12ef32169e4f1087a40d.png,8517,140,GAVI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-09,https://assets.paninidigitalcollections.com/assets/22/stickers/273-c8ded7d4549be8717384bce15b3889776ce5cbe0.png,8650,273,GONZALO GARCÍA,REAL MADRID,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-10,https://assets.paninidigitalcollections.com/assets/22/stickers/262-50fb7f2015d3103bee1da5f6d67d9a2b842b7ea4.png,8639,262,DEAN HUIJSEN,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-11,https://assets.paninidigitalcollections.com/assets/22/stickers/106-b222ee894e0ae90ea769d305b49a4019ea5b92e7.png,8483,106,MIKEL JAUREGIZAR,ATHLETIC CLUB,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-12,https://assets.paninidigitalcollections.com/assets/22/stickers/380-fd73f0c319f6014472a720009843864b660735b7.png,8757,380,JAVI GUERRA,VALENCIA CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-13,https://assets.paninidigitalcollections.com/assets/22/stickers/341-8bea5179ce8babf96dd56455749959d081789b08.png,8718,341,JON MARTÍN,REAL SOCIEDAD,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-14,https://assets.paninidigitalcollections.com/assets/22/stickers/357-25f0bc2b904f262f0ab4db3cfd300042d991f5fc.png,8734,357,JUANLU,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-15,https://assets.paninidigitalcollections.com/assets/22/stickers/139-6e6a0e55a771722d16f7b00b345ec97473c4c284.png,8516,139,MARC BERNAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-16,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-KROMIX-17,https://assets.paninidigitalcollections.com/assets/22/stickers/362-b9aad2f8077cd2954ac68cce910ebf1eb59d473b.png,8739,362,OSO,SEVILLA FC,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-18,https://assets.paninidigitalcollections.com/assets/22/stickers/389-526c488dda9b562080924cb553b369d943b24918.png,8766,389,PAU NAVARRO,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-19,https://assets.paninidigitalcollections.com/assets/22/stickers/118-5fafddb3586b49b1b54580d367a51919abaa5599.png,8495,118,MARC PUBILL,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-20,https://assets.paninidigitalcollections.com/assets/22/stickers/392-5dbb27535d87849784f08c693d8d768d42ff40b7.png,8769,392,RENATO VEIGA,VILLARREAL CF,exacta_grupo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-21,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,exacta_catalogo,1.0000,Nombre exacto normalizado.
+DRAFT-23-KROMIX-22,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
+DRAFT-23-KROMIX-23,https://assets.paninidigitalcollections.com/assets/22/stickers/192-8167dd2ab4bd1db58eae53e7fd0861d0e3513817.png,8569,192,YEREMAY HERNÁNDEZ,DEPORTIVO,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-BRONCE-01,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-BRONCE-02,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-BRONCE-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-BRONCE-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-BRONCE-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-PLATA-01,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-PLATA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-PLATA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-PLATA-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-PLATA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-ORO-01,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-ORO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-ORO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-ORO-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
+EXTRA-STICKER-ORO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.

@@ -1,0 +1,515 @@
+﻿id,seccion,numero,hueco_album,variante,nombre,tipo,club_objetivo,estado_plantilla,accion,coincidencia_transfermarkt,confianza,comprobado_en,notas
+DEPORTIVO-ALAVES-01,DEPORTIVO ALAVÉS,1,1,,Escudo,,Deportivo Alavés,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+DEPORTIVO-ALAVES-02,DEPORTIVO ALAVÉS,2,2,,Quique Sánchez Flores,entrenador,Deportivo Alavés,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+DEPORTIVO-ALAVES-03,DEPORTIVO ALAVÉS,3,3,,Sivera,portero,Deportivo Alavés,en_plantilla,PEGAR,Antonio Sivera,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-04,DEPORTIVO ALAVÉS,4,4,,,,Deportivo Alavés,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-ALAVES-05,DEPORTIVO ALAVÉS,5,5,,Jonny,defensa,Deportivo Alavés,en_plantilla,PEGAR,Jonny Otto,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-06,DEPORTIVO ALAVÉS,6,6,,Koski,defensa,Deportivo Alavés,en_plantilla,PEGAR,Ville Koski,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-07,DEPORTIVO ALAVÉS,7,7,,Tenaglia,defensa,Deportivo Alavés,en_plantilla,PEGAR,Nahuel Tenaglia,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-08,DEPORTIVO ALAVÉS,8,8,,Parada,defensa,Deportivo Alavés,no_encontrado,NO PEGAR,Mariano Díaz,0.5556,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DEPORTIVO-ALAVES-09,DEPORTIVO ALAVÉS,9,9,,Yusi,defensa,Deportivo Alavés,no_encontrado,NO PEGAR,Youssef Enríquez,0.4000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DEPORTIVO-ALAVES-10,DEPORTIVO ALAVÉS,10,10,,,,Deportivo Alavés,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-ALAVES-11,DEPORTIVO ALAVÉS,11,11,,Benavidez,medio,Deportivo Alavés,no_encontrado,NO PEGAR,Denis Suárez,0.4762,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DEPORTIVO-ALAVES-12,DEPORTIVO ALAVÉS,12,12,,Blanco,medio,Deportivo Alavés,en_plantilla,PEGAR,Antonio Blanco,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-13,DEPORTIVO ALAVÉS,13,13,,Guevara,medio,Deportivo Alavés,en_plantilla,PEGAR,Ander Guevara,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-14,DEPORTIVO ALAVÉS,14,14,,Aleñá,medio,Deportivo Alavés,en_plantilla,PEGAR,Carles Aleñá,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-15,DEPORTIVO ALAVÉS,15,15,,Pablo Ibáñez,medio,Deportivo Alavés,en_plantilla,PEGAR,Pablo Ibáñez,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-ALAVES-16,DEPORTIVO ALAVÉS,16,16,,Denis Suárez,medio,Deportivo Alavés,en_plantilla,PEGAR,Denis Suárez,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-ALAVES-17,DEPORTIVO ALAVÉS,17,17,,Ángel Pérez,delantero,Deportivo Alavés,en_plantilla,PEGAR,Ángel Pérez,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-ALAVES-18,DEPORTIVO ALAVÉS,18A,18,A,Abde,delantero,Deportivo Alavés,en_plantilla,PEGAR,Abde Rebbach,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-19,DEPORTIVO ALAVÉS,18B,18,B,Mañas,delantero,Deportivo Alavés,en_plantilla,PEGAR,Aitor Mañas,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-ALAVES-20,DEPORTIVO ALAVÉS,19,19,,Toni Martínez,delantero,Deportivo Alavés,en_plantilla,PEGAR,Toni Martínez,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-ALAVES-21,DEPORTIVO ALAVÉS,20,20,,Boyé,delantero,Deportivo Alavés,en_plantilla,PEGAR,Lucas Boyé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-01,ATHLETIC CLUB DE BILBAO,1,1,,Escudo,,Athletic Club,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ATHLETIC-CLUB-DE-BILBAO-02,ATHLETIC CLUB DE BILBAO,2,2,,Edin Terzic,entrenador,Athletic Club,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ATHLETIC-CLUB-DE-BILBAO-03,ATHLETIC CLUB DE BILBAO,3,3,,Unai Simón,portero,Athletic Club,en_plantilla,PEGAR,Unai Simón,1.0000,2026-08-22,Coincidencia exacta.
+ATHLETIC-CLUB-DE-BILBAO-04,ATHLETIC CLUB DE BILBAO,4,4,,Padilla,portero,Athletic Club,en_plantilla,PEGAR,Álex Padilla,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-05,ATHLETIC CLUB DE BILBAO,5,5,,Areso,defensa,Athletic Club,en_plantilla,PEGAR,Jesús Areso,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-06,ATHLETIC CLUB DE BILBAO,6A,6,A,Paredes,defensa,Athletic Club,en_plantilla,PEGAR,Aitor Paredes,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-07,ATHLETIC CLUB DE BILBAO,6B,6,B,Yeray,defensa,Athletic Club,en_plantilla,PEGAR,Yeray Álvarez,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-08,ATHLETIC CLUB DE BILBAO,7,7,,Vivian,defensa,Athletic Club,en_plantilla,PEGAR,Dani Vivian,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-09,ATHLETIC CLUB DE BILBAO,8,8,,Laporte,defensa,Athletic Club,en_plantilla,PEGAR,Aymeric Laporte,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-10,ATHLETIC CLUB DE BILBAO,9A,9,A,Yuri,defensa,Athletic Club,en_plantilla,PEGAR,Yuri Berchiche,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-11,ATHLETIC CLUB DE BILBAO,9B,9,B,Adama Boiro,defensa,Athletic Club,en_plantilla,PEGAR,Adama Boiro,1.0000,2026-08-22,Coincidencia exacta.
+ATHLETIC-CLUB-DE-BILBAO-12,ATHLETIC CLUB DE BILBAO,10,10,,Jauregizar,medio,Athletic Club,en_plantilla,PEGAR,Mikel Jauregizar,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-13,ATHLETIC CLUB DE BILBAO,11,11,,Ruiz de Galarreta,medio,Athletic Club,en_plantilla,PEGAR,Iñigo Ruiz de Galarreta,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-14,ATHLETIC CLUB DE BILBAO,12,12,,Rego,medio,Athletic Club,en_plantilla,PEGAR,Alejandro Rego,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-15,ATHLETIC CLUB DE BILBAO,13,13,,Unai Gómez,medio,Athletic Club,no_encontrado,NO PEGAR,Unai Egiluz,0.6667,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ATHLETIC-CLUB-DE-BILBAO-16,ATHLETIC CLUB DE BILBAO,14,14,,Sancet,medio,Athletic Club,en_plantilla,PEGAR,Oihan Sancet,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-17,ATHLETIC CLUB DE BILBAO,15,15,,Nico Serrano,medio,Athletic Club,en_plantilla,PEGAR,Nico Serrano,1.0000,2026-08-22,Coincidencia exacta.
+ATHLETIC-CLUB-DE-BILBAO-18,ATHLETIC CLUB DE BILBAO,16,16,,Berenguer,delantero,Athletic Club,en_plantilla,PEGAR,Álex Berenguer,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-19,ATHLETIC CLUB DE BILBAO,17A,17,A,Robert Navarro,delantero,Athletic Club,en_plantilla,PEGAR,Robert Navarro,1.0000,2026-08-22,Coincidencia exacta.
+ATHLETIC-CLUB-DE-BILBAO-20,ATHLETIC CLUB DE BILBAO,17B,17,B,Maroan,delantero,Athletic Club,en_plantilla,PEGAR,Maroan Sannadi,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATHLETIC-CLUB-DE-BILBAO-21,ATHLETIC CLUB DE BILBAO,18,18,,Nico Williams,delantero,Athletic Club,en_plantilla,PEGAR,Nico Williams,1.0000,2026-08-22,Coincidencia exacta.
+ATHLETIC-CLUB-DE-BILBAO-22,ATHLETIC CLUB DE BILBAO,19,19,,Williams,delantero,Athletic Club,en_plantilla,PEGAR,Iñaki Williams,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+ATHLETIC-CLUB-DE-BILBAO-23,ATHLETIC CLUB DE BILBAO,20,20,,Guruzeta,delantero,Athletic Club,en_plantilla,PEGAR,Gorka Guruzeta,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-01,ATLÉTICO DE MADRID,1,1,,Escudo,,Atlético de Madrid,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ATLETICO-DE-MADRID-02,ATLÉTICO DE MADRID,2,2,,Cholo Simeone,entrenador,Atlético de Madrid,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ATLETICO-DE-MADRID-03,ATLÉTICO DE MADRID,3,3,,Oblak,portero,Atlético de Madrid,en_plantilla,PEGAR,Jan Oblak,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-04,ATLÉTICO DE MADRID,4,4,,Musso,portero,Atlético de Madrid,en_plantilla,PEGAR,Juan Musso,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-05,ATLÉTICO DE MADRID,5,5,,Marcos Llorente,defensa,Atlético de Madrid,en_plantilla,PEGAR,Marcos Llorente,1.0000,2026-08-22,Coincidencia exacta.
+ATLETICO-DE-MADRID-06,ATLÉTICO DE MADRID,6,6,,Nahuel Molina,defensa,Atlético de Madrid,no_encontrado,NO PEGAR,Arnau Ortiz,0.5000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ATLETICO-DE-MADRID-07,ATLÉTICO DE MADRID,7,7,,Pubill,defensa,Atlético de Madrid,en_plantilla,PEGAR,Marc Pubill,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-08,ATLÉTICO DE MADRID,8A,8,A,Le Normand,defensa,Atlético de Madrid,en_plantilla,PEGAR,Robin Le Normand,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-09,ATLÉTICO DE MADRID,8B,8,B,Giménez,defensa,Atlético de Madrid,en_plantilla,PEGAR,José María Giménez,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-10,ATLÉTICO DE MADRID,9,9,,Hancko,defensa,Atlético de Madrid,en_plantilla,PEGAR,Dávid Hancko,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-11,ATLÉTICO DE MADRID,10,10,,Ruggeri,defensa,Atlético de Madrid,no_encontrado,NO PEGAR,Arnau Ortiz,0.4444,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ATLETICO-DE-MADRID-12,ATLÉTICO DE MADRID,11,11,,Koke,medio,Atlético de Madrid,en_plantilla,PEGAR,Koke,1.0000,2026-08-22,Coincidencia exacta.
+ATLETICO-DE-MADRID-13,ATLÉTICO DE MADRID,12,12,,Barrios,medio,Atlético de Madrid,en_plantilla,PEGAR,Pablo Barrios,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-14,ATLÉTICO DE MADRID,13,13,,Johnny Cardoso,medio,Atlético de Madrid,en_plantilla,PEGAR,Johnny Cardoso,1.0000,2026-08-22,Coincidencia exacta.
+ATLETICO-DE-MADRID-15,ATLÉTICO DE MADRID,14A,14,A,Rodri Mendoza,medio,Atlético de Madrid,en_plantilla,PEGAR,Rodrigo Mendoza,0.9286,2026-08-22,Coincidencia aproximada de alta confianza.
+ATLETICO-DE-MADRID-16,ATLÉTICO DE MADRID,14B,14,B,Obed Vargas,medio,Atlético de Madrid,en_plantilla,PEGAR,Obed Vargas,1.0000,2026-08-22,Coincidencia exacta.
+ATLETICO-DE-MADRID-17,ATLÉTICO DE MADRID,15,15,,Álex Baena,medio,Atlético de Madrid,en_plantilla,PEGAR,Álex Baena,1.0000,2026-08-22,Coincidencia exacta.
+ATLETICO-DE-MADRID-18,ATLÉTICO DE MADRID,16,16,,Almada,medio,Atlético de Madrid,no_encontrado,NO PEGAR,Álex Baena,0.5000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ATLETICO-DE-MADRID-19,ATLÉTICO DE MADRID,17,17,,Giuliano,delantero,Atlético de Madrid,en_plantilla,PEGAR,Giuliano Simeone,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-20,ATLÉTICO DE MADRID,18,18,,Lookman,delantero,Atlético de Madrid,en_plantilla,PEGAR,Ademola Lookman,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ATLETICO-DE-MADRID-21,ATLÉTICO DE MADRID,19,19,,Sorloth,delantero,Atlético de Madrid,en_plantilla,PEGAR,Alexander Sørloth,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+ATLETICO-DE-MADRID-22,ATLÉTICO DE MADRID,20,20,,Julián Alvarez,delantero,Atlético de Madrid,en_plantilla,PEGAR,Julián Alvarez,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-01,FC BARCELONA,1,1,,Escudo,,FC Barcelona,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+FC-BARCELONA-02,FC BARCELONA,2,2,,Hansi Flick,entrenador,FC Barcelona,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+FC-BARCELONA-03,FC BARCELONA,3,3,,Joan García,portero,FC Barcelona,en_plantilla,PEGAR,Joan García,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-04,FC BARCELONA,4,4,,Szczesny,portero,FC Barcelona,en_plantilla,PEGAR,Wojciech Szczęsny,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-05,FC BARCELONA,5,5,,Koundé,defensa,FC Barcelona,en_plantilla,PEGAR,Jules Koundé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-06,FC BARCELONA,6A,6,A,Araujo,defensa,FC Barcelona,no_encontrado,NO PEGAR,Marc Casadó,0.4706,2026-08-22,No aparece en la plantilla de Transfermarkt.
+FC-BARCELONA-07,FC BARCELONA,6B,6,B,Christensen,defensa,FC Barcelona,en_plantilla,PEGAR,Andreas Christensen,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-08,FC BARCELONA,7,7,,Cubarsí,defensa,FC Barcelona,en_plantilla,PEGAR,Pau Cubarsí,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-09,FC BARCELONA,8,8,,Gerard Martín,defensa,FC Barcelona,en_plantilla,PEGAR,Gerard Martín,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-10,FC BARCELONA,9,9,,Joao Cancelo,defensa,FC Barcelona,en_plantilla,PEGAR,João Cancelo,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-11,FC BARCELONA,10,10,,Balde,defensa,FC Barcelona,en_plantilla,PEGAR,Alejandro Balde,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-12,FC BARCELONA,11,11,,Eric García,defensa,FC Barcelona,en_plantilla,PEGAR,Eric García,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-13,FC BARCELONA,12,12,,De Jong,medio,FC Barcelona,en_plantilla,PEGAR,Frenkie de Jong,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-14,FC BARCELONA,13,13,,Gavi,medio,FC Barcelona,en_plantilla,PEGAR,Gavi,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-15,FC BARCELONA,14,14,,Bernal,medio,FC Barcelona,en_plantilla,PEGAR,Marc Bernal,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-16,FC BARCELONA,15,15,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-17,FC BARCELONA,16,16,,Fermín,medio,FC Barcelona,en_plantilla,PEGAR,Fermín López,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+FC-BARCELONA-18,FC BARCELONA,17,17,,Dani Olmo,delantero,FC Barcelona,en_plantilla,PEGAR,Dani Olmo,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-19,FC BARCELONA,18,18,,Ferran Torres,delantero,FC Barcelona,no_encontrado,NO PEGAR,Fermín López,0.5600,2026-08-22,No aparece en la plantilla de Transfermarkt.
+FC-BARCELONA-20,FC BARCELONA,19,19,,Raphinha,delantero,FC Barcelona,en_plantilla,PEGAR,Raphinha,1.0000,2026-08-22,Coincidencia exacta.
+FC-BARCELONA-21,FC BARCELONA,20,20,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-01,REAL BETIS,1,1,,Escudo,,Real Betis,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-BETIS-02,REAL BETIS,2,2,,Manuel Pellegrini,entrenador,Real Betis,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-BETIS-03,REAL BETIS,3,3,,Valles,portero,Real Betis,en_plantilla,PEGAR,Álvaro Valles,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+REAL-BETIS-04,REAL BETIS,4,4,,Pau López,portero,Real Betis,no_encontrado,NO PEGAR,Gonzalo Petit,0.4545,2026-08-22,No aparece en la plantilla de Transfermarkt.
+REAL-BETIS-05,REAL BETIS,5A,5,A,Aitor Ruibal,defensa,Real Betis,en_plantilla,PEGAR,Aitor Ruibal,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-06,REAL BETIS,5B,5,B,Bellerín,defensa,Real Betis,en_plantilla,PEGAR,Héctor Bellerín,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-BETIS-07,REAL BETIS,6,6,,Diego Llorente,defensa,Real Betis,en_plantilla,PEGAR,Diego Llorente,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-08,REAL BETIS,7,7,,Bartra,defensa,Real Betis,en_plantilla,PEGAR,Marc Bartra,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-BETIS-09,REAL BETIS,8,8,,Natan,defensa,Real Betis,en_plantilla,PEGAR,Natan,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-10,REAL BETIS,9,9,,Valentín Gómez,defensa,Real Betis,en_plantilla,PEGAR,Valentín Gómez,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-11,REAL BETIS,10,10,,Marc Roca,medio,Real Betis,en_plantilla,PEGAR,Marc Roca,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-12,REAL BETIS,11,11,,Amrabat,medio,Real Betis,no_encontrado,NO PEGAR,Aitor Ruibal,0.4211,2026-08-22,No aparece en la plantilla de Transfermarkt.
+REAL-BETIS-13,REAL BETIS,12,12,,Fidalgo,medio,Real Betis,en_plantilla,PEGAR,Álvaro Fidalgo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-BETIS-14,REAL BETIS,13,13,,,,Real Betis,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+REAL-BETIS-15,REAL BETIS,14,14,,Lo Celso,medio,Real Betis,en_plantilla,PEGAR,Giovani Lo Celso,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-BETIS-16,REAL BETIS,15,15,,Pablo Fornals,medio,Real Betis,en_plantilla,PEGAR,Pablo Fornals,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-17,REAL BETIS,16,16,,Isco,medio,Real Betis,en_plantilla,PEGAR,Isco,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-18,REAL BETIS,17,17,,Riquelme,delantero,Real Betis,en_plantilla,PEGAR,Rodrigo Riquelme,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-BETIS-19,REAL BETIS,18,18,,Antony,delantero,Real Betis,en_plantilla,PEGAR,Antony,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-20,REAL BETIS,19,19,,Cucho Hernández,delantero,Real Betis,en_plantilla,PEGAR,Cucho Hernández,1.0000,2026-08-22,Coincidencia exacta.
+REAL-BETIS-21,REAL BETIS,20,20,,Abde,delantero,Real Betis,en_plantilla,PEGAR,Abde Ezzalzouli,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-01,RC CELTA DE VIGO,1,1,,Escudo,,RC Celta de Vigo,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RC-CELTA-DE-VIGO-02,RC CELTA DE VIGO,2,2,,Claudio Giráldez,entrenador,RC Celta de Vigo,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RC-CELTA-DE-VIGO-03,RC CELTA DE VIGO,3,3,,Radu,portero,RC Celta de Vigo,en_plantilla,PEGAR,Ionuț Radu,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-04,RC CELTA DE VIGO,4,4,,Iván Villar,portero,RC Celta de Vigo,en_plantilla,PEGAR,Iván Villar,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-05,RC CELTA DE VIGO,5,5,,Álvaro Núñez,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Álvaro Núñez,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-06,RC CELTA DE VIGO,6,6,,Javi Rueda,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Javi Rueda,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-07,RC CELTA DE VIGO,7,7,,Javi Rodríguez,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Javi Rodríguez,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-08,RC CELTA DE VIGO,8,8,,Starfelt,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Carl Starfelt,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-09,RC CELTA DE VIGO,9A,9,A,Marcos Alonso,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Marcos Alonso,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-10,RC CELTA DE VIGO,9B,9,B,Yoel Lago,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Yoel Lago,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-11,RC CELTA DE VIGO,10,10,,Carreira,defensa,RC Celta de Vigo,en_plantilla,PEGAR,Sergio Carreira,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-12,RC CELTA DE VIGO,11,11,,Ilaix Moriba,medio,RC Celta de Vigo,en_plantilla,PEGAR,Ilaix Moriba,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-13,RC CELTA DE VIGO,12,12,,Miguel Román,medio,RC Celta de Vigo,en_plantilla,PEGAR,Miguel Román,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-14,RC CELTA DE VIGO,13,13,,Hugo Álvarez,medio,RC Celta de Vigo,en_plantilla,PEGAR,Hugo Álvarez,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-15,RC CELTA DE VIGO,14,14,,Sotelo,medio,RC Celta de Vigo,no_encontrado,NO PEGAR,Yoel Lago,0.5333,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RC-CELTA-DE-VIGO-16,RC CELTA DE VIGO,15,15,,Fer López,medio,RC Celta de Vigo,no_encontrado,NO PEGAR,Ferran Jutglà,0.5185,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RC-CELTA-DE-VIGO-17,RC CELTA DE VIGO,16,16,,Swedberg,medio,RC Celta de Vigo,en_plantilla,PEGAR,Williot Swedberg,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-18,RC CELTA DE VIGO,17,17,,Iago Aspas,delantero,RC Celta de Vigo,en_plantilla,PEGAR,Iago Aspas,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-19,RC CELTA DE VIGO,18A,18,A,Pablo Durán,delantero,RC Celta de Vigo,en_plantilla,PEGAR,Pablo Durán,1.0000,2026-08-22,Coincidencia exacta.
+RC-CELTA-DE-VIGO-20,RC CELTA DE VIGO,18B,18,B,El-Abdellaoui,delantero,RC Celta de Vigo,en_plantilla,PEGAR,Jones El-Abdellaoui,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-21,RC CELTA DE VIGO,19,19,,Jutglà,delantero,RC Celta de Vigo,en_plantilla,PEGAR,Ferran Jutglà,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RC-CELTA-DE-VIGO-22,RC CELTA DE VIGO,20,20,,Borja Iglesias,delantero,RC Celta de Vigo,en_plantilla,PEGAR,Borja Iglesias,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-01,DEPORTIVO,1,1,,Escudo,,Deportivo de La Coruña,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+DEPORTIVO-02,DEPORTIVO,2,2,,Antonio Hidalgo,entrenador,Deportivo de La Coruña,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+DEPORTIVO-03,DEPORTIVO,3,3,,Álvaro Fernández,portero,Deportivo de La Coruña,en_plantilla,PEGAR,Álvaro Ferllo,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+DEPORTIVO-04,DEPORTIVO,4,4,,Germán Parreño,portero,Deportivo de La Coruña,en_plantilla,PEGAR,Germán Parreño,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-05,DEPORTIVO,5,5,,Adrià Altimira,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Adrià Altimira,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-06,DEPORTIVO,6,6,,Loureiro,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Miguel Loureiro,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-07,DEPORTIVO,7,7,,Noubi,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Lucas Noubi,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-08,DEPORTIVO,8,8,,Dani Barcia,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Dani Barcia,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-09,DEPORTIVO,9A,9,A,Ximo Navarro,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Ximo Navarro,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-10,DEPORTIVO,9B,9,B,Arnau Comas,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Arnau Comas,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-11,DEPORTIVO,10,10,,Quagliata,defensa,Deportivo de La Coruña,en_plantilla,PEGAR,Giacomo Quagliata,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-12,DEPORTIVO,11,11,,Villares,medio,Deportivo de La Coruña,en_plantilla,PEGAR,Diego Villares,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-13,DEPORTIVO,12,12,,Riki,medio,Deportivo de La Coruña,en_plantilla,PEGAR,Riki Rodríguez,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-14,DEPORTIVO,13,13,,Mario Soriano,medio,Deportivo de La Coruña,en_plantilla,PEGAR,Mario Soriano,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-15,DEPORTIVO,14,14,,José Ángel,medio,Deportivo de La Coruña,en_plantilla,PEGAR,José Ángel Jurado,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-16,DEPORTIVO,15,15,,Luismi Cruz,medio,Deportivo de La Coruña,en_plantilla,PEGAR,Luismi Cruz,1.0000,2026-08-22,Coincidencia exacta.
+DEPORTIVO-17,DEPORTIVO,16,16,,Mella,medio,Deportivo de La Coruña,en_plantilla,PEGAR,David Mella,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-18,DEPORTIVO,17,17,,,,Deportivo de La Coruña,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-19,DEPORTIVO,18,18,,Yeremay,delantero,Deportivo de La Coruña,en_plantilla,PEGAR,Yeremay Hernández,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-20,DEPORTIVO,19,19,,Eddahchouri,delantero,Deportivo de La Coruña,en_plantilla,PEGAR,Zakaria Eddahchouri,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DEPORTIVO-21,DEPORTIVO,20,20,,Nsongo,delantero,Deportivo de La Coruña,en_plantilla,PEGAR,Bil Nsongo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-01,ELCHE CF,1,1,,Escudo,,Elche CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ELCHE-CF-02,ELCHE CF,2,2,,Eder Saravia,entrenador,Elche CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+ELCHE-CF-03,ELCHE CF,3,3,,Dituro,portero,Elche CF,en_plantilla,PEGAR,Matías Dituro,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-04,ELCHE CF,4,4,,,,Elche CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+ELCHE-CF-05,ELCHE CF,5,5,,Pétrot,defensa,Elche CF,no_encontrado,NO PEGAR,Pedro Bigas,0.4706,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ELCHE-CF-06,ELCHE CF,6,6,,Chust,defensa,Elche CF,en_plantilla,PEGAR,Víctor Chust,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-07,ELCHE CF,7,7,,Bigas,defensa,Elche CF,en_plantilla,PEGAR,Pedro Bigas,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-08,ELCHE CF,8,8,,Affengruber,defensa,Elche CF,en_plantilla,PEGAR,David Affengruber,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-09,ELCHE CF,9A,9,A,Pedrosa,defensa,Elche CF,no_encontrado,NO PEGAR,Pedro Bigas,0.6667,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ELCHE-CF-10,ELCHE CF,9B,9,B,Sangaré,defensa,Elche CF,en_plantilla,PEGAR,Buba Sangaré,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-11,ELCHE CF,10,10,,Germán Valera,medio,Elche CF,en_plantilla,PEGAR,Germán Valera,1.0000,2026-08-22,Coincidencia exacta.
+ELCHE-CF-12,ELCHE CF,11,11,,Martim Neto,medio,Elche CF,en_plantilla,PEGAR,Martim Neto,1.0000,2026-08-22,Coincidencia exacta.
+ELCHE-CF-13,ELCHE CF,12,12,,Gonzalo Villar,medio,Elche CF,en_plantilla,PEGAR,Gonzalo Villar,1.0000,2026-08-22,Coincidencia exacta.
+ELCHE-CF-14,ELCHE CF,13A,13,A,Fede Redondo,medio,Elche CF,en_plantilla,PEGAR,Federico Redondo,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+ELCHE-CF-15,ELCHE CF,13B,13,B,Jon Chetauya,medio,Elche CF,no_encontrado,NO PEGAR,John Donald,0.4348,2026-08-22,No aparece en la plantilla de Transfermarkt.
+ELCHE-CF-16,ELCHE CF,14,14,,Marc Aguado,medio,Elche CF,en_plantilla,PEGAR,Marc Aguado,1.0000,2026-08-22,Coincidencia exacta.
+ELCHE-CF-17,ELCHE CF,15,15,,Josan,medio,Elche CF,en_plantilla,PEGAR,Josan,1.0000,2026-08-22,Coincidencia exacta.
+ELCHE-CF-18,ELCHE CF,16,16,,Morente,medio,Elche CF,en_plantilla,PEGAR,Tete Morente,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-19,ELCHE CF,17,17,,,,Elche CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+ELCHE-CF-20,ELCHE CF,18,18,,Cepeda,delantero,Elche CF,en_plantilla,PEGAR,Lucas Cepeda,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-21,ELCHE CF,19,19,,Diangana,delantero,Elche CF,en_plantilla,PEGAR,Grady Diangana,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ELCHE-CF-22,ELCHE CF,20,20,,Yago Santiago,delantero,Elche CF,en_plantilla,PEGAR,Yago Santiago,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-01,RCD ESPANYOL,1,1,,Escudo,,RCD Espanyol,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RCD-ESPANYOL-02,RCD ESPANYOL,2,2,,Manolo González,entrenador,RCD Espanyol,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RCD-ESPANYOL-03,RCD ESPANYOL,3,3,,Dmitrovic,portero,RCD Espanyol,en_plantilla,PEGAR,Marko Dmitrovic,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-04,RCD ESPANYOL,4,4,,Fortuño,portero,RCD Espanyol,en_plantilla,PEGAR,Ángel Fortuño,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-05,RCD ESPANYOL,5,5,,El Hilali,defensa,RCD Espanyol,en_plantilla,PEGAR,Omar El Hilali,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-06,RCD ESPANYOL,6,6,,Rubén Sánchez,defensa,RCD Espanyol,en_plantilla,PEGAR,Rubén Sánchez,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-07,RCD ESPANYOL,7,7,,Riedel,defensa,RCD Espanyol,en_plantilla,PEGAR,Clemens Riedel,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-08,RCD ESPANYOL,8,8,,Cabrera,defensa,RCD Espanyol,en_plantilla,PEGAR,Leandro Cabrera,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-09,RCD ESPANYOL,9,9,,Miguel Rubio,defensa,RCD Espanyol,no_encontrado,NO PEGAR,Ángel Fortuño,0.5600,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RCD-ESPANYOL-10,RCD ESPANYOL,10,10,,,,RCD Espanyol,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+RCD-ESPANYOL-11,RCD ESPANYOL,11,11,,Pol Lozano,medio,RCD Espanyol,en_plantilla,PEGAR,Pol Lozano,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-12,RCD ESPANYOL,12,12,,Urko,medio,RCD Espanyol,en_plantilla,PEGAR,Urko González de Zárate,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-13,RCD ESPANYOL,13,13,,Edu Expósito,medio,RCD Espanyol,en_plantilla,PEGAR,Edu Expósito,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-14,RCD ESPANYOL,14,14,,Jofre,medio,RCD Espanyol,en_plantilla,PEGAR,Jofre Carreras,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-15,RCD ESPANYOL,15,15,,,,RCD Espanyol,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+RCD-ESPANYOL-16,RCD ESPANYOL,16,16,,Dolan,delantero,RCD Espanyol,en_plantilla,PEGAR,Tyrhys Dolan,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-17,RCD ESPANYOL,17,17,,Pere Milla,delantero,RCD Espanyol,en_plantilla,PEGAR,Pere Milla,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-18,RCD ESPANYOL,18,18,,Puado,delantero,RCD Espanyol,en_plantilla,PEGAR,Javi Puado,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RCD-ESPANYOL-19,RCD ESPANYOL,19,19,,Kike García,delantero,RCD Espanyol,en_plantilla,PEGAR,Kike García,1.0000,2026-08-22,Coincidencia exacta.
+RCD-ESPANYOL-20,RCD ESPANYOL,20,20,,Roberto Fernández,delantero,RCD Espanyol,en_plantilla,PEGAR,Roberto Fernández,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-01,GETAFE CF,1,1,,Escudo,,Getafe CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+GETAFE-CF-02,GETAFE CF,2,2,,Jose Bordalás,entrenador,Getafe CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+GETAFE-CF-03,GETAFE CF,3,3,,David Soria,portero,Getafe CF,en_plantilla,PEGAR,David Soria,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-04,GETAFE CF,4,4,,Letacek,portero,Getafe CF,en_plantilla,PEGAR,Jiri Letacek,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+GETAFE-CF-05,GETAFE CF,5,5,,Kiko Femenía,defensa,Getafe CF,en_plantilla,PEGAR,Kiko Femenía,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-06,GETAFE CF,6,6,,Djené,defensa,Getafe CF,en_plantilla,PEGAR,Dakonam Djené,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+GETAFE-CF-07,GETAFE CF,7,7,,Boselli,defensa,Getafe CF,en_plantilla,PEGAR,Sebastián Boselli,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+GETAFE-CF-08,GETAFE CF,8,8,,Abqar,defensa,Getafe CF,en_plantilla,PEGAR,Abdel Abqar,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+GETAFE-CF-09,GETAFE CF,9,9,,Zaid Romero,defensa,Getafe CF,en_plantilla,PEGAR,Zaid Romero,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-10,GETAFE CF,10,10,,Davinchi,defensa,Getafe CF,en_plantilla,PEGAR,Davinchi,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-11,GETAFE CF,11,11,,Mario Martín,medio,Getafe CF,en_plantilla,PEGAR,Mario Martín,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-12,GETAFE CF,12,12,,Javi Muñoz,medio,Getafe CF,en_plantilla,PEGAR,Javi Muñoz,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-13,GETAFE CF,13,13,,,,Getafe CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-14,GETAFE CF,14,14,,,,Getafe CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-15,GETAFE CF,15,15,,,,Getafe CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-16,GETAFE CF,16,16,,,,Getafe CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-17,GETAFE CF,17,17,,Álex Sancris,delantero,Getafe CF,en_plantilla,PEGAR,Álex Sancris,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-18,GETAFE CF,18,18,,Borja Mayoral,delantero,Getafe CF,en_plantilla,PEGAR,Borja Mayoral,1.0000,2026-08-22,Coincidencia exacta.
+GETAFE-CF-19,GETAFE CF,19,19,,Luis Vázquez,delantero,Getafe CF,no_encontrado,NO PEGAR,Jean Ives Valou,0.4444,2026-08-22,No aparece en la plantilla de Transfermarkt.
+GETAFE-CF-20,GETAFE CF,20,20,,Satriano,delantero,Getafe CF,en_plantilla,PEGAR,Martín Satriano,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-01,LEVANTE UD,1,1,,Escudo,,Levante UD,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+LEVANTE-UD-02,LEVANTE UD,2,2,,Luís Castro,entrenador,Levante UD,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+LEVANTE-UD-03,LEVANTE UD,3,3,,Ryan,portero,Levante UD,en_plantilla,PEGAR,Mathew Ryan,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-04,LEVANTE UD,4,4,,Pablo Campos,portero,Levante UD,en_plantilla,PEGAR,Pablo Campos,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-05,LEVANTE UD,5,5,,Toljan,defensa,Levante UD,en_plantilla,PEGAR,Jeremy Toljan,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-06,LEVANTE UD,6,6,,Elgezabal,defensa,Levante UD,no_encontrado,NO PEGAR,Nacho Pérez,0.3000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+LEVANTE-UD-07,LEVANTE UD,7,7,,Dela,defensa,Levante UD,en_plantilla,PEGAR,Adrián Dela,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-08,LEVANTE UD,8,8,,,,Levante UD,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+LEVANTE-UD-09,LEVANTE UD,9,9,,Manu Sánchez,defensa,Levante UD,en_plantilla,PEGAR,Manu Sánchez,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-10,LEVANTE UD,10,10,,Arriaga,medio,Levante UD,no_encontrado,NO PEGAR,Adrián Dela,0.5556,2026-08-22,No aparece en la plantilla de Transfermarkt.
+LEVANTE-UD-11,LEVANTE UD,11,11,,Oriol Rey,medio,Levante UD,en_plantilla,PEGAR,Oriol Rey,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-12,LEVANTE UD,12,12,,Olasagasti,medio,Levante UD,en_plantilla,PEGAR,Jon Ander Olasagasti,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-13,LEVANTE UD,13,13,,,,Levante UD,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+LEVANTE-UD-14,LEVANTE UD,14A,14,A,Victor García,medio,Levante UD,en_plantilla,PEGAR,Víctor García,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-15,LEVANTE UD,14B,14,B,Paco Cortés,medio,Levante UD,en_plantilla,PEGAR,Paco Cortés,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-16,LEVANTE UD,15,15,,Carlos Álvarez,medio,Levante UD,en_plantilla,PEGAR,Carlos Álvarez,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-17,LEVANTE UD,16,16,,Tunde,delantero,Levante UD,en_plantilla,PEGAR,Kareem Tunde,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-18,LEVANTE UD,17,17,,Brugué,delantero,Levante UD,en_plantilla,PEGAR,Roger Brugué,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-19,LEVANTE UD,18,18,,Iván Romero,delantero,Levante UD,en_plantilla,PEGAR,Iván Romero,1.0000,2026-08-22,Coincidencia exacta.
+LEVANTE-UD-20,LEVANTE UD,19,19,,Etta Eyong,delantero,Levante UD,en_plantilla,PEGAR,Karl Etta Eyong,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LEVANTE-UD-21,LEVANTE UD,20,20,,Carlos Espí,delantero,Levante UD,no_encontrado,NO PEGAR,Carlos Álvarez,0.6400,2026-08-22,No aparece en la plantilla de Transfermarkt.
+REAL-MADRID-CF-01,REAL MADRID CF,1,1,,Escudo,,Real Madrid,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-MADRID-CF-02,REAL MADRID CF,2,2,,José Mourinho,entrenador,Real Madrid,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-MADRID-CF-03,REAL MADRID CF,3,3,,Courtois,portero,Real Madrid,en_plantilla,PEGAR,Thibaut Courtois,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-04,REAL MADRID CF,4,4,,Lunin,portero,Real Madrid,en_plantilla,PEGAR,Andriy Lunin,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-05,REAL MADRID CF,5,5,,Trent,defensa,Real Madrid,en_plantilla,PEGAR,Trent Alexander-Arnold,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+REAL-MADRID-CF-06,REAL MADRID CF,6,6,,Militao,defensa,Real Madrid,en_plantilla,PEGAR,Éder Militão,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-07,REAL MADRID CF,7,7,,Asencio,defensa,Real Madrid,en_plantilla,PEGAR,Raúl Asencio,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-08,REAL MADRID CF,8,8,,Rüdiger,defensa,Real Madrid,en_plantilla,PEGAR,Antonio Rüdiger,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-09,REAL MADRID CF,9,9,,Huijsen,defensa,Real Madrid,en_plantilla,PEGAR,Dean Huijsen,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-10,REAL MADRID CF,10A,10,A,Carreras,defensa,Real Madrid,en_plantilla,PEGAR,Álvaro Carreras,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-11,REAL MADRID CF,10B,10,B,Mendy,defensa,Real Madrid,en_plantilla,PEGAR,Ferland Mendy,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-12,REAL MADRID CF,11,11,,Tchouaméni,medio,Real Madrid,en_plantilla,PEGAR,Aurélien Tchouaméni,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-13,REAL MADRID CF,12,12,,Fede Valverde,medio,Real Madrid,en_plantilla,PEGAR,Federico Valverde,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+REAL-MADRID-CF-14,REAL MADRID CF,13,13,,Camavinga,medio,Real Madrid,en_plantilla,PEGAR,Eduardo Camavinga,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-15,REAL MADRID CF,14,14,,Bellingham,medio,Real Madrid,en_plantilla,PEGAR,Jude Bellingham,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-16,REAL MADRID CF,15A,15,A,Güler,medio,Real Madrid,en_plantilla,PEGAR,Arda Güler,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-MADRID-CF-17,REAL MADRID CF,15B,15,B,Thiago Pitarch,medio,Real Madrid,en_plantilla,PEGAR,Thiago Pitarch,1.0000,2026-08-22,Coincidencia exacta.
+REAL-MADRID-CF-18,REAL MADRID CF,16A,16,A,Mastantuono,medio,Real Madrid,no_encontrado,NO PEGAR,Antonio Rüdiger,0.4615,2026-08-22,No aparece en la plantilla de Transfermarkt.
+REAL-MADRID-CF-19,REAL MADRID CF,16B,16,B,Brahim Díaz,delantero,Real Madrid,en_plantilla,PEGAR,Brahim Díaz,1.0000,2026-08-22,Coincidencia exacta.
+REAL-MADRID-CF-20,REAL MADRID CF,17,17,,Gonzalo,delantero,Real Madrid,no_encontrado,NO PEGAR,Álvaro Carreras,0.4828,2026-08-22,No aparece en la plantilla de Transfermarkt.
+REAL-MADRID-CF-21,REAL MADRID CF,18,18,,Rodrygo,delantero,Real Madrid,en_plantilla,PEGAR,Rodrygo,1.0000,2026-08-22,Coincidencia exacta.
+REAL-MADRID-CF-22,REAL MADRID CF,19,19,,Vinícius,delantero,Real Madrid,en_plantilla,PEGAR,Vinicius Junior,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+REAL-MADRID-CF-23,REAL MADRID CF,20,20,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-01,MALAGA CF,1,1,,Escudo,,Málaga CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+MALAGA-CF-02,MALAGA CF,2,2,,Juan Franisco Funes,entrenador,Málaga CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+MALAGA-CF-03,MALAGA CF,3,3,,Alfonso Herrero,portero,Málaga CF,en_plantilla,PEGAR,Alfonso Herrero,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-04,MALAGA CF,4,4,,Carlos López,portero,Málaga CF,en_plantilla,PEGAR,Carlos López,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-05,MALAGA CF,5,5,,Puga,defensa,Málaga CF,en_plantilla,PEGAR,Carlos Puga,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-06,MALAGA CF,6,6,,Murillo,defensa,Málaga CF,en_plantilla,PEGAR,Diego Murillo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-07,MALAGA CF,7,7,,,,Málaga CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+MALAGA-CF-08,MALAGA CF,8,8,,Einar Galilea,defensa,Málaga CF,en_plantilla,PEGAR,Einar Galilea,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-09,MALAGA CF,9,9,,Rafita,defensa,Málaga CF,en_plantilla,PEGAR,Rafita Garrido,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-10,MALAGA CF,10,10,,,,Málaga CF,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+MALAGA-CF-11,MALAGA CF,11,11,,Izan Mérino,medio,Málaga CF,en_plantilla,PEGAR,Izan Merino,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-12,MALAGA CF,12,12,,Dani Lorenzo,medio,Málaga CF,en_plantilla,PEGAR,Dani Lorenzo,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-13,MALAGA CF,13A,13,A,Rafa Rodríguez,medio,Málaga CF,en_plantilla,PEGAR,Rafa Rodríguez,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-14,MALAGA CF,13B,13,B,Juanpe,medio,Málaga CF,no_encontrado,NO PEGAR,Chupe,0.5455,2026-08-22,No aparece en la plantilla de Transfermarkt.
+MALAGA-CF-15,MALAGA CF,14,14,,Dotor,medio,Málaga CF,en_plantilla,PEGAR,Carlos Dotor,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-16,MALAGA CF,15,15,,Aarón Ochoa,medio,Málaga CF,en_plantilla,PEGAR,Aarón Ochoa,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-17,MALAGA CF,16,16,,Larrubia,delantero,Málaga CF,en_plantilla,PEGAR,David Larrubia,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-18,MALAGA CF,17,17,,Lobete,delantero,Málaga CF,en_plantilla,PEGAR,Julen Lobete,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-19,MALAGA CF,18,18,,Adrián Niño,delantero,Málaga CF,en_plantilla,PEGAR,Adrián Niño,1.0000,2026-08-22,Coincidencia exacta.
+MALAGA-CF-20,MALAGA CF,19,19,,Joaquín,delantero,Málaga CF,en_plantilla,PEGAR,Joaquín Muñoz,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+MALAGA-CF-21,MALAGA CF,20,20,,Chupe,delantero,Málaga CF,en_plantilla,PEGAR,Chupe,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-01,OSASUNA,1,1,,Escudo,,CA Osasuna,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+OSASUNA-02,OSASUNA,2,2,,Luis Miguel Ramis,entrenador,CA Osasuna,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+OSASUNA-03,OSASUNA,3,3,,Sergio Herrera,portero,CA Osasuna,en_plantilla,PEGAR,Sergio Herrera,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-04,OSASUNA,4,4,,Aitor Fernández,portero,CA Osasuna,en_plantilla,PEGAR,Aitor Fernández,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-05,OSASUNA,5A,5,A,Rosier,defensa,CA Osasuna,en_plantilla,PEGAR,Valentin Rosier,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-06,OSASUNA,5B,5,B,Arguibide,defensa,CA Osasuna,en_plantilla,PEGAR,Iñigo Arguibide,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-07,OSASUNA,6,6,,Boyomo,defensa,CA Osasuna,en_plantilla,PEGAR,Enzo Boyomo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-08,OSASUNA,7,7,,Herrando,defensa,CA Osasuna,en_plantilla,PEGAR,Jorge Herrando,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-09,OSASUNA,8,8,,Catena,defensa,CA Osasuna,en_plantilla,PEGAR,Alejandro Catena,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-10,OSASUNA,9,9,,Abel Bretones,defensa,CA Osasuna,en_plantilla,PEGAR,Abel Bretones,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-11,OSASUNA,10,10,,Osambela,medio,CA Osasuna,en_plantilla,PEGAR,Asier Osambela,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-12,OSASUNA,11,11,,Torró,medio,CA Osasuna,en_plantilla,PEGAR,Lucas Torró,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-13,OSASUNA,12,12,,Moncayola,medio,CA Osasuna,en_plantilla,PEGAR,Jon Moncayola,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+OSASUNA-14,OSASUNA,13A,13,A,Moi Gómez,medio,CA Osasuna,en_plantilla,PEGAR,Moi Gómez,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-15,OSASUNA,13B,13,B,Iker Muñoz,medio,CA Osasuna,en_plantilla,PEGAR,Iker Muñoz,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-16,OSASUNA,14,14,,Rubén García,medio,CA Osasuna,en_plantilla,PEGAR,Rubén García,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-17,OSASUNA,15,15,,Aimar Oroz,medio,CA Osasuna,en_plantilla,PEGAR,Aimar Oroz,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-18,OSASUNA,16,16,,Iker Benito,medio,CA Osasuna,no_encontrado,NO PEGAR,Iker Muñoz,0.6667,2026-08-22,No aparece en la plantilla de Transfermarkt.
+OSASUNA-19,OSASUNA,17,17,,Raúl Moro,delantero,CA Osasuna,en_plantilla,PEGAR,Raúl Moro,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-20,OSASUNA,18,18,,Raúl García,delantero,CA Osasuna,en_plantilla,PEGAR,Raúl García,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-21,OSASUNA,19,19,,Kike Barja,delantero,CA Osasuna,en_plantilla,PEGAR,Kike Barja,1.0000,2026-08-22,Coincidencia exacta.
+OSASUNA-22,OSASUNA,20,20,,Budimir,delantero,CA Osasuna,en_plantilla,PEGAR,Ante Budimir,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-01,RACING DE SANTANDER,1,1,,Escudo,,Racing de Santander,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RACING-DE-SANTANDER-02,RACING DE SANTANDER,2,2,,José Alberto López,entrenador,Racing de Santander,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RACING-DE-SANTANDER-03,RACING DE SANTANDER,3,3,,,,Racing de Santander,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+RACING-DE-SANTANDER-04,RACING DE SANTANDER,4,4,,Eriksson,portero,Racing de Santander,en_plantilla,PEGAR,Simon Eriksson,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-05,RACING DE SANTANDER,5,5,,Mantilla,defensa,Racing de Santander,en_plantilla,PEGAR,Álvaro Mantilla,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-06,RACING DE SANTANDER,6,6,,Sangalli,defensa,Racing de Santander,no_encontrado,NO PEGAR,Sergio Canales,0.4545,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-07,RACING DE SANTANDER,7,7,,Facu González,defensa,Racing de Santander,en_plantilla,PEGAR,Facundo González,0.8966,2026-08-22,Coincidencia aproximada de alta confianza.
+RACING-DE-SANTANDER-08,RACING DE SANTANDER,8,8,,Javi Castro,defensa,Racing de Santander,no_encontrado,NO PEGAR,Juan Carlos Arana,0.5000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-09,RACING DE SANTANDER,9A,9,A,Manu Hernando,defensa,Racing de Santander,en_plantilla,PEGAR,Manu Hernando,1.0000,2026-08-22,Coincidencia exacta.
+RACING-DE-SANTANDER-10,RACING DE SANTANDER,9B,9,B,Mario García,defensa,Racing de Santander,no_encontrado,NO PEGAR,Juan Carlos Arana,0.4828,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-11,RACING DE SANTANDER,10,10,,Jorge Salinas,defensa,Racing de Santander,en_plantilla,PEGAR,Jorge Salinas,1.0000,2026-08-22,Coincidencia exacta.
+RACING-DE-SANTANDER-12,RACING DE SANTANDER,11A,11,A,Maguette,medio,Racing de Santander,en_plantilla,PEGAR,Maguette Gueye,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-13,RACING DE SANTANDER,11B,11,B,Nteka,medio,Racing de Santander,no_encontrado,NO PEGAR,Manu Hernando,0.3333,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-14,RACING DE SANTANDER,12,12,,Gustavo Puerta,medio,Racing de Santander,en_plantilla,PEGAR,Gustavo Puerta,1.0000,2026-08-22,Coincidencia exacta.
+RACING-DE-SANTANDER-15,RACING DE SANTANDER,13,13,,Íñigo,medio,Racing de Santander,coincidencia_ambigua,REVISAR,"Íñigo Sainz-Maza, Iñigo Vicente",0.5000,2026-08-22,El nombre parcial coincide con varios jugadores.
+RACING-DE-SANTANDER-16,RACING DE SANTANDER,14,14,,Aldasoro,medio,Racing de Santander,no_encontrado,NO PEGAR,Álvaro Mantilla,0.4348,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-17,RACING DE SANTANDER,15,15,,Suleiman,delantero,Racing de Santander,no_encontrado,NO PEGAR,Sergio Martínez,0.5217,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RACING-DE-SANTANDER-18,RACING DE SANTANDER,16,16,,Andrés Martín,delantero,Racing de Santander,en_plantilla,PEGAR,Andrés Martín,1.0000,2026-08-22,Coincidencia exacta.
+RACING-DE-SANTANDER-19,RACING DE SANTANDER,17,17,,Guliashvili,delantero,Racing de Santander,en_plantilla,PEGAR,Giorgi Guliashvili,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-20,RACING DE SANTANDER,18,18,,Íñigo Vicente,delantero,Racing de Santander,en_plantilla,PEGAR,Iñigo Vicente,1.0000,2026-08-22,Coincidencia exacta.
+RACING-DE-SANTANDER-21,RACING DE SANTANDER,19,19,,Arana,delantero,Racing de Santander,en_plantilla,PEGAR,Juan Carlos Arana,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RACING-DE-SANTANDER-22,RACING DE SANTANDER,20,20,,Villalibre,delantero,Racing de Santander,en_plantilla,PEGAR,Asier Villalibre,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-01,RAYO VALLECANO,1,1,,Escudo,,Rayo Vallecano,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RAYO-VALLECANO-02,RAYO VALLECANO,2,2,,Beñat San José,entrenador,Rayo Vallecano,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+RAYO-VALLECANO-03,RAYO VALLECANO,3,3,,Batalla,portero,Rayo Vallecano,en_plantilla,PEGAR,Augusto Batalla,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-04,RAYO VALLECANO,4,4,,Cárdenas,portero,Rayo Vallecano,en_plantilla,PEGAR,Dani Cárdenas,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-05,RAYO VALLECANO,5,5,,Ratiu,defensa,Rayo Vallecano,en_plantilla,PEGAR,Andrei Rațiu,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-06,RAYO VALLECANO,6,6,,Balliu,defensa,Rayo Vallecano,en_plantilla,PEGAR,Iván Balliu,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-07,RAYO VALLECANO,7,7,,Nobel Mendy,defensa,Rayo Vallecano,no_encontrado,NO PEGAR,Pelayo Fernández,0.4444,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RAYO-VALLECANO-08,RAYO VALLECANO,8,8,,Lejeune,defensa,Rayo Vallecano,en_plantilla,PEGAR,Florian Lejeune,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-09,RAYO VALLECANO,9,9,,Luiz Felipe,defensa,Rayo Vallecano,en_plantilla,PEGAR,Luiz Felipe,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-10,RAYO VALLECANO,10,10,,Pep Chavarría,defensa,Rayo Vallecano,no_encontrado,NO PEGAR,Álvaro García,0.5385,2026-08-22,No aparece en la plantilla de Transfermarkt.
+RAYO-VALLECANO-11,RAYO VALLECANO,11,11,,Pedro Díaz,medio,Rayo Vallecano,en_plantilla,PEGAR,Pedro Díaz,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-12,RAYO VALLECANO,12,12,,Pathé Ciss,medio,Rayo Vallecano,en_plantilla,PEGAR,Pathé Ciss,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-13,RAYO VALLECANO,13,13,,Óscar Valentín,medio,Rayo Vallecano,en_plantilla,PEGAR,Óscar Valentín,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-14,RAYO VALLECANO,14,14,,Unai López,medio,Rayo Vallecano,en_plantilla,PEGAR,Unai López,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-15,RAYO VALLECANO,15,15,,Isi,medio,Rayo Vallecano,en_plantilla,PEGAR,Isi Palazón,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+RAYO-VALLECANO-16,RAYO VALLECANO,16,16,,De Frutos,delantero,Rayo Vallecano,en_plantilla,PEGAR,Jorge de Frutos,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-17,RAYO VALLECANO,17,17,,Fran Pérez,delantero,Rayo Vallecano,en_plantilla,PEGAR,Fran Pérez,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-18,RAYO VALLECANO,18,18,,Álvaro García,delantero,Rayo Vallecano,en_plantilla,PEGAR,Álvaro García,1.0000,2026-08-22,Coincidencia exacta.
+RAYO-VALLECANO-19,RAYO VALLECANO,19,19,,Camello,delantero,Rayo Vallecano,en_plantilla,PEGAR,Sergio Camello,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+RAYO-VALLECANO-20,RAYO VALLECANO,20,20,,Alemao,delantero,Rayo Vallecano,en_plantilla,PEGAR,Alemão,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-01,REAL SOCIEDAD,1,1,,Escudo,,Real Sociedad,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-SOCIEDAD-02,REAL SOCIEDAD,2,2,,Pellegrino Matarazzo,entrenador,Real Sociedad,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+REAL-SOCIEDAD-03,REAL SOCIEDAD,3,3,,Remiro,portero,Real Sociedad,en_plantilla,PEGAR,Álex Remiro,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-04,REAL SOCIEDAD,4,4,,Marrero,portero,Real Sociedad,en_plantilla,PEGAR,Unai Marrero,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-05,REAL SOCIEDAD,5,5,,Aramburu,defensa,Real Sociedad,en_plantilla,PEGAR,Jon Aramburu,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-06,REAL SOCIEDAD,6,6,,Zubeldia,defensa,Real Sociedad,en_plantilla,PEGAR,Igor Zubeldia,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-07,REAL SOCIEDAD,7,7,,Jon Martín,defensa,Real Sociedad,en_plantilla,PEGAR,Jon Martín,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-08,REAL SOCIEDAD,8,8,,Sergio Gómez,defensa,Real Sociedad,en_plantilla,PEGAR,Sergio Gómez,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-09,REAL SOCIEDAD,9,9,,Aihen Muñoz,defensa,Real Sociedad,en_plantilla,PEGAR,Aihen Muñoz,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-10,REAL SOCIEDAD,10,10,,Gorrotxategi,medio,Real Sociedad,en_plantilla,PEGAR,Jon Gorrotxategi,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-11,REAL SOCIEDAD,11,11,,Pablo Marín,medio,Real Sociedad,en_plantilla,PEGAR,Pablo Marín,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-12,REAL SOCIEDAD,12,12,,Turrientes,medio,Real Sociedad,en_plantilla,PEGAR,Beñat Turrientes,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-13,REAL SOCIEDAD,13A,13,A,Yangel Herrera,medio,Real Sociedad,en_plantilla,PEGAR,Yangel Herrera,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-14,REAL SOCIEDAD,13B,13,B,,,Real Sociedad,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+REAL-SOCIEDAD-15,REAL SOCIEDAD,14,14,,Carlos Soler,medio,Real Sociedad,en_plantilla,PEGAR,Carlos Soler,1.0000,2026-08-22,Coincidencia exacta.
+REAL-SOCIEDAD-16,REAL SOCIEDAD,15,15,,Sucic,medio,Real Sociedad,en_plantilla,PEGAR,Luka Sucic,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-17,REAL SOCIEDAD,16,16,,Barrenetxea,delantero,Real Sociedad,en_plantilla,PEGAR,Ander Barrenetxea,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-18,REAL SOCIEDAD,17,17,,Kubo,delantero,Real Sociedad,en_plantilla,PEGAR,Takefusa Kubo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-19,REAL SOCIEDAD,18,18,,Guedes,delantero,Real Sociedad,en_plantilla,PEGAR,Gonçalo Guedes,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-20,REAL SOCIEDAD,19,19,,Oskarsson,delantero,Real Sociedad,en_plantilla,PEGAR,Orri Óskarsson,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+REAL-SOCIEDAD-21,REAL SOCIEDAD,20,20,,Oyarzabal,delantero,Real Sociedad,en_plantilla,PEGAR,Mikel Oyarzabal,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-01,SEVILLA,1,1,,Escudo,,Sevilla FC,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+SEVILLA-02,SEVILLA,2,2,,Luis García,entrenador,Sevilla FC,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+SEVILLA-03,SEVILLA,3,3,,Vlachodimos,portero,Sevilla FC,en_plantilla,PEGAR,Odysseas Vlachodimos,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-04,SEVILLA,4,4,,,,Sevilla FC,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+SEVILLA-05,SEVILLA,5,5,,Carmona,defensa,Sevilla FC,en_plantilla,PEGAR,José Ángel Carmona,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-06,SEVILLA,6,6,,Juanlu,defensa,Sevilla FC,no_encontrado,NO PEGAR,Juan Iglesias,0.5263,2026-08-22,No aparece en la plantilla de Transfermarkt.
+SEVILLA-07,SEVILLA,7,7,,Kike Salas,defensa,Sevilla FC,en_plantilla,PEGAR,Kike Salas,1.0000,2026-08-22,Coincidencia exacta.
+SEVILLA-08,SEVILLA,8,8,,Nianzou,defensa,Sevilla FC,no_encontrado,NO PEGAR,Lucien Agoumé,0.4000,2026-08-22,No aparece en la plantilla de Transfermarkt.
+SEVILLA-09,SEVILLA,9A,9,A,Castrín,defensa,Sevilla FC,en_plantilla,PEGAR,Andrés Castrín,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-10,SEVILLA,9B,9,B,Marcao,defensa,Sevilla FC,en_plantilla,PEGAR,Marcão,1.0000,2026-08-22,Coincidencia exacta.
+SEVILLA-11,SEVILLA,10,10,,Suazo,defensa,Sevilla FC,en_plantilla,PEGAR,Gabriel Suazo,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-12,SEVILLA,11,11,,Oso,medio,Sevilla FC,en_plantilla,PEGAR,Oso,1.0000,2026-08-22,Coincidencia exacta.
+SEVILLA-13,SEVILLA,12,12,,Agoumé,medio,Sevilla FC,en_plantilla,PEGAR,Lucien Agoumé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-14,SEVILLA,13,13,,,,Sevilla FC,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+SEVILLA-15,SEVILLA,14,14,,Sow,medio,Sevilla FC,no_encontrado,NO PEGAR,Oso,0.6667,2026-08-22,No aparece en la plantilla de Transfermarkt.
+SEVILLA-16,SEVILLA,15,15,,Vargas,medio,Sevilla FC,en_plantilla,PEGAR,Rubén Vargas,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-17,SEVILLA,16,16,,Manu Bueno,medio,Sevilla FC,en_plantilla,PEGAR,Manu Bueno,1.0000,2026-08-22,Coincidencia exacta.
+SEVILLA-18,SEVILLA,17,17,,Peque,delantero,Sevilla FC,en_plantilla,PEGAR,Peque Fernández,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-19,SEVILLA,18,18,,Ejuke,delantero,Sevilla FC,en_plantilla,PEGAR,Chidera Ejuke,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+SEVILLA-20,SEVILLA,19,19,,Akor Adams,delantero,Sevilla FC,no_encontrado,NO PEGAR,Fábio Cardoso,0.4348,2026-08-22,No aparece en la plantilla de Transfermarkt.
+SEVILLA-21,SEVILLA,20,20,,Isaac Romero,delantero,Sevilla FC,en_plantilla,PEGAR,Isaac Romero,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-01,VALENCIA,1,1,,Escudo,,Valencia CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+VALENCIA-02,VALENCIA,2,2,,Carlos Corberán,entrenador,Valencia CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+VALENCIA-03,VALENCIA,3,3,,Dimitrievski,portero,Valencia CF,en_plantilla,PEGAR,Stole Dimitrievski,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-04,VALENCIA,4,4,,Rivero,portero,Valencia CF,en_plantilla,PEGAR,Cristian Rivero,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-05,VALENCIA,5,5,,Foulquier,defensa,Valencia CF,en_plantilla,PEGAR,Dimitri Foulquier,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-06,VALENCIA,6,6,,Copete,defensa,Valencia CF,en_plantilla,PEGAR,José Copete,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-07,VALENCIA,7,7,,Tárrega,defensa,Valencia CF,en_plantilla,PEGAR,César Tárrega,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-08,VALENCIA,8A,8,A,Cömert,defensa,Valencia CF,no_encontrado,NO PEGAR,José Copete,0.4706,2026-08-22,No aparece en la plantilla de Transfermarkt.
+VALENCIA-09,VALENCIA,8B,8,B,Diakhaby,defensa,Valencia CF,en_plantilla,PEGAR,Mouctar Diakhaby,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-10,VALENCIA,9,9,,Gayà,defensa,Valencia CF,en_plantilla,PEGAR,José Gayà,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-11,VALENCIA,10,10,,Jesús Vázquez,defensa,Valencia CF,en_plantilla,PEGAR,Jesús Vázquez,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-12,VALENCIA,11,11,,Pepelu,medio,Valencia CF,en_plantilla,PEGAR,Pepelu,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-13,VALENCIA,12,12,,Guido Rodríguez,medio,Valencia CF,en_plantilla,PEGAR,Guido Rodríguez,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-14,VALENCIA,13,13,,Javi Guerra,medio,Valencia CF,en_plantilla,PEGAR,Javi Guerra,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-15,VALENCIA,14,14,,Luis Rioja,medio,Valencia CF,en_plantilla,PEGAR,Luis Rioja,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-16,VALENCIA,15,15,,Ugrinic,medio,Valencia CF,en_plantilla,PEGAR,Filip Ugrinic,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-17,VALENCIA,16,16,,André Almeida,medio,Valencia CF,en_plantilla,PEGAR,André Almeida,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-18,VALENCIA,17,17,,Hugo Duro,delantero,Valencia CF,en_plantilla,PEGAR,Hugo Duro,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-19,VALENCIA,18,18,,Diego López,delantero,Valencia CF,en_plantilla,PEGAR,Diego López,1.0000,2026-08-22,Coincidencia exacta.
+VALENCIA-20,VALENCIA,19,19,,Ramazani,delantero,Valencia CF,no_encontrado,NO PEGAR,Umar Sadiq,0.4444,2026-08-22,No aparece en la plantilla de Transfermarkt.
+VALENCIA-21,VALENCIA,20A,20,A,Sadiq,delantero,Valencia CF,en_plantilla,PEGAR,Umar Sadiq,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VALENCIA-22,VALENCIA,20B,20,B,Lucas Beltrán,delantero,Valencia CF,no_encontrado,NO PEGAR,Luis Rioja,0.5217,2026-08-22,No aparece en la plantilla de Transfermarkt.
+VILLARREAL-01,VILLARREAL,1,1,,Escudo,,Villarreal CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+VILLARREAL-02,VILLARREAL,2,2,,Íñigo Pérez,entrenador,Villarreal CF,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+VILLARREAL-03,VILLARREAL,3,3,,Luiz Júnior,portero,Villarreal CF,en_plantilla,PEGAR,Luiz Júnior,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-04,VILLARREAL,4,4,,Arnau Tenas,portero,Villarreal CF,no_encontrado,NO PEGAR,Pau Navarro,0.4545,2026-08-22,No aparece en la plantilla de Transfermarkt.
+VILLARREAL-05,VILLARREAL,5,5,,Mouriño,defensa,Villarreal CF,en_plantilla,PEGAR,Santiago Mouriño,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-06,VILLARREAL,6A,6,A,Pau Navarro,defensa,Villarreal CF,en_plantilla,PEGAR,Pau Navarro,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-07,VILLARREAL,6B,6,B,Logan Costa,defensa,Villarreal CF,en_plantilla,PEGAR,Logan Costa,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-08,VILLARREAL,7A,7,A,Foyth,defensa,Villarreal CF,en_plantilla,PEGAR,Juan Foyth,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-09,VILLARREAL,7B,7,B,Freeman,defensa,Villarreal CF,en_plantilla,PEGAR,Alex Freeman,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-10,VILLARREAL,8A,8,A,Kambwala,defensa,Villarreal CF,en_plantilla,PEGAR,Willy Kambwala,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-11,VILLARREAL,8B,8,B,Rafa Marín,defensa,Villarreal CF,no_encontrado,NO PEGAR,Santiago Mouriño,0.5385,2026-08-22,No aparece en la plantilla de Transfermarkt.
+VILLARREAL-12,VILLARREAL,9,9,,Renato Veiga,defensa,Villarreal CF,en_plantilla,PEGAR,Renato Veiga,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-13,VILLARREAL,10,10,,Sergi Cardona,defensa,Villarreal CF,en_plantilla,PEGAR,Sergi Cardona,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-14,VILLARREAL,11,11,,Pape Gueye,medio,Villarreal CF,en_plantilla,PEGAR,Pape Gueye,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-15,VILLARREAL,12,12,,Santi Comesaña,medio,Villarreal CF,en_plantilla,PEGAR,Santi Comesaña,1.0000,2026-08-22,Coincidencia exacta.
+VILLARREAL-16,VILLARREAL,13,13,,Maciá,medio,Villarreal CF,en_plantilla,PEGAR,Carlos Macià,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-17,VILLARREAL,14,14,,Moleiro,medio,Villarreal CF,en_plantilla,PEGAR,Alberto Moleiro,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-18,VILLARREAL,15,15,,Buchanan,delantero,Villarreal CF,en_plantilla,PEGAR,Tajon Buchanan,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-19,VILLARREAL,16,16,,Oluwaseyi,delantero,Villarreal CF,en_plantilla,PEGAR,Tani Oluwaseyi,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-20,VILLARREAL,17,17,,Ayoze,delantero,Villarreal CF,en_plantilla,PEGAR,Ayoze Pérez,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-21,VILLARREAL,18,18,,Pépé,delantero,Villarreal CF,en_plantilla,PEGAR,Nicolas Pépé,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+VILLARREAL-22,VILLARREAL,19,19,,Mikautadze,delantero,Villarreal CF,en_plantilla,PEGAR,Georges Mikautadze,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+VILLARREAL-23,VILLARREAL,20,20,,Gerard Moreno,delantero,Villarreal CF,en_plantilla,PEGAR,Gerard Moreno,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-01,ADN / LALIGA PRIME,1,1,,Antony,delantero,Real Betis,en_plantilla,PEGAR,Antony,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-02,ADN / LALIGA PRIME,2,2,,Bellingham,medio,Real Madrid,en_plantilla,PEGAR,Jude Bellingham,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-03,ADN / LALIGA PRIME,3,3,,Courtois,portero,Real Madrid,en_plantilla,PEGAR,Thibaut Courtois,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-04,ADN / LALIGA PRIME,4,4,,Fermín,medio,FC Barcelona,en_plantilla,PEGAR,Fermín López,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-05,ADN / LALIGA PRIME,5,5,,Julián Alvarez,delantero,Atlético de Madrid,en_plantilla,PEGAR,Julián Alvarez,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-06,ADN / LALIGA PRIME,6,6,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-07,ADN / LALIGA PRIME,7,7,,Lookman,delantero,Atlético de Madrid,en_plantilla,PEGAR,Ademola Lookman,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-08,ADN / LALIGA PRIME,8,8,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-09,ADN / LALIGA PRIME,9,9,,Moleiro,medio,Villarreal CF,en_plantilla,PEGAR,Alberto Moleiro,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-10,ADN / LALIGA PRIME,10,10,,Nico Williams,delantero,Athletic Club,en_plantilla,PEGAR,Nico Williams,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-11,ADN / LALIGA PRIME,11,11,,Oyarzabal,delantero,Real Sociedad,en_plantilla,PEGAR,Mikel Oyarzabal,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+ADN-LALIGA-PRIME-12,ADN / LALIGA PRIME,12,12,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-13,ADN / LALIGA PRIME,13,13,,Raphinha,delantero,FC Barcelona,en_plantilla,PEGAR,Raphinha,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-14,ADN / LALIGA PRIME,14,14,,Unai Simón,portero,Athletic Club,en_plantilla,PEGAR,Unai Simón,1.0000,2026-08-22,Coincidencia exacta.
+ADN-LALIGA-PRIME-15,ADN / LALIGA PRIME,15,15,,Vinícius,delantero,Real Madrid,en_plantilla,PEGAR,Vinicius Junior,0.9900,2026-08-22,Coincidencia exacta mediante alias conocido.
+LALIGA-FANTASY-01,LALIGA FANTASY,1,1,,Hansi Flick,entrenador,FC Barcelona,no_aplica,REVISAR,,,,La comprobación de plantilla solo cubre jugadores.
+LALIGA-FANTASY-02,LALIGA FANTASY,2,2,,Joan García,portero,FC Barcelona,en_plantilla,PEGAR,Joan García,1.0000,2026-08-22,Coincidencia exacta.
+LALIGA-FANTASY-03,LALIGA FANTASY,3,3,,Lejeune,defensa,Rayo Vallecano,en_plantilla,PEGAR,Florian Lejeune,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-04,LALIGA FANTASY,4,4,,Fornals,medio,Real Betis,en_plantilla,PEGAR,Pablo Fornals,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+LALIGA-FANTASY-05,LALIGA FANTASY,5,5,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+LALIGA-FANTASY-06,LALIGA FANTASY,6,6,,Luis Milla,medio,Getafe CF,no_encontrado,NO PEGAR,Orel Mangala,0.4545,2026-08-22,No aparece en la plantilla de Transfermarkt.
+LALIGA-FANTASY-07,LALIGA FANTASY,7,7,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+LALIGA-FANTASY-08,LALIGA FANTASY,8,8,,Luis Milla,medio,Getafe CF,no_encontrado,NO PEGAR,Orel Mangala,0.4545,2026-08-22,No aparece en la plantilla de Transfermarkt.
+LALIGA-FANTASY-09,LALIGA FANTASY,9,9,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-01,DRAFT 23,1,1,,Asencio,defensa,Real Madrid,en_plantilla,PEGAR,Raúl Asencio,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-02,DRAFT 23,2,2,,Balde,defensa,FC Barcelona,en_plantilla,PEGAR,Alejandro Balde,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-03,DRAFT 23,3,3,,Barrios,medio,Atlético de Madrid,en_plantilla,PEGAR,Pablo Barrios,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-04,DRAFT 23,4,4,,Carlos Espí,delantero,Levante UD,no_encontrado,NO PEGAR,Carlos Álvarez,0.6400,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-05,DRAFT 23,5,5,,Carreras,defensa,Real Madrid,en_plantilla,PEGAR,Álvaro Carreras,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-06,DRAFT 23,6,6,,Cubarsí,defensa,FC Barcelona,en_plantilla,PEGAR,Pau Cubarsí,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-07,DRAFT 23,7,7,,Fer López,medio,RC Celta de Vigo,no_encontrado,NO PEGAR,Ferran Jutglà,0.5185,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-08,DRAFT 23,8,8,,Gavi,medio,FC Barcelona,en_plantilla,PEGAR,Gavi,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-09,DRAFT 23,9,9,,Gonzalo,delantero,Real Madrid,no_encontrado,NO PEGAR,Álvaro Carreras,0.4828,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-10,DRAFT 23,10,10,,Huijsen,defensa,Real Madrid,en_plantilla,PEGAR,Dean Huijsen,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-11,DRAFT 23,11,11,,Jauregizar,medio,Athletic Club,en_plantilla,PEGAR,Mikel Jauregizar,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-12,DRAFT 23,12,12,,Javi Guerra,medio,Valencia CF,en_plantilla,PEGAR,Javi Guerra,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-13,DRAFT 23,13,13,,Jon Martín,defensa,Real Sociedad,en_plantilla,PEGAR,Jon Martín,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-14,DRAFT 23,14,14,,Juanlu,defensa,Sevilla FC,no_encontrado,NO PEGAR,Juan Iglesias,0.5263,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-15,DRAFT 23,15,15,,Marc Bernal,medio,FC Barcelona,en_plantilla,PEGAR,Marc Bernal,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-16,DRAFT 23,16,16,,Mastantuono,medio,Real Madrid,no_encontrado,NO PEGAR,Antonio Rüdiger,0.4615,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-17,DRAFT 23,17,17,,Oso,medio,Sevilla FC,en_plantilla,PEGAR,Oso,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-18,DRAFT 23,18,18,,Pau Navarro,defensa,Villarreal CF,en_plantilla,PEGAR,Pau Navarro,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-19,DRAFT 23,19,19,,Pubill,defensa,Atlético de Madrid,en_plantilla,PEGAR,Marc Pubill,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-20,DRAFT 23,20,20,,Renato Veiga,defensa,Villarreal CF,en_plantilla,PEGAR,Renato Veiga,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-21,DRAFT 23,21,21,,Rodri Mendoza,medio,Atlético de Madrid,en_plantilla,PEGAR,Rodrigo Mendoza,0.9286,2026-08-22,Coincidencia aproximada de alta confianza.
+DRAFT-23-22,DRAFT 23,22,22,,Thiago Pitarch,medio,Real Madrid,en_plantilla,PEGAR,Thiago Pitarch,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-23,DRAFT 23,23,23,,Yeremay,delantero,Deportivo de La Coruña,en_plantilla,PEGAR,Yeremay Hernández,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-01,DRAFT 23 KROMIX,K1,K1,,Asencio,defensa,Real Madrid,en_plantilla,PEGAR,Raúl Asencio,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-02,DRAFT 23 KROMIX,K2,K2,,Balde,defensa,FC Barcelona,en_plantilla,PEGAR,Alejandro Balde,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-03,DRAFT 23 KROMIX,K3,K3,,Barrios,medio,Atlético de Madrid,en_plantilla,PEGAR,Pablo Barrios,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-04,DRAFT 23 KROMIX,K4,K4,,Carlos Espí,delantero,Levante UD,no_encontrado,NO PEGAR,Carlos Álvarez,0.6400,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-KROMIX-05,DRAFT 23 KROMIX,K5,K5,,Carreras,defensa,Real Madrid,en_plantilla,PEGAR,Álvaro Carreras,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-06,DRAFT 23 KROMIX,K6,K6,,Cubarsí,defensa,FC Barcelona,en_plantilla,PEGAR,Pau Cubarsí,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-07,DRAFT 23 KROMIX,K7,K7,,Fer López,medio,RC Celta de Vigo,no_encontrado,NO PEGAR,Ferran Jutglà,0.5185,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-KROMIX-08,DRAFT 23 KROMIX,K8,K8,,Gavi,medio,FC Barcelona,en_plantilla,PEGAR,Gavi,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-09,DRAFT 23 KROMIX,K9,K9,,Gonzalo,delantero,Real Madrid,no_encontrado,NO PEGAR,Álvaro Carreras,0.4828,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-KROMIX-10,DRAFT 23 KROMIX,K10,K10,,Huijsen,defensa,Real Madrid,en_plantilla,PEGAR,Dean Huijsen,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-11,DRAFT 23 KROMIX,K11,K11,,Jauregizar,medio,Athletic Club,en_plantilla,PEGAR,Mikel Jauregizar,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-12,DRAFT 23 KROMIX,K12,K12,,Javi Guerra,medio,Valencia CF,en_plantilla,PEGAR,Javi Guerra,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-13,DRAFT 23 KROMIX,K13,K13,,Jon Martín,defensa,Real Sociedad,en_plantilla,PEGAR,Jon Martín,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-14,DRAFT 23 KROMIX,K14,K14,,Juanlu,defensa,Sevilla FC,no_encontrado,NO PEGAR,Juan Iglesias,0.5263,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-KROMIX-15,DRAFT 23 KROMIX,K15,K15,,Marc Bernal,medio,FC Barcelona,en_plantilla,PEGAR,Marc Bernal,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-16,DRAFT 23 KROMIX,K16,K16,,Mastantuono,medio,Real Madrid,no_encontrado,NO PEGAR,Antonio Rüdiger,0.4615,2026-08-22,No aparece en la plantilla de Transfermarkt.
+DRAFT-23-KROMIX-17,DRAFT 23 KROMIX,K17,K17,,Oso,medio,Sevilla FC,en_plantilla,PEGAR,Oso,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-18,DRAFT 23 KROMIX,K18,K18,,Pau Navarro,defensa,Villarreal CF,en_plantilla,PEGAR,Pau Navarro,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-19,DRAFT 23 KROMIX,K19,K19,,Pubill,defensa,Atlético de Madrid,en_plantilla,PEGAR,Marc Pubill,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+DRAFT-23-KROMIX-20,DRAFT 23 KROMIX,K20,K20,,Renato Veiga,defensa,Villarreal CF,en_plantilla,PEGAR,Renato Veiga,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-21,DRAFT 23 KROMIX,K21,K21,,Rodri Mendoza,medio,Atlético de Madrid,en_plantilla,PEGAR,Rodrigo Mendoza,0.9286,2026-08-22,Coincidencia aproximada de alta confianza.
+DRAFT-23-KROMIX-22,DRAFT 23 KROMIX,K22,K22,,Thiago Pitarch,medio,Real Madrid,en_plantilla,PEGAR,Thiago Pitarch,1.0000,2026-08-22,Coincidencia exacta.
+DRAFT-23-KROMIX-23,DRAFT 23 KROMIX,K23,K23,,Yeremay,delantero,Deportivo de La Coruña,en_plantilla,PEGAR,Yeremay Hernández,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-BRONCE-01,EXTRA STICKER BRONCE,Extra Sticker,Extra Sticker,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-BRONCE-02,EXTRA STICKER BRONCE,Extra Sticker,Extra Sticker,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-BRONCE-03,EXTRA STICKER BRONCE,Extra Sticker,Extra Sticker,,Nico Williams,delantero,Athletic Club,en_plantilla,PEGAR,Nico Williams,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-BRONCE-04,EXTRA STICKER BRONCE,Extra Sticker,Extra Sticker,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-BRONCE-05,EXTRA STICKER BRONCE,Extra Sticker,Extra Sticker,,Oblak,portero,Atlético de Madrid,en_plantilla,PEGAR,Jan Oblak,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-PLATA-01,EXTRA STICKER PLATA,Extra Sticker,Extra Sticker,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-PLATA-02,EXTRA STICKER PLATA,Extra Sticker,Extra Sticker,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-PLATA-03,EXTRA STICKER PLATA,Extra Sticker,Extra Sticker,,Nico Williams,delantero,Athletic Club,en_plantilla,PEGAR,Nico Williams,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-PLATA-04,EXTRA STICKER PLATA,Extra Sticker,Extra Sticker,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-PLATA-05,EXTRA STICKER PLATA,Extra Sticker,Extra Sticker,,Oblak,portero,Atlético de Madrid,en_plantilla,PEGAR,Jan Oblak,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-ORO-01,EXTRA STICKER ORO,Extra Sticker,Extra Sticker,,Lamine Yamal,delantero,FC Barcelona,en_plantilla,PEGAR,Lamine Yamal,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-ORO-02,EXTRA STICKER ORO,Extra Sticker,Extra Sticker,,Mbappé,delantero,Real Madrid,en_plantilla,PEGAR,Kylian Mbappé,0.9600,2026-08-22,Coincidencia única por nombre parcial.
+EXTRA-STICKER-ORO-03,EXTRA STICKER ORO,Extra Sticker,Extra Sticker,,Nico Williams,delantero,Athletic Club,en_plantilla,PEGAR,Nico Williams,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-ORO-04,EXTRA STICKER ORO,Extra Sticker,Extra Sticker,,Pedri,medio,FC Barcelona,en_plantilla,PEGAR,Pedri,1.0000,2026-08-22,Coincidencia exacta.
+EXTRA-STICKER-ORO-05,EXTRA STICKER ORO,Extra Sticker,Extra Sticker,,Oblak,portero,Atlético de Madrid,en_plantilla,PEGAR,Jan Oblak,0.9600,2026-08-22,Coincidencia única por nombre parcial.

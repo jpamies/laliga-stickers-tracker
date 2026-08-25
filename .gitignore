@@ -1,0 +1,11 @@
+.venv/
+.cache_transfermarkt/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.DS_Store
+Thumbs.db
+
+# Documento fuente local; los datos extraídos y el sitio sí se versionan.
+Checklist_LALIGA_2026-27.pdf
