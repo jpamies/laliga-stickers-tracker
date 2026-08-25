@@ -4,7 +4,8 @@
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
   const data = window.ALBUM_DATA;
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
-  const validStates = new Set(["missing", "owned", "stuck"]);
+  const validStates = new Set(["missing", "owned"]);
+  const validStickDecisions = new Set(["default", "dont-stick", "stick"]);
 
   const state = {
     view: "album",
@@ -23,7 +24,6 @@
     summaryTotal: document.querySelector("#summary-total"),
     summaryMissing: document.querySelector("#summary-missing"),
     summaryOwned: document.querySelector("#summary-owned"),
-    summaryStuck: document.querySelector("#summary-stuck"),
     summaryDuplicates: document.querySelector("#summary-duplicates"),
     progressText: document.querySelector("#progress-text"),
     progressBar: document.querySelector("#progress-bar"),
@@ -35,29 +35,52 @@
   };
 
   function defaultEntry() {
-    return { state: "missing", copies: 0 };
+    return { state: "missing", copies: 0, stickDecision: "default" };
+  }
+
+  function cleanProgress(progress) {
+    if (!progress || typeof progress !== "object" || Array.isArray(progress)) {
+      return {};
+    }
+    const cleaned = {};
+    for (const [id, entry] of Object.entries(progress)) {
+      if (!entry || typeof entry !== "object") {
+        continue;
+      }
+      const migratedState = entry.state === "stuck" ? "owned" : entry.state;
+      const personalState = validStates.has(migratedState) ? migratedState : "missing";
+      const copies = Math.max(0, Math.floor(Number(entry.copies) || 0));
+      const stickDecision = validStickDecisions.has(entry.stickDecision)
+        ? entry.stickDecision
+        : "default";
+      const updatedAt = typeof entry.updatedAt === "string"
+        && !Number.isNaN(Date.parse(entry.updatedAt))
+        ? entry.updatedAt
+        : "";
+      const normalized = {
+        state: copies === 0 ? "missing" : personalState,
+        copies,
+        stickDecision,
+        ...(updatedAt ? { updatedAt } : {}),
+      };
+      if (
+        normalized.state !== "missing"
+        || normalized.copies !== 0
+        || normalized.stickDecision !== "default"
+        || normalized.updatedAt
+      ) {
+        cleaned[id] = normalized;
+      }
+    }
+    return cleaned;
   }
 
   function loadProgress() {
     try {
       const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
-        return {};
-      }
-      const cleaned = {};
-      for (const [id, entry] of Object.entries(parsed)) {
-        if (!entry || typeof entry !== "object") {
-          continue;
-        }
-        const personalState = validStates.has(entry.state) ? entry.state : "missing";
-        const copies = Math.max(0, Math.floor(Number(entry.copies) || 0));
-        cleaned[id] = {
-          state: copies === 0 ? "missing" : personalState,
-          copies,
-        };
-      }
-      return cleaned;
-    } catch {
+      return cleanProgress(parsed);
+    } catch (error) {
+      console.error("No se pudo leer el progreso local.", error);
       return {};
     }
   }
@@ -68,6 +91,12 @@
 
   function progressFor(id) {
     return state.progress[id] || defaultEntry();
+  }
+
+  function shouldNotStick(sticker, progress = progressFor(sticker.id)) {
+    if (progress.stickDecision === "dont-stick") return true;
+    if (progress.stickDecision === "stick") return false;
+    return sticker.accion === "NO PEGAR";
   }
 
   function normalize(value) {
@@ -105,14 +134,11 @@
     if (state.filter === "owned") {
       return progress.state === "owned";
     }
-    if (state.filter === "stuck") {
-      return progress.state === "stuck";
-    }
     if (state.filter === "duplicates") {
       return progress.copies >= 2;
     }
     if (state.filter === "dont-stick") {
-      return sticker.accion === "NO PEGAR";
+      return shouldNotStick(sticker, progress);
     }
     if (state.filter === "wait") {
       return sticker.accion === "ESPERAR";
@@ -148,12 +174,19 @@
       ? `<strong>${escapeHtml(sticker.coincidencia_transfermarkt)}</strong>`
       : escapeHtml(sticker.notas || "Sin coincidencia disponible");
     const name = sticker.nombre || "Pendiente de publicación";
+    const dontStick = shouldNotStick(sticker, progress);
+    const stickDecisionSource = progress.stickDecision === "default"
+      ? "Recomendación automática"
+      : "Decisión personal";
+    const photoAction = progress.state === "missing"
+      ? `Marcar ${name} como conseguido`
+      : `Quitar ${name} de la colección`;
     const visualClass = sticker.digital_group === "ESCUDO"
       ? "sticker-visual sticker-visual-crest"
       : "sticker-visual";
     const visual = sticker.imagen_url
       ? `
-        <div class="${visualClass}">
+        <button class="${visualClass}" type="button" data-photo-toggle aria-label="${escapeHtml(photoAction)}">
           <img
             class="sticker-image"
             src="${escapeHtml(sticker.imagen_url)}"
@@ -161,12 +194,12 @@
             loading="lazy"
             referrerpolicy="no-referrer"
           >
-        </div>
+        </button>
       `
       : `
-        <div class="sticker-visual sticker-visual-empty" aria-label="Imagen no disponible">
+        <button class="sticker-visual sticker-visual-empty" type="button" data-photo-toggle aria-label="${escapeHtml(photoAction)}. Imagen no disponible">
           <span>Imagen no disponible</span>
-        </div>
+        </button>
       `;
 
     return `
@@ -194,8 +227,17 @@
         <div class="state-controls" aria-label="Estado personal">
           <button class="state-button ${progress.state === "missing" ? "active" : ""}" type="button" data-state="missing">No lo tengo</button>
           <button class="state-button ${progress.state === "owned" ? "active" : ""}" type="button" data-state="owned">Lo tengo</button>
-          <button class="state-button ${progress.state === "stuck" ? "active" : ""}" type="button" data-state="stuck">Pegado</button>
         </div>
+        <button
+          class="stick-toggle ${dontStick ? "active" : ""}"
+          type="button"
+          data-stick-toggle
+          aria-pressed="${dontStick}"
+          title="${stickDecisionSource}"
+        >
+          <span>No pegar</span>
+          <small>${stickDecisionSource}</small>
+        </button>
       </article>
     `;
   }
@@ -238,22 +280,19 @@
   function updateSummary() {
     let missing = 0;
     let owned = 0;
-    let stuck = 0;
     let duplicates = 0;
     for (const sticker of data) {
       const progress = progressFor(sticker.id);
       if (progress.state === "owned") owned += 1;
-      else if (progress.state === "stuck") stuck += 1;
       else missing += 1;
       duplicates += Math.max(0, progress.copies - 1);
     }
 
-    const collected = owned + stuck;
+    const collected = owned;
     const percentage = data.length ? Math.round((collected / data.length) * 100) : 0;
     elements.summaryTotal.textContent = data.length;
     elements.summaryMissing.textContent = missing;
     elements.summaryOwned.textContent = owned;
-    elements.summaryStuck.textContent = stuck;
     elements.summaryDuplicates.textContent = duplicates;
     elements.progressText.textContent = `${percentage}%`;
     elements.progressBar.style.width = `${percentage}%`;
@@ -265,19 +304,35 @@
 
   function updateSticker(id, updater) {
     const current = { ...progressFor(id) };
-    const next = updater(current);
+    const next = { ...updater(current), updatedAt: new Date().toISOString() };
     if (next.state === "missing") {
       next.copies = 0;
     } else if (next.copies === 0) {
       next.copies = 1;
     }
-    if (next.state === "missing" && next.copies === 0) {
-      delete state.progress[id];
-    } else {
-      state.progress[id] = next;
-    }
+    state.progress[id] = next;
     saveProgress();
+    document.dispatchEvent(new CustomEvent("panini:progress-changed", {
+      detail: { progress: state.progress },
+    }));
     render();
+  }
+
+  function removeOwnedSticker(id) {
+    const confirmed = window.confirm(
+      "¿Seguro que quieres marcar este cromo como «No lo tengo»? Sus copias se pondrán a 0.",
+    );
+    if (!confirmed) return;
+    updateSticker(id, (entry) => ({ ...entry, state: "missing", copies: 0 }));
+  }
+
+  function setOwnership(id, nextState) {
+    const current = progressFor(id);
+    if (nextState === "missing" && current.state === "owned") {
+      removeOwnedSticker(id);
+      return;
+    }
+    updateSticker(id, (entry) => ({ ...entry, state: nextState }));
   }
 
   function showToast(message) {
@@ -334,15 +389,34 @@
     const id = card.dataset.id;
     const stateButton = event.target.closest("[data-state]");
     if (stateButton) {
-      updateSticker(id, (entry) => ({ ...entry, state: stateButton.dataset.state }));
+      setOwnership(id, stateButton.dataset.state);
+      return;
+    }
+    const photoToggle = event.target.closest("[data-photo-toggle]");
+    if (photoToggle) {
+      const nextState = progressFor(id).state === "missing" ? "owned" : "missing";
+      setOwnership(id, nextState);
+      return;
+    }
+    const stickToggle = event.target.closest("[data-stick-toggle]");
+    if (stickToggle) {
+      const sticker = data.find((item) => item.id === id);
+      const nextDecision = shouldNotStick(sticker) ? "stick" : "dont-stick";
+      updateSticker(id, (entry) => ({ ...entry, stickDecision: nextDecision }));
       return;
     }
     const copyButton = event.target.closest("[data-copy]");
     if (copyButton) {
       const delta = Number(copyButton.dataset.copy);
+      const current = progressFor(id);
+      if (delta < 0 && current.state === "owned" && current.copies <= 1) {
+        removeOwnedSticker(id);
+        return;
+      }
       updateSticker(id, (entry) => ({
         ...entry,
         copies: Math.max(0, entry.copies + delta),
+        state: delta > 0 ? "owned" : entry.state,
       }));
     }
   });
@@ -373,9 +447,10 @@
       if (!imported || typeof imported !== "object" || Array.isArray(imported)) {
         throw new Error("Formato no válido");
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(imported));
-      state.progress = loadProgress();
-      render();
+      window.PaniniAlbum.replaceProgress(imported, {
+        notify: true,
+        stampEntries: true,
+      });
       showToast("Progreso importado correctamente.");
     } catch {
       showToast("No se pudo importar ese archivo.");
@@ -383,6 +458,26 @@
       elements.importInput.value = "";
     }
   });
+
+  window.PaniniAlbum = {
+    getProgress: () => structuredClone(state.progress),
+    replaceProgress(progress, { notify = false, stampEntries = false } = {}) {
+      state.progress = cleanProgress(progress);
+      if (stampEntries) {
+        const updatedAt = new Date().toISOString();
+        for (const entry of Object.values(state.progress)) {
+          entry.updatedAt = updatedAt;
+        }
+      }
+      saveProgress();
+      render();
+      if (notify) {
+        document.dispatchEvent(new CustomEvent("panini:progress-changed", {
+          detail: { progress: state.progress },
+        }));
+      }
+    },
+  };
 
   initializeSections();
   render();

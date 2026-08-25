@@ -30,6 +30,10 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertEqual(sum(bool(sticker["imagen_url"]) for sticker in stickers), 418)
         self.assertIn("Álbum completo", html)
         self.assertIn("Repetidos", html)
+        self.assertNotIn('id="summary-stuck"', html)
+        self.assertNotIn('data-filter="stuck"', html)
+        self.assertIn('id="auth-button"', html)
+        self.assertIn('src="cloud-sync.js?v=4"', html)
 
 
 if __name__ == "__main__":

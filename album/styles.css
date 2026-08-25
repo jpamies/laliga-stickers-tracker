@@ -68,6 +68,46 @@ button {
   gap: 20px;
 }
 
+.account-panel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.account-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-copy strong,
+.account-copy small {
+  display: block;
+  max-width: 180px;
+}
+
+.account-copy strong {
+  overflow: hidden;
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-copy small {
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.account-copy .sync-error {
+  color: var(--red);
+}
+
+.account-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -110,6 +150,7 @@ button {
 .button,
 .filter-chip,
 .state-button,
+.stick-toggle,
 .icon-button {
   cursor: pointer;
   border: 0;
@@ -212,7 +253,7 @@ button {
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(130px, 1fr));
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -407,10 +448,6 @@ button {
 }
 
 .sticker-card[data-personal-state="owned"]::before {
-  background: var(--blue);
-}
-
-.sticker-card[data-personal-state="stuck"]::before {
   background: var(--green);
 }
 
@@ -489,9 +526,17 @@ button {
   overflow: hidden;
   place-items: center;
   border-radius: 12px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
   background:
     linear-gradient(135deg, rgba(20, 122, 82, 0.08), rgba(21, 35, 28, 0.03)),
     #eef0ea;
+}
+
+.sticker-visual:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
 }
 
 .sticker-image {
@@ -626,7 +671,7 @@ button {
 
 .state-controls {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
 
@@ -654,9 +699,34 @@ button {
   background: var(--blue-soft);
 }
 
-.state-button.active[data-state="stuck"] {
-  color: var(--green-dark);
-  background: var(--green-soft);
+.stick-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 38px;
+  gap: 8px;
+  margin-top: 7px;
+  padding: 7px 10px;
+  color: var(--muted);
+  background: #f1f2ed;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.stick-toggle small {
+  font-size: 0.61rem;
+  font-weight: 650;
+}
+
+.stick-toggle:hover {
+  color: var(--ink);
+  background: #e7e9e2;
+}
+
+.stick-toggle.active {
+  color: #8c2c26;
+  background: var(--red-soft);
 }
 
 .empty-state {
@@ -736,6 +806,14 @@ button {
     min-height: auto;
     flex-direction: column;
     padding: 10px 0;
+  }
+
+  .account-panel {
+    width: 100%;
+  }
+
+  .account-copy {
+    flex: 1;
   }
 
   .nav-tabs {

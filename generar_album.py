@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <header class="topbar">
@@ -30,6 +30,14 @@ HTML_TEMPLATE = """<!doctype html>
         <button class="nav-tab active" type="button" data-view="album">Álbum completo</button>
         <button class="nav-tab" type="button" data-view="duplicates">Repetidos</button>
       </nav>
+      <div class="account-panel">
+        <img class="account-avatar hidden" id="account-avatar" alt="">
+        <div class="account-copy">
+          <strong id="account-name">Modo local</strong>
+          <small id="sync-status">Guardado en este dispositivo</small>
+        </div>
+        <button class="button account-button" id="auth-button" type="button">Iniciar sesión</button>
+      </div>
     </div>
   </header>
 
@@ -40,7 +48,7 @@ HTML_TEMPLATE = """<!doctype html>
         <h1>Tu colección, bajo control.</h1>
         <p class="hero-copy">
           Consulta todos los equipos y secciones, sigue la recomendación de plantilla
-          y guarda qué cromos tienes, cuáles has pegado y cuántas copias repetidas conservas.
+          y guarda qué cromos tienes, cuáles no quieres pegar y cuántas copias repetidas conservas.
         </p>
       </div>
       <div class="hero-progress">
@@ -58,7 +66,6 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="summary-card"><span>Total</span><strong id="summary-total">0</strong></div>
       <div class="summary-card"><span>Sin conseguir</span><strong id="summary-missing">0</strong></div>
       <div class="summary-card"><span>Los tengo</span><strong id="summary-owned">0</strong></div>
-      <div class="summary-card"><span>Pegados</span><strong id="summary-stuck">0</strong></div>
       <div class="summary-card"><span>Copias repetidas</span><strong id="summary-duplicates">0</strong></div>
     </section>
 
@@ -79,7 +86,6 @@ HTML_TEMPLATE = """<!doctype html>
         <button class="filter-chip active" type="button" data-filter="all">Todos</button>
         <button class="filter-chip" type="button" data-filter="missing">Sin conseguir</button>
         <button class="filter-chip" type="button" data-filter="owned">Los tengo</button>
-        <button class="filter-chip" type="button" data-filter="stuck">Pegados</button>
         <button class="filter-chip" type="button" data-filter="duplicates">Con repetidos</button>
         <button class="filter-chip" type="button" data-filter="dont-stick">No pegar</button>
         <button class="filter-chip" type="button" data-filter="wait">Esperar</button>
@@ -92,7 +98,10 @@ HTML_TEMPLATE = """<!doctype html>
 
   <div class="toast" id="toast" role="status"></div>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="app.js"></script>
+  <script src="cloud-config.js?v=4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
+  <script src="app.js?v=4"></script>
+  <script src="cloud-sync.js?v=4"></script>
 </body>
 </html>
 """
