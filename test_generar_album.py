@@ -36,7 +36,9 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="section-menu"', html)
         self.assertIn('id="section-prev"', html)
         self.assertIn('id="section-next"', html)
-        self.assertIn('src="cloud-sync.js?v=10"', html)
+        self.assertIn('id="section-current"', html)
+        self.assertNotIn("Tu colección, bajo control.", html)
+        self.assertIn('src="cloud-sync.js?v=11"', html)
 
 
 if __name__ == "__main__":

@@ -31,6 +31,8 @@
     sectionMenu: document.querySelector("#section-menu"),
     sectionPrevious: document.querySelector("#section-prev"),
     sectionNext: document.querySelector("#section-next"),
+    sectionCurrent: document.querySelector("#section-current"),
+    sectionPosition: document.querySelector("#section-position"),
     filterChips: document.querySelector("#filter-chips"),
     navTabs: document.querySelectorAll(".nav-tab"),
     summaryTotal: document.querySelector("#summary-total"),
@@ -344,6 +346,13 @@
       tile.classList.toggle("active", active);
       tile.setAttribute("aria-pressed", String(active));
     });
+    const sectionIndex = sections.indexOf(state.section);
+    elements.sectionCurrent.textContent = state.section === "all"
+      ? "Todo el álbum"
+      : state.section;
+    elements.sectionPosition.textContent = sectionIndex === -1
+      ? "Vista completa"
+      : `${sectionIndex + 1} de ${sections.length}`;
   }
 
   function selectSection(section) {
@@ -359,10 +368,6 @@
       ? (offset > 0 ? 0 : sections.length - 1)
       : (currentIndex + offset + sections.length) % sections.length;
     selectSection(sections[nextIndex]);
-    document.querySelector(".section-menu-panel").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
   }
 
   function updateSticker(id, updater) {

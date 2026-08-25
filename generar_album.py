@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
   <header class="topbar">
@@ -42,52 +42,46 @@ HTML_TEMPLATE = """<!doctype html>
   </header>
 
   <main class="page">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Colección 2026-27</p>
-        <h1>Tu colección, bajo control.</h1>
-        <p class="hero-copy">
-          Consulta todos los equipos y secciones, sigue la recomendación de plantilla
-          y guarda qué cromos tienes, cuáles no quieres pegar y cuántas copias repetidas conservas.
-        </p>
-      </div>
-      <div class="hero-progress">
-        <div class="hero-progress-row">
-          <span>Colección conseguida</span>
-          <strong id="progress-text">0%</strong>
+    <section class="progress-overview" aria-label="Progreso de la colección">
+      <div class="progress-overview-heading">
+        <div>
+          <span>Progreso del álbum</span>
+          <strong><span id="summary-owned">0</span> de <span id="summary-total">0</span> cromos</strong>
         </div>
-        <div class="progress-track" aria-hidden="true">
-          <div class="progress-bar" id="progress-bar"></div>
-        </div>
+        <strong id="progress-text">0%</strong>
       </div>
-    </section>
-
-    <section class="summary-grid" aria-label="Resumen de la colección">
-      <div class="summary-card"><span>Total</span><strong id="summary-total">0</strong></div>
-      <div class="summary-card"><span>Sin conseguir</span><strong id="summary-missing">0</strong></div>
-      <div class="summary-card"><span>Los tengo</span><strong id="summary-owned">0</strong></div>
-      <div class="summary-card"><span>Copias repetidas</span><strong id="summary-duplicates">0</strong></div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-overview-meta">
+        <span><strong id="summary-missing">0</strong> pendientes</span>
+        <span><strong id="summary-duplicates">0</strong> repetidos</span>
+      </div>
     </section>
 
     <section class="section-menu-panel" aria-labelledby="section-menu-title">
       <div class="section-menu-heading">
         <div>
-          <p class="eyebrow">Filtro por equipo</p>
-          <h2 id="section-menu-title">Ver el álbum sección a sección</h2>
-        </div>
-        <div class="section-menu-pager" aria-label="Cambiar de equipo">
-          <button class="button secondary" id="section-prev" type="button">← Anterior</button>
-          <button class="button secondary" id="section-next" type="button">Siguiente →</button>
+          <p class="eyebrow">Navegación</p>
+          <h2 id="section-menu-title">Secciones del álbum</h2>
         </div>
       </div>
       <nav class="section-menu" id="section-menu" aria-label="Filtrar por equipo o sección"></nav>
+      <div class="section-menu-pager" aria-label="Cambiar de sección">
+        <button class="section-page-button" id="section-prev" type="button" aria-label="Sección anterior">←</button>
+        <div class="section-page-status" aria-live="polite">
+          <strong id="section-current">Todo el álbum</strong>
+          <small id="section-position">Vista completa</small>
+        </div>
+        <button class="section-page-button" id="section-next" type="button" aria-label="Sección siguiente">→</button>
+      </div>
     </section>
 
     <section class="toolbar" aria-label="Buscar y filtrar cromos">
       <div class="toolbar-main">
         <label class="search-wrap">
           <span aria-hidden="true">⌕</span>
-          <input class="search" id="search" type="search" placeholder="Buscar jugador, equipo, número o posición…">
+          <input class="search" id="search" type="search" placeholder="Buscar cromo…">
         </label>
         <div class="toolbar-actions">
           <select class="section-select" id="section-select" aria-label="Filtrar por sección"></select>
@@ -112,10 +106,10 @@ HTML_TEMPLATE = """<!doctype html>
 
   <div class="toast" id="toast" role="status"></div>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="cloud-config.js?v=10"></script>
+  <script src="cloud-config.js?v=11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=10"></script>
-  <script src="cloud-sync.js?v=10"></script>
+  <script src="app.js?v=11"></script>
+  <script src="cloud-sync.js?v=11"></script>
 </body>
 </html>
 """
