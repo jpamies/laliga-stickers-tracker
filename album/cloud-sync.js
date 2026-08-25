@@ -231,8 +231,8 @@
       return;
     }
     window.Clerk.openSignIn({
-      afterSignInUrl: window.location.href,
-      afterSignUpUrl: window.location.href,
+      fallbackRedirectUrl: window.location.href,
+      signUpFallbackRedirectUrl: window.location.href,
     });
   });
 

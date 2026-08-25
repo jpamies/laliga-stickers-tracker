@@ -33,7 +33,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertNotIn('id="summary-stuck"', html)
         self.assertNotIn('data-filter="stuck"', html)
         self.assertIn('id="auth-button"', html)
-        self.assertIn('src="cloud-sync.js?v=4"', html)
+        self.assertIn('src="cloud-sync.js?v=5"', html)
 
 
 if __name__ == "__main__":
