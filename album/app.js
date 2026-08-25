@@ -4,11 +4,15 @@
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
   const data = window.ALBUM_DATA;
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
-  const teamSections = sections.filter((section) => data.some((sticker) => (
-    sticker.seccion === section
-    && sticker.digital_group === "ESCUDO"
-    && sticker.imagen_url
-  )));
+  const specialSectionIcons = {
+    "ADN / LALIGA PRIME": "ADN",
+    "LALIGA FANTASY": "LF",
+    "DRAFT 23": "D23",
+    "DRAFT 23 KROMIX": "KX",
+    "EXTRA STICKER BRONCE": "BR",
+    "EXTRA STICKER PLATA": "PL",
+    "EXTRA STICKER ORO": "OR",
+  };
   const validStates = new Set(["missing", "owned"]);
   const validStickDecisions = new Set(["default", "dont-stick", "stick"]);
 
@@ -316,14 +320,16 @@
       && sticker.digital_group === "ESCUDO"
       && sticker.imagen_url
     ));
+    const specialIcon = specialSectionIcons[section];
     const visual = crest
       ? `<img src="${escapeHtml(crest.imagen_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
-      : `<span class="section-menu-placeholder" aria-hidden="true">${escapeHtml(section.charAt(0))}</span>`;
+      : `<span class="section-menu-placeholder" aria-hidden="true">${escapeHtml(specialIcon || section.charAt(0))}</span>`;
     return `
       <button
-        class="section-menu-tile"
+        class="section-menu-tile ${specialIcon ? "section-menu-tile-special" : ""}"
         type="button"
         data-section-menu="${escapeHtml(section)}"
+        aria-label="Mostrar ${escapeHtml(section)}"
         aria-pressed="false"
       >
         <span class="section-menu-visual">${visual}</span>
@@ -347,12 +353,12 @@
     render();
   }
 
-  function moveBetweenTeams(offset) {
-    const currentIndex = teamSections.indexOf(state.section);
+  function moveBetweenSections(offset) {
+    const currentIndex = sections.indexOf(state.section);
     const nextIndex = currentIndex === -1
-      ? (offset > 0 ? 0 : teamSections.length - 1)
-      : (currentIndex + offset + teamSections.length) % teamSections.length;
-    selectSection(teamSections[nextIndex]);
+      ? (offset > 0 ? 0 : sections.length - 1)
+      : (currentIndex + offset + sections.length) % sections.length;
+    selectSection(sections[nextIndex]);
     document.querySelector(".section-menu-panel").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -407,11 +413,11 @@
       ...sections.map((section) => `<option value="${escapeHtml(section)}">${escapeHtml(section)}</option>`),
     ].join("");
     elements.sectionMenu.innerHTML = `
-      <button class="section-menu-tile section-menu-all active" type="button" data-section-menu="all" aria-pressed="true">
+      <button class="section-menu-tile section-menu-all active" type="button" data-section-menu="all" aria-label="Mostrar todas las secciones" aria-pressed="true">
         <span class="section-menu-visual section-menu-placeholder" aria-hidden="true">▦</span>
         <span>Todos</span>
       </button>
-      ${teamSections.map(sectionTile).join("")}
+      ${sections.map(sectionTile).join("")}
     `;
   }
 
@@ -430,8 +436,8 @@
     selectSection(tile.dataset.sectionMenu);
   });
 
-  elements.sectionPrevious.addEventListener("click", () => moveBetweenTeams(-1));
-  elements.sectionNext.addEventListener("click", () => moveBetweenTeams(1));
+  elements.sectionPrevious.addEventListener("click", () => moveBetweenSections(-1));
+  elements.sectionNext.addEventListener("click", () => moveBetweenSections(1));
 
   elements.filterChips.addEventListener("click", (event) => {
     const chip = event.target.closest("[data-filter]");

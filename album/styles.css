@@ -365,6 +365,22 @@ button {
   font-weight: 700;
 }
 
+.section-menu-tile-special .section-menu-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  color: white;
+  background: var(--green-dark);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.65rem, 1.3vw, 1rem);
+  font-weight: 900;
+}
+
+.section-menu-tile-special:nth-last-child(-n + 3) .section-menu-placeholder {
+  color: var(--ink);
+  background: var(--amber-soft);
+}
+
 .section-menu-all .section-menu-visual {
   width: auto;
   height: auto;
@@ -895,6 +911,10 @@ button {
 }
 
 @media (max-width: 620px) {
+  body {
+    min-width: 0;
+  }
+
   .topbar {
     position: static;
   }
@@ -1046,20 +1066,31 @@ button {
   }
 
   .section-menu {
-    display: flex;
-    overflow-x: auto;
-    gap: 7px;
-    padding: 2px 4px 6px;
-    scroll-snap-type: x proximity;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    padding: 2px 4px 4px;
   }
 
   .section-menu-tile {
-    flex: 0 0 74px;
+    width: 100%;
     gap: 5px;
-    padding: 6px;
+    padding: 5px;
     border-radius: 11px;
     font-size: 0.53rem;
-    scroll-snap-align: start;
+  }
+
+  .section-menu-tile > span:last-child {
+    display: none;
+  }
+
+  .section-menu-visual {
+    width: 70%;
+    height: 70%;
+  }
+
+  .section-menu-tile-special .section-menu-placeholder {
+    font-size: 0.68rem;
   }
 
   .toolbar {
@@ -1094,16 +1125,11 @@ button {
   }
 
   .filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow: visible;
     gap: 6px;
     margin-top: 7px;
-    padding-bottom: 3px;
-  }
-
-  .filter-chip,
-  .filters .section-count {
-    flex: 0 0 auto;
+    padding-bottom: 0;
   }
 
   .filter-chip {
@@ -1113,13 +1139,13 @@ button {
 
   .sticker-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
   }
 
   .sticker-card {
     min-width: 0;
     min-height: 0;
-    padding: 9px;
+    padding: 7px;
     border-radius: 13px;
   }
 
@@ -1147,8 +1173,8 @@ button {
   }
 
   .sticker-name {
-    margin: 8px 0 3px;
-    font-size: 1rem;
+    margin: 7px 0 3px;
+    font-size: 0.94rem;
   }
 
   .sticker-type {
@@ -1163,7 +1189,7 @@ button {
   .copy-row {
     gap: 4px;
     margin: 8px 0 6px;
-    padding: 5px 6px;
+    padding: 4px 5px;
   }
 
   .copy-label {
@@ -1181,8 +1207,8 @@ button {
   }
 
   .icon-button {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
   }
 
   .state-button {
@@ -1214,11 +1240,9 @@ button {
   .section-heading h2 {
     font-size: 1.35rem;
   }
-}
 
-@media (max-width: 350px) {
-  .sticker-grid {
-    grid-template-columns: 1fr;
+  .section-heading .section-count {
+    display: none;
   }
 }
 
