@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
   <header class="topbar">
@@ -112,10 +112,10 @@ HTML_TEMPLATE = """<!doctype html>
 
   <div class="toast" id="toast" role="status"></div>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="cloud-config.js?v=6"></script>
+  <script src="cloud-config.js?v=8"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=6"></script>
-  <script src="cloud-sync.js?v=6"></script>
+  <script src="app.js?v=8"></script>
+  <script src="cloud-sync.js?v=8"></script>
 </body>
 </html>
 """

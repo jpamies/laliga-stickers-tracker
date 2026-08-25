@@ -225,7 +225,7 @@
         </div>
         <div class="card-spacer"></div>
         <div class="copy-row">
-          <span class="copy-label">Copias en total${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : ""}</span>
+          <span class="copy-label">Copias${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : ""}</span>
           <div class="copy-control">
             <button class="icon-button" type="button" data-copy="-1" aria-label="Quitar una copia">−</button>
             <span class="copy-count">${progress.copies}</span>
