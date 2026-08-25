@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
   <header class="topbar">
@@ -87,6 +87,7 @@ HTML_TEMPLATE = """<!doctype html>
           <select class="section-select" id="section-select" aria-label="Filtrar por sección"></select>
           <button class="button secondary" id="import-progress" type="button">Importar</button>
           <button class="button" id="export-progress" type="button">Exportar progreso</button>
+          <button class="button social-button" id="social-open" type="button">Compartir</button>
           <input class="hidden" id="import-file" type="file" accept="application/json,.json">
         </div>
       </div>
@@ -105,11 +106,15 @@ HTML_TEMPLATE = """<!doctype html>
   </main>
 
   <div class="toast" id="toast" role="status"></div>
+  <dialog class="social-dialog" id="social-dialog">
+    <div id="social-content"></div>
+  </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="cloud-config.js?v=12"></script>
+  <script src="cloud-config.js?v=13"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=12"></script>
-  <script src="cloud-sync.js?v=12"></script>
+  <script src="app.js?v=13"></script>
+  <script src="cloud-sync.js?v=13"></script>
+  <script src="social.js?v=13"></script>
 </body>
 </html>
 """

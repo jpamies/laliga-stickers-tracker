@@ -612,6 +612,11 @@ button {
   background: #f0f1ec;
 }
 
+.social-button {
+  color: white;
+  background: var(--green-dark);
+}
+
 .section-block {
   margin-top: 36px;
   scroll-margin-top: 180px;
@@ -998,6 +1003,337 @@ button {
   display: none !important;
 }
 
+.read-only .copy-row,
+.read-only .state-controls,
+.read-only .stick-toggle,
+.read-only #import-progress,
+.read-only #export-progress,
+.read-only #social-open,
+.read-only .account-panel {
+  display: none !important;
+}
+
+.read-only .sticker-visual {
+  cursor: default;
+}
+
+.social-dialog {
+  width: min(760px, calc(100% - 28px));
+  max-height: min(820px, calc(100dvh - 28px));
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 22px;
+  color: var(--ink);
+  background: var(--card);
+  box-shadow: 0 24px 80px rgba(21, 35, 28, 0.28);
+}
+
+.social-dialog::backdrop {
+  background: rgba(21, 35, 28, 0.58);
+  backdrop-filter: blur(5px);
+}
+
+#social-content {
+  display: flex;
+  max-height: min(820px, calc(100dvh - 28px));
+  flex-direction: column;
+}
+
+.social-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px 14px;
+}
+
+.social-header span {
+  color: var(--green);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.social-header h2 {
+  margin: 2px 0 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+}
+
+.social-close {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  color: var(--muted);
+  background: #eff1ec;
+  font-size: 1.4rem;
+}
+
+.social-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 0 22px 14px;
+}
+
+.social-tabs button,
+.social-row-actions button,
+.friend-row button,
+.social-primary,
+.social-back {
+  min-height: 36px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.social-tabs button {
+  color: var(--muted);
+  background: #eff1ec;
+}
+
+.social-tabs button.active {
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+.social-body {
+  padding: 4px 22px 24px;
+  overflow-y: auto;
+}
+
+.social-body h3 {
+  margin: 18px 0 10px;
+  font-size: 0.9rem;
+}
+
+.social-card,
+.social-row,
+.friend-row,
+.trade-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.social-intro {
+  padding: 16px;
+  background: linear-gradient(135deg, var(--green-soft), #f4faf7);
+}
+
+.social-intro p,
+.social-help {
+  margin: 6px 0 13px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.social-primary {
+  padding: 0 14px;
+  color: white;
+  background: var(--green-dark);
+}
+
+.social-row,
+.friend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 11px 12px;
+}
+
+.social-row strong,
+.social-row small,
+.friend-row strong,
+.friend-row small {
+  display: block;
+}
+
+.social-row small,
+.friend-row small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.social-row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.social-row-actions button,
+.friend-row button {
+  min-height: 32px;
+  padding: 0 10px;
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+.social-row-actions .danger,
+.social-row-actions button.danger {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.friend-row img,
+.friend-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friend-avatar {
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.friend-row > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.social-notice {
+  display: none;
+  margin: 0 22px 10px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.social-notice.visible {
+  display: block;
+}
+
+.social-notice.error {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.social-empty {
+  padding: 20px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.trade-card {
+  margin-bottom: 10px;
+  padding: 13px;
+}
+
+.trade-heading,
+.trade-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trade-status {
+  padding: 4px 7px;
+  border-radius: 99px;
+  color: var(--muted);
+  background: #eff1ec;
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.status-accepted {
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+.status-rejected,
+.status-cancelled {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.trade-columns > div,
+.trade-columns > section {
+  min-width: 0;
+  flex: 1;
+}
+
+.trade-columns small {
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.trade-columns ul {
+  margin: 5px 0 10px;
+  padding-left: 17px;
+  font-size: 0.72rem;
+}
+
+.comparison-columns h3 span {
+  color: var(--muted);
+}
+
+.trade-options {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.trade-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 9px;
+  background: #f3f4f0;
+  font-size: 0.7rem;
+}
+
+.trade-option input {
+  margin-top: 2px;
+  accent-color: var(--green);
+}
+
+.social-back {
+  padding: 0 11px;
+  color: var(--muted);
+  background: #eff1ec;
+}
+
+.social-message {
+  display: block;
+  margin: 16px 0 10px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.social-message textarea {
+  display: block;
+  width: 100%;
+  min-height: 70px;
+  margin-top: 5px;
+  padding: 9px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -1254,7 +1590,7 @@ button {
 
   .toolbar-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 7px;
   }
 
@@ -1268,6 +1604,8 @@ button {
 
   .toolbar-actions .button {
     min-height: 36px;
+    padding: 0 6px;
+    font-size: 0.67rem;
   }
 
   .filters {
@@ -1389,6 +1727,40 @@ button {
 
   .section-heading .section-count {
     display: none;
+  }
+
+  .social-dialog {
+    width: calc(100% - 12px);
+    max-height: calc(100dvh - 12px);
+    border-radius: 17px;
+  }
+
+  #social-content {
+    max-height: calc(100dvh - 12px);
+  }
+
+  .social-header {
+    padding: 16px 14px 11px;
+  }
+
+  .social-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .social-tabs {
+    padding: 0 14px 10px;
+  }
+
+  .social-body {
+    padding: 3px 14px 18px;
+  }
+
+  .social-notice {
+    margin: 0 14px 8px;
+  }
+
+  .comparison-columns {
+    flex-direction: column;
   }
 }
 

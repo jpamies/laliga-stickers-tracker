@@ -22,6 +22,7 @@
     section: "all",
     filter: "all",
     progress: loadProgress(),
+    readOnly: false,
   };
 
   const elements = {
@@ -178,7 +179,7 @@
   function escapeHtml(value) {
     const holder = document.createElement("div");
     holder.textContent = String(value || "");
-    return holder.innerHTML;
+    return holder.innerHTML.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
   function stickerCard(sticker) {
@@ -511,6 +512,7 @@
   });
 
   elements.collection.addEventListener("click", (event) => {
+    if (state.readOnly) return;
     const card = event.target.closest(".sticker-card");
     if (!card) return;
     const id = card.dataset.id;
@@ -588,6 +590,26 @@
 
   window.PaniniAlbum = {
     getProgress: () => structuredClone(state.progress),
+    isReadOnly: () => state.readOnly,
+    getSocialProgress() {
+      const socialProgress = {};
+      for (const [id, entry] of Object.entries(state.progress)) {
+        if (entry.state === "owned" || entry.copies > 0) {
+          socialProgress[id] = {
+            state: entry.state,
+            copies: entry.copies,
+          };
+        }
+      }
+      return socialProgress;
+    },
+    showReadOnly(progress, ownerName) {
+      state.readOnly = true;
+      state.progress = cleanProgress(progress);
+      document.body.classList.add("read-only");
+      document.querySelector(".brand strong").textContent = `Álbum de ${ownerName}`;
+      render();
+    },
     replaceProgress(progress, { notify = false, stampEntries = false } = {}) {
       state.progress = cleanProgress(progress);
       if (stampEntries) {

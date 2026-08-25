@@ -97,17 +97,24 @@
   }
 
   async function saveToCloud() {
-    if (!currentUser || !client || applyingRemote) return;
+    if (!currentUser || !client || applyingRemote || album.isReadOnly()) return;
     const updatedAt = localStorage.getItem(updatedKey) || new Date().toISOString();
     localStorage.setItem(updatedKey, updatedAt);
     setStatus("Guardando…");
-    const { error } = await client.from("album_progress").upsert({
-      user_id: currentUser.id,
-      progress: album.getProgress(),
-      updated_at: updatedAt,
-    }, { onConflict: "user_id" });
-    if (error) {
-      console.error("No se pudo guardar el progreso en Supabase.", error);
+    const [{ error }, { error: socialError }] = await Promise.all([
+      client.from("album_progress").upsert({
+        user_id: currentUser.id,
+        progress: album.getProgress(),
+        updated_at: updatedAt,
+      }, { onConflict: "user_id" }),
+      client.from("album_social_progress").upsert({
+        user_id: currentUser.id,
+        progress: album.getSocialProgress(),
+        updated_at: updatedAt,
+      }, { onConflict: "user_id" }),
+    ]);
+    if (error || socialError) {
+      console.error("No se pudo guardar el progreso en Supabase.", error || socialError);
       setStatus("Error al sincronizar", true);
       return;
     }
@@ -116,7 +123,7 @@
   }
 
   function scheduleSave() {
-    if (applyingRemote) return;
+    if (applyingRemote || album.isReadOnly()) return;
     localStorage.setItem(updatedKey, new Date().toISOString());
     if (!currentUser) return;
     window.clearTimeout(saveTimer);
@@ -127,7 +134,7 @@
   }
 
   async function synchronize() {
-    if (!currentUser || !client) return;
+    if (!currentUser || !client || album.isReadOnly()) return;
     setStatus("Sincronizando…");
     const { data, error } = await client
       .from("album_progress")
@@ -181,9 +188,12 @@
 
   async function handleUser(user) {
     displayUser(user);
-    if (user) {
+    if (user && !album.isReadOnly()) {
       await synchronize();
     }
+    document.dispatchEvent(new CustomEvent("panini:cloud-ready", {
+      detail: { client, user: currentUser },
+    }));
   }
 
   async function initialize() {
@@ -209,6 +219,12 @@
           accessToken: async () => window.Clerk.session?.getToken() || null,
         },
       );
+      window.PaniniCloud = {
+        getClient: () => client,
+        getUser: () => currentUser,
+        signIn: () => elements.button.click(),
+        syncNow: saveToCloud,
+      };
       await handleUser(window.Clerk.user);
       window.Clerk.addListener(({ user }) => {
         handleUser(user).catch((error) => {

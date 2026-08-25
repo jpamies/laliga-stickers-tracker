@@ -14,6 +14,8 @@
 - Imágenes asociadas de forma conservadora por jugador y equipo.
 - Estrategia de pegado basada en plantillas de Transfermarkt.
 - Importación y exportación del progreso.
+- Enlaces públicos revocables del álbum en modo sólo lectura.
+- Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 
 ## Desarrollo
 
@@ -47,6 +49,18 @@ progreso con Supabase. Si la nube no está configurada o no está disponible, el
    [`album/cloud-config.js`](album/cloud-config.js). Esta clave es pública; no
    uses nunca una `secret` o `service_role` en el navegador.
 5. Autoriza la URL local y la de GitHub Pages en la aplicación de Clerk.
+
+Las funciones sociales se gestionan con migraciones versionadas:
+
+```powershell
+supabase link --project-ref cjwssgaigkagoocwiecq
+supabase db push
+```
+
+La copia social contiene únicamente estado de posesión y número de copias.
+`stickDecision`, el correo y los identificadores internos no se incluyen en
+enlaces públicos ni comparaciones entre amigos. Las propuestas aceptadas no
+modifican automáticamente el álbum: cada usuario confirma después sus copias.
 
 Clerk Hobby y Supabase Free no requieren tarjeta para este uso. Supabase puede
 pausar un proyecto gratuito tras una semana sin actividad y lo reactiva cuando
