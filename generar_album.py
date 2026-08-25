@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <header class="topbar">
@@ -69,6 +69,20 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="summary-card"><span>Copias repetidas</span><strong id="summary-duplicates">0</strong></div>
     </section>
 
+    <section class="section-menu-panel" aria-labelledby="section-menu-title">
+      <div class="section-menu-heading">
+        <div>
+          <p class="eyebrow">Filtro por equipo</p>
+          <h2 id="section-menu-title">Ver el álbum equipo a equipo</h2>
+        </div>
+        <div class="section-menu-pager" aria-label="Cambiar de equipo">
+          <button class="button secondary" id="section-prev" type="button">← Anterior</button>
+          <button class="button secondary" id="section-next" type="button">Siguiente →</button>
+        </div>
+      </div>
+      <nav class="section-menu" id="section-menu" aria-label="Filtrar por equipo"></nav>
+    </section>
+
     <section class="toolbar" aria-label="Buscar y filtrar cromos">
       <div class="toolbar-main">
         <label class="search-wrap">
@@ -98,10 +112,10 @@ HTML_TEMPLATE = """<!doctype html>
 
   <div class="toast" id="toast" role="status"></div>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="cloud-config.js?v=5"></script>
+  <script src="cloud-config.js?v=6"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=5"></script>
-  <script src="cloud-sync.js?v=5"></script>
+  <script src="app.js?v=6"></script>
+  <script src="cloud-sync.js?v=6"></script>
 </body>
 </html>
 """

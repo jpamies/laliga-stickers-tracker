@@ -4,6 +4,11 @@
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
   const data = window.ALBUM_DATA;
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
+  const teamSections = sections.filter((section) => data.some((sticker) => (
+    sticker.seccion === section
+    && sticker.digital_group === "ESCUDO"
+    && sticker.imagen_url
+  )));
   const validStates = new Set(["missing", "owned"]);
   const validStickDecisions = new Set(["default", "dont-stick", "stick"]);
 
@@ -19,6 +24,9 @@
     collection: document.querySelector("#collection"),
     search: document.querySelector("#search"),
     sectionSelect: document.querySelector("#section-select"),
+    sectionMenu: document.querySelector("#section-menu"),
+    sectionPrevious: document.querySelector("#section-prev"),
+    sectionNext: document.querySelector("#section-next"),
     filterChips: document.querySelector("#filter-chips"),
     navTabs: document.querySelectorAll(".nav-tab"),
     summaryTotal: document.querySelector("#summary-total"),
@@ -302,6 +310,55 @@
     return `section-${normalize(section).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
   }
 
+  function sectionTile(section) {
+    const crest = data.find((sticker) => (
+      sticker.seccion === section
+      && sticker.digital_group === "ESCUDO"
+      && sticker.imagen_url
+    ));
+    const visual = crest
+      ? `<img src="${escapeHtml(crest.imagen_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
+      : `<span class="section-menu-placeholder" aria-hidden="true">${escapeHtml(section.charAt(0))}</span>`;
+    return `
+      <button
+        class="section-menu-tile"
+        type="button"
+        data-section-menu="${escapeHtml(section)}"
+        aria-pressed="false"
+      >
+        <span class="section-menu-visual">${visual}</span>
+        <span>${escapeHtml(section)}</span>
+      </button>
+    `;
+  }
+
+  function updateSectionMenu() {
+    elements.sectionMenu.querySelectorAll("[data-section-menu]").forEach((tile) => {
+      const active = tile.dataset.sectionMenu === state.section;
+      tile.classList.toggle("active", active);
+      tile.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  function selectSection(section) {
+    state.section = section;
+    elements.sectionSelect.value = section;
+    updateSectionMenu();
+    render();
+  }
+
+  function moveBetweenTeams(offset) {
+    const currentIndex = teamSections.indexOf(state.section);
+    const nextIndex = currentIndex === -1
+      ? (offset > 0 ? 0 : teamSections.length - 1)
+      : (currentIndex + offset + teamSections.length) % teamSections.length;
+    selectSection(teamSections[nextIndex]);
+    document.querySelector(".section-menu-panel").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   function updateSticker(id, updater) {
     const current = { ...progressFor(id) };
     const next = { ...updater(current), updatedAt: new Date().toISOString() };
@@ -349,6 +406,13 @@
       '<option value="all">Todos los equipos y secciones</option>',
       ...sections.map((section) => `<option value="${escapeHtml(section)}">${escapeHtml(section)}</option>`),
     ].join("");
+    elements.sectionMenu.innerHTML = `
+      <button class="section-menu-tile section-menu-all active" type="button" data-section-menu="all" aria-pressed="true">
+        <span class="section-menu-visual section-menu-placeholder" aria-hidden="true">▦</span>
+        <span>Todos</span>
+      </button>
+      ${teamSections.map(sectionTile).join("")}
+    `;
   }
 
   elements.search.addEventListener("input", (event) => {
@@ -357,9 +421,17 @@
   });
 
   elements.sectionSelect.addEventListener("change", (event) => {
-    state.section = event.target.value;
-    render();
+    selectSection(event.target.value);
   });
+
+  elements.sectionMenu.addEventListener("click", (event) => {
+    const tile = event.target.closest("[data-section-menu]");
+    if (!tile) return;
+    selectSection(tile.dataset.sectionMenu);
+  });
+
+  elements.sectionPrevious.addEventListener("click", () => moveBetweenTeams(-1));
+  elements.sectionNext.addEventListener("click", () => moveBetweenTeams(1));
 
   elements.filterChips.addEventListener("click", (event) => {
     const chip = event.target.closest("[data-filter]");
