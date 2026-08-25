@@ -355,11 +355,46 @@
       : `${sectionIndex + 1} de ${sections.length}`;
   }
 
-  function selectSection(section) {
+  function isMobileLayout() {
+    return window.matchMedia("(max-width: 620px)").matches;
+  }
+
+  function updateSectionHistory(section) {
+    if (!isMobileLayout()) return false;
+    const historyState = { ...(window.history.state || {}) };
+    if (section === "all" && state.section !== "all" && historyState.paniniSectionView) {
+      window.history.back();
+      return true;
+    }
+    const nextHistoryState = {
+      ...historyState,
+      paniniSectionView: section !== "all",
+      paniniSection: section,
+    };
+    if (section !== "all" && state.section === "all") {
+      window.history.pushState(nextHistoryState, "");
+    } else {
+      window.history.replaceState(nextHistoryState, "");
+    }
+    return false;
+  }
+
+  function selectSection(section, { updateHistory = true } = {}) {
+    if (updateHistory && updateSectionHistory(section)) return;
     state.section = section;
     elements.sectionSelect.value = section;
     updateSectionMenu();
     render();
+  }
+
+  function returnToSectionMenu() {
+    selectSection("all", { updateHistory: false });
+    window.requestAnimationFrame(() => {
+      document.querySelector(".section-menu-panel").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
   }
 
   function moveBetweenSections(offset) {
@@ -443,6 +478,15 @@
 
   elements.sectionPrevious.addEventListener("click", () => moveBetweenSections(-1));
   elements.sectionNext.addEventListener("click", () => moveBetweenSections(1));
+
+  window.addEventListener("popstate", (event) => {
+    if (!isMobileLayout()) return;
+    if (event.state?.paniniSectionView && sections.includes(event.state.paniniSection)) {
+      selectSection(event.state.paniniSection, { updateHistory: false });
+      return;
+    }
+    returnToSectionMenu();
+  });
 
   elements.filterChips.addEventListener("click", (event) => {
     const chip = event.target.closest("[data-filter]");
@@ -563,5 +607,10 @@
   };
 
   initializeSections();
+  window.history.replaceState({
+    ...(window.history.state || {}),
+    paniniSectionView: false,
+    paniniSection: "all",
+  }, "");
   render();
 })();
