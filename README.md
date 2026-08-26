@@ -2,7 +2,7 @@
 
 Álbum estático para seguir la colección Panini LALIGA 2026-27.
 
-**Aplicación:** https://jpamies.github.io/laliga-stickers-tracker/
+**Aplicación:** https://stickers.laliga.jpamies.com/
 
 ## Funciones
 
