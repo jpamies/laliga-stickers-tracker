@@ -2,6 +2,8 @@
 
 Álbum estático para seguir la colección Panini LALIGA 2026-27.
 
+**Aplicación:** https://jpamies.github.io/laliga-stickers-tracker/
+
 ## Funciones
 
 - 514 cromos y variantes del checklist físico.
@@ -48,7 +50,11 @@ progreso con Supabase. Si la nube no está configurada o no está disponible, el
 4. Copia la URL y la clave **Publishable** del proyecto en
    [`album/cloud-config.js`](album/cloud-config.js). Esta clave es pública; no
    uses nunca una `secret` o `service_role` en el navegador.
-5. Autoriza la URL local y la de GitHub Pages en la aplicación de Clerk.
+5. Para publicar, crea una instancia de **producción** en Clerk, configura el
+   dominio de GitHub Pages y usa su clave `pk_live_...`. No publiques la
+   aplicación con una instancia de desarrollo `pk_test_...`.
+6. Configura Supabase para confiar exclusivamente en el emisor/JWKS de esa
+   instancia Clerk de producción.
 
 Las funciones sociales se gestionan con migraciones versionadas:
 
@@ -56,6 +62,9 @@ Las funciones sociales se gestionan con migraciones versionadas:
 supabase link --project-ref cjwssgaigkagoocwiecq
 supabase db push
 ```
+
+Las invitaciones de amistad requieren confirmación expresa y caducan a los 30
+días. Al caducar, iniciar sesión genera automáticamente un enlace nuevo.
 
 La copia social contiene únicamente estado de posesión y número de copias.
 `stickDecision`, el correo y los identificadores internos no se incluyen en

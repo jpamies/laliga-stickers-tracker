@@ -274,15 +274,57 @@
     const { error } = await client.rpc("accept_album_invite", { p_token: friendToken });
     if (error) {
       console.error("No se pudo aceptar la invitación.", error);
+      showNotice("La invitación no es válida o ha caducado.", true);
       return;
     }
+    clearFriendToken();
+    activeTab = "friends";
+    await renderActiveTab();
+    showNotice("Amigo añadido.");
+  }
+
+  function clearFriendToken() {
     const url = new URL(window.location.href);
     url.searchParams.delete("friend");
     window.history.replaceState(window.history.state, "", url);
-    activeTab = "friends";
-    await renderActiveTab();
-    if (!dialog.open) dialog.showModal();
-    showNotice("Amigo añadido.");
+  }
+
+  async function renderInviteConfirmation() {
+    if (!friendToken || !user) return;
+    if (window.top !== window.self) {
+      content.innerHTML = modalShell(`
+        <section class="social-card social-intro">
+          <strong>Abre la invitación directamente</strong>
+          <p>Por seguridad, las invitaciones de amistad no se pueden aceptar dentro de otra página.</p>
+          <button type="button" data-decline-invite>Cerrar</button>
+        </section>
+      `);
+      dialog.showModal();
+      return;
+    }
+    const { data, error } = await client.rpc("get_album_invite", { p_token: friendToken });
+    const inviter = data?.[0]?.display_name;
+    if (error || !inviter) {
+      content.innerHTML = modalShell(`
+        <section class="social-card social-intro">
+          <strong>Invitación no disponible</strong>
+          <p>Este enlace no existe o ha caducado.</p>
+          <button type="button" data-decline-invite>Cerrar</button>
+        </section>
+      `);
+    } else {
+      content.innerHTML = modalShell(`
+        <section class="social-card social-intro">
+          <strong>${escapeHtml(inviter)} quiere añadirte como amigo</strong>
+          <p>Si aceptas, ambos podréis comparar colecciones y enviar propuestas de intercambio.</p>
+          <div class="social-row-actions">
+            <button class="social-primary" type="button" data-accept-invite>Aceptar amistad</button>
+            <button type="button" data-decline-invite>Ahora no</button>
+          </div>
+        </section>
+      `);
+    }
+    dialog.showModal();
   }
 
   async function initialize(event) {
@@ -306,7 +348,7 @@
     }
     try {
       await ensureProfile();
-      await acceptInvite();
+      await renderInviteConfirmation();
     } catch (error) {
       console.error("No se pudo preparar la función social.", error);
     }
@@ -331,6 +373,15 @@
     }
     if (event.target.closest("[data-social-login]")) {
       window.PaniniCloud.signIn();
+      return;
+    }
+    if (event.target.closest("[data-accept-invite]")) {
+      await acceptInvite();
+      return;
+    }
+    if (event.target.closest("[data-decline-invite]")) {
+      clearFriendToken();
+      dialog.close();
       return;
     }
     if (event.target.closest("[data-create-share]")) {

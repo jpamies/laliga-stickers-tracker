@@ -110,11 +110,11 @@ HTML_TEMPLATE = """<!doctype html>
     <div id="social-content"></div>
   </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
-  <script src="cloud-config.js?v=13"></script>
+  <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
   <script src="app.js?v=13"></script>
   <script src="cloud-sync.js?v=13"></script>
-  <script src="social.js?v=13"></script>
+  <script src="social.js?v=14"></script>
 </body>
 </html>
 """
