@@ -34,6 +34,22 @@ Ejecutar las pruebas:
 .\.venv\Scripts\python.exe -m unittest -v
 ```
 
+Generar el CSV maestro de estrategia con las plantillas actuales de
+Transfermarkt y las altas/bajas de BeSoccer:
+
+```powershell
+.\.venv\Scripts\python.exe generar_estrategia_mercado.py `
+  --refrescar-transfermarkt `
+  --refrescar-besoccer `
+  --progreso ruta\al\progreso.json
+```
+
+El resultado local `estrategia_mercado.csv` mantiene los 514 cromos físicos y
+añade, al final de cada club, los jugadores de su plantilla que no tienen
+cromo. Las salidas confirmadas distinguen ventas, cesiones, salidas libres y
+retiradas. El CSV se ignora en Git porque puede contener el progreso privado
+importado con `--progreso`.
+
 La documentación sobre el manifiesto digital está en
 [`PANINI_DIGITAL.md`](PANINI_DIGITAL.md).
 

@@ -1,5 +1,7 @@
 .venv/
 .cache_transfermarkt/
+.cache_besoccer/
+estrategia_mercado.csv
 __pycache__/
 *.py[cod]
 .pytest_cache/
