@@ -796,6 +796,37 @@ button {
   opacity: 0.68;
 }
 
+.sticker-visual-placeholder .sticker-image {
+  object-fit: cover;
+}
+
+.placeholder-inline {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder-inline svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder-badge {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(18, 27, 23, 0.72);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .sticker-visual-empty {
   border: 1px dashed #c7cec5;
   color: #929c94;

@@ -12,6 +12,8 @@
     "EXTRA STICKER BRONCE": "BR",
     "EXTRA STICKER PLATA": "PL",
     "EXTRA STICKER ORO": "OR",
+    "ÚLTIMOS FICHAJES": "UF",
+    "TOP FICHAJES": "TOP",
   };
   const validStates = new Set(["missing", "owned"]);
   const validStickDecisions = new Set(["default", "dont-stick", "stick"]);
@@ -43,8 +45,9 @@
     BRO: "EXTRA STICKER BRONCE",
     PLA: "EXTRA STICKER PLATA",
     ORO: "EXTRA STICKER ORO",
+    UF: "ÚLTIMOS FICHAJES",
+    TOP: "TOP FICHAJES",
   };
-  const figuritasUnsupportedSections = new Set(["UF", "TOP"]);
 
   const state = {
     view: "album",
@@ -211,10 +214,6 @@
       const tokens = match[2].split(",")
         .map(parseFiguritasToken)
         .filter((token) => token.number);
-      if (figuritasUnsupportedSections.has(code)) {
-        unsupported.push(...tokens.map((token) => `${code}:${token.number}`));
-        continue;
-      }
       const section = figuritasSections[code];
       if (!section) {
         unknownCodes.push(code);
@@ -371,6 +370,81 @@
     return holder.innerHTML.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
+  function placeholderTheme(section) {
+    const themes = window.ALBUM_PLACEHOLDERS || {};
+    return themes[section] || themes["*"] || {
+      code: "LALIGA",
+      primary: "#315b4a",
+      secondary: "#edf1eb",
+      accent: "#c8a64b",
+    };
+  }
+
+  function placeholderRole(sticker) {
+    const source = normalize(sticker.tipo || sticker.estado_plantilla);
+    if (source.startsWith("portero")) return "POR";
+    if (source.startsWith("defensa")) return "DEF";
+    if (source.startsWith("centrocampista") || source.startsWith("medio")) return "MED";
+    if (source.startsWith("delantero")) return "DEL";
+    if (source.startsWith("entrenador")) return "ENT";
+    if (source.startsWith("pendiente")) return "—";
+    return (sticker.tipo || "").toUpperCase().slice(0, 3) || "—";
+  }
+
+  function placeholderSticker(sticker) {
+    const theme = placeholderTheme(sticker.seccion);
+    const id = normalize(sticker.id).replace(/[^a-z0-9]+/g, "-");
+    const name = (sticker.nombre || "").toUpperCase();
+    const role = placeholderRole(sticker);
+    const photo = sticker.foto_url
+      ? `<image href="${escapeHtml(sticker.foto_url)}" x="52" y="66" width="172" height="204" clip-path="url(#photo-${id})" preserveAspectRatio="xMidYMax meet"/>`
+      : `
+        <g clip-path="url(#photo-${id})" fill="${theme.primary}" opacity=".22">
+          <circle cx="138" cy="146" r="34"/>
+          <path d="M138 188c38 0 62 26 70 82H68c8-56 32-82 70-82z"/>
+        </g>
+        <text x="138" y="160" text-anchor="middle" fill="${theme.primary}" font-family="Trebuchet MS, Arial, sans-serif" font-size="44" font-weight="900" opacity=".45">?</text>
+      `;
+    const crest = sticker.escudo_url
+      ? `<image href="${escapeHtml(sticker.escudo_url)}" x="8" y="7" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>`
+      : `<text x="36" y="44" text-anchor="middle" fill="#ffffff" font-family="Trebuchet MS, Arial, sans-serif" font-size="20" font-weight="900">${escapeHtml(theme.code)}</text>`;
+    const label = name || "POR CONFIRMAR";
+    const labelSize = label.length > 15 ? 13 : label.length > 11 ? 15 : 18;
+
+    return `
+      <svg viewBox="0 0 232 308" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cromo provisional de ${escapeHtml(sticker.seccion)}">
+        <defs>
+          <linearGradient id="swoosh-${id}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="${theme.primary}"/>
+            <stop offset="1" stop-color="${theme.accent}"/>
+          </linearGradient>
+          <pattern id="weave-${id}" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="9" stroke="${theme.primary}" stroke-width="2.5" opacity=".07"/>
+          </pattern>
+          <clipPath id="photo-${id}">
+            <rect x="52" y="66" width="172" height="204" rx="10"/>
+          </clipPath>
+        </defs>
+        <rect width="232" height="308" fill="#f6f5f1"/>
+        <rect width="232" height="308" fill="url(#weave-${id})"/>
+        <rect x="10" y="4" width="34" height="264" fill="#ffffff" opacity=".9"/>
+        <rect x="46" y="4" width="2.5" height="264" fill="${theme.primary}" opacity=".55"/>
+        ${photo}
+        <path d="M4 4h118Q42 46 4 116Z" fill="url(#swoosh-${id})"/>
+        <path d="M4 122Q44 52 124 6l8 0Q50 56 4 128Z" fill="#ffffff" opacity=".75"/>
+        <path d="M0 268h232v40H0z" fill="#f6f5f1"/>
+        <text transform="translate(35 262) rotate(-90)" fill="${name ? "#14171a" : "#8c9299"}" font-family="Trebuchet MS, Arial, sans-serif" font-size="${labelSize}" font-weight="900" letter-spacing="1">${escapeHtml(label)}</text>
+        <g transform="translate(4 272)">
+          <rect width="45" height="24" rx="2" fill="${theme.primary}"/>
+          <text x="22.5" y="17" text-anchor="middle" fill="#ffffff" font-family="Trebuchet MS, Arial, sans-serif" font-size="13" font-weight="900">${escapeHtml(role)}</text>
+        </g>
+        <text x="218" y="288" text-anchor="end" fill="${theme.primary}" font-family="Trebuchet MS, Arial, sans-serif" font-size="21" font-weight="900">${escapeHtml(sticker.numero)}</text>
+        ${crest}
+        <rect x="2" y="2" width="228" height="304" rx="5" fill="none" stroke="${theme.primary}" stroke-width="4"/>
+      </svg>
+    `;
+  }
+
   function stickerCard(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
@@ -385,19 +459,34 @@
     const photoAction = progress.state === "missing"
       ? `Marcar ${name} como conseguido`
       : `Quitar ${name} de la colección`;
-    const visualClass = sticker.digital_group === "ESCUDO"
-      ? "sticker-visual sticker-visual-crest"
-      : "sticker-visual";
-    const visual = sticker.imagen_url
+    const provisionalImage = sticker.imagen_provisional === "true";
+    const placeholderMarkup = provisionalImage ? placeholderSticker(sticker) : "";
+    const visualClass = [
+      "sticker-visual",
+      sticker.digital_group === "ESCUDO" ? "sticker-visual-crest" : "",
+      provisionalImage ? "sticker-visual-placeholder" : "",
+    ].filter(Boolean).join(" ");
+    const imageAlt = provisionalImage
+      ? `Imagen provisional de ${sticker.seccion}`
+      : name;
+    const visual = placeholderMarkup
+      ? `
+        <button class="${visualClass}" type="button" data-photo-toggle aria-label="${escapeHtml(photoAction)}. ${escapeHtml(imageAlt)}">
+          <span class="sticker-image placeholder-inline" role="img" aria-label="${escapeHtml(imageAlt)}">${placeholderMarkup}</span>
+          <span class="placeholder-badge">Provisional</span>
+        </button>
+      `
+      : sticker.imagen_url
       ? `
         <button class="${visualClass}" type="button" data-photo-toggle aria-label="${escapeHtml(photoAction)}">
           <img
             class="sticker-image"
             src="${escapeHtml(sticker.imagen_url)}"
-            alt="${escapeHtml(name)}"
+            alt="${escapeHtml(imageAlt)}"
             loading="lazy"
             referrerpolicy="no-referrer"
           >
+          ${provisionalImage ? '<span class="placeholder-badge">Provisional</span>' : ""}
         </button>
       `
       : `

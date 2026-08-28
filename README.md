@@ -6,18 +6,21 @@
 
 ## Funciones
 
-- 514 cromos y variantes del checklist físico.
+- 514 cromos y variantes del checklist físico, más 66 huecos provisionales de
+  Últimos Fichajes y 3 de Top Fichajes.
 - Buscador y filtros por equipo, sección y estado.
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
 - Confirmación antes de retirar un cromo de la colección.
 - Decisión personal `No pegar`, inicializada desde la recomendación de Transfermarkt.
 - Contador y vista de cromos repetidos.
 - Progreso local sin conexión y sincronización opcional por cuenta.
-- Imágenes asociadas de forma conservadora por jugador y equipo.
+- Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
+  foto oficial se dibujan en la propia web con el escudo y la foto de
+  Transfermarkt, los colores del equipo y los datos pendientes marcados.
 - Estrategia de pegado basada en plantillas de Transfermarkt.
 - Importación y exportación del progreso.
 - Importación mediante el texto de «Compartir lista» de Figuritas App, con
-  revisión previa de faltantes, conseguidos y repetidos.
+  revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 
@@ -27,8 +30,15 @@ Regenerar los datos y el álbum:
 
 ```powershell
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
+.\.venv\Scripts\python.exe generar_fotos_transfermarkt.py
 .\.venv\Scripts\python.exe generar_album.py
 ```
+
+`generar_fotos_transfermarkt.py` lee las plantillas ya cacheadas en
+`.cache_transfermarkt/` y produce `fotos_transfermarkt.csv` con el escudo, el
+dorsal y la foto de cada jugador. El álbum usa esos datos para dibujar los
+cromos que todavía no tienen imagen oficial, sin copiar ninguna imagen al
+repositorio.
 
 Ejecutar las pruebas:
 

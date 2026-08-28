@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 
@@ -14,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
   <header class="topbar">
@@ -137,14 +139,88 @@ HTML_TEMPLATE = """<!doctype html>
     </div>
   </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
+  <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=15"></script>
+  <script src="app.js?v=35"></script>
   <script src="cloud-sync.js?v=13"></script>
   <script src="social.js?v=14"></script>
 </body>
 </html>
 """
+
+PENDING_UPDATE_SECTIONS = (
+    ("ÚLTIMOS FICHAJES", "ULTIMOS-FICHAJES", range(1, 67), "Último fichaje"),
+    ("TOP FICHAJES", "TOP-FICHAJES", range(67, 70), "Top fichaje"),
+)
+
+PLACEHOLDER_THEMES = {
+    "DEPORTIVO ALAVÉS": ("alaves", "ALA", "#0b4da2", "#f4f7fb", "#79b8f3"),
+    "ATHLETIC CLUB DE BILBAO": ("athletic", "ATH", "#d71920", "#f7f3eb", "#111111"),
+    "ATLÉTICO DE MADRID": ("atletico", "ATM", "#c8102e", "#f5f3ed", "#1b2b5b"),
+    "FC BARCELONA": ("barcelona", "BAR", "#004d98", "#a50044", "#edbb00"),
+    "REAL BETIS": ("betis", "BET", "#159447", "#f5f7f1", "#0b5f35"),
+    "RC CELTA DE VIGO": ("celta", "CEL", "#7cc7e8", "#f5f7f4", "#b21f3d"),
+    "DEPORTIVO": ("deportivo", "DEP", "#1d62a7", "#f5f7f4", "#77b5e8"),
+    "ELCHE CF": ("elche", "ELC", "#15733c", "#f6f7f2", "#b9d631"),
+    "RCD ESPANYOL": ("espanyol", "ESP", "#1474b8", "#f7f5ef", "#202c5f"),
+    "GETAFE CF": ("getafe", "GET", "#1459a6", "#f4f6f8", "#e31d2b"),
+    "LEVANTE UD": ("levante", "LEV", "#b61f3e", "#174b8f", "#e6b534"),
+    "REAL MADRID CF": ("real-madrid", "RMA", "#f4f4ef", "#7851a9", "#d7b64c"),
+    "MALAGA CF": ("malaga", "MAL", "#62b5e5", "#f7f5ef", "#193b70"),
+    "OSASUNA": ("osasuna", "OSA", "#c8102e", "#172a54", "#d7b640"),
+    "RACING DE SANTANDER": ("racing", "RAC", "#168047", "#f5f6ef", "#111111"),
+    "RAYO VALLECANO": ("rayo", "RAY", "#f5f4ee", "#d71920", "#1d1d1b"),
+    "REAL SOCIEDAD": ("real-sociedad", "RSO", "#1672b8", "#f6f5ef", "#89c8e8"),
+    "SEVILLA": ("sevilla", "SEV", "#d71920", "#f7f5ef", "#111111"),
+    "VALENCIA": ("valencia", "VAL", "#f28c28", "#1d1d1b", "#f5f3ed"),
+    "VILLARREAL": ("villarreal", "VIL", "#f3d332", "#1259a5", "#f7f3d4"),
+    "DRAFT 23": ("draft-23", "D23", "#702963", "#f2c14e", "#15172b"),
+    "DRAFT 23 KROMIX": ("draft-23-kromix", "KX", "#1f2937", "#d946ef", "#22d3ee"),
+    "ÚLTIMOS FICHAJES": ("ultimos-fichajes", "UF", "#006f51", "#e8f4ec", "#c8a64b"),
+    "TOP FICHAJES": ("top-fichajes", "TOP", "#191919", "#d7b44a", "#f5efe0"),
+}
+GENERIC_PLACEHOLDER_THEME = ("general", "LALIGA", "#315b4a", "#edf1eb", "#c8a64b")
+
+
+def normalize_name(value: str) -> str:
+    text = unicodedata.normalize("NFD", str(value or ""))
+    text = "".join(char for char in text if unicodedata.category(char) != "Mn")
+    text = re.sub(r"[^a-zA-Z0-9 ]+", " ", text)
+    return " ".join(text.lower().split())
+
+
+def pending_update_stickers() -> list[dict[str, str]]:
+    stickers = []
+    for section, id_prefix, numbers, sticker_type in PENDING_UPDATE_SECTIONS:
+        for number in numbers:
+            stickers.append(
+                {
+                    "id": f"{id_prefix}-{number:02d}",
+                    "seccion": section,
+                    "numero": str(number),
+                    "hueco_album": "",
+                    "variante": "",
+                    "nombre": "",
+                    "tipo": sticker_type,
+                    "club_objetivo": "",
+                    "estado_plantilla": "pendiente_publicacion",
+                    "accion": "ESPERAR",
+                    "coincidencia_transfermarkt": "",
+                    "confianza": "",
+                    "comprobado_en": "",
+                    "notas": "Pendiente del listado oficial de una actualización de Panini.",
+                    "imagen_url": "",
+                    "digital_label": "",
+                    "digital_group": "",
+                    "metodo_coincidencia": "",
+                    "imagen_provisional": "",
+                    "foto_url": "",
+                    "escudo_url": "",
+                    "dorsal": "",
+                }
+            )
+    return stickers
 
 
 def load_stickers(
@@ -183,23 +259,99 @@ def load_stickers(
         row["digital_label"] = image.get("digital_label", "")
         row["digital_group"] = image.get("digital_group", "")
         row["metodo_coincidencia"] = image.get("metodo_coincidencia", "")
+        row["imagen_provisional"] = ""
+        row["foto_url"] = ""
+        row["escudo_url"] = ""
+        row["dorsal"] = ""
+    rows.extend(pending_update_stickers())
     return rows
+
+
+def load_player_photos(path: Path | None) -> dict[str, dict[str, str]]:
+    if not path or not path.exists():
+        return {}
+    with path.open(encoding="utf-8-sig", newline="") as source:
+        return {
+            row["jugador_normalizado"]: row
+            for row in csv.DictReader(source)
+            if row.get("jugador_normalizado") and row.get("foto_url")
+        }
+
+
+def reliable_match(sticker: dict[str, str], minimum: float = 0.9) -> bool:
+    """Sólo aceptamos la foto cuando la coincidencia con Transfermarkt es
+    suficientemente fiable; con nombres cortos el emparejamiento parcial
+    puede señalar a un jugador distinto."""
+    if sticker["estado_plantilla"] != "en_plantilla":
+        return False
+    try:
+        return float(sticker["confianza"]) >= minimum
+    except (TypeError, ValueError):
+        return False
 
 
 def generate(
     csv_path: Path,
     output_path: Path,
     image_mapping_path: Path | None = Path("imagenes_panini.csv"),
+    photo_mapping_path: Path | None = Path("fotos_transfermarkt.csv"),
 ) -> int:
     stickers = load_stickers(csv_path, image_mapping_path)
+    photos = load_player_photos(photo_mapping_path)
+    crests_by_section = {
+        sticker["seccion"]: sticker["imagen_url"]
+        for sticker in stickers
+        if sticker["digital_group"] == "ESCUDO" and sticker["imagen_url"]
+    }
+    used_sections: set[str] = set()
+    for sticker in stickers:
+        if sticker["imagen_url"]:
+            continue
+        sticker["imagen_provisional"] = "true"
+        sticker["escudo_url"] = crests_by_section.get(sticker["seccion"], "")
+        player = (
+            photos.get(normalize_name(sticker["coincidencia_transfermarkt"]))
+            if reliable_match(sticker)
+            else None
+        )
+        if player:
+            sticker["foto_url"] = player["foto_url"]
+            sticker["dorsal"] = player["dorsal"]
+        used_sections.add(sticker["seccion"])
+    themes = {
+        section: {
+            "code": code,
+            "primary": primary,
+            "secondary": secondary,
+            "accent": accent,
+        }
+        for section, (_, code, primary, secondary, accent) in PLACEHOLDER_THEMES.items()
+        if section in used_sections
+    }
+    _, generic_code, generic_primary, generic_secondary, generic_accent = (
+        GENERIC_PLACEHOLDER_THEME
+    )
+    themes["*"] = {
+        "code": generic_code,
+        "primary": generic_primary,
+        "secondary": generic_secondary,
+        "accent": generic_accent,
+    }
     serialized = json.dumps(
         stickers,
         ensure_ascii=False,
         separators=(",", ":"),
     ).replace("</", r"<\/")
+    serialized_themes = json.dumps(
+        themes,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("</", r"<\/")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        HTML_TEMPLATE.replace("__ALBUM_DATA__", serialized),
+        HTML_TEMPLATE
+        .replace("__ALBUM_DATA__", serialized)
+        .replace("__ALBUM_PLACEHOLDERS__", serialized_themes),
         encoding="utf-8",
     )
     return len(stickers)
@@ -224,8 +376,13 @@ def main() -> None:
         type=Path,
         default=Path("imagenes_panini.csv"),
     )
+    parser.add_argument(
+        "--fotos",
+        type=Path,
+        default=Path("fotos_transfermarkt.csv"),
+    )
     args = parser.parse_args()
-    total = generate(args.csv, args.salida, args.imagenes)
+    total = generate(args.csv, args.salida, args.imagenes, args.fotos)
     print(f"Generado {args.salida} con {total} cromos.")
 
 
