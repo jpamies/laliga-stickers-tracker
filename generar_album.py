@@ -14,7 +14,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
   <header class="topbar">
@@ -109,10 +109,37 @@ HTML_TEMPLATE = """<!doctype html>
   <dialog class="social-dialog" id="social-dialog">
     <div id="social-content"></div>
   </dialog>
+  <dialog class="import-dialog" id="import-dialog">
+    <div class="import-header">
+      <div>
+        <span>Actualizar colección</span>
+        <h2>Importar progreso</h2>
+      </div>
+      <button class="social-close" id="import-close" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div class="import-body">
+      <section class="import-section">
+        <strong>Desde Figuritas App</strong>
+        <p>Pega el texto completo de «Compartir lista». Podrás revisarlo antes de aplicarlo.</p>
+        <textarea id="figuritas-text" maxlength="100000" placeholder="Figuritas App - Lista&#10;LaLiga 26/27..."></textarea>
+        <div class="import-actions">
+          <button class="button" id="figuritas-preview" type="button">Revisar importación</button>
+        </div>
+        <div class="import-preview hidden" id="figuritas-preview-result" aria-live="polite"></div>
+      </section>
+      <section class="import-section import-json">
+        <div>
+          <strong>Desde una copia de seguridad</strong>
+          <p>Importa un archivo JSON exportado anteriormente desde este álbum.</p>
+        </div>
+        <button class="button secondary" id="import-json" type="button">Elegir archivo JSON</button>
+      </section>
+    </div>
+  </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
   <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=13"></script>
+  <script src="app.js?v=15"></script>
   <script src="cloud-sync.js?v=13"></script>
   <script src="social.js?v=14"></script>
 </body>

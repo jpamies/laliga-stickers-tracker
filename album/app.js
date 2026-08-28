@@ -15,6 +15,36 @@
   };
   const validStates = new Set(["missing", "owned"]);
   const validStickDecisions = new Set(["default", "dont-stick", "stick"]);
+  const figuritasSections = {
+    ALA: "DEPORTIVO ALAVÉS",
+    ATH: "ATHLETIC CLUB DE BILBAO",
+    ATM: "ATLÉTICO DE MADRID",
+    BAR: "FC BARCELONA",
+    BET: "REAL BETIS",
+    CEL: "RC CELTA DE VIGO",
+    DEP: "DEPORTIVO",
+    ELC: "ELCHE CF",
+    ESP: "RCD ESPANYOL",
+    GET: "GETAFE CF",
+    LEV: "LEVANTE UD",
+    RMA: "REAL MADRID CF",
+    MAL: "MALAGA CF",
+    OSA: "OSASUNA",
+    RAC: "RACING DE SANTANDER",
+    RAY: "RAYO VALLECANO",
+    RSO: "REAL SOCIEDAD",
+    SEV: "SEVILLA",
+    VAL: "VALENCIA",
+    VIL: "VILLARREAL",
+    ADN: "ADN / LALIGA PRIME",
+    FAN: "LALIGA FANTASY",
+    DRA: "DRAFT 23",
+    K: "DRAFT 23 KROMIX",
+    BRO: "EXTRA STICKER BRONCE",
+    PLA: "EXTRA STICKER PLATA",
+    ORO: "EXTRA STICKER ORO",
+  };
+  const figuritasUnsupportedSections = new Set(["UF", "TOP"]);
 
   const state = {
     view: "album",
@@ -24,6 +54,7 @@
     progress: loadProgress(),
     readOnly: false,
   };
+  let pendingFiguritasImport = null;
 
   const elements = {
     collection: document.querySelector("#collection"),
@@ -46,6 +77,12 @@
     exportButton: document.querySelector("#export-progress"),
     importButton: document.querySelector("#import-progress"),
     importInput: document.querySelector("#import-file"),
+    importDialog: document.querySelector("#import-dialog"),
+    importClose: document.querySelector("#import-close"),
+    importJsonButton: document.querySelector("#import-json"),
+    figuritasText: document.querySelector("#figuritas-text"),
+    figuritasPreviewButton: document.querySelector("#figuritas-preview"),
+    figuritasPreview: document.querySelector("#figuritas-preview-result"),
     toast: document.querySelector("#toast"),
   };
 
@@ -119,6 +156,158 @@
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
+  }
+
+  function figuritasNumber(sticker, indexInSection) {
+    if (sticker.seccion.startsWith("EXTRA STICKER ")) {
+      return String(indexInSection + 1);
+    }
+    return String(sticker.numero || "").trim().toUpperCase();
+  }
+
+  function parseFiguritasToken(value) {
+    const clean = value.trim().toUpperCase();
+    const match = clean.match(/^([A-Z]?\d+[A-Z]?)(?:\s*\(([X×]\s*)?(\d+)\))?$/);
+    if (!match) return { number: clean, copies: 2 };
+    const quantity = Number(match[3] || 0);
+    return {
+      number: match[1],
+      copies: quantity > 0 ? quantity + (match[2] ? 1 : 0) : 2,
+    };
+  }
+
+  function parseFiguritasList(text) {
+    if (typeof text !== "string" || text.length > 100000) {
+      throw new Error("El texto es demasiado largo.");
+    }
+    const lines = text.replace(/\r/g, "").split("\n").map((line) => line.trim());
+    if (!lines.some((line) => /^Figuritas App\s*-\s*Lista$/i.test(line))) {
+      throw new Error("No se reconoce una lista compartida por Figuritas App.");
+    }
+    if (!lines.some((line) => /^LaLiga\s+26\/27\b/i.test(line))) {
+      throw new Error("La lista no corresponde a LaLiga 26/27.");
+    }
+
+    const missing = new Map();
+    const duplicates = new Map();
+    const unsupported = [];
+    const unknownCodes = [];
+    let mode = "";
+    for (const line of lines) {
+      if (/^Me faltan$/i.test(line)) {
+        mode = "missing";
+        continue;
+      }
+      if (/^Repetidas$/i.test(line)) {
+        mode = "duplicates";
+        continue;
+      }
+      if (!mode || !line || /^Descarga la app$/i.test(line) || /^https?:\/\//i.test(line)) {
+        continue;
+      }
+      const match = line.match(/^([A-Z]{1,4})(?:\s+[^:]*)?:\s*(.+)$/i);
+      if (!match) continue;
+      const code = match[1].toUpperCase();
+      const tokens = match[2].split(",")
+        .map(parseFiguritasToken)
+        .filter((token) => token.number);
+      if (figuritasUnsupportedSections.has(code)) {
+        unsupported.push(...tokens.map((token) => `${code}:${token.number}`));
+        continue;
+      }
+      const section = figuritasSections[code];
+      if (!section) {
+        unknownCodes.push(code);
+        continue;
+      }
+      const target = mode === "missing" ? missing : duplicates;
+      if (!target.has(section)) target.set(section, mode === "missing" ? new Set() : new Map());
+      tokens.forEach((token) => {
+        if (mode === "missing") {
+          target.get(section).add(token.number);
+        } else {
+          target.get(section).set(token.number, token.copies);
+        }
+      });
+    }
+
+    const importedSections = new Set([...missing.keys(), ...duplicates.keys()]);
+    if (!importedSections.size && !unsupported.length) {
+      throw new Error("No se encontraron cromos importables.");
+    }
+    const imported = {};
+    const unmatched = [];
+    let missingCount = 0;
+    let ownedCount = 0;
+    let duplicateCount = 0;
+    for (const section of importedSections) {
+      const sectionStickers = data.filter((sticker) => sticker.seccion === section);
+      const knownNumbers = new Set();
+      sectionStickers.forEach((sticker, index) => {
+        const number = figuritasNumber(sticker, index);
+        knownNumbers.add(number);
+        const previous = progressFor(sticker.id);
+        let copies = 1;
+        if (missing.get(section)?.has(number)) copies = 0;
+        const duplicateCopies = duplicates.get(section)?.get(number);
+        if (duplicateCopies) copies = Math.max(previous.copies, duplicateCopies);
+        if (copies === 0) missingCount += 1;
+        else ownedCount += 1;
+        if (copies >= 2) duplicateCount += 1;
+        imported[sticker.id] = {
+          state: copies > 0 ? "owned" : "missing",
+          copies,
+          stickDecision: previous.stickDecision,
+        };
+      });
+      for (const number of missing.get(section) || []) {
+        if (!knownNumbers.has(number)) unmatched.push(`${section}:${number}`);
+      }
+      for (const number of duplicates.get(section)?.keys() || []) {
+        if (!knownNumbers.has(number)) unmatched.push(`${section}:${number}`);
+      }
+    }
+    return {
+      progress: imported,
+      sectionCount: importedSections.size,
+      missingCount,
+      ownedCount,
+      duplicateCount,
+      unsupported,
+      unmatched,
+      unknownCodes: [...new Set(unknownCodes)],
+    };
+  }
+
+  function renderFiguritasPreview(result) {
+    const warnings = [];
+    if (result.unsupported.length) {
+      warnings.push(`${result.unsupported.length} referencias UF/TOP ignoradas porque no existen en este álbum.`);
+    }
+    if (result.unmatched.length) {
+      warnings.push(`${result.unmatched.length} números no coinciden con ningún cromo físico.`);
+    }
+    if (result.unknownCodes.length) {
+      warnings.push(`Códigos desconocidos: ${result.unknownCodes.join(", ")}.`);
+    }
+    elements.figuritasPreview.classList.remove("hidden");
+    elements.figuritasPreview.replaceChildren();
+    const summary = document.createElement("p");
+    summary.textContent = `${result.sectionCount} secciones: ${result.ownedCount} conseguidos, ${result.missingCount} faltantes y ${result.duplicateCount} repetidos.`;
+    elements.figuritasPreview.append(summary);
+    warnings.forEach((warning) => {
+      const item = document.createElement("p");
+      item.className = "import-warning";
+      item.textContent = warning;
+      elements.figuritasPreview.append(item);
+    });
+    if (!result.sectionCount) return;
+    const apply = document.createElement("button");
+    apply.className = "button";
+    apply.type = "button";
+    apply.dataset.applyFiguritas = "";
+    apply.textContent = "Aplicar importación";
+    elements.figuritasPreview.append(apply);
   }
 
   function matchesSearch(sticker) {
@@ -565,7 +754,57 @@
     showToast("Progreso exportado.");
   });
 
-  elements.importButton.addEventListener("click", () => elements.importInput.click());
+  elements.importButton.addEventListener("click", () => {
+    pendingFiguritasImport = null;
+    elements.figuritasText.value = "";
+    elements.figuritasPreview.replaceChildren();
+    elements.figuritasPreview.classList.add("hidden");
+    elements.importDialog.showModal();
+  });
+
+  elements.importClose.addEventListener("click", () => elements.importDialog.close());
+
+  elements.importDialog.addEventListener("click", (event) => {
+    if (event.target === elements.importDialog) {
+      elements.importDialog.close();
+    }
+  });
+
+  elements.importJsonButton.addEventListener("click", () => elements.importInput.click());
+
+  elements.figuritasPreviewButton.addEventListener("click", () => {
+    try {
+      pendingFiguritasImport = parseFiguritasList(elements.figuritasText.value);
+      renderFiguritasPreview(pendingFiguritasImport);
+    } catch (error) {
+      pendingFiguritasImport = null;
+      elements.figuritasPreview.classList.remove("hidden");
+      elements.figuritasPreview.replaceChildren();
+      const message = document.createElement("p");
+      message.className = "import-warning";
+      message.textContent = error instanceof Error ? error.message : "No se pudo leer la lista.";
+      elements.figuritasPreview.append(message);
+    }
+  });
+
+  elements.figuritasText.addEventListener("input", () => {
+    pendingFiguritasImport = null;
+    elements.figuritasPreview.replaceChildren();
+    elements.figuritasPreview.classList.add("hidden");
+  });
+
+  elements.figuritasPreview.addEventListener("click", (event) => {
+    if (!event.target.closest("[data-apply-figuritas]") || !pendingFiguritasImport) return;
+    window.PaniniAlbum.replaceProgress({
+      ...state.progress,
+      ...pendingFiguritasImport.progress,
+    }, {
+      notify: true,
+      stampEntries: true,
+    });
+    elements.importDialog.close();
+    showToast("Lista de Figuritas App importada.");
+  });
 
   elements.importInput.addEventListener("change", async () => {
     const file = elements.importInput.files[0];
@@ -580,6 +819,7 @@
         notify: true,
         stampEntries: true,
       });
+      elements.importDialog.close();
       showToast("Progreso importado correctamente.");
     } catch {
       showToast("No se pudo importar ese archivo.");
@@ -626,6 +866,7 @@
         }));
       }
     },
+    parseFiguritasList,
   };
 
   initializeSections();

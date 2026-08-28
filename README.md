@@ -16,6 +16,8 @@
 - Imágenes asociadas de forma conservadora por jugador y equipo.
 - Estrategia de pegado basada en plantillas de Transfermarkt.
 - Importación y exportación del progreso.
+- Importación mediante el texto de «Compartir lista» de Figuritas App, con
+  revisión previa de faltantes, conseguidos y repetidos.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 
