@@ -1192,6 +1192,31 @@ button {
   color: var(--amber);
 }
 
+.import-log {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid rgba(28, 43, 34, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 253, 248, 0.7);
+}
+
+.import-log summary {
+  cursor: pointer;
+  color: var(--green-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.import-log ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  max-height: 160px;
+  overflow-y: auto;
+  color: var(--green-dark);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .import-json {
   display: flex;
   align-items: center;

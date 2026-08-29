@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=18">
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
   <header class="topbar">
@@ -67,6 +67,7 @@ HTML_TEMPLATE = """<!doctype html>
           <p class="eyebrow">Navegación</p>
           <h2 id="section-menu-title">Secciones del álbum</h2>
         </div>
+        <button class="button secondary hidden" id="section-clear" type="button">Borrar selección</button>
       </div>
       <nav class="section-menu" id="section-menu" aria-label="Filtrar por equipo o sección"></nav>
       <div class="section-menu-pager" aria-label="Cambiar de sección">
@@ -142,7 +143,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=35"></script>
+  <script src="app.js?v=36"></script>
   <script src="cloud-sync.js?v=13"></script>
   <script src="social.js?v=14"></script>
 </body>

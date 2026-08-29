@@ -8,7 +8,8 @@
 
 - 514 cromos y variantes del checklist físico, más 66 huecos provisionales de
   Últimos Fichajes y 3 de Top Fichajes.
-- Buscador y filtros por equipo, sección y estado.
+- Buscador y filtros por equipo, sección y estado, con botón para borrar la
+  sección seleccionada.
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
 - Confirmación antes de retirar un cromo de la colección.
 - Decisión personal `No pegar`, inicializada desde la recomendación de Transfermarkt.
@@ -20,7 +21,8 @@
 - Estrategia de pegado basada en plantillas de Transfermarkt.
 - Importación y exportación del progreso.
 - Importación mediante el texto de «Compartir lista» de Figuritas App, con
-  revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`.
+  revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`,
+  y un registro detallado de los números que no se han reconocido.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 

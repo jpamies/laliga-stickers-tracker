@@ -68,6 +68,7 @@
     sectionNext: document.querySelector("#section-next"),
     sectionCurrent: document.querySelector("#section-current"),
     sectionPosition: document.querySelector("#section-position"),
+    sectionClear: document.querySelector("#section-clear"),
     filterChips: document.querySelector("#filter-chips"),
     navTabs: document.querySelectorAll(".nav-tab"),
     summaryTotal: document.querySelector("#summary-total"),
@@ -193,7 +194,6 @@
 
     const missing = new Map();
     const duplicates = new Map();
-    const unsupported = [];
     const unknownCodes = [];
     let mode = "";
     for (const line of lines) {
@@ -231,7 +231,7 @@
     }
 
     const importedSections = new Set([...missing.keys(), ...duplicates.keys()]);
-    if (!importedSections.size && !unsupported.length) {
+    if (!importedSections.size) {
       throw new Error("No se encontraron cromos importables.");
     }
     const imported = {};
@@ -272,19 +272,25 @@
       missingCount,
       ownedCount,
       duplicateCount,
-      unsupported,
       unmatched,
       unknownCodes: [...new Set(unknownCodes)],
     };
   }
 
+  function groupUnmatched(unmatched) {
+    const grouped = new Map();
+    for (const entry of unmatched) {
+      const [section, number] = entry.split(":");
+      if (!grouped.has(section)) grouped.set(section, []);
+      grouped.get(section).push(number);
+    }
+    return grouped;
+  }
+
   function renderFiguritasPreview(result) {
     const warnings = [];
-    if (result.unsupported.length) {
-      warnings.push(`${result.unsupported.length} referencias UF/TOP ignoradas porque no existen en este álbum.`);
-    }
     if (result.unmatched.length) {
-      warnings.push(`${result.unmatched.length} números no coinciden con ningún cromo físico.`);
+      warnings.push(`${result.unmatched.length} números no coinciden con ningún cromo de este álbum.`);
     }
     if (result.unknownCodes.length) {
       warnings.push(`Códigos desconocidos: ${result.unknownCodes.join(", ")}.`);
@@ -300,6 +306,23 @@
       item.textContent = warning;
       elements.figuritasPreview.append(item);
     });
+    if (result.unmatched.length) {
+      const details = document.createElement("details");
+      details.className = "import-log";
+      const caption = document.createElement("summary");
+      caption.textContent = "Ver números no reconocidos";
+      details.append(caption);
+      const list = document.createElement("ul");
+      for (const [section, numbers] of groupUnmatched(result.unmatched)) {
+        const row = document.createElement("li");
+        const label = document.createElement("strong");
+        label.textContent = `${section}: `;
+        row.append(label, document.createTextNode(numbers.join(", ")));
+        list.append(row);
+      }
+      details.append(list);
+      elements.figuritasPreview.append(details);
+    }
     if (!result.sectionCount) return;
     const apply = document.createElement("button");
     apply.className = "button";
@@ -632,6 +655,7 @@
     elements.sectionPosition.textContent = sectionIndex === -1
       ? "Vista completa"
       : `${sectionIndex + 1} de ${sections.length}`;
+    elements.sectionClear.classList.toggle("hidden", state.section === "all");
   }
 
   function isMobileLayout() {
@@ -757,6 +781,7 @@
 
   elements.sectionPrevious.addEventListener("click", () => moveBetweenSections(-1));
   elements.sectionNext.addEventListener("click", () => moveBetweenSections(1));
+  elements.sectionClear.addEventListener("click", () => selectSection("all"));
 
   window.addEventListener("popstate", (event) => {
     if (!isMobileLayout()) return;
