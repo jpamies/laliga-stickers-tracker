@@ -539,7 +539,7 @@
           <span>${transfermarkt}</span>
         </div>
         <div class="card-spacer"></div>
-        <div class="copy-row">
+        <div class="copy-row ${progress.copies > 1 ? "copy-row-duplicate" : progress.copies === 1 ? "copy-row-owned" : ""}">
           <span class="copy-label">Copias${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : ""}</span>
           <div class="copy-control">
             <button class="icon-button" type="button" data-copy="-1" aria-label="Quitar una copia">−</button>
@@ -565,6 +565,19 @@
     `;
   }
 
+  function sectionSummary(stickers) {
+    let owned = 0;
+    let missing = 0;
+    let duplicates = 0;
+    for (const sticker of stickers) {
+      const progress = progressFor(sticker.id);
+      if (progress.state === "owned") owned += 1;
+      else missing += 1;
+      if (progress.copies > 1) duplicates += 1;
+    }
+    return { owned, missing, duplicates };
+  }
+
   function render() {
     const visible = visibleStickers();
     const grouped = new Map();
@@ -575,15 +588,23 @@
       grouped.get(sticker.seccion).push(sticker);
     }
 
-    elements.collection.innerHTML = [...grouped.entries()].map(([section, stickers]) => `
+    elements.collection.innerHTML = [...grouped.entries()].map(([section, stickers]) => {
+      const totals = sectionSummary(stickers);
+      return `
       <section class="section-block" id="${sectionId(section)}">
         <div class="section-heading">
           <h2>${escapeHtml(section)}</h2>
-          <span class="section-count">${stickers.length} ${stickers.length === 1 ? "cromo" : "cromos"}</span>
+          <div class="section-totals" aria-label="Resumen de la sección">
+            <span class="section-count">${stickers.length} ${stickers.length === 1 ? "cromo" : "cromos"}</span>
+            <span class="section-tally tally-owned" title="Los tengo">${totals.owned}</span>
+            <span class="section-tally tally-missing" title="Me faltan">${totals.missing}</span>
+            <span class="section-tally tally-duplicates" title="Repetidos">${totals.duplicates}</span>
+          </div>
         </div>
         <div class="sticker-grid">${stickers.map(stickerCard).join("")}</div>
       </section>
-    `).join("");
+    `;
+    }).join("");
 
     if (!visible.length) {
       elements.collection.innerHTML = `

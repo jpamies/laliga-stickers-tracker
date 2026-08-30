@@ -646,6 +646,40 @@ button {
   white-space: nowrap;
 }
 
+.section-totals {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.section-tally {
+  display: grid;
+  min-width: 30px;
+  padding: 3px 8px;
+  place-items: center;
+  border-radius: 99px;
+  font-size: 0.76rem;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+}
+
+.tally-owned {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.tally-missing {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.tally-duplicates {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
 .sticker-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
@@ -885,6 +919,30 @@ button {
   padding: 8px 9px;
   border-radius: 11px;
   background: #f1f2ed;
+  transition: background 180ms ease;
+}
+
+.copy-row-owned {
+  background: var(--green-soft);
+}
+
+.copy-row-owned .copy-label,
+.copy-row-owned .copy-count {
+  color: var(--green);
+}
+
+.copy-row-duplicate {
+  background: var(--red-soft);
+}
+
+.copy-row-duplicate .copy-label,
+.copy-row-duplicate .copy-count {
+  color: #8c2c26;
+}
+
+.copy-row-duplicate .duplicate-pill {
+  color: white;
+  background: var(--red);
 }
 
 .copy-label {

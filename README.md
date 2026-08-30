@@ -13,7 +13,9 @@
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
 - Confirmación antes de retirar un cromo de la colección.
 - Decisión personal `No pegar`, inicializada desde la recomendación de Transfermarkt.
-- Contador y vista de cromos repetidos.
+- Contador y vista de cromos repetidos, con el resumen de conseguidos, faltantes
+  y repetidos en el título de cada sección y la fila de copias en verde cuando
+  tienes un cromo y en rojo cuando está repetido.
 - Progreso local sin conexión y sincronización opcional por cuenta. El progreso
   de invitado y el de cada cuenta se guardan por separado, así que iniciar
   sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso
