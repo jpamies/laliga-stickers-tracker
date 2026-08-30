@@ -92,11 +92,12 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="figuritas-preview"', html)
         self.assertIn('id="section-clear"', html)
         self.assertIn('id="import-json"', html)
-        self.assertIn('src="app.js?v=39"', html)
-        self.assertIn('href="styles.css?v=22"', html)
+        self.assertIn('src="app.js?v=40"', html)
+        self.assertIn('href="styles.css?v=23"', html)
         self.assertIn('src="cloud-config.js?v=14"', html)
         self.assertIn('src="cloud-sync.js?v=14"', html)
-        self.assertIn('src="social.js?v=15"', html)
+        self.assertIn('src="social.js?v=16"', html)
+        self.assertIn('data-view="friends"', html)
 
 
 if __name__ == "__main__":

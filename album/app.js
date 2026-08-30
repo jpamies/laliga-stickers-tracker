@@ -57,6 +57,7 @@
     filter: "all",
     storageScope: GUEST_SCOPE,
     progress: {},
+    preview: null,
     readOnly: false,
   };
   state.progress = loadProgress();
@@ -153,7 +154,8 @@
   }
 
   function progressFor(id) {
-    return state.progress[id] || defaultEntry();
+    const source = state.preview ? state.preview.progress : state.progress;
+    return source[id] || defaultEntry();
   }
 
   function shouldNotStick(sticker, progress = progressFor(sticker.id)) {
@@ -579,6 +581,17 @@
   }
 
   function render() {
+    document.body.classList.toggle("previewing", Boolean(state.preview));
+    if (state.view === "friends" && !state.preview) {
+      elements.collection.innerHTML = '<div class="friends-panel" id="friends-panel"></div>';
+      document.dispatchEvent(new CustomEvent("panini:friends-render", {
+        detail: { container: document.querySelector("#friends-panel") },
+      }));
+      elements.resultsLabel.textContent = "Amigos";
+      updateSummary();
+      return;
+    }
+
     const visible = visibleStickers();
     const grouped = new Map();
     for (const sticker of visible) {
@@ -588,7 +601,15 @@
       grouped.get(sticker.seccion).push(sticker);
     }
 
-    elements.collection.innerHTML = [...grouped.entries()].map(([section, stickers]) => {
+    elements.collection.innerHTML = (state.preview
+      ? `<div class="preview-banner">
+          <div>
+            <strong>Álbum de ${escapeHtml(state.preview.ownerName)}</strong>
+            <small>Sólo lectura. No puedes modificar sus cromos.</small>
+          </div>
+          <button class="button secondary" type="button" data-exit-preview>Volver a mi álbum</button>
+        </div>`
+      : "") + [...grouped.entries()].map(([section, stickers]) => {
       const totals = sectionSummary(stickers);
       return `
       <section class="section-block" id="${sectionId(section)}">
@@ -609,7 +630,7 @@
     if (!visible.length) {
       elements.collection.innerHTML = `
         <div class="empty-state">
-          <strong>${state.view === "duplicates" ? "Todavía no tienes repetidos" : "No hay resultados"}</strong>
+          <strong>${state.view === "duplicates" ? "Todavía no hay repetidos" : "No hay resultados"}</strong>
           ${state.view === "duplicates"
             ? "Añade dos o más copias de un cromo para verlo aquí."
             : "Prueba con otra búsqueda, equipo o filtro."}
@@ -737,6 +758,7 @@
   }
 
   function updateSticker(id, updater) {
+    if (state.preview || state.readOnly) return;
     const current = { ...progressFor(id) };
     const next = { ...updater(current), updatedAt: new Date().toISOString() };
     if (next.state === "missing") {
@@ -832,6 +854,7 @@
 
   elements.navTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      state.preview = null;
       state.view = tab.dataset.view;
       state.filter = "all";
       elements.navTabs.forEach((item) => item.classList.toggle("active", item === tab));
@@ -843,7 +866,11 @@
   });
 
   elements.collection.addEventListener("click", (event) => {
-    if (state.readOnly) return;
+    if (event.target.closest("[data-exit-preview]")) {
+      window.PaniniAlbum.exitPreview();
+      return;
+    }
+    if (state.readOnly || state.preview) return;
     const card = event.target.closest(".sticker-card");
     if (!card) return;
     const id = card.dataset.id;
@@ -973,6 +1000,31 @@
   window.PaniniAlbum = {
     getProgress: () => structuredClone(state.progress),
     isReadOnly: () => state.readOnly,
+    isPreviewing: () => Boolean(state.preview),
+    previewFriend(ownerName, progress) {
+      state.preview = { ownerName, progress: cleanProgress(progress) };
+      state.view = "album";
+      state.filter = "all";
+      state.query = "";
+      elements.search.value = "";
+      elements.navTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.view === "album");
+      });
+      elements.filterChips.querySelectorAll("[data-filter]").forEach((item) => {
+        item.classList.toggle("active", item.dataset.filter === "all");
+      });
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    exitPreview() {
+      if (!state.preview) return;
+      state.preview = null;
+      state.view = "friends";
+      elements.navTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.view === "friends");
+      });
+      render();
+    },
     getStorageScope: () => state.storageScope,
     showToast,
     setStorageScope(scope) {

@@ -244,6 +244,88 @@
     }
   }
 
+  function friendSummary(friend) {
+    const theirs = friend.progress || {};
+    let owned = 0;
+    let duplicates = 0;
+    for (const entry of Object.values(theirs)) {
+      if (entry.state === "owned" || entry.copies > 0) owned += 1;
+      if (entry.copies >= 2) duplicates += 1;
+    }
+    return { owned, duplicates, missing: stickers.size - owned };
+  }
+
+  function renderFriendsPanel(container) {
+    if (!container) return;
+    if (!user) {
+      container.innerHTML = `
+        <div class="friends-empty">
+          <strong>Inicia sesión para ver a tus amigos</strong>
+          <p>Con una cuenta puedes comparar colecciones, proponer intercambios y ver sus álbumes.</p>
+          <button class="button" type="button" data-social-login>Iniciar sesión</button>
+        </div>
+      `;
+      return;
+    }
+    const inviteUrl = profile ? `${baseUrl()}?friend=${profile.inviteToken}` : "";
+    const cards = friends.map((friend) => {
+      const totals = friendSummary(friend);
+      const comparison = comparisons(friend);
+      return `
+        <article class="friend-card">
+          <header>
+            ${friend.avatar_url
+              ? `<img src="${escapeHtml(friend.avatar_url)}" alt="" referrerpolicy="no-referrer">`
+              : '<span class="friend-avatar">●</span>'}
+            <div>
+              <strong>${escapeHtml(friend.display_name)}</strong>
+              <small>${totals.owned} cromos · ${totals.duplicates} repetidos</small>
+            </div>
+          </header>
+          <p class="friend-trade-summary">
+            <span class="friend-tally tally-owned">${comparison.friendCanGive.length}</span> te puede dar
+            <span class="friend-tally tally-duplicates">${comparison.iCanGive.length}</span> le puedes dar
+          </p>
+          <div class="friend-actions">
+            <button class="button secondary" type="button" data-open-friend-album="${escapeHtml(friend.user_id)}">Ver su álbum</button>
+            <button class="button" type="button" data-open-friend-trade="${escapeHtml(friend.user_id)}">Intercambiar</button>
+          </div>
+        </article>
+      `;
+    }).join("");
+    container.innerHTML = `
+      <div class="friends-toolbar">
+        <div>
+          <strong>Mis amigos</strong>
+          <small>${friends.length} ${friends.length === 1 ? "amigo" : "amigos"}</small>
+        </div>
+        <div class="friends-toolbar-actions">
+          ${inviteUrl ? `<button class="button secondary" type="button" data-share-url="${escapeHtml(inviteUrl)}">Invitar</button>` : ""}
+          <button class="button" type="button" data-open-trades>Propuestas</button>
+        </div>
+      </div>
+      ${cards || '<div class="friends-empty"><strong>Todavía no tienes amigos</strong><p>Comparte tu invitación para comparar colecciones y proponer intercambios.</p></div>'}
+    `;
+  }
+
+  async function refreshFriendsPanel(container) {
+    const target = container || document.querySelector("#friends-panel");
+    if (!target) return;
+    if (!user || !client) {
+      renderFriendsPanel(target);
+      return;
+    }
+    target.innerHTML = '<p class="social-empty">Cargando amigos…</p>';
+    try {
+      if (!profile) await ensureProfile();
+      await loadFriends();
+      renderFriendsPanel(target);
+    } catch (error) {
+      console.error("No se pudieron cargar los amigos.", error);
+      target.innerHTML = '<div class="friends-empty"><strong>No se pudieron cargar tus amigos</strong><p>Comprueba tu conexión e inténtalo de nuevo.</p></div>';
+    }
+  }
+
   async function ensureProfile() {
     if (!user) return;
     const displayName = user.fullName || user.firstName || "Coleccionista";
@@ -350,6 +432,7 @@
     try {
       await ensureProfile();
       await renderInviteConfirmation();
+      await refreshFriendsPanel();
     } catch (error) {
       console.error("No se pudo preparar la función social.", error);
     }
@@ -451,6 +534,42 @@
         p_status: response.dataset.status,
       });
       await renderTrades();
+    }
+  });
+
+  document.addEventListener("panini:friends-render", (event) => {
+    refreshFriendsPanel(event.detail.container);
+  });
+
+  document.addEventListener("click", async (event) => {
+    const albumButton = event.target.closest("[data-open-friend-album]");
+    if (albumButton) {
+      const friend = friends.find((item) => item.user_id === albumButton.dataset.openFriendAlbum);
+      if (friend) album.previewFriend(friend.display_name, friend.progress || {});
+      return;
+    }
+    const tradeButton = event.target.closest("[data-open-friend-trade]");
+    if (tradeButton) {
+      const friend = friends.find((item) => item.user_id === tradeButton.dataset.openFriendTrade);
+      if (!friend) return;
+      activeTab = "friends";
+      renderComparison(friend);
+      dialog.showModal();
+      return;
+    }
+    if (event.target.closest("#friends-panel [data-open-trades]")) {
+      activeTab = "trades";
+      await renderActiveTab();
+      dialog.showModal();
+      return;
+    }
+    const panelShare = event.target.closest("#friends-panel [data-share-url]");
+    if (panelShare) {
+      await shareUrl(panelShare.dataset.shareUrl, "Únete a mi álbum Panini");
+      return;
+    }
+    if (event.target.closest("#friends-panel [data-social-login]")) {
+      window.PaniniCloud?.signIn();
     }
   });
 

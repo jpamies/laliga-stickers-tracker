@@ -1101,12 +1101,142 @@ button {
 .read-only #import-progress,
 .read-only #export-progress,
 .read-only #social-open,
-.read-only .account-panel {
+.read-only .account-panel,
+.previewing .state-controls,
+.previewing .stick-toggle,
+.previewing .copy-control {
   display: none !important;
 }
 
-.read-only .sticker-visual {
+.previewing .sticker-visual {
   cursor: default;
+}
+
+.preview-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--green-soft);
+}
+
+.preview-banner strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.preview-banner small {
+  color: var(--muted);
+}
+
+.friends-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.friends-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.friends-toolbar strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.friends-toolbar small {
+  color: var(--muted);
+}
+
+.friends-toolbar-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.friend-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+
+.friend-card header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.friend-card header img,
+.friend-card .friend-avatar {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.friend-card header strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.friend-card header small {
+  color: var(--muted);
+}
+
+.friend-trade-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.friend-tally {
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+}
+
+.friend-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.friends-empty {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  padding: 22px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.7);
+}
+
+.friends-empty p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .social-dialog,

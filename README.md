@@ -30,6 +30,8 @@
   y un registro detallado de los números que no se han reconocido.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
+- Sección «Amigos» con el resumen de cada amigo, acceso directo al intercambio y
+  vista de su álbum en modo sólo lectura.
 
 ## Desarrollo
 
