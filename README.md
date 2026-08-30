@@ -14,7 +14,10 @@
 - Confirmación antes de retirar un cromo de la colección.
 - Decisión personal `No pegar`, inicializada desde la recomendación de Transfermarkt.
 - Contador y vista de cromos repetidos.
-- Progreso local sin conexión y sincronización opcional por cuenta.
+- Progreso local sin conexión y sincronización opcional por cuenta. El progreso
+  de invitado y el de cada cuenta se guardan por separado, así que iniciar
+  sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso
+  de invitado a tu cuenta, expórtalo e impórtalo tras iniciar sesión.
 - Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
   foto oficial se dibujan en la propia web con el escudo y la foto de
   Transfermarkt, los colores del equipo y los datos pendientes marcados.

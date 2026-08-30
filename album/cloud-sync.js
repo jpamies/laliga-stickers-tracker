@@ -9,12 +9,30 @@
     name: document.querySelector("#account-name"),
     status: document.querySelector("#sync-status"),
   };
-  const updatedKey = "panini-laliga-2026-27-local-updated-at";
-  const syncedKey = "panini-laliga-2026-27-last-synced-at";
+  const updatedKeyBase = "panini-laliga-2026-27-local-updated-at";
+  const syncedKeyBase = "panini-laliga-2026-27-last-synced-at";
+  const guestScope = "guest";
   let client = null;
   let currentUser = null;
   let saveTimer = null;
   let applyingRemote = false;
+
+  function scopeFor(user) {
+    return user ? `user:${user.id}` : guestScope;
+  }
+
+  function scopedKey(base) {
+    const scope = album.getStorageScope();
+    return scope === guestScope ? base : `${base}::${scope}`;
+  }
+
+  function updatedKey() {
+    return scopedKey(updatedKeyBase);
+  }
+
+  function syncedKey() {
+    return scopedKey(syncedKeyBase);
+  }
 
   function setStatus(message, isError = false) {
     elements.status.textContent = message;
@@ -98,8 +116,8 @@
 
   async function saveToCloud() {
     if (!currentUser || !client || applyingRemote || album.isReadOnly()) return;
-    const updatedAt = localStorage.getItem(updatedKey) || new Date().toISOString();
-    localStorage.setItem(updatedKey, updatedAt);
+    const updatedAt = localStorage.getItem(updatedKey()) || new Date().toISOString();
+    localStorage.setItem(updatedKey(), updatedAt);
     setStatus("Guardando…");
     const [{ error }, { error: socialError }] = await Promise.all([
       client.from("album_progress").upsert({
@@ -118,13 +136,13 @@
       setStatus("Error al sincronizar", true);
       return;
     }
-    localStorage.setItem(syncedKey, updatedAt);
+    localStorage.setItem(syncedKey(), updatedAt);
     setStatus("Sincronizado");
   }
 
   function scheduleSave() {
     if (applyingRemote || album.isReadOnly()) return;
-    localStorage.setItem(updatedKey, new Date().toISOString());
+    localStorage.setItem(updatedKey(), new Date().toISOString());
     if (!currentUser) return;
     window.clearTimeout(saveTimer);
     saveTimer = window.setTimeout(() => {
@@ -148,11 +166,11 @@
     }
 
     const localProgress = album.getProgress();
-    const localUpdatedAt = localStorage.getItem(updatedKey);
-    const lastSyncedAt = localStorage.getItem(syncedKey);
+    const localUpdatedAt = localStorage.getItem(updatedKey());
+    const lastSyncedAt = localStorage.getItem(syncedKey());
     if (!data) {
       if (!localUpdatedAt && Object.keys(localProgress).length) {
-        localStorage.setItem(updatedKey, new Date().toISOString());
+        localStorage.setItem(updatedKey(), new Date().toISOString());
       }
       await saveToCloud();
       return;
@@ -173,7 +191,7 @@
       applyingRemote = true;
       album.replaceProgress(merged);
       applyingRemote = false;
-      localStorage.setItem(updatedKey, new Date().toISOString());
+      localStorage.setItem(updatedKey(), new Date().toISOString());
       await saveToCloud();
       return;
     }
@@ -181,14 +199,29 @@
     applyingRemote = true;
     album.replaceProgress(data.progress || {});
     applyingRemote = false;
-    localStorage.setItem(updatedKey, data.updated_at);
-    localStorage.setItem(syncedKey, data.updated_at);
+    localStorage.setItem(updatedKey(), data.updated_at);
+    localStorage.setItem(syncedKey(), data.updated_at);
     setStatus("Sincronizado");
   }
 
   async function handleUser(user) {
     displayUser(user);
-    if (user && !album.isReadOnly()) {
+    if (album.isReadOnly()) {
+      document.dispatchEvent(new CustomEvent("panini:cloud-ready", {
+        detail: { client, user: currentUser },
+      }));
+      return;
+    }
+    const previousScope = album.getStorageScope();
+    const nextScope = scopeFor(user);
+    const scopeChanged = album.setStorageScope(nextScope);
+    if (scopeChanged && user && previousScope === guestScope
+      && album.hasStoredProgress(guestScope)) {
+      album.showToast(
+        "El progreso de invitado se ha guardado aparte. Expórtalo e impórtalo si quieres unirlo a tu cuenta.",
+      );
+    }
+    if (user) {
       await synchronize();
     }
     document.dispatchEvent(new CustomEvent("panini:cloud-ready", {

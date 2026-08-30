@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
+  const GUEST_SCOPE = "guest";
   const data = window.ALBUM_DATA;
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
   const specialSectionIcons = {
@@ -54,9 +55,11 @@
     query: "",
     section: "all",
     filter: "all",
-    progress: loadProgress(),
+    storageScope: GUEST_SCOPE,
+    progress: {},
     readOnly: false,
   };
+  state.progress = loadProgress();
   let pendingFiguritasImport = null;
 
   const elements = {
@@ -131,9 +134,13 @@
     return cleaned;
   }
 
-  function loadProgress() {
+  function storageKey(scope = state.storageScope) {
+    return scope === GUEST_SCOPE ? STORAGE_KEY : `${STORAGE_KEY}::${scope}`;
+  }
+
+  function loadProgress(scope = state.storageScope) {
     try {
-      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      const parsed = JSON.parse(localStorage.getItem(storageKey(scope)) || "{}");
       return cleanProgress(parsed);
     } catch (error) {
       console.error("No se pudo leer el progreso local.", error);
@@ -142,7 +149,7 @@
   }
 
   function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+    localStorage.setItem(storageKey(), JSON.stringify(state.progress));
   }
 
   function progressFor(id) {
@@ -945,6 +952,23 @@
   window.PaniniAlbum = {
     getProgress: () => structuredClone(state.progress),
     isReadOnly: () => state.readOnly,
+    getStorageScope: () => state.storageScope,
+    showToast,
+    setStorageScope(scope) {
+      const next = scope || GUEST_SCOPE;
+      if (next === state.storageScope) return false;
+      state.storageScope = next;
+      state.progress = loadProgress(next);
+      render();
+      return true;
+    },
+    hasStoredProgress(scope) {
+      try {
+        return Object.keys(loadProgress(scope || GUEST_SCOPE)).length > 0;
+      } catch {
+        return false;
+      }
+    },
     getSocialProgress() {
       const socialProgress = {};
       for (const [id, entry] of Object.entries(state.progress)) {

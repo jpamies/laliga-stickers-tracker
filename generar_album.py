@@ -143,8 +143,8 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=36"></script>
-  <script src="cloud-sync.js?v=13"></script>
+  <script src="app.js?v=37"></script>
+  <script src="cloud-sync.js?v=14"></script>
   <script src="social.js?v=14"></script>
 </body>
 </html>
