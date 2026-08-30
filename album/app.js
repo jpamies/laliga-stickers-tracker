@@ -540,7 +540,7 @@
         </div>
         <div class="card-spacer"></div>
         <div class="copy-row ${progress.copies > 1 ? "copy-row-duplicate" : progress.copies === 1 ? "copy-row-owned" : ""}">
-          <span class="copy-label">Copias${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : ""}</span>
+          <span class="copy-label">${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : "Copias"}</span>
           <div class="copy-control">
             <button class="icon-button" type="button" data-copy="-1" aria-label="Quitar una copia">−</button>
             <span class="copy-count">${progress.copies}</span>

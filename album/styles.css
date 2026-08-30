@@ -950,6 +950,7 @@ button {
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 750;
+  white-space: nowrap;
 }
 
 .copy-control {
@@ -982,13 +983,14 @@ button {
 }
 
 .duplicate-pill {
-  margin-left: 5px;
-  padding: 3px 6px;
+  display: inline-block;
+  padding: 3px 8px;
   border-radius: 99px;
   color: #8c2c26;
   background: var(--red-soft);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 850;
+  white-space: nowrap;
 }
 
 .state-controls {

@@ -27,7 +27,8 @@
 
   function stickerName(id) {
     const sticker = stickers.get(id);
-    return sticker ? `${sticker.numero} · ${sticker.nombre || "Pendiente"}` : id;
+    if (!sticker) return id;
+    return `${sticker.seccion} · ${sticker.numero} · ${sticker.nombre || "Pendiente"}`;
   }
 
   function formatDate(value) {
