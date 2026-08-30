@@ -656,12 +656,13 @@ button {
 
 .section-tally {
   display: grid;
-  min-width: 30px;
-  padding: 3px 8px;
+  min-width: 1.9em;
+  padding: 2px 12px;
   place-items: center;
   border-radius: 99px;
-  font-size: 0.76rem;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
   font-weight: 850;
+  line-height: 1.25;
   font-variant-numeric: tabular-nums;
 }
 
