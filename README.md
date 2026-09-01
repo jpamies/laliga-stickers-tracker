@@ -6,13 +6,19 @@
 
 ## Funciones
 
-- 514 cromos y variantes del checklist físico, más 66 huecos provisionales de
-  Últimos Fichajes y 3 de Top Fichajes.
+- 544 cromos y variantes del checklist físico (1ª y 2ª edición), más 46 huecos
+  provisionales de Últimos Fichajes y 3 de Top Fichajes.
+- Cromos añadidos en la 2ª edición marcados con la etiqueta `2ª ed`, incluidos
+  los números `BIS` y la sección `ÚLTIMOS FICHAJES` (UF1-UF20).
 - Buscador y filtros por equipo, sección y estado, con botón para borrar la
   sección seleccionada.
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
 - Confirmación antes de retirar un cromo de la colección.
-- Decisión personal `No pegar`, inicializada desde la recomendación de Transfermarkt.
+- Decisión personal `No pegar`. La recomendación automática es siempre *pegar*:
+  la columna `accion` solo puede valer `PEGAR` o `ESPERAR` (huecos que Panini
+  todavía no ha asignado). Nunca se descarta ni se marca para revisar un cromo
+  por ti; el detalle de la comprobación queda en `estado_plantilla` y en las
+  notas de cada cromo.
 - Contador y vista de cromos repetidos, con el resumen de conseguidos, faltantes
   y repetidos en el título de cada sección y la fila de copias en verde cuando
   tienes un cromo y en rojo cuando está repetido.
@@ -23,7 +29,11 @@
 - Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
   foto oficial se dibujan en la propia web con el escudo y la foto de
   Transfermarkt, los colores del equipo y los datos pendientes marcados.
-- Estrategia de pegado basada en plantillas de Transfermarkt.
+- Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
+  información: la decisión de no pegar la tomas tú.
+- Vista aparte con las plantillas reales de Primera División
+  (`album/plantillas.html`), generada con los datos y las fotos oficiales de
+  LALIGA. No está enlazada en el menú: se abre por URL directa.
 - Importación y exportación del progreso.
 - Importación mediante el texto de «Compartir lista» de Figuritas App, con
   revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`,
@@ -38,16 +48,40 @@
 Regenerar los datos y el álbum:
 
 ```powershell
+.\.venv\Scripts\python.exe extraer_checklist.py
+.\.venv\Scripts\python.exe comprobar_plantillas.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
 .\.venv\Scripts\python.exe generar_fotos_transfermarkt.py
 .\.venv\Scripts\python.exe generar_album.py
 ```
+
+`extraer_checklist.py` lee `Checklist_LALIGA_2026-27-2aED.pdf` y reutiliza los
+identificadores que ya existen en `coleccion_panini.csv`, de forma que los
+cromos nuevos se añaden al final de su sección sin desplazar los IDs anteriores.
+El progreso del álbum se guarda por identificador, así que ese detalle es lo que
+evita perderlo al publicarse una edición nueva del checklist.
 
 `generar_fotos_transfermarkt.py` lee las plantillas ya cacheadas en
 `.cache_transfermarkt/` y produce `fotos_transfermarkt.csv` con el escudo, el
 dorsal y la foto de cada jugador. El álbum usa esos datos para dibujar los
 cromos que todavía no tienen imagen oficial, sin copiar ninguna imagen al
 repositorio.
+
+Regenerar las plantillas reales de LALIGA y su vista:
+
+```powershell
+.\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
+.\.venv\Scripts\python.exe generar_plantillas_html.py
+```
+
+`generar_plantillas_laliga.py` descarga los 20 equipos y sus fichas desde la API
+pública de laliga.com, cachea las respuestas en `.cache_laliga/` y escribe
+`laliga_equipos.csv`, `laliga_plantillas.csv` y
+[`supabase/laliga_plantillas.sql`](supabase/laliga_plantillas.sql). El SQL se
+regenera entero (un `delete` y los `insert` dentro de una transacción), así que
+cuando LALIGA actualice dorsales o fotos basta con volver a ejecutarlo, limpiar
+la tabla e importar. Las tablas viven en la migración
+[`supabase/migrations/20260902120000_laliga_squads.sql`](supabase/migrations/20260902120000_laliga_squads.sql).
 
 Ejecutar las pruebas:
 
@@ -65,11 +99,12 @@ Transfermarkt y las altas/bajas de BeSoccer:
   --progreso ruta\al\progreso.json
 ```
 
-El resultado local `estrategia_mercado.csv` mantiene los 514 cromos físicos y
+El resultado local `estrategia_mercado.csv` mantiene los cromos físicos y
 añade, al final de cada club, los jugadores de su plantilla que no tienen
 cromo. Las salidas confirmadas distinguen ventas, cesiones, salidas libres y
-retiradas. El CSV se ignora en Git porque puede contener el progreso privado
-importado con `--progreso`.
+retiradas en la columna `estado_mercado`, pero `accion_estrategia` sigue siendo
+`PEGAR`: el informe te dice qué ha pasado, no decide por ti. El CSV se ignora en
+Git porque puede contener el progreso privado importado con `--progreso`.
 
 La documentación sobre el manifiesto digital está en
 [`PANINI_DIGITAL.md`](PANINI_DIGITAL.md), y la fuente oficial de plantillas,

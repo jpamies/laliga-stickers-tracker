@@ -139,12 +139,28 @@ de Transfermarkt para dibujar los cromos que no tienen imagen oficial.
 
 ## Cómo actualizar
 
-1. Recuperar los 20 slugs con el endpoint de equipos filtrado por competición.
-2. Descargar la plantilla de cada equipo y quedarse con `role.slug == "jugador"`.
-3. Emparejar con `coleccion_panini_revisada.csv` usando `person.name` y
-   `person.nickname` normalizados.
-4. Actualizar dorsal, posición y foto sólo cuando la coincidencia sea fiable,
-   igual que se hace con Transfermarkt.
+El proceso está automatizado en `generar_plantillas_laliga.py`:
+
+```powershell
+.\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
+.\.venv\Scripts\python.exe generar_plantillas_html.py
+```
+
+1. Recupera los 20 slugs con el endpoint de equipos filtrado por competición.
+2. Descarga la plantilla de cada equipo y cachea la respuesta en `.cache_laliga/`.
+3. Escribe `laliga_equipos.csv` y `laliga_plantillas.csv` con todos los campos
+   útiles, ordenando cada plantilla por demarcación y dorsal.
+4. Regenera `supabase/laliga_plantillas.sql` con un `delete` y los `insert`
+   completos dentro de una transacción, para limpiar tabla e importar de nuevo.
+5. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
+   sólo lectura con las plantillas reales.
+
+Las tablas `public.laliga_equipo` y `public.laliga_plantilla` se crean con la
+migración `supabase/migrations/20260902120000_laliga_squads.sql`.
+
+Para emparejar con el checklist Panini se usa `person.name` y `person.nickname`
+normalizados contra `coleccion_panini_revisada.csv`, y sólo se actualiza dorsal,
+posición o foto cuando la coincidencia es fiable.
 
 ## Limitaciones
 

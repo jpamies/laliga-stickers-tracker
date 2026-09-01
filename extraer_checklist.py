@@ -35,6 +35,7 @@ CLUB_SECTIONS = [
 ]
 
 SPECIAL_SECTIONS = [
+    "ÚLTIMOS FICHAJES",
     "ADN / LALIGA PRIME",
     "LALIGA FANTASY",
     "DRAFT 23",
@@ -68,6 +69,7 @@ CLUB_CANONICAL = {
 }
 
 SPECIAL_CLUB_ALIASES = {
+    "Alavés": "Deportivo Alavés",
     "Athletic": "Athletic Club",
     "Atlético": "Atlético de Madrid",
     "Atlético de Madrid": "Atlético de Madrid",
@@ -75,8 +77,14 @@ SPECIAL_CLUB_ALIASES = {
     "Betis": "Real Betis",
     "Celta": "RC Celta de Vigo",
     "Deportivo": "Deportivo de La Coruña",
+    "Elche": "Elche CF",
+    "Espanyol": "RCD Espanyol",
     "Getafe": "Getafe CF",
     "Levante": "Levante UD",
+    "Malaga": "Málaga CF",
+    "Málaga": "Málaga CF",
+    "Osasuna": "CA Osasuna",
+    "Racing de Santander": "Racing de Santander",
     "Rayo Vallecano": "Rayo Vallecano",
     "Real Madrid": "Real Madrid",
     "Real Sociedad": "Real Sociedad",
@@ -86,8 +94,18 @@ SPECIAL_CLUB_ALIASES = {
 }
 
 POSITIONS = {"entrenador", "portero", "defensa", "medio", "delantero"}
-NUMBER_RE = re.compile(r"^(?:\d+[AB]?|K\d+)$")
+NUMBER_RE = re.compile(r"^(?:\d+(?:BIS|[AB])?|UF\d+|K\d+)$")
 SPECIAL_NAME_RE = re.compile(r"^(.*?)\s+\(([^()]*)\)$")
+EDITION_MARKER_RE = re.compile(r"^2[ªa]\s*ed\.?$")
+SECOND_EDITION = "2ed"
+
+# Los huecos de ÚLTIMOS FICHAJES existían como marcadores generados por
+# generar_album.py antes de que Panini publicara los nombres. Reutilizamos sus
+# identificadores para no perder el progreso ya guardado.
+LEGACY_ID_ALIASES = {
+    ("ÚLTIMOS FICHAJES", f"UF{number}"): f"ULTIMOS-FICHAJES-{number:02d}"
+    for number in range(1, 67)
+}
 
 CSV_FIELDS = [
     "id",
@@ -98,6 +116,7 @@ CSV_FIELDS = [
     "nombre",
     "tipo",
     "club_objetivo",
+    "edicion",
     "estado_plantilla",
     "accion",
     "coincidencia_transfermarkt",
@@ -117,6 +136,7 @@ class Sticker:
     nombre: str
     tipo: str
     club_objetivo: str
+    edicion: str
     estado_plantilla: str
     accion: str
     coincidencia_transfermarkt: str = ""
@@ -185,41 +205,64 @@ def is_number(line: str) -> bool:
 
 
 def parse_number(number: str) -> tuple[str, str]:
-    match = re.fullmatch(r"(\d+)([AB])?", number)
-    if not match:
-        return number, ""
-    return match.group(1), match.group(2) or ""
+    match = re.fullmatch(r"(\d+)(BIS|[AB])?", number)
+    if match:
+        return match.group(1), match.group(2) or ""
+    match = re.fullmatch(r"UF(\d+)", number)
+    if match:
+        return match.group(1), ""
+    return number, ""
 
 
-def parse_entries(section: str, lines: list[str]) -> list[tuple[str, str, str]]:
-    entries: list[tuple[str, str, str]] = []
+@dataclass
+class Entry:
+    numero: str
+    nombre: str
+    tipo: str
+    edicion: str = ""
+
+
+def parse_entries(section: str, lines: list[str]) -> list[Entry]:
+    entries: list[Entry] = []
     pending_number: str | None = None
+    pending_edition = ""
     name_parts: list[str] = []
 
+    def flush(kind: str = "") -> None:
+        nonlocal pending_number, pending_edition, name_parts
+        if pending_number is None:
+            return
+        entries.append(
+            Entry(pending_number, " ".join(name_parts).strip(), kind, pending_edition)
+        )
+        pending_number = None
+        pending_edition = ""
+        name_parts = []
+
     for line in lines:
-        if is_number(line):
+        if EDITION_MARKER_RE.fullmatch(normalize(line).strip()):
             if pending_number is not None:
-                entries.append((pending_number, " ".join(name_parts), ""))
+                pending_edition = SECOND_EDITION
+            elif entries:
+                entries[-1].edicion = SECOND_EDITION
+            else:
+                raise ValueError(f"Marca de edición sin cromo en {section}: {line!r}")
+            continue
+
+        if is_number(line):
+            flush()
             pending_number = line
-            name_parts = []
             continue
 
         normalized_line = normalize(line)
         if normalized_line in POSITIONS:
             if pending_number is None:
-                raise ValueError(
-                    f"Posición sin número en {section}: {line!r}"
-                )
-            entries.append(
-                (pending_number, " ".join(name_parts).strip(), normalized_line)
-            )
-            pending_number = None
-            name_parts = []
+                raise ValueError(f"Posición sin número en {section}: {line!r}")
+            flush(normalized_line)
         elif pending_number is not None:
             name_parts.append(line)
 
-    if pending_number is not None:
-        entries.append((pending_number, " ".join(name_parts).strip(), ""))
+    flush()
     return entries
 
 
@@ -231,6 +274,8 @@ def club_and_name(section: str, raw_name: str) -> tuple[str, str]:
     if not match:
         return "", raw_name
     name, raw_club = match.groups()
+    if name.isupper():
+        name = name.title()
     return SPECIAL_CLUB_ALIASES.get(raw_club, raw_club), name
 
 
@@ -238,37 +283,90 @@ def initial_status(name: str, kind: str) -> tuple[str, str, str]:
     if not name:
         return "pendiente_publicacion", "ESPERAR", "Hueco sin jugador en el checklist."
     if kind in {"entrenador"} or name == "Escudo":
-        return "no_aplica", "REVISAR", "La comprobación de plantilla solo cubre jugadores."
-    return "sin_comprobar", "REVISAR", ""
+        return "no_aplica", "PEGAR", "La comprobación de plantilla solo cubre jugadores."
+    return "sin_comprobar", "PEGAR", ""
 
 
-def build_stickers(sections: dict[str, list[str]]) -> list[Sticker]:
+def load_known_ids(csv_path: Path | None) -> dict[tuple[str, str, int], str]:
+    """IDs ya publicados, indexados por (sección, número, repetición).
+
+    El progreso del álbum se guarda por identificador, así que un cromo nuevo
+    del checklist nunca debe desplazar el ID de uno anterior. Algunas secciones
+    repiten número (los «Extra Sticker»), de ahí el contador de repetición."""
+    known: dict[tuple[str, str, int], str] = {
+        (section, number, 1): identifier
+        for (section, number), identifier in LEGACY_ID_ALIASES.items()
+    }
+    if not csv_path or not csv_path.exists():
+        return known
+    repeats: Counter[tuple[str, str]] = Counter()
+    with csv_path.open(encoding="utf-8-sig", newline="") as source:
+        for row in csv.DictReader(source):
+            if not row.get("id"):
+                continue
+            key = (row["seccion"], row["numero"])
+            repeats[key] += 1
+            known[(*key, repeats[key])] = row["id"]
+    return known
+
+
+def section_identifier(section: str) -> str:
+    return re.sub(r"[^A-Z0-9]+", "-", normalize(section).upper()).strip("-")
+
+
+def build_stickers(
+    sections: dict[str, list[str]],
+    known_ids: dict[tuple[str, str, int], str] | None = None,
+) -> list[Sticker]:
+    known_ids = known_ids or {}
+    parsed: list[tuple[str, Entry]] = [
+        (section, entry)
+        for section in CLUB_SECTIONS + SPECIAL_SECTIONS
+        for entry in parse_entries(section, sections[section])
+    ]
+
+    repeats: Counter[tuple[str, str]] = Counter()
+    assigned: list[str | None] = []
+    for section, entry in parsed:
+        repeats[(section, entry.numero)] += 1
+        key = (section, entry.numero, repeats[(section, entry.numero)])
+        assigned.append(known_ids.get(key))
+
+    used = {identifier for identifier in assigned if identifier}
+    counters: Counter[str] = Counter()
+    for index, (section, _) in enumerate(parsed):
+        if assigned[index]:
+            continue
+        section_id = section_identifier(section)
+        while True:
+            counters[section_id] += 1
+            candidate = f"{section_id}-{counters[section_id]:02d}"
+            if candidate not in used:
+                break
+        used.add(candidate)
+        assigned[index] = candidate
+
     stickers: list[Sticker] = []
-    section_counts: Counter[str] = Counter()
-
-    for section in CLUB_SECTIONS + SPECIAL_SECTIONS:
-        for number, raw_name, kind in parse_entries(section, sections[section]):
-            section_counts[section] += 1
-            occurrence = section_counts[section]
-            slot, variant = parse_number(number)
-            club, name = club_and_name(section, raw_name)
-            status, action, notes = initial_status(name, kind)
-            section_id = re.sub(r"[^A-Z0-9]+", "-", normalize(section).upper()).strip("-")
-            stickers.append(
-                Sticker(
-                    id=f"{section_id}-{occurrence:02d}",
-                    seccion=section,
-                    numero=number,
-                    hueco_album=slot,
-                    variante=variant,
-                    nombre=name,
-                    tipo=kind,
-                    club_objetivo=club,
-                    estado_plantilla=status,
-                    accion=action,
-                    notas=notes,
-                )
+    for identifier, (section, entry) in zip(assigned, parsed):
+        slot, variant = parse_number(entry.numero)
+        club, name = club_and_name(section, entry.nombre)
+        status, action, notes = initial_status(name, entry.tipo)
+        stickers.append(
+            Sticker(
+                id=str(identifier),
+                seccion=section,
+                numero=entry.numero,
+                hueco_album=slot,
+                variante=variant,
+                nombre=name,
+                tipo=entry.tipo,
+                club_objetivo=club,
+                edicion=entry.edicion,
+                estado_plantilla=status,
+                accion=action,
+                notas=notes,
             )
+        )
     return stickers
 
 
@@ -288,6 +386,7 @@ def write_markdown(stickers: list[Sticker], output_path: Path) -> None:
     named_total = sum(bool(item.nombre) for item in stickers)
     album_slots = len({(item.seccion, item.hueco_album) for item in stickers})
     alternatives = sum(bool(item.variante) for item in stickers)
+    second_edition = sum(item.edicion == SECOND_EDITION for item in stickers)
     blanks = sum(not item.nombre for item in stickers)
 
     lines = [
@@ -296,15 +395,19 @@ def write_markdown(stickers: list[Sticker], output_path: Path) -> None:
         f"- **Entradas y variantes del checklist:** {entry_total}",
         f"- **Cromos con nombre o contenido asignado:** {named_total}",
         f"- **Huecos de álbum:** {album_slots}",
-        f"- **Cromos con variante A/B:** {alternatives}",
+        f"- **Cromos con variante A/B/BIS:** {alternatives}",
+        f"- **Cromos añadidos en la 2ª edición:** {second_edition}",
         f"- **Cromos todavía sin nombre:** {blanks}",
         "",
         "## Leyenda de estrategia",
         "",
-        "- **PEGAR:** el jugador aparece en la plantilla actual de Transfermarkt.",
-        "- **NO PEGAR:** el jugador no aparece en esa plantilla.",
-        "- **REVISAR:** no se ha comprobado, no aplica o la coincidencia es dudosa.",
+        "- **PEGAR:** recomendación por defecto para cualquier cromo con contenido.",
         "- **ESPERAR:** Panini todavía no ha asignado un jugador al hueco.",
+        "",
+        "> Nunca se recomienda automáticamente *no pegar* ni *revisar*: la "
+        "recomendación es siempre pegar y la decisión de descartar un cromo es "
+        "personal y se marca a mano en el álbum. El detalle de la comprobación "
+        "queda en `estado_plantilla` y en las notas.",
         "",
         "> El estado inicial procede únicamente del checklist. Ejecuta "
         "`python comprobar_plantillas.py` para generar la versión revisada.",
@@ -316,8 +419,8 @@ def write_markdown(stickers: list[Sticker], output_path: Path) -> None:
             [
                 f"## {section}",
                 "",
-                "| Nº | Variante | Nombre | Tipo | Club a comprobar | Estado | Acción |",
-                "|---:|:---:|---|---|---|---|:---:|",
+                "| Nº | Variante | Nombre | Tipo | Club a comprobar | Edición | Estado | Acción |",
+                "|---:|:---:|---|---|---|:---:|---|:---:|",
             ]
         )
         for item in (sticker for sticker in stickers if sticker.seccion == section):
@@ -327,6 +430,7 @@ def write_markdown(stickers: list[Sticker], output_path: Path) -> None:
                 item.nombre or "—",
                 item.tipo or "—",
                 item.club_objetivo or "—",
+                item.edicion or "1ª",
                 item.estado_plantilla,
                 item.accion,
             ]
@@ -362,21 +466,31 @@ def main() -> None:
     parser.add_argument(
         "--pdf",
         type=Path,
-        default=Path("Checklist_LALIGA_2026-27.pdf"),
+        default=Path("Checklist_LALIGA_2026-27-2aED.pdf"),
     )
     parser.add_argument("--csv", type=Path, default=Path("coleccion_panini.csv"))
     parser.add_argument(
         "--markdown", type=Path, default=Path("coleccion_panini.md")
     )
+    parser.add_argument(
+        "--ids-previos",
+        type=Path,
+        default=Path("coleccion_panini.csv"),
+        help="CSV del que reutilizar los identificadores ya publicados.",
+    )
     args = parser.parse_args()
 
-    stickers = build_stickers(split_sections(extract_lines(args.pdf)))
+    stickers = build_stickers(
+        split_sections(extract_lines(args.pdf)),
+        load_known_ids(args.ids_previos),
+    )
     validate(stickers)
     write_csv(stickers, args.csv)
     write_markdown(stickers, args.markdown)
+    second_edition = sum(item.edicion == SECOND_EDITION for item in stickers)
     print(
         f"Generados {args.csv} y {args.markdown}: "
-        f"{len(stickers)} entradas y variantes."
+        f"{len(stickers)} entradas y variantes ({second_edition} de la 2ª edición)."
     )
 
 

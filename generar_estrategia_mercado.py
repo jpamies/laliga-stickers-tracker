@@ -288,10 +288,10 @@ def strategy_rows(
         )
         if not is_official_player(source):
             market_status = "NO_APLICA" if source.get("nombre") else "PENDIENTE_PUBLICACION"
-            action = source.get("accion", "REVISAR")
+            action = source.get("accion", "PEGAR")
         elif departure:
             market_status = departure_status(departure)
-            action = "NO PEGAR"
+            action = "PEGAR"
         elif in_squad:
             market_status = "EN_PLANTILLA"
             action = "PEGAR"
@@ -299,11 +299,11 @@ def strategy_rows(
             "coincidencia_ambigua",
             "coincidencia_dudosa",
         }:
-            market_status = "REVISAR"
-            action = "REVISAR"
+            market_status = "COINCIDENCIA_DUDOSA"
+            action = "PEGAR"
         else:
             market_status = "NO_EN_PLANTILLA"
-            action = "NO PEGAR"
+            action = "PEGAR"
 
         owned = progress.get(source["id"], {})
         output.append(

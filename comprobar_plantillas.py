@@ -172,7 +172,7 @@ def match_player(sticker_name: str, squad: list[str]) -> Match:
         candidates = ", ".join(original for original, _ in containment)
         return Match(
             "coincidencia_ambigua",
-            "REVISAR",
+            "PEGAR",
             candidates,
             0.5,
             "El nombre parcial coincide con varios jugadores.",
@@ -197,17 +197,17 @@ def match_player(sticker_name: str, squad: list[str]) -> Match:
     if best_score >= 0.68:
         return Match(
             "coincidencia_dudosa",
-            "REVISAR",
+            "PEGAR",
             best_name,
             best_score,
-            "Posible coincidencia; no pegar hasta revisarla.",
+            "Posible coincidencia; confírmala antes de descartar el cromo.",
         )
     return Match(
         "no_encontrado",
-        "NO PEGAR",
+        "PEGAR",
         best_name,
         best_score,
-        "No aparece en la plantilla de Transfermarkt.",
+        "No aparece en la plantilla de Transfermarkt; decide tú si lo pegas.",
     )
 
 
@@ -242,12 +242,13 @@ def write_review_markdown(
         f"Comprobación realizada: **{checked_on.isoformat()}**.",
         "",
         f"- **PEGAR:** {counts.get('PEGAR', 0)}",
-        f"- **NO PEGAR:** {counts.get('NO PEGAR', 0)}",
-        f"- **REVISAR:** {counts.get('REVISAR', 0)}",
         f"- **ESPERAR:** {counts.get('ESPERAR', 0)}",
         "",
-        "> Transfermarkt es una fuente externa y puede tardar en reflejar un fichaje. "
-        "Antes de descartar definitivamente un cromo marcado NO PEGAR, revisa la fecha.",
+        "> La recomendación automática es siempre **PEGAR**: no descartamos "
+        "ningún cromo por nosotros. Si un jugador ya no está en el club o la "
+        "coincidencia es dudosa, se anota en `estado_plantilla` y en las notas, "
+        "pero marcar «No pegar» es una decisión personal que se toma a mano en "
+        "el álbum.",
         "",
     ]
 
@@ -261,8 +262,8 @@ def write_review_markdown(
                 [
                     f"## {section}",
                     "",
-                    "| Nº | Nombre | Club | Estado | Acción | Coincidencia | Confianza |",
-                    "|---:|---|---|---|:---:|---|---:|",
+                    "| Nº | Nombre | Club | Ed. | Estado | Acción | Coincidencia | Confianza |",
+                    "|---:|---|---|:---:|---|:---:|---|---:|",
                 ]
             )
         confidence = (
@@ -272,6 +273,7 @@ def write_review_markdown(
             row["numero"],
             row["nombre"] or "—",
             row["club_objetivo"] or "—",
+            row.get("edicion") or "1ª",
             row["estado_plantilla"],
             row["accion"],
             row["coincidencia_transfermarkt"] or "—",
@@ -296,7 +298,7 @@ def check_rows(
         club = row["club_objetivo"]
         if club not in squads:
             row["estado_plantilla"] = "club_no_disponible"
-            row["accion"] = "REVISAR"
+            row["accion"] = "PEGAR"
             row["notas"] = "No se pudo obtener la plantilla de este club."
             continue
 

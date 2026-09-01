@@ -1,0 +1,21 @@
+﻿slug,team_id,nombre,nombre_corto,abreviatura,seccion_album,color,color_secundario,escudo_url,estadio,temporada
+d-alaves,21,Deportivo Alavés SAD,Deportivo Alavés,ALA,DEPORTIVO ALAVÉS,#0f39b8,#ffffff,https://assets.laliga.com/assets/2020/09/01/medium/27002754a98bf535807fe49a24cc63ea.png,Mendizorroza,2026
+athletic-club,3,Athletic Club,Athletic Club,ATH,ATHLETIC CLUB DE BILBAO,#f21e27,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/athletic.png,Estadio San Mamés,2026
+atletico-de-madrid,2,Club Atlético de Madrid SAD,Atlético de Madrid,ATM,ATLÉTICO DE MADRID,#f21e27,#ffffff,https://assets.laliga.com/assets/2024/06/17/medium/cbc5c8cc8c3e8abd0e175c00ee53b723.png,Riyadh Air Metropolitano,2026
+fc-barcelona,4,Fútbol Club Barcelona,FC Barcelona,BAR,FC BARCELONA,#0f39b8,#bc161c,https://assets.laliga.com/assets/2019/06/07/medium/barcelona.png,Spotify Camp Nou,2026
+real-betis,5,Real Betis Balompié SAD,Real Betis,BET,REAL BETIS,#038316,#ffffff,https://assets.laliga.com/assets/2022/09/15/medium/e4a09419d3bd115b8f3dab73d480e146.png,Estadio La Cartuja,2026
+rc-celta,6,Real Club Celta de Vigo SAD,Celta,CEL,RC CELTA DE VIGO,#52c3f1,#ffffff,https://assets.laliga.com/assets/2025/07/11/medium/0a796827f9e758d7d750db805adde7c5.png,Estadio ABANCA Balaídos,2026
+rc-deportivo,26,Real Club Deportivo de A Coruña SAD,RC Deportivo,DEP,DEPORTIVO,#005ea4,#ffffff,https://assets.laliga.com/assets/2026/06/24/medium/6b88661529a2c06840c8bf6bddd90970.png,Estadio ABANCA-RIAZOR,2026
+elche-c-f,7,Elche Club de Fútbol SAD,Elche CF,ELC,ELCHE CF,#038316,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/elche.png,Estadio Martínez Valero,2026
+rcd-espanyol,8,RCD Espanyol de Barcelona,RCD Espanyol de Barcelona,ESP,RCD ESPANYOL,#5a7cf1,#ffffff,https://assets.laliga.com/assets/2025/07/02/medium/e9177f6edd72c6360602adbca85e442f.png,RCDE Stadium,2026
+getafe-cf,9,Getafe Club de Fútbol SAD,Getafe CF,GET,GETAFE CF,#0f39b8,#ffffff,https://assets.laliga.com/assets/2023/05/12/medium/dc59645c96bc2c9010341c16dd6d4bfa.png,Coliseum,2026
+levante-ud,11,Levante Unión Deportiva SAD,Levante UD,LEV,LEVANTE UD,#bc161c,#08237f,https://assets.laliga.com/assets/2019/06/07/medium/levante.png,Estadio Ciutat de València,2026
+real-madrid,15,Real Madrid Club de Fútbol,Real Madrid,RMA,REAL MADRID CF,#0f39b8,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/real-madrid.png,Bernabéu,2026
+malaga-cf,12,Málaga Club de Fútbol SAD,Málaga CF,MGA,MALAGA CF,#1476c4,,https://assets.laliga.com/assets/2019/06/07/medium/malaga.png,La Rosaleda,2026
+c-a-osasuna,13,Club Atlético Osasuna,CA Osasuna,OSA,OSASUNA,#bc161c,#020f42,https://assets.laliga.com/assets/2019/06/07/medium/osasuna.png,Estadio El Sadar,2026
+r-racing-club,49,Real Racing Club SAD,R. Racing Club,RAC,RACING DE SANTANDER,#48bf5f,#000000,https://assets.laliga.com/assets/2019/06/07/medium/racing.png,El Sardinero,2026
+rayo-vallecano,14,Rayo Vallecano de Madrid SAD,Rayo Vallecano,RAY,RAYO VALLECANO,#f21e27,#ffffff,https://assets.laliga.com/assets/2023/04/27/medium/57d9950a8745ead226c04d37235c0786.png,Estadio de Vallecas,2026
+real-sociedad,16,Real Sociedad de Fútbol SAD,Real Sociedad,RSO,REAL SOCIEDAD,#194beb,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/real-sociedad.png,Anoeta,2026
+sevilla-fc,17,Sevilla Fútbol Club SAD,Sevilla FC,SEV,SEVILLA,#f21e27,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/sevilla.png,Ramón Sánchez-Pizjuán,2026
+valencia-cf,18,Valencia Club de Fútbol SAD,Valencia CF,VAL,VALENCIA,#000000,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/valencia.png,Camp de Mestalla,2026
+villarreal-cf,20,Villarreal Club de Fútbol SAD,Villarreal CF,VIL,VILLARREAL,#ffd301,#ffffff,https://assets.laliga.com/assets/2019/06/07/medium/villarreal.png,Estadio de la Cerámica,2026

@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=23">
+  <link rel="stylesheet" href="styles.css?v=24">
 </head>
 <body>
   <header class="topbar">
@@ -144,7 +144,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=14"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=40"></script>
+  <script src="app.js?v=41"></script>
   <script src="cloud-sync.js?v=14"></script>
   <script src="social.js?v=16"></script>
 </body>
@@ -152,8 +152,8 @@ HTML_TEMPLATE = """<!doctype html>
 """
 
 PENDING_UPDATE_SECTIONS = (
-    ("ÚLTIMOS FICHAJES", "ULTIMOS-FICHAJES", range(1, 67), "Último fichaje"),
-    ("TOP FICHAJES", "TOP-FICHAJES", range(67, 70), "Top fichaje"),
+    ("ÚLTIMOS FICHAJES", "ULTIMOS-FICHAJES", range(1, 67), "Último fichaje", "UF{number}"),
+    ("TOP FICHAJES", "TOP-FICHAJES", range(67, 70), "Top fichaje", "{number}"),
 )
 
 PLACEHOLDER_THEMES = {
@@ -192,20 +192,27 @@ def normalize_name(value: str) -> str:
     return " ".join(text.lower().split())
 
 
-def pending_update_stickers() -> list[dict[str, str]]:
+def pending_update_stickers(
+    existing_ids: set[str] | None = None,
+) -> list[dict[str, str]]:
+    existing_ids = existing_ids or set()
     stickers = []
-    for section, id_prefix, numbers, sticker_type in PENDING_UPDATE_SECTIONS:
+    for section, id_prefix, numbers, sticker_type, number_format in PENDING_UPDATE_SECTIONS:
         for number in numbers:
+            identifier = f"{id_prefix}-{number:02d}"
+            if identifier in existing_ids:
+                continue
             stickers.append(
                 {
-                    "id": f"{id_prefix}-{number:02d}",
+                    "id": identifier,
                     "seccion": section,
-                    "numero": str(number),
+                    "numero": number_format.format(number=number),
                     "hueco_album": "",
                     "variante": "",
                     "nombre": "",
                     "tipo": sticker_type,
                     "club_objetivo": "",
+                    "edicion": "",
                     "estado_plantilla": "pendiente_publicacion",
                     "accion": "ESPERAR",
                     "coincidencia_transfermarkt": "",
@@ -257,6 +264,7 @@ def load_stickers(
 
     for row in rows:
         image = mapping.get(row["id"], {})
+        row.setdefault("edicion", "")
         row["imagen_url"] = image.get("imagen_url", "")
         row["digital_label"] = image.get("digital_label", "")
         row["digital_group"] = image.get("digital_group", "")
@@ -265,7 +273,7 @@ def load_stickers(
         row["foto_url"] = ""
         row["escudo_url"] = ""
         row["dorsal"] = ""
-    rows.extend(pending_update_stickers())
+    rows.extend(pending_update_stickers({row["id"] for row in rows}))
     return rows
 
 

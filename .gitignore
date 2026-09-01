@@ -1,6 +1,7 @@
 .venv/
 .cache_transfermarkt/
 .cache_besoccer/
+.cache_laliga/
 estrategia_mercado.csv
 __pycache__/
 *.py[cod]
@@ -11,3 +12,4 @@ Thumbs.db
 
 # Documento fuente local; los datos extraídos y el sitio sí se versionan.
 Checklist_LALIGA_2026-27.pdf
+Checklist_LALIGA_2026-27-2aED.pdf

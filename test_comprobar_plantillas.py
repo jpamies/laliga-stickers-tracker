@@ -33,18 +33,21 @@ class SquadParsingTests(unittest.TestCase):
         self.assertEqual(match.action, "PEGAR")
         self.assertEqual(match.candidate, "Vinicius Junior")
 
-    def test_clear_absence_is_marked_do_not_stick(self) -> None:
+    def test_clear_absence_is_still_recommended_to_stick(self) -> None:
         match = match_player("Jugador Ausente", ["Kylian Mbappé", "Pedri"])
 
-        self.assertEqual(match.action, "NO PEGAR")
+        self.assertEqual(match.action, "PEGAR")
+        self.assertEqual(match.status, "no_encontrado")
+        self.assertIn("decide tú", match.notes)
 
-    def test_doubtful_match_requires_review(self) -> None:
+    def test_doubtful_match_keeps_the_stick_recommendation(self) -> None:
         match = match_player(
             "García",
             ["Raúl García de Haro", "Rubén García", "Pedri"],
         )
 
-        self.assertEqual(match.action, "REVISAR")
+        self.assertEqual(match.action, "PEGAR")
+        self.assertEqual(match.status, "coincidencia_ambigua")
 
 
 if __name__ == "__main__":

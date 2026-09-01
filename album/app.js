@@ -159,9 +159,9 @@
   }
 
   function shouldNotStick(sticker, progress = progressFor(sticker.id)) {
-    if (progress.stickDecision === "dont-stick") return true;
-    if (progress.stickDecision === "stick") return false;
-    return sticker.accion === "NO PEGAR";
+    // La recomendación automática nunca descarta un cromo: «no pegar» es
+    // siempre una decisión personal marcada a mano.
+    return progress.stickDecision === "dont-stick";
   }
 
   function normalize(value) {
@@ -352,6 +352,7 @@
       sticker.seccion,
       sticker.club_objetivo,
       sticker.accion,
+      sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
       sticker.coincidencia_transfermarkt,
       sticker.notas,
     ].join(" "));
@@ -486,7 +487,7 @@
     const name = sticker.nombre || "Pendiente de publicación";
     const dontStick = shouldNotStick(sticker, progress);
     const stickDecisionSource = progress.stickDecision === "default"
-      ? "Recomendación automática"
+      ? "Sin decidir"
       : "Decisión personal";
     const photoAction = progress.state === "missing"
       ? `Marcar ${name} como conseguido`
@@ -531,6 +532,7 @@
       <article class="sticker-card" data-id="${escapeHtml(sticker.id)}" data-personal-state="${progress.state}">
         <div class="card-top">
           <span class="sticker-number">${escapeHtml(sticker.numero)}</span>
+          ${sticker.edicion === "2ed" ? '<span class="edition-badge" title="Cromo añadido en la 2ª edición del checklist">2ª ed</span>' : ""}
           <span class="strategy-badge ${strategyClass(sticker.accion)}">${escapeHtml(sticker.accion)}</span>
         </div>
         ${visual}

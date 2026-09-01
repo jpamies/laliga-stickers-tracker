@@ -755,6 +755,19 @@ button {
   letter-spacing: 0.035em;
 }
 
+.edition-badge {
+  margin-right: auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(200, 166, 75, 0.55);
+  border-radius: 8px;
+  color: #7a5b0d;
+  background: rgba(200, 166, 75, 0.18);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .strategy-stick {
   color: var(--green-dark);
   background: var(--green-soft);
@@ -773,6 +786,86 @@ button {
 .strategy-review {
   color: #274d85;
   background: var(--blue-soft);
+}
+
+.strategy-portero {
+  color: #755009;
+  background: var(--amber-soft);
+}
+
+.strategy-defensa {
+  color: #274d85;
+  background: var(--blue-soft);
+}
+
+.strategy-medio {
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+.strategy-delantero {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.strategy-staff {
+  color: #4a4a4a;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.squad-visual {
+  cursor: default;
+}
+
+.squad-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.squad-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.squad-tag-loan {
+  color: #755009;
+  background: var(--amber-soft);
+}
+
+.squad-tag-off {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.squad-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 10px;
+  margin: 0;
+}
+
+.squad-facts div {
+  min-width: 0;
+}
+
+.squad-facts dt {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.squad-facts dd {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 650;
+  overflow-wrap: anywhere;
 }
 
 .sticker-name {

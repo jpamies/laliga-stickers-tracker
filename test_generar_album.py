@@ -30,21 +30,30 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertIsNotNone(themes_match)
         themes = json.loads(themes_match.group(1))
-        self.assertEqual(total, 583)
-        self.assertEqual(len(stickers), 583)
-        self.assertEqual(len({sticker["id"] for sticker in stickers}), 583)
+        self.assertEqual(total, 593)
+        self.assertEqual(len(stickers), 593)
+        self.assertEqual(len({sticker["id"] for sticker in stickers}), 593)
         self.assertEqual(len({sticker["seccion"] for sticker in stickers}), 29)
         self.assertEqual(
             sum(sticker["imagen_provisional"] != "true" for sticker in stickers),
-            418,
+            423,
         )
         self.assertEqual(
             sum(sticker["imagen_provisional"] == "true" for sticker in stickers),
-            165,
+            170,
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            51,
+            85,
+        )
+        self.assertEqual(
+            sum(sticker["accion"] == "NO PEGAR" for sticker in stickers),
+            0,
+        )
+        self.assertEqual({sticker["accion"] for sticker in stickers}, {"PEGAR", "ESPERAR"})
+        self.assertEqual(
+            sum(sticker["edicion"] == "2ed" for sticker in stickers),
+            44,
         )
         alaves_placeholder = next(
             sticker for sticker in stickers if sticker["id"] == "ATHLETIC-CLUB-DE-BILBAO-11"
@@ -65,19 +74,25 @@ class AlbumGenerationTests(unittest.TestCase):
             if sticker["seccion"] in {"ÚLTIMOS FICHAJES", "TOP FICHAJES"}
         ]
         self.assertEqual(len(updates), 69)
-        self.assertTrue(all(not sticker["foto_url"] for sticker in updates))
         self.assertEqual(
             [sticker["numero"] for sticker in updates[:2]],
-            ["1", "2"],
+            ["UF1", "UF2"],
         )
         self.assertEqual(
             [sticker["numero"] for sticker in updates[-3:]],
             ["67", "68", "69"],
         )
+        published = [sticker for sticker in updates if sticker["nombre"]]
+        pending = [sticker for sticker in updates if not sticker["nombre"]]
+        self.assertEqual(len(published), 20)
+        self.assertEqual(len(pending), 49)
+        self.assertTrue(all(sticker["edicion"] == "2ed" for sticker in published))
+        self.assertTrue(all(sticker["accion"] == "PEGAR" for sticker in published))
         self.assertTrue(
-            all(sticker["estado_plantilla"] == "pendiente_publicacion" for sticker in updates)
+            all(sticker["estado_plantilla"] == "pendiente_publicacion" for sticker in pending)
         )
-        self.assertTrue(all(sticker["accion"] == "ESPERAR" for sticker in updates))
+        self.assertTrue(all(sticker["accion"] == "ESPERAR" for sticker in pending))
+        self.assertTrue(all(not sticker["foto_url"] for sticker in pending))
         self.assertIn("Álbum completo", html)
         self.assertIn("Repetidos", html)
         self.assertNotIn('id="summary-stuck"', html)
@@ -92,8 +107,8 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="figuritas-preview"', html)
         self.assertIn('id="section-clear"', html)
         self.assertIn('id="import-json"', html)
-        self.assertIn('src="app.js?v=40"', html)
-        self.assertIn('href="styles.css?v=23"', html)
+        self.assertIn('src="app.js?v=41"', html)
+        self.assertIn('href="styles.css?v=24"', html)
         self.assertIn('src="cloud-config.js?v=14"', html)
         self.assertIn('src="cloud-sync.js?v=14"', html)
         self.assertIn('src="social.js?v=16"', html)
