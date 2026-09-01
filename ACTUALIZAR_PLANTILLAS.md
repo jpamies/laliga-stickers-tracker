@@ -1,0 +1,155 @@
+# Actualización de plantillas desde LALIGA
+
+Fuente oficial para refrescar plantillas, dorsales y fotos de jugador. Sustituye
+o complementa a Transfermarkt, que se sigue usando para escudos y para detectar
+salidas.
+
+## Resumen
+
+| Dato | Valor |
+| --- | --- |
+| Host | `https://apim.laliga.com/public-service/api/v1` |
+| Clave pública | `c13c3a8e2f6b46da9c5c425cf61fab3e` |
+| Temporada | `seasonYear=2026` |
+| Competición | `laliga-easports-2026` |
+| Equipos | 20 |
+| Jugadores | 560 |
+| Comprobado | 2026-09-02 |
+
+La clave `subscription-key` viaja en la URL del sitio público
+[laliga.com](https://www.laliga.com/es-GB/laliga-easports/clubes), así que no es
+un secreto, pero puede rotar sin aviso. Si las peticiones empiezan a devolver
+`401`, hay que volver a leerla desde la web.
+
+## Listado de equipos
+
+El endpoint general de equipos devuelve 244 clubes de todo el mundo. Para
+quedarse sólo con LALIGA EA SPORTS hay que filtrar por competición:
+
+```
+GET /teams?subscriptionSlug=laliga-easports-2026&limit=30&contentLanguage=es&subscription-key=<clave>
+```
+
+Los identificadores de competición salen de:
+
+```
+GET /subscriptions?contentLanguage=es&subscription-key=<clave>
+```
+
+Filtros que **no** funcionan: `competitionId`, `competition`,
+`/subscriptions/<slug>/teams` y `/competitions/<slug>/teams`.
+
+## Plantilla de un equipo
+
+```
+GET /teams/<slug>/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=<clave>
+```
+
+### URLs de los 20 equipos
+
+| Sección del álbum | Slug | Jugadores |
+| --- | --- | --- |
+| DEPORTIVO ALAVÉS | [`d-alaves`](https://apim.laliga.com/public-service/api/v1/teams/d-alaves/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
+| ATHLETIC CLUB DE BILBAO | [`athletic-club`](https://apim.laliga.com/public-service/api/v1/teams/athletic-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
+| ATLÉTICO DE MADRID | [`atletico-de-madrid`](https://apim.laliga.com/public-service/api/v1/teams/atletico-de-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
+| FC BARCELONA | [`fc-barcelona`](https://apim.laliga.com/public-service/api/v1/teams/fc-barcelona/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 29 |
+| REAL BETIS | [`real-betis`](https://apim.laliga.com/public-service/api/v1/teams/real-betis/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
+| RC CELTA DE VIGO | [`rc-celta`](https://apim.laliga.com/public-service/api/v1/teams/rc-celta/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
+| DEPORTIVO | [`rc-deportivo`](https://apim.laliga.com/public-service/api/v1/teams/rc-deportivo/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 25 |
+| ELCHE CF | [`elche-c-f`](https://apim.laliga.com/public-service/api/v1/teams/elche-c-f/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
+| RCD ESPANYOL | [`rcd-espanyol`](https://apim.laliga.com/public-service/api/v1/teams/rcd-espanyol/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
+| GETAFE CF | [`getafe-cf`](https://apim.laliga.com/public-service/api/v1/teams/getafe-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 30 |
+| LEVANTE UD | [`levante-ud`](https://apim.laliga.com/public-service/api/v1/teams/levante-ud/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
+| REAL MADRID CF | [`real-madrid`](https://apim.laliga.com/public-service/api/v1/teams/real-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 30 |
+| MALAGA CF | [`malaga-cf`](https://apim.laliga.com/public-service/api/v1/teams/malaga-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
+| OSASUNA | [`c-a-osasuna`](https://apim.laliga.com/public-service/api/v1/teams/c-a-osasuna/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
+| RACING DE SANTANDER | [`r-racing-club`](https://apim.laliga.com/public-service/api/v1/teams/r-racing-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
+| RAYO VALLECANO | [`rayo-vallecano`](https://apim.laliga.com/public-service/api/v1/teams/rayo-vallecano/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
+| REAL SOCIEDAD | [`real-sociedad`](https://apim.laliga.com/public-service/api/v1/teams/real-sociedad/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 29 |
+| SEVILLA | [`sevilla-fc`](https://apim.laliga.com/public-service/api/v1/teams/sevilla-fc/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
+| VALENCIA | [`valencia-cf`](https://apim.laliga.com/public-service/api/v1/teams/valencia-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
+| VILLARREAL | [`villarreal-cf`](https://apim.laliga.com/public-service/api/v1/teams/villarreal-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
+
+`limit=50` cubre de sobra la plantilla más numerosa (33 fichas), así que no hace
+falta paginar con `offset`.
+
+## Estructura de la respuesta
+
+```json
+{
+  "total": 28,
+  "squads": [
+    {
+      "id": 84308,
+      "shirt_number": 1,
+      "current": true,
+      "loan": false,
+      "loan_to": false,
+      "position": { "name": "Portero", "slug": "portero" },
+      "team": { "slug": "d-alaves", "shortname": "ALA", "color": "#0f39b8" },
+      "person": {
+        "name": "Antonio Sivera",
+        "nickname": "Sivera",
+        "firstname": "Antonio",
+        "lastname": "Sivera",
+        "date_of_birth": "1996-08-11T00:00:00+00:00",
+        "height": 188,
+        "country": { "id": "ES" }
+      },
+      "role": { "name": "Jugador", "slug": "jugador" },
+      "photos": { "001": { "512x556": "https://assets.laliga.com/..." } }
+    }
+  ]
+}
+```
+
+### Campos útiles
+
+| Campo | Uso |
+| --- | --- |
+| `shirt_number` | Dorsal oficial. Puede ir desactualizado a principio de temporada. |
+| `person.nickname` | Nombre corto, el que suele imprimir Panini. |
+| `person.name` | Nombre completo, mejor para emparejar con el checklist. |
+| `position.name` | `Portero`, `Defensa`, `Centrocampista` o `Delantero`. |
+| `role.slug` | `jugador`, `entrenador` o `segundo-entrenador`. |
+| `loan` / `loan_to` | Cesiones entrantes y salientes. |
+| `current` | Si la ficha sigue activa en la plantilla. |
+| `photos` | Retratos oficiales en PNG. |
+
+Para quedarse sólo con futbolistas hay que filtrar `role.slug == "jugador"`; en
+caso contrario se cuelan el entrenador y el segundo entrenador.
+
+## Fotos de jugador
+
+Las imágenes viven en `assets.laliga.com` y siguen este patrón:
+
+```
+https://assets.laliga.com/squad/2026/t<equipo>/p<persona>/<tamaño>/p<persona>_t<equipo>_2026_0_<variante>_000.png
+```
+
+| Variante | Encuadre | Tamaños |
+| --- | --- | --- |
+| `001` | Retrato vertical, fondo recortado | `64x70` … `2048x2225` |
+| `002` | Cuadrado | `64x64` … `2048x2048` |
+| `003` | Cuadrado alternativo | `64x64` … `2048x2048` |
+| `004` | Cuadrado alternativo | `64x64` … `2048x2048` |
+
+Son PNG con transparencia y encuadre uniforme, bastante mejores que los retratos
+de Transfermarkt para dibujar los cromos que no tienen imagen oficial.
+
+## Cómo actualizar
+
+1. Recuperar los 20 slugs con el endpoint de equipos filtrado por competición.
+2. Descargar la plantilla de cada equipo y quedarse con `role.slug == "jugador"`.
+3. Emparejar con `coleccion_panini_revisada.csv` usando `person.name` y
+   `person.nickname` normalizados.
+4. Actualizar dorsal, posición y foto sólo cuando la coincidencia sea fiable,
+   igual que se hace con Transfermarkt.
+
+## Limitaciones
+
+- Los dorsales no siempre están al día, sobre todo tras el mercado de invierno.
+- La API confirma quién **está** en la plantilla, pero no informa de traspasos;
+  para las salidas se sigue usando BeSoccer.
+- La clave pública puede cambiar.
+- Las imágenes se enlazan desde `assets.laliga.com`; no se copian al repositorio.

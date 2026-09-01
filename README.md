@@ -72,7 +72,9 @@ retiradas. El CSV se ignora en Git porque puede contener el progreso privado
 importado con `--progreso`.
 
 La documentación sobre el manifiesto digital está en
-[`PANINI_DIGITAL.md`](PANINI_DIGITAL.md).
+[`PANINI_DIGITAL.md`](PANINI_DIGITAL.md), y la fuente oficial de plantillas,
+dorsales y fotos de jugador en
+[`ACTUALIZAR_PLANTILLAS.md`](ACTUALIZAR_PLANTILLAS.md).
 
 ## Sincronización gratuita
 
