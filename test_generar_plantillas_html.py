@@ -30,6 +30,7 @@ class SquadPageTests(unittest.TestCase):
 
         self.assertEqual(total, len(players))
         self.assertEqual(len(teams), 20)
+        self.assertEqual(len({player["clave"] for player in players}), len(players))
         self.assertEqual(len({player["seccion_album"] for player in players}), 20)
         self.assertIn("*", themes)
         self.assertIn("FC BARCELONA", themes)

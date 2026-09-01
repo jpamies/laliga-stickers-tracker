@@ -100,7 +100,7 @@
 
   function stickerSvg(player) {
     const palette = theme(player.seccion_album);
-    const id = normalize(player.squad_id).replace(/[^a-z0-9]+/g, "-");
+    const id = normalize(player.clave).replace(/[^a-z0-9]+/g, "-");
     const team = teamBySection.get(player.seccion_album);
     const label = (player.apodo || player.nombre || "").toUpperCase();
     const labelSize = label.length > 15 ? 13 : label.length > 11 ? 15 : 18;
@@ -166,7 +166,7 @@
     ].filter(Boolean).join("");
 
     return `
-      <article class="sticker-card squad-card" data-id="${escapeHtml(player.squad_id)}">
+      <article class="sticker-card squad-card" data-id="${escapeHtml(player.clave)}">
         <div class="card-top">
           <span class="sticker-number">${escapeHtml(player.dorsal || "—")}</span>
           <span class="strategy-badge strategy-${positionGroup(player)}">${escapeHtml(player.posicion)}</span>

@@ -156,7 +156,10 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
    sólo lectura con las plantillas reales.
 
 Las tablas `public.laliga_equipo` y `public.laliga_plantilla` se crean con la
-migración `supabase/migrations/20260902120000_laliga_squads.sql`.
+migración `supabase/migrations/20260902120000_laliga_squads.sql`, que las
+recrea desde cero porque todo su contenido se regenera desde la API. La clave
+primaria de las fichas es `clave`, no `squad_id`, porque LALIGA publica los
+fichajes recién anunciados sin identificador.
 
 Para emparejar con el checklist Panini se usa `person.name` y `person.nickname`
 normalizados contra `coleccion_panini_revisada.csv`, y sólo se actualiza dorsal,
@@ -165,6 +168,11 @@ posición o foto cuando la coincidencia es fiable.
 ## Limitaciones
 
 - Los dorsales no siempre están al día, sobre todo tras el mercado de invierno.
+- Los fichajes más recientes llegan sin `id`, `person.id`, `opta_id` ni dorsal
+  (unas 15 fichas). Por eso la clave primaria de la tabla es `clave`, que el
+  generador construye con el slug del equipo y, cuando no hay `id`, con el
+  nombre normalizado del jugador.
+- Muchos nombres vienen con espacios sobrantes; el generador los recorta.
 - La API confirma quién **está** en la plantilla, pero no informa de traspasos;
   para las salidas se sigue usando BeSoccer.
 - La clave pública puede cambiar.

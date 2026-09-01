@@ -81,7 +81,8 @@ pública de laliga.com, cachea las respuestas en `.cache_laliga/` y escribe
 regenera entero (un `delete` y los `insert` dentro de una transacción), así que
 cuando LALIGA actualice dorsales o fotos basta con volver a ejecutarlo, limpiar
 la tabla e importar. Las tablas viven en la migración
-[`supabase/migrations/20260902120000_laliga_squads.sql`](supabase/migrations/20260902120000_laliga_squads.sql).
+[`supabase/migrations/20260902120000_laliga_squads.sql`](supabase/migrations/20260902120000_laliga_squads.sql),
+y hay que aplicarla antes del primer volcado.
 
 Ejecutar las pruebas:
 

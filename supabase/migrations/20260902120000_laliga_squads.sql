@@ -5,8 +5,14 @@
 -- completo. No guardan datos personales del usuario: son el catálogo público
 -- que publica laliga.com, así que cualquiera puede leerlas y sólo el rol de
 -- servicio puede escribirlas.
+--
+-- Todo el contenido se regenera desde la API, así que la migración recrea las
+-- tablas desde cero en lugar de intentar conservar filas.
 
-create table if not exists public.laliga_equipo (
+drop table if exists public.laliga_plantilla cascade;
+drop table if exists public.laliga_equipo cascade;
+
+create table public.laliga_equipo (
   slug text primary key,
   team_id integer not null,
   nombre text not null,
@@ -20,8 +26,12 @@ create table if not exists public.laliga_equipo (
   temporada integer not null
 );
 
-create table if not exists public.laliga_plantilla (
-  squad_id integer primary key,
+-- `squad_id`, `person_id`, `opta_id` y `dorsal` llegan vacíos en los fichajes
+-- que LALIGA todavía no ha fichado del todo, de ahí que la clave primaria sea
+-- `clave`, que el generador deriva del equipo y del nombre cuando hace falta.
+create table public.laliga_plantilla (
+  clave text primary key,
+  squad_id integer,
   team_slug text not null references public.laliga_equipo (slug) on delete cascade,
   seccion_album text,
   equipo text,
@@ -51,22 +61,23 @@ create table if not exists public.laliga_plantilla (
   temporada integer not null
 );
 
-create index if not exists laliga_plantilla_team_idx
+create unique index laliga_plantilla_squad_id_idx
+  on public.laliga_plantilla (squad_id)
+  where squad_id is not null;
+create index laliga_plantilla_team_idx
   on public.laliga_plantilla (team_slug);
-create index if not exists laliga_plantilla_seccion_idx
+create index laliga_plantilla_seccion_idx
   on public.laliga_plantilla (seccion_album);
 
 alter table public.laliga_equipo enable row level security;
 alter table public.laliga_plantilla enable row level security;
 
-drop policy if exists "Anyone can read laliga teams" on public.laliga_equipo;
 create policy "Anyone can read laliga teams"
 on public.laliga_equipo
 for select
 to anon, authenticated
 using (true);
 
-drop policy if exists "Anyone can read laliga squads" on public.laliga_plantilla;
 create policy "Anyone can read laliga squads"
 on public.laliga_plantilla
 for select

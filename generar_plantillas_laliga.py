@@ -11,7 +11,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import time
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -67,6 +69,7 @@ TEAM_FIELDS = [
 ]
 
 PLAYER_FIELDS = [
+    "clave",
     "squad_id",
     "team_slug",
     "seccion_album",
@@ -187,25 +190,54 @@ def photo_url(photos: dict | None, variant: str, size: str) -> str:
     return (photos.get(variant) or {}).get(size, "")
 
 
+def text(value: object) -> str:
+    """La API deja espacios sobrantes en muchos nombres."""
+    return "" if value is None else str(value).strip()
+
+
 def as_date(value: str | None) -> str:
     if not value:
         return ""
     return str(value)[:10]
 
 
+def slugify(value: str) -> str:
+    normalized = "".join(
+        character
+        for character in unicodedata.normalize("NFKD", value)
+        if not unicodedata.combining(character)
+    )
+    return re.sub(r"[^a-z0-9]+", "-", normalized.casefold()).strip("-")
+
+
+def player_key(member: dict, team: dict) -> str:
+    """Identificador estable de la ficha.
+
+    LALIGA todavía no asigna `id` a los fichajes más recientes, así que en ese
+    caso lo derivamos del equipo y del nombre para no depender de un valor nulo.
+    """
+    slug = text(team.get("slug"))
+    squad_id = member.get("id")
+    if squad_id:
+        return f"{slug}-{squad_id}"
+    person = member.get("person") or {}
+    name = text(person.get("name")) or text(person.get("nickname"))
+    return f"{slug}-s-{slugify(name)}"
+
+
 def team_row(team: dict, season: int) -> dict[str, str]:
     venue = team.get("venue") or {}
     return {
-        "slug": team.get("slug", ""),
+        "slug": text(team.get("slug")),
         "team_id": team.get("id", ""),
-        "nombre": team.get("name", ""),
-        "nombre_corto": team.get("nickname") or team.get("boundname") or "",
-        "abreviatura": team.get("shortname", ""),
-        "seccion_album": ALBUM_SECTION_BY_SLUG.get(team.get("slug", ""), ""),
-        "color": team.get("color", ""),
-        "color_secundario": team.get("color_secondary", ""),
+        "nombre": text(team.get("name")),
+        "nombre_corto": text(team.get("nickname")) or text(team.get("boundname")),
+        "abreviatura": text(team.get("shortname")),
+        "seccion_album": ALBUM_SECTION_BY_SLUG.get(text(team.get("slug")), ""),
+        "color": text(team.get("color")),
+        "color_secundario": text(team.get("color_secondary")),
         "escudo_url": image_url(team.get("shield"), "medium"),
-        "estadio": venue.get("name", ""),
+        "estadio": text(venue.get("name")),
         "temporada": season,
     }
 
@@ -215,24 +247,25 @@ def player_row(member: dict, team: dict, season: int) -> dict[str, str]:
     position = member.get("position") or {}
     role = member.get("role") or {}
     photos = member.get("photos") or {}
-    slug = team.get("slug", "")
+    slug = text(team.get("slug"))
     return {
-        "squad_id": member.get("id", ""),
+        "clave": player_key(member, team),
+        "squad_id": member.get("id") or "",
         "team_slug": slug,
         "seccion_album": ALBUM_SECTION_BY_SLUG.get(slug, ""),
-        "equipo": team.get("nickname") or team.get("name") or "",
+        "equipo": text(team.get("nickname")) or text(team.get("name")),
         "dorsal": member.get("shirt_number") or "",
-        "posicion": position.get("name", ""),
-        "posicion_slug": position.get("slug", ""),
-        "rol": role.get("name", ""),
-        "rol_slug": role.get("slug", ""),
-        "nombre": person.get("name", ""),
-        "apodo": person.get("nickname", ""),
-        "nombre_pila": person.get("firstname", ""),
-        "apellidos": person.get("lastname", ""),
+        "posicion": text(position.get("name")),
+        "posicion_slug": text(position.get("slug")),
+        "rol": text(role.get("name")),
+        "rol_slug": text(role.get("slug")),
+        "nombre": text(person.get("name")),
+        "apodo": text(person.get("nickname")),
+        "nombre_pila": text(person.get("firstname")),
+        "apellidos": text(person.get("lastname")),
         "fecha_nacimiento": as_date(person.get("date_of_birth")),
-        "lugar_nacimiento": person.get("place_of_birth", "") or "",
-        "pais": (person.get("country") or {}).get("id", ""),
+        "lugar_nacimiento": text(person.get("place_of_birth")),
+        "pais": text((person.get("country") or {}).get("id")),
         "altura_cm": person.get("height") or "",
         "peso_kg": person.get("weight") or "",
         "internacional": "true" if person.get("international") else "false",
@@ -242,8 +275,8 @@ def player_row(member: dict, team: dict, season: int) -> dict[str, str]:
         "foto_url": photo_url(photos, "001", "512x556"),
         "foto_grande_url": photo_url(photos, "001", "1024x1113"),
         "foto_cuadrada_url": photo_url(photos, "002", "512x512"),
-        "person_id": person.get("id", ""),
-        "opta_id": member.get("opta_id", "") or "",
+        "person_id": person.get("id") or "",
+        "opta_id": text(member.get("opta_id")),
         "temporada": season,
     }
 
@@ -279,6 +312,10 @@ def collect(
     missing = set(ALBUM_SECTION_BY_SLUG) - {team["slug"] for team in teams}
     if missing:
         raise RuntimeError(f"Faltan plantillas de: {sorted(missing)}")
+    keys = [row["clave"] for row in players]
+    if len(keys) != len(set(keys)):
+        duplicated = sorted({key for key in keys if keys.count(key) > 1})
+        raise RuntimeError(f"Claves de ficha repetidas: {duplicated}")
     return teams, players
 
 

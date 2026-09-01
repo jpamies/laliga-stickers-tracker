@@ -6,6 +6,7 @@ from generar_plantillas_laliga import (
     PLAYER_FIELDS,
     TEAM_FIELDS,
     insert_statements,
+    player_key,
     player_row,
     sql_literal,
     team_row,
@@ -74,6 +75,7 @@ class RowMappingTests(unittest.TestCase):
         row = player_row(MEMBER, TEAM, 2026)
 
         self.assertEqual(set(row), set(PLAYER_FIELDS))
+        self.assertEqual(row["clave"], "fc-barcelona-84308")
         self.assertEqual(row["squad_id"], 84308)
         self.assertEqual(row["dorsal"], 1)
         self.assertEqual(row["fecha_nacimiento"], "2001-05-04")
@@ -92,6 +94,39 @@ class RowMappingTests(unittest.TestCase):
 
         self.assertEqual(row["dorsal"], "")
         self.assertEqual(sql_literal(row["dorsal"], "dorsal"), "null")
+
+    def test_brand_new_signings_get_a_key_derived_from_the_name(self) -> None:
+        # LALIGA publica los fichajes recientes sin `id`, `opta_id` ni dorsal.
+        member = {
+            **MEMBER,
+            "id": None,
+            "shirt_number": None,
+            "opta_id": None,
+            "person": {
+                **MEMBER["person"],
+                "id": None,
+                "name": "Youssouf Fofana ",
+                "place_of_birth": None,
+            },
+        }
+
+        row = player_row(member, TEAM, 2026)
+
+        self.assertEqual(row["clave"], "fc-barcelona-s-youssouf-fofana")
+        self.assertEqual(row["nombre"], "Youssouf Fofana")
+        self.assertEqual(row["squad_id"], "")
+        self.assertEqual(row["person_id"], "")
+        self.assertEqual(sql_literal(row["clave"], "clave"), "'fc-barcelona-s-youssouf-fofana'")
+        self.assertEqual(sql_literal(row["squad_id"], "squad_id"), "null")
+
+    def test_key_is_stable_for_accented_names(self) -> None:
+        member = {
+            **MEMBER,
+            "id": None,
+            "person": {**MEMBER["person"], "id": None, "name": "Nicolas Pépé"},
+        }
+
+        self.assertEqual(player_key(member, TEAM), "fc-barcelona-s-nicolas-pepe")
 
 
 class SqlTests(unittest.TestCase):
