@@ -151,6 +151,7 @@
     const facts = [
       ["Posición", player.posicion],
       ["Dorsal", player.dorsal || "sin asignar"],
+      ["Cromo", player.cromos || "—"],
       ["Edad", years ? `${years} años` : ""],
       ["Nacimiento", [formatDate(player.fecha_nacimiento), player.lugar_nacimiento].filter(Boolean).join(" · ")],
       ["País", player.pais],
@@ -202,6 +203,7 @@
       player.seccion_album,
       player.pais,
       player.lugar_nacimiento,
+      player.cromos,
     ].join(" "));
     return haystack.includes(normalize(state.query));
   }

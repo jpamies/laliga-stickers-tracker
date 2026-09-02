@@ -390,7 +390,7 @@
       sticker.club_objetivo,
       displayAction(sticker),
       sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
-      sticker.coincidencia_transfermarkt,
+      sticker.coincidencia_laliga,
       sticker.notas,
     ].join(" "));
     return haystack.includes(normalize(state.query));
@@ -515,12 +515,36 @@
     `;
   }
 
+  const laligaReasons = {
+    fuera_plantilla: "Ya no aparece en la plantilla oficial de LALIGA",
+    coincidencia_dudosa: "Coincidencia sin confirmar en LALIGA",
+    no_aplica: "Este cromo no es un jugador",
+    pendiente_publicacion: "Panini todavía no ha asignado el hueco",
+  };
+
+  function laligaSummary(sticker) {
+    // Sólo mostramos la ficha oficial cuando el emparejamiento es firme; una
+    // coincidencia dudosa señalaría a otro jugador, así que va como guion.
+    if (sticker.estado_laliga !== "en_plantilla") {
+      return {
+        html: "—",
+        title: laligaReasons[sticker.estado_laliga] || "Sin ficha en LALIGA",
+      };
+    }
+    const details = [sticker.dorsal_laliga, sticker.posicion_laliga]
+      .filter(Boolean)
+      .join(" · ");
+    return {
+      html: `<strong>${escapeHtml(sticker.coincidencia_laliga)}</strong>`
+        + (details ? `<small>${escapeHtml(details)}</small>` : ""),
+      title: "Ficha oficial de LALIGA",
+    };
+  }
+
   function stickerCard(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
-    const transfermarkt = sticker.coincidencia_transfermarkt
-      ? `<strong>${escapeHtml(sticker.coincidencia_transfermarkt)}</strong>`
-      : escapeHtml(sticker.notas || "Sin coincidencia disponible");
+    const laliga = laligaSummary(sticker);
     const name = sticker.nombre || "Pendiente de publicación";
     const dontStick = shouldNotStick(sticker, progress);
     const action = displayAction(sticker);
@@ -578,9 +602,9 @@
         ${visual}
         <h3 class="sticker-name">${escapeHtml(name)}</h3>
         <p class="sticker-type">${escapeHtml(sticker.tipo || sticker.estado_plantilla.replaceAll("_", " "))}</p>
-        <div class="card-meta">
-          <span>Transfermarkt:</span>
-          <span>${transfermarkt}</span>
+        <div class="card-meta" title="${escapeHtml(laliga.title)}">
+          <span>LALIGA:</span>
+          <span>${laliga.html}</span>
         </div>
         <div class="card-spacer"></div>
         <div class="copy-row ${progress.copies > 1 ? "copy-row-duplicate" : progress.copies === 1 ? "copy-row-owned" : ""}">

@@ -1,10 +1,14 @@
 """Contrasta el checklist Panini con las plantillas oficiales de LALIGA.
 
-Genera un CSV auxiliar por identificador de cromo (igual que
-`imagenes_panini.csv` o `fotos_transfermarkt.csv`) que el álbum consume para
-saber qué jugadores ya no aparecen en la plantilla de su club. El CSV maestro
-no se toca: la recomendación pública sigue siendo siempre «pegar» y sólo el
-dueño del álbum ve la sugerencia de no pegar.
+Emparejar cromos y fichas sirve en las dos direcciones, así que un único
+recorrido produce los dos índices:
+
+- `comprobacion_laliga.csv`, por identificador de cromo, dice si el jugador
+  sigue en su club. El álbum lo consume para mostrar la ficha oficial y, sólo
+  al dueño, la sugerencia de no pegar. El CSV maestro no se toca: la
+  recomendación pública sigue siendo siempre «pegar».
+- `laliga_plantillas.csv` recibe de vuelta el cromo asociado a cada ficha, para
+  saber quién de la plantilla real tiene cromo y cuál es.
 """
 
 from __future__ import annotations
@@ -12,15 +16,26 @@ from __future__ import annotations
 import argparse
 import csv
 import difflib
-from dataclasses import dataclass, asdict
-from datetime import date
+from dataclasses import dataclass
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from comprobar_plantillas import NAME_ALIASES, normalize_name
-from extraer_checklist import CLUB_CANONICAL
+from extraer_checklist import CLUB_CANONICAL, CLUB_SECTIONS
+from generar_plantillas_laliga import (
+    PLAYER_FIELDS,
+    TEAM_FIELDS,
+    write_csv as write_squad_csv,
+    write_sql,
+)
 
 
 SECTION_BY_CLUB = {club: section for section, club in CLUB_CANONICAL.items()}
+
+# Sólo los cromos del equipo y los de Últimos Fichajes representan a un
+# jugador en su club. Las secciones temáticas (ADN, Fantasy, Draft, Extra)
+# repiten jugadores con otro diseño y ensuciarían el índice inverso.
+SQUAD_SECTIONS = frozenset(CLUB_SECTIONS) | {"ÚLTIMOS FICHAJES"}
 
 # LALIGA usa el nombre del registro civil y Panini el nombre deportivo.
 LALIGA_ALIASES = {
@@ -35,12 +50,22 @@ CSV_FIELDS = [
     "nombre",
     "club_objetivo",
     "estado_laliga",
+    "clave_laliga",
     "coincidencia_laliga",
     "dorsal_laliga",
     "posicion_laliga",
     "confianza_laliga",
     "comprobado_en",
     "notas_laliga",
+]
+
+# Columnas que este script devuelve a `laliga_plantillas.csv`.
+STICKER_FIELDS = [
+    "cromo_id",
+    "cromo_seccion",
+    "cromo_numero",
+    "cromo_nombre",
+    "cromos",
 ]
 
 IN_SQUAD = "en_plantilla"
@@ -59,6 +84,7 @@ MIN_ABSENCE_LENGTH = 5
 
 @dataclass(frozen=True)
 class SquadMember:
+    clave: str
     nombre: str
     apodo: str
     dorsal: str
@@ -69,6 +95,7 @@ class SquadMember:
 @dataclass(frozen=True)
 class Match:
     estado: str
+    clave: str
     candidato: str
     dorsal: str
     posicion: str
@@ -100,30 +127,37 @@ def member_keys(row: dict[str, str]) -> frozenset[str]:
     return frozenset(keys)
 
 
-def load_squads(path: Path) -> dict[str, list[SquadMember]]:
-    squads: dict[str, list[SquadMember]] = {}
+def load_squads(path: Path) -> tuple[list[dict[str, str]], dict[str, list[SquadMember]]]:
     with path.open(encoding="utf-8-sig", newline="") as source:
-        for row in csv.DictReader(source):
-            section = row.get("seccion_album", "")
-            if not section:
-                continue
-            squads.setdefault(section, []).append(
-                SquadMember(
-                    nombre=row.get("nombre", ""),
-                    apodo=row.get("apodo", ""),
-                    dorsal=row.get("dorsal", ""),
-                    posicion=row.get("posicion", ""),
-                    keys=member_keys(row),
-                )
+        rows = list(csv.DictReader(source))
+    squads: dict[str, list[SquadMember]] = {}
+    for row in rows:
+        section = row.get("seccion_album", "")
+        if not section:
+            continue
+        squads.setdefault(section, []).append(
+            SquadMember(
+                clave=row.get("clave", ""),
+                nombre=row.get("nombre", ""),
+                apodo=row.get("apodo", ""),
+                dorsal=row.get("dorsal", ""),
+                posicion=row.get("posicion", ""),
+                keys=member_keys(row),
             )
+        )
     if not squads:
         raise ValueError(f"{path} no contiene plantillas; ejecuta antes generar_plantillas_laliga.py.")
-    return squads
+    return rows, squads
+
+
+def miss(estado: str, candidato: str, confianza: float, notas: str) -> Match:
+    return Match(estado, "", candidato, "", "", confianza, notas)
 
 
 def hit(member: SquadMember, confidence: float, notes: str) -> Match:
     return Match(
         IN_SQUAD,
+        member.clave,
         member.nombre or member.apodo,
         member.dorsal,
         member.posicion,
@@ -135,7 +169,7 @@ def hit(member: SquadMember, confidence: float, notes: str) -> Match:
 def match_member(name: str, squad: list[SquadMember]) -> Match:
     raw_target = normalize_name(name)
     if not raw_target:
-        return Match(UNPUBLISHED, "", "", "", 0.0, "Cromo sin nombre.")
+        return miss(UNPUBLISHED, "", 0.0, "Cromo sin nombre.")
 
     targets = [raw_target]
     for aliases in (LALIGA_ALIASES, NAME_ALIASES):
@@ -149,12 +183,9 @@ def match_member(name: str, squad: list[SquadMember]) -> Match:
             notes = "Coincidencia exacta." if not index else "Coincidencia por alias conocido."
             return hit(exact[0], 1.0 if not index else 0.99, notes)
         if len(exact) > 1:
-            candidates = ", ".join(member.nombre for member in exact)
-            return Match(
+            return miss(
                 DOUBTFUL,
-                candidates,
-                "",
-                "",
+                ", ".join(member.nombre for member in exact),
                 0.5,
                 "El nombre coincide con varios jugadores de la plantilla.",
             )
@@ -170,12 +201,9 @@ def match_member(name: str, squad: list[SquadMember]) -> Match:
         if len(contained) == 1:
             return hit(contained[0], 0.96, "Coincidencia única por nombre parcial.")
         if len(contained) > 1:
-            candidates = ", ".join(member.nombre for member in contained)
-            return Match(
+            return miss(
                 DOUBTFUL,
-                candidates,
-                "",
-                "",
+                ", ".join(member.nombre for member in contained),
                 0.5,
                 "El nombre parcial coincide con varios jugadores.",
             )
@@ -189,32 +217,26 @@ def match_member(name: str, squad: list[SquadMember]) -> Match:
                 if score > best_score:
                     best_score, best_member = score, member
     if best_member is None:
-        return Match(NO_SQUAD, "", "", "", 0.0, "La plantilla llegó vacía.")
+        return miss(NO_SQUAD, "", 0.0, "La plantilla llegó vacía.")
     if best_score >= 0.86:
         return hit(best_member, best_score, "Coincidencia aproximada de alta confianza.")
     if best_score >= 0.68:
-        return Match(
+        return miss(
             DOUBTFUL,
             best_member.nombre,
-            "",
-            "",
             best_score,
             "Posible coincidencia; confírmala antes de descartar el cromo.",
         )
     if len(raw_target) < MIN_ABSENCE_LENGTH:
-        return Match(
+        return miss(
             DOUBTFUL,
             best_member.nombre,
-            "",
-            "",
             best_score,
             "Nombre demasiado corto para descartarlo con seguridad.",
         )
-    return Match(
+    return miss(
         OUT_OF_SQUAD,
         best_member.nombre,
-        "",
-        "",
         best_score,
         "No aparece en la plantilla oficial de LALIGA.",
     )
@@ -236,15 +258,15 @@ def check_rows(
     for row in rows:
         name = row.get("nombre", "")
         if not name:
-            match = Match(UNPUBLISHED, "", "", "", 0.0, "Hueco sin jugador.")
+            match = miss(UNPUBLISHED, "", 0.0, "Hueco sin jugador.")
         elif name == "Escudo":
-            match = Match(NOT_APPLICABLE, "", "", "", 0.0, "El escudo no es un jugador.")
+            match = miss(NOT_APPLICABLE, "", 0.0, "El escudo no es un jugador.")
         else:
             section = section_for(row, squads)
             match = (
                 match_member(name, squads[section])
                 if section
-                else Match(NO_SQUAD, "", "", "", 0.0, "Sin club que comprobar.")
+                else miss(NO_SQUAD, "", 0.0, "Sin club que comprobar.")
             )
         results.append(
             {
@@ -254,6 +276,7 @@ def check_rows(
                 "nombre": name,
                 "club_objetivo": row.get("club_objetivo", ""),
                 "estado_laliga": match.estado,
+                "clave_laliga": match.clave,
                 "coincidencia_laliga": match.candidato,
                 "dorsal_laliga": match.dorsal,
                 "posicion_laliga": match.posicion,
@@ -265,6 +288,45 @@ def check_rows(
     return results
 
 
+def stickers_by_member(results: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
+    """Índice inverso: qué cromos representan a cada ficha de LALIGA.
+
+    Un jugador puede tener el cromo de su equipo y además el de Últimos
+    Fichajes; el del equipo manda porque es el hueco fijo del álbum."""
+    by_member: dict[str, list[dict[str, str]]] = {}
+    for result in results:
+        if not result["clave_laliga"] or result["seccion"] not in SQUAD_SECTIONS:
+            continue
+        by_member.setdefault(result["clave_laliga"], []).append(result)
+    for stickers in by_member.values():
+        stickers.sort(key=lambda item: item["seccion"] == "ÚLTIMOS FICHAJES")
+    return by_member
+
+
+def link_stickers(
+    squad_rows: list[dict[str, str]],
+    results: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    by_member = stickers_by_member(results)
+    linked: list[dict[str, str]] = []
+    for row in squad_rows:
+        stickers = by_member.get(row.get("clave", ""), [])
+        primary = stickers[0] if stickers else {}
+        linked.append(
+            {
+                **row,
+                "cromo_id": primary.get("id", ""),
+                "cromo_seccion": primary.get("seccion", ""),
+                "cromo_numero": primary.get("numero", ""),
+                "cromo_nombre": primary.get("nombre", ""),
+                "cromos": "; ".join(
+                    f"{sticker['seccion']} {sticker['numero']}" for sticker in stickers
+                ),
+            }
+        )
+    return linked
+
+
 def write_csv(rows: list[dict[str, str]], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8-sig", newline="") as output:
@@ -273,26 +335,45 @@ def write_csv(rows: list[dict[str, str]], path: Path) -> None:
         writer.writerows(rows)
 
 
+def read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8-sig", newline="") as source:
+        return list(csv.DictReader(source))
+
+
 def generate(
     collection_path: Path,
     squads_path: Path,
     output_path: Path,
+    teams_path: Path | None = None,
+    sql_path: Path | None = None,
     checked_on: date | None = None,
 ) -> dict[str, int]:
-    with collection_path.open(encoding="utf-8-sig", newline="") as source:
-        rows = list(csv.DictReader(source))
-    squads = load_squads(squads_path)
+    rows = read_csv(collection_path)
+    squad_rows, squads = load_squads(squads_path)
     results = check_rows(rows, squads, checked_on or date.today())
     write_csv(results, output_path)
+
+    linked = link_stickers(squad_rows, results)
+    write_squad_csv(linked, PLAYER_FIELDS, squads_path)
+    if teams_path and sql_path and teams_path.exists():
+        write_sql(
+            read_csv(teams_path), linked, sql_path, datetime.now(timezone.utc)
+        )
+
     counts: dict[str, int] = {}
     for result in results:
         counts[result["estado_laliga"]] = counts.get(result["estado_laliga"], 0) + 1
+    counts["fichas_con_cromo"] = sum(bool(row["cromo_id"]) for row in linked)
+    counts["fichas_sin_cromo"] = sum(not row["cromo_id"] for row in linked)
     return counts
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Marca qué cromos ya no están en la plantilla oficial de LALIGA."
+        description=(
+            "Empareja el checklist Panini con las plantillas oficiales de LALIGA "
+            "en las dos direcciones."
+        )
     )
     parser.add_argument(
         "--coleccion", type=Path, default=Path("coleccion_panini_revisada.csv")
@@ -300,11 +381,17 @@ def main() -> None:
     parser.add_argument(
         "--plantillas", type=Path, default=Path("laliga_plantillas.csv")
     )
+    parser.add_argument("--equipos", type=Path, default=Path("laliga_equipos.csv"))
     parser.add_argument("--salida", type=Path, default=Path("comprobacion_laliga.csv"))
+    parser.add_argument(
+        "--sql", type=Path, default=Path("supabase/laliga_plantillas.sql")
+    )
     args = parser.parse_args()
 
-    counts = generate(args.coleccion, args.plantillas, args.salida)
-    print(f"Generado {args.salida}:")
+    counts = generate(
+        args.coleccion, args.plantillas, args.salida, args.equipos, args.sql
+    )
+    print(f"Generados {args.salida}, {args.plantillas} y {args.sql}:")
     for estado, total in sorted(counts.items()):
         print(f"- {estado}: {total}")
 

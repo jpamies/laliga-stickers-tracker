@@ -1002,6 +1002,11 @@ button {
   color: var(--ink);
 }
 
+.card-meta small {
+  display: block;
+  font-size: 0.68rem;
+}
+
 .card-spacer {
   flex: 1;
 }

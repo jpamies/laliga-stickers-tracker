@@ -154,8 +154,10 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
 4. Regenera `supabase/laliga_plantillas.sql` con un `delete` y los `insert`
    completos dentro de una transacción, para limpiar tabla e importar de nuevo.
 5. `comprobar_plantillas_laliga.py` cruza esas plantillas con el checklist y
-   escribe `comprobacion_laliga.csv`, que alimenta la sugerencia privada de «no
-   pegar» descrita en el README.
+   escribe `comprobacion_laliga.csv`; además devuelve a `laliga_plantillas.csv`
+   y al SQL el cromo asociado a cada ficha (`cromo_id`, `cromo_seccion`,
+   `cromo_numero`, `cromo_nombre` y `cromos`). Ejecútalo siempre después de
+   `generar_plantillas_laliga.py`, que reescribe esas columnas vacías.
 6. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
    sólo lectura con las plantillas reales.
 

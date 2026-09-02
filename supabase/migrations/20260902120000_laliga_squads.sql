@@ -58,8 +58,19 @@ create table public.laliga_plantilla (
   foto_cuadrada_url text,
   person_id integer,
   opta_id text,
-  temporada integer not null
+  temporada integer not null,
+  -- Cromo del álbum Panini que representa a esta ficha, si lo hay. Sólo se
+  -- cruzan las secciones de equipo y Últimos Fichajes: las temáticas (ADN,
+  -- Fantasy, Draft, Extra) repiten jugadores con otro diseño.
+  cromo_id text,
+  cromo_seccion text,
+  cromo_numero text,
+  cromo_nombre text,
+  cromos text
 );
+
+create index laliga_plantilla_cromo_idx
+  on public.laliga_plantilla (cromo_id);
 
 create unique index laliga_plantilla_squad_id_idx
   on public.laliga_plantilla (squad_id)

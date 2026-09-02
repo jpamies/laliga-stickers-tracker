@@ -98,6 +98,12 @@ PLAYER_FIELDS = [
     "person_id",
     "opta_id",
     "temporada",
+    # Las rellena `comprobar_plantillas_laliga.py` al cruzar con el checklist.
+    "cromo_id",
+    "cromo_seccion",
+    "cromo_numero",
+    "cromo_nombre",
+    "cromos",
 ]
 
 TEAM_TABLE = "public.laliga_equipo"
@@ -278,6 +284,11 @@ def player_row(member: dict, team: dict, season: int) -> dict[str, str]:
         "person_id": person.get("id") or "",
         "opta_id": text(member.get("opta_id")),
         "temporada": season,
+        "cromo_id": "",
+        "cromo_seccion": "",
+        "cromo_numero": "",
+        "cromo_nombre": "",
+        "cromos": "",
     }
 
 

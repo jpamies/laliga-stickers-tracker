@@ -35,9 +35,12 @@
   Transfermarkt, los colores del equipo y los datos pendientes marcados.
 - Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
   información: la decisión de no pegar la tomas tú.
+- Ficha oficial de LALIGA en cada cromo (nombre completo, dorsal y
+  demarcación), con un guion cuando el jugador ya no está en el club.
 - Vista aparte con las plantillas reales de Primera División
   (`album/plantillas.html`), generada con los datos y las fotos oficiales de
-  LALIGA. No está enlazada en el menú: se abre por URL directa.
+  LALIGA, incluido el cromo del álbum que representa a cada jugador. No está
+  enlazada en el menú: se abre por URL directa.
 - Importación y exportación del progreso.
 - Importación mediante el texto de «Compartir lista» de Figuritas App, con
   revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`,
@@ -73,11 +76,25 @@ cromos que todavía no tienen imagen oficial, sin copiar ninguna imagen al
 repositorio.
 
 `comprobar_plantillas_laliga.py` cruza el checklist con `laliga_plantillas.csv`
-y escribe `comprobacion_laliga.csv`, un CSV auxiliar por identificador de cromo
-con el estado de cada jugador (`en_plantilla`, `fuera_plantilla`,
-`coincidencia_dudosa`…). Es deliberadamente conservador: ante un nombre corto,
-un apellido compartido o un parecido razonable prefiere `coincidencia_dudosa`
+y aprovecha el mismo recorrido para escribir los dos índices:
+
+- `comprobacion_laliga.csv`, por identificador de cromo, con el estado de cada
+  jugador (`en_plantilla`, `fuera_plantilla`, `coincidencia_dudosa`…) y su
+  ficha oficial.
+- las columnas `cromo_id`, `cromo_seccion`, `cromo_numero`, `cromo_nombre` y
+  `cromos` que devuelve a `laliga_plantillas.csv` y al SQL, para saber qué
+  cromo representa a cada jugador de la plantilla real. Sólo se cruzan las
+  secciones de equipo y Últimos Fichajes; las temáticas (ADN, Fantasy, Draft y
+  Extra Sticker) repiten jugadores con otro diseño y quedan fuera.
+
+El emparejamiento es deliberadamente conservador: ante un nombre corto, un
+apellido compartido o un parecido razonable prefiere `coincidencia_dudosa`
 antes que afirmar que alguien se ha ido.
+
+En la ficha de cada cromo el álbum muestra los datos oficiales de LALIGA
+(nombre completo, dorsal y demarcación) en lugar de la coincidencia de
+Transfermarkt, y un guion cuando el jugador ya no está en el club o el
+emparejamiento no es firme.
 
 ### Sugerencia privada de «no pegar»
 

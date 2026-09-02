@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=24">
+  <link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
   <header class="topbar">
@@ -144,7 +144,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=42"></script>
+  <script src="app.js?v=43"></script>
   <script src="cloud-sync.js?v=14"></script>
   <script src="social.js?v=16"></script>
 </body>
@@ -224,6 +224,9 @@ def pending_update_stickers(
                     "digital_group": "",
                     "metodo_coincidencia": "",
                     "estado_laliga": "",
+                    "coincidencia_laliga": "",
+                    "dorsal_laliga": "",
+                    "posicion_laliga": "",
                     "imagen_provisional": "",
                     "foto_url": "",
                     "escudo_url": "",
@@ -264,22 +267,23 @@ def load_stickers(
             image_rows = list(csv.DictReader(source))
         mapping = {row["id"]: row for row in image_rows}
 
-    laliga: dict[str, str] = {}
+    laliga: dict[str, dict[str, str]] = {}
     if laliga_check_path and laliga_check_path.exists():
         with laliga_check_path.open(encoding="utf-8-sig", newline="") as source:
-            laliga = {
-                row["id"]: row.get("estado_laliga", "")
-                for row in csv.DictReader(source)
-            }
+            laliga = {row["id"]: row for row in csv.DictReader(source)}
 
     for row in rows:
         image = mapping.get(row["id"], {})
+        check = laliga.get(row["id"], {})
         row.setdefault("edicion", "")
         row["imagen_url"] = image.get("imagen_url", "")
         row["digital_label"] = image.get("digital_label", "")
         row["digital_group"] = image.get("digital_group", "")
         row["metodo_coincidencia"] = image.get("metodo_coincidencia", "")
-        row["estado_laliga"] = laliga.get(row["id"], "")
+        row["estado_laliga"] = check.get("estado_laliga", "")
+        row["coincidencia_laliga"] = check.get("coincidencia_laliga", "")
+        row["dorsal_laliga"] = check.get("dorsal_laliga", "")
+        row["posicion_laliga"] = check.get("posicion_laliga", "")
         row["imagen_provisional"] = ""
         row["foto_url"] = ""
         row["escudo_url"] = ""

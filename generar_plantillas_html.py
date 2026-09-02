@@ -25,7 +25,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="robots" content="noindex">
   <meta name="description" content="Plantillas oficiales de LALIGA EA SPORTS 2026-27">
   <title>Plantillas reales LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=24">
+  <link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
   <header class="topbar">
@@ -112,7 +112,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.SQUAD_TEAMS = __SQUAD_TEAMS__;</script>
   <script>window.SQUAD_THEMES = __SQUAD_THEMES__;</script>
   <script>window.SQUAD_GENERATED_AT = __SQUAD_GENERATED_AT__;</script>
-  <script src="plantillas.js?v=1"></script>
+  <script src="plantillas.js?v=2"></script>
 </body>
 </html>
 """
