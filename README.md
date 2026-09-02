@@ -211,8 +211,11 @@ días. Al caducar, iniciar sesión genera automáticamente un enlace nuevo.
 
 La copia social contiene únicamente estado de posesión y número de copias.
 `stickDecision`, el correo y los identificadores internos no se incluyen en
-enlaces públicos ni comparaciones entre amigos. Las propuestas aceptadas no
-modifican automáticamente el álbum: cada usuario confirma después sus copias.
+enlaces públicos ni comparaciones entre amigos. Esa copia
+(`album_social_progress`) la deriva un disparador desde `album_progress`, así
+que no puede quedarse obsoleta aunque el álbum se reinicie desde el panel de
+Supabase o desde otro dispositivo. Las propuestas aceptadas no modifican
+automáticamente el álbum: cada usuario confirma después sus copias.
 
 Clerk Hobby y Supabase Free no requieren tarjeta para este uso. Supabase puede
 pausar un proyecto gratuito tras una semana sin actividad y lo reactiva cuando

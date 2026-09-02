@@ -123,7 +123,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('src="app.js?v=44"', html)
         self.assertIn('href="styles.css?v=25"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
-        self.assertIn('src="cloud-sync.js?v=14"', html)
+        self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
         self.assertIn('data-view="friends"', html)
 

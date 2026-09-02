@@ -145,7 +145,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
   <script src="app.js?v=44"></script>
-  <script src="cloud-sync.js?v=14"></script>
+  <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>
 </html>

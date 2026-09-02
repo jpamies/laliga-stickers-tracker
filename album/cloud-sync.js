@@ -119,20 +119,15 @@
     const updatedAt = localStorage.getItem(updatedKey()) || new Date().toISOString();
     localStorage.setItem(updatedKey(), updatedAt);
     setStatus("Guardando…");
-    const [{ error }, { error: socialError }] = await Promise.all([
-      client.from("album_progress").upsert({
-        user_id: currentUser.id,
-        progress: album.getProgress(),
-        updated_at: updatedAt,
-      }, { onConflict: "user_id" }),
-      client.from("album_social_progress").upsert({
-        user_id: currentUser.id,
-        progress: album.getSocialProgress(),
-        updated_at: updatedAt,
-      }, { onConflict: "user_id" }),
-    ]);
-    if (error || socialError) {
-      console.error("No se pudo guardar el progreso en Supabase.", error || socialError);
+    // La copia que ven los amigos la deriva un disparador en Supabase, así que
+    // aquí sólo se guarda el progreso real.
+    const { error } = await client.from("album_progress").upsert({
+      user_id: currentUser.id,
+      progress: album.getProgress(),
+      updated_at: updatedAt,
+    }, { onConflict: "user_id" });
+    if (error) {
+      console.error("No se pudo guardar el progreso en Supabase.", error);
       setStatus("Error al sincronizar", true);
       return;
     }
