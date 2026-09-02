@@ -55,7 +55,7 @@ class AlbumGenerationTests(unittest.TestCase):
         # recomendación pública de no pegar.
         self.assertEqual(
             sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
-            65,
+            67,
         )
         self.assertTrue(
             all(

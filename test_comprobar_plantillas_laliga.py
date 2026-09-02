@@ -103,6 +103,31 @@ class MatchTests(unittest.TestCase):
         self.assertEqual(match.estado, IN_SQUAD)
         self.assertEqual(match.candidato, "Youssef Enriquez")
 
+    def test_a_shared_surname_is_not_enough_to_claim_the_same_player(self) -> None:
+        # «Mario García» no es «Pablo García» sólo por compartir apellido.
+        squad = [member("Pablo García", "Pablo G.", "Pablo", "García")]
+
+        match = match_member("Mario García", squad)
+
+        self.assertNotEqual(match.estado, IN_SQUAD)
+
+    def test_abbreviations_and_typos_still_match(self) -> None:
+        squad = [
+            member("Rodrigo Mendoza", "Rodrigo", "Rodrigo", "Mendoza"),
+            member("Adrià Alti", "Alti", "Adrià", "Alti"),
+            member("Juan Francisco Funes Arjona", "Funes", "Juan Francisco", "Funes Arjona"),
+        ]
+
+        for printed, expected in [
+            ("Rodri Mendoza", "Rodrigo Mendoza"),
+            ("Adrià Altimira", "Adrià Alti"),
+            ("Juan Franisco Funes", "Juan Francisco Funes Arjona"),
+        ]:
+            with self.subTest(printed=printed):
+                match = match_member(printed, squad)
+                self.assertEqual(match.estado, IN_SQUAD)
+                self.assertEqual(match.candidato, expected)
+
 
 class SquadLoadingTests(unittest.TestCase):
     def test_reads_the_generated_squads_grouped_by_album_section(self) -> None:

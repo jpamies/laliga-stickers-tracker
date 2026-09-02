@@ -42,6 +42,15 @@ LALIGA_ALIASES = {
     "quique sanchez flores": "enrique sanchez flores",
     "cholo simeone": "diego pablo simeone",
     "yusi": "youssef enriquez",
+    # LALIGA no registra el nombre por el que se les conoce.
+    "ilaix moriba": "moriba kourouma kourouma",
+}
+
+# Cromos que comparten apellido con un fichaje posterior, así que el
+# emparejamiento por texto no puede distinguirlos. Comprobado a mano.
+KNOWN_ABSENCES = {
+    # El «García» del Racing es ahora Pablo, un fichaje de última hora.
+    ("Racing de Santander", "mario garcia"),
 }
 
 CSV_FIELDS = [
@@ -167,6 +176,34 @@ def hit(member: SquadMember, confidence: float, notes: str) -> Match:
     )
 
 
+def member_words(member: SquadMember) -> set[str]:
+    return {word for key in member.keys for word in key.split()}
+
+
+def similar_word(word: str, known: set[str]) -> bool:
+    """¿Esta palabra del cromo describe al mismo jugador?
+
+    Panini abrevia («Rodri» por «Rodrigo»), recorta («Alti» por «Altimira») y a
+    veces se equivoca al teclear («Franisco»). Lo que no hace es cambiar el
+    nombre por otro distinto, así que un «Mario» que no se parece a nada de la
+    ficha significa que es otra persona."""
+    for other in known:
+        if word == other:
+            return True
+        if len(word) >= 3 and len(other) >= 3 and (
+            word.startswith(other) or other.startswith(word)
+        ):
+            return True
+        if difflib.SequenceMatcher(None, word, other).ratio() >= 0.85:
+            return True
+    return False
+
+
+def describes_member(target: str, member: SquadMember) -> bool:
+    known = member_words(member)
+    return all(similar_word(word, known) for word in target.split())
+
+
 def match_member(name: str, squad: list[SquadMember]) -> Match:
     raw_target = normalize_name(name)
     if not raw_target:
@@ -198,6 +235,7 @@ def match_member(name: str, squad: list[SquadMember]) -> Match:
             member
             for member in squad
             if any(target in key or key in target for key in member.keys)
+            and describes_member(target, member)
         ]
         if len(contained) == 1:
             return hit(contained[0], 0.96, "Coincidencia única por nombre parcial.")
@@ -262,6 +300,13 @@ def check_rows(
             match = miss(UNPUBLISHED, "", 0.0, "Hueco sin jugador.")
         elif name == "Escudo":
             match = miss(NOT_APPLICABLE, "", 0.0, "El escudo no es un jugador.")
+        elif (row.get("club_objetivo", ""), normalize_name(name)) in KNOWN_ABSENCES:
+            match = miss(
+                OUT_OF_SQUAD,
+                "",
+                0.0,
+                "Comprobado a mano: otro jugador con el mismo apellido ocupa su sitio.",
+            )
         else:
             section = section_for(row, squads)
             match = (

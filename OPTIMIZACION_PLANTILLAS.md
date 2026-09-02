@@ -1,6 +1,6 @@
 # Optimización de plantilla por equipo
 
-Generado el 2026-09-02 por `analizar_optimizacion.py`.
+Generado el 2026-09-03 por `analizar_optimizacion.py`.
 
 Cada club ocupa una página de **20 huecos**: escudo, entrenador y 18
 jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o `BIS`)
@@ -26,8 +26,8 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 ## Resumen
 
 - **Equipos con la página completable sin Últimos Fichajes:** 2 de 20
-- **Huecos sin ningún jugador activo:** 30
-- **Huecos que ni con Últimos Fichajes se pueden salvar:** 17
+- **Huecos sin ningún jugador activo:** 31
+- **Huecos que ni con Últimos Fichajes se pueden salvar:** 18
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Últimos Fichajes | Déficit |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -40,7 +40,7 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 | [Deportivo de La Coruña](#deportivo) | 18/19 | 0 | 0 | 1 | 2/2 | — |
 | [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 1/1 | 1 |
 | [RCD Espanyol](#rcd-espanyol) | 17/19 | 2 | 0 | 0 | 2/3 | — |
-| [Getafe CF](#getafe-cf) | 15/19 | 2 | 0 | 2 | 1/1 | 1 |
+| [Getafe CF](#getafe-cf) | 14/19 | 3 | 0 | 2 | 1/1 | 2 |
 | [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1/1 | 3 |
 | [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 1/2 | — |
 | [Málaga CF](#malaga-cf) | 18/19 | 1 | 0 | 0 | 1/1 | — |
@@ -545,9 +545,9 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 ## GETAFE CF
 
-⛔ **2 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **1 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
+⛔ **3 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **2 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
 
-- **Huecos a resolver:** 12 (Javi Muñoz), 19 (Luis Vázquez)
+- **Huecos a resolver:** 12 (Javi Muñoz), 17 (Álex Sancris), 19 (Luis Vázquez)
 - **Últimos Fichajes que sirven:** UF18 (Andrés García)
 - **Sin asignar por Panini:** 13, 15
 
@@ -571,7 +571,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 14 | 14 (2ª ed) | Terrats | Ramón Terrats | 11 | **pegar** |
 | 15 | 15 | sin asignar | — | — | Pendiente |
 | 16 | 16 (2ª ed) | Juanmi | Juan Miguel Jiménez López | 7 | **pegar** |
-| 17 | 17 | Álex Sancris | Óscar López | 30 | **pegar** |
+| 17 | 17 | Álex Sancris | — | — | Sin jugador activo |
 | 18 | 18 | Borja Mayoral | Borja Mayoral | 9 | **pegar** |
 | 19 | 19 | Luis Vázquez | — | — | Sin jugador activo |
 | 20 | 20 | Satriano | Martín Satriano | 10 | **pegar** |
@@ -598,6 +598,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 27 | Ibra Drj | Delantero |
 | 28 | Risco | Centrocampista |
 | 29 | Curro | Centrocampista |
+| 30 | O. Lopez | Centrocampista |
 | 31 | Moha | Centrocampista |
 | 32 | Joselu | Delantero |
 | 35 | Ferrer | Portero |
@@ -828,7 +829,6 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 - **Huecos a resolver:** 8 (Javi Castro), 12 (Gustavo Puerta), 14 (Aldasoro), 15 (Suleiman)
 - **Últimos Fichajes que sirven:** UF1 (Canales)
 - **Sin asignar por Panini:** 3
-- **Puedes elegir variante:** 9 (9A o 9B)
 
 ### Huecos del álbum
 
@@ -843,8 +843,8 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 |  | 6BIS (2ª ed) | Pablo Ramón | Pablo Ramón | 5 | **pegar** |
 | 7 | 7 | Facu González | Facu González | 16 | **pegar** |
 | 8 | 8 | Javi Castro | — | — | Sin jugador activo |
-| 9 | 9A | Manu Hernando | José Manuel Hernando Riol | 4 | elegir una |
-|  | 9B | Mario García | Pablo García | — | elegir una |
+| 9 | 9A | Manu Hernando | José Manuel Hernando Riol | 4 | **pegar** |
+|  | 9B | Mario García | — | — | descartar |
 | 10 | 10 | Jorge Salinas | Jorge Salinas | 17 | **pegar** |
 | 11 | 11A | Maguette | Maguette Gueye | 14 | **pegar** |
 |  | 11B | Nteka | — | — | descartar |
@@ -880,6 +880,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | — | Aaron | Defensa |
 | — | A. Almeida | Centrocampista |
 | — | Iker Luque | Centrocampista |
+| — | Pablo G. | Delantero |
 
 ## RAYO VALLECANO
 
