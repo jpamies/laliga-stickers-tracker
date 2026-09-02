@@ -51,6 +51,19 @@ class AlbumGenerationTests(unittest.TestCase):
             0,
         )
         self.assertEqual({sticker["accion"] for sticker in stickers}, {"PEGAR", "ESPERAR"})
+        # La ausencia en la plantilla oficial viaja como dato, nunca como una
+        # recomendación pública de no pegar.
+        self.assertEqual(
+            sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
+            65,
+        )
+        self.assertTrue(
+            all(
+                sticker["accion"] == "PEGAR"
+                for sticker in stickers
+                if sticker["estado_laliga"] == "fuera_plantilla"
+            )
+        )
         self.assertEqual(
             sum(sticker["edicion"] == "2ed" for sticker in stickers),
             44,
@@ -107,9 +120,9 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="figuritas-preview"', html)
         self.assertIn('id="section-clear"', html)
         self.assertIn('id="import-json"', html)
-        self.assertIn('src="app.js?v=41"', html)
+        self.assertIn('src="app.js?v=42"', html)
         self.assertIn('href="styles.css?v=24"', html)
-        self.assertIn('src="cloud-config.js?v=14"', html)
+        self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=14"', html)
         self.assertIn('src="social.js?v=16"', html)
         self.assertIn('data-view="friends"', html)

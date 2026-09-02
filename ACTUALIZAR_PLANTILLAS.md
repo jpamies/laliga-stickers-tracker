@@ -143,6 +143,7 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
 
 ```powershell
 .\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
+.\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_plantillas_html.py
 ```
 
@@ -152,7 +153,10 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
    útiles, ordenando cada plantilla por demarcación y dorsal.
 4. Regenera `supabase/laliga_plantillas.sql` con un `delete` y los `insert`
    completos dentro de una transacción, para limpiar tabla e importar de nuevo.
-5. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
+5. `comprobar_plantillas_laliga.py` cruza esas plantillas con el checklist y
+   escribe `comprobacion_laliga.csv`, que alimenta la sugerencia privada de «no
+   pegar» descrita en el README.
+6. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
    sólo lectura con las plantillas reales.
 
 Las tablas `public.laliga_equipo` y `public.laliga_plantilla` se crean con la

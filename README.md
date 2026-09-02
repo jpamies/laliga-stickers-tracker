@@ -14,11 +14,15 @@
   sección seleccionada.
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
 - Confirmación antes de retirar un cromo de la colección.
-- Decisión personal `No pegar`. La recomendación automática es siempre *pegar*:
+- Decisión personal `No pegar`. La recomendación pública es siempre *pegar*:
   la columna `accion` solo puede valer `PEGAR` o `ESPERAR` (huecos que Panini
   todavía no ha asignado). Nunca se descarta ni se marca para revisar un cromo
   por ti; el detalle de la comprobación queda en `estado_plantilla` y en las
   notas de cada cromo.
+- Sugerencia privada de `No pegar` para los jugadores que ya no aparecen en la
+  plantilla oficial de LALIGA. Solo la ve la cuenta dueña del álbum: para el
+  resto de visitantes, para los enlaces públicos y al mirar el álbum de un
+  amigo, la vista no cambia.
 - Contador y vista de cromos repetidos, con el resumen de conseguidos, faltantes
   y repetidos en el título de cada sección y la fila de copias en verde cuando
   tienes un cromo y en rojo cuando está repetido.
@@ -50,6 +54,7 @@ Regenerar los datos y el álbum:
 ```powershell
 .\.venv\Scripts\python.exe extraer_checklist.py
 .\.venv\Scripts\python.exe comprobar_plantillas.py
+.\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
 .\.venv\Scripts\python.exe generar_fotos_transfermarkt.py
 .\.venv\Scripts\python.exe generar_album.py
@@ -66,6 +71,35 @@ evita perderlo al publicarse una edición nueva del checklist.
 dorsal y la foto de cada jugador. El álbum usa esos datos para dibujar los
 cromos que todavía no tienen imagen oficial, sin copiar ninguna imagen al
 repositorio.
+
+`comprobar_plantillas_laliga.py` cruza el checklist con `laliga_plantillas.csv`
+y escribe `comprobacion_laliga.csv`, un CSV auxiliar por identificador de cromo
+con el estado de cada jugador (`en_plantilla`, `fuera_plantilla`,
+`coincidencia_dudosa`…). Es deliberadamente conservador: ante un nombre corto,
+un apellido compartido o un parecido razonable prefiere `coincidencia_dudosa`
+antes que afirmar que alguien se ha ido.
+
+### Sugerencia privada de «no pegar»
+
+`comprobacion_laliga.csv` viaja al álbum como el campo `estado_laliga` de cada
+cromo, pero la recomendación pública sigue siendo `PEGAR` para todos. Solo la
+cuenta dueña del álbum ve la pastilla `NO PEGAR` y el pie «Ya no está en el
+club» en los cromos con `fuera_plantilla`, y esos cromos entran en el filtro
+«No pegar».
+
+La comprobación se hace en el navegador contra `strategyOwnerHash` de
+[`album/cloud-config.js`](album/cloud-config.js), que guarda el **SHA-256** del
+identificador de la cuenta para no publicarlo. Para cambiar de cuenta:
+
+```powershell
+.\.venv\Scripts\python.exe -c "import hashlib,sys; print(hashlib.sha256(sys.argv[1].encode()).hexdigest())" user_XXXXXXXX
+```
+
+La sugerencia se desactiva en los enlaces públicos de sólo lectura y al mirar
+el álbum de un amigo. Es una preferencia de visualización, no un secreto: el
+campo `estado_laliga` está en el HTML público porque procede del catálogo
+abierto de LALIGA. Lo que nunca se comparte es tu decisión personal
+`stickDecision`.
 
 Regenerar las plantillas reales de LALIGA y su vista:
 

@@ -142,9 +142,9 @@ HTML_TEMPLATE = """<!doctype html>
   </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
-  <script src="cloud-config.js?v=14"></script>
+  <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=41"></script>
+  <script src="app.js?v=42"></script>
   <script src="cloud-sync.js?v=14"></script>
   <script src="social.js?v=16"></script>
 </body>
@@ -223,6 +223,7 @@ def pending_update_stickers(
                     "digital_label": "",
                     "digital_group": "",
                     "metodo_coincidencia": "",
+                    "estado_laliga": "",
                     "imagen_provisional": "",
                     "foto_url": "",
                     "escudo_url": "",
@@ -235,6 +236,7 @@ def pending_update_stickers(
 def load_stickers(
     csv_path: Path,
     image_mapping_path: Path | None = None,
+    laliga_check_path: Path | None = None,
 ) -> list[dict[str, str]]:
     with csv_path.open(encoding="utf-8-sig", newline="") as source:
         rows = list(csv.DictReader(source))
@@ -262,6 +264,14 @@ def load_stickers(
             image_rows = list(csv.DictReader(source))
         mapping = {row["id"]: row for row in image_rows}
 
+    laliga: dict[str, str] = {}
+    if laliga_check_path and laliga_check_path.exists():
+        with laliga_check_path.open(encoding="utf-8-sig", newline="") as source:
+            laliga = {
+                row["id"]: row.get("estado_laliga", "")
+                for row in csv.DictReader(source)
+            }
+
     for row in rows:
         image = mapping.get(row["id"], {})
         row.setdefault("edicion", "")
@@ -269,6 +279,7 @@ def load_stickers(
         row["digital_label"] = image.get("digital_label", "")
         row["digital_group"] = image.get("digital_group", "")
         row["metodo_coincidencia"] = image.get("metodo_coincidencia", "")
+        row["estado_laliga"] = laliga.get(row["id"], "")
         row["imagen_provisional"] = ""
         row["foto_url"] = ""
         row["escudo_url"] = ""
@@ -305,8 +316,9 @@ def generate(
     output_path: Path,
     image_mapping_path: Path | None = Path("imagenes_panini.csv"),
     photo_mapping_path: Path | None = Path("fotos_transfermarkt.csv"),
+    laliga_check_path: Path | None = Path("comprobacion_laliga.csv"),
 ) -> int:
-    stickers = load_stickers(csv_path, image_mapping_path)
+    stickers = load_stickers(csv_path, image_mapping_path, laliga_check_path)
     photos = load_player_photos(photo_mapping_path)
     crests_by_section = {
         sticker["seccion"]: sticker["imagen_url"]
@@ -391,8 +403,13 @@ def main() -> None:
         type=Path,
         default=Path("fotos_transfermarkt.csv"),
     )
+    parser.add_argument(
+        "--laliga",
+        type=Path,
+        default=Path("comprobacion_laliga.csv"),
+    )
     args = parser.parse_args()
-    total = generate(args.csv, args.salida, args.imagenes, args.fotos)
+    total = generate(args.csv, args.salida, args.imagenes, args.fotos, args.laliga)
     print(f"Generado {args.salida} con {total} cromos.")
 
 

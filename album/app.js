@@ -59,6 +59,7 @@
     progress: {},
     preview: null,
     readOnly: false,
+    privateStrategy: false,
   };
   state.progress = loadProgress();
   let pendingFiguritasImport = null;
@@ -159,9 +160,45 @@
   }
 
   function shouldNotStick(sticker, progress = progressFor(sticker.id)) {
-    // La recomendación automática nunca descarta un cromo: «no pegar» es
-    // siempre una decisión personal marcada a mano.
-    return progress.stickDecision === "dont-stick";
+    if (progress.stickDecision === "dont-stick") return true;
+    if (progress.stickDecision === "stick") return false;
+    // La recomendación automática nunca descarta un cromo salvo para el dueño
+    // del álbum, que sí ve marcados los jugadores que LALIGA ya no lista.
+    return leftTheSquad(sticker);
+  }
+
+  function leftTheSquad(sticker) {
+    return state.privateStrategy
+      && !state.preview
+      && !state.readOnly
+      && sticker.estado_laliga === "fuera_plantilla";
+  }
+
+  function displayAction(sticker) {
+    return leftTheSquad(sticker) ? "NO PEGAR" : sticker.accion;
+  }
+
+  async function sha256Hex(value) {
+    const bytes = new TextEncoder().encode(value);
+    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    return [...new Uint8Array(digest)]
+      .map((byte) => byte.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  async function updatePrivateStrategy(user) {
+    const expected = (window.PANINI_CLOUD_CONFIG || {}).strategyOwnerHash;
+    let owner = false;
+    if (expected && user?.id && window.crypto?.subtle) {
+      try {
+        owner = await sha256Hex(user.id) === expected;
+      } catch (error) {
+        console.error("No se pudo comprobar la cuenta del álbum.", error);
+      }
+    }
+    if (owner === state.privateStrategy) return;
+    state.privateStrategy = owner;
+    render();
   }
 
   function normalize(value) {
@@ -351,7 +388,7 @@
       sticker.tipo,
       sticker.seccion,
       sticker.club_objetivo,
-      sticker.accion,
+      displayAction(sticker),
       sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
       sticker.coincidencia_transfermarkt,
       sticker.notas,
@@ -486,9 +523,12 @@
       : escapeHtml(sticker.notas || "Sin coincidencia disponible");
     const name = sticker.nombre || "Pendiente de publicación";
     const dontStick = shouldNotStick(sticker, progress);
-    const stickDecisionSource = progress.stickDecision === "default"
-      ? "Sin decidir"
-      : "Decisión personal";
+    const action = displayAction(sticker);
+    const stickDecisionSource = progress.stickDecision !== "default"
+      ? "Decisión personal"
+      : leftTheSquad(sticker)
+      ? "Ya no está en el club"
+      : "Sin decidir";
     const photoAction = progress.state === "missing"
       ? `Marcar ${name} como conseguido`
       : `Quitar ${name} de la colección`;
@@ -533,7 +573,7 @@
         <div class="card-top">
           <span class="sticker-number">${escapeHtml(sticker.numero)}</span>
           ${sticker.edicion === "2ed" ? '<span class="edition-badge" title="Cromo añadido en la 2ª edición del checklist">2ª ed</span>' : ""}
-          <span class="strategy-badge ${strategyClass(sticker.accion)}">${escapeHtml(sticker.accion)}</span>
+          <span class="strategy-badge ${strategyClass(action)}">${escapeHtml(action)}</span>
         </div>
         ${visual}
         <h3 class="sticker-name">${escapeHtml(name)}</h3>
@@ -842,6 +882,10 @@
       return;
     }
     returnToSectionMenu();
+  });
+
+  document.addEventListener("panini:cloud-ready", (event) => {
+    updatePrivateStrategy(event.detail?.user);
   });
 
   elements.filterChips.addEventListener("click", (event) => {
