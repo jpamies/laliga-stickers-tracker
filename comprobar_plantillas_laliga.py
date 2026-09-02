@@ -41,6 +41,7 @@ SQUAD_SECTIONS = frozenset(CLUB_SECTIONS) | {"ÚLTIMOS FICHAJES"}
 LALIGA_ALIASES = {
     "quique sanchez flores": "enrique sanchez flores",
     "cholo simeone": "diego pablo simeone",
+    "yusi": "youssef enriquez",
 }
 
 CSV_FIELDS = [

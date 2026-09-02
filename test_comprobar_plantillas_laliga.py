@@ -42,6 +42,7 @@ SQUAD = [
     member("Luiz Lúcio Reis Júnior", "Luiz Júnior", "Luiz", "Lúcio Reis Júnior"),
     member("Iñaki Williams", "Williams", "Iñaki", "Williams"),
     member("Nico Williams", "Nico Williams", "Nico", "Williams"),
+    member("Youssef Enriquez", "Youssef", "Youssef", "Enriquez"),
 ]
 
 
@@ -94,6 +95,13 @@ class MatchTests(unittest.TestCase):
         match = match_member("Oso", SQUAD)
 
         self.assertEqual(match.estado, DOUBTFUL)
+
+    def test_known_alias_rescues_a_nickname_laliga_does_not_print(self) -> None:
+        # El cromo del Alavés dice «Yusi» y LALIGA «Youssef Enriquez».
+        match = match_member("Yusi", SQUAD)
+
+        self.assertEqual(match.estado, IN_SQUAD)
+        self.assertEqual(match.candidato, "Youssef Enriquez")
 
 
 class SquadLoadingTests(unittest.TestCase):
