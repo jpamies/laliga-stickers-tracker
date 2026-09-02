@@ -159,9 +159,26 @@ retiradas en la columna `estado_mercado`, pero `accion_estrategia` sigue siendo
 Git porque puede contener el progreso privado importado con `--progreso`.
 
 La documentación sobre el manifiesto digital está en
-[`PANINI_DIGITAL.md`](PANINI_DIGITAL.md), y la fuente oficial de plantillas,
+[`PANINI_DIGITAL.md`](PANINI_DIGITAL.md), la fuente oficial de plantillas,
 dorsales y fotos de jugador en
-[`ACTUALIZAR_PLANTILLAS.md`](ACTUALIZAR_PLANTILLAS.md).
+[`ACTUALIZAR_PLANTILLAS.md`](ACTUALIZAR_PLANTILLAS.md), y el análisis de qué
+página de equipo se puede completar sin pegar jugadores que ya se fueron en
+[`OPTIMIZACION_PLANTILLAS.md`](OPTIMIZACION_PLANTILLAS.md).
+
+### Optimización de la página de cada equipo
+
+```powershell
+.\.venv\Scripts\python.exe analizar_optimizacion.py
+```
+
+Cada club ocupa 20 huecos: escudo, entrenador y 18 jugadores, algunos con dos
+variantes (`A`/`B` o `BIS`) de las que sólo se pega una.
+`analizar_optimizacion.py` cruza el checklist con las plantillas oficiales y
+escribe [`OPTIMIZACION_PLANTILLAS.md`](OPTIMIZACION_PLANTILLAS.md), que por
+equipo responde a si la página se puede dejar llena usando sólo futbolistas que
+siguen en el club: qué hueco resuelve cada cromo, cuáles se han quedado sin
+jugador activo, qué Últimos Fichajes hay para taparlos y a qué jugadores de la
+plantilla real no les corresponde ningún cromo.
 
 ## Sincronización gratuita
 
