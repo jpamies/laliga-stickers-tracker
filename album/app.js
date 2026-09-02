@@ -50,6 +50,59 @@
     TOP: "TOP FICHAJES",
   };
 
+  // Figuritas App encabeza cada línea con el nombre del equipo, no con un
+  // código, y no siempre coincide con el del checklist.
+  const figuritasLabels = {
+    "deportivo alaves": "DEPORTIVO ALAVÉS",
+    "alaves": "DEPORTIVO ALAVÉS",
+    "athletic club": "ATHLETIC CLUB DE BILBAO",
+    "athletic club de bilbao": "ATHLETIC CLUB DE BILBAO",
+    "atletico de madrid": "ATLÉTICO DE MADRID",
+    "fc barcelona": "FC BARCELONA",
+    "barcelona": "FC BARCELONA",
+    "real betis": "REAL BETIS",
+    "rc celta": "RC CELTA DE VIGO",
+    "rc celta de vigo": "RC CELTA DE VIGO",
+    "celta": "RC CELTA DE VIGO",
+    "deportivo de la coruna": "DEPORTIVO",
+    "rc deportivo": "DEPORTIVO",
+    "deportivo": "DEPORTIVO",
+    "elche cf": "ELCHE CF",
+    "elche": "ELCHE CF",
+    "rcd espanyol": "RCD ESPANYOL",
+    "espanyol": "RCD ESPANYOL",
+    "getafe cf": "GETAFE CF",
+    "getafe": "GETAFE CF",
+    "levante ud": "LEVANTE UD",
+    "levante": "LEVANTE UD",
+    "real madrid": "REAL MADRID CF",
+    "malaga cf": "MALAGA CF",
+    "malaga": "MALAGA CF",
+    "ca osasuna": "OSASUNA",
+    "osasuna": "OSASUNA",
+    "racing santander": "RACING DE SANTANDER",
+    "racing de santander": "RACING DE SANTANDER",
+    "rayo vallecano": "RAYO VALLECANO",
+    "real sociedad": "REAL SOCIEDAD",
+    "sevilla fc": "SEVILLA",
+    "sevilla": "SEVILLA",
+    "valencia cf": "VALENCIA",
+    "valencia": "VALENCIA",
+    "villarreal cf": "VILLARREAL",
+    "villarreal": "VILLARREAL",
+    "adn / laliga prime": "ADN / LALIGA PRIME",
+    "adn laliga prime": "ADN / LALIGA PRIME",
+    "laliga fantasy": "LALIGA FANTASY",
+    "draft 23": "DRAFT 23",
+    "draft 23 kromix": "DRAFT 23 KROMIX",
+    "extra sticker bronce": "EXTRA STICKER BRONCE",
+    "extra sticker plata": "EXTRA STICKER PLATA",
+    "extra sticker oro": "EXTRA STICKER ORO",
+    "ultimos fichajes": "ÚLTIMOS FICHAJES",
+    "top 3 ultimos fichajes": "TOP FICHAJES",
+    "top fichajes": "TOP FICHAJES",
+  };
+
   const state = {
     view: "album",
     query: "",
@@ -212,7 +265,28 @@
     if (sticker.seccion.startsWith("EXTRA STICKER ")) {
       return String(indexInSection + 1);
     }
-    return String(sticker.numero || "").trim().toUpperCase();
+    const numero = String(sticker.numero || "").trim().toUpperCase();
+    // El checklist numera los últimos fichajes como «UF7» y Figuritas como «7».
+    if (sticker.seccion === "ÚLTIMOS FICHAJES") {
+      return numero.replace(/^UF/, "");
+    }
+    return numero;
+  }
+
+  function figuritasSectionFor(label) {
+    const clean = label.trim();
+    const byCode = figuritasSections[clean.toUpperCase()];
+    if (byCode) return byCode;
+    return figuritasLabels[normalize(clean).replace(/\s+/g, " ")] || "";
+  }
+
+  // Figuritas desglosa algún hueco en variantes que el checklist no tiene
+  // («11a» donde aquí sólo existe el «11»). Si la variante no existe, el
+  // número base es el mismo cromo.
+  function resolveFiguritasNumber(number, knownNumbers) {
+    if (knownNumbers.has(number)) return number;
+    const base = number.replace(/[A-Z]+$/, "");
+    return base !== number && knownNumbers.has(base) ? base : "";
   }
 
   function parseFiguritasToken(value) {
@@ -241,6 +315,10 @@
     const missing = new Map();
     const duplicates = new Map();
     const unknownCodes = [];
+    // «Me faltan» enumera lo que no tienes, así que el resto de esa sección se
+    // da por conseguido. «Repetidas» sólo habla de los repetidos: si la lista
+    // no trae faltantes, no podemos deducir nada de los demás cromos.
+    const hasMissingList = lines.some((line) => /^Me faltan$/i.test(line));
     let mode = "";
     for (const line of lines) {
       if (/^Me faltan$/i.test(line)) {
@@ -254,15 +332,15 @@
       if (!mode || !line || /^Descarga la app$/i.test(line) || /^https?:\/\//i.test(line)) {
         continue;
       }
-      const match = line.match(/^([A-Z]{1,4})(?:\s+[^:]*)?:\s*(.+)$/i);
+      const match = line.match(/^([^:]+):\s*(.+)$/);
       if (!match) continue;
-      const code = match[1].toUpperCase();
+      const label = match[1].trim();
       const tokens = match[2].split(",")
         .map(parseFiguritasToken)
         .filter((token) => token.number);
-      const section = figuritasSections[code];
+      const section = figuritasSectionFor(label);
       if (!section) {
-        unknownCodes.push(code);
+        unknownCodes.push(label);
         continue;
       }
       const target = mode === "missing" ? missing : duplicates;
@@ -287,14 +365,35 @@
     let duplicateCount = 0;
     for (const section of importedSections) {
       const sectionStickers = data.filter((sticker) => sticker.seccion === section);
-      const knownNumbers = new Set();
+      const knownNumbers = new Set(
+        sectionStickers.map((sticker, index) => figuritasNumber(sticker, index)),
+      );
+
+      const sectionMissing = new Set();
+      for (const number of missing.get(section) || []) {
+        const resolved = resolveFiguritasNumber(number, knownNumbers);
+        if (resolved) sectionMissing.add(resolved);
+        else unmatched.push(`${section}:${number}`);
+      }
+      const sectionDuplicates = new Map();
+      for (const [number, copies] of duplicates.get(section) || []) {
+        const resolved = resolveFiguritasNumber(number, knownNumbers);
+        if (!resolved) {
+          unmatched.push(`${section}:${number}`);
+          continue;
+        }
+        sectionDuplicates.set(
+          resolved,
+          Math.max(sectionDuplicates.get(resolved) || 0, copies),
+        );
+      }
+
       sectionStickers.forEach((sticker, index) => {
         const number = figuritasNumber(sticker, index);
-        knownNumbers.add(number);
         const previous = progressFor(sticker.id);
-        let copies = 1;
-        if (missing.get(section)?.has(number)) copies = 0;
-        const duplicateCopies = duplicates.get(section)?.get(number);
+        let copies = hasMissingList ? 1 : previous.copies;
+        if (sectionMissing.has(number)) copies = 0;
+        const duplicateCopies = sectionDuplicates.get(number);
         if (duplicateCopies) copies = Math.max(previous.copies, duplicateCopies);
         if (copies === 0) missingCount += 1;
         else ownedCount += 1;
@@ -305,12 +404,6 @@
           stickDecision: previous.stickDecision,
         };
       });
-      for (const number of missing.get(section) || []) {
-        if (!knownNumbers.has(number)) unmatched.push(`${section}:${number}`);
-      }
-      for (const number of duplicates.get(section)?.keys() || []) {
-        if (!knownNumbers.has(number)) unmatched.push(`${section}:${number}`);
-      }
     }
     return {
       progress: imported,
@@ -318,6 +411,7 @@
       missingCount,
       ownedCount,
       duplicateCount,
+      hasMissingList,
       unmatched,
       unknownCodes: [...new Set(unknownCodes)],
     };
@@ -335,11 +429,17 @@
 
   function renderFiguritasPreview(result) {
     const warnings = [];
+    if (!result.hasMissingList) {
+      warnings.push(
+        "La lista sólo trae repetidos, así que el resto de cromos se queda como está. "
+        + "Pega también el bloque «Me faltan» para actualizar el álbum entero.",
+      );
+    }
     if (result.unmatched.length) {
       warnings.push(`${result.unmatched.length} números no coinciden con ningún cromo de este álbum.`);
     }
     if (result.unknownCodes.length) {
-      warnings.push(`Códigos desconocidos: ${result.unknownCodes.join(", ")}.`);
+      warnings.push(`Secciones no reconocidas: ${result.unknownCodes.join(", ")}.`);
     }
     elements.figuritasPreview.classList.remove("hidden");
     elements.figuritasPreview.replaceChildren();

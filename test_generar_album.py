@@ -120,12 +120,49 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="figuritas-preview"', html)
         self.assertIn('id="section-clear"', html)
         self.assertIn('id="import-json"', html)
-        self.assertIn('src="app.js?v=43"', html)
+        self.assertIn('src="app.js?v=44"', html)
         self.assertIn('href="styles.css?v=25"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=14"', html)
         self.assertIn('src="social.js?v=16"', html)
         self.assertIn('data-view="friends"', html)
+
+
+class FiguritasSectionTests(unittest.TestCase):
+    """El importador de Figuritas traduce el encabezado de cada línea a una
+    sección del álbum; si un nombre no existe, esa línea se descarta en
+    silencio y el usuario pierde cromos sin enterarse."""
+
+    def album_sections(self) -> set[str]:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        match = re.search(r"window\.ALBUM_DATA = (.*?);</script>", html, flags=re.DOTALL)
+        return {sticker["seccion"] for sticker in json.loads(match.group(1))}
+
+    def mapped_sections(self) -> dict[str, list[str]]:
+        source = Path("album/app.js").read_text(encoding="utf-8")
+        mappings = {}
+        for name in ("figuritasSections", "figuritasLabels"):
+            block = re.search(
+                rf"const {name} = \{{(.*?)\n  \}};", source, flags=re.DOTALL
+            )
+            self.assertIsNotNone(block, f"No se encontró {name} en app.js")
+            mappings[name] = re.findall(r':\s*"([^"]+)"', block.group(1))
+        return mappings
+
+    def test_every_mapped_section_exists_in_the_album(self) -> None:
+        sections = self.album_sections()
+
+        for name, targets in self.mapped_sections().items():
+            for target in targets:
+                self.assertIn(target, sections, f"{name} apunta a una sección inexistente")
+
+    def test_every_album_section_can_be_imported(self) -> None:
+        mapped = set(sum(self.mapped_sections().values(), []))
+
+        self.assertEqual(self.album_sections() - mapped, set())
 
 
 if __name__ == "__main__":
