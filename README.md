@@ -25,7 +25,12 @@
   amigo, la vista no cambia.
 - Contador y vista de cromos repetidos, con el resumen de conseguidos, faltantes
   y repetidos en el título de cada sección y la fila de copias en verde cuando
-  tienes un cromo y en rojo cuando está repetido.
+  tienes un cromo y en rojo cuando está repetido. Los números van en verde (los
+  tengo), rojo (me faltan), ámbar (repetidos) y gris (los que no pegas).
+- Los cromos marcados `No pegar` salen del objetivo del álbum: no cuentan en el
+  progreso ni como pendientes, y se resumen aparte.
+- Filtros por edición y un interruptor para ocultar los cromos que no vas a
+  pegar.
 - Progreso local sin conexión y sincronización opcional por cuenta. El progreso
   de invitado y el de cada cuenta se guardan por separado, así que iniciar
   sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso

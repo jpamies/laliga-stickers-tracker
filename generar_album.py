@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=25">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body>
   <header class="topbar">
@@ -59,6 +59,7 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="progress-overview-meta">
         <span><strong id="summary-missing">0</strong> pendientes</span>
         <span><strong id="summary-duplicates">0</strong> repetidos</span>
+        <span class="hidden" id="summary-skipped-wrap"><strong id="summary-skipped">0</strong> sin pegar</span>
       </div>
     </section>
 
@@ -101,7 +102,12 @@ HTML_TEMPLATE = """<!doctype html>
         <button class="filter-chip" type="button" data-filter="owned">Los tengo</button>
         <button class="filter-chip" type="button" data-filter="duplicates">Con repetidos</button>
         <button class="filter-chip" type="button" data-filter="dont-stick">No pegar</button>
+        <button class="filter-chip" type="button" data-filter="second-edition">2ª edición</button>
         <button class="filter-chip" type="button" data-filter="wait">Esperar</button>
+        <label class="filter-toggle" for="hide-dont-stick">
+          <input type="checkbox" id="hide-dont-stick">
+          <span>Ocultar los que no pego</span>
+        </label>
         <span id="results-label" class="section-count"></span>
       </div>
     </section>
@@ -144,7 +150,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=44"></script>
+  <script src="app.js?v=45"></script>
   <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>

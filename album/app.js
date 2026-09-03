@@ -113,6 +113,7 @@
     preview: null,
     readOnly: false,
     privateStrategy: false,
+    hideDontStick: false,
   };
   state.progress = loadProgress();
   let pendingFiguritasImport = null;
@@ -133,6 +134,9 @@
     summaryMissing: document.querySelector("#summary-missing"),
     summaryOwned: document.querySelector("#summary-owned"),
     summaryDuplicates: document.querySelector("#summary-duplicates"),
+    summarySkipped: document.querySelector("#summary-skipped"),
+    summarySkippedWrap: document.querySelector("#summary-skipped-wrap"),
+    hideDontStick: document.querySelector("#hide-dont-stick"),
     progressText: document.querySelector("#progress-text"),
     progressBar: document.querySelector("#progress-bar"),
     resultsLabel: document.querySelector("#results-label"),
@@ -501,17 +505,29 @@
     if (state.view === "duplicates" && progress.copies < 2) {
       return false;
     }
+    // El interruptor esconde los cromos que no vas a pegar, salvo cuando son
+    // justo lo que has pedido ver.
+    if (
+      state.hideDontStick
+      && state.filter !== "dont-stick"
+      && shouldNotStick(sticker, progress)
+    ) {
+      return false;
+    }
     if (state.filter === "missing") {
-      return progress.state === "missing";
+      return progress.state === "missing" && !shouldNotStick(sticker, progress);
     }
     if (state.filter === "owned") {
-      return progress.state === "owned";
+      return progress.state === "owned" && !shouldNotStick(sticker, progress);
     }
     if (state.filter === "duplicates") {
       return progress.copies >= 2;
     }
     if (state.filter === "dont-stick") {
       return shouldNotStick(sticker, progress);
+    }
+    if (state.filter === "second-edition") {
+      return sticker.edicion === "2ed";
     }
     if (state.filter === "wait") {
       return sticker.accion === "ESPERAR";
@@ -737,13 +753,20 @@
     let owned = 0;
     let missing = 0;
     let duplicates = 0;
+    let skipped = 0;
     for (const sticker of stickers) {
       const progress = progressFor(sticker.id);
+      if (progress.copies > 1) duplicates += 1;
+      // Un cromo que has decidido no pegar no cuenta como pendiente: no lo
+      // estás buscando.
+      if (shouldNotStick(sticker, progress)) {
+        skipped += 1;
+        continue;
+      }
       if (progress.state === "owned") owned += 1;
       else missing += 1;
-      if (progress.copies > 1) duplicates += 1;
     }
-    return { owned, missing, duplicates };
+    return { owned, missing, duplicates, skipped };
   }
 
   function render() {
@@ -786,6 +809,7 @@
             <span class="section-tally tally-owned" title="Los tengo">${totals.owned}</span>
             <span class="section-tally tally-missing" title="Me faltan">${totals.missing}</span>
             <span class="section-tally tally-duplicates" title="Repetidos">${totals.duplicates}</span>
+            ${totals.skipped ? `<span class="section-tally tally-skipped" title="No los pego">${totals.skipped}</span>` : ""}
           </div>
         </div>
         <div class="sticker-grid">${stickers.map(stickerCard).join("")}</div>
@@ -812,19 +836,28 @@
     let missing = 0;
     let owned = 0;
     let duplicates = 0;
+    let skipped = 0;
     for (const sticker of data) {
       const progress = progressFor(sticker.id);
+      duplicates += Math.max(0, progress.copies - 1);
+      // Los cromos que no vas a pegar salen del objetivo del álbum, así que
+      // no cuentan ni como conseguidos ni como pendientes.
+      if (shouldNotStick(sticker, progress)) {
+        skipped += 1;
+        continue;
+      }
       if (progress.state === "owned") owned += 1;
       else missing += 1;
-      duplicates += Math.max(0, progress.copies - 1);
     }
 
-    const collected = owned;
-    const percentage = data.length ? Math.round((collected / data.length) * 100) : 0;
-    elements.summaryTotal.textContent = data.length;
+    const total = data.length - skipped;
+    const percentage = total ? Math.round((owned / total) * 100) : 0;
+    elements.summaryTotal.textContent = total;
     elements.summaryMissing.textContent = missing;
     elements.summaryOwned.textContent = owned;
     elements.summaryDuplicates.textContent = duplicates;
+    elements.summarySkipped.textContent = skipped;
+    elements.summarySkippedWrap.classList.toggle("hidden", !skipped);
     elements.progressText.textContent = `${percentage}%`;
     elements.progressBar.style.width = `${percentage}%`;
   }
@@ -1019,6 +1052,11 @@
     elements.filterChips.querySelectorAll("[data-filter]").forEach((item) => {
       item.classList.toggle("active", item === chip);
     });
+    render();
+  });
+
+  elements.hideDontStick.addEventListener("change", (event) => {
+    state.hideDontStick = event.target.checked;
     render();
   });
 
