@@ -13,8 +13,8 @@ salidas.
 | Temporada | `seasonYear=2026` |
 | Competición | `laliga-easports-2026` |
 | Equipos | 20 |
-| Jugadores | 560 |
-| Comprobado | 2026-09-02 |
+| Jugadores | 575 |
+| Comprobado | 2026-09-09 |
 
 La clave `subscription-key` viaja en la URL del sitio público
 [laliga.com](https://www.laliga.com/es-GB/laliga-easports/clubes), así que no es
@@ -47,28 +47,31 @@ GET /teams/<slug>/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&s
 
 ### URLs de los 20 equipos
 
-| Sección del álbum | Slug | Jugadores |
-| --- | --- | --- |
-| DEPORTIVO ALAVÉS | [`d-alaves`](https://apim.laliga.com/public-service/api/v1/teams/d-alaves/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
-| ATHLETIC CLUB DE BILBAO | [`athletic-club`](https://apim.laliga.com/public-service/api/v1/teams/athletic-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
-| ATLÉTICO DE MADRID | [`atletico-de-madrid`](https://apim.laliga.com/public-service/api/v1/teams/atletico-de-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
-| FC BARCELONA | [`fc-barcelona`](https://apim.laliga.com/public-service/api/v1/teams/fc-barcelona/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 29 |
-| REAL BETIS | [`real-betis`](https://apim.laliga.com/public-service/api/v1/teams/real-betis/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
-| RC CELTA DE VIGO | [`rc-celta`](https://apim.laliga.com/public-service/api/v1/teams/rc-celta/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
-| DEPORTIVO | [`rc-deportivo`](https://apim.laliga.com/public-service/api/v1/teams/rc-deportivo/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 25 |
-| ELCHE CF | [`elche-c-f`](https://apim.laliga.com/public-service/api/v1/teams/elche-c-f/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
-| RCD ESPANYOL | [`rcd-espanyol`](https://apim.laliga.com/public-service/api/v1/teams/rcd-espanyol/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
-| GETAFE CF | [`getafe-cf`](https://apim.laliga.com/public-service/api/v1/teams/getafe-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 30 |
-| LEVANTE UD | [`levante-ud`](https://apim.laliga.com/public-service/api/v1/teams/levante-ud/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
-| REAL MADRID CF | [`real-madrid`](https://apim.laliga.com/public-service/api/v1/teams/real-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 30 |
-| MALAGA CF | [`malaga-cf`](https://apim.laliga.com/public-service/api/v1/teams/malaga-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
-| OSASUNA | [`c-a-osasuna`](https://apim.laliga.com/public-service/api/v1/teams/c-a-osasuna/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 27 |
-| RACING DE SANTANDER | [`r-racing-club`](https://apim.laliga.com/public-service/api/v1/teams/r-racing-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 28 |
-| RAYO VALLECANO | [`rayo-vallecano`](https://apim.laliga.com/public-service/api/v1/teams/rayo-vallecano/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
-| REAL SOCIEDAD | [`real-sociedad`](https://apim.laliga.com/public-service/api/v1/teams/real-sociedad/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 29 |
-| SEVILLA | [`sevilla-fc`](https://apim.laliga.com/public-service/api/v1/teams/sevilla-fc/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
-| VALENCIA | [`valencia-cf`](https://apim.laliga.com/public-service/api/v1/teams/valencia-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 31 |
-| VILLARREAL | [`villarreal-cf`](https://apim.laliga.com/public-service/api/v1/teams/villarreal-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) | 26 |
+El número de jugadores de cada club está en
+[`PLANTILLAS_LALIGA.md`](PLANTILLAS_LALIGA.md), que se regenera con los datos.
+
+| Sección del álbum | Slug |
+| --- | --- |
+| DEPORTIVO ALAVÉS | [`d-alaves`](https://apim.laliga.com/public-service/api/v1/teams/d-alaves/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| ATHLETIC CLUB DE BILBAO | [`athletic-club`](https://apim.laliga.com/public-service/api/v1/teams/athletic-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| ATLÉTICO DE MADRID | [`atletico-de-madrid`](https://apim.laliga.com/public-service/api/v1/teams/atletico-de-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| FC BARCELONA | [`fc-barcelona`](https://apim.laliga.com/public-service/api/v1/teams/fc-barcelona/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| REAL BETIS | [`real-betis`](https://apim.laliga.com/public-service/api/v1/teams/real-betis/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| RC CELTA DE VIGO | [`rc-celta`](https://apim.laliga.com/public-service/api/v1/teams/rc-celta/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| DEPORTIVO | [`rc-deportivo`](https://apim.laliga.com/public-service/api/v1/teams/rc-deportivo/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| ELCHE CF | [`elche-c-f`](https://apim.laliga.com/public-service/api/v1/teams/elche-c-f/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| RCD ESPANYOL | [`rcd-espanyol`](https://apim.laliga.com/public-service/api/v1/teams/rcd-espanyol/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| GETAFE CF | [`getafe-cf`](https://apim.laliga.com/public-service/api/v1/teams/getafe-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| LEVANTE UD | [`levante-ud`](https://apim.laliga.com/public-service/api/v1/teams/levante-ud/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| REAL MADRID CF | [`real-madrid`](https://apim.laliga.com/public-service/api/v1/teams/real-madrid/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| MALAGA CF | [`malaga-cf`](https://apim.laliga.com/public-service/api/v1/teams/malaga-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| OSASUNA | [`c-a-osasuna`](https://apim.laliga.com/public-service/api/v1/teams/c-a-osasuna/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| RACING DE SANTANDER | [`r-racing-club`](https://apim.laliga.com/public-service/api/v1/teams/r-racing-club/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| RAYO VALLECANO | [`rayo-vallecano`](https://apim.laliga.com/public-service/api/v1/teams/rayo-vallecano/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| REAL SOCIEDAD | [`real-sociedad`](https://apim.laliga.com/public-service/api/v1/teams/real-sociedad/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| SEVILLA | [`sevilla-fc`](https://apim.laliga.com/public-service/api/v1/teams/sevilla-fc/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| VALENCIA | [`valencia-cf`](https://apim.laliga.com/public-service/api/v1/teams/valencia-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
+| VILLARREAL | [`villarreal-cf`](https://apim.laliga.com/public-service/api/v1/teams/villarreal-cf/squad-manager?limit=50&offset=0&orderField=id&orderType=DESC&seasonYear=2026&contentLanguage=es&subscription-key=c13c3a8e2f6b46da9c5c425cf61fab3e) |
 
 `limit=50` cubre de sobra la plantilla más numerosa (33 fichas), así que no hace
 falta paginar con `offset`.
@@ -158,7 +161,10 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
    y al SQL el cromo asociado a cada ficha (`cromo_id`, `cromo_seccion`,
    `cromo_numero`, `cromo_nombre` y `cromos`). Ejecútalo siempre después de
    `generar_plantillas_laliga.py`, que reescribe esas columnas vacías.
-6. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
+6. `generar_plantillas_markdown.py` documenta el resultado en
+   `PLANTILLAS_LALIGA.md`, con el total de jugadores registrados y la ficha de
+   cada club.
+7. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
    sólo lectura con las plantillas reales.
 
 Las tablas `public.laliga_equipo` y `public.laliga_plantilla` se crean con la
@@ -174,10 +180,10 @@ posición o foto cuando la coincidencia es fiable.
 ## Limitaciones
 
 - Los dorsales no siempre están al día, sobre todo tras el mercado de invierno.
-- Los fichajes más recientes llegan sin `id`, `person.id`, `opta_id` ni dorsal
-  (unas 15 fichas). Por eso la clave primaria de la tabla es `clave`, que el
-  generador construye con el slug del equipo y, cuando no hay `id`, con el
-  nombre normalizado del jugador.
+- Los fichajes recién anunciados pueden llegar sin `id`, `person.id`, `opta_id`
+  ni dorsal, y LALIGA los completa días después. Por eso la clave primaria de la
+  tabla es `clave`, que el generador construye con el slug del equipo y, cuando
+  no hay `id`, con el nombre normalizado del jugador.
 - Muchos nombres vienen con espacios sobrantes; el generador los recorta.
 - La API confirma quién **está** en la plantilla, pero no informa de traspasos;
   para las salidas se sigue usando BeSoccer.

@@ -101,6 +101,12 @@ En la ficha de cada cromo el álbum muestra los datos oficiales de LALIGA
 Transfermarkt, y un guion cuando el jugador ya no está en el club o el
 emparejamiento no es firme.
 
+`generar_plantillas_markdown.py` vuelca lo mismo a
+[`PLANTILLAS_LALIGA.md`](PLANTILLAS_LALIGA.md), para poder consultar sin abrir
+la hoja de cálculo quién está registrado en cada club, con qué dorsal y qué
+cromo le corresponde. Empieza con el total de jugadores registrados y el
+reparto por demarcación y por equipo.
+
 ### Sugerencia privada de «no pegar»
 
 `comprobacion_laliga.csv` viaja al álbum como el campo `estado_laliga` de cada
@@ -127,6 +133,8 @@ Regenerar las plantillas reales de LALIGA y su vista:
 
 ```powershell
 .\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
+.\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
+.\.venv\Scripts\python.exe generar_plantillas_markdown.py
 .\.venv\Scripts\python.exe generar_plantillas_html.py
 ```
 
@@ -166,8 +174,9 @@ Git porque puede contener el progreso privado importado con `--progreso`.
 La documentación sobre el manifiesto digital está en
 [`PANINI_DIGITAL.md`](PANINI_DIGITAL.md), la fuente oficial de plantillas,
 dorsales y fotos de jugador en
-[`ACTUALIZAR_PLANTILLAS.md`](ACTUALIZAR_PLANTILLAS.md), y el análisis de qué
-página de equipo se puede completar sin pegar jugadores que ya se fueron en
+[`ACTUALIZAR_PLANTILLAS.md`](ACTUALIZAR_PLANTILLAS.md), las plantillas ya
+descargadas en [`PLANTILLAS_LALIGA.md`](PLANTILLAS_LALIGA.md), y el análisis de
+qué página de equipo se puede completar sin pegar jugadores que ya se fueron en
 [`OPTIMIZACION_PLANTILLAS.md`](OPTIMIZACION_PLANTILLAS.md).
 
 ### Optimización de la página de cada equipo

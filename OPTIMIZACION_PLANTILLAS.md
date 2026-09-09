@@ -1,6 +1,6 @@
 # Optimización de plantilla por equipo
 
-Generado el 2026-09-03 por `analizar_optimizacion.py`.
+Generado el 2026-09-09 por `analizar_optimizacion.py`.
 
 Cada club ocupa una página de **20 huecos**: escudo, entrenador y 18
 jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o `BIS`)
@@ -105,6 +105,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 23 | C. Protesoni | Centrocampista |
 | 24 | Selu Diallo | Centrocampista |
 | 27 | Xanet Olaiz | Defensa |
+| 29 | Izei | Centrocampista |
 | 31 | Swiderski | Portero |
 
 ## ATHLETIC CLUB DE BILBAO
@@ -156,8 +157,10 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 24 | Gerenabarrena | Centrocampista |
 | 25 | Djalo | Delantero |
 | 28 | Canales | Delantero |
+| 29 | Hierro | Delantero |
 | 30 | Monreal | Defensa |
 | 31 | Johaneko | Defensa |
+| 44 | Selton | Centrocampista |
 
 ## ATLÉTICO DE MADRID
 
@@ -205,7 +208,6 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
-| 12 | Carlos M. | Centrocampista |
 | 15 | J.david | Delantero |
 | 16 | Arnau Ortiz | Centrocampista |
 | 21 | Romero | Defensa |
@@ -213,6 +215,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 25 | Esquivel | Portero |
 | 27 | Domínguez | Defensa |
 | 29 | Cubo | Delantero |
+| 30 | D. Martínez | Defensa |
 | 46 | Castillo | Centrocampista |
 
 ## FC BARCELONA
@@ -259,6 +262,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
 | 4 | Brian | Centrocampista |
+| 9 | Gabriel Jesus | Delantero |
 | 12 | Xavi Espart | Defensa |
 | 16 | Rodrigo | Centrocampista |
 | 17 | Anthony Gordon | Delantero |
@@ -268,7 +272,6 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 29 | Hamza Abdelkarim | Delantero |
 | 31 | Eder Aller | Portero |
 | 33 | Jordi Pesquer | Defensa |
-| — | Gabriel Jesus | Delantero |
 
 ## REAL BETIS
 
@@ -320,6 +323,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 19 | Parrott | Delantero |
 | 23 | J. Firpo | Defensa |
 | 25 | D. Ceballos | Centrocampista |
+| 27 | Morante | Delantero |
 | 31 | Manu G. | Portero |
 | 40 | Á. De Pablo | Portero |
 
@@ -406,7 +410,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 11 | 11 | Villares | Diego Villares | 8 | **pegar** |
 | 12 | 12 | Riki | Riki Rodríguez | 14 | **pegar** |
 | 13 | 13 | Mario Soriano | Mario Soriano | 21 | **pegar** |
-| 14 | 14 | José Ángel | José Ángel Esmoris Tasende | 24 | **pegar** |
+| 14 | 14 | José Ángel | José Ángel Esmoris Tasende | 17 | **pegar** |
 | 15 | 15 | Luismi Cruz | Luismi Cruz | 19 | **pegar** |
 | 16 | 16 | Mella | David Mella | 11 | **pegar** |
 | 17 | 17 | sin asignar | — | — | Pendiente |
@@ -425,13 +429,15 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
+| 6 | M. Casadó | Centrocampista |
 | 16 | Amatucci | Centrocampista |
 | 18 | Asp - Jensen | Centrocampista |
+| 20 | J. M. Giménez | Defensa |
 | 22 | Ede | Defensa |
 | 23 | X. Navarro | Defensa |
+| 24 | Adama | Delantero |
 | 33 | Kevin | Delantero |
-| — | Adama | Delantero |
-| — | Gijselhart | Centrocampista |
+| 34 | Gijselhart | Centrocampista |
 
 ## ELCHE CF
 
@@ -447,7 +453,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 1 | 1 | Escudo | — | — | No aplica |
 | 2 | 2 (2ª ed) | Martín Anselmi | Martín Anselmi | — | **pegar** |
 | 3 | 3 | Dituro | Matías Dituro | 1 | **pegar** |
-| 4 | 4 (2ª ed) | Iturbe | Alejandro Iturbe | — | **pegar** |
+| 4 | 4 (2ª ed) | Iturbe | Alejandro Iturbe | 13 | **pegar** |
 | 5 | 5 | Pétrot | — | — | Sin jugador activo |
 | 6 | 6 | Chust | Víctor Chust | 23 | **pegar** |
 | 7 | 7 | Bigas | Pedro Bigas | 6 | **pegar** |
@@ -477,16 +483,18 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
+| 3 | Revivo | Defensa |
 | 4 | Diaby | Defensa |
 | 9 | E. Ponce | Delantero |
 | 10 | Buonanotte | Centrocampista |
+| 15 | Kevin J. | Defensa |
+| 18 | Lemar | Centrocampista |
+| 22 | Rubén S. | Centrocampista |
 | 24 | Osorio | Delantero |
 | 26 | M. Baržić | Defensa |
 | 30 | Padilla | Centrocampista |
 | 33 | N. Al-Lal | Delantero |
 | 47 | Morcillo | Centrocampista |
-| — | Rubén S. | Centrocampista |
-| — | Lemar | Centrocampista |
 
 ## RCD ESPANYOL
 
@@ -650,21 +658,22 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | ---: | --- | --- |
 | 3 | Ndukwe | Defensa |
 | 5 | Hugo Sotelo | Centrocampista |
+| 10 | Petar Ratkov | Delantero |
 | 14 | Cabello | Defensa |
+| 16 | Axel Tape | Centrocampista |
 | 24 | Thiago | Centrocampista |
 | 29 | Nacho Perez | Defensa |
 | 33 | Marc Santos | Defensa |
 | 34 | Manel Usedo | Centrocampista |
 | 36 | Ihor Galdin | Portero |
 | 38 | Calatrava | Centrocampista |
-| — | Axel Tape | Centrocampista |
 
 ## REAL MADRID CF
 
 ✅ **Página completa sin Últimos Fichajes.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
 - **Últimos Fichajes que sirven:** UF3 (Dumfries)
-- **Puedes elegir variante:** 10 (10A o 10B)
+- **Puedes elegir variante:** 10 (10A o 10B), 15 (15A o 15B)
 
 ### Huecos del álbum
 
@@ -685,8 +694,8 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 12 | 12 | Fede Valverde | Federico Valverde | 8 | **pegar** |
 | 13 | 13 | Camavinga | Eduardo Camavinga | 6 | **pegar** |
 | 14 | 14 | Bellingham | Jude Bellingham | 5 | **pegar** |
-| 15 | 15A | Güler | Arda Güler | 15 | **pegar** |
-|  | 15B | Thiago Pitarch | — | — | descartar |
+| 15 | 15A | Güler | Arda Güler | 15 | elegir una |
+|  | 15B | Thiago Pitarch | Thiago Pitarch | 27 | elegir una |
 | 16 | 16A | Mastantuono | — | — | descartar |
 |  | 16B | Brahim Díaz | Brahim Díaz | 21 | **pegar** |
 | 17 | 17 | Gonzalo | — | — | descartar |
@@ -716,6 +725,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 31 | Javi Navarro | Portero |
 | 33 | Mario Rivas | Defensa |
 | 36 | Alexis Ciria | Delantero |
+| 38 | Sergio | Centrocampista |
 
 ## MALAGA CF
 
@@ -760,15 +770,17 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
+| 2 | Cajuste | Centrocampista |
 | 5 | Pastor | Defensa |
 | 6 | Ramon | Centrocampista |
 | 7 | Haitam | Delantero |
 | 15 | Recio | Defensa |
 | 17 | Jauregi | Delantero |
 | 18 | Martínez | Centrocampista |
+| 25 | J. Berrocal | Defensa |
 | 28 | Otu Jr | Centrocampista |
 | 32 | Juani | Delantero |
-| — | J. Berrocal | Defensa |
+| 39 | Aznou | Defensa |
 
 ## OSASUNA
 
@@ -814,13 +826,13 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
 | 15 | Rico | Defensa |
+| 20 | Del Castillo | Centrocampista |
 | 21 | Dubasin | Centrocampista |
 | 26 | Mauro | Centrocampista |
 | 30 | A. Bonel | Delantero |
 | 31 | Rafa Fdez. | Portero |
 | 35 | Santos | Defensa |
 | 48 | Rockson | Defensa |
-| — | Del Castillo | Centrocampista |
 
 ## RACING DE SANTANDER
 
@@ -868,19 +880,19 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
+| 3 | Aaron | Defensa |
+| 8 | Almeida | Centrocampista |
 | 13 | Agirrezabala | Portero |
+| 15 | Pablo G. | Delantero |
 | 18 | Prati | Centrocampista |
+| 19 | Iker Luque | Centrocampista |
 | 21 | Zabiri | Delantero |
 | 22 | Pedro | Defensa |
 | 23 | Iván Martín | Centrocampista |
-| 29 | A. Vallecillo | Centrocampista |
-| 30 | Carlos | Defensa |
-| 33 | Caste | Centrocampista |
+| 24 | Belocian | Defensa |
+| 29 | Vallecillo | Centrocampista |
+| 33 | Castellanos | Centrocampista |
 | 38 | Hugo | Centrocampista |
-| — | Aaron | Defensa |
-| — | A. Almeida | Centrocampista |
-| — | Iker Luque | Centrocampista |
-| — | Pablo G. | Delantero |
 
 ## RAYO VALLECANO
 
@@ -925,8 +937,10 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 3 | Kumbulla | Centrocampista |
 | 11 | Nteka | Centrocampista |
 | 14 | G.tsitaishvili | Delantero |
+| 15 | Mujaid | Defensa |
 | 17 | Pedrosa | Defensa |
 | 22 | Pelayo | Defensa |
+| 25 | Emil Audero | Portero |
 | 26 | De Las Sias | Defensa |
 | 27 | Lozano | Defensa |
 | 30 | Adrián Molina | Portero |
@@ -934,6 +948,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 33 | Jozhua V. | Defensa |
 | 34 | Alonso | Delantero |
 | 36 | G. Bouaré | Centrocampista |
+| 37 | Rayane | Delantero |
 | — | Rdt | Delantero |
 
 ## REAL SOCIEDAD
@@ -1040,6 +1055,8 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 9 | Robbie Ure | Delantero |
 | 13 | Fran González | Portero |
 | 19 | Stassin | Delantero |
+| 20 | Felix | Delantero |
+| 24 | Fofana | Centrocampista |
 | 26 | Manuel Ángel | Defensa |
 | 27 | Nico Guillen | Centrocampista |
 | 30 | Miguel Sierra | Delantero |
@@ -1095,14 +1112,17 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 | Dorsal | Jugador | Posición |
 | ---: | --- | --- |
+| 10 | Elliott | Centrocampista |
 | 19 | Raba | Delantero |
 | 22 | Arnau | Defensa |
 | 24 | Maffeo | Defensa |
 | 25 | Van Oevelen | Portero |
 | 27 | Otorbi | Delantero |
 | 29 | Panach | Defensa |
+| 31 | Gamón | Defensa |
 | 33 | Mayol | Centrocampista |
 | 36 | I. Córdoba | Defensa |
+| 37 | Aimar | Delantero |
 | 38 | Jaume Durà | Centrocampista |
 | 41 | M. Navarro | Defensa |
 | — | Tenés | Delantero |
