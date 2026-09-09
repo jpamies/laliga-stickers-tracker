@@ -140,7 +140,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="hide-dont-stick"', html)
         self.assertIn('id="summary-skipped"', html)
         self.assertIn('src="app.js?v=46"', html)
-        self.assertIn('href="styles.css?v=26"', html)
+        self.assertIn('href="styles.css?v=27"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)

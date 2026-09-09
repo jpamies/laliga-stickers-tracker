@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 :root {
   color-scheme: light;
   --ink: #15231c;
@@ -457,13 +459,19 @@ button {
 }
 
 .section-menu-visual {
+  position: relative;
   display: grid;
   width: 50%;
   height: 50%;
   place-items: center;
 }
 
+/* El hueco es cuadrado y algunos escudos son más altos que anchos. Se colocan
+   en absoluto porque `height: 100%` no resuelve contra una altura indefinida y
+   la imagen acababa desbordando sobre el nombre de la sección. */
 .section-menu-visual img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
