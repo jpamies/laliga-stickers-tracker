@@ -1,5 +1,9 @@
 -- Plantillas reales de LALIGA EA SPORTS.
 --
+-- YA APLICADA: no edites este fichero. Una migración aplicada no se vuelve a
+-- ejecutar, así que cualquier cambio aquí no llegaría a las bases existentes.
+-- Para modificar estas tablas, añade una migración nueva.
+--
 -- Tablas de sólo lectura pobladas por `generar_plantillas_laliga.py`, que
 -- regenera `supabase/laliga_plantillas.sql` con un `delete` + `insert`
 -- completo. No guardan datos personales del usuario: son el catálogo público

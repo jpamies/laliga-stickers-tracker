@@ -220,6 +220,10 @@ supabase link --project-ref cjwssgaigkagoocwiecq
 supabase db push
 ```
 
+Una migración aplicada no se vuelve a ejecutar: si necesitas cambiar una tabla,
+añade un fichero nuevo en `supabase/migrations/` en lugar de editar el que la
+creó, o las bases de datos existentes se quedarán sin ese cambio.
+
 Las invitaciones de amistad requieren confirmación expresa y caducan a los 30
 días. Al caducar, iniciar sesión genera automáticamente un enlace nuevo.
 
