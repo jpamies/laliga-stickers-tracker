@@ -26,12 +26,12 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 ## Resumen
 
 - **Equipos con la página completable sin Últimos Fichajes:** 2 de 20
-- **Huecos sin ningún jugador activo:** 31
-- **Huecos que ni con Últimos Fichajes se pueden salvar:** 18
+- **Huecos sin ningún jugador activo:** 30
+- **Huecos que ni con Últimos Fichajes se pueden salvar:** 17
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Últimos Fichajes | Déficit |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [Deportivo Alavés](#deportivo-alavés) | 15/19 | 2 | 0 | 2 | 0/0 | 2 |
+| [Deportivo Alavés](#deportivo-alavés) | 16/19 | 1 | 0 | 2 | 0/0 | 1 |
 | [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 0/0 | — |
 | [Atlético de Madrid](#atlético-de-madrid) | 16/19 | 3 | 0 | 0 | 2/2 | 1 |
 | [FC Barcelona](#fc-barcelona) | 18/19 | 1 | 0 | 0 | 1/1 | — |
@@ -54,9 +54,9 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 
 ## DEPORTIVO ALAVÉS
 
-⛔ **2 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **2 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
+⛔ **1 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **1 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
 
-- **Huecos a resolver:** 8 (Parada), 11 (Benavidez)
+- **Huecos a resolver:** 8 (Parada)
 - **Últimos Fichajes que sirven:** ninguno para este equipo
 - **Sin asignar por Panini:** 4, 10
 - **Puedes elegir variante:** 18 (18A o 18B)
@@ -75,7 +75,7 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 | 8 | 8 | Parada | — | — | Sin jugador activo |
 | 9 | 9 | Yusi | Youssef Enriquez | 3 | **pegar** |
 | 10 | 10 | sin asignar | — | — | Pendiente |
-| 11 | 11 | Benavidez | — | — | Sin jugador activo |
+| 11 | 11 | Benavidez | Carlos Protesoni | 23 | **pegar** |
 | 12 | 12 | Blanco | Antonio Blanco | 8 | **pegar** |
 | 13 | 13 | Guevara | Ander Guevara | 6 | **pegar** |
 | 14 | 14 | Aleñá | Carles Aleñá | 10 | **pegar** |
@@ -102,7 +102,6 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 13 | A. Rodriguez | Portero |
 | 18 | Mikel R. | Defensa |
 | 22 | Miguel | Delantero |
-| 23 | C. Protesoni | Centrocampista |
 | 24 | Selu Diallo | Centrocampista |
 | 27 | Xanet Olaiz | Defensa |
 | 29 | Izei | Centrocampista |

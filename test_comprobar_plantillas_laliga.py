@@ -103,6 +103,19 @@ class MatchTests(unittest.TestCase):
         self.assertEqual(match.estado, IN_SQUAD)
         self.assertEqual(match.candidato, "Youssef Enriquez")
 
+    def test_alias_links_names_that_share_nothing(self) -> None:
+        # El cromo 11 del Alavés lleva impreso «Benavidez» y el jugador es
+        # Carlos Protesoni: sin el alias no hay una sola letra que los una.
+        squad = [
+            member("Carlos Protesoni", "C. Protesoni", "Carlos", "Protesoni"),
+            member("Izei Hernández", "Izei", "Izei", "Hernández"),
+        ]
+
+        match = match_member("Benavidez", squad)
+
+        self.assertEqual(match.estado, IN_SQUAD)
+        self.assertEqual(match.candidato, "Carlos Protesoni")
+
     def test_a_shared_surname_is_not_enough_to_claim_the_same_player(self) -> None:
         # «Mario García» no es «Pablo García» sólo por compartir apellido.
         squad = [member("Pablo García", "Pablo G.", "Pablo", "García")]

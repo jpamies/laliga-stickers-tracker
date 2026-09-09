@@ -11,8 +11,8 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | Equipos | 20 |
 | **Jugadores registrados** | **575** |
 | Fichas totales (con cuerpo técnico) | 615 |
-| Jugadores con cromo en el álbum | 352 |
-| Jugadores sin cromo | 223 |
+| Jugadores con cromo en el álbum | 353 |
+| Jugadores sin cromo | 222 |
 | Cedidos | 47 |
 | Sin dorsal asignado | 3 |
 
@@ -29,7 +29,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 
 | Equipo | Jugadores | Con cromo | Sin cromo | Cedidos |
 | --- | ---: | ---: | ---: | ---: |
-| [Deportivo Alavés](#deportivo-alavés) | 27 | 15 | 12 | 0 |
+| [Deportivo Alavés](#deportivo-alavés) | 27 | 16 | 11 | 0 |
 | [Athletic Club](#athletic-club-de-bilbao) | 28 | 19 | 9 | 0 |
 | [Atlético de Madrid](#atlético-de-madrid) | 27 | 18 | 9 | 1 |
 | [FC Barcelona](#fc-barcelona) | 29 | 18 | 11 | 0 |
@@ -77,7 +77,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 10 | C. Aleñá | Carles Aleñá | Centrocampista | 28 | ES | DEPORTIVO ALAVÉS 14 |  |
 | 19 | Ibáñez | Pablo Ibáñez | Centrocampista | 27 | ES | DEPORTIVO ALAVÉS 15 |  |
 | 21 | A. Rebbach | Abde Rebbach | Centrocampista | 28 | DZ | DEPORTIVO ALAVÉS 18A |  |
-| 23 | C. Protesoni | Carlos Protesoni | Centrocampista | 28 | UY | — |  |
+| 23 | C. Protesoni | Carlos Protesoni | Centrocampista | 28 | UY | DEPORTIVO ALAVÉS 11 |  |
 | 24 | Selu Diallo | Selu Diallo | Centrocampista | 22 | GN | — |  |
 | 29 | Izei | Izei Hernández | Centrocampista | 19 | ES | — |  |
 | 9 | Mariano | Mariano Díaz | Delantero | 33 | DO | — |  |

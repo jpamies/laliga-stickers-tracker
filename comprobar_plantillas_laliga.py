@@ -44,6 +44,8 @@ LALIGA_ALIASES = {
     "yusi": "youssef enriquez",
     # LALIGA no registra el nombre por el que se les conoce.
     "ilaix moriba": "moriba kourouma kourouma",
+    # El cromo 11 del Alavés lleva impreso otro apellido. Comprobado a mano.
+    "benavidez": "carlos protesoni",
 }
 
 # Cromos que comparten apellido con un fichaje posterior, así que el
