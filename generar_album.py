@@ -150,7 +150,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=45"></script>
+  <script src="app.js?v=46"></script>
   <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>
@@ -233,8 +233,10 @@ def pending_update_stickers(
                     "coincidencia_laliga": "",
                     "dorsal_laliga": "",
                     "posicion_laliga": "",
+                    "clave_laliga": "",
                     "imagen_provisional": "",
                     "foto_url": "",
+                    "foto_fuente": "",
                     "escudo_url": "",
                     "dorsal": "",
                 }
@@ -290,8 +292,10 @@ def load_stickers(
         row["coincidencia_laliga"] = check.get("coincidencia_laliga", "")
         row["dorsal_laliga"] = check.get("dorsal_laliga", "")
         row["posicion_laliga"] = check.get("posicion_laliga", "")
+        row["clave_laliga"] = check.get("clave_laliga", "")
         row["imagen_provisional"] = ""
         row["foto_url"] = ""
+        row["foto_fuente"] = ""
         row["escudo_url"] = ""
         row["dorsal"] = ""
     rows.extend(pending_update_stickers({row["id"] for row in rows}))
@@ -321,15 +325,44 @@ def reliable_match(sticker: dict[str, str], minimum: float = 0.9) -> bool:
         return False
 
 
+def load_laliga_photos(path: Path | None) -> dict[str, dict[str, str]]:
+    if not path or not path.exists():
+        return {}
+    with path.open(encoding="utf-8-sig", newline="") as source:
+        return {row["clave"]: row for row in csv.DictReader(source) if row.get("clave")}
+
+
+def generic_photo(url: str) -> bool:
+    """LALIGA sirve una silueta cuando todavía no tiene el retrato."""
+    return not url or "/default/" in url or "default-player" in url
+
+
+def laliga_photo(
+    sticker: dict[str, str], squads: dict[str, dict[str, str]]
+) -> dict[str, str] | None:
+    """Retrato oficial del jugador, si el cromo está emparejado con su ficha.
+
+    Son mejores que los de Transfermarkt: mismo encuadre para todos, fondo
+    recortado y mucha más resolución."""
+    if sticker.get("estado_laliga") != "en_plantilla":
+        return None
+    player = squads.get(sticker.get("clave_laliga", ""))
+    if not player or generic_photo(player.get("foto_url", "")):
+        return None
+    return player
+
+
 def generate(
     csv_path: Path,
     output_path: Path,
     image_mapping_path: Path | None = Path("imagenes_panini.csv"),
     photo_mapping_path: Path | None = Path("fotos_transfermarkt.csv"),
     laliga_check_path: Path | None = Path("comprobacion_laliga.csv"),
+    laliga_squads_path: Path | None = Path("laliga_plantillas.csv"),
 ) -> int:
     stickers = load_stickers(csv_path, image_mapping_path, laliga_check_path)
     photos = load_player_photos(photo_mapping_path)
+    squads = load_laliga_photos(laliga_squads_path)
     crests_by_section = {
         sticker["seccion"]: sticker["imagen_url"]
         for sticker in stickers
@@ -341,14 +374,21 @@ def generate(
             continue
         sticker["imagen_provisional"] = "true"
         sticker["escudo_url"] = crests_by_section.get(sticker["seccion"], "")
-        player = (
-            photos.get(normalize_name(sticker["coincidencia_transfermarkt"]))
-            if reliable_match(sticker)
-            else None
-        )
-        if player:
-            sticker["foto_url"] = player["foto_url"]
-            sticker["dorsal"] = player["dorsal"]
+        oficial = laliga_photo(sticker, squads)
+        if oficial:
+            sticker["foto_url"] = oficial["foto_url"]
+            sticker["foto_fuente"] = "laliga"
+            sticker["dorsal"] = oficial["dorsal"]
+        else:
+            player = (
+                photos.get(normalize_name(sticker["coincidencia_transfermarkt"]))
+                if reliable_match(sticker)
+                else None
+            )
+            if player:
+                sticker["foto_url"] = player["foto_url"]
+                sticker["foto_fuente"] = "transfermarkt"
+                sticker["dorsal"] = player["dorsal"]
         used_sections.add(sticker["seccion"])
     themes = {
         section: {
@@ -418,8 +458,15 @@ def main() -> None:
         type=Path,
         default=Path("comprobacion_laliga.csv"),
     )
+    parser.add_argument(
+        "--plantillas",
+        type=Path,
+        default=Path("laliga_plantillas.csv"),
+    )
     args = parser.parse_args()
-    total = generate(args.csv, args.salida, args.imagenes, args.fotos, args.laliga)
+    total = generate(
+        args.csv, args.salida, args.imagenes, args.fotos, args.laliga, args.plantillas
+    )
     print(f"Generado {args.salida} con {total} cromos.")
 
 

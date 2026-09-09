@@ -112,7 +112,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.SQUAD_TEAMS = __SQUAD_TEAMS__;</script>
   <script>window.SQUAD_THEMES = __SQUAD_THEMES__;</script>
   <script>window.SQUAD_GENERATED_AT = __SQUAD_GENERATED_AT__;</script>
-  <script src="plantillas.js?v=2"></script>
+  <script src="plantillas.js?v=3"></script>
 </body>
 </html>
 """

@@ -577,13 +577,32 @@
     return (sticker.tipo || "").toUpperCase().slice(0, 3) || "—";
   }
 
+  // Hueco de la foto dentro del cromo provisional, en coordenadas del SVG.
+  const PHOTO_BOX = { x: 52, y: 66, width: 172, height: 204 };
+  // Los retratos de LALIGA son de cuerpo medio y dejan al jugador pequeño, así
+  // que se amplían hasta un encuadre parecido al de un cromo real. Los de
+  // Transfermarkt ya vienen recortados a la cara y se dejan como están.
+  const LALIGA_PHOTO_ZOOM = 1.22;
+
+  function photoTag(sticker, id) {
+    const zoom = sticker.foto_fuente === "laliga" ? LALIGA_PHOTO_ZOOM : 1;
+    const width = PHOTO_BOX.width * zoom;
+    const height = PHOTO_BOX.height * zoom;
+    const x = PHOTO_BOX.x - (width - PHOTO_BOX.width) / 2;
+    // Las fotos de LALIGA traen la cabeza pegada al borde superior, así que se
+    // recortan por abajo; las de Transfermarkt se apoyan en el borde inferior,
+    // como hasta ahora.
+    const anchor = zoom === 1 ? "xMidYMax meet" : "xMidYMin slice";
+    return `<image href="${escapeHtml(sticker.foto_url)}" x="${x}" y="${PHOTO_BOX.y}" width="${width}" height="${height}" clip-path="url(#photo-${id})" preserveAspectRatio="${anchor}"/>`;
+  }
+
   function placeholderSticker(sticker) {
     const theme = placeholderTheme(sticker.seccion);
     const id = normalize(sticker.id).replace(/[^a-z0-9]+/g, "-");
     const name = (sticker.nombre || "").toUpperCase();
     const role = placeholderRole(sticker);
     const photo = sticker.foto_url
-      ? `<image href="${escapeHtml(sticker.foto_url)}" x="52" y="66" width="172" height="204" clip-path="url(#photo-${id})" preserveAspectRatio="xMidYMax meet"/>`
+      ? photoTag(sticker, id)
       : `
         <g clip-path="url(#photo-${id})" fill="${theme.primary}" opacity=".22">
           <circle cx="138" cy="146" r="34"/>
@@ -608,7 +627,7 @@
             <line x1="0" y1="0" x2="0" y2="9" stroke="${theme.primary}" stroke-width="2.5" opacity=".07"/>
           </pattern>
           <clipPath id="photo-${id}">
-            <rect x="52" y="66" width="172" height="204" rx="10"/>
+            <rect x="${PHOTO_BOX.x}" y="${PHOTO_BOX.y}" width="${PHOTO_BOX.width}" height="${PHOTO_BOX.height}" rx="10"/>
           </clipPath>
         </defs>
         <rect width="232" height="308" fill="#f6f5f1"/>

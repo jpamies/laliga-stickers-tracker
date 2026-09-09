@@ -36,8 +36,10 @@
   sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso
   de invitado a tu cuenta, expórtalo e impórtalo tras iniciar sesión.
 - Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
-  foto oficial se dibujan en la propia web con el escudo y la foto de
-  Transfermarkt, los colores del equipo y los datos pendientes marcados.
+  foto oficial se dibujan en la propia web con el escudo del equipo, sus colores
+  y el retrato oficial de LALIGA, ampliado hasta un encuadre parecido al de un
+  cromo real. Cuando LALIGA no ha emparejado al jugador se recurre a la foto de
+  Transfermarkt, y si tampoco la hay se dibuja una silueta.
 - Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
   información: la decisión de no pegar la tomas tú.
 - Ficha oficial de LALIGA en cada cromo (nombre completo, dorsal y

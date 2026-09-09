@@ -4,6 +4,7 @@ import json
 import re
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 
 from generar_album import generate
@@ -44,7 +45,22 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            85,
+            89,
+        )
+        # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
+        # que sólo quedan donde LALIGA no ha emparejado al jugador.
+        fuentes = Counter(
+            sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
+        )
+        self.assertEqual(fuentes, Counter({"laliga": 76, "transfermarkt": 13}))
+        self.assertTrue(
+            all(
+                "/default/" not in sticker["foto_url"]
+                and "default-player" not in sticker["foto_url"]
+                for sticker in stickers
+                if sticker["foto_fuente"] == "laliga"
+            ),
+            "una silueta genérica de LALIGA no es mejor que el dibujo propio",
         )
         self.assertEqual(
             sum(sticker["accion"] == "NO PEGAR" for sticker in stickers),
@@ -123,7 +139,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-filter="second-edition"', html)
         self.assertIn('id="hide-dont-stick"', html)
         self.assertIn('id="summary-skipped"', html)
-        self.assertIn('src="app.js?v=45"', html)
+        self.assertIn('src="app.js?v=46"', html)
         self.assertIn('href="styles.css?v=26"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)

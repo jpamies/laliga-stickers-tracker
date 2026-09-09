@@ -98,6 +98,26 @@
     });
   }
 
+  // Hueco de la foto dentro del cromo, en coordenadas del SVG.
+  const PHOTO_BOX = { x: 52, y: 66, width: 172, height: 204 };
+  // Los retratos de LALIGA son de cuerpo medio y dejan al jugador pequeño. Se
+  // amplían para acercarlo al encuadre de un cromo Panini: la cabeza arriba y
+  // el recorte a la altura del pecho.
+  const PHOTO_ZOOM = 1.22;
+
+  function photoFrame() {
+    const width = PHOTO_BOX.width * PHOTO_ZOOM;
+    const height = PHOTO_BOX.height * PHOTO_ZOOM;
+    return {
+      width,
+      height,
+      x: PHOTO_BOX.x - (width - PHOTO_BOX.width) / 2,
+      // Anclado al borde superior: en estas fotos la cabeza empieza justo
+      // arriba, así que cualquier desplazamiento la recortaría.
+      y: PHOTO_BOX.y,
+    };
+  }
+
   function stickerSvg(player) {
     const palette = theme(player.seccion_album);
     const id = normalize(player.clave).replace(/[^a-z0-9]+/g, "-");
@@ -105,8 +125,9 @@
     const label = (player.apodo || player.nombre || "").toUpperCase();
     const labelSize = label.length > 15 ? 13 : label.length > 11 ? 15 : 18;
     const role = positionCode(player);
+    const frame = photoFrame();
     const photo = player.foto_url
-      ? `<image href="${escapeHtml(player.foto_url)}" x="52" y="66" width="172" height="204" clip-path="url(#photo-${id})" preserveAspectRatio="xMidYMax meet"/>`
+      ? `<image href="${escapeHtml(player.foto_url)}" x="${frame.x}" y="${frame.y}" width="${frame.width}" height="${frame.height}" clip-path="url(#photo-${id})" preserveAspectRatio="xMidYMin slice"/>`
       : `<text x="138" y="180" text-anchor="middle" fill="${palette.primary}" font-family="Trebuchet MS, Arial, sans-serif" font-size="44" font-weight="900" opacity=".35">?</text>`;
     const crest = team && team.escudo_url
       ? `<image href="${escapeHtml(team.escudo_url)}" x="8" y="7" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>`
@@ -123,7 +144,7 @@
             <line x1="0" y1="0" x2="0" y2="9" stroke="${palette.primary}" stroke-width="2.5" opacity=".07"/>
           </pattern>
           <clipPath id="photo-${id}">
-            <rect x="52" y="66" width="172" height="204" rx="10"/>
+            <rect x="${PHOTO_BOX.x}" y="${PHOTO_BOX.y}" width="${PHOTO_BOX.width}" height="${PHOTO_BOX.height}" rx="10"/>
           </clipPath>
         </defs>
         <rect width="232" height="308" fill="#f6f5f1"/>
