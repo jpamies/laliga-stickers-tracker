@@ -276,7 +276,7 @@ MALAGA-CF-12,MALAGA CF,12,Dani Lorenzo,Málaga CF,en_plantilla,malaga-cf-84585,D
 MALAGA-CF-13,MALAGA CF,13A,Rafa Rodríguez,Málaga CF,en_plantilla,malaga-cf-84588,Rafa Rodríguez,14,Centrocampista,1.0000,2026-09-09,Coincidencia exacta.
 MALAGA-CF-14,MALAGA CF,13B,Juanpe,Málaga CF,coincidencia_dudosa,,Juan Francisco Fernández Martin,,,0.7273,2026-09-09,Posible coincidencia; confírmala antes de descartar el cromo.
 MALAGA-CF-15,MALAGA CF,14,Dotor,Málaga CF,en_plantilla,malaga-cf-86058,Carlos Dotor,8,Centrocampista,1.0000,2026-09-09,Coincidencia exacta.
-MALAGA-CF-16,MALAGA CF,15,Aarón Ochoa,Málaga CF,fuera_plantilla,,Juan Francisco Funes Arjona,,,0.5455,2026-09-09,No aparece en la plantilla oficial de LALIGA.
+MALAGA-CF-16,MALAGA CF,15,Aarón Ochoa,Málaga CF,sin_ficha,,,,,0.0000,2026-09-09,"Comprobado a mano: sigue en el club, pero LALIGA no lo lista."
 MALAGA-CF-17,MALAGA CF,16,Larrubia,Málaga CF,en_plantilla,malaga-cf-84591,David Larrubia,10,Centrocampista,1.0000,2026-09-09,Coincidencia exacta.
 MALAGA-CF-18,MALAGA CF,17,Lobete,Málaga CF,en_plantilla,malaga-cf-84595,Julen Lobete,24,Delantero,1.0000,2026-09-09,Coincidencia exacta.
 MALAGA-CF-19,MALAGA CF,18,Adrián Niño,Málaga CF,en_plantilla,malaga-cf-84594,Adrián Niño,21,Delantero,1.0000,2026-09-09,Coincidencia exacta.

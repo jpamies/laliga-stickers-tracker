@@ -1,15 +1,21 @@
 from __future__ import annotations
 
 import unittest
+from datetime import date
 from pathlib import Path
 
 from comprobar_plantillas import normalize_name
 
 from comprobar_plantillas_laliga import (
+    AT_THE_CLUB,
     DOUBTFUL,
     IN_SQUAD,
+    KNOWN_ABSENCES,
+    KNOWN_UNLISTED,
     OUT_OF_SQUAD,
+    UNLISTED,
     SquadMember,
+    check_rows,
     link_stickers,
     load_squads,
     match_member,
@@ -115,6 +121,33 @@ class MatchTests(unittest.TestCase):
 
         self.assertEqual(match.estado, IN_SQUAD)
         self.assertEqual(match.candidato, "Carlos Protesoni")
+
+
+class ManualVerdictTests(unittest.TestCase):
+    """Hay dos motivos distintos para no encontrar a alguien en LALIGA, y sólo
+    uno significa que se haya ido del club."""
+
+    def _fila(self, club: str, nombre: str) -> dict[str, str]:
+        return {
+            "id": "X-01", "seccion": "SECCION", "numero": "1",
+            "nombre": nombre, "club_objetivo": club,
+        }
+
+    def test_a_confirmed_departure_is_reported_as_gone(self) -> None:
+        club, nombre = next(iter(KNOWN_ABSENCES))
+
+        [row] = check_rows([self._fila(club, nombre)], {}, date(2026, 9, 9))
+
+        self.assertEqual(row["estado_laliga"], OUT_OF_SQUAD)
+
+    def test_a_player_without_a_licence_still_counts_as_at_the_club(self) -> None:
+        club, nombre = next(iter(KNOWN_UNLISTED))
+
+        [row] = check_rows([self._fila(club, nombre)], {}, date(2026, 9, 9))
+
+        self.assertEqual(row["estado_laliga"], UNLISTED)
+        self.assertIn(UNLISTED, AT_THE_CLUB)
+        self.assertNotIn(OUT_OF_SQUAD, AT_THE_CLUB)
 
     def test_a_shared_surname_is_not_enough_to_claim_the_same_player(self) -> None:
         # «Mario García» no es «Pablo García» sólo por compartir apellido.

@@ -1,6 +1,6 @@
 -- Plantillas reales de LALIGA EA SPORTS.
 -- Generado por generar_plantillas_laliga.py, no editar a mano.
--- Actualizado: 2026-09-09T14:00:30+00:00
+-- Actualizado: 2026-09-09T14:09:33+00:00
 -- Equipos: 20 | Fichas: 615
 
 begin;

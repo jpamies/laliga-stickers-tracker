@@ -55,6 +55,13 @@ KNOWN_ABSENCES = {
     ("Racing de Santander", "mario garcia"),
 }
 
+# Jugadores que siguen en el club pero que LALIGA no lista, normalmente porque
+# no tienen ficha. No son bajas: su cromo se puede pegar.
+KNOWN_UNLISTED = {
+    # Lesionado y sin ficha del primer equipo.
+    ("Málaga CF", "aaron ochoa"),
+}
+
 CSV_FIELDS = [
     "id",
     "seccion",
@@ -82,10 +89,14 @@ STICKER_FIELDS = [
 
 IN_SQUAD = "en_plantilla"
 OUT_OF_SQUAD = "fuera_plantilla"
+UNLISTED = "sin_ficha"
 DOUBTFUL = "coincidencia_dudosa"
 NOT_APPLICABLE = "no_aplica"
 NO_SQUAD = "plantilla_no_disponible"
 UNPUBLISHED = "pendiente_publicacion"
+
+# Estados en los que el jugador sigue en el club y su cromo se puede pegar.
+AT_THE_CLUB = frozenset({IN_SQUAD, UNLISTED})
 
 # Longitud mínima para fiarnos de una coincidencia parcial y, sobre todo, para
 # atrevernos a decir que un jugador ya no está: con apodos como «Oso» o «Yusi»
@@ -298,16 +309,24 @@ def check_rows(
     results: list[dict[str, str]] = []
     for row in rows:
         name = row.get("nombre", "")
+        club = (row.get("club_objetivo", ""), normalize_name(name))
         if not name:
             match = miss(UNPUBLISHED, "", 0.0, "Hueco sin jugador.")
         elif name == "Escudo":
             match = miss(NOT_APPLICABLE, "", 0.0, "El escudo no es un jugador.")
-        elif (row.get("club_objetivo", ""), normalize_name(name)) in KNOWN_ABSENCES:
+        elif club in KNOWN_ABSENCES:
             match = miss(
                 OUT_OF_SQUAD,
                 "",
                 0.0,
                 "Comprobado a mano: otro jugador con el mismo apellido ocupa su sitio.",
+            )
+        elif club in KNOWN_UNLISTED:
+            match = miss(
+                UNLISTED,
+                "",
+                0.0,
+                "Comprobado a mano: sigue en el club, pero LALIGA no lo lista.",
             )
         else:
             section = section_for(row, squads)

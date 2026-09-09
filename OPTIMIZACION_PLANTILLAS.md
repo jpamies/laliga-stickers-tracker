@@ -25,8 +25,8 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 
 ## Resumen
 
-- **Equipos con la página completable sin Últimos Fichajes:** 2 de 20
-- **Huecos sin ningún jugador activo:** 30
+- **Equipos con la página completable sin Últimos Fichajes:** 3 de 20
+- **Huecos sin ningún jugador activo:** 29
 - **Huecos que ni con Últimos Fichajes se pueden salvar:** 17
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Últimos Fichajes | Déficit |
@@ -43,7 +43,7 @@ dejar la página llena sólo con futbolistas que siguen en el club?**
 | [Getafe CF](#getafe-cf) | 14/19 | 3 | 0 | 2 | 1/1 | 2 |
 | [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1/1 | 3 |
 | [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 1/2 | — |
-| [Málaga CF](#malaga-cf) | 18/19 | 1 | 0 | 0 | 1/1 | — |
+| [Málaga CF](#malaga-cf) | 19/19 | 0 | 0 | 0 | 1/1 | — |
 | [CA Osasuna](#osasuna) | 18/19 | 1 | 0 | 0 | 0/0 | 1 |
 | [Racing de Santander](#racing-de-santander) | 14/19 | 4 | 0 | 1 | 1/1 | 3 |
 | [Rayo Vallecano](#rayo-vallecano) | 17/19 | 2 | 0 | 0 | 0/0 | 2 |
@@ -728,9 +728,8 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 
 ## MALAGA CF
 
-🔄 **1 huecos sin jugador activo**, cubiertos con 1 de los 1 Últimos Fichajes disponibles.
+✅ **Página completa sin Últimos Fichajes.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Huecos a resolver:** 15 (Aarón Ochoa)
 - **Últimos Fichajes que sirven:** UF11 (Juan Cruz)
 
 ### Huecos del álbum
@@ -752,7 +751,7 @@ _Este equipo no tiene ningún cromo de Últimos Fichajes._
 | 13 | 13A | Rafa Rodríguez | Rafa Rodríguez | 14 | **pegar** |
 |  | 13B | Juanpe | — | — | descartar |
 | 14 | 14 | Dotor | Carlos Dotor | 8 | **pegar** |
-| 15 | 15 | Aarón Ochoa | — | — | Sin jugador activo |
+| 15 | 15 | Aarón Ochoa | sin ficha, sigue en el club | — | **pegar** |
 | 16 | 16 | Larrubia | David Larrubia | 10 | **pegar** |
 | 17 | 17 | Lobete | Julen Lobete | 24 | **pegar** |
 | 18 | 18 | Adrián Niño | Adrián Niño | 21 | **pegar** |

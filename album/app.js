@@ -652,6 +652,7 @@
 
   const laligaReasons = {
     fuera_plantilla: "Ya no aparece en la plantilla oficial de LALIGA",
+    sin_ficha: "Sigue en el club, pero LALIGA no le ha dado ficha",
     coincidencia_dudosa: "Coincidencia sin confirmar en LALIGA",
     no_aplica: "Este cromo no es un jugador",
     pendiente_publicacion: "Panini todavía no ha asignado el hueco",

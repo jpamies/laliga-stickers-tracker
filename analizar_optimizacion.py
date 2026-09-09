@@ -18,15 +18,18 @@ from datetime import date
 from pathlib import Path
 
 from extraer_checklist import CLUB_CANONICAL, CLUB_SECTIONS, markdown_escape
+from comprobar_plantillas_laliga import (
+    AT_THE_CLUB,
+    DOUBTFUL,
+    IN_SQUAD,
+    OUT_OF_SQUAD,
+    UNLISTED,
+)
 
 
 LATEST_SIGNINGS = "ÚLTIMOS FICHAJES"
 CREST_SLOT = "1"
 COACH_SLOT = "2"
-
-IN_SQUAD = "en_plantilla"
-OUT_OF_SQUAD = "fuera_plantilla"
-DOUBTFUL = "coincidencia_dudosa"
 
 # Estado de cada hueco una vez cruzado con LALIGA.
 READY = "resuelto"
@@ -59,7 +62,8 @@ class Option:
 
     @property
     def active(self) -> bool:
-        return self.estado == IN_SQUAD
+        """Sigue en el club, aunque LALIGA no siempre le dé ficha."""
+        return self.estado in AT_THE_CLUB
 
 
 @dataclass
@@ -325,8 +329,10 @@ def slot_rows(report: TeamReport) -> list[str]:
             else:
                 mark = "descartar"
             details = (
-                f"{option.ficha}"
+                option.ficha
                 if option.estado == IN_SQUAD
+                else "sin ficha, sigue en el club"
+                if option.estado == UNLISTED
                 else "—"
             )
             lines.append(
