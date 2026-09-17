@@ -184,17 +184,21 @@ qué página de equipo se puede completar sin pegar jugadores que ya se fueron e
 ### Optimización de la página de cada equipo
 
 ```powershell
+.\.venv\Scripts\python.exe generar_estadisticas_laliga.py
 .\.venv\Scripts\python.exe analizar_optimizacion.py
 ```
 
 Cada club ocupa 20 huecos: escudo, entrenador y 18 jugadores, algunos con dos
 variantes (`A`/`B` o `BIS`) de las que sólo se pega una.
-`analizar_optimizacion.py` cruza el checklist con las plantillas oficiales y
-escribe [`OPTIMIZACION_PLANTILLAS.md`](OPTIMIZACION_PLANTILLAS.md), que por
-equipo responde a si la página se puede dejar llena usando sólo futbolistas que
-siguen en el club: qué hueco resuelve cada cromo, cuáles se han quedado sin
-jugador activo, qué Últimos Fichajes hay para taparlos y a qué jugadores de la
-plantilla real no les corresponde ningún cromo.
+`generar_estadisticas_laliga.py` descarga los minutos de cada jugador y
+`analizar_optimizacion.py` los cruza con el checklist para escribir
+[`OPTIMIZACION_PLANTILLAS.md`](OPTIMIZACION_PLANTILLAS.md), que por equipo
+responde a tres cosas: qué huecos se han quedado sin nadie del club, cuál de
+las dos variantes conviene pegar cuando ambas siguen en plantilla, y qué
+jugadores inscritos sin cromo se lo han ganado a base de minutos.
+
+Los Últimos Fichajes no entran en ese recuento: se pegan en su propia sección,
+no tapando huecos de equipo.
 
 ## Sincronización gratuita
 

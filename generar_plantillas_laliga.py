@@ -97,6 +97,7 @@ PLAYER_FIELDS = [
     "foto_cuadrada_url",
     "person_id",
     "opta_id",
+    "slug",
     "temporada",
     # Las rellena `comprobar_plantillas_laliga.py` al cruzar con el checklist.
     "cromo_id",
@@ -283,6 +284,7 @@ def player_row(member: dict, team: dict, season: int) -> dict[str, str]:
         "foto_cuadrada_url": photo_url(photos, "002", "512x512"),
         "person_id": person.get("id") or "",
         "opta_id": text(member.get("opta_id")),
+        "slug": text(person.get("slug")),
         "temporada": season,
         "cromo_id": "",
         "cromo_seccion": "",

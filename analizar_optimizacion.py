@@ -2,10 +2,12 @@
 
 Cada club tiene 20 huecos: escudo, entrenador y 18 jugadores. Algunos huecos
 admiten dos cromos (variantes A/B o BIS) y sólo se pega uno. Cruzando el
-checklist con las plantillas oficiales de LALIGA se puede saber, hueco a hueco,
-si existe al menos una opción que siga en el club, cuántos Últimos Fichajes hay
-para tapar los que no y a qué jugadores de la plantilla real no les corresponde
-ningún cromo.
+checklist con las plantillas oficiales de LALIGA y con los minutos jugados se
+puede saber, hueco a hueco, cuál de las dos variantes conviene pegar y qué
+huecos se quedan sin nadie del club.
+
+Los Últimos Fichajes no entran en el recuento: van pegados en su propia
+sección, no tapando huecos de equipo.
 """
 
 from __future__ import annotations
@@ -27,10 +29,6 @@ from comprobar_plantillas_laliga import (
 )
 
 
-LATEST_SIGNINGS = "ÚLTIMOS FICHAJES"
-CREST_SLOT = "1"
-COACH_SLOT = "2"
-
 # Estado de cada hueco una vez cruzado con LALIGA.
 READY = "resuelto"
 DEAD = "sin_jugador_activo"
@@ -46,6 +44,58 @@ SLOT_LABEL = {
     NOT_APPLICABLE: "No aplica",
 }
 
+# Un jugador con esta parte de los minutos de su equipo se ha ganado el cromo.
+IMPORTANT_SHARE = 0.30
+# Diferencia a partir de la cual una variante gana claramente a la otra.
+CLEAR_MARGIN = 2.0
+
+
+def as_number(value: object) -> int:
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return 0
+
+
+@dataclass
+class Stats:
+    """Lo que ha jugado alguien en lo que va de competición."""
+
+    minutos: int = 0
+    partidos: int = 0
+    titularidades: int = 0
+    goles: int = 0
+    asistencias: int = 0
+    partidos_equipo: int = 0
+
+    @property
+    def known(self) -> bool:
+        return self.partidos_equipo > 0
+
+    @property
+    def share(self) -> float:
+        """Fracción de los minutos posibles que ha disputado."""
+        posibles = self.partidos_equipo * 90
+        return self.minutos / posibles if posibles else 0.0
+
+    @property
+    def important(self) -> bool:
+        return self.known and self.share >= IMPORTANT_SHARE
+
+    def summary(self) -> str:
+        if not self.known:
+            return "—"
+        if not self.minutos:
+            return "0′ · no ha jugado"
+        partes = [f"{self.minutos}′", f"{self.partidos} pj"]
+        if self.titularidades:
+            partes.append(f"{self.titularidades} tit")
+        if self.goles:
+            partes.append(f"{self.goles} g")
+        if self.asistencias:
+            partes.append(f"{self.asistencias} a")
+        return " · ".join(partes)
+
 
 @dataclass
 class Option:
@@ -59,6 +109,7 @@ class Option:
     ficha: str
     dorsal: str
     posicion: str
+    stats: Stats = field(default_factory=Stats)
 
     @property
     def active(self) -> bool:
@@ -87,15 +138,36 @@ class Slot:
         return REVIEW
 
     @property
-    def pick(self) -> Option | None:
-        for option in self.options:
-            if option.active:
-                return option
-        return None
-
-    @property
     def active_options(self) -> list[Option]:
         return [option for option in self.options if option.active]
+
+    @property
+    def pick(self) -> Option | None:
+        """La variante que conviene pegar: la que más juega.
+
+        El álbum sólo admite una, y quien acumula minutos envejece mejor que
+        quien todavía no se ha estrenado."""
+        candidatos = self.active_options
+        if not candidatos:
+            return None
+        return max(candidatos, key=lambda option: option.stats.minutos)
+
+    @property
+    def is_choice(self) -> bool:
+        """Dos variantes viables: hay algo que decidir."""
+        return len(self.active_options) > 1
+
+    @property
+    def decided_by_minutes(self) -> bool:
+        """Uno juega bastante más que el otro, así que la decisión está clara."""
+        if not self.is_choice:
+            return False
+        minutos = sorted(
+            (option.stats.minutos for option in self.active_options), reverse=True
+        )
+        if not minutos[0]:
+            return False
+        return minutos[1] == 0 or minutos[0] >= minutos[1] * CLEAR_MARGIN
 
 
 @dataclass
@@ -103,7 +175,6 @@ class TeamReport:
     section: str
     club: str
     slots: list[Slot]
-    signings: list[Option]
     without_sticker: list[dict[str, str]]
 
     @property
@@ -113,16 +184,42 @@ class TeamReport:
     def count(self, state: str) -> int:
         return sum(slot.state == state for slot in self.player_slots)
 
-    @property
-    def active_signings(self) -> list[Option]:
-        return [signing for signing in self.signings if signing.active]
-
     def slots_in(self, state: str) -> list[Slot]:
         return [slot for slot in self.player_slots if slot.state == state]
 
     @property
-    def deficit(self) -> int:
-        return max(0, self.count(DEAD) - len(self.active_signings))
+    def choices(self) -> list[Slot]:
+        return [slot for slot in self.player_slots if slot.is_choice]
+
+    @property
+    def deserve_sticker(self) -> list[dict[str, str]]:
+        """Jugadores sin cromo que se lo han ganado en el campo."""
+        return [
+            row for row in self.without_sticker if stats_for(row).important
+        ]
+
+    @property
+    def verdict(self) -> str:
+        dead = self.count(DEAD)
+        review = self.count(REVIEW)
+        pending = self.count(PENDING)
+        if not dead and not review and not pending:
+            return (
+                "✅ **Página completable.** Todos los huecos tienen un cromo de "
+                "alguien que sigue en el club."
+            )
+        partes = []
+        if dead:
+            hueco = "hueco" if dead == 1 else "huecos"
+            partes.append(
+                f"⛔ **{dead} {hueco} sin jugador activo:** o lo dejas vacío, "
+                "o pegas a alguien que ya se fue."
+            )
+        if review:
+            partes.append(f"🔎 {review} por revisar a mano.")
+        if pending:
+            partes.append(f"⏳ {pending} que Panini no ha asignado.")
+        return " ".join(partes)
 
     @property
     def plan(self) -> list[str]:
@@ -133,17 +230,22 @@ class TeamReport:
             names = ", ".join(
                 f"{slot.hueco} ({slot.options[0].nombre})" for slot in dead
             )
-            lines.append(f"- **Huecos a resolver:** {names}")
-        signings = self.active_signings
-        if signings:
+            lines.append(f"- **Huecos sin solución:** {names}")
+        claras = [slot for slot in self.choices if slot.decided_by_minutes]
+        if claras:
             names = ", ".join(
-                f"{signing.numero} ({signing.nombre})" for signing in signings
+                f"{slot.hueco} → **{slot.pick.numero}** ({slot.pick.nombre},"
+                f" {slot.pick.stats.minutos}′)"
+                for slot in claras
             )
-            lines.append(f"- **Últimos Fichajes que sirven:** {names}")
-        elif dead:
-            lines.append(
-                "- **Últimos Fichajes que sirven:** ninguno para este equipo"
+            lines.append(f"- **Variante recomendada por minutos:** {names}")
+        abiertas = [slot for slot in self.choices if not slot.decided_by_minutes]
+        if abiertas:
+            names = ", ".join(
+                f"{slot.hueco} ({' o '.join(o.numero for o in slot.active_options)})"
+                for slot in abiertas
             )
+            lines.append(f"- **Elección abierta:** {names}")
         review = self.slots_in(REVIEW)
         if review:
             names = ", ".join(
@@ -154,44 +256,14 @@ class TeamReport:
         if pending:
             names = ", ".join(slot.hueco for slot in pending)
             lines.append(f"- **Sin asignar por Panini:** {names}")
-        double = [slot for slot in self.player_slots if len(slot.active_options) > 1]
-        if double:
+        merecen = self.deserve_sticker
+        if merecen:
             names = ", ".join(
-                f"{slot.hueco} ({' o '.join(option.numero for option in slot.active_options)})"
-                for slot in double
+                f"{row['apodo'] or row['nombre']} ({as_number(row['minutos'])}′)"
+                for row in merecen
             )
-            lines.append(f"- **Puedes elegir variante:** {names}")
+            lines.append(f"- **Piden cromo a gritos:** {names}")
         return lines
-
-    @property
-    def verdict(self) -> str:
-        dead = self.count(DEAD)
-        review = self.count(REVIEW)
-        pending = self.count(PENDING)
-        if not dead and not review and not pending:
-            return (
-                "✅ **Página completa sin Últimos Fichajes.** Todos los huecos "
-                "tienen un cromo de alguien que sigue en el club."
-            )
-        parts = []
-        if dead:
-            available = len(self.active_signings)
-            if self.deficit:
-                parts.append(
-                    f"⛔ **{dead} huecos sin jugador activo** y sólo "
-                    f"{available} Últimos Fichajes: quedan **{self.deficit} "
-                    "sin solución**."
-                )
-            else:
-                parts.append(
-                    f"🔄 **{dead} huecos sin jugador activo**, cubiertos con "
-                    f"{dead} de los {available} Últimos Fichajes disponibles."
-                )
-        if review:
-            parts.append(f"🔎 {review} huecos por revisar a mano.")
-        if pending:
-            parts.append(f"⏳ {pending} huecos que Panini no ha asignado.")
-        return " ".join(parts)
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -199,7 +271,22 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(source))
 
 
-def option_for(row: dict[str, str], check: dict[str, str]) -> Option:
+def stats_for(row: dict[str, str]) -> Stats:
+    return Stats(
+        minutos=as_number(row.get("minutos")),
+        partidos=as_number(row.get("partidos")),
+        titularidades=as_number(row.get("titularidades")),
+        goles=as_number(row.get("goles")),
+        asistencias=as_number(row.get("asistencias")),
+        partidos_equipo=as_number(row.get("partidos_equipo")),
+    )
+
+
+def option_for(
+    row: dict[str, str],
+    check: dict[str, str],
+    stats: dict[str, Stats],
+) -> Option:
     return Option(
         numero=row["numero"],
         nombre=row["nombre"],
@@ -209,6 +296,7 @@ def option_for(row: dict[str, str], check: dict[str, str]) -> Option:
         ficha=check.get("coincidencia_laliga", ""),
         dorsal=check.get("dorsal_laliga", ""),
         posicion=check.get("posicion_laliga", ""),
+        stats=stats.get(check.get("clave_laliga", ""), Stats()),
     )
 
 
@@ -222,35 +310,29 @@ def build_reports(
     collection: list[dict[str, str]],
     checks: dict[str, dict[str, str]],
     squads: list[dict[str, str]],
+    stats_rows: list[dict[str, str]] | None = None,
 ) -> list[TeamReport]:
+    stats = {row["clave"]: stats_for(row) for row in stats_rows or []}
     by_section: dict[str, dict[str, Slot]] = defaultdict(dict)
-    signings: dict[str, list[Option]] = defaultdict(list)
 
     for row in collection:
-        check = checks.get(row["id"], {})
-        if row["seccion"] in CLUB_CANONICAL:
-            slots = by_section[row["seccion"]]
-            slot = slots.setdefault(
-                row["hueco_album"], Slot(row["hueco_album"], slot_kind(row))
-            )
-            slot.options.append(option_for(row, check))
-        elif row["seccion"] == LATEST_SIGNINGS and row["club_objetivo"]:
-            section = next(
-                (
-                    name
-                    for name, club in CLUB_CANONICAL.items()
-                    if club == row["club_objetivo"]
-                ),
-                "",
-            )
-            if section:
-                signings[section].append(option_for(row, check))
+        # Los Últimos Fichajes se pegan en su propia sección, así que no
+        # participan en el recuento de huecos de equipo.
+        if row["seccion"] not in CLUB_CANONICAL:
+            continue
+        slots = by_section[row["seccion"]]
+        slot = slots.setdefault(
+            row["hueco_album"], Slot(row["hueco_album"], slot_kind(row))
+        )
+        slot.options.append(option_for(row, checks.get(row["id"], {}), stats))
 
+    stats_by_key = {row["clave"]: row for row in stats_rows or []}
     orphans: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in squads:
         if row.get("cromo_id") or row.get("rol_slug") != "jugador":
             continue
-        orphans[row.get("seccion_album", "")].append(row)
+        marca = stats_by_key.get(row.get("clave", ""), {})
+        orphans[row.get("seccion_album", "")].append({**row, **marca})
 
     reports = []
     for section in CLUB_SECTIONS:
@@ -262,13 +344,9 @@ def build_reports(
                 section=section,
                 club=CLUB_CANONICAL[section],
                 slots=slots,
-                signings=sorted(signings[section], key=lambda item: item.numero),
                 without_sticker=sorted(
                     orphans[section],
-                    key=lambda row: (
-                        int(row["dorsal"]) if row["dorsal"].isdigit() else 999,
-                        row["nombre"],
-                    ),
+                    key=lambda row: (-as_number(row.get("minutos")), row["nombre"]),
                 ),
             )
         )
@@ -288,7 +366,8 @@ def option_cell(option: Option) -> str:
 
 def summary_table(reports: list[TeamReport]) -> list[str]:
     lines = [
-        "| Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Últimos Fichajes | Déficit |",
+        "| Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes"
+        " | Variantes a elegir | Piden cromo |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for report in reports:
@@ -301,8 +380,8 @@ def summary_table(reports: list[TeamReport]) -> list[str]:
                     str(report.count(DEAD)),
                     str(report.count(REVIEW)),
                     str(report.count(PENDING)),
-                    f"{len(report.active_signings)}/{len(report.signings)}",
-                    str(report.deficit) if report.deficit else "—",
+                    str(len(report.choices)),
+                    str(len(report.deserve_sticker)),
                 ]
             )
             + " |"
@@ -310,24 +389,23 @@ def summary_table(reports: list[TeamReport]) -> list[str]:
     return lines
 
 
+def slot_mark(slot: Slot, option: Option) -> str:
+    if slot.state != READY:
+        return SLOT_LABEL[slot.state]
+    if not slot.is_choice:
+        return "**pegar**"
+    if not slot.decided_by_minutes:
+        return "elegir una"
+    return "**pegar**" if option is slot.pick else "descartar"
+
+
 def slot_rows(report: TeamReport) -> list[str]:
     lines = [
-        "| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |",
-        "| ---: | :---: | --- | --- | ---: | --- |",
+        "| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |",
+        "| ---: | :---: | --- | --- | ---: | --- | --- |",
     ]
     for slot in report.slots:
-        state = slot.state
-        chosen = slot.pick
-        choices = len(slot.active_options)
         for index, option in enumerate(slot.options):
-            if state != READY:
-                mark = SLOT_LABEL[state]
-            elif choices > 1:
-                mark = "elegir una"
-            elif option is chosen:
-                mark = "**pegar**"
-            else:
-                mark = "descartar"
             details = (
                 option.ficha
                 if option.estado == IN_SQUAD
@@ -344,7 +422,8 @@ def slot_rows(report: TeamReport) -> list[str]:
                         markdown_escape(option.nombre or "sin asignar"),
                         markdown_escape(details),
                         option.dorsal or "—",
-                        mark,
+                        markdown_escape(option.stats.summary()),
+                        slot_mark(slot, option),
                     ]
                 )
                 + " |"
@@ -352,38 +431,22 @@ def slot_rows(report: TeamReport) -> list[str]:
     return lines
 
 
-def signing_rows(report: TeamReport) -> list[str]:
-    if not report.signings:
-        return ["_Este equipo no tiene ningún cromo de Últimos Fichajes._"]
-    lines = [
-        "| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |",
-        "| :---: | --- | --- | ---: | --- |",
-    ]
-    for signing in report.signings:
-        lines.append(
-            "| "
-            + " | ".join(
-                [
-                    markdown_escape(signing.numero),
-                    markdown_escape(signing.nombre),
-                    markdown_escape(signing.ficha if signing.active else "—"),
-                    signing.dorsal or "—",
-                    "**sirve para tapar un hueco**" if signing.active else "no está en el club",
-                ]
-            )
-            + " |"
-        )
-    return lines
-
-
 def orphan_rows(report: TeamReport) -> list[str]:
     if not report.without_sticker:
         return ["_Toda la plantilla oficial tiene cromo._"]
     lines = [
-        "| Dorsal | Jugador | Posición |",
-        "| ---: | --- | --- |",
+        "| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |",
+        "| ---: | --- | --- | --- | :---: |",
     ]
     for row in report.without_sticker:
+        stats = stats_for(row)
+        veredicto = (
+            "**sí**"
+            if stats.important
+            else "no ha jugado"
+            if stats.known and not stats.minutos
+            else "—"
+        )
         lines.append(
             "| "
             + " | ".join(
@@ -391,6 +454,8 @@ def orphan_rows(report: TeamReport) -> list[str]:
                     row["dorsal"] or "—",
                     markdown_escape(row["apodo"] or row["nombre"]),
                     markdown_escape(row["posicion"]),
+                    markdown_escape(stats.summary()),
+                    veredicto,
                 ]
             )
             + " |"
@@ -400,7 +465,11 @@ def orphan_rows(report: TeamReport) -> list[str]:
 
 def render(reports: list[TeamReport], generated_on: date) -> str:
     total_dead = sum(report.count(DEAD) for report in reports)
-    total_deficit = sum(report.deficit for report in reports)
+    total_choices = sum(len(report.choices) for report in reports)
+    decided = sum(
+        1 for report in reports for slot in report.choices if slot.decided_by_minutes
+    )
+    deserve = sum(len(report.deserve_sticker) for report in reports)
     complete = sum(
         1
         for report in reports
@@ -415,59 +484,51 @@ def render(reports: list[TeamReport], generated_on: date) -> str:
         f"Generado el {generated_on.isoformat()} por `analizar_optimizacion.py`.",
         "",
         "Cada club ocupa una página de **20 huecos**: escudo, entrenador y 18",
-        "jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o `BIS`)",
-        "y sólo se pega uno. Este informe cruza el checklist con las plantillas",
-        "oficiales de LALIGA para responder a una pregunta por equipo: **¿puedo",
-        "dejar la página llena sólo con futbolistas que siguen en el club?**",
+        "jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o",
+        "`BIS`) y sólo se pega uno. Este informe cruza el checklist con las",
+        "plantillas oficiales de LALIGA y con los minutos jugados para responder",
+        "a dos preguntas: **¿puedo llenar la página sólo con futbolistas que",
+        "siguen en el club?** y **¿cuál de las dos variantes conviene pegar?**",
+        "",
+        "Los Últimos Fichajes no aparecen aquí: se pegan en su propia sección,",
+        "no tapando huecos de equipo.",
         "",
         "## Cómo leerlo",
         "",
         "- **Resueltos:** el hueco tiene al menos un cromo de alguien que sigue",
-        "  en la plantilla. Si hay dos variantes, se indica cuál pegar.",
+        "  en la plantilla.",
         "- **Sin jugador activo:** ninguna variante sigue en el club. O lo dejas",
-        "  vacío, o pegas a alguien que se fue, o tapas el hueco con un cromo de",
-        "  Últimos Fichajes.",
+        "  vacío, o pegas a alguien que se fue.",
         "- **Por revisar:** el emparejamiento con LALIGA no es concluyente",
         "  (apodos cortos o apellidos compartidos). Hay que mirarlo a mano.",
-        "- **Déficit:** huecos sin jugador activo que tampoco puede cubrir un",
-        "  Último Fichaje del mismo equipo.",
+        "- **Variantes a elegir:** huecos con dos jugadores en plantilla. Cuando",
+        "  uno juega al menos el doble que el otro, se recomienda ese.",
+        "- **Piden cromo:** jugadores inscritos y sin cromo que han disputado al",
+        f"  menos el {IMPORTANT_SHARE:.0%} de los minutos de su equipo.",
         "",
         "> El entrenador cuenta como hueco comprobable porque LALIGA también",
         "> publica su ficha. El escudo queda fuera del recuento.",
         "",
         "## Resumen",
         "",
-        f"- **Equipos con la página completable sin Últimos Fichajes:** {complete} de 20",
+        f"- **Equipos con la página completable:** {complete} de 20",
         f"- **Huecos sin ningún jugador activo:** {total_dead}",
-        f"- **Huecos que ni con Últimos Fichajes se pueden salvar:** {total_deficit}",
+        f"- **Huecos con dos variantes válidas:** {total_choices}"
+        f" ({decided} con una recomendación clara por minutos)",
+        f"- **Jugadores que piden cromo:** {deserve}",
         "",
     ]
     lines.extend(summary_table(reports))
     lines.append("")
 
     for report in reports:
-        lines.extend(
-            [
-                f"## {report.section}",
-                "",
-                report.verdict,
-                "",
-            ]
-        )
+        lines.extend([f"## {report.section}", "", report.verdict, ""])
         if report.plan:
             lines.extend(report.plan)
             lines.append("")
         lines.extend(["### Huecos del álbum", ""])
         lines.extend(slot_rows(report))
-        lines.extend(["", "### Últimos Fichajes de este equipo", ""])
-        lines.extend(signing_rows(report))
-        lines.extend(
-            [
-                "",
-                "### Condicional: plantilla de LALIGA sin cromo",
-                "",
-            ]
-        )
+        lines.extend(["", "### Plantilla de LALIGA sin cromo", ""])
         lines.extend(orphan_rows(report))
         lines.append("")
 
@@ -479,12 +540,14 @@ def generate(
     check_path: Path,
     squads_path: Path,
     output_path: Path,
+    stats_path: Path | None = None,
     generated_on: date | None = None,
 ) -> list[TeamReport]:
     collection = read_csv(collection_path)
     checks = {row["id"]: row for row in read_csv(check_path)}
     squads = read_csv(squads_path)
-    reports = build_reports(collection, checks, squads)
+    stats_rows = read_csv(stats_path) if stats_path and stats_path.exists() else []
+    reports = build_reports(collection, checks, squads, stats_rows)
     output_path.write_text(
         render(reports, generated_on or date.today()), encoding="utf-8"
     )
@@ -493,7 +556,10 @@ def generate(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Analiza si cada página de equipo se puede completar con jugadores activos."
+        description=(
+            "Analiza si cada página de equipo se puede completar con jugadores "
+            "activos."
+        )
     )
     parser.add_argument(
         "--coleccion", type=Path, default=Path("coleccion_panini_revisada.csv")
@@ -505,18 +571,27 @@ def main() -> None:
         "--plantillas", type=Path, default=Path("laliga_plantillas.csv")
     )
     parser.add_argument(
+        "--estadisticas", type=Path, default=Path("laliga_estadisticas.csv")
+    )
+    parser.add_argument(
         "--salida", type=Path, default=Path("OPTIMIZACION_PLANTILLAS.md")
     )
     args = parser.parse_args()
 
     reports = generate(
-        args.coleccion, args.comprobacion, args.plantillas, args.salida
+        args.coleccion,
+        args.comprobacion,
+        args.plantillas,
+        args.salida,
+        args.estadisticas,
     )
     dead = sum(report.count(DEAD) for report in reports)
-    deficit = sum(report.deficit for report in reports)
+    choices = sum(len(report.choices) for report in reports)
+    deserve = sum(len(report.deserve_sticker) for report in reports)
     print(
-        f"Generado {args.salida}: {len(reports)} equipos, "
-        f"{dead} huecos sin jugador activo y {deficit} sin solución."
+        f"Generado {args.salida}: {len(reports)} equipos, {dead} huecos sin "
+        f"jugador activo, {choices} variantes a elegir y {deserve} jugadores "
+        "que piden cromo."
     )
 
 

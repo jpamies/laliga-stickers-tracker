@@ -147,6 +147,7 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
 ```powershell
 .\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
 .\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
+.\.venv\Scripts\python.exe generar_estadisticas_laliga.py --refrescar
 .\.venv\Scripts\python.exe generar_plantillas_html.py
 ```
 
@@ -161,10 +162,12 @@ El proceso está automatizado en `generar_plantillas_laliga.py`:
    y al SQL el cromo asociado a cada ficha (`cromo_id`, `cromo_seccion`,
    `cromo_numero`, `cromo_nombre` y `cromos`). Ejecútalo siempre después de
    `generar_plantillas_laliga.py`, que reescribe esas columnas vacías.
-6. `generar_plantillas_markdown.py` documenta el resultado en
+6. `generar_estadisticas_laliga.py` descarga los minutos de cada jugador en
+   `laliga_estadisticas.csv`.
+7. `generar_plantillas_markdown.py` documenta el resultado en
    `PLANTILLAS_LALIGA.md`, con el total de jugadores registrados y la ficha de
    cada club.
-7. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
+8. `generar_plantillas_html.py` construye `album/plantillas.html`, la vista de
    sólo lectura con las plantillas reales.
 
 Las tablas `public.laliga_equipo` y `public.laliga_plantilla` se crean con la
@@ -176,6 +179,40 @@ fichajes recién anunciados sin identificador.
 Para emparejar con el checklist Panini se usa `person.name` y `person.nickname`
 normalizados contra `coleccion_panini_revisada.csv`, y sólo se actualiza dorsal,
 posición o foto cuando la coincidencia es fiable.
+
+## Estadísticas de juego
+
+```
+GET /players/<slug>/stats?subscriptionSlug=laliga-easports-2026&contentLanguage=es&subscription-key=<clave>
+GET /teams/<slug>/stats?subscriptionSlug=laliga-easports-2026&contentLanguage=es&subscription-key=<clave>
+```
+
+El `subscriptionSlug` es imprescindible: sin él la API responde una lista vacía
+sin dar ningún error. El slug del jugador es el `person.slug` que ya viene en el
+`squad-manager`, y por eso `laliga_plantillas.csv` guarda una columna `slug`.
+
+No existe un endpoint que devuelva las estadísticas de todos los jugadores de
+golpe, así que hay que preguntar uno a uno: son unas 575 peticiones, algo menos
+de diez minutos con la espera por defecto. Cada respuesta se cachea en
+`.cache_laliga/stats_<slug>.json` y `.cache_laliga/teamstats_<slug>.json`, de
+modo que repetir el comando sin `--refrescar` es instantáneo.
+
+De las más de noventa métricas por jugador sólo se guardan las que miden cuánto
+juega: `time_played`, `appearances`, `starts`, `substitute_on`, `goals`,
+`goal_assists`, `yellow_cards`, `red_cards` y `team_games_played`.
+
+Ojo con dos respuestas que se parecen mucho y no significan lo mismo:
+
+| Respuesta | Significa |
+| --- | --- |
+| `{}` con código 200 | El jugador existe, pero no ha disputado un solo minuto |
+| `HTTP 404` | El slug no existe |
+
+Distinguirlas importa porque un `{}` es un dato firme —ese jugador no ha
+jugado— mientras que un 404 es una laguna. A quien no ha jugado tampoco se le
+devuelve `team_games_played`, así que los partidos del equipo se leen de
+`teams/<slug>/stats`; de ahí sale el denominador que permite comparar a todos
+con el mismo rasero.
 
 ## Limitaciones
 

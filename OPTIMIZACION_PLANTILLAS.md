@@ -1,1179 +1,1078 @@
 # Optimización de plantilla por equipo
 
-Generado el 2026-09-09 por `analizar_optimizacion.py`.
+Generado el 2026-09-17 por `analizar_optimizacion.py`.
 
 Cada club ocupa una página de **20 huecos**: escudo, entrenador y 18
-jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o `BIS`)
-y sólo se pega uno. Este informe cruza el checklist con las plantillas
-oficiales de LALIGA para responder a una pregunta por equipo: **¿puedo
-dejar la página llena sólo con futbolistas que siguen en el club?**
+jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o
+`BIS`) y sólo se pega uno. Este informe cruza el checklist con las
+plantillas oficiales de LALIGA y con los minutos jugados para responder
+a dos preguntas: **¿puedo llenar la página sólo con futbolistas que
+siguen en el club?** y **¿cuál de las dos variantes conviene pegar?**
+
+Los Últimos Fichajes no aparecen aquí: se pegan en su propia sección,
+no tapando huecos de equipo.
 
 ## Cómo leerlo
 
 - **Resueltos:** el hueco tiene al menos un cromo de alguien que sigue
-  en la plantilla. Si hay dos variantes, se indica cuál pegar.
+  en la plantilla.
 - **Sin jugador activo:** ninguna variante sigue en el club. O lo dejas
-  vacío, o pegas a alguien que se fue, o tapas el hueco con un cromo de
-  Últimos Fichajes.
+  vacío, o pegas a alguien que se fue.
 - **Por revisar:** el emparejamiento con LALIGA no es concluyente
   (apodos cortos o apellidos compartidos). Hay que mirarlo a mano.
-- **Déficit:** huecos sin jugador activo que tampoco puede cubrir un
-  Último Fichaje del mismo equipo.
+- **Variantes a elegir:** huecos con dos jugadores en plantilla. Cuando
+  uno juega al menos el doble que el otro, se recomienda ese.
+- **Piden cromo:** jugadores inscritos y sin cromo que han disputado al
+  menos el 30% de los minutos de su equipo.
 
 > El entrenador cuenta como hueco comprobable porque LALIGA también
 > publica su ficha. El escudo queda fuera del recuento.
 
 ## Resumen
 
-- **Equipos con la página completable sin Últimos Fichajes:** 3 de 20
+- **Equipos con la página completable:** 3 de 20
 - **Huecos sin ningún jugador activo:** 29
-- **Huecos que ni con Últimos Fichajes se pueden salvar:** 17
+- **Huecos con dos variantes válidas:** 16 (12 con una recomendación clara por minutos)
+- **Jugadores que piden cromo:** 57
 
-| Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Últimos Fichajes | Déficit |
+| Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Variantes a elegir | Piden cromo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [Deportivo Alavés](#deportivo-alavés) | 16/19 | 1 | 0 | 2 | 0/0 | 1 |
-| [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 0/0 | — |
-| [Atlético de Madrid](#atlético-de-madrid) | 16/19 | 3 | 0 | 0 | 2/2 | 1 |
-| [FC Barcelona](#fc-barcelona) | 18/19 | 1 | 0 | 0 | 1/1 | — |
-| [Real Betis](#real-betis) | 18/19 | 1 | 0 | 0 | 0/0 | 1 |
-| [RC Celta de Vigo](#rc-celta-de-vigo) | 17/19 | 1 | 1 | 0 | 1/2 | — |
-| [Deportivo de La Coruña](#deportivo) | 18/19 | 0 | 0 | 1 | 2/2 | — |
-| [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 1/1 | 1 |
-| [RCD Espanyol](#rcd-espanyol) | 17/19 | 2 | 0 | 0 | 2/3 | — |
-| [Getafe CF](#getafe-cf) | 14/19 | 3 | 0 | 2 | 1/1 | 2 |
-| [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1/1 | 3 |
-| [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 1/2 | — |
-| [Málaga CF](#malaga-cf) | 19/19 | 0 | 0 | 0 | 1/1 | — |
-| [CA Osasuna](#osasuna) | 18/19 | 1 | 0 | 0 | 0/0 | 1 |
-| [Racing de Santander](#racing-de-santander) | 14/19 | 4 | 0 | 1 | 1/1 | 3 |
-| [Rayo Vallecano](#rayo-vallecano) | 17/19 | 2 | 0 | 0 | 0/0 | 2 |
-| [Real Sociedad](#real-sociedad) | 19/19 | 0 | 0 | 0 | 0/0 | — |
-| [Sevilla FC](#sevilla) | 15/19 | 2 | 1 | 1 | 1/1 | 1 |
-| [Valencia CF](#valencia) | 18/19 | 1 | 0 | 0 | 2/2 | — |
-| [Villarreal CF](#villarreal) | 18/19 | 1 | 0 | 0 | 0/0 | 1 |
+| [Deportivo Alavés](#deportivo-alavés) | 16/19 | 1 | 0 | 2 | 1 | 1 |
+| [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 2 | 3 |
+| [Atlético de Madrid](#atlético-de-madrid) | 16/19 | 3 | 0 | 0 | 1 | 2 |
+| [FC Barcelona](#fc-barcelona) | 18/19 | 1 | 0 | 0 | 0 | 3 |
+| [Real Betis](#real-betis) | 18/19 | 1 | 0 | 0 | 1 | 2 |
+| [RC Celta de Vigo](#rc-celta-de-vigo) | 17/19 | 1 | 1 | 0 | 2 | 2 |
+| [Deportivo de La Coruña](#deportivo) | 18/19 | 0 | 0 | 1 | 0 | 5 |
+| [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 0 | 3 |
+| [RCD Espanyol](#rcd-espanyol) | 17/19 | 2 | 0 | 0 | 0 | 3 |
+| [Getafe CF](#getafe-cf) | 14/19 | 3 | 0 | 2 | 0 | 5 |
+| [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1 | 2 |
+| [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 2 | 4 |
+| [Málaga CF](#malaga-cf) | 19/19 | 0 | 0 | 0 | 0 | 2 |
+| [CA Osasuna](#osasuna) | 18/19 | 1 | 0 | 0 | 2 | 2 |
+| [Racing de Santander](#racing-de-santander) | 14/19 | 4 | 0 | 1 | 0 | 4 |
+| [Rayo Vallecano](#rayo-vallecano) | 17/19 | 2 | 0 | 0 | 0 | 4 |
+| [Real Sociedad](#real-sociedad) | 19/19 | 0 | 0 | 0 | 1 | 1 |
+| [Sevilla FC](#sevilla) | 15/19 | 2 | 1 | 1 | 1 | 5 |
+| [Valencia CF](#valencia) | 18/19 | 1 | 0 | 0 | 0 | 3 |
+| [Villarreal CF](#villarreal) | 18/19 | 1 | 0 | 0 | 2 | 1 |
 
 ## DEPORTIVO ALAVÉS
 
-⛔ **1 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **1 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 2 que Panini no ha asignado.
 
-- **Huecos a resolver:** 8 (Parada)
-- **Últimos Fichajes que sirven:** ninguno para este equipo
+- **Huecos sin solución:** 8 (Parada)
+- **Variante recomendada por minutos:** 18 → **18A** (Abde, 496′)
 - **Sin asignar por Panini:** 4, 10
-- **Puedes elegir variante:** 18 (18A o 18B)
+- **Piden cromo a gritos:** Mariano (258′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Quique Sánchez Flores | Enrique Sánchez Flores | — | **pegar** |
-| 3 | 3 | Sivera | Antonio Sivera | 1 | **pegar** |
-| 4 | 4 | sin asignar | — | — | Pendiente |
-| 5 | 5 | Jonny | Jonny Otto | 17 | **pegar** |
-| 6 | 6 | Koski | Ville Koski | 16 | **pegar** |
-| 7 | 7 | Tenaglia | Nahuel Tenaglia | 14 | **pegar** |
-| 8 | 8 | Parada | — | — | Sin jugador activo |
-| 9 | 9 | Yusi | Youssef Enriquez | 3 | **pegar** |
-| 10 | 10 | sin asignar | — | — | Pendiente |
-| 11 | 11 | Benavidez | Carlos Protesoni | 23 | **pegar** |
-| 12 | 12 | Blanco | Antonio Blanco | 8 | **pegar** |
-| 13 | 13 | Guevara | Ander Guevara | 6 | **pegar** |
-| 14 | 14 | Aleñá | Carles Aleñá | 10 | **pegar** |
-| 15 | 15 | Pablo Ibáñez | Pablo Ibáñez | 19 | **pegar** |
-| 16 | 16 | Denis Suárez | Denis Suárez | 4 | **pegar** |
-| 17 | 17 | Ángel Pérez | Ángel Pérez | 7 | **pegar** |
-| 18 | 18A | Abde | Abde Rebbach | 21 | elegir una |
-|  | 18B | Mañas | Aitor Mañas | 20 | elegir una |
-| 19 | 19 | Toni Martínez | Toni Martínez | 11 | **pegar** |
-| 20 | 20 | Boyé | Lucas Boyé | 15 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Quique Sánchez Flores | Enrique Sánchez Flores | — | — | **pegar** |
+| 3 | 3 | Sivera | Antonio Sivera | 1 | 540′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 4 | 4 | sin asignar | — | — | — | Pendiente |
+| 5 | 5 | Jonny | Jonny Otto | 17 | 420′ · 5 pj · 5 tit | **pegar** |
+| 6 | 6 | Koski | Ville Koski | 16 | 530′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 7 | 7 | Tenaglia | Nahuel Tenaglia | 14 | 495′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 8 | 8 | Parada | — | — | — | Sin jugador activo |
+| 9 | 9 | Yusi | Youssef Enriquez | 3 | 123′ · 5 pj | **pegar** |
+| 10 | 10 | sin asignar | — | — | — | Pendiente |
+| 11 | 11 | Benavidez | Carlos Protesoni | 23 | 64′ · 2 pj | **pegar** |
+| 12 | 12 | Blanco | Antonio Blanco | 8 | 511′ · 6 pj · 6 tit | **pegar** |
+| 13 | 13 | Guevara | Ander Guevara | 6 | 6′ · 2 pj | **pegar** |
+| 14 | 14 | Aleñá | Carles Aleñá | 10 | 110′ · 5 pj · 1 tit · 1 a | **pegar** |
+| 15 | 15 | Pablo Ibáñez | Pablo Ibáñez | 19 | 495′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 16 | 16 | Denis Suárez | Denis Suárez | 4 | 280′ · 6 pj · 3 tit | **pegar** |
+| 17 | 17 | Ángel Pérez | Ángel Pérez | 7 | 477′ · 6 pj · 6 tit · 3 a | **pegar** |
+| 18 | 18A | Abde | Abde Rebbach | 21 | 496′ · 6 pj · 6 tit | **pegar** |
+|  | 18B | Mañas | Aitor Mañas | 20 | 87′ · 4 pj · 1 tit | descartar |
+| 19 | 19 | Toni Martínez | Toni Martínez | 11 | 324′ · 5 pj · 4 tit | **pegar** |
+| 20 | 20 | Boyé | Lucas Boyé | 15 | 409′ · 5 pj · 5 tit · 4 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 2 | Valentini | Defensa |
-| 5 | F. Garcés | Defensa |
-| 9 | Mariano | Delantero |
-| 12 | Novoa | Defensa |
-| 13 | A. Rodriguez | Portero |
-| 18 | Mikel R. | Defensa |
-| 22 | Miguel | Delantero |
-| 24 | Selu Diallo | Centrocampista |
-| 27 | Xanet Olaiz | Defensa |
-| 29 | Izei | Centrocampista |
-| 31 | Swiderski | Portero |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 9 | Mariano | Delantero | 258′ · 6 pj · 2 tit · 3 g · 3 a | **sí** |
+| 18 | Mikel R. | Defensa | 149′ · 3 pj · 2 tit · 1 g | — |
+| 2 | Valentini | Defensa | 145′ · 3 pj · 1 tit | — |
+| 22 | Miguel | Delantero | 11′ · 3 pj | — |
+| 27 | Xanet Olaiz | Defensa | 10′ · 1 pj | — |
+| 13 | A. Rodriguez | Portero | 0′ · no ha jugado | no ha jugado |
+| 5 | F. Garcés | Defensa | 0′ · no ha jugado | no ha jugado |
+| 31 | Swiderski | Portero | 0′ · no ha jugado | no ha jugado |
+| 12 | Novoa | Defensa | 0′ · no ha jugado | no ha jugado |
+| 29 | Izei | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 24 | Selu Diallo | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## ATHLETIC CLUB DE BILBAO
 
-🔎 1 huecos por revisar a mano.
+🔎 1 por revisar a mano.
 
+- **Variante recomendada por minutos:** 17 → **17A** (Robert Navarro, 242′)
+- **Elección abierta:** 6 (6A o 6B)
 - **Comprobar a mano:** 19 (Williams)
-- **Puedes elegir variante:** 6 (6A o 6B), 17 (17A o 17B)
+- **Piden cromo a gritos:** Gerenabarrena (373′), Williams (330′), Canales (205′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Edin Terzic | Edin Terzic | — | **pegar** |
-| 3 | 3 | Unai Simón | Unai Simón | 1 | **pegar** |
-| 4 | 4 | Padilla | Álex Padilla | 13 | **pegar** |
-| 5 | 5 | Areso | Jesús Areso | 12 | **pegar** |
-| 6 | 6A | Paredes | Aitor Paredes | 4 | elegir una |
-|  | 6B | Yeray | Yeray Álvarez | 5 | elegir una |
-| 7 | 7 | Vivian | Dani Vivian | 3 | **pegar** |
-| 8 | 8 | Laporte | Aymeric Laporte | 14 | **pegar** |
-| 9 | 9A | Yuri | Yuri Berchiche | 17 | **pegar** |
-|  | 9B | Adama Boiro | — | — | descartar |
-| 10 | 10 | Jauregizar | Mikel Jauregizar | 18 | **pegar** |
-| 11 | 11 | Ruiz de Galarreta | Íñigo Ruiz de Galarreta | 16 | **pegar** |
-| 12 | 12 | Rego | Alejandro Rego | 20 | **pegar** |
-| 13 | 13 | Unai Gómez | — | — | descartar |
-|  | 13BIS (2ª ed) | Prados | Beñat Prados | 6 | **pegar** |
-| 14 | 14 | Sancet | Oihan Sancet | 8 | **pegar** |
-| 15 | 15 | Nico Serrano | Nico Serrano | 22 | **pegar** |
-| 16 | 16 | Berenguer | Alex Berenguer | 7 | **pegar** |
-| 17 | 17A | Robert Navarro | Robert Navarro | 23 | elegir una |
-|  | 17B | Maroan | Maroan Sannadi | 21 | elegir una |
-| 18 | 18 | Nico Williams | Nico Williams | 10 | **pegar** |
-| 19 | 19 | Williams | — | — | Por revisar |
-| 20 | 20 | Guruzeta | Gorka Guruzeta | 11 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Edin Terzic | Edin Terzic | — | — | **pegar** |
+| 3 | 3 | Unai Simón | Unai Simón | 1 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Padilla | Álex Padilla | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Areso | Jesús Areso | 12 | 299′ · 4 pj · 4 tit | **pegar** |
+| 6 | 6A | Paredes | Aitor Paredes | 4 | 209′ · 3 pj · 2 tit · 1 g | elegir una |
+|  | 6B | Yeray | Yeray Álvarez | 5 | 315′ · 4 pj · 4 tit · 1 a | elegir una |
+| 7 | 7 | Vivian | Dani Vivian | 3 | 0′ · no ha jugado | **pegar** |
+| 8 | 8 | Laporte | Aymeric Laporte | 14 | 392′ · 5 pj · 4 tit | **pegar** |
+| 9 | 9A | Yuri | Yuri Berchiche | 17 | 281′ · 4 pj · 4 tit | **pegar** |
+|  | 9B | Adama Boiro | — | — | — | **pegar** |
+| 10 | 10 | Jauregizar | Mikel Jauregizar | 18 | 150′ · 4 pj · 1 tit | **pegar** |
+| 11 | 11 | Ruiz de Galarreta | Íñigo Ruiz de Galarreta | 16 | 197′ · 4 pj · 3 tit · 1 a | **pegar** |
+| 12 | 12 | Rego | Alejandro Rego | 20 | 0′ · no ha jugado | **pegar** |
+| 13 | 13 | Unai Gómez | — | — | — | **pegar** |
+|  | 13BIS (2ª ed) | Prados | Beñat Prados | 6 | 0′ · no ha jugado | **pegar** |
+| 14 | 14 | Sancet | Oihan Sancet | 8 | 425′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 15 | 15 | Nico Serrano | Nico Serrano | 22 | 0′ · no ha jugado | **pegar** |
+| 16 | 16 | Berenguer | Alex Berenguer | 7 | 252′ · 5 pj · 2 tit · 1 g | **pegar** |
+| 17 | 17A | Robert Navarro | Robert Navarro | 23 | 242′ · 4 pj · 3 tit · 2 g | **pegar** |
+|  | 17B | Maroan | Maroan Sannadi | 21 | 41′ · 2 pj | descartar |
+| 18 | 18 | Nico Williams | Nico Williams | 10 | 274′ · 5 pj · 3 tit · 1 g | **pegar** |
+| 19 | 19 | Williams | — | — | — | Por revisar |
+| 20 | 20 | Guruzeta | Gorka Guruzeta | 11 | 178′ · 4 pj · 2 tit | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 9 | Williams | Delantero |
-| 15 | H. Rincón | Defensa |
-| 24 | Gerenabarrena | Centrocampista |
-| 25 | Djalo | Delantero |
-| 28 | Canales | Delantero |
-| 29 | Hierro | Delantero |
-| 30 | Monreal | Defensa |
-| 31 | Johaneko | Defensa |
-| 44 | Selton | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 24 | Gerenabarrena | Centrocampista | 373′ · 5 pj · 4 tit | **sí** |
+| 9 | Williams | Delantero | 330′ · 5 pj · 5 tit · 2 a | **sí** |
+| 28 | Canales | Delantero | 205′ · 3 pj · 2 tit | **sí** |
+| 31 | Johaneko | Defensa | 123′ · 4 pj · 1 tit | — |
+| 15 | H. Rincón | Defensa | 106′ · 2 pj · 1 tit | — |
+| 25 | Djalo | Delantero | 9′ · 1 pj | — |
+| 29 | Hierro | Delantero | 0′ · no ha jugado | no ha jugado |
+| 30 | Monreal | Defensa | 0′ · no ha jugado | no ha jugado |
+| 44 | Selton | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## ATLÉTICO DE MADRID
 
-⛔ **3 huecos sin jugador activo** y sólo 2 Últimos Fichajes: quedan **1 sin solución**.
+⛔ **3 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 6 (Nahuel Molina), 10 (Ruggeri), 16 (Almada)
-- **Últimos Fichajes que sirven:** UF20 (Kang-In Lee), UF5 (Hjulmand)
-- **Puedes elegir variante:** 14 (14A o 14B)
+- **Huecos sin solución:** 6 (Nahuel Molina), 10 (Ruggeri), 16 (Almada)
+- **Variante recomendada por minutos:** 14 → **14A** (Rodri Mendoza, 107′)
+- **Piden cromo a gritos:** Grimaldo (445′), Romero (189′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Cholo Simeone | Diego Simeone | — | **pegar** |
-| 3 | 3 | Oblak | Jan Oblak | 13 | **pegar** |
-| 4 | 4 | Musso | Juan Musso | 1 | **pegar** |
-| 5 | 5 | Marcos Llorente | Marcos Llorente | 14 | **pegar** |
-| 6 | 6 | Nahuel Molina | — | — | Sin jugador activo |
-| 7 | 7 | Pubill | Marc Pubill | 18 | **pegar** |
-| 8 | 8A | Le Normand | Robin Le Normand | 24 | **pegar** |
-|  | 8B | Giménez | — | — | descartar |
-| 9 | 9 | Hancko | Dávid Hancko | 17 | **pegar** |
-| 10 | 10 | Ruggeri | — | — | Sin jugador activo |
-| 11 | 11 | Koke | Jorge Resurrección Merodio | 6 | **pegar** |
-| 12 | 12 | Barrios | Pablo Barrios | 8 | **pegar** |
-| 13 | 13 | Johnny Cardoso | Johnny Cardoso | 5 | **pegar** |
-| 14 | 14A | Rodri Mendoza | Rodrigo Mendoza | 4 | elegir una |
-|  | 14B | Obed Vargas | Obed Vargas | 3 | elegir una |
-| 15 | 15 | Álex Baena | Álex Baena | 10 | **pegar** |
-| 16 | 16 | Almada | — | — | Sin jugador activo |
-| 17 | 17 | Giuliano | Giuliano Simeone | 20 | **pegar** |
-| 18 | 18 | Lookman | Ademola Lookman | 11 | **pegar** |
-| 19 | 19 | Sorloth | Alexander Sørloth | 9 | **pegar** |
-| 20 | 20 | Julián Alvarez | Julián Alvarez | 19 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Cholo Simeone | Diego Simeone | — | — | **pegar** |
+| 3 | 3 | Oblak | Jan Oblak | 13 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Musso | Juan Musso | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Marcos Llorente | Marcos Llorente | 14 | 375′ · 6 pj · 4 tit · 1 a | **pegar** |
+| 6 | 6 | Nahuel Molina | — | — | — | Sin jugador activo |
+| 7 | 7 | Pubill | Marc Pubill | 18 | 358′ · 5 pj · 4 tit · 1 g | **pegar** |
+| 8 | 8A | Le Normand | Robin Le Normand | 24 | 256′ · 3 pj · 3 tit · 1 g | **pegar** |
+|  | 8B | Giménez | — | — | — | **pegar** |
+| 9 | 9 | Hancko | Dávid Hancko | 17 | 455′ · 6 pj · 5 tit · 2 a | **pegar** |
+| 10 | 10 | Ruggeri | — | — | — | Sin jugador activo |
+| 11 | 11 | Koke | Jorge Resurrección Merodio | 6 | 313′ · 6 pj · 3 tit | **pegar** |
+| 12 | 12 | Barrios | Pablo Barrios | 8 | 294′ · 4 pj · 3 tit · 1 a | **pegar** |
+| 13 | 13 | Johnny Cardoso | Johnny Cardoso | 5 | 135′ · 4 pj · 1 tit · 1 a | **pegar** |
+| 14 | 14A | Rodri Mendoza | Rodrigo Mendoza | 4 | 107′ · 3 pj · 2 tit | **pegar** |
+|  | 14B | Obed Vargas | Obed Vargas | 3 | 0′ · no ha jugado | descartar |
+| 15 | 15 | Álex Baena | Álex Baena | 10 | 388′ · 6 pj · 4 tit · 4 g · 1 a | **pegar** |
+| 16 | 16 | Almada | — | — | — | Sin jugador activo |
+| 17 | 17 | Giuliano | Giuliano Simeone | 20 | 384′ · 6 pj · 4 tit · 2 g · 1 a | **pegar** |
+| 18 | 18 | Lookman | Ademola Lookman | 11 | 437′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 19 | 19 | Sorloth | Alexander Sørloth | 9 | 0′ · no ha jugado | **pegar** |
+| 20 | 20 | Julián Alvarez | Julián Alvarez | 19 | 55′ · 2 pj | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF20 | Kang-In Lee | Kang-In Lee | 7 | **sirve para tapar un hueco** |
-| UF5 | Hjulmand | Morten Hjulmand | 23 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 15 | J.david | Delantero |
-| 16 | Arnau Ortiz | Centrocampista |
-| 21 | Romero | Defensa |
-| 22 | Grimaldo | Defensa |
-| 25 | Esquivel | Portero |
-| 27 | Domínguez | Defensa |
-| 29 | Cubo | Delantero |
-| 30 | D. Martínez | Defensa |
-| 46 | Castillo | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 22 | Grimaldo | Defensa | 445′ · 5 pj · 5 tit · 1 g · 1 a | **sí** |
+| 21 | Romero | Defensa | 189′ · 3 pj · 2 tit | **sí** |
+| 16 | Arnau Ortiz | Centrocampista | 149′ · 5 pj · 1 tit | — |
+| 15 | J.david | Delantero | 98′ · 2 pj · 1 tit · 2 g · 1 a | — |
+| 30 | D. Martínez | Defensa | 90′ · 1 pj · 1 tit | — |
+| 27 | Domínguez | Defensa | 45′ · 1 pj · 1 tit | — |
+| 46 | Castillo | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 29 | Cubo | Delantero | 0′ · no ha jugado | no ha jugado |
+| 25 | Esquivel | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## FC BARCELONA
 
-🔄 **1 huecos sin jugador activo**, cubiertos con 1 de los 1 Últimos Fichajes disponibles.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 18 (Ferran Torres)
-- **Últimos Fichajes que sirven:** UF19 (Adeyemi)
+- **Huecos sin solución:** 18 (Ferran Torres)
+- **Piden cromo a gritos:** Xavi Espart (440′), Anthony Gordon (311′), Rodrigo (266′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Hansi Flick | Hansi Flick | — | **pegar** |
-| 3 | 3 | Joan García | Joan García | 1 | **pegar** |
-| 4 | 4 | Szczesny | Wojciech Szczesny | 13 | **pegar** |
-| 5 | 5 | Koundé | Jules Koundé | 23 | **pegar** |
-| 6 | 6A | Araujo | — | — | descartar |
-|  | 6B | Christensen | Andreas Christensen | 15 | **pegar** |
-| 7 | 7 | Cubarsí | Pau Cubarsí | 5 | **pegar** |
-| 8 | 8 | Gerard Martín | Gerard Martín | 18 | **pegar** |
-| 9 | 9 | Joao Cancelo | João Pedro Cavaco Cancelo | 2 | **pegar** |
-| 10 | 10 | Balde | Alejandro Balde | 3 | **pegar** |
-| 11 | 11 | Eric García | Eric García | 24 | **pegar** |
-| 12 | 12 | De Jong | Frenkie de Jong | 21 | **pegar** |
-| 13 | 13 | Gavi | Pablo Páez Gavira | 6 | **pegar** |
-| 14 | 14 | Bernal | Marc Bernal | 22 | **pegar** |
-| 15 | 15 | Pedri | Pedro González López | 8 | **pegar** |
-| 16 | 16 | Fermín | Fermín López | 7 | **pegar** |
-| 17 | 17 | Dani Olmo | Dani Olmo | 20 | **pegar** |
-| 18 | 18 | Ferran Torres | — | — | Sin jugador activo |
-| 19 | 19 | Raphinha | Raphael Dias Belloli | 11 | **pegar** |
-| 20 | 20 | Lamine Yamal | Lamine Yamal Nasraoui Ebana | 10 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Hansi Flick | Hansi Flick | — | — | **pegar** |
+| 3 | 3 | Joan García | Joan García | 1 | 495′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Szczesny | Wojciech Szczesny | 13 | 45′ · 1 pj | **pegar** |
+| 5 | 5 | Koundé | Jules Koundé | 23 | 171′ · 4 pj · 1 tit | **pegar** |
+| 6 | 6A | Araujo | — | — | — | **pegar** |
+|  | 6B | Christensen | Andreas Christensen | 15 | 343′ · 5 pj · 3 tit | **pegar** |
+| 7 | 7 | Cubarsí | Pau Cubarsí | 5 | 332′ · 4 pj · 4 tit | **pegar** |
+| 8 | 8 | Gerard Martín | Gerard Martín | 18 | 405′ · 5 pj · 5 tit | **pegar** |
+| 9 | 9 | Joao Cancelo | João Pedro Cavaco Cancelo | 2 | 116′ · 5 pj · 1 tit · 1 g | **pegar** |
+| 10 | 10 | Balde | Alejandro Balde | 3 | 12′ · 1 pj | **pegar** |
+| 11 | 11 | Eric García | Eric García | 24 | 379′ · 5 pj · 5 tit | **pegar** |
+| 12 | 12 | De Jong | Frenkie de Jong | 21 | 0′ · no ha jugado | **pegar** |
+| 13 | 13 | Gavi | Pablo Páez Gavira | 6 | 73′ · 2 pj · 1 tit | **pegar** |
+| 14 | 14 | Bernal | Marc Bernal | 22 | 288′ · 6 pj · 3 tit · 2 a | **pegar** |
+| 15 | 15 | Pedri | Pedro González López | 8 | 416′ · 6 pj · 5 tit · 1 g · 1 a | **pegar** |
+| 16 | 16 | Fermín | Fermín López | 7 | 371′ · 5 pj · 4 tit · 4 g · 2 a | **pegar** |
+| 17 | 17 | Dani Olmo | Dani Olmo | 20 | 245′ · 6 pj · 2 tit · 3 a | **pegar** |
+| 18 | 18 | Ferran Torres | — | — | — | Sin jugador activo |
+| 19 | 19 | Raphinha | Raphael Dias Belloli | 11 | 478′ · 6 pj · 6 tit · 9 g · 3 a | **pegar** |
+| 20 | 20 | Lamine Yamal | Lamine Yamal Nasraoui Ebana | 10 | 491′ · 6 pj · 6 tit · 7 g · 2 a | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF19 | Adeyemi | Karim Adeyemi | 14 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 4 | Brian | Centrocampista |
-| 9 | Gabriel Jesus | Delantero |
-| 12 | Xavi Espart | Defensa |
-| 16 | Rodrigo | Centrocampista |
-| 17 | Anthony Gordon | Delantero |
-| 19 | Roony | Centrocampista |
-| 25 | Livakovic | Portero |
-| 26 | Cortes | Defensa |
-| 29 | Hamza Abdelkarim | Delantero |
-| 31 | Eder Aller | Portero |
-| 33 | Jordi Pesquer | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 12 | Xavi Espart | Defensa | 440′ · 5 pj · 5 tit · 1 g · 2 a | **sí** |
+| 17 | Anthony Gordon | Delantero | 311′ · 5 pj · 4 tit · 4 a | **sí** |
+| 16 | Rodrigo | Centrocampista | 266′ · 5 pj · 3 tit | **sí** |
+| 9 | Gabriel Jesus | Delantero | 30′ · 2 pj · 1 g | — |
+| 29 | Hamza Abdelkarim | Delantero | 4′ · 1 pj | — |
+| 4 | Brian | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 25 | Livakovic | Portero | 0′ · no ha jugado | no ha jugado |
+| 31 | Eder Aller | Portero | 0′ · no ha jugado | no ha jugado |
+| 33 | Jordi Pesquer | Defensa | 0′ · no ha jugado | no ha jugado |
+| 19 | Roony | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 26 | Cortes | Defensa | 0′ · no ha jugado | no ha jugado |
 
 ## REAL BETIS
 
-⛔ **1 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **1 sin solución**.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 11 (Amrabat)
-- **Últimos Fichajes que sirven:** ninguno para este equipo
-- **Puedes elegir variante:** 5 (5A o 5B)
+- **Huecos sin solución:** 11 (Amrabat)
+- **Variante recomendada por minutos:** 5 → **5B** (Bellerín, 379′)
+- **Piden cromo a gritos:** Fran García (391′), N. Deossa (168′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Manuel Pellegrini | Manuel Pellegrini | — | **pegar** |
-| 3 | 3 | Valles | Álvaro Valles | 1 | **pegar** |
-| 4 | 4 | Pau López | — | — | descartar |
-|  | 4BIS (2ª ed) | Diego Conde | Diego Conde | 13 | **pegar** |
-| 5 | 5A | Aitor Ruibal | Aitor Ruibal | 24 | elegir una |
-|  | 5B | Bellerín | Héctor Bellerín | 2 | elegir una |
-| 6 | 6 | Diego Llorente | Diego Llorente | 3 | **pegar** |
-| 7 | 7 | Bartra | Marc Bartra | 5 | **pegar** |
-| 8 | 8 | Natan | Natan Bernardo de Souza | 4 | **pegar** |
-| 9 | 9 | Valentín Gómez | Valentín Gómez | 16 | **pegar** |
-| 10 | 10 | Marc Roca | Marc Roca | 21 | **pegar** |
-| 11 | 11 | Amrabat | — | — | Sin jugador activo |
-| 12 | 12 | Fidalgo | Álvaro Fidalgo | 15 | **pegar** |
-| 13 | 13 (2ª ed) | Facundo Bernal | Facundo Bernal | 6 | **pegar** |
-| 14 | 14 | Lo Celso | Giovani Lo Celso | 20 | **pegar** |
-| 15 | 15 | Pablo Fornals | Pablo Fornals | 8 | **pegar** |
-| 16 | 16 | Isco | Francisco Román Alarcón Suárez | 22 | **pegar** |
-| 17 | 17 | Riquelme | Rodrigo Riquelme | 17 | **pegar** |
-| 18 | 18 | Antony | Antony Matheus dos Santos | 7 | **pegar** |
-| 19 | 19 | Cucho Hernández | Cucho Hernández | 9 | **pegar** |
-| 20 | 20 | Abde | Abde Ezzalzouli | 10 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Manuel Pellegrini | Manuel Pellegrini | — | — | **pegar** |
+| 3 | 3 | Valles | Álvaro Valles | 1 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Pau López | — | — | — | **pegar** |
+|  | 4BIS (2ª ed) | Diego Conde | Diego Conde | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5A | Aitor Ruibal | Aitor Ruibal | 24 | 0′ · no ha jugado | descartar |
+|  | 5B | Bellerín | Héctor Bellerín | 2 | 379′ · 5 pj · 4 tit | **pegar** |
+| 6 | 6 | Diego Llorente | Diego Llorente | 3 | 129′ · 2 pj · 2 tit | **pegar** |
+| 7 | 7 | Bartra | Marc Bartra | 5 | 321′ · 4 pj · 3 tit · 1 g | **pegar** |
+| 8 | 8 | Natan | Natan Bernardo de Souza | 4 | 360′ · 4 pj · 4 tit · 1 g | **pegar** |
+| 9 | 9 | Valentín Gómez | Valentín Gómez | 16 | 90′ · 1 pj · 1 tit | **pegar** |
+| 10 | 10 | Marc Roca | Marc Roca | 21 | 337′ · 4 pj · 4 tit · 1 a | **pegar** |
+| 11 | 11 | Amrabat | — | — | — | Sin jugador activo |
+| 12 | 12 | Fidalgo | Álvaro Fidalgo | 15 | 30′ · 1 pj | **pegar** |
+| 13 | 13 (2ª ed) | Facundo Bernal | Facundo Bernal | 6 | 296′ · 5 pj · 4 tit | **pegar** |
+| 14 | 14 | Lo Celso | Giovani Lo Celso | 20 | 6′ · 1 pj | **pegar** |
+| 15 | 15 | Pablo Fornals | Pablo Fornals | 8 | 376′ · 5 pj · 4 tit | **pegar** |
+| 16 | 16 | Isco | Francisco Román Alarcón Suárez | 22 | 237′ · 5 pj · 3 tit | **pegar** |
+| 17 | 17 | Riquelme | Rodrigo Riquelme | 17 | 279′ · 5 pj · 4 tit · 2 g | **pegar** |
+| 18 | 18 | Antony | Antony Matheus dos Santos | 7 | 371′ · 5 pj · 4 tit | **pegar** |
+| 19 | 19 | Cucho Hernández | Cucho Hernández | 9 | 336′ · 5 pj · 4 tit · 1 g · 1 a | **pegar** |
+| 20 | 20 | Abde | Abde Ezzalzouli | 10 | 82′ · 2 pj · 1 tit | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 11 | Fran García | Defensa |
-| 12 | Á. Ortiz | Centrocampista |
-| 14 | Iker | Centrocampista |
-| 18 | N. Deossa | Centrocampista |
-| 19 | Parrott | Delantero |
-| 23 | J. Firpo | Defensa |
-| 25 | D. Ceballos | Centrocampista |
-| 27 | Morante | Delantero |
-| 31 | Manu G. | Portero |
-| 40 | Á. De Pablo | Portero |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 11 | Fran García | Defensa | 391′ · 5 pj · 4 tit · 1 a | **sí** |
+| 18 | N. Deossa | Centrocampista | 168′ · 5 pj · 1 tit | **sí** |
+| 19 | Parrott | Delantero | 98′ · 3 pj · 1 tit · 1 g | — |
+| 12 | Á. Ortiz | Centrocampista | 71′ · 1 pj · 1 tit | — |
+| 23 | J. Firpo | Defensa | 59′ · 1 pj · 1 tit | — |
+| 25 | D. Ceballos | Centrocampista | 33′ · 1 pj | — |
+| 14 | Iker | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 27 | Morante | Delantero | 0′ · no ha jugado | no ha jugado |
+| 31 | Manu G. | Portero | 0′ · no ha jugado | no ha jugado |
+| 40 | Á. De Pablo | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## RC CELTA DE VIGO
 
-🔄 **1 huecos sin jugador activo**, cubiertos con 1 de los 1 Últimos Fichajes disponibles. 🔎 1 huecos por revisar a mano.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. 🔎 1 por revisar a mano.
 
-- **Huecos a resolver:** 14 (Sotelo)
-- **Últimos Fichajes que sirven:** UF10 (Febas)
+- **Huecos sin solución:** 14 (Sotelo)
+- **Variante recomendada por minutos:** 18 → **18A** (Pablo Durán, 201′)
+- **Elección abierta:** 9 (9A o 9B)
 - **Comprobar a mano:** 15 (Fer López)
-- **Puedes elegir variante:** 9 (9A o 9B), 18 (18A o 18B)
+- **Piden cromo a gritos:** Javi Galán (205′), H. González (190′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Claudio Giráldez | Claudio Giráldez | — | **pegar** |
-| 3 | 3 | Radu | Ionut Radu | 13 | **pegar** |
-| 4 | 4 | Iván Villar | Iván Villar | 25 | **pegar** |
-| 5 | 5 | Álvaro Núñez | Álvaro Núñez | 15 | **pegar** |
-| 6 | 6 | Javi Rueda | Javi Rueda | 17 | **pegar** |
-| 7 | 7 | Javi Rodríguez | Javi Rodríguez | 20 | **pegar** |
-| 8 | 8 | Starfelt | Carl Starfelt | 2 | **pegar** |
-| 9 | 9A | Marcos Alonso | Marcos Alonso | 3 | elegir una |
-|  | 9B | Yoel Lago | Yoel Lago | 18 | elegir una |
-| 10 | 10 | Carreira | Sergio Carreira | 5 | **pegar** |
-| 11 | 11 | Ilaix Moriba | Moriba Kourouma Kourouma | 6 | **pegar** |
-| 12 | 12 | Miguel Román | Miguel Román | 8 | **pegar** |
-| 13 | 13 | Hugo Álvarez | Hugo Álvarez | 23 | **pegar** |
-| 14 | 14 | Sotelo | — | — | Sin jugador activo |
-|  | 14BIS (2ª ed) | Vecino | — | — | Sin jugador activo |
-| 15 | 15 | Fer López | — | — | Por revisar |
-| 16 | 16 | Swedberg | Williot Swedberg | 19 | **pegar** |
-| 17 | 17 | Iago Aspas | Iago Aspas | 10 | **pegar** |
-| 18 | 18A | Pablo Durán | Pablo Durán | 11 | elegir una |
-|  | 18B | El-Abdellaoui | Jones El Abdellaoui | 39 | elegir una |
-| 19 | 19 | Jutglà | Ferran Jutglà | 9 | **pegar** |
-| 20 | 20 | Borja Iglesias | Borja Iglesias | 7 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Claudio Giráldez | Claudio Giráldez | — | — | **pegar** |
+| 3 | 3 | Radu | Ionut Radu | 13 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Iván Villar | Iván Villar | 25 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Álvaro Núñez | Álvaro Núñez | 15 | 174′ · 2 pj · 2 tit | **pegar** |
+| 6 | 6 | Javi Rueda | Javi Rueda | 17 | 331′ · 6 pj · 3 tit | **pegar** |
+| 7 | 7 | Javi Rodríguez | Javi Rodríguez | 20 | 231′ · 4 pj · 3 tit | **pegar** |
+| 8 | 8 | Starfelt | Carl Starfelt | 2 | 218′ · 3 pj · 2 tit · 1 g | **pegar** |
+| 9 | 9A | Marcos Alonso | Marcos Alonso | 3 | 411′ · 5 pj · 5 tit | elegir una |
+|  | 9B | Yoel Lago | Yoel Lago | 18 | 495′ · 6 pj · 5 tit | elegir una |
+| 10 | 10 | Carreira | Sergio Carreira | 5 | 411′ · 6 pj · 4 tit | **pegar** |
+| 11 | 11 | Ilaix Moriba | Moriba Kourouma Kourouma | 6 | 402′ · 6 pj · 5 tit | **pegar** |
+| 12 | 12 | Miguel Román | Miguel Román | 8 | 495′ · 6 pj · 5 tit · 1 a | **pegar** |
+| 13 | 13 | Hugo Álvarez | Hugo Álvarez | 23 | 189′ · 4 pj · 2 tit | **pegar** |
+| 14 | 14 | Sotelo | — | — | — | Sin jugador activo |
+|  | 14BIS (2ª ed) | Vecino | — | — | — | Sin jugador activo |
+| 15 | 15 | Fer López | — | — | — | Por revisar |
+| 16 | 16 | Swedberg | Williot Swedberg | 19 | 246′ · 5 pj · 3 tit | **pegar** |
+| 17 | 17 | Iago Aspas | Iago Aspas | 10 | 220′ · 6 pj · 2 tit · 1 g | **pegar** |
+| 18 | 18A | Pablo Durán | Pablo Durán | 11 | 201′ · 4 pj · 2 tit | **pegar** |
+|  | 18B | El-Abdellaoui | Jones El Abdellaoui | 39 | 0′ · no ha jugado | descartar |
+| 19 | 19 | Jutglà | Ferran Jutglà | 9 | 325′ · 6 pj · 4 tit · 1 g | **pegar** |
+| 20 | 20 | Borja Iglesias | Borja Iglesias | 7 | 21′ · 1 pj | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF10 | Febas | Aleix Febas | 14 | **sirve para tapar un hueco** |
-| UF13 | Sotelo | — | — | no está en el club |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 1 | Altay Bayindir | Portero |
-| 4 | Faye | Defensa |
-| 16 | H. González | Centrocampista |
-| 21 | S. Caceres | Defensa |
-| 22 | Javi Galán | Centrocampista |
-| 24 | Driouech | Delantero |
-| 27 | Ribes | Defensa |
-| 28 | Antañon | Centrocampista |
-| 30 | Burcio | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 22 | Javi Galán | Centrocampista | 205′ · 5 pj · 3 tit | **sí** |
+| 16 | H. González | Centrocampista | 190′ · 3 pj · 3 tit · 2 a | **sí** |
+| 21 | S. Caceres | Defensa | 90′ · 1 pj · 1 tit | — |
+| 24 | Driouech | Delantero | 63′ · 3 pj | — |
+| 4 | Faye | Defensa | 45′ · 1 pj · 1 tit | — |
+| 1 | Altay Bayindir | Portero | 0′ · no ha jugado | no ha jugado |
+| 28 | Antañon | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 27 | Ribes | Defensa | 0′ · no ha jugado | no ha jugado |
+| 30 | Burcio | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## DEPORTIVO
 
-⏳ 1 huecos que Panini no ha asignado.
+⏳ 1 que Panini no ha asignado.
 
-- **Últimos Fichajes que sirven:** UF12 (Aubameyang), UF8 (Leo Román)
 - **Sin asignar por Panini:** 17
+- **Piden cromo a gritos:** Amatucci (540′), X. Navarro (443′), J. M. Giménez (239′), Ede (196′), Asp - Jensen (162′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Antonio Hidalgo | Antonio Hidalgo | — | **pegar** |
-| 3 | 3 | Álvaro Fernández | Álvaro Fernández | 25 | **pegar** |
-| 4 | 4 | Germán Parreño | Germán Parreño | 1 | **pegar** |
-| 5 | 5 | Adrià Altimira | Adrià Alti | 2 | **pegar** |
-| 6 | 6 | Loureiro | Miguel Loureiro | 15 | **pegar** |
-| 7 | 7 | Noubi | Lucas Noubi | 4 | **pegar** |
-| 8 | 8 | Dani Barcia | Dani Barcia | 5 | **pegar** |
-| 9 | 9A | Ximo Navarro | — | — | descartar |
-|  | 9B | Arnau Comas | Arnau Comas | 3 | **pegar** |
-| 10 | 10 | Quagliata | Giacomo Quagliata | 12 | **pegar** |
-| 11 | 11 | Villares | Diego Villares | 8 | **pegar** |
-| 12 | 12 | Riki | Riki Rodríguez | 14 | **pegar** |
-| 13 | 13 | Mario Soriano | Mario Soriano | 21 | **pegar** |
-| 14 | 14 | José Ángel | José Ángel Esmoris Tasende | 17 | **pegar** |
-| 15 | 15 | Luismi Cruz | Luismi Cruz | 19 | **pegar** |
-| 16 | 16 | Mella | David Mella | 11 | **pegar** |
-| 17 | 17 | sin asignar | — | — | Pendiente |
-| 18 | 18 | Yeremay | Yeremay Hernández | 10 | **pegar** |
-| 19 | 19 | Eddahchouri | Zakaria Eddahchouri | 9 | **pegar** |
-| 20 | 20 | Nsongo | Bil Nsongo | 32 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Antonio Hidalgo | Antonio Hidalgo | — | — | **pegar** |
+| 3 | 3 | Álvaro Fernández | Álvaro Fernández | 25 | 0′ · no ha jugado | **pegar** |
+| 4 | 4 | Germán Parreño | Germán Parreño | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Adrià Altimira | Adrià Alti | 2 | 240′ · 4 pj · 3 tit | **pegar** |
+| 6 | 6 | Loureiro | Miguel Loureiro | 15 | 195′ · 4 pj · 2 tit | **pegar** |
+| 7 | 7 | Noubi | Lucas Noubi | 4 | 450′ · 5 pj · 5 tit | **pegar** |
+| 8 | 8 | Dani Barcia | Dani Barcia | 5 | 0′ · no ha jugado | **pegar** |
+| 9 | 9A | Ximo Navarro | — | — | — | **pegar** |
+|  | 9B | Arnau Comas | Arnau Comas | 3 | 0′ · no ha jugado | **pegar** |
+| 10 | 10 | Quagliata | Giacomo Quagliata | 12 | 479′ · 6 pj · 5 tit | **pegar** |
+| 11 | 11 | Villares | Diego Villares | 8 | 58′ · 2 pj | **pegar** |
+| 12 | 12 | Riki | Riki Rodríguez | 14 | 175′ · 3 pj · 3 tit | **pegar** |
+| 13 | 13 | Mario Soriano | Mario Soriano | 21 | 418′ · 6 pj · 5 tit · 1 a | **pegar** |
+| 14 | 14 | José Ángel | José Ángel Esmoris Tasende | 17 | 59′ · 1 pj · 1 tit | **pegar** |
+| 15 | 15 | Luismi Cruz | Luismi Cruz | 19 | 374′ · 6 pj · 5 tit · 1 g · 1 a | **pegar** |
+| 16 | 16 | Mella | David Mella | 11 | 47′ · 2 pj | **pegar** |
+| 17 | 17 | sin asignar | — | — | — | Pendiente |
+| 18 | 18 | Yeremay | Yeremay Hernández | 10 | 146′ · 5 pj · 1 tit · 1 a | **pegar** |
+| 19 | 19 | Eddahchouri | Zakaria Eddahchouri | 9 | 69′ · 4 pj · 1 g | **pegar** |
+| 20 | 20 | Nsongo | Bil Nsongo | 32 | 330′ · 6 pj · 5 tit | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF12 | Aubameyang | Pierre-Emerick Aubameyang | 7 | **sirve para tapar un hueco** |
-| UF8 | Leo Román | Leo Román | 13 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 6 | M. Casadó | Centrocampista |
-| 16 | Amatucci | Centrocampista |
-| 18 | Asp - Jensen | Centrocampista |
-| 20 | J. M. Giménez | Defensa |
-| 22 | Ede | Defensa |
-| 23 | X. Navarro | Defensa |
-| 24 | Adama | Delantero |
-| 33 | Kevin | Delantero |
-| 34 | Gijselhart | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 16 | Amatucci | Centrocampista | 540′ · 6 pj · 6 tit · 1 a | **sí** |
+| 23 | X. Navarro | Defensa | 443′ · 5 pj · 5 tit | **sí** |
+| 20 | J. M. Giménez | Defensa | 239′ · 3 pj · 3 tit | **sí** |
+| 22 | Ede | Defensa | 196′ · 3 pj · 2 tit | **sí** |
+| 18 | Asp - Jensen | Centrocampista | 162′ · 4 pj · 2 tit | **sí** |
+| 24 | Adama | Delantero | 97′ · 3 pj | — |
+| 6 | M. Casadó | Centrocampista | 86′ · 2 pj · 1 tit | — |
+| 34 | Gijselhart | Centrocampista | 26′ · 1 pj | — |
+| 33 | Kevin | Delantero | 5′ · 1 pj | — |
 
 ## ELCHE CF
 
-⛔ **2 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **1 sin solución**.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 5 (Pétrot), 8 (Affengruber)
-- **Últimos Fichajes que sirven:** UF15 (Fer Niño)
+- **Huecos sin solución:** 5 (Pétrot), 8 (Affengruber)
+- **Piden cromo a gritos:** Buonanotte (219′), Morcillo (217′), Revivo (189′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 (2ª ed) | Martín Anselmi | Martín Anselmi | — | **pegar** |
-| 3 | 3 | Dituro | Matías Dituro | 1 | **pegar** |
-| 4 | 4 (2ª ed) | Iturbe | Alejandro Iturbe | 13 | **pegar** |
-| 5 | 5 | Pétrot | — | — | Sin jugador activo |
-| 6 | 6 | Chust | Víctor Chust | 23 | **pegar** |
-| 7 | 7 | Bigas | Pedro Bigas | 6 | **pegar** |
-| 8 | 8 | Affengruber | — | — | Sin jugador activo |
-| 9 | 9A | Pedrosa | — | — | descartar |
-|  | 9B | Sangaré | Buba Sangaré | 2 | **pegar** |
-| 10 | 10 | Germán Valera | Germán Valera | 11 | **pegar** |
-| 11 | 11 | Martim Neto | Martim Carvalho Neto | 16 | **pegar** |
-| 12 | 12 | Gonzalo Villar | Gonzalo Villar | 12 | **pegar** |
-| 13 | 13A | Fede Redondo | Federico Redondo | 5 | **pegar** |
-|  | 13B | Jon Chetauya | — | — | descartar |
-| 14 | 14 | Marc Aguado | Marc Aguado | 8 | **pegar** |
-| 15 | 15 | Josan | José Antonio Ferrández Pomares | 17 | **pegar** |
-| 16 | 16 | Morente | José Antonio Morente Oliva | 20 | **pegar** |
-| 17 | 17 (2ª ed) | Ali Houary | Ali Houary | 29 | **pegar** |
-| 18 | 18 | Cepeda | Lucas Cepeda | 21 | **pegar** |
-| 19 | 19 | Diangana | Grady Diangana | 19 | **pegar** |
-| 20 | 20 | Yago Santiago | Yago Santiago | 7 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 (2ª ed) | Martín Anselmi | Martín Anselmi | — | — | **pegar** |
+| 3 | 3 | Dituro | Matías Dituro | 1 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 (2ª ed) | Iturbe | Alejandro Iturbe | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Pétrot | — | — | — | Sin jugador activo |
+| 6 | 6 | Chust | Víctor Chust | 23 | 540′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 7 | 7 | Bigas | Pedro Bigas | 6 | 161′ · 3 pj · 2 tit | **pegar** |
+| 8 | 8 | Affengruber | — | — | — | Sin jugador activo |
+| 9 | 9A | Pedrosa | — | — | — | **pegar** |
+|  | 9B | Sangaré | Buba Sangaré | 2 | 503′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 10 | 10 | Germán Valera | Germán Valera | 11 | 482′ · 6 pj · 6 tit | **pegar** |
+| 11 | 11 | Martim Neto | Martim Carvalho Neto | 16 | 161′ · 4 pj · 2 tit | **pegar** |
+| 12 | 12 | Gonzalo Villar | Gonzalo Villar | 12 | 513′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 13 | 13A | Fede Redondo | Federico Redondo | 5 | 321′ · 4 pj · 4 tit | **pegar** |
+|  | 13B | Jon Chetauya | — | — | — | **pegar** |
+| 14 | 14 | Marc Aguado | Marc Aguado | 8 | 257′ · 4 pj · 4 tit · 1 g | **pegar** |
+| 15 | 15 | Josan | José Antonio Ferrández Pomares | 17 | 25′ · 3 pj · 1 a | **pegar** |
+| 16 | 16 | Morente | José Antonio Morente Oliva | 20 | 385′ · 6 pj · 4 tit · 2 a | **pegar** |
+| 17 | 17 (2ª ed) | Ali Houary | Ali Houary | 29 | 190′ · 3 pj · 3 tit | **pegar** |
+| 18 | 18 | Cepeda | Lucas Cepeda | 21 | 137′ · 6 pj · 2 a | **pegar** |
+| 19 | 19 | Diangana | Grady Diangana | 19 | 0′ · no ha jugado | **pegar** |
+| 20 | 20 | Yago Santiago | Yago Santiago | 7 | 0′ · no ha jugado | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF15 | Fer Niño | Fer Niño | 14 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 3 | Revivo | Defensa |
-| 4 | Diaby | Defensa |
-| 9 | E. Ponce | Delantero |
-| 10 | Buonanotte | Centrocampista |
-| 15 | Kevin J. | Defensa |
-| 18 | Lemar | Centrocampista |
-| 22 | Rubén S. | Centrocampista |
-| 24 | Osorio | Delantero |
-| 26 | M. Baržić | Defensa |
-| 30 | Padilla | Centrocampista |
-| 33 | N. Al-Lal | Delantero |
-| 47 | Morcillo | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 10 | Buonanotte | Centrocampista | 219′ · 4 pj · 3 tit · 1 g | **sí** |
+| 47 | Morcillo | Centrocampista | 217′ · 4 pj · 2 tit | **sí** |
+| 3 | Revivo | Defensa | 189′ · 3 pj · 2 tit | **sí** |
+| 24 | Osorio | Delantero | 146′ · 3 pj · 1 tit · 1 g | — |
+| 9 | E. Ponce | Delantero | 121′ · 3 pj · 1 tit | — |
+| 18 | Lemar | Centrocampista | 88′ · 3 pj · 1 g | — |
+| 22 | Rubén S. | Centrocampista | 36′ · 2 pj | — |
+| 30 | Padilla | Centrocampista | 9′ · 1 pj | — |
+| 4 | Diaby | Defensa | 0′ · no ha jugado | no ha jugado |
+| 15 | Kevin J. | Defensa | 0′ · no ha jugado | no ha jugado |
+| 26 | M. Baržić | Defensa | 0′ · no ha jugado | no ha jugado |
+| 33 | N. Al-Lal | Delantero | 0′ · no ha jugado | no ha jugado |
 
 ## RCD ESPANYOL
 
-🔄 **2 huecos sin jugador activo**, cubiertos con 2 de los 2 Últimos Fichajes disponibles.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 6 (Rubén Sánchez), 9 (Miguel Rubio)
-- **Últimos Fichajes que sirven:** UF16 (Moscardo), UF2 (Calatrava)
+- **Huecos sin solución:** 6 (Rubén Sánchez), 9 (Miguel Rubio)
+- **Piden cromo a gritos:** R. Hinojo (491′), Javi H. (471′), Nuñez (356′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Manolo González | José Manuel González Álvarez | — | **pegar** |
-| 3 | 3 | Dmitrovic | Marko Dmitrovic | 13 | **pegar** |
-| 4 | 4 | Fortuño | Ángel Fortuño | 1 | **pegar** |
-| 5 | 5 | El Hilali | Omar El Hilali | 23 | **pegar** |
-| 6 | 6 | Rubén Sánchez | — | — | Sin jugador activo |
-| 7 | 7 | Riedel | Clemens Riedel | 5 | **pegar** |
-| 8 | 8 | Cabrera | Leandro Cabrera | 6 | **pegar** |
-| 9 | 9 | Miguel Rubio | — | — | Sin jugador activo |
-| 10 | 10 (2ª ed) | Hartman | Quilindschy Hartman | 3 | **pegar** |
-| 11 | 11 | Pol Lozano | Pol Lozano | 10 | **pegar** |
-| 12 | 12 | Urko | Urko González de Zárate Quirós | 4 | **pegar** |
-| 13 | 13 | Edu Expósito | Edu Expósito | 8 | **pegar** |
-| 14 | 14 | Jofre | Jofre Carreras | 17 | **pegar** |
-| 15 | 15 (2ª ed) | Marcos Fernández | Marcos Fernández | 18 | **pegar** |
-| 16 | 16 | Dolan | Tyrhys Dolan | 24 | **pegar** |
-| 17 | 17 | Pere Milla | Pere Milla | 11 | **pegar** |
-| 18 | 18 | Puado | Javi Puado | 7 | **pegar** |
-| 19 | 19 | Kike García | Kike García | 19 | **pegar** |
-| 20 | 20 | Roberto Fernández | Roberto Fernández | 9 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Manolo González | José Manuel González Álvarez | — | — | **pegar** |
+| 3 | 3 | Dmitrovic | Marko Dmitrovic | 13 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Fortuño | Ángel Fortuño | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | El Hilali | Omar El Hilali | 23 | 525′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 6 | 6 | Rubén Sánchez | — | — | — | Sin jugador activo |
+| 7 | 7 | Riedel | Clemens Riedel | 5 | 340′ · 5 pj · 4 tit | **pegar** |
+| 8 | 8 | Cabrera | Leandro Cabrera | 6 | 270′ · 3 pj · 3 tit | **pegar** |
+| 9 | 9 | Miguel Rubio | — | — | — | Sin jugador activo |
+| 10 | 10 (2ª ed) | Hartman | Quilindschy Hartman | 3 | 94′ · 2 pj · 1 tit | **pegar** |
+| 11 | 11 | Pol Lozano | Pol Lozano | 10 | 39′ · 3 pj | **pegar** |
+| 12 | 12 | Urko | Urko González de Zárate Quirós | 4 | 397′ · 6 pj · 5 tit | **pegar** |
+| 13 | 13 | Edu Expósito | Edu Expósito | 8 | 468′ · 6 pj · 5 tit | **pegar** |
+| 14 | 14 | Jofre | Jofre Carreras | 17 | 18′ · 3 pj | **pegar** |
+| 15 | 15 (2ª ed) | Marcos Fernández | Marcos Fernández | 18 | 166′ · 5 pj · 1 tit · 1 g · 1 a | **pegar** |
+| 16 | 16 | Dolan | Tyrhys Dolan | 24 | 410′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 17 | 17 | Pere Milla | Pere Milla | 11 | 40′ · 4 pj | **pegar** |
+| 18 | 18 | Puado | Javi Puado | 7 | 0′ · no ha jugado | **pegar** |
+| 19 | 19 | Kike García | Kike García | 19 | 0′ · no ha jugado | **pegar** |
+| 20 | 20 | Roberto Fernández | Roberto Fernández | 9 | 523′ · 6 pj · 6 tit · 6 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF16 | Moscardo | Gabriel Silva Moscardo de Salles | 20 | **sirve para tapar un hueco** |
-| UF2 | Calatrava | Álex Calatrava Torrado | 22 | **sirve para tapar un hueco** |
-| UF4 | Carlos Romero | — | — | no está en el club |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 2 | Gorosabel | Defensa |
-| 14 | Nuñez | Defensa |
-| 15 | Bryan | Centrocampista |
-| 16 | Vanja | Defensa |
-| 21 | R. Hinojo | Defensa |
-| 26 | Bauza | Centrocampista |
-| 27 | Timera | Defensa |
-| 28 | Javi H. | Delantero |
-| 31 | Llorenç | Portero |
-| 32 | Jose Angel | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 21 | R. Hinojo | Defensa | 491′ · 6 pj · 6 tit | **sí** |
+| 28 | Javi H. | Delantero | 471′ · 6 pj · 6 tit · 4 a | **sí** |
+| 14 | Nuñez | Defensa | 356′ · 4 pj · 4 tit | **sí** |
+| 16 | Vanja | Defensa | 115′ · 3 pj · 1 tit | — |
+| 26 | Bauza | Centrocampista | 107′ · 4 pj · 1 tit · 1 a | — |
+| 15 | Bryan | Centrocampista | 70′ · 3 pj | — |
+| 27 | Timera | Defensa | 0′ · no ha jugado | no ha jugado |
+| 2 | Gorosabel | Defensa | 0′ · no ha jugado | no ha jugado |
+| 32 | Jose Angel | Defensa | 0′ · no ha jugado | no ha jugado |
+| 31 | Llorenç | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## GETAFE CF
 
-⛔ **3 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **2 sin solución**. ⏳ 2 huecos que Panini no ha asignado.
+⛔ **3 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 2 que Panini no ha asignado.
 
-- **Huecos a resolver:** 12 (Javi Muñoz), 17 (Álex Sancris), 19 (Luis Vázquez)
-- **Últimos Fichajes que sirven:** UF18 (Andrés García)
+- **Huecos sin solución:** 12 (Javi Muñoz), 17 (Álex Sancris), 19 (Luis Vázquez)
 - **Sin asignar por Panini:** 13, 15
+- **Piden cromo a gritos:** Mangala (448′), Enes Ünal (405′), Johan Mojica (360′), Gudelj (194′), Francho (180′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Jose Bordalás | José Bordalás | — | **pegar** |
-| 3 | 3 | David Soria | David Soria | 13 | **pegar** |
-| 4 | 4 | Letacek | Jirí Letácek | 1 | **pegar** |
-| 5 | 5 | Kiko Femenía | Francisco Femenía Far | 17 | **pegar** |
-| 6 | 6 | Djené | Djené Dakonam | 2 | **pegar** |
-| 7 | 7 | Boselli | Sebastián Boselli | 15 | **pegar** |
-| 8 | 8 | Abqar | Abdel Abqar | 5 | **pegar** |
-| 9 | 9 | Zaid Romero | Zaid Romero | 24 | **pegar** |
-| 10 | 10 | Davinchi | David Cordón Mancha | 3 | **pegar** |
-| 11 | 11 | Mario Martín | Mario Martín | 6 | **pegar** |
-| 12 | 12 | Javi Muñoz | — | — | Sin jugador activo |
-| 13 | 13 | sin asignar | — | — | Pendiente |
-| 14 | 14 (2ª ed) | Terrats | Ramón Terrats | 11 | **pegar** |
-| 15 | 15 | sin asignar | — | — | Pendiente |
-| 16 | 16 (2ª ed) | Juanmi | Juan Miguel Jiménez López | 7 | **pegar** |
-| 17 | 17 | Álex Sancris | — | — | Sin jugador activo |
-| 18 | 18 | Borja Mayoral | Borja Mayoral | 9 | **pegar** |
-| 19 | 19 | Luis Vázquez | — | — | Sin jugador activo |
-| 20 | 20 | Satriano | Martín Satriano | 10 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Jose Bordalás | José Bordalás | — | — | **pegar** |
+| 3 | 3 | David Soria | David Soria | 13 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Letacek | Jirí Letácek | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Kiko Femenía | Francisco Femenía Far | 17 | 140′ · 3 pj · 3 tit | **pegar** |
+| 6 | 6 | Djené | Djené Dakonam | 2 | 441′ · 5 pj · 5 tit | **pegar** |
+| 7 | 7 | Boselli | Sebastián Boselli | 15 | 99′ · 4 pj · 1 tit | **pegar** |
+| 8 | 8 | Abqar | Abdel Abqar | 5 | 91′ · 2 pj · 1 tit | **pegar** |
+| 9 | 9 | Zaid Romero | Zaid Romero | 24 | 337′ · 4 pj · 4 tit | **pegar** |
+| 10 | 10 | Davinchi | David Cordón Mancha | 3 | 46′ · 2 pj · 1 tit | **pegar** |
+| 11 | 11 | Mario Martín | Mario Martín | 6 | 246′ · 3 pj · 3 tit | **pegar** |
+| 12 | 12 | Javi Muñoz | — | — | — | Sin jugador activo |
+| 13 | 13 | sin asignar | — | — | — | Pendiente |
+| 14 | 14 (2ª ed) | Terrats | Ramón Terrats | 11 | 442′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 15 | 15 | sin asignar | — | — | — | Pendiente |
+| 16 | 16 (2ª ed) | Juanmi | Juan Miguel Jiménez López | 7 | 0′ · no ha jugado | **pegar** |
+| 17 | 17 | Álex Sancris | — | — | — | Sin jugador activo |
+| 18 | 18 | Borja Mayoral | Borja Mayoral | 9 | 5′ · 2 pj | **pegar** |
+| 19 | 19 | Luis Vázquez | — | — | — | Sin jugador activo |
+| 20 | 20 | Satriano | Martín Satriano | 10 | 410′ · 5 pj · 5 tit · 1 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF18 | Andrés García | Andrés García | 21 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 4 | Sazonov | Defensa |
-| 8 | Gudelj | Centrocampista |
-| 16 | Francho | Centrocampista |
-| 18 | Uche | Centrocampista |
-| 19 | Enes Ünal | Delantero |
-| 20 | Ivan | Delantero |
-| 22 | Johan Mojica | Centrocampista |
-| 23 | Mangala | Centrocampista |
-| 26 | J. Ives Valou | Defensa |
-| 27 | Ibra Drj | Delantero |
-| 28 | Risco | Centrocampista |
-| 29 | Curro | Centrocampista |
-| 30 | O. Lopez | Centrocampista |
-| 31 | Moha | Centrocampista |
-| 32 | Joselu | Delantero |
-| 35 | Ferrer | Portero |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 23 | Mangala | Centrocampista | 448′ · 5 pj · 5 tit | **sí** |
+| 19 | Enes Ünal | Delantero | 405′ · 5 pj · 4 tit · 1 g | **sí** |
+| 22 | Johan Mojica | Centrocampista | 360′ · 4 pj · 4 tit | **sí** |
+| 8 | Gudelj | Centrocampista | 194′ · 3 pj · 2 tit | **sí** |
+| 16 | Francho | Centrocampista | 180′ · 3 pj · 2 tit | **sí** |
+| 4 | Sazonov | Defensa | 105′ · 3 pj · 1 tit | — |
+| 20 | Ivan | Delantero | 93′ · 2 pj · 1 tit · 1 a | — |
+| 28 | Risco | Centrocampista | 50′ · 3 pj | — |
+| 26 | J. Ives Valou | Defensa | 17′ · 1 pj | — |
+| 32 | Joselu | Delantero | 6′ · 1 pj | — |
+| 30 | O. Lopez | Centrocampista | 1′ · 1 pj | — |
+| 18 | Uche | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 35 | Ferrer | Portero | 0′ · no ha jugado | no ha jugado |
+| 27 | Ibra Drj | Delantero | 0′ · no ha jugado | no ha jugado |
+| 29 | Curro | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 31 | Moha | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## LEVANTE UD
 
-⛔ **4 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **3 sin solución**.
+⛔ **4 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 6 (Elgezabal), 10 (Arriaga), 15 (Carlos Álvarez), 16 (Tunde)
-- **Últimos Fichajes que sirven:** UF7 (Bardelli)
-- **Puedes elegir variante:** 14 (14A o 14B)
+- **Huecos sin solución:** 6 (Elgezabal), 10 (Arriaga), 15 (Carlos Álvarez), 16 (Tunde)
+- **Variante recomendada por minutos:** 14 → **14A** (Victor García, 196′)
+- **Piden cromo a gritos:** Nacho Perez (295′), Thiago (227′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Luís Castro | Luís Manuel Ferreira de Castro | — | **pegar** |
-| 3 | 3 | Ryan | Mathew Ryan | 13 | **pegar** |
-| 4 | 4 | Pablo Campos | Pablo Campos | 1 | **pegar** |
-| 5 | 5 | Toljan | Jeremy Toljan | 22 | **pegar** |
-| 6 | 6 | Elgezabal | — | — | Sin jugador activo |
-| 7 | 7 | Dela | Adrián de la Fuente | 4 | **pegar** |
-| 8 | 8 (2ª ed) | Mandi | Aïssa Mandi | 2 | **pegar** |
-| 9 | 9 | Manu Sánchez | Manu Sánchez | 23 | **pegar** |
-| 10 | 10 | Arriaga | — | — | Sin jugador activo |
-| 11 | 11 | Oriol Rey | Oriol Rey | 20 | **pegar** |
-| 12 | 12 | Olasagasti | Jon Ander Olasagasti | 8 | **pegar** |
-| 13 | 13 (2ª ed) | Dani Requena | Dani Requena | 6 | **pegar** |
-| 14 | 14A | Victor García | Víctor García | 17 | elegir una |
-|  | 14B | Paco Cortés | Paco Cortés | 27 | elegir una |
-| 15 | 15 | Carlos Álvarez | — | — | Sin jugador activo |
-| 16 | 16 | Tunde | — | — | Sin jugador activo |
-| 17 | 17 | Brugué | Roger Brugué | 7 | **pegar** |
-| 18 | 18 | Iván Romero | Iván Romero | 9 | **pegar** |
-| 19 | 19 | Etta Eyong | Karl Etta Eyong | 21 | **pegar** |
-| 20 | 20 | Carlos Espí | — | — | descartar |
-|  | 20BIS (2ª ed) | Musuayi | Yanis Musuayi | 11 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Luís Castro | Luís Manuel Ferreira de Castro | — | — | **pegar** |
+| 3 | 3 | Ryan | Mathew Ryan | 13 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Pablo Campos | Pablo Campos | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Toljan | Jeremy Toljan | 22 | 174′ · 5 pj · 1 tit | **pegar** |
+| 6 | 6 | Elgezabal | — | — | — | Sin jugador activo |
+| 7 | 7 | Dela | Adrián de la Fuente | 4 | 431′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 8 | 8 (2ª ed) | Mandi | Aïssa Mandi | 2 | 450′ · 5 pj · 5 tit | **pegar** |
+| 9 | 9 | Manu Sánchez | Manu Sánchez | 23 | 431′ · 5 pj · 5 tit | **pegar** |
+| 10 | 10 | Arriaga | — | — | — | Sin jugador activo |
+| 11 | 11 | Oriol Rey | Oriol Rey | 20 | 389′ · 5 pj · 4 tit | **pegar** |
+| 12 | 12 | Olasagasti | Jon Ander Olasagasti | 8 | 415′ · 5 pj · 5 tit · 1 g · 1 a | **pegar** |
+| 13 | 13 (2ª ed) | Dani Requena | Dani Requena | 6 | 94′ · 2 pj · 1 tit | **pegar** |
+| 14 | 14A | Victor García | Víctor García | 17 | 196′ · 4 pj · 2 tit | **pegar** |
+|  | 14B | Paco Cortés | Paco Cortés | 27 | 64′ · 3 pj · 1 tit | descartar |
+| 15 | 15 | Carlos Álvarez | — | — | — | Sin jugador activo |
+| 16 | 16 | Tunde | — | — | — | Sin jugador activo |
+| 17 | 17 | Brugué | Roger Brugué | 7 | 354′ · 4 pj · 4 tit · 3 g | **pegar** |
+| 18 | 18 | Iván Romero | Iván Romero | 9 | 316′ · 5 pj · 4 tit · 1 g | **pegar** |
+| 19 | 19 | Etta Eyong | Karl Etta Eyong | 21 | 64′ · 3 pj · 1 a | **pegar** |
+| 20 | 20 | Carlos Espí | — | — | — | **pegar** |
+|  | 20BIS (2ª ed) | Musuayi | Yanis Musuayi | 11 | 30′ · 1 pj | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF7 | Bardelli | Enzo Bardeli | 18 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 3 | Ndukwe | Defensa |
-| 5 | Hugo Sotelo | Centrocampista |
-| 10 | Petar Ratkov | Delantero |
-| 14 | Cabello | Defensa |
-| 16 | Axel Tape | Centrocampista |
-| 24 | Thiago | Centrocampista |
-| 29 | Nacho Perez | Defensa |
-| 33 | Marc Santos | Defensa |
-| 34 | Manel Usedo | Centrocampista |
-| 36 | Ihor Galdin | Portero |
-| 38 | Calatrava | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 29 | Nacho Perez | Defensa | 295′ · 5 pj · 4 tit | **sí** |
+| 24 | Thiago | Centrocampista | 227′ · 3 pj · 3 tit | **sí** |
+| 5 | Hugo Sotelo | Centrocampista | 99′ · 4 pj · 1 tit | — |
+| 10 | Petar Ratkov | Delantero | 59′ · 1 pj · 1 tit | — |
+| 33 | Marc Santos | Defensa | 26′ · 1 pj | — |
+| 3 | Ndukwe | Defensa | 19′ · 1 pj | — |
+| 38 | Calatrava | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 16 | Axel Tape | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 36 | Ihor Galdin | Portero | 0′ · no ha jugado | no ha jugado |
+| 14 | Cabello | Defensa | 0′ · no ha jugado | no ha jugado |
+| 34 | Manel Usedo | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## REAL MADRID CF
 
-✅ **Página completa sin Últimos Fichajes.** Todos los huecos tienen un cromo de alguien que sigue en el club.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Últimos Fichajes que sirven:** UF3 (Dumfries)
-- **Puedes elegir variante:** 10 (10A o 10B), 15 (15A o 15B)
+- **Variante recomendada por minutos:** 10 → **10A** (Carreras, 201′), 15 → **15A** (Güler, 295′)
+- **Piden cromo a gritos:** Konaté (450′), Cucurella (340′), Bernardo (274′), Yan Diomande (244′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | José Mourinho | José Mário dos Santos Mourinho Félix | — | **pegar** |
-| 3 | 3 | Courtois | Thibaut Courtois | 1 | **pegar** |
-| 4 | 4 | Lunin | Andrii Lunin | 13 | **pegar** |
-| 5 | 5 | Trent | Trent Alexander-Arnold | 12 | **pegar** |
-| 6 | 6 | Militao | Éder Gabriel Militão Pinheiro | 3 | **pegar** |
-| 7 | 7 | Asencio | Raúl Asencio | 2 | **pegar** |
-| 8 | 8 | Rüdiger | Antonio Rüdiger | 22 | **pegar** |
-| 9 | 9 | Huijsen | Dean Huijsen | 4 | **pegar** |
-| 10 | 10A | Carreras | Álvaro Carreras | 18 | elegir una |
-|  | 10B | Mendy | Ferland Mendy | 23 | elegir una |
-| 11 | 11 | Tchouaméni | Aurélien Tchouaméni | 14 | **pegar** |
-| 12 | 12 | Fede Valverde | Federico Valverde | 8 | **pegar** |
-| 13 | 13 | Camavinga | Eduardo Camavinga | 6 | **pegar** |
-| 14 | 14 | Bellingham | Jude Bellingham | 5 | **pegar** |
-| 15 | 15A | Güler | Arda Güler | 15 | elegir una |
-|  | 15B | Thiago Pitarch | Thiago Pitarch | 27 | elegir una |
-| 16 | 16A | Mastantuono | — | — | descartar |
-|  | 16B | Brahim Díaz | Brahim Díaz | 21 | **pegar** |
-| 17 | 17 | Gonzalo | — | — | descartar |
-|  | 17BIS (2ª ed) | Carlos Espí | Carlos Espí | 19 | **pegar** |
-| 18 | 18 | Rodrygo | Rodrygo Silva de Goes | 11 | **pegar** |
-| 19 | 19 | Vinícius | Vinícius José Paixão de Oliveira Júnior | 7 | **pegar** |
-| 20 | 20 | Mbappé | Kylian Mbappé | 10 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | José Mourinho | José Mário dos Santos Mourinho Félix | — | — | **pegar** |
+| 3 | 3 | Courtois | Thibaut Courtois | 1 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Lunin | Andrii Lunin | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Trent | Trent Alexander-Arnold | 12 | 213′ · 4 pj · 2 tit · 1 a | **pegar** |
+| 6 | 6 | Militao | Éder Gabriel Militão Pinheiro | 3 | 0′ · no ha jugado | **pegar** |
+| 7 | 7 | Asencio | Raúl Asencio | 2 | 0′ · no ha jugado | **pegar** |
+| 8 | 8 | Rüdiger | Antonio Rüdiger | 22 | 180′ · 2 pj · 2 tit | **pegar** |
+| 9 | 9 | Huijsen | Dean Huijsen | 4 | 450′ · 5 pj · 5 tit | **pegar** |
+| 10 | 10A | Carreras | Álvaro Carreras | 18 | 201′ · 4 pj · 3 tit · 1 g | **pegar** |
+|  | 10B | Mendy | Ferland Mendy | 23 | 0′ · no ha jugado | descartar |
+| 11 | 11 | Tchouaméni | Aurélien Tchouaméni | 14 | 107′ · 2 pj · 1 tit | **pegar** |
+| 12 | 12 | Fede Valverde | Federico Valverde | 8 | 474′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 13 | 13 | Camavinga | Eduardo Camavinga | 6 | 221′ · 5 pj · 2 tit | **pegar** |
+| 14 | 14 | Bellingham | Jude Bellingham | 5 | 447′ · 6 pj · 5 tit · 3 g · 2 a | **pegar** |
+| 15 | 15A | Güler | Arda Güler | 15 | 295′ · 6 pj · 4 tit · 1 g · 2 a | **pegar** |
+|  | 15B | Thiago Pitarch | Thiago Pitarch | 27 | 0′ · no ha jugado | descartar |
+| 16 | 16A | Mastantuono | — | — | — | **pegar** |
+|  | 16B | Brahim Díaz | Brahim Díaz | 21 | 99′ · 3 pj · 1 tit | **pegar** |
+| 17 | 17 | Gonzalo | — | — | — | **pegar** |
+|  | 17BIS (2ª ed) | Carlos Espí | Carlos Espí | 19 | 25′ · 4 pj · 2 g | **pegar** |
+| 18 | 18 | Rodrygo | Rodrygo Silva de Goes | 11 | 0′ · no ha jugado | **pegar** |
+| 19 | 19 | Vinícius | Vinícius José Paixão de Oliveira Júnior | 7 | 511′ · 6 pj · 6 tit · 1 g · 3 a | **pegar** |
+| 20 | 20 | Mbappé | Kylian Mbappé | 10 | 540′ · 6 pj · 6 tit · 7 g · 2 a | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF3 | Dumfries | Denzel Dumfries | 24 | **sirve para tapar un hueco** |
-| UF6 | Fran García | — | — | no está en el club |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 9 | Endrick | Delantero |
-| 16 | Konaté | Defensa |
-| 17 | Cucurella | Defensa |
-| 20 | Bernardo | Centrocampista |
-| 25 | Yan Diomande | Delantero |
-| 26 | Mestre | Portero |
-| 29 | Cestero | Centrocampista |
-| 31 | Javi Navarro | Portero |
-| 33 | Mario Rivas | Defensa |
-| 36 | Alexis Ciria | Delantero |
-| 38 | Sergio | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 16 | Konaté | Defensa | 450′ · 5 pj · 5 tit | **sí** |
+| 17 | Cucurella | Defensa | 340′ · 6 pj · 3 tit | **sí** |
+| 20 | Bernardo | Centrocampista | 274′ · 5 pj · 3 tit | **sí** |
+| 25 | Yan Diomande | Delantero | 244′ · 6 pj · 2 tit · 1 a | **sí** |
+| 9 | Endrick | Delantero | 4′ · 1 pj | — |
+| 36 | Alexis Ciria | Delantero | 0′ · no ha jugado | no ha jugado |
+| 31 | Javi Navarro | Portero | 0′ · no ha jugado | no ha jugado |
+| 29 | Cestero | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 33 | Mario Rivas | Defensa | 0′ · no ha jugado | no ha jugado |
+| 38 | Sergio | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 26 | Mestre | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## MALAGA CF
 
-✅ **Página completa sin Últimos Fichajes.** Todos los huecos tienen un cromo de alguien que sigue en el club.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Últimos Fichajes que sirven:** UF11 (Juan Cruz)
+- **Piden cromo a gritos:** Recio (450′), Martínez (194′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Juan Franisco Funes | Juan Francisco Funes Arjona | — | **pegar** |
-| 3 | 3 | Alfonso Herrero | Alfonso Herrero | 1 | **pegar** |
-| 4 | 4 | Carlos López | Carlos López | 13 | **pegar** |
-| 5 | 5 | Puga | Carlos Puga | 3 | **pegar** |
-| 6 | 6 | Murillo | Diego Murillo | 16 | **pegar** |
-| 7 | 7 (2ª ed) | Calero | Fernando Calero | 20 | **pegar** |
-| 8 | 8 | Einar Galilea | Einar Galilea | 4 | **pegar** |
-| 9 | 9 | Rafita | Rafael Garrido Hierro | 31 | **pegar** |
-| 10 | 10 (2ª ed) | Salinas | José Salinas | 12 | **pegar** |
-| 11 | 11 | Izan Mérino | Izan Merino | 23 | **pegar** |
-| 12 | 12 | Dani Lorenzo | Dani Lorenzo | 22 | **pegar** |
-| 13 | 13A | Rafa Rodríguez | Rafa Rodríguez | 14 | **pegar** |
-|  | 13B | Juanpe | — | — | descartar |
-| 14 | 14 | Dotor | Carlos Dotor | 8 | **pegar** |
-| 15 | 15 | Aarón Ochoa | sin ficha, sigue en el club | — | **pegar** |
-| 16 | 16 | Larrubia | David Larrubia | 10 | **pegar** |
-| 17 | 17 | Lobete | Julen Lobete | 24 | **pegar** |
-| 18 | 18 | Adrián Niño | Adrián Niño | 21 | **pegar** |
-| 19 | 19 | Joaquín | Joaquín Muñoz | 11 | **pegar** |
-| 20 | 20 | Chupe | Carlos Ruiz Rubio | 9 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Juan Franisco Funes | Juan Francisco Funes Arjona | — | — | **pegar** |
+| 3 | 3 | Alfonso Herrero | Alfonso Herrero | 1 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Carlos López | Carlos López | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Puga | Carlos Puga | 3 | 268′ · 5 pj · 3 tit | **pegar** |
+| 6 | 6 | Murillo | Diego Murillo | 16 | 0′ · no ha jugado | **pegar** |
+| 7 | 7 (2ª ed) | Calero | Fernando Calero | 20 | 0′ · no ha jugado | **pegar** |
+| 8 | 8 | Einar Galilea | Einar Galilea | 4 | 379′ · 5 pj · 5 tit | **pegar** |
+| 9 | 9 | Rafita | Rafael Garrido Hierro | 31 | 427′ · 5 pj · 5 tit | **pegar** |
+| 10 | 10 (2ª ed) | Salinas | José Salinas | 12 | 225′ · 4 pj · 2 tit | **pegar** |
+| 11 | 11 | Izan Mérino | Izan Merino | 23 | 360′ · 5 pj · 4 tit | **pegar** |
+| 12 | 12 | Dani Lorenzo | Dani Lorenzo | 22 | 299′ · 4 pj · 4 tit | **pegar** |
+| 13 | 13A | Rafa Rodríguez | Rafa Rodríguez | 14 | 85′ · 3 pj · 1 tit | **pegar** |
+|  | 13B | Juanpe | — | — | — | **pegar** |
+| 14 | 14 | Dotor | Carlos Dotor | 8 | 316′ · 4 pj · 4 tit | **pegar** |
+| 15 | 15 | Aarón Ochoa | sin ficha, sigue en el club | — | — | **pegar** |
+| 16 | 16 | Larrubia | David Larrubia | 10 | 394′ · 5 pj · 4 tit | **pegar** |
+| 17 | 17 | Lobete | Julen Lobete | 24 | 5′ · 1 pj | **pegar** |
+| 18 | 18 | Adrián Niño | Adrián Niño | 21 | 23′ · 1 pj · 1 g | **pegar** |
+| 19 | 19 | Joaquín | Joaquín Muñoz | 11 | 293′ · 5 pj · 4 tit | **pegar** |
+| 20 | 20 | Chupe | Carlos Ruiz Rubio | 9 | 450′ · 5 pj · 5 tit · 1 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF11 | Juan Cruz | Juan Cruz | 19 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 2 | Cajuste | Centrocampista |
-| 5 | Pastor | Defensa |
-| 6 | Ramon | Centrocampista |
-| 7 | Haitam | Delantero |
-| 15 | Recio | Defensa |
-| 17 | Jauregi | Delantero |
-| 18 | Martínez | Centrocampista |
-| 25 | J. Berrocal | Defensa |
-| 28 | Otu Jr | Centrocampista |
-| 32 | Juani | Delantero |
-| 39 | Aznou | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 15 | Recio | Defensa | 450′ · 5 pj · 5 tit | **sí** |
+| 18 | Martínez | Centrocampista | 194′ · 3 pj · 2 tit · 1 a | **sí** |
+| 6 | Ramon | Centrocampista | 86′ · 5 pj | — |
+| 7 | Haitam | Delantero | 33′ · 2 pj | — |
+| 17 | Jauregi | Delantero | 10′ · 1 pj | — |
+| 2 | Cajuste | Centrocampista | 4′ · 1 pj | — |
+| 25 | J. Berrocal | Defensa | 3′ · 1 pj | — |
+| 39 | Aznou | Defensa | 0′ · no ha jugado | no ha jugado |
+| 28 | Otu Jr | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 32 | Juani | Delantero | 0′ · no ha jugado | no ha jugado |
+| 5 | Pastor | Defensa | 0′ · no ha jugado | no ha jugado |
 
 ## OSASUNA
 
-⛔ **1 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **1 sin solución**.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 16 (Iker Benito)
-- **Últimos Fichajes que sirven:** ninguno para este equipo
-- **Puedes elegir variante:** 5 (5A o 5B), 13 (13A o 13B)
+- **Huecos sin solución:** 16 (Iker Benito)
+- **Variante recomendada por minutos:** 5 → **5B** (Arguibide, 476′)
+- **Elección abierta:** 13 (13A o 13B)
+- **Piden cromo a gritos:** Dubasin (232′), Rockson (210′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Luis Miguel Ramis | Luis Miguel Ramis | — | **pegar** |
-| 3 | 3 | Sergio Herrera | Sergio Herrera | 1 | **pegar** |
-| 4 | 4 | Aitor Fernández | Aitor Fernández | 13 | **pegar** |
-| 5 | 5A | Rosier | Valentin Rosier | 19 | elegir una |
-|  | 5B | Arguibide | Iñigo Arguibide | 27 | elegir una |
-| 6 | 6 | Boyomo | Enzo Boyomo | 22 | **pegar** |
-| 7 | 7 | Herrando | Jorge Herrando | 5 | **pegar** |
-| 8 | 8 | Catena | Alejandro Catena | 24 | **pegar** |
-| 9 | 9 | Abel Bretones | Abel Bretones | 23 | **pegar** |
-| 10 | 10 | Osambela | Asier Osambela | 29 | **pegar** |
-| 11 | 11 | Torró | Lucas Torró | 6 | **pegar** |
-| 12 | 12 | Moncayola | Jon Moncayola | 7 | **pegar** |
-| 13 | 13A | Moi Gómez | Moi Gómez | 16 | elegir una |
-|  | 13B | Iker Muñoz | Iker Muñoz | 8 | elegir una |
-| 14 | 14 | Rubén García | Rubén García | 14 | **pegar** |
-| 15 | 15 | Aimar Oroz | Aimar Oroz | 10 | **pegar** |
-| 16 | 16 | Iker Benito | — | — | Sin jugador activo |
-| 17 | 17 | Raúl Moro | Raúl Moro | 18 | **pegar** |
-| 18 | 18 | Raúl García | Raúl García | 9 | **pegar** |
-| 19 | 19 | Kike Barja | Kike Barja | 11 | **pegar** |
-| 20 | 20 | Budimir | Ante Budimir | 17 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Luis Miguel Ramis | Luis Miguel Ramis | — | — | **pegar** |
+| 3 | 3 | Sergio Herrera | Sergio Herrera | 1 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Aitor Fernández | Aitor Fernández | 13 | 90′ · 1 pj · 1 tit | **pegar** |
+| 5 | 5A | Rosier | Valentin Rosier | 19 | 0′ · no ha jugado | descartar |
+|  | 5B | Arguibide | Iñigo Arguibide | 27 | 476′ · 6 pj · 6 tit | **pegar** |
+| 6 | 6 | Boyomo | Enzo Boyomo | 22 | 201′ · 3 pj · 2 tit | **pegar** |
+| 7 | 7 | Herrando | Jorge Herrando | 5 | 187′ · 3 pj · 3 tit | **pegar** |
+| 8 | 8 | Catena | Alejandro Catena | 24 | 450′ · 5 pj · 5 tit | **pegar** |
+| 9 | 9 | Abel Bretones | Abel Bretones | 23 | 495′ · 6 pj · 5 tit | **pegar** |
+| 10 | 10 | Osambela | Asier Osambela | 29 | 200′ · 4 pj · 2 tit | **pegar** |
+| 11 | 11 | Torró | Lucas Torró | 6 | 208′ · 4 pj · 2 tit | **pegar** |
+| 12 | 12 | Moncayola | Jon Moncayola | 7 | 424′ · 6 pj · 5 tit | **pegar** |
+| 13 | 13A | Moi Gómez | Moi Gómez | 16 | 240′ · 4 pj · 3 tit · 1 a | elegir una |
+|  | 13B | Iker Muñoz | Iker Muñoz | 8 | 386′ · 5 pj · 4 tit | elegir una |
+| 14 | 14 | Rubén García | Rubén García | 14 | 300′ · 6 pj · 4 tit | **pegar** |
+| 15 | 15 | Aimar Oroz | Aimar Oroz | 10 | 151′ · 3 pj · 2 tit | **pegar** |
+| 16 | 16 | Iker Benito | — | — | — | Sin jugador activo |
+| 17 | 17 | Raúl Moro | Raúl Moro | 18 | 137′ · 4 pj · 1 tit | **pegar** |
+| 18 | 18 | Raúl García | Raúl García | 9 | 340′ · 6 pj · 4 tit · 1 a | **pegar** |
+| 19 | 19 | Kike Barja | Kike Barja | 11 | 181′ · 5 pj · 2 tit · 1 g | **pegar** |
+| 20 | 20 | Budimir | Ante Budimir | 17 | 412′ · 6 pj · 4 tit · 4 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 15 | Rico | Defensa |
-| 20 | Del Castillo | Centrocampista |
-| 21 | Dubasin | Centrocampista |
-| 26 | Mauro | Centrocampista |
-| 30 | A. Bonel | Delantero |
-| 31 | Rafa Fdez. | Portero |
-| 35 | Santos | Defensa |
-| 48 | Rockson | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 21 | Dubasin | Centrocampista | 232′ · 6 pj · 2 tit | **sí** |
+| 48 | Rockson | Defensa | 210′ · 3 pj · 2 tit | **sí** |
+| 35 | Santos | Defensa | 90′ · 1 pj · 1 tit | — |
+| 15 | Rico | Defensa | 45′ · 1 pj · 1 tit | — |
+| 20 | Del Castillo | Centrocampista | 35′ · 2 pj | — |
+| 30 | A. Bonel | Delantero | 0′ · no ha jugado | no ha jugado |
+| 26 | Mauro | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 31 | Rafa Fdez. | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## RACING DE SANTANDER
 
-⛔ **4 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **3 sin solución**. ⏳ 1 huecos que Panini no ha asignado.
+⛔ **4 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 1 que Panini no ha asignado.
 
-- **Huecos a resolver:** 8 (Javi Castro), 12 (Gustavo Puerta), 14 (Aldasoro), 15 (Suleiman)
-- **Últimos Fichajes que sirven:** UF1 (Canales)
+- **Huecos sin solución:** 8 (Javi Castro), 12 (Gustavo Puerta), 14 (Aldasoro), 15 (Suleiman)
 - **Sin asignar por Panini:** 3
+- **Piden cromo a gritos:** Agirrezabala (540′), Iván Martín (315′), Zabiri (311′), Prati (260′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | José Alberto López | José Alberto López Menéndez | — | **pegar** |
-| 3 | 3 | sin asignar | — | — | Pendiente |
-| 4 | 4 | Eriksson | Simon Eriksson | 1 | **pegar** |
-| 5 | 5 | Mantilla | Álvaro Mantilla | 2 | **pegar** |
-| 6 | 6 | Sangalli | — | — | descartar |
-|  | 6BIS (2ª ed) | Pablo Ramón | Pablo Ramón | 5 | **pegar** |
-| 7 | 7 | Facu González | Facu González | 16 | **pegar** |
-| 8 | 8 | Javi Castro | — | — | Sin jugador activo |
-| 9 | 9A | Manu Hernando | José Manuel Hernando Riol | 4 | **pegar** |
-|  | 9B | Mario García | — | — | descartar |
-| 10 | 10 | Jorge Salinas | Jorge Salinas | 17 | **pegar** |
-| 11 | 11A | Maguette | Maguette Gueye | 14 | **pegar** |
-|  | 11B | Nteka | — | — | descartar |
-| 12 | 12 | Gustavo Puerta | — | — | Sin jugador activo |
-| 13 | 13 | Íñigo | Íñigo Sainz-Maza | 6 | **pegar** |
-| 14 | 14 | Aldasoro | — | — | Sin jugador activo |
-| 15 | 15 | Suleiman | — | — | Sin jugador activo |
-| 16 | 16 | Andrés Martín | Andrés Martín | 11 | **pegar** |
-| 17 | 17 | Guliashvili | Giorgi Guliashvili | 7 | **pegar** |
-| 18 | 18 | Íñigo Vicente | Iñigo Vicente | 10 | **pegar** |
-| 19 | 19 | Arana | Juan Carlos Arana | 9 | **pegar** |
-| 20 | 20 | Villalibre | Asier Villalibre | 12 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | José Alberto López | José Alberto López Menéndez | — | — | **pegar** |
+| 3 | 3 | sin asignar | — | — | — | Pendiente |
+| 4 | 4 | Eriksson | Simon Eriksson | 1 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Mantilla | Álvaro Mantilla | 2 | 449′ · 5 pj · 5 tit | **pegar** |
+| 6 | 6 | Sangalli | — | — | — | **pegar** |
+|  | 6BIS (2ª ed) | Pablo Ramón | Pablo Ramón | 5 | 292′ · 4 pj · 3 tit | **pegar** |
+| 7 | 7 | Facu González | Facu González | 16 | 246′ · 5 pj · 3 tit | **pegar** |
+| 8 | 8 | Javi Castro | — | — | — | Sin jugador activo |
+| 9 | 9A | Manu Hernando | José Manuel Hernando Riol | 4 | 397′ · 5 pj · 4 tit | **pegar** |
+|  | 9B | Mario García | — | — | — | **pegar** |
+| 10 | 10 | Jorge Salinas | Jorge Salinas | 17 | 454′ · 6 pj · 5 tit · 1 a | **pegar** |
+| 11 | 11A | Maguette | Maguette Gueye | 14 | 148′ · 5 pj · 1 tit · 1 g | **pegar** |
+|  | 11B | Nteka | — | — | — | **pegar** |
+| 12 | 12 | Gustavo Puerta | — | — | — | Sin jugador activo |
+| 13 | 13 | Íñigo | Íñigo Sainz-Maza | 6 | 78′ · 1 pj · 1 tit | **pegar** |
+| 14 | 14 | Aldasoro | — | — | — | Sin jugador activo |
+| 15 | 15 | Suleiman | — | — | — | Sin jugador activo |
+| 16 | 16 | Andrés Martín | Andrés Martín | 11 | 239′ · 3 pj · 3 tit · 1 g | **pegar** |
+| 17 | 17 | Guliashvili | Giorgi Guliashvili | 7 | 48′ · 3 pj | **pegar** |
+| 18 | 18 | Íñigo Vicente | Iñigo Vicente | 10 | 454′ · 6 pj · 5 tit · 2 a | **pegar** |
+| 19 | 19 | Arana | Juan Carlos Arana | 9 | 62′ · 3 pj · 1 tit | **pegar** |
+| 20 | 20 | Villalibre | Asier Villalibre | 12 | 219′ · 5 pj · 3 tit · 1 a | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF1 | Canales | Sergio Canales | 20 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 3 | Aaron | Defensa |
-| 8 | Almeida | Centrocampista |
-| 13 | Agirrezabala | Portero |
-| 15 | Pablo G. | Delantero |
-| 18 | Prati | Centrocampista |
-| 19 | Iker Luque | Centrocampista |
-| 21 | Zabiri | Delantero |
-| 22 | Pedro | Defensa |
-| 23 | Iván Martín | Centrocampista |
-| 24 | Belocian | Defensa |
-| 29 | Vallecillo | Centrocampista |
-| 33 | Castellanos | Centrocampista |
-| 38 | Hugo | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 13 | Agirrezabala | Portero | 540′ · 6 pj · 6 tit | **sí** |
+| 23 | Iván Martín | Centrocampista | 315′ · 4 pj · 3 tit | **sí** |
+| 21 | Zabiri | Delantero | 311′ · 6 pj · 3 tit · 6 g | **sí** |
+| 18 | Prati | Centrocampista | 260′ · 4 pj · 3 tit | **sí** |
+| 15 | Pablo G. | Delantero | 154′ · 2 pj · 2 tit · 1 g | — |
+| 24 | Belocian | Defensa | 125′ · 2 pj · 1 tit | — |
+| 3 | Aaron | Defensa | 91′ · 2 pj · 1 tit | — |
+| 22 | Pedro | Defensa | 76′ · 3 pj · 2 tit | — |
+| 8 | Almeida | Centrocampista | 59′ · 2 pj | — |
+| 19 | Iker Luque | Centrocampista | 47′ · 2 pj | — |
+| 29 | Vallecillo | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 38 | Hugo | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 33 | Castellanos | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## RAYO VALLECANO
 
-⛔ **2 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **2 sin solución**.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 7 (Nobel Mendy), 10 (Pep Chavarría)
-- **Últimos Fichajes que sirven:** ninguno para este equipo
+- **Huecos sin solución:** 7 (Nobel Mendy), 10 (Pep Chavarría)
+- **Piden cromo a gritos:** Pedrosa (308′), G. Bouaré (186′), G.tsitaishvili (182′), Emil Audero (180′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Beñat San José | Beñat San José | — | **pegar** |
-| 3 | 3 | Batalla | Augusto Batalla | 13 | **pegar** |
-| 4 | 4 | Cárdenas | Dani Cárdenas | 1 | **pegar** |
-| 5 | 5 | Ratiu | Andrei Ratiu | 2 | **pegar** |
-| 6 | 6 | Balliu | Iván Balliu | 20 | **pegar** |
-| 7 | 7 | Nobel Mendy | — | — | Sin jugador activo |
-| 8 | 8 | Lejeune | Florian Lejeune | 24 | **pegar** |
-| 9 | 9 | Luiz Felipe | Luiz Felipe Ramos Marchi | 5 | **pegar** |
-| 10 | 10 | Pep Chavarría | — | — | Sin jugador activo |
-| 11 | 11 | Pedro Díaz | Pedro Díaz | 4 | **pegar** |
-| 12 | 12 | Pathé Ciss | Pathé Ciss | 6 | **pegar** |
-| 13 | 13 | Óscar Valentín | Óscar Valentín | 23 | **pegar** |
-| 14 | 14 | Unai López | Unai López | 8 | **pegar** |
-| 15 | 15 | Isi | Isi Palazón | 7 | **pegar** |
-| 16 | 16 | De Frutos | Jorge de Frutos | 19 | **pegar** |
-| 17 | 17 | Fran Pérez | Fran Pérez | 21 | **pegar** |
-| 18 | 18 | Álvaro García | Álvaro García | 18 | **pegar** |
-| 19 | 19 | Camello | Sergio Camello | 10 | **pegar** |
-| 20 | 20 | Alemao | Alexandre Zurawski | 9 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Beñat San José | Beñat San José | — | — | **pegar** |
+| 3 | 3 | Batalla | Augusto Batalla | 13 | 150′ · 2 pj · 2 tit | **pegar** |
+| 4 | 4 | Cárdenas | Dani Cárdenas | 1 | 210′ · 3 pj · 2 tit | **pegar** |
+| 5 | 5 | Ratiu | Andrei Ratiu | 2 | 450′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 6 | 6 | Balliu | Iván Balliu | 20 | 206′ · 5 pj · 2 tit | **pegar** |
+| 7 | 7 | Nobel Mendy | — | — | — | Sin jugador activo |
+| 8 | 8 | Lejeune | Florian Lejeune | 24 | 540′ · 6 pj · 6 tit | **pegar** |
+| 9 | 9 | Luiz Felipe | Luiz Felipe Ramos Marchi | 5 | 0′ · no ha jugado | **pegar** |
+| 10 | 10 | Pep Chavarría | — | — | — | Sin jugador activo |
+| 11 | 11 | Pedro Díaz | Pedro Díaz | 4 | 292′ · 5 pj · 3 tit | **pegar** |
+| 12 | 12 | Pathé Ciss | Pathé Ciss | 6 | 540′ · 6 pj · 6 tit | **pegar** |
+| 13 | 13 | Óscar Valentín | Óscar Valentín | 23 | 312′ · 6 pj · 3 tit | **pegar** |
+| 14 | 14 | Unai López | Unai López | 8 | 469′ · 6 pj · 6 tit · 3 a | **pegar** |
+| 15 | 15 | Isi | Isi Palazón | 7 | 81′ · 2 pj · 2 tit | **pegar** |
+| 16 | 16 | De Frutos | Jorge de Frutos | 19 | 302′ · 4 pj · 4 tit · 1 a | **pegar** |
+| 17 | 17 | Fran Pérez | Fran Pérez | 21 | 142′ · 5 pj · 1 tit | **pegar** |
+| 18 | 18 | Álvaro García | Álvaro García | 18 | 443′ · 6 pj · 5 tit · 2 g · 2 a | **pegar** |
+| 19 | 19 | Camello | Sergio Camello | 10 | 399′ · 6 pj · 5 tit · 6 g · 1 a | **pegar** |
+| 20 | 20 | Alemao | Alexandre Zurawski | 9 | 102′ · 5 pj | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 3 | Kumbulla | Centrocampista |
-| 11 | Nteka | Centrocampista |
-| 14 | G.tsitaishvili | Delantero |
-| 15 | Mujaid | Defensa |
-| 17 | Pedrosa | Defensa |
-| 22 | Pelayo | Defensa |
-| 25 | Emil Audero | Portero |
-| 26 | De Las Sias | Defensa |
-| 27 | Lozano | Defensa |
-| 30 | Adrián Molina | Portero |
-| 31 | M. Román | Centrocampista |
-| 33 | Jozhua V. | Defensa |
-| 34 | Alonso | Delantero |
-| 36 | G. Bouaré | Centrocampista |
-| 37 | Rayane | Delantero |
-| — | Rdt | Delantero |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 17 | Pedrosa | Defensa | 308′ · 4 pj · 3 tit · 1 g | **sí** |
+| 36 | G. Bouaré | Centrocampista | 186′ · 4 pj · 2 tit | **sí** |
+| 14 | G.tsitaishvili | Delantero | 182′ · 3 pj · 2 tit | **sí** |
+| 25 | Emil Audero | Portero | 180′ · 2 pj · 2 tit | **sí** |
+| 11 | Nteka | Centrocampista | 153′ · 3 pj · 1 tit | — |
+| 33 | Jozhua V. | Defensa | 122′ · 2 pj · 2 tit | — |
+| 15 | Mujaid | Defensa | 76′ · 2 pj · 1 tit | — |
+| 22 | Pelayo | Defensa | 67′ · 2 pj · 1 tit | — |
+| 37 | Rayane | Delantero | 23′ · 1 pj | — |
+| 30 | Adrián Molina | Portero | 0′ · no ha jugado | no ha jugado |
+| 34 | Alonso | Delantero | 0′ · no ha jugado | no ha jugado |
+| 3 | Kumbulla | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 31 | M. Román | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 26 | De Las Sias | Defensa | 0′ · no ha jugado | no ha jugado |
+| — | Rdt | Delantero | 0′ · no ha jugado | no ha jugado |
+| 27 | Lozano | Defensa | 0′ · no ha jugado | no ha jugado |
 
 ## REAL SOCIEDAD
 
-✅ **Página completa sin Últimos Fichajes.** Todos los huecos tienen un cromo de alguien que sigue en el club.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Puedes elegir variante:** 13 (13A o 13B)
+- **Variante recomendada por minutos:** 13 → **13A** (Yangel Herrera, 382′)
+- **Piden cromo a gritos:** Ochieng (174′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Pellegrino Matarazzo | Pellegrino Matarazzo | — | **pegar** |
-| 3 | 3 | Remiro | Álex Remiro | 1 | **pegar** |
-| 4 | 4 | Marrero | Unai Marrero | 13 | **pegar** |
-| 5 | 5 | Aramburu | Jon Aramburu | 2 | **pegar** |
-| 6 | 6 | Zubeldia | Igor Zubeldia | 5 | **pegar** |
-| 7 | 7 | Jon Martín | Jon Martín | 6 | **pegar** |
-| 8 | 8 | Sergio Gómez | Sergio Gómez | 17 | **pegar** |
-| 9 | 9 | Aihen Muñoz | Aihen Muñoz | 3 | **pegar** |
-| 10 | 10 | Gorrotxategi | Jon Gorrotxategi | 4 | **pegar** |
-| 11 | 11 | Pablo Marín | Pablo Marín | 15 | **pegar** |
-| 12 | 12 | Turrientes | Beñat Turrientes | 8 | **pegar** |
-| 13 | 13A | Yangel Herrera | Yangel Herrera | 21 | elegir una |
-|  | 13B (2ª ed) | Zakharyan | Arsen Zakharyan | 23 | elegir una |
-| 14 | 14 | Carlos Soler | Carlos Soler | 18 | **pegar** |
-| 15 | 15 | Sucic | Luka Sucic | 24 | **pegar** |
-| 16 | 16 | Barrenetxea | Ander Barrenetxea | 7 | **pegar** |
-| 17 | 17 | Kubo | Takefusa Kubo | 14 | **pegar** |
-| 18 | 18 | Guedes | Gonçalo Manuel Ganchinho Guedes | 11 | **pegar** |
-| 19 | 19 | Oskarsson | Orri Óskarsson | 9 | **pegar** |
-| 20 | 20 | Oyarzabal | Mikel Oyarzabal | 10 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Pellegrino Matarazzo | Pellegrino Matarazzo | — | — | **pegar** |
+| 3 | 3 | Remiro | Álex Remiro | 1 | 450′ · 5 pj · 5 tit | **pegar** |
+| 4 | 4 | Marrero | Unai Marrero | 13 | 90′ · 1 pj · 1 tit | **pegar** |
+| 5 | 5 | Aramburu | Jon Aramburu | 2 | 507′ · 6 pj · 6 tit | **pegar** |
+| 6 | 6 | Zubeldia | Igor Zubeldia | 5 | 393′ · 5 pj · 4 tit | **pegar** |
+| 7 | 7 | Jon Martín | Jon Martín | 6 | 366′ · 5 pj · 4 tit | **pegar** |
+| 8 | 8 | Sergio Gómez | Sergio Gómez | 17 | 522′ · 6 pj · 6 tit | **pegar** |
+| 9 | 9 | Aihen Muñoz | Aihen Muñoz | 3 | 18′ · 1 pj | **pegar** |
+| 10 | 10 | Gorrotxategi | Jon Gorrotxategi | 4 | 62′ · 4 pj | **pegar** |
+| 11 | 11 | Pablo Marín | Pablo Marín | 15 | 0′ · no ha jugado | **pegar** |
+| 12 | 12 | Turrientes | Beñat Turrientes | 8 | 258′ · 4 pj · 3 tit | **pegar** |
+| 13 | 13A | Yangel Herrera | Yangel Herrera | 21 | 382′ · 6 pj · 5 tit · 1 g | **pegar** |
+|  | 13B (2ª ed) | Zakharyan | Arsen Zakharyan | 23 | 8′ · 2 pj | descartar |
+| 14 | 14 | Carlos Soler | Carlos Soler | 18 | 374′ · 6 pj · 4 tit · 1 a | **pegar** |
+| 15 | 15 | Sucic | Luka Sucic | 24 | 464′ · 6 pj · 5 tit · 2 g | **pegar** |
+| 16 | 16 | Barrenetxea | Ander Barrenetxea | 7 | 288′ · 5 pj · 4 tit · 1 g | **pegar** |
+| 17 | 17 | Kubo | Takefusa Kubo | 14 | 223′ · 5 pj · 3 tit | **pegar** |
+| 18 | 18 | Guedes | Gonçalo Manuel Ganchinho Guedes | 11 | 177′ · 5 pj · 2 tit | **pegar** |
+| 19 | 19 | Oskarsson | Orri Óskarsson | 9 | 283′ · 5 pj · 3 tit · 1 g | **pegar** |
+| 20 | 20 | Oyarzabal | Mikel Oyarzabal | 10 | 417′ · 6 pj · 5 tit · 2 a | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 12 | Ochieng | Centrocampista |
-| 16 | J. Pacheco | Defensa |
-| 19 | M.sarr | Defensa |
-| 20 | Odriozola | Defensa |
-| 22 | H. Fort | Defensa |
-| 26 | Aguirre | Centrocampista |
-| 27 | Carrera | Delantero |
-| 28 | Lebarbier | Defensa |
-| 29 | Marchal | Centrocampista |
-| 34 | Beitia | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 12 | Ochieng | Centrocampista | 174′ · 3 pj · 2 tit · 1 g · 2 a | **sí** |
+| 19 | M.sarr | Defensa | 148′ · 2 pj · 2 tit | — |
+| 16 | J. Pacheco | Defensa | 20′ · 1 pj | — |
+| 22 | H. Fort | Defensa | 9′ · 1 pj | — |
+| 28 | Lebarbier | Defensa | 0′ · no ha jugado | no ha jugado |
+| 29 | Marchal | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 27 | Carrera | Delantero | 0′ · no ha jugado | no ha jugado |
+| 26 | Aguirre | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 34 | Beitia | Defensa | 0′ · no ha jugado | no ha jugado |
+| 20 | Odriozola | Defensa | 0′ · no ha jugado | no ha jugado |
 
 ## SEVILLA
 
-⛔ **2 huecos sin jugador activo** y sólo 1 Últimos Fichajes: quedan **1 sin solución**. 🔎 1 huecos por revisar a mano. ⏳ 1 huecos que Panini no ha asignado.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. 🔎 1 por revisar a mano. ⏳ 1 que Panini no ha asignado.
 
-- **Huecos a resolver:** 8 (Nianzou), 19 (Akor Adams)
-- **Últimos Fichajes que sirven:** UF17 (Sangante)
+- **Huecos sin solución:** 8 (Nianzou), 19 (Akor Adams)
+- **Variante recomendada por minutos:** 9 → **9A** (Castrín, 390′)
 - **Comprobar a mano:** 11 (Oso)
 - **Sin asignar por Panini:** 4
-- **Puedes elegir variante:** 9 (9A o 9B)
+- **Piden cromo a gritos:** Miguel Sierra (418′), Robbie Ure (307′), Fofana (197′), Stassin (195′), Felix (164′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Luis García | Luis García | — | **pegar** |
-| 3 | 3 | Vlachodimos | Odysseas Vlachodimos | 1 | **pegar** |
-| 4 | 4 | sin asignar | — | — | Pendiente |
-| 5 | 5 | Carmona | José Ángel Carmona | 22 | **pegar** |
-| 6 | 6 | Juanlu | — | — | descartar |
-|  | 6BIS (2ª ed) | Iglesias | Juan Iglesias | 2 | **pegar** |
-| 7 | 7 | Kike Salas | Kike Salas | 4 | **pegar** |
-| 8 | 8 | Nianzou | — | — | Sin jugador activo |
-| 9 | 9A | Castrín | Andrés López Gallo | 5 | elegir una |
-|  | 9B | Marcao | Marcos do Nascimento Teixeira | 23 | elegir una |
-| 10 | 10 | Suazo | Gabriel Suazo | 17 | **pegar** |
-| 11 | 11 | Oso | — | — | Por revisar |
-| 12 | 12 | Agoumé | Lucien Agoumé | 6 | **pegar** |
-| 13 | 13 (2ª ed) | Guridi | Jon Guridi | 18 | **pegar** |
-| 14 | 14 | Sow | Ibrahima Sow | 37 | **pegar** |
-| 15 | 15 | Vargas | Rubén Vargas | 11 | **pegar** |
-| 16 | 16 | Manu Bueno | Manu Bueno | 14 | **pegar** |
-| 17 | 17 | Peque | Gerard Fernández Castellano | 10 | **pegar** |
-| 18 | 18 | Ejuke | Chidera Ejuke | 21 | **pegar** |
-| 19 | 19 | Akor Adams | — | — | Sin jugador activo |
-| 20 | 20 | Isaac Romero | Isaac Romero | 16 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Luis García | Luis García | — | — | **pegar** |
+| 3 | 3 | Vlachodimos | Odysseas Vlachodimos | 1 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | sin asignar | — | — | — | Pendiente |
+| 5 | 5 | Carmona | José Ángel Carmona | 22 | 41′ · 2 pj | **pegar** |
+| 6 | 6 | Juanlu | — | — | — | **pegar** |
+|  | 6BIS (2ª ed) | Iglesias | Juan Iglesias | 2 | 540′ · 6 pj · 6 tit · 1 g | **pegar** |
+| 7 | 7 | Kike Salas | Kike Salas | 4 | 448′ · 5 pj · 5 tit | **pegar** |
+| 8 | 8 | Nianzou | — | — | — | Sin jugador activo |
+| 9 | 9A | Castrín | Andrés López Gallo | 5 | 390′ · 5 pj · 4 tit | **pegar** |
+|  | 9B | Marcao | Marcos do Nascimento Teixeira | 23 | 0′ · no ha jugado | descartar |
+| 10 | 10 | Suazo | Gabriel Suazo | 17 | 540′ · 6 pj · 6 tit | **pegar** |
+| 11 | 11 | Oso | — | — | — | Por revisar |
+| 12 | 12 | Agoumé | Lucien Agoumé | 6 | 540′ · 6 pj · 6 tit | **pegar** |
+| 13 | 13 (2ª ed) | Guridi | Jon Guridi | 18 | 341′ · 6 pj · 5 tit · 1 g | **pegar** |
+| 14 | 14 | Sow | Ibrahima Sow | 37 | 0′ · no ha jugado | **pegar** |
+| 15 | 15 | Vargas | Rubén Vargas | 11 | 20′ · 1 pj | **pegar** |
+| 16 | 16 | Manu Bueno | Manu Bueno | 14 | 27′ · 2 pj | **pegar** |
+| 17 | 17 | Peque | Gerard Fernández Castellano | 10 | 158′ · 3 pj · 2 tit · 1 g | **pegar** |
+| 18 | 18 | Ejuke | Chidera Ejuke | 21 | 179′ · 5 pj · 1 tit · 1 g | **pegar** |
+| 19 | 19 | Akor Adams | — | — | — | Sin jugador activo |
+| 20 | 20 | Isaac Romero | Isaac Romero | 16 | 189′ · 5 pj · 2 tit · 1 g · 1 a | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF17 | Sangante | Arouna Sangante | 12 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 3 | Julio Díaz | Defensa |
-| 7 | Alfon | Delantero |
-| 8 | Kochorashvili | Centrocampista |
-| 9 | Robbie Ure | Delantero |
-| 13 | Fran González | Portero |
-| 19 | Stassin | Delantero |
-| 20 | Felix | Delantero |
-| 24 | Fofana | Centrocampista |
-| 26 | Manuel Ángel | Defensa |
-| 27 | Nico Guillen | Centrocampista |
-| 30 | Miguel Sierra | Delantero |
-| 33 | Rafa Romero | Portero |
-| 34 | Iker Muñoz | Defensa |
-| 39 | Edu Altozano | Centrocampista |
-| — | Cardoso | Defensa |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 30 | Miguel Sierra | Delantero | 418′ · 6 pj · 6 tit · 2 g | **sí** |
+| 9 | Robbie Ure | Delantero | 307′ · 6 pj · 3 tit · 1 a | **sí** |
+| 24 | Fofana | Centrocampista | 197′ · 3 pj · 2 tit | **sí** |
+| 19 | Stassin | Delantero | 195′ · 3 pj · 2 tit · 1 g | **sí** |
+| 20 | Felix | Delantero | 164′ · 2 pj · 2 tit | **sí** |
+| 8 | Kochorashvili | Centrocampista | 117′ · 4 pj · 1 tit · 1 a | — |
+| 27 | Nico Guillen | Centrocampista | 90′ · 2 pj · 1 tit | — |
+| 3 | Julio Díaz | Defensa | 83′ · 4 pj · 1 tit | — |
+| 7 | Alfon | Delantero | 10′ · 1 pj | — |
+| 39 | Edu Altozano | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 13 | Fran González | Portero | 0′ · no ha jugado | no ha jugado |
+| — | Cardoso | Defensa | 0′ · no ha jugado | no ha jugado |
+| 34 | Iker Muñoz | Defensa | 0′ · no ha jugado | no ha jugado |
+| 26 | Manuel Ángel | Defensa | 0′ · no ha jugado | no ha jugado |
+| 33 | Rafa Romero | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## VALENCIA
 
-🔄 **1 huecos sin jugador activo**, cubiertos con 1 de los 2 Últimos Fichajes disponibles.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 18 (Diego López)
-- **Últimos Fichajes que sirven:** UF14 (Sato), UF9 (De Haas)
+- **Huecos sin solución:** 18 (Diego López)
+- **Piden cromo a gritos:** Arnau (242′), Maffeo (240′), Otorbi (218′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Carlos Corberán | Carlos Corberán | — | **pegar** |
-| 3 | 3 | Dimitrievski | Stole Dimitrievski | 1 | **pegar** |
-| 4 | 4 | Rivero | Cristian Rivero | 13 | **pegar** |
-| 5 | 5 | Foulquier | Dimitri Foulquier | 20 | **pegar** |
-| 6 | 6 | Copete | José Manuel Arias Copete | 3 | **pegar** |
-| 7 | 7 | Tárrega | César Tárrega | 5 | **pegar** |
-| 8 | 8A | Cömert | — | — | descartar |
-|  | 8B | Diakhaby | Mouctar Diakhaby | 4 | **pegar** |
-| 9 | 9 | Gayà | José Gayà | 14 | **pegar** |
-| 10 | 10 | Jesús Vázquez | Jesús Vázquez | 21 | **pegar** |
-| 11 | 11 | Pepelu | José Luis García Vayá | 18 | **pegar** |
-| 12 | 12 | Guido Rodríguez | Guido Rodríguez | 2 | **pegar** |
-| 13 | 13 | Javi Guerra | Javi Guerra | 8 | **pegar** |
-| 14 | 14 | Luis Rioja | Luis Rioja | 11 | **pegar** |
-| 15 | 15 | Ugrinic | Filip Ugrinic | 23 | **pegar** |
-| 16 | 16 | André Almeida | — | — | descartar |
-|  | 16BIS (2ª ed) | Dieng | Aliou Dieng | 15 | **pegar** |
-| 17 | 17 | Hugo Duro | Hugo Duro | 9 | **pegar** |
-| 18 | 18 | Diego López | — | — | Sin jugador activo |
-| 19 | 19 | Ramazani | — | — | descartar |
-|  | 19BIS (2ª ed) | Danjuma | Arnaut Danjuma | 7 | **pegar** |
-| 20 | 20A | Sadiq | Umar Sadiq | 6 | **pegar** |
-|  | 20B | Lucas Beltrán | — | — | descartar |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Carlos Corberán | Carlos Corberán | — | — | **pegar** |
+| 3 | 3 | Dimitrievski | Stole Dimitrievski | 1 | 540′ · 6 pj · 6 tit | **pegar** |
+| 4 | 4 | Rivero | Cristian Rivero | 13 | 0′ · no ha jugado | **pegar** |
+| 5 | 5 | Foulquier | Dimitri Foulquier | 20 | 0′ · no ha jugado | **pegar** |
+| 6 | 6 | Copete | José Manuel Arias Copete | 3 | 0′ · no ha jugado | **pegar** |
+| 7 | 7 | Tárrega | César Tárrega | 5 | 330′ · 5 pj · 4 tit | **pegar** |
+| 8 | 8A | Cömert | — | — | — | **pegar** |
+|  | 8B | Diakhaby | Mouctar Diakhaby | 4 | 287′ · 4 pj · 3 tit | **pegar** |
+| 9 | 9 | Gayà | José Gayà | 14 | 278′ · 4 pj · 3 tit | **pegar** |
+| 10 | 10 | Jesús Vázquez | Jesús Vázquez | 21 | 339′ · 6 pj · 4 tit | **pegar** |
+| 11 | 11 | Pepelu | José Luis García Vayá | 18 | 478′ · 6 pj · 6 tit | **pegar** |
+| 12 | 12 | Guido Rodríguez | Guido Rodríguez | 2 | 248′ · 3 pj · 3 tit | **pegar** |
+| 13 | 13 | Javi Guerra | Javi Guerra | 8 | 475′ · 6 pj · 6 tit · 1 a | **pegar** |
+| 14 | 14 | Luis Rioja | Luis Rioja | 11 | 114′ · 3 pj · 1 tit · 1 g | **pegar** |
+| 15 | 15 | Ugrinic | Filip Ugrinic | 23 | 464′ · 6 pj · 5 tit | **pegar** |
+| 16 | 16 | André Almeida | — | — | — | **pegar** |
+|  | 16BIS (2ª ed) | Dieng | Aliou Dieng | 15 | 227′ · 5 pj · 2 tit | **pegar** |
+| 17 | 17 | Hugo Duro | Hugo Duro | 9 | 176′ · 6 pj · 2 tit | **pegar** |
+| 18 | 18 | Diego López | — | — | — | Sin jugador activo |
+| 19 | 19 | Ramazani | — | — | — | **pegar** |
+|  | 19BIS (2ª ed) | Danjuma | Arnaut Danjuma | 7 | 438′ · 6 pj · 5 tit | **pegar** |
+| 20 | 20A | Sadiq | Umar Sadiq | 6 | 158′ · 3 pj · 1 tit · 1 g | **pegar** |
+|  | 20B | Lucas Beltrán | — | — | — | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-| Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| :---: | --- | --- | ---: | --- |
-| UF14 | Sato | Ryunosuke Sato | 39 | **sirve para tapar un hueco** |
-| UF9 | De Haas | Justin de Haas | 12 | **sirve para tapar un hueco** |
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 10 | Elliott | Centrocampista |
-| 19 | Raba | Delantero |
-| 22 | Arnau | Defensa |
-| 24 | Maffeo | Defensa |
-| 25 | Van Oevelen | Portero |
-| 27 | Otorbi | Delantero |
-| 29 | Panach | Defensa |
-| 31 | Gamón | Defensa |
-| 33 | Mayol | Centrocampista |
-| 36 | I. Córdoba | Defensa |
-| 37 | Aimar | Delantero |
-| 38 | Jaume Durà | Centrocampista |
-| 41 | M. Navarro | Defensa |
-| — | Tenés | Delantero |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 22 | Arnau | Defensa | 242′ · 4 pj · 3 tit | **sí** |
+| 24 | Maffeo | Defensa | 240′ · 5 pj · 3 tit | **sí** |
+| 27 | Otorbi | Delantero | 218′ · 5 pj · 2 tit | **sí** |
+| 36 | I. Córdoba | Defensa | 102′ · 3 pj | — |
+| 33 | Mayol | Centrocampista | 90′ · 1 pj · 1 tit | — |
+| 10 | Elliott | Centrocampista | 64′ · 2 pj | — |
+| 19 | Raba | Delantero | 8′ · 1 pj | — |
+| 37 | Aimar | Delantero | 0′ · no ha jugado | no ha jugado |
+| 29 | Panach | Defensa | 0′ · no ha jugado | no ha jugado |
+| 38 | Jaume Durà | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 25 | Van Oevelen | Portero | 0′ · no ha jugado | no ha jugado |
+| 41 | M. Navarro | Defensa | 0′ · no ha jugado | no ha jugado |
+| 31 | Gamón | Defensa | 0′ · no ha jugado | no ha jugado |
+| — | Tenés | Delantero | 0′ · no ha jugado | no ha jugado |
 
 ## VILLARREAL
 
-⛔ **1 huecos sin jugador activo** y sólo 0 Últimos Fichajes: quedan **1 sin solución**.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos a resolver:** 8 (Kambwala)
-- **Últimos Fichajes que sirven:** ninguno para este equipo
-- **Puedes elegir variante:** 6 (6A o 6B), 7 (7A o 7B)
+- **Huecos sin solución:** 8 (Kambwala)
+- **Variante recomendada por minutos:** 7 → **7A** (Foyth, 270′)
+- **Elección abierta:** 6 (6A o 6B)
+- **Piden cromo a gritos:** C. Romero (360′)
 
 ### Huecos del álbum
 
-| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Estado |
-| ---: | :---: | --- | --- | ---: | --- |
-| 1 | 1 | Escudo | — | — | No aplica |
-| 2 | 2 | Íñigo Pérez | Iñigo Pérez | — | **pegar** |
-| 3 | 3 | Luiz Júnior | Luiz Lúcio Reis Júnior | 1 | **pegar** |
-| 4 | 4 | Arnau Tenas | — | — | descartar |
-|  | 4BIS (2ª ed) | Gulácsi | Péter Gulácsi | 25 | **pegar** |
-| 5 | 5 | Mouriño | Santiago Mouriño | 15 | **pegar** |
-| 6 | 6A | Pau Navarro | Pau Navarro | 6 | elegir una |
-|  | 6B | Logan Costa | Logan Evans Costa | 2 | elegir una |
-| 7 | 7A | Foyth | Juan Foyth | 8 | elegir una |
-|  | 7B | Freeman | Alex Freeman | 3 | elegir una |
-| 8 | 8A | Kambwala | — | — | Sin jugador activo |
-|  | 8B | Rafa Marín | — | — | Sin jugador activo |
-| 9 | 9 | Renato Veiga | Renato Palma Veiga | 12 | **pegar** |
-| 10 | 10 | Sergi Cardona | Sergi Cardona | 23 | **pegar** |
-| 11 | 11 | Pape Gueye | Pape Gueye | 18 | **pegar** |
-| 12 | 12 | Santi Comesaña | Santi Comesaña | 14 | **pegar** |
-| 13 | 13 | Maciá | Carlos Maciá | 16 | **pegar** |
-| 14 | 14 | Moleiro | Alberto Moleiro | 10 | **pegar** |
-| 15 | 15 | Buchanan | Tajon Buchanan | 17 | **pegar** |
-| 16 | 16 | Oluwaseyi | Tani Oluwaseyi | 21 | **pegar** |
-| 17 | 17 | Ayoze | Ayoze Pérez | 22 | **pegar** |
-| 18 | 18 | Pépé | Nicolas Pépé | 19 | **pegar** |
-| 19 | 19 | Mikautadze | Georges Mikautadze | 9 | **pegar** |
-| 20 | 20 | Gerard Moreno | Gerard Moreno | 7 | **pegar** |
+| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
+| ---: | :---: | --- | --- | ---: | --- | --- |
+| 1 | 1 | Escudo | — | — | — | No aplica |
+| 2 | 2 | Íñigo Pérez | Iñigo Pérez | — | — | **pegar** |
+| 3 | 3 | Luiz Júnior | Luiz Lúcio Reis Júnior | 1 | 360′ · 4 pj · 4 tit | **pegar** |
+| 4 | 4 | Arnau Tenas | — | — | — | **pegar** |
+|  | 4BIS (2ª ed) | Gulácsi | Péter Gulácsi | 25 | 90′ · 1 pj · 1 tit | **pegar** |
+| 5 | 5 | Mouriño | Santiago Mouriño | 15 | 316′ · 4 pj · 4 tit | **pegar** |
+| 6 | 6A | Pau Navarro | Pau Navarro | 6 | 90′ · 1 pj · 1 tit | elegir una |
+|  | 6B | Logan Costa | Logan Evans Costa | 2 | 83′ · 1 pj · 1 tit | elegir una |
+| 7 | 7A | Foyth | Juan Foyth | 8 | 270′ · 3 pj · 3 tit | **pegar** |
+|  | 7B | Freeman | Alex Freeman | 3 | 134′ · 4 pj · 1 tit | descartar |
+| 8 | 8A | Kambwala | — | — | — | Sin jugador activo |
+|  | 8B | Rafa Marín | — | — | — | Sin jugador activo |
+| 9 | 9 | Renato Veiga | Renato Palma Veiga | 12 | 450′ · 5 pj · 5 tit · 1 a | **pegar** |
+| 10 | 10 | Sergi Cardona | Sergi Cardona | 23 | 90′ · 1 pj · 1 tit | **pegar** |
+| 11 | 11 | Pape Gueye | Pape Gueye | 18 | 386′ · 5 pj · 5 tit · 1 g | **pegar** |
+| 12 | 12 | Santi Comesaña | Santi Comesaña | 14 | 320′ · 5 pj · 4 tit | **pegar** |
+| 13 | 13 | Maciá | Carlos Maciá | 16 | 45′ · 2 pj | **pegar** |
+| 14 | 14 | Moleiro | Alberto Moleiro | 10 | 240′ · 5 pj · 3 tit · 1 a | **pegar** |
+| 15 | 15 | Buchanan | Tajon Buchanan | 17 | 209′ · 5 pj · 2 tit | **pegar** |
+| 16 | 16 | Oluwaseyi | Tani Oluwaseyi | 21 | 55′ · 4 pj | **pegar** |
+| 17 | 17 | Ayoze | Ayoze Pérez | 22 | 221′ · 5 pj · 3 tit · 1 a | **pegar** |
+| 18 | 18 | Pépé | Nicolas Pépé | 19 | 412′ · 5 pj · 5 tit · 2 g | **pegar** |
+| 19 | 19 | Mikautadze | Georges Mikautadze | 9 | 369′ · 5 pj · 4 tit · 1 g · 1 a | **pegar** |
+| 20 | 20 | Gerard Moreno | Gerard Moreno | 7 | 273′ · 5 pj · 3 tit · 2 g | **pegar** |
 
-### Últimos Fichajes de este equipo
+### Plantilla de LALIGA sin cromo
 
-_Este equipo no tiene ningún cromo de Últimos Fichajes._
-
-### Condicional: plantilla de LALIGA sin cromo
-
-| Dorsal | Jugador | Posición |
-| ---: | --- | --- |
-| 5 | A. Diatta | Centrocampista |
-| 11 | I. Akhomach | Delantero |
-| 13 | Ruben Gomez | Portero |
-| 20 | C. Romero | Defensa |
-| 24 | Saliba | Centrocampista |
-| 27 | Nizar | Centrocampista |
-| 30 | Cheikh | Centrocampista |
+| Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
+| ---: | --- | --- | --- | :---: |
+| 20 | C. Romero | Defensa | 360′ · 4 pj · 4 tit | **sí** |
+| 24 | Saliba | Centrocampista | 126′ · 2 pj · 1 tit | — |
+| 11 | I. Akhomach | Delantero | 51′ · 4 pj | — |
+| 5 | A. Diatta | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 30 | Cheikh | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 27 | Nizar | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 13 | Ruben Gomez | Portero | 0′ · no ha jugado | no ha jugado |
