@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body>
   <header class="topbar">
@@ -152,9 +152,10 @@ HTML_TEMPLATE = """<!doctype html>
   </dialog>
   <script>window.ALBUM_DATA = __ALBUM_DATA__;</script>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
+  <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=47"></script>
+  <script src="app.js?v=48"></script>
   <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>
@@ -336,6 +337,39 @@ def load_laliga_photos(path: Path | None) -> dict[str, dict[str, str]]:
         return {row["clave"]: row for row in csv.DictReader(source) if row.get("clave")}
 
 
+# El orden importa: app.js lee la lista por posición. Va como lista y no como
+# objeto porque repetir el nombre de cada campo 353 veces cuesta 33 KB de más
+# en un HTML que ya ronda el medio mega.
+STAT_FIELDS = ("minutos", "partidos", "goles", "asistencias", "partidos_equipo")
+
+
+def load_stats(path: Path | None) -> dict[str, list[int]]:
+    """Minutos y aportación de cada cromo emparejado con su ficha de LALIGA.
+
+    Va en una tabla aparte indexada por cromo porque sólo 353 de los 593
+    cromos son jugadores con estadísticas; meterla dentro de cada cromo
+    obligaría a escribir campos vacíos en los escudos, los entrenadores y las
+    secciones especiales."""
+    if not path or not path.exists():
+        return {}
+    stats: dict[str, list[int]] = {}
+    with path.open(encoding="utf-8-sig", newline="") as source:
+        for row in csv.DictReader(source):
+            sticker_id = row.get("cromo_id")
+            if not sticker_id:
+                continue
+            try:
+                values = [int(row[field] or 0) for field in STAT_FIELDS]
+            except (KeyError, ValueError):
+                continue
+            # Sin partidos del equipo no hay con qué comparar los minutos, así
+            # que ese cromo se queda sin ficha en lugar de mostrar un dato suelto.
+            if values[-1] <= 0:
+                continue
+            stats[sticker_id] = values
+    return stats
+
+
 def generic_photo(url: str) -> bool:
     """LALIGA sirve una silueta cuando todavía no tiene el retrato."""
     return not url or "/default/" in url or "default-player" in url
@@ -363,10 +397,17 @@ def generate(
     photo_mapping_path: Path | None = Path("fotos_transfermarkt.csv"),
     laliga_check_path: Path | None = Path("comprobacion_laliga.csv"),
     laliga_squads_path: Path | None = Path("laliga_plantillas.csv"),
+    stats_path: Path | None = Path("laliga_estadisticas.csv"),
 ) -> int:
     stickers = load_stickers(csv_path, image_mapping_path, laliga_check_path)
     photos = load_player_photos(photo_mapping_path)
     squads = load_laliga_photos(laliga_squads_path)
+    known = {sticker["id"] for sticker in stickers}
+    stats = {
+        sticker_id: values
+        for sticker_id, values in load_stats(stats_path).items()
+        if sticker_id in known
+    }
     crests_by_section = {
         sticker["seccion"]: sticker["imagen_url"]
         for sticker in stickers
@@ -423,11 +464,17 @@ def generate(
         ensure_ascii=False,
         separators=(",", ":"),
     ).replace("</", r"<\/")
+    serialized_stats = json.dumps(
+        stats,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("</", r"<\/")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         HTML_TEMPLATE
         .replace("__ALBUM_DATA__", serialized)
-        .replace("__ALBUM_PLACEHOLDERS__", serialized_themes),
+        .replace("__ALBUM_PLACEHOLDERS__", serialized_themes)
+        .replace("__ALBUM_STATS__", serialized_stats),
         encoding="utf-8",
     )
     return len(stickers)
@@ -467,9 +514,20 @@ def main() -> None:
         type=Path,
         default=Path("laliga_plantillas.csv"),
     )
+    parser.add_argument(
+        "--estadisticas",
+        type=Path,
+        default=Path("laliga_estadisticas.csv"),
+    )
     args = parser.parse_args()
     total = generate(
-        args.csv, args.salida, args.imagenes, args.fotos, args.laliga, args.plantillas
+        args.csv,
+        args.salida,
+        args.imagenes,
+        args.fotos,
+        args.laliga,
+        args.plantillas,
+        args.estadisticas,
     )
     print(f"Generado {args.salida} con {total} cromos.")
 

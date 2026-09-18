@@ -1220,6 +1220,26 @@ button {
   flex: 1;
 }
 
+.card-stats {
+  min-height: 0;
+  margin-top: -6px;
+}
+
+/* El color adelanta la respuesta a «¿merece la pena pegarlo?» sin tener que
+   leer los minutos: verde titular, ámbar rotación, gris apenas juega. */
+.card-stats[data-minutes="high"] strong {
+  color: var(--green);
+}
+
+.card-stats[data-minutes="medium"] strong {
+  color: var(--amber);
+}
+
+.card-stats[data-minutes="none"] strong,
+.card-stats[data-minutes="none"] small {
+  color: #8c2c26;
+}
+
 .copy-row {
   justify-content: space-between;
   gap: 10px;

@@ -31,6 +31,12 @@
   progreso ni como pendientes, y se resumen aparte.
 - Filtros por edición y un interruptor para ocultar los cromos que no vas a
   pegar.
+- Minutos de juego en la ficha de cada cromo: minutos, partidos y goles o
+  asistencias, tomados de las estadísticas oficiales de LALIGA. El número va en
+  verde para un titular, ámbar para un jugador de rotación y rojo cuando no ha
+  disputado un solo minuto, que es la señal más clara para decidir entre la
+  variante A y la B. Viajan en una tabla aparte indexada por cromo, así que sólo
+  añaden 12 KB al álbum.
 - Interruptor `Fichas`/`Lista`. La lista cambia las fotos por una fila por cromo
   con el escudo del equipo, el número y el nombre, así que una plantilla entera
   cabe de un vistazo cuando vas a hacer cambios. El número lleva el mismo código
@@ -74,8 +80,12 @@ Regenerar los datos y el álbum:
 .\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
 .\.venv\Scripts\python.exe generar_fotos_transfermarkt.py
+.\.venv\Scripts\python.exe generar_estadisticas_laliga.py
 .\.venv\Scripts\python.exe generar_album.py
 ```
+
+`generar_album.py` necesita `laliga_estadisticas.csv` para los minutos de cada
+ficha; si el archivo no está, el álbum se genera igual pero sin esa fila.
 
 `extraer_checklist.py` lee `Checklist_LALIGA_2026-27-2aED.pdf` y reutiliza los
 identificadores que ya existen en `coleccion_panini.csv`, de forma que los

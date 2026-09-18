@@ -6,6 +6,7 @@
   const GUEST_SCOPE = "guest";
   const validDensities = new Set(["cards", "list"]);
   const data = window.ALBUM_DATA;
+  const statsTable = window.ALBUM_STATS || {};
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
   const specialSectionIcons = {
     "ADN / LALIGA PRIME": "ADN",
@@ -695,6 +696,34 @@
     };
   }
 
+  function statsSummary(sticker) {
+    const row = statsTable[sticker.id];
+    if (!row) return null;
+    const [minutes, games, goals, assists, teamGames] = row;
+    // El reparto sobre los minutos que ha jugado el equipo es lo que separa a
+    // un titular de alguien que sale al descuento.
+    const share = Math.round((minutes / (teamGames * 90)) * 100);
+    if (!minutes) {
+      return {
+        html: "<strong>0′</strong><small>no ha jugado ni un minuto</small>",
+        title: `Sin minutos en las ${teamGames} jornadas que lleva su equipo`,
+        level: "none",
+      };
+    }
+    const contribution = [
+      goals ? `${goals} ${goals === 1 ? "gol" : "goles"}` : "",
+      assists ? `${assists} ${assists === 1 ? "asist." : "asist."}` : "",
+    ].filter(Boolean).join(" · ");
+    const detail = [`${games} ${games === 1 ? "partido" : "partidos"}`, contribution]
+      .filter(Boolean)
+      .join(" · ");
+    return {
+      html: `<strong>${minutes}′</strong><small>${escapeHtml(detail)}</small>`,
+      title: `${share}% de los minutos que ha jugado su equipo (${teamGames} jornadas)`,
+      level: share >= 60 ? "high" : share >= 25 ? "medium" : "low",
+    };
+  }
+
   const crestCache = new Map();
 
   function crestFor(section) {
@@ -754,6 +783,7 @@
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
     const laliga = laligaSummary(sticker);
+    const stats = statsSummary(sticker);
     const name = sticker.nombre || "Pendiente de publicación";
     const dontStick = shouldNotStick(sticker, progress);
     const action = displayAction(sticker);
@@ -815,6 +845,11 @@
           <span>LALIGA:</span>
           <span>${laliga.html}</span>
         </div>
+        ${stats ? `
+        <div class="card-meta card-stats" data-minutes="${stats.level}" title="${escapeHtml(stats.title)}">
+          <span>Juego:</span>
+          <span>${stats.html}</span>
+        </div>` : ""}
         <div class="card-spacer"></div>
         <div class="copy-row ${progress.copies > 1 ? "copy-row-duplicate" : progress.copies === 1 ? "copy-row-owned" : ""}">
           <span class="copy-label">${duplicates ? `<span class="duplicate-pill">+${duplicates} repe</span>` : "Copias"}</span>

@@ -7,7 +7,7 @@ import unittest
 from collections import Counter
 from pathlib import Path
 
-from generar_album import generate
+from generar_album import STAT_FIELDS, generate, load_stats
 
 
 class AlbumGenerationTests(unittest.TestCase):
@@ -142,8 +142,8 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="density-switch"', html)
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
-        self.assertIn('src="app.js?v=47"', html)
-        self.assertIn('href="styles.css?v=28"', html)
+        self.assertIn('src="app.js?v=48"', html)
+        self.assertIn('href="styles.css?v=29"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
@@ -196,6 +196,95 @@ class CompactListViewTests(unittest.TestCase):
                 styles,
                 f"La fila no distingue el estado {status}",
             )
+
+
+class StatsTests(unittest.TestCase):
+    """Los minutos deciden qué variante pegar, así que un dato mal cargado
+    lleva a pegar el cromo equivocado."""
+
+    def load(self, body: str) -> dict[str, list[int]]:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "stats.csv"
+            header = (
+                "cromo_id,minutos,partidos,goles,asistencias,partidos_equipo\n"
+            )
+            path.write_text(header + body, encoding="utf-8")
+            return load_stats(path)
+
+    def test_reads_the_fields_in_the_order_the_album_expects(self) -> None:
+        stats = self.load("REAL-BETIS-05B,379,5,1,2,6\n")
+
+        self.assertEqual(stats, {"REAL-BETIS-05B": [379, 5, 1, 2, 6]})
+        self.assertEqual(
+            STAT_FIELDS,
+            ("minutos", "partidos", "goles", "asistencias", "partidos_equipo"),
+        )
+
+    def test_keeps_a_player_who_has_not_played(self) -> None:
+        # Cero minutos es un hecho comprobado y la señal más útil del álbum:
+        # descartarlo por caer en un `if` haría desaparecer justo ese aviso.
+        stats = self.load("REAL-BETIS-05A,0,0,0,0,6\n")
+
+        self.assertEqual(stats["REAL-BETIS-05A"], [0, 0, 0, 0, 6])
+
+    def test_skips_rows_without_a_sticker(self) -> None:
+        stats = self.load(",450,5,0,0,5\n")
+
+        self.assertEqual(stats, {})
+
+    def test_skips_rows_without_games_to_compare_against(self) -> None:
+        # Sin partidos del equipo no se puede calcular el reparto de minutos,
+        # y una división por cero pintaría un porcentaje inventado.
+        stats = self.load("SEVILLA-07,120,2,0,0,0\n")
+
+        self.assertEqual(stats, {})
+
+    def test_missing_file_is_not_an_error(self) -> None:
+        self.assertEqual(load_stats(Path("no-existe.csv")), {})
+        self.assertEqual(load_stats(None), {})
+
+
+class StatsInAlbumTests(unittest.TestCase):
+    def album(self) -> tuple[str, list[dict], dict[str, list[int]]]:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(
+            re.search(r"window\.ALBUM_DATA = (\[.*?\]);", html, flags=re.DOTALL).group(1)
+        )
+        stats = json.loads(
+            re.search(r"window\.ALBUM_STATS = (\{.*?\});", html, flags=re.DOTALL).group(1)
+        )
+        return html, stickers, stats
+
+    def test_the_table_only_holds_stickers_that_exist(self) -> None:
+        # Va indexada por cromo, así que una clave suelta sería una ficha que
+        # nunca se llega a pintar.
+        _, stickers, stats = self.album()
+        known = {sticker["id"] for sticker in stickers}
+
+        self.assertTrue(stats, "El álbum salió sin estadísticas")
+        self.assertEqual(set(stats) - known, set())
+
+    def test_every_entry_carries_the_five_values(self) -> None:
+        _, _, stats = self.album()
+
+        lengths = {len(values) for values in stats.values()}
+        self.assertEqual(lengths, {len(STAT_FIELDS)})
+
+    def test_the_table_stays_out_of_the_stickers(self) -> None:
+        # Repetir los campos dentro de cada cromo costaba 60 KB de más porque
+        # obligaba a escribirlos vacíos en escudos y entrenadores.
+        _, stickers, _ = self.album()
+
+        self.assertNotIn("minutos", stickers[0])
+
+    def test_the_album_reads_the_table(self) -> None:
+        source = Path("album/app.js").read_text(encoding="utf-8")
+
+        self.assertIn("window.ALBUM_STATS", source)
+        self.assertIn("function statsSummary(sticker)", source)
 
 
 class FiguritasSectionTests(unittest.TestCase):
