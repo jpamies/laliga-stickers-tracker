@@ -2,7 +2,9 @@
   "use strict";
 
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
+  const DENSITY_KEY = "panini-laliga-2026-27-density";
   const GUEST_SCOPE = "guest";
+  const validDensities = new Set(["cards", "list"]);
   const data = window.ALBUM_DATA;
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
   const specialSectionIcons = {
@@ -114,6 +116,7 @@
     readOnly: false,
     privateStrategy: false,
     hideDontStick: false,
+    density: loadDensity(),
   };
   state.progress = loadProgress();
   let pendingFiguritasImport = null;
@@ -137,6 +140,7 @@
     summarySkipped: document.querySelector("#summary-skipped"),
     summarySkippedWrap: document.querySelector("#summary-skipped-wrap"),
     hideDontStick: document.querySelector("#hide-dont-stick"),
+    densitySwitch: document.querySelector("#density-switch"),
     progressText: document.querySelector("#progress-text"),
     progressBar: document.querySelector("#progress-bar"),
     resultsLabel: document.querySelector("#results-label"),
@@ -209,6 +213,20 @@
 
   function saveProgress() {
     localStorage.setItem(storageKey(), JSON.stringify(state.progress));
+  }
+
+  function loadDensity() {
+    try {
+      const stored = localStorage.getItem(DENSITY_KEY);
+      return validDensities.has(stored) ? stored : "cards";
+    } catch (error) {
+      console.error("No se pudo leer la densidad guardada.", error);
+      return "cards";
+    }
+  }
+
+  function saveDensity() {
+    localStorage.setItem(DENSITY_KEY, state.density);
   }
 
   function progressFor(id) {
@@ -677,6 +695,61 @@
     };
   }
 
+  const crestCache = new Map();
+
+  function crestFor(section) {
+    if (!crestCache.has(section)) {
+      const crest = data.find((sticker) => (
+        sticker.seccion === section
+        && sticker.digital_group === "ESCUDO"
+        && sticker.imagen_url
+      ));
+      crestCache.set(section, crest ? crest.imagen_url : "");
+    }
+    return crestCache.get(section);
+  }
+
+  function rowStatus(sticker, progress) {
+    if (shouldNotStick(sticker, progress)) return "skipped";
+    if (progress.copies > 1) return "duplicate";
+    if (progress.state === "owned") return "owned";
+    return "missing";
+  }
+
+  function stickerRow(sticker) {
+    const progress = progressFor(sticker.id);
+    const duplicates = Math.max(0, progress.copies - 1);
+    const name = sticker.nombre || "Pendiente";
+    const status = rowStatus(sticker, progress);
+    const crest = crestFor(sticker.seccion);
+    const icon = specialSectionIcons[sticker.seccion] || sticker.seccion.charAt(0);
+    const visual = crest
+      ? `<img src="${escapeHtml(crest)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
+      : `<span aria-hidden="true">${escapeHtml(icon)}</span>`;
+    // El título carga el nombre completo porque la fila lo recorta con puntos
+    // suspensivos: en un listado de cambios el ancho manda sobre el detalle.
+    const title = `${sticker.numero} · ${name}${duplicates ? ` · +${duplicates} repe` : ""}`;
+    const toggleLabel = progress.state === "missing"
+      ? `Marcar ${name} como conseguido`
+      : `Quitar ${name} de la colección`;
+
+    return `
+      <article class="sticker-card sticker-row" data-id="${escapeHtml(sticker.id)}" data-personal-state="${progress.state}" data-row-status="${status}">
+        <button class="row-main" type="button" data-row-toggle title="${escapeHtml(title)}" aria-label="${escapeHtml(toggleLabel)}">
+          <span class="row-crest">${visual}</span>
+          <span class="row-number">${escapeHtml(sticker.numero)}</span>
+          <span class="row-name">${escapeHtml(name)}</span>
+          ${duplicates ? `<span class="row-duplicate">+${duplicates}</span>` : ""}
+        </button>
+        <div class="row-copies">
+          <button class="icon-button" type="button" data-copy="-1" aria-label="Quitar una copia de ${escapeHtml(name)}">−</button>
+          <span class="copy-count">${progress.copies}</span>
+          <button class="icon-button" type="button" data-copy="1" aria-label="Añadir una copia de ${escapeHtml(name)}">+</button>
+        </div>
+      </article>
+    `;
+  }
+
   function stickerCard(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
@@ -832,7 +905,7 @@
             ${totals.skipped ? `<span class="section-tally tally-skipped" title="No los pego">${totals.skipped}</span>` : ""}
           </div>
         </div>
-        <div class="sticker-grid">${stickers.map(stickerCard).join("")}</div>
+        <div class="${state.density === "list" ? "sticker-list" : "sticker-grid"}">${stickers.map(state.density === "list" ? stickerRow : stickerCard).join("")}</div>
       </section>
     `;
     }).join("");
@@ -887,14 +960,10 @@
   }
 
   function sectionTile(section) {
-    const crest = data.find((sticker) => (
-      sticker.seccion === section
-      && sticker.digital_group === "ESCUDO"
-      && sticker.imagen_url
-    ));
+    const crest = crestFor(section);
     const specialIcon = specialSectionIcons[section];
     const visual = crest
-      ? `<img src="${escapeHtml(crest.imagen_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
+      ? `<img src="${escapeHtml(crest)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
       : `<span class="section-menu-placeholder" aria-hidden="true">${escapeHtml(specialIcon || section.charAt(0))}</span>`;
     return `
       <button
@@ -1080,6 +1149,23 @@
     render();
   });
 
+  elements.densitySwitch.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-density]");
+    if (!button || button.dataset.density === state.density) return;
+    state.density = button.dataset.density;
+    saveDensity();
+    updateDensitySwitch();
+    render();
+  });
+
+  function updateDensitySwitch() {
+    elements.densitySwitch.querySelectorAll("[data-density]").forEach((button) => {
+      const active = button.dataset.density === state.density;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
   elements.navTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       state.preview = null;
@@ -1107,8 +1193,14 @@
       setOwnership(id, stateButton.dataset.state);
       return;
     }
-    const photoToggle = event.target.closest("[data-photo-toggle]");
+    const photoToggle = event.target.closest("[data-photo-toggle], [data-row-toggle]");
     if (photoToggle) {
+      const nextState = progressFor(id).state === "missing" ? "owned" : "missing";
+      setOwnership(id, nextState);
+      return;
+    }
+    const rowToggle = event.target.closest("[data-row-toggle]");
+    if (rowToggle) {
       const nextState = progressFor(id).state === "missing" ? "owned" : "missing";
       setOwnership(id, nextState);
       return;
@@ -1309,6 +1401,7 @@
   };
 
   initializeSections();
+  updateDensitySwitch();
   window.history.replaceState({
     ...(window.history.state || {}),
     paniniSectionView: false,

@@ -31,6 +31,13 @@
   progreso ni como pendientes, y se resumen aparte.
 - Filtros por edición y un interruptor para ocultar los cromos que no vas a
   pegar.
+- Interruptor `Fichas`/`Lista`. La lista cambia las fotos por una fila por cromo
+  con el escudo del equipo, el número y el nombre, así que una plantilla entera
+  cabe de un vistazo cuando vas a hacer cambios. El número lleva el mismo código
+  de color que los contadores de sección y la fila sigue permitiendo marcar el
+  cromo y contar copias. Se combina con el resto: `Lista` más `Sin conseguir` da
+  lo que buscas, y `Lista` dentro de `Repetidos` lo que ofreces. La elección se
+  recuerda entre visitas y la lista también sale bien impresa.
 - Progreso local sin conexión y sincronización opcional por cuenta. El progreso
   de invitado y el de cada cuenta se guardan por separado, así que iniciar
   sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso

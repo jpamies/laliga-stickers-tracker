@@ -628,6 +628,35 @@ button {
   cursor: pointer;
 }
 
+.density-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 99px;
+  background: #f0f1ec;
+}
+
+.density-button {
+  padding: 6px 13px;
+  border: 0;
+  border-radius: 99px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 760;
+  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.density-button:hover {
+  color: var(--green-dark);
+}
+
+.density-button.active {
+  color: white;
+  background: var(--green-dark);
+}
+
 .button {
   min-height: 40px;
   padding: 0 13px;
@@ -725,6 +754,146 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 13px;
+}
+
+.sticker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: 5px;
+}
+
+.sticker-card.sticker-row {
+  display: flex;
+  min-height: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 0 5px 0 0;
+  border-radius: 9px;
+  box-shadow: none;
+}
+
+.sticker-card.sticker-row::before {
+  display: none;
+}
+
+.sticker-card.sticker-row:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(28, 43, 34, 0.09);
+}
+
+.row-main {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 2px 5px 7px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.row-crest {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  flex: none;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 850;
+}
+
+.row-crest img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.row-number {
+  min-width: 2.5em;
+  flex: none;
+  padding: 2px 5px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 860;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.row-name {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.row-duplicate {
+  flex: none;
+  padding: 1px 6px;
+  border-radius: 99px;
+  color: var(--amber);
+  background: var(--amber-soft);
+  font-size: 0.66rem;
+  font-weight: 860;
+}
+
+.row-copies {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 1px;
+}
+
+.row-copies .icon-button {
+  width: 23px;
+  height: 23px;
+  border-radius: 7px;
+  box-shadow: none;
+  background: #f0f1ec;
+  font-size: 0.85rem;
+}
+
+.row-copies .copy-count {
+  min-width: 16px;
+  font-size: 0.78rem;
+}
+
+/* El número repite el código de color de los contadores de sección: rojo lo
+   que falta, verde lo que tienes, ámbar los repetidos y gris lo que no pegas. */
+.sticker-card.sticker-row[data-row-status="missing"] .row-number {
+  color: #8c2c26;
+  background: var(--red-soft);
+}
+
+.sticker-card.sticker-row[data-row-status="owned"] .row-number {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.sticker-card.sticker-row[data-row-status="duplicate"] .row-number {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.sticker-card.sticker-row[data-row-status="skipped"] {
+  opacity: 0.62;
+}
+
+.sticker-card.sticker-row[data-row-status="skipped"] .row-number {
+  color: #5a625d;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.sticker-card.sticker-row[data-row-status="skipped"] .row-name {
+  text-decoration: line-through;
 }
 
 .sticker-card {
@@ -2282,6 +2451,7 @@ button {
   .toolbar,
   .state-controls,
   .copy-row,
+  .row-copies,
   .toast {
     display: none !important;
   }
@@ -2308,5 +2478,13 @@ button {
 
   .sticker-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sticker-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sticker-card.sticker-row {
+    break-inside: avoid;
   }
 }

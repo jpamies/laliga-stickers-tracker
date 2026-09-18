@@ -139,12 +139,63 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-filter="second-edition"', html)
         self.assertIn('id="hide-dont-stick"', html)
         self.assertIn('id="summary-skipped"', html)
-        self.assertIn('src="app.js?v=46"', html)
-        self.assertIn('href="styles.css?v=27"', html)
+        self.assertIn('id="density-switch"', html)
+        self.assertIn('data-density="cards"', html)
+        self.assertIn('data-density="list"', html)
+        self.assertIn('src="app.js?v=47"', html)
+        self.assertIn('href="styles.css?v=28"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
         self.assertIn('data-view="friends"', html)
+
+
+class CompactListViewTests(unittest.TestCase):
+    """La vista de lista comprime cada cromo en una fila para preparar
+    cambios; se apoya en el álbum ya existente, así que es fácil romperla sin
+    enterarse."""
+
+    def app(self) -> str:
+        return Path("album/app.js").read_text(encoding="utf-8")
+
+    def styles(self) -> str:
+        return Path("album/styles.css").read_text(encoding="utf-8")
+
+    def test_the_row_keeps_the_class_the_click_handler_looks_for(self) -> None:
+        # La delegación de clics busca `.sticker-card`; si la fila deja de
+        # llevar esa clase, marcarla o sumar copias deja de responder.
+        source = self.app()
+        self.assertIn('class="sticker-card sticker-row"', source)
+        self.assertIn('const card = event.target.closest(".sticker-card");', source)
+
+    def test_the_row_rules_outrank_the_card_rules(self) -> None:
+        # `.sticker-card` se declara después en la hoja, así que una regla
+        # `.sticker-row` suelta pierde el desempate y la fila hereda los 272px
+        # de alto de la ficha.
+        loose = re.findall(r"(?<!\.sticker-card)\.sticker-row", self.styles())
+        self.assertEqual(loose, [])
+
+    def test_the_row_resets_the_card_layout(self) -> None:
+        block = re.search(
+            r"\.sticker-card\.sticker-row \{(.*?)\}", self.styles(), flags=re.DOTALL
+        )
+        self.assertIsNotNone(block, "Falta la regla base de la fila compacta")
+        self.assertIn("min-height: 0", block.group(1))
+        self.assertIn("flex-direction: row", block.group(1))
+
+    def test_the_density_choice_is_remembered(self) -> None:
+        source = self.app()
+        self.assertIn("const DENSITY_KEY =", source)
+        self.assertIn("localStorage.setItem(DENSITY_KEY", source)
+
+    def test_every_state_colours_the_number(self) -> None:
+        styles = self.styles()
+        for status in ("missing", "owned", "duplicate", "skipped"):
+            self.assertIn(
+                f'.sticker-card.sticker-row[data-row-status="{status}"]',
+                styles,
+                f"La fila no distingue el estado {status}",
+            )
 
 
 class FiguritasSectionTests(unittest.TestCase):

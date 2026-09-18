@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=27">
+  <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body>
   <header class="topbar">
@@ -108,6 +108,10 @@ HTML_TEMPLATE = """<!doctype html>
           <input type="checkbox" id="hide-dont-stick">
           <span>Ocultar los que no pego</span>
         </label>
+        <div class="density-switch" id="density-switch" role="group" aria-label="Densidad de la vista">
+          <button class="density-button active" type="button" data-density="cards" aria-pressed="true">Fichas</button>
+          <button class="density-button" type="button" data-density="list" aria-pressed="false">Lista</button>
+        </div>
         <span id="results-label" class="section-count"></span>
       </div>
     </section>
@@ -150,7 +154,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_PLACEHOLDERS = __ALBUM_PLACEHOLDERS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=46"></script>
+  <script src="app.js?v=47"></script>
   <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>
