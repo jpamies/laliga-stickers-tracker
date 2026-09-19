@@ -38,7 +38,7 @@ class SquadPageTests(unittest.TestCase):
             all(player["seccion_album"] in themes for player in players)
         )
         self.assertIn('src="plantillas.js?v=3"', html)
-        self.assertIn('href="styles.css?v=31"', html)
+        self.assertIn('href="styles.css?v=32"', html)
         self.assertIn('href="index.html"', html)
         self.assertIn('name="robots" content="noindex"', html)
 

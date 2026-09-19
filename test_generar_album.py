@@ -143,8 +143,8 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=49"', html)
-        self.assertIn('href="styles.css?v=31"', html)
+        self.assertIn('src="app.js?v=50"', html)
+        self.assertIn('href="styles.css?v=32"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
@@ -346,18 +346,51 @@ class TradeViewTests(unittest.TestCase):
         self.assertIn('<div class="sticker-trade">', source)
 
     def test_removing_a_copy_has_a_single_implementation(self) -> None:
-        # La chapa y los botones −/+ comparten la misma función para que el
-        # aviso al borrar la última copia no se quede sólo en un sitio.
+        # El globo y los botones −/+ de las fichas comparten la misma función
+        # para que el aviso al borrar la última copia no se quede sólo en un
+        # sitio.
         source = self.app()
 
         self.assertIn("function changeCopies(id, delta)", source)
         self.assertEqual(source.count("removeOwnedSticker(id);"), 2)
 
-    def test_the_secondary_gesture_decrements(self) -> None:
+    def test_the_chip_only_opens_the_popover(self) -> None:
+        # Tocar la chapa no puede cambiar el álbum: es lo único que evita que
+        # un clic que se escapa sume una copia sin querer, y en el móvil es
+        # además la única forma de leer el nombre.
         source = self.app()
 
-        self.assertIn('addEventListener("contextmenu"', source)
-        self.assertIn("changeCopies(chip.dataset.id, -1)", source)
+        self.assertIn("state.openChip = state.openChip === chip.dataset.id", source)
+        self.assertNotIn("changeCopies(chip.dataset.id", source)
+
+    def test_the_popover_shows_the_name(self) -> None:
+        source = self.app()
+
+        self.assertIn("function chipPopover(sticker)", source)
+        self.assertIn('class="popover-copy"', source)
+
+    def test_the_popover_closes_from_outside_the_collection(self) -> None:
+        # El buscador y la cabecera quedan fuera de #collection, así que el
+        # cierre tiene que escuchar en el documento.
+        source = self.app()
+
+        self.assertIn(
+            'document.addEventListener("click"', source
+        )
+        self.assertIn('event.target.closest("[data-trade-chip], #chip-popover")', source)
+
+    def test_the_popover_closes_with_escape(self) -> None:
+        source = self.app()
+
+        self.assertIn('event.key !== "Escape" || !state.openChip', source)
+
+    def test_an_invisible_sticker_cannot_keep_the_popover_open(self) -> None:
+        # Sumar una copia con el filtro «Sin conseguir» saca el cromo de la
+        # lista, y el globo no puede quedarse anclado a una chapa que ya no
+        # se pinta.
+        source = self.app()
+
+        self.assertIn("if (!openSticker) state.openChip = null;", source)
 
     def test_the_density_switch_offers_the_three_views(self) -> None:
         source = self.app()

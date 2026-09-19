@@ -118,6 +118,7 @@
     privateStrategy: false,
     hideDontStick: false,
     density: loadDensity(),
+    openChip: null,
   };
   state.progress = loadProgress();
   let pendingFiguritasImport = null;
@@ -788,6 +789,12 @@
       : sticker.nombre || sticker.numero;
   }
 
+  function copiesLabel(copies) {
+    if (copies === 0) return "No lo tienes";
+    if (copies === 1) return "Lo tienes";
+    return `${copies} copias`;
+  }
+
   function stickerChip(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
@@ -799,14 +806,10 @@
       ? `<img src="${escapeHtml(crest)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
       : `<span aria-hidden="true">${escapeHtml(icon)}</span>`;
     const label = chipLabel(sticker);
-    // Sin nombre visible el escudo y el número tienen que bastar, así que el
-    // resto del cromo vive en el tooltip.
-    const copies = progress.copies === 0
-      ? "no lo tienes"
-      : progress.copies === 1
-      ? "lo tienes"
-      : `${progress.copies} copias`;
-    const title = `${sticker.seccion} · ${sticker.numero} · ${name} · ${copies}`;
+    const open = state.openChip === sticker.id;
+    // En el móvil no hay hover que enseñe el tooltip, así que el nombre sólo
+    // se lee al abrir el globo: la chapa por sí sola no cambia nada.
+    const title = `${sticker.seccion} · ${sticker.numero} · ${name} · ${copiesLabel(progress.copies).toLowerCase()}`;
 
     return `
       <button
@@ -815,14 +818,58 @@
         data-trade-chip
         data-id="${escapeHtml(sticker.id)}"
         data-row-status="${status}"
+        ${open ? "data-open" : ""}
         title="${escapeHtml(title)}"
-        aria-label="${escapeHtml(`${title}. Añadir una copia`)}"
+        aria-haspopup="dialog"
+        aria-expanded="${open}"
+        aria-label="${escapeHtml(`${title}. Abrir para cambiar copias`)}"
       >
         <span class="chip-crest">${visual}</span>
         <span class="chip-number ${label === sticker.numero ? "" : "chip-named"}">${escapeHtml(label)}</span>
         ${duplicates ? `<span class="chip-duplicate">+${duplicates}</span>` : ""}
       </button>
     `;
+  }
+
+  function chipPopover(sticker) {
+    const progress = progressFor(sticker.id);
+    const name = sticker.nombre || "Pendiente de publicación";
+    const crest = crestFor(sticker.seccion);
+    const icon = specialSectionIcons[sticker.seccion] || sticker.seccion.charAt(0);
+    const visual = crest
+      ? `<img src="${escapeHtml(crest)}" alt="" referrerpolicy="no-referrer">`
+      : `<span aria-hidden="true">${escapeHtml(icon)}</span>`;
+
+    return `
+      <div class="chip-popover" id="chip-popover" role="dialog" aria-label="${escapeHtml(`${sticker.numero} ${name}`)}">
+        <div class="popover-head">
+          <span class="chip-crest">${visual}</span>
+          <div class="popover-copy">
+            <strong>${escapeHtml(name)}</strong>
+            <small>${escapeHtml(`${sticker.seccion} · ${sticker.numero}`)}</small>
+          </div>
+          <button class="popover-close" type="button" data-popover-close aria-label="Cerrar">×</button>
+        </div>
+        <div class="popover-actions">
+          <button class="icon-button" type="button" data-popover-copy="-1" ${progress.copies === 0 ? "disabled" : ""} aria-label="Quitar una copia de ${escapeHtml(name)}">−</button>
+          <span class="popover-copies">${escapeHtml(copiesLabel(progress.copies))}</span>
+          <button class="icon-button" type="button" data-popover-copy="1" aria-label="Añadir una copia de ${escapeHtml(name)}">+</button>
+        </div>
+      </div>
+    `;
+  }
+
+  // El globo se coloca después de pintar porque necesita la posición real de
+  // la chapa, y se pega al borde cuando se saldría por la derecha.
+  function positionChipPopover() {
+    const popover = elements.collection.querySelector("#chip-popover");
+    if (!popover) return;
+    const chip = elements.collection.querySelector("[data-trade-chip][data-open]");
+    if (!chip) return;
+    const container = popover.parentElement;
+    const maxLeft = container.clientWidth - popover.offsetWidth;
+    popover.style.left = `${Math.max(0, Math.min(chip.offsetLeft, maxLeft))}px`;
+    popover.style.top = `${chip.offsetTop + chip.offsetHeight + 5}px`;
   }
 
   function stickerCard(sticker) {
@@ -956,6 +1003,14 @@
     }
 
     const visible = visibleStickers();
+    // Un filtro puede dejar fuera el cromo abierto —sumar una copia lo saca de
+    // «Sin conseguir»—, y el globo no puede quedarse anclado a una chapa que
+    // ya no existe.
+    const openSticker = state.density === "trade" && state.openChip
+      ? visible.find((sticker) => sticker.id === state.openChip)
+      : null;
+    if (!openSticker) state.openChip = null;
+
     const grouped = new Map();
     for (const sticker of visible) {
       if (!grouped.has(sticker.seccion)) {
@@ -976,7 +1031,7 @@
       // El escudo de cada chapa ya dice de qué sección es, así que las
       // cabeceras sólo meterían saltos en una lista pensada para recorrerse
       // de un tirón.
-      ? `<div class="sticker-trade">${visible.map(stickerChip).join("")}</div>`
+      ? `<div class="sticker-trade">${visible.map(stickerChip).join("")}${openSticker ? chipPopover(openSticker) : ""}</div>`
       : [...grouped.entries()].map(([section, stickers]) => {
       const totals = sectionSummary(stickers);
       return `
@@ -1008,6 +1063,7 @@
     }
 
     elements.resultsLabel.textContent = `${visible.length} de ${data.length} cromos`;
+    positionChipPopover();
     updateSummary();
   }
 
@@ -1286,9 +1342,22 @@
       return;
     }
     if (state.readOnly || state.preview) return;
+    const popoverCopy = event.target.closest("[data-popover-copy]");
+    if (popoverCopy) {
+      changeCopies(state.openChip, Number(popoverCopy.dataset.popoverCopy));
+      return;
+    }
+    if (event.target.closest("[data-popover-close]")) {
+      state.openChip = null;
+      render();
+      return;
+    }
     const chip = event.target.closest("[data-trade-chip]");
     if (chip) {
-      changeCopies(chip.dataset.id, 1);
+      // La chapa sólo abre el globo: así el nombre se lee antes de tocar nada
+      // y un clic que se escapa no cambia el álbum.
+      state.openChip = state.openChip === chip.dataset.id ? null : chip.dataset.id;
+      render();
       return;
     }
     const card = event.target.closest(".sticker-card");
@@ -1318,15 +1387,22 @@
     }
   });
 
-  // En la chapa de intercambio no caben los botones de copias, así que restar
-  // se hace con el gesto secundario. El clic derecho del ratón y la pulsación
-  // larga del móvil llegan los dos como `contextmenu`.
-  elements.collection.addEventListener("contextmenu", (event) => {
-    const chip = event.target.closest("[data-trade-chip]");
-    if (!chip) return;
-    event.preventDefault();
-    if (state.readOnly || state.preview) return;
-    changeCopies(chip.dataset.id, -1);
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !state.openChip) return;
+    state.openChip = null;
+    render();
+  });
+
+  // Cerrar al tocar fuera va en el documento y no en la colección, porque el
+  // buscador y la cabecera quedan fuera de ella. Cuando el clic viene de la
+  // chapa o del propio globo ya lo ha atendido el manejador de la colección,
+  // que ha repintado: el nodo original queda suelto, pero `closest` sigue
+  // encontrando a sus padres y sirve para reconocerlo.
+  document.addEventListener("click", (event) => {
+    if (!state.openChip) return;
+    if (event.target.closest("[data-trade-chip], #chip-popover")) return;
+    state.openChip = null;
+    render();
   });
 
   elements.exportButton.addEventListener("click", () => {
