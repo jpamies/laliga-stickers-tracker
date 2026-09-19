@@ -45,12 +45,13 @@
   más `Sin conseguir` da lo que buscas, y `Lista` dentro de `Repetidos` lo que
   ofreces. La elección se recuerda entre visitas y la lista también sale bien
   impresa.
-- El modo `Intercambio` aprieta todavía más: escudo y número, sin cabeceras de
-  sección porque el escudo ya dice de qué equipo es. Los 593 cromos caben en
-  unas veinticinco filas. Cada clic suma una copia y el clic derecho, o la
-  pulsación larga en el móvil, resta una; el nombre completo está en el
-  tooltip. Los Extra Sticker, que no llevan número, se muestran por el nombre
-  del jugador.
+- El modo `Intercambio` aprieta todavía más: escudo y número en una chapa de
+  22 píxeles de alto, sin cabeceras de sección porque el escudo ya dice de qué
+  equipo es. Los 593 cromos caben en una sola pantalla. Cada clic suma una
+  copia y el clic derecho, o la pulsación larga en el móvil, resta una; el
+  nombre completo está en el tooltip. En el móvil las chapas crecen hasta los
+  40 píxeles para que el dedo no se equivoque de cromo. Los Extra Sticker, que
+  no llevan número, se muestran por el nombre del jugador.
 - Progreso local sin conexión y sincronización opcional por cuenta. El progreso
   de invitado y el de cada cuenta se guardan por separado, así que iniciar
   sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso

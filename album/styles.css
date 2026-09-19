@@ -765,16 +765,16 @@ button {
 .sticker-trade {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 3px;
 }
 
 .trade-chip {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 8px 4px 5px;
+  gap: 4px;
+  padding: 2px 5px 2px 3px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--card);
   cursor: pointer;
   transition: 140ms ease;
@@ -787,12 +787,12 @@ button {
 
 .chip-crest {
   display: grid;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   flex: none;
   place-items: center;
   color: var(--muted);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 850;
 }
 
@@ -803,8 +803,8 @@ button {
 }
 
 .chip-number {
-  min-width: 1.9em;
-  font-size: 0.8rem;
+  min-width: 1.75em;
+  font-size: 0.73rem;
   font-weight: 870;
   font-variant-numeric: tabular-nums;
   text-align: center;
@@ -812,18 +812,18 @@ button {
 
 .chip-named {
   overflow: hidden;
-  max-width: 8.5em;
-  font-size: 0.74rem;
+  max-width: 7.5em;
+  font-size: 0.67rem;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .chip-duplicate {
-  padding: 0 4px;
+  padding: 0 3px;
   border-radius: 99px;
   color: var(--amber);
   background: var(--amber-soft);
-  font-size: 0.64rem;
+  font-size: 0.58rem;
   font-weight: 870;
 }
 
