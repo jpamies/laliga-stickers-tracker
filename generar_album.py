@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
   <header class="topbar">
@@ -111,6 +111,7 @@ HTML_TEMPLATE = """<!doctype html>
         <div class="density-switch" id="density-switch" role="group" aria-label="Densidad de la vista">
           <button class="density-button active" type="button" data-density="cards" aria-pressed="true">Fichas</button>
           <button class="density-button" type="button" data-density="list" aria-pressed="false">Lista</button>
+          <button class="density-button" type="button" data-density="trade" aria-pressed="false">Intercambio</button>
         </div>
         <span id="results-label" class="section-count"></span>
       </div>
@@ -155,7 +156,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=48"></script>
+  <script src="app.js?v=49"></script>
   <script src="cloud-sync.js?v=15"></script>
   <script src="social.js?v=16"></script>
 </body>

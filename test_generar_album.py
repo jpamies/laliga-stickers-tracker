@@ -142,8 +142,9 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="density-switch"', html)
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
-        self.assertIn('src="app.js?v=48"', html)
-        self.assertIn('href="styles.css?v=29"', html)
+        self.assertIn('data-density="trade"', html)
+        self.assertIn('src="app.js?v=49"', html)
+        self.assertIn('href="styles.css?v=30"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
@@ -285,6 +286,83 @@ class StatsInAlbumTests(unittest.TestCase):
 
         self.assertIn("window.ALBUM_STATS", source)
         self.assertIn("function statsSummary(sticker)", source)
+
+
+class TradeViewTests(unittest.TestCase):
+    """El modo intercambio reduce cada cromo a escudo y número, sin cabeceras
+    de sección, para recorrer el álbum entero de un tirón."""
+
+    def app(self) -> str:
+        return Path("album/app.js").read_text(encoding="utf-8")
+
+    def stickers(self) -> list[dict]:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        return json.loads(
+            re.search(r"window\.ALBUM_DATA = (\[.*?\]);", html, flags=re.DOTALL).group(1)
+        )
+
+    def test_every_sticker_has_something_to_show_on_its_chip(self) -> None:
+        # La chapa enseña el número, y cuando no lo hay tira del nombre. Si un
+        # cromo se quedara sin los dos saldría una chapa en blanco,
+        # imposible de pedir en un cambio.
+        blank = [
+            sticker["id"]
+            for sticker in self.stickers()
+            if not re.search(r"\d", sticker["numero"])
+            and not sticker["nombre"].strip()
+        ]
+
+        self.assertEqual(blank, [])
+
+    def test_the_stickers_without_a_number_are_told_apart_by_name(self) -> None:
+        # Los Extra Sticker comparten el texto «Extra Sticker» como número, así
+        # que sin el nombre serían quince chapas idénticas.
+        unnumbered = [
+            sticker
+            for sticker in self.stickers()
+            if not re.search(r"\d", sticker["numero"])
+        ]
+
+        self.assertTrue(unnumbered, "Ya no hay cromos sin número que distinguir")
+        self.assertEqual(
+            len({sticker["nombre"] for sticker in unnumbered}),
+            len({sticker["id"] for sticker in unnumbered}) // 3,
+            "Los Extra Sticker deberían repetir los mismos jugadores en bronce, plata y oro",
+        )
+
+    def test_the_chip_falls_back_to_the_name(self) -> None:
+        source = self.app()
+
+        self.assertIn("function chipLabel(sticker)", source)
+        self.assertIn("function stickerChip(sticker)", source)
+
+    def test_the_trade_view_drops_the_section_headings(self) -> None:
+        source = self.app()
+
+        self.assertIn('state.density === "trade"', source)
+        self.assertIn('<div class="sticker-trade">', source)
+
+    def test_removing_a_copy_has_a_single_implementation(self) -> None:
+        # La chapa y los botones −/+ comparten la misma función para que el
+        # aviso al borrar la última copia no se quede sólo en un sitio.
+        source = self.app()
+
+        self.assertIn("function changeCopies(id, delta)", source)
+        self.assertEqual(source.count("removeOwnedSticker(id);"), 2)
+
+    def test_the_secondary_gesture_decrements(self) -> None:
+        source = self.app()
+
+        self.assertIn('addEventListener("contextmenu"', source)
+        self.assertIn("changeCopies(chip.dataset.id, -1)", source)
+
+    def test_the_density_switch_offers_the_three_views(self) -> None:
+        source = self.app()
+
+        self.assertIn('new Set(["cards", "list", "trade"])', source)
 
 
 class FiguritasSectionTests(unittest.TestCase):

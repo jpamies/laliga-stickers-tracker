@@ -25,7 +25,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="robots" content="noindex">
   <meta name="description" content="Plantillas oficiales de LALIGA EA SPORTS 2026-27">
   <title>Plantillas reales LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
   <header class="topbar">

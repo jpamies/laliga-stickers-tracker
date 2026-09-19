@@ -4,7 +4,7 @@
   const STORAGE_KEY = "panini-laliga-2026-27-progress-v1";
   const DENSITY_KEY = "panini-laliga-2026-27-density";
   const GUEST_SCOPE = "guest";
-  const validDensities = new Set(["cards", "list"]);
+  const validDensities = new Set(["cards", "list", "trade"]);
   const data = window.ALBUM_DATA;
   const statsTable = window.ALBUM_STATS || {};
   const sections = [...new Set(data.map((sticker) => sticker.seccion))];
@@ -779,6 +779,52 @@
     `;
   }
 
+  // Los Extra Sticker no llevan número: los nueve comparten el texto «Extra
+  // Sticker», que ni cabe en la chapa ni los distingue. En esos casos manda el
+  // nombre del jugador, que es por lo que se piden en un cambio.
+  function chipLabel(sticker) {
+    return /\d/.test(sticker.numero)
+      ? sticker.numero
+      : sticker.nombre || sticker.numero;
+  }
+
+  function stickerChip(sticker) {
+    const progress = progressFor(sticker.id);
+    const duplicates = Math.max(0, progress.copies - 1);
+    const name = sticker.nombre || "Pendiente";
+    const status = rowStatus(sticker, progress);
+    const crest = crestFor(sticker.seccion);
+    const icon = specialSectionIcons[sticker.seccion] || sticker.seccion.charAt(0);
+    const visual = crest
+      ? `<img src="${escapeHtml(crest)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
+      : `<span aria-hidden="true">${escapeHtml(icon)}</span>`;
+    const label = chipLabel(sticker);
+    // Sin nombre visible el escudo y el número tienen que bastar, así que el
+    // resto del cromo vive en el tooltip.
+    const copies = progress.copies === 0
+      ? "no lo tienes"
+      : progress.copies === 1
+      ? "lo tienes"
+      : `${progress.copies} copias`;
+    const title = `${sticker.seccion} · ${sticker.numero} · ${name} · ${copies}`;
+
+    return `
+      <button
+        class="trade-chip"
+        type="button"
+        data-trade-chip
+        data-id="${escapeHtml(sticker.id)}"
+        data-row-status="${status}"
+        title="${escapeHtml(title)}"
+        aria-label="${escapeHtml(`${title}. Añadir una copia`)}"
+      >
+        <span class="chip-crest">${visual}</span>
+        <span class="chip-number ${label === sticker.numero ? "" : "chip-named"}">${escapeHtml(label)}</span>
+        ${duplicates ? `<span class="chip-duplicate">+${duplicates}</span>` : ""}
+      </button>
+    `;
+  }
+
   function stickerCard(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
@@ -926,7 +972,12 @@
           </div>
           <button class="button secondary" type="button" data-exit-preview>Volver a mi álbum</button>
         </div>`
-      : "") + [...grouped.entries()].map(([section, stickers]) => {
+      : "") + (state.density === "trade"
+      // El escudo de cada chapa ya dice de qué sección es, así que las
+      // cabeceras sólo meterían saltos en una lista pensada para recorrerse
+      // de un tirón.
+      ? `<div class="sticker-trade">${visible.map(stickerChip).join("")}</div>`
+      : [...grouped.entries()].map(([section, stickers]) => {
       const totals = sectionSummary(stickers);
       return `
       <section class="section-block" id="${sectionId(section)}">
@@ -943,7 +994,7 @@
         <div class="${state.density === "list" ? "sticker-list" : "sticker-grid"}">${stickers.map(state.density === "list" ? stickerRow : stickerCard).join("")}</div>
       </section>
     `;
-    }).join("");
+    }).join(""));
 
     if (!visible.length) {
       elements.collection.innerHTML = `
@@ -1114,6 +1165,21 @@
     updateSticker(id, (entry) => ({ ...entry, state: nextState }));
   }
 
+  function changeCopies(id, delta) {
+    const current = progressFor(id);
+    // Bajar de la única copia equivale a marcarlo como no conseguido, y eso
+    // borra el progreso del cromo: se pregunta antes.
+    if (delta < 0 && current.state === "owned" && current.copies <= 1) {
+      removeOwnedSticker(id);
+      return;
+    }
+    updateSticker(id, (entry) => ({
+      ...entry,
+      copies: Math.max(0, entry.copies + delta),
+      state: delta > 0 ? "owned" : entry.state,
+    }));
+  }
+
   function showToast(message) {
     elements.toast.textContent = message;
     elements.toast.classList.add("visible");
@@ -1220,6 +1286,11 @@
       return;
     }
     if (state.readOnly || state.preview) return;
+    const chip = event.target.closest("[data-trade-chip]");
+    if (chip) {
+      changeCopies(chip.dataset.id, 1);
+      return;
+    }
     const card = event.target.closest(".sticker-card");
     if (!card) return;
     const id = card.dataset.id;
@@ -1234,12 +1305,6 @@
       setOwnership(id, nextState);
       return;
     }
-    const rowToggle = event.target.closest("[data-row-toggle]");
-    if (rowToggle) {
-      const nextState = progressFor(id).state === "missing" ? "owned" : "missing";
-      setOwnership(id, nextState);
-      return;
-    }
     const stickToggle = event.target.closest("[data-stick-toggle]");
     if (stickToggle) {
       const sticker = data.find((item) => item.id === id);
@@ -1249,18 +1314,19 @@
     }
     const copyButton = event.target.closest("[data-copy]");
     if (copyButton) {
-      const delta = Number(copyButton.dataset.copy);
-      const current = progressFor(id);
-      if (delta < 0 && current.state === "owned" && current.copies <= 1) {
-        removeOwnedSticker(id);
-        return;
-      }
-      updateSticker(id, (entry) => ({
-        ...entry,
-        copies: Math.max(0, entry.copies + delta),
-        state: delta > 0 ? "owned" : entry.state,
-      }));
+      changeCopies(id, Number(copyButton.dataset.copy));
     }
+  });
+
+  // En la chapa de intercambio no caben los botones de copias, así que restar
+  // se hace con el gesto secundario. El clic derecho del ratón y la pulsación
+  // larga del móvil llegan los dos como `contextmenu`.
+  elements.collection.addEventListener("contextmenu", (event) => {
+    const chip = event.target.closest("[data-trade-chip]");
+    if (!chip) return;
+    event.preventDefault();
+    if (state.readOnly || state.preview) return;
+    changeCopies(chip.dataset.id, -1);
   });
 
   elements.exportButton.addEventListener("click", () => {
