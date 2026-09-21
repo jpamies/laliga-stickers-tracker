@@ -46,13 +46,26 @@ LALIGA_ALIASES = {
     "ilaix moriba": "moriba kourouma kourouma",
     # El cromo 11 del Alavés lleva impreso otro apellido. Comprobado a mano.
     "benavidez": "carlos protesoni",
+    # «Rodri» a secas se parece tanto a Rodrigo Hernández como al canterano
+    # Iker Rodríguez, así que hay que decir de cuál se trata.
+    "rodri": "rodrigo hernandez cascante",
 }
 
-# Cromos que comparten apellido con un fichaje posterior, así que el
-# emparejamiento por texto no puede distinguirlos. Comprobado a mano.
+# Cromos que el emparejamiento por texto no puede resolver: o comparten
+# apellido con un fichaje posterior, o el jugador se fue después de que Panini
+# imprimiera el cromo. Comprobado a mano.
 KNOWN_ABSENCES = {
     # El «García» del Racing es ahora Pablo, un fichaje de última hora.
-    ("Racing de Santander", "mario garcia"),
+    ("Racing de Santander", "mario garcia"): (
+        "Comprobado a mano: otro jugador con el mismo apellido ocupa su sitio."
+    ),
+    # Panini llegó tarde: el cromo salió con la camiseta del Racing, pero para
+    # entonces ya había fichado por el Real Madrid Castilla. Sin el aviso se
+    # empareja con Sergio Canales, que sí sigue en el club.
+    ("Racing de Santander", "sergio martinez"): (
+        "Comprobado a mano: fichó por el Real Madrid Castilla y no tiene ficha"
+        " del primer equipo."
+    ),
 }
 
 # Jugadores que siguen en el club pero que LALIGA no lista, normalmente porque
@@ -319,7 +332,7 @@ def check_rows(
                 OUT_OF_SQUAD,
                 "",
                 0.0,
-                "Comprobado a mano: otro jugador con el mismo apellido ocupa su sitio.",
+                KNOWN_ABSENCES[club],
             )
         elif club in KNOWN_UNLISTED:
             match = miss(

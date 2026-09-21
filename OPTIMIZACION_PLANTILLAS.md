@@ -1,6 +1,6 @@
 # Optimización de plantilla por equipo
 
-Generado el 2026-09-17 por `analizar_optimizacion.py`.
+Generado el 2026-09-21 por `analizar_optimizacion.py`.
 
 Cada club ocupa una página de **20 huecos**: escudo, entrenador y 18
 jugadores. Algunos huecos admiten dos cromos (variantes `A`/`B` o
@@ -30,42 +30,41 @@ no tapando huecos de equipo.
 
 ## Resumen
 
-- **Equipos con la página completable:** 3 de 20
+- **Equipos con la página completable:** 5 de 20
 - **Huecos sin ningún jugador activo:** 29
 - **Huecos con dos variantes válidas:** 16 (12 con una recomendación clara por minutos)
-- **Jugadores que piden cromo:** 57
+- **Jugadores que piden cromo:** 23
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Variantes a elegir | Piden cromo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [Deportivo Alavés](#deportivo-alavés) | 16/19 | 1 | 0 | 2 | 1 | 1 |
-| [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 2 | 3 |
-| [Atlético de Madrid](#atlético-de-madrid) | 16/19 | 3 | 0 | 0 | 1 | 2 |
-| [FC Barcelona](#fc-barcelona) | 18/19 | 1 | 0 | 0 | 0 | 3 |
-| [Real Betis](#real-betis) | 18/19 | 1 | 0 | 0 | 1 | 2 |
-| [RC Celta de Vigo](#rc-celta-de-vigo) | 17/19 | 1 | 1 | 0 | 2 | 2 |
-| [Deportivo de La Coruña](#deportivo) | 18/19 | 0 | 0 | 1 | 0 | 5 |
-| [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 0 | 3 |
-| [RCD Espanyol](#rcd-espanyol) | 17/19 | 2 | 0 | 0 | 0 | 3 |
-| [Getafe CF](#getafe-cf) | 14/19 | 3 | 0 | 2 | 0 | 5 |
-| [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1 | 2 |
-| [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 2 | 4 |
-| [Málaga CF](#malaga-cf) | 19/19 | 0 | 0 | 0 | 0 | 2 |
-| [CA Osasuna](#osasuna) | 18/19 | 1 | 0 | 0 | 2 | 2 |
-| [Racing de Santander](#racing-de-santander) | 14/19 | 4 | 0 | 1 | 0 | 4 |
+| [Deportivo Alavés](#deportivo-alavés) | 18/19 | 1 | 0 | 0 | 1 | 0 |
+| [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 2 | 2 |
+| [Atlético de Madrid](#atlético-de-madrid) | 16/19 | 3 | 0 | 0 | 1 | 1 |
+| [FC Barcelona](#fc-barcelona) | 19/19 | 0 | 0 | 0 | 0 | 1 |
+| [Real Betis](#real-betis) | 18/19 | 1 | 0 | 0 | 1 | 1 |
+| [RC Celta de Vigo](#rc-celta-de-vigo) | 17/19 | 1 | 1 | 0 | 2 | 0 |
+| [Deportivo de La Coruña](#deportivo) | 19/19 | 0 | 0 | 0 | 0 | 2 |
+| [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 0 | 1 |
+| [RCD Espanyol](#rcd-espanyol) | 17/19 | 2 | 0 | 0 | 0 | 0 |
+| [Getafe CF](#getafe-cf) | 16/19 | 3 | 0 | 0 | 0 | 1 |
+| [Levante UD](#levante-ud) | 15/19 | 4 | 0 | 0 | 1 | 0 |
+| [Real Madrid](#real-madrid-cf) | 19/19 | 0 | 0 | 0 | 2 | 0 |
+| [Málaga CF](#malaga-cf) | 19/19 | 0 | 0 | 0 | 0 | 1 |
+| [CA Osasuna](#osasuna) | 18/19 | 1 | 0 | 0 | 2 | 1 |
+| [Racing de Santander](#racing-de-santander) | 15/19 | 4 | 0 | 0 | 0 | 1 |
 | [Rayo Vallecano](#rayo-vallecano) | 17/19 | 2 | 0 | 0 | 0 | 4 |
 | [Real Sociedad](#real-sociedad) | 19/19 | 0 | 0 | 0 | 1 | 1 |
-| [Sevilla FC](#sevilla) | 15/19 | 2 | 1 | 1 | 1 | 5 |
-| [Valencia CF](#valencia) | 18/19 | 1 | 0 | 0 | 0 | 3 |
+| [Sevilla FC](#sevilla) | 16/19 | 2 | 1 | 0 | 1 | 3 |
+| [Valencia CF](#valencia) | 17/19 | 2 | 0 | 0 | 0 | 2 |
 | [Villarreal CF](#villarreal) | 18/19 | 1 | 0 | 0 | 2 | 1 |
 
 ## DEPORTIVO ALAVÉS
 
-⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 2 que Panini no ha asignado.
+⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 8 (Parada)
 - **Variante recomendada por minutos:** 18 → **18A** (Abde, 496′)
-- **Sin asignar por Panini:** 4, 10
-- **Piden cromo a gritos:** Mariano (258′)
+- **BIS pendientes de numeración:** Garcés, Mariano Díaz. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 
 ### Huecos del álbum
 
@@ -74,13 +73,13 @@ no tapando huecos de equipo.
 | 1 | 1 | Escudo | — | — | — | No aplica |
 | 2 | 2 | Quique Sánchez Flores | Enrique Sánchez Flores | — | — | **pegar** |
 | 3 | 3 | Sivera | Antonio Sivera | 1 | 540′ · 6 pj · 6 tit · 1 a | **pegar** |
-| 4 | 4 | sin asignar | — | — | — | Pendiente |
+| 4 | 4 | Adrián Rodríguez | Adrián Rodríguez | 13 | 0′ · no ha jugado | **pegar** |
 | 5 | 5 | Jonny | Jonny Otto | 17 | 420′ · 5 pj · 5 tit | **pegar** |
 | 6 | 6 | Koski | Ville Koski | 16 | 530′ · 6 pj · 6 tit · 1 g | **pegar** |
 | 7 | 7 | Tenaglia | Nahuel Tenaglia | 14 | 495′ · 6 pj · 6 tit · 1 g | **pegar** |
 | 8 | 8 | Parada | — | — | — | Sin jugador activo |
 | 9 | 9 | Yusi | Youssef Enriquez | 3 | 123′ · 5 pj | **pegar** |
-| 10 | 10 | sin asignar | — | — | — | Pendiente |
+| 10 | 10 | Mikel Rodríguez | Mikel Rodríguez | 18 | 149′ · 3 pj · 2 tit · 1 g | **pegar** |
 | 11 | 11 | Benavidez | Carlos Protesoni | 23 | 64′ · 2 pj | **pegar** |
 | 12 | 12 | Blanco | Antonio Blanco | 8 | 511′ · 6 pj · 6 tit | **pegar** |
 | 13 | 13 | Guevara | Ander Guevara | 6 | 6′ · 2 pj | **pegar** |
@@ -97,13 +96,8 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 9 | Mariano | Delantero | 258′ · 6 pj · 2 tit · 3 g · 3 a | **sí** |
-| 18 | Mikel R. | Defensa | 149′ · 3 pj · 2 tit · 1 g | — |
-| 2 | Valentini | Defensa | 145′ · 3 pj · 1 tit | — |
 | 22 | Miguel | Delantero | 11′ · 3 pj | — |
 | 27 | Xanet Olaiz | Defensa | 10′ · 1 pj | — |
-| 13 | A. Rodriguez | Portero | 0′ · no ha jugado | no ha jugado |
-| 5 | F. Garcés | Defensa | 0′ · no ha jugado | no ha jugado |
 | 31 | Swiderski | Portero | 0′ · no ha jugado | no ha jugado |
 | 12 | Novoa | Defensa | 0′ · no ha jugado | no ha jugado |
 | 29 | Izei | Centrocampista | 0′ · no ha jugado | no ha jugado |
@@ -116,7 +110,7 @@ no tapando huecos de equipo.
 - **Variante recomendada por minutos:** 17 → **17A** (Robert Navarro, 242′)
 - **Elección abierta:** 6 (6A o 6B)
 - **Comprobar a mano:** 19 (Williams)
-- **Piden cromo a gritos:** Gerenabarrena (373′), Williams (330′), Canales (205′)
+- **Piden cromo a gritos:** Gerenabarrena (373′), Williams (330′)
 
 ### Huecos del álbum
 
@@ -153,11 +147,9 @@ no tapando huecos de equipo.
 | ---: | --- | --- | --- | :---: |
 | 24 | Gerenabarrena | Centrocampista | 373′ · 5 pj · 4 tit | **sí** |
 | 9 | Williams | Delantero | 330′ · 5 pj · 5 tit · 2 a | **sí** |
-| 28 | Canales | Delantero | 205′ · 3 pj · 2 tit | **sí** |
 | 31 | Johaneko | Defensa | 123′ · 4 pj · 1 tit | — |
 | 15 | H. Rincón | Defensa | 106′ · 2 pj · 1 tit | — |
 | 25 | Djalo | Delantero | 9′ · 1 pj | — |
-| 29 | Hierro | Delantero | 0′ · no ha jugado | no ha jugado |
 | 30 | Monreal | Defensa | 0′ · no ha jugado | no ha jugado |
 | 44 | Selton | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
@@ -167,7 +159,8 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 6 (Nahuel Molina), 10 (Ruggeri), 16 (Almada)
 - **Variante recomendada por minutos:** 14 → **14A** (Rodri Mendoza, 107′)
-- **Piden cromo a gritos:** Grimaldo (445′), Romero (189′)
+- **BIS pendientes de numeración:** Alejandro Grimaldo, Arnau Ortiz. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Romero (189′)
 
 ### Huecos del álbum
 
@@ -200,22 +193,20 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 22 | Grimaldo | Defensa | 445′ · 5 pj · 5 tit · 1 g · 1 a | **sí** |
 | 21 | Romero | Defensa | 189′ · 3 pj · 2 tit | **sí** |
-| 16 | Arnau Ortiz | Centrocampista | 149′ · 5 pj · 1 tit | — |
 | 15 | J.david | Delantero | 98′ · 2 pj · 1 tit · 2 g · 1 a | — |
 | 30 | D. Martínez | Defensa | 90′ · 1 pj · 1 tit | — |
 | 27 | Domínguez | Defensa | 45′ · 1 pj · 1 tit | — |
+| 45 | Javier Gil | Defensa | 0′ · no ha jugado | no ha jugado |
 | 46 | Castillo | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 29 | Cubo | Delantero | 0′ · no ha jugado | no ha jugado |
 | 25 | Esquivel | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## FC BARCELONA
 
-⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Huecos sin solución:** 18 (Ferran Torres)
-- **Piden cromo a gritos:** Xavi Espart (440′), Anthony Gordon (311′), Rodrigo (266′)
+- **Piden cromo a gritos:** Xavi Espart (440′)
 
 ### Huecos del álbum
 
@@ -239,7 +230,8 @@ no tapando huecos de equipo.
 | 15 | 15 | Pedri | Pedro González López | 8 | 416′ · 6 pj · 5 tit · 1 g · 1 a | **pegar** |
 | 16 | 16 | Fermín | Fermín López | 7 | 371′ · 5 pj · 4 tit · 4 g · 2 a | **pegar** |
 | 17 | 17 | Dani Olmo | Dani Olmo | 20 | 245′ · 6 pj · 2 tit · 3 a | **pegar** |
-| 18 | 18 | Ferran Torres | — | — | — | Sin jugador activo |
+| 18 | 18 | Ferran Torres | — | — | — | **pegar** |
+|  | 18BIS | Hamza Abdelkarim | Hamza Mohamed Abdelkarim Elsayed Selim | 29 | 4′ · 1 pj | **pegar** |
 | 19 | 19 | Raphinha | Raphael Dias Belloli | 11 | 478′ · 6 pj · 6 tit · 9 g · 3 a | **pegar** |
 | 20 | 20 | Lamine Yamal | Lamine Yamal Nasraoui Ebana | 10 | 491′ · 6 pj · 6 tit · 7 g · 2 a | **pegar** |
 
@@ -248,13 +240,11 @@ no tapando huecos de equipo.
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
 | 12 | Xavi Espart | Defensa | 440′ · 5 pj · 5 tit · 1 g · 2 a | **sí** |
-| 17 | Anthony Gordon | Delantero | 311′ · 5 pj · 4 tit · 4 a | **sí** |
-| 16 | Rodrigo | Centrocampista | 266′ · 5 pj · 3 tit | **sí** |
 | 9 | Gabriel Jesus | Delantero | 30′ · 2 pj · 1 g | — |
-| 29 | Hamza Abdelkarim | Delantero | 4′ · 1 pj | — |
 | 4 | Brian | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 25 | Livakovic | Portero | 0′ · no ha jugado | no ha jugado |
 | 31 | Eder Aller | Portero | 0′ · no ha jugado | no ha jugado |
+| 35 | Iker Rodriguez | Portero | 0′ · no ha jugado | no ha jugado |
 | 33 | Jordi Pesquer | Defensa | 0′ · no ha jugado | no ha jugado |
 | 19 | Roony | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 26 | Cortes | Defensa | 0′ · no ha jugado | no ha jugado |
@@ -265,7 +255,8 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 11 (Amrabat)
 - **Variante recomendada por minutos:** 5 → **5B** (Bellerín, 379′)
-- **Piden cromo a gritos:** Fran García (391′), N. Deossa (168′)
+- **BIS pendientes de numeración:** Deossa. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Fran García (391′)
 
 ### Huecos del álbum
 
@@ -299,8 +290,6 @@ no tapando huecos de equipo.
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
 | 11 | Fran García | Defensa | 391′ · 5 pj · 4 tit · 1 a | **sí** |
-| 18 | N. Deossa | Centrocampista | 168′ · 5 pj · 1 tit | **sí** |
-| 19 | Parrott | Delantero | 98′ · 3 pj · 1 tit · 1 g | — |
 | 12 | Á. Ortiz | Centrocampista | 71′ · 1 pj · 1 tit | — |
 | 23 | J. Firpo | Defensa | 59′ · 1 pj · 1 tit | — |
 | 25 | D. Ceballos | Centrocampista | 33′ · 1 pj | — |
@@ -317,7 +306,7 @@ no tapando huecos de equipo.
 - **Variante recomendada por minutos:** 18 → **18A** (Pablo Durán, 201′)
 - **Elección abierta:** 9 (9A o 9B)
 - **Comprobar a mano:** 15 (Fer López)
-- **Piden cromo a gritos:** Javi Galán (205′), H. González (190′)
+- **BIS pendientes de numeración:** Hugo González. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 
 ### Huecos del álbum
 
@@ -351,8 +340,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 22 | Javi Galán | Centrocampista | 205′ · 5 pj · 3 tit | **sí** |
-| 16 | H. González | Centrocampista | 190′ · 3 pj · 3 tit · 2 a | **sí** |
 | 21 | S. Caceres | Defensa | 90′ · 1 pj · 1 tit | — |
 | 24 | Driouech | Delantero | 63′ · 3 pj | — |
 | 4 | Faye | Defensa | 45′ · 1 pj · 1 tit | — |
@@ -363,10 +350,10 @@ no tapando huecos de equipo.
 
 ## DEPORTIVO
 
-⏳ 1 que Panini no ha asignado.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Sin asignar por Panini:** 17
-- **Piden cromo a gritos:** Amatucci (540′), X. Navarro (443′), J. M. Giménez (239′), Ede (196′), Asp - Jensen (162′)
+- **BIS pendientes de numeración:** Bright Ede, Gijselhart. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** X. Navarro (443′), J. M. Giménez (239′)
 
 ### Huecos del álbum
 
@@ -389,7 +376,7 @@ no tapando huecos de equipo.
 | 14 | 14 | José Ángel | José Ángel Esmoris Tasende | 17 | 59′ · 1 pj · 1 tit | **pegar** |
 | 15 | 15 | Luismi Cruz | Luismi Cruz | 19 | 374′ · 6 pj · 5 tit · 1 g · 1 a | **pegar** |
 | 16 | 16 | Mella | David Mella | 11 | 47′ · 2 pj | **pegar** |
-| 17 | 17 | sin asignar | — | — | — | Pendiente |
+| 17 | 17 | Asp Jensen | Jonathan Asp Jensen | 18 | 162′ · 4 pj · 2 tit | **pegar** |
 | 18 | 18 | Yeremay | Yeremay Hernández | 10 | 146′ · 5 pj · 1 tit · 1 a | **pegar** |
 | 19 | 19 | Eddahchouri | Zakaria Eddahchouri | 9 | 69′ · 4 pj · 1 g | **pegar** |
 | 20 | 20 | Nsongo | Bil Nsongo | 32 | 330′ · 6 pj · 5 tit | **pegar** |
@@ -398,14 +385,10 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 16 | Amatucci | Centrocampista | 540′ · 6 pj · 6 tit · 1 a | **sí** |
 | 23 | X. Navarro | Defensa | 443′ · 5 pj · 5 tit | **sí** |
 | 20 | J. M. Giménez | Defensa | 239′ · 3 pj · 3 tit | **sí** |
-| 22 | Ede | Defensa | 196′ · 3 pj · 2 tit | **sí** |
-| 18 | Asp - Jensen | Centrocampista | 162′ · 4 pj · 2 tit | **sí** |
 | 24 | Adama | Delantero | 97′ · 3 pj | — |
 | 6 | M. Casadó | Centrocampista | 86′ · 2 pj · 1 tit | — |
-| 34 | Gijselhart | Centrocampista | 26′ · 1 pj | — |
 | 33 | Kevin | Delantero | 5′ · 1 pj | — |
 
 ## ELCHE CF
@@ -413,7 +396,7 @@ no tapando huecos de equipo.
 ⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 5 (Pétrot), 8 (Affengruber)
-- **Piden cromo a gritos:** Buonanotte (219′), Morcillo (217′), Revivo (189′)
+- **Piden cromo a gritos:** Revivo (189′)
 
 ### Huecos del álbum
 
@@ -446,8 +429,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 10 | Buonanotte | Centrocampista | 219′ · 4 pj · 3 tit · 1 g | **sí** |
-| 47 | Morcillo | Centrocampista | 217′ · 4 pj · 2 tit | **sí** |
 | 3 | Revivo | Defensa | 189′ · 3 pj · 2 tit | **sí** |
 | 24 | Osorio | Delantero | 146′ · 3 pj · 1 tit · 1 g | — |
 | 9 | E. Ponce | Delantero | 121′ · 3 pj · 1 tit | — |
@@ -464,7 +445,7 @@ no tapando huecos de equipo.
 ⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 6 (Rubén Sánchez), 9 (Miguel Rubio)
-- **Piden cromo a gritos:** R. Hinojo (491′), Javi H. (471′), Nuñez (356′)
+- **BIS pendientes de numeración:** Drkusic, Hinojo, Javi Hernández. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 
 ### Huecos del álbum
 
@@ -495,24 +476,21 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 21 | R. Hinojo | Defensa | 491′ · 6 pj · 6 tit | **sí** |
-| 28 | Javi H. | Delantero | 471′ · 6 pj · 6 tit · 4 a | **sí** |
-| 14 | Nuñez | Defensa | 356′ · 4 pj · 4 tit | **sí** |
-| 16 | Vanja | Defensa | 115′ · 3 pj · 1 tit | — |
 | 26 | Bauza | Centrocampista | 107′ · 4 pj · 1 tit · 1 a | — |
 | 15 | Bryan | Centrocampista | 70′ · 3 pj | — |
 | 27 | Timera | Defensa | 0′ · no ha jugado | no ha jugado |
 | 2 | Gorosabel | Defensa | 0′ · no ha jugado | no ha jugado |
 | 32 | Jose Angel | Defensa | 0′ · no ha jugado | no ha jugado |
 | 31 | Llorenç | Portero | 0′ · no ha jugado | no ha jugado |
+| 29 | Mullerat | Delantero | 0′ · no ha jugado | no ha jugado |
 
 ## GETAFE CF
 
-⛔ **3 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 2 que Panini no ha asignado.
+⛔ **3 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 12 (Javi Muñoz), 17 (Álex Sancris), 19 (Luis Vázquez)
-- **Sin asignar por Panini:** 13, 15
-- **Piden cromo a gritos:** Mangala (448′), Enes Ünal (405′), Johan Mojica (360′), Gudelj (194′), Francho (180′)
+- **BIS pendientes de numeración:** Enes Ünal. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Gudelj (194′)
 
 ### Huecos del álbum
 
@@ -530,9 +508,9 @@ no tapando huecos de equipo.
 | 10 | 10 | Davinchi | David Cordón Mancha | 3 | 46′ · 2 pj · 1 tit | **pegar** |
 | 11 | 11 | Mario Martín | Mario Martín | 6 | 246′ · 3 pj · 3 tit | **pegar** |
 | 12 | 12 | Javi Muñoz | — | — | — | Sin jugador activo |
-| 13 | 13 | sin asignar | — | — | — | Pendiente |
+| 13 | 13 | Francho | Francho Serrano | 16 | 180′ · 3 pj · 2 tit | **pegar** |
 | 14 | 14 (2ª ed) | Terrats | Ramón Terrats | 11 | 442′ · 5 pj · 5 tit · 1 g | **pegar** |
-| 15 | 15 | sin asignar | — | — | — | Pendiente |
+| 15 | 15 | Mangala | Orel Mangala | 23 | 448′ · 5 pj · 5 tit | **pegar** |
 | 16 | 16 (2ª ed) | Juanmi | Juan Miguel Jiménez López | 7 | 0′ · no ha jugado | **pegar** |
 | 17 | 17 | Álex Sancris | — | — | — | Sin jugador activo |
 | 18 | 18 | Borja Mayoral | Borja Mayoral | 9 | 5′ · 2 pj | **pegar** |
@@ -543,12 +521,7 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 23 | Mangala | Centrocampista | 448′ · 5 pj · 5 tit | **sí** |
-| 19 | Enes Ünal | Delantero | 405′ · 5 pj · 4 tit · 1 g | **sí** |
-| 22 | Johan Mojica | Centrocampista | 360′ · 4 pj · 4 tit | **sí** |
 | 8 | Gudelj | Centrocampista | 194′ · 3 pj · 2 tit | **sí** |
-| 16 | Francho | Centrocampista | 180′ · 3 pj · 2 tit | **sí** |
-| 4 | Sazonov | Defensa | 105′ · 3 pj · 1 tit | — |
 | 20 | Ivan | Delantero | 93′ · 2 pj · 1 tit · 1 a | — |
 | 28 | Risco | Centrocampista | 50′ · 3 pj | — |
 | 26 | J. Ives Valou | Defensa | 17′ · 1 pj | — |
@@ -558,6 +531,7 @@ no tapando huecos de equipo.
 | 35 | Ferrer | Portero | 0′ · no ha jugado | no ha jugado |
 | 27 | Ibra Drj | Delantero | 0′ · no ha jugado | no ha jugado |
 | 29 | Curro | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 33 | M. Achraf | Delantero | 0′ · no ha jugado | no ha jugado |
 | 31 | Moha | Centrocampista | 0′ · no ha jugado | no ha jugado |
 
 ## LEVANTE UD
@@ -566,7 +540,7 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 6 (Elgezabal), 10 (Arriaga), 15 (Carlos Álvarez), 16 (Tunde)
 - **Variante recomendada por minutos:** 14 → **14A** (Victor García, 196′)
-- **Piden cromo a gritos:** Nacho Perez (295′), Thiago (227′)
+- **BIS pendientes de numeración:** Nacho Pérez, Thiago Fernández. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 
 ### Huecos del álbum
 
@@ -599,8 +573,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 29 | Nacho Perez | Defensa | 295′ · 5 pj · 4 tit | **sí** |
-| 24 | Thiago | Centrocampista | 227′ · 3 pj · 3 tit | **sí** |
 | 5 | Hugo Sotelo | Centrocampista | 99′ · 4 pj · 1 tit | — |
 | 10 | Petar Ratkov | Delantero | 59′ · 1 pj · 1 tit | — |
 | 33 | Marc Santos | Defensa | 26′ · 1 pj | — |
@@ -616,7 +588,7 @@ no tapando huecos de equipo.
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
 - **Variante recomendada por minutos:** 10 → **10A** (Carreras, 201′), 15 → **15A** (Güler, 295′)
-- **Piden cromo a gritos:** Konaté (450′), Cucurella (340′), Bernardo (274′), Yan Diomande (244′)
+- **BIS pendientes de numeración:** Konaté. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 
 ### Huecos del álbum
 
@@ -651,10 +623,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 16 | Konaté | Defensa | 450′ · 5 pj · 5 tit | **sí** |
-| 17 | Cucurella | Defensa | 340′ · 6 pj · 3 tit | **sí** |
-| 20 | Bernardo | Centrocampista | 274′ · 5 pj · 3 tit | **sí** |
-| 25 | Yan Diomande | Delantero | 244′ · 6 pj · 2 tit · 1 a | **sí** |
 | 9 | Endrick | Delantero | 4′ · 1 pj | — |
 | 36 | Alexis Ciria | Delantero | 0′ · no ha jugado | no ha jugado |
 | 31 | Javi Navarro | Portero | 0′ · no ha jugado | no ha jugado |
@@ -667,7 +635,8 @@ no tapando huecos de equipo.
 
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Piden cromo a gritos:** Recio (450′), Martínez (194′)
+- **BIS pendientes de numeración:** Ángel Recio. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Martínez (194′)
 
 ### Huecos del álbum
 
@@ -699,7 +668,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 15 | Recio | Defensa | 450′ · 5 pj · 5 tit | **sí** |
 | 18 | Martínez | Centrocampista | 194′ · 3 pj · 2 tit · 1 a | **sí** |
 | 6 | Ramon | Centrocampista | 86′ · 5 pj | — |
 | 7 | Haitam | Delantero | 33′ · 2 pj | — |
@@ -707,6 +675,7 @@ no tapando huecos de equipo.
 | 2 | Cajuste | Centrocampista | 4′ · 1 pj | — |
 | 25 | J. Berrocal | Defensa | 3′ · 1 pj | — |
 | 39 | Aznou | Defensa | 0′ · no ha jugado | no ha jugado |
+| 30 | Andrés | Portero | 0′ · no ha jugado | no ha jugado |
 | 28 | Otu Jr | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 32 | Juani | Delantero | 0′ · no ha jugado | no ha jugado |
 | 5 | Pastor | Defensa | 0′ · no ha jugado | no ha jugado |
@@ -718,7 +687,8 @@ no tapando huecos de equipo.
 - **Huecos sin solución:** 16 (Iker Benito)
 - **Variante recomendada por minutos:** 5 → **5B** (Arguibide, 476′)
 - **Elección abierta:** 13 (13A o 13B)
-- **Piden cromo a gritos:** Dubasin (232′), Rockson (210′)
+- **BIS pendientes de numeración:** Jonathan Dubasin. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Rockson (210′)
 
 ### Huecos del álbum
 
@@ -751,7 +721,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 21 | Dubasin | Centrocampista | 232′ · 6 pj · 2 tit | **sí** |
 | 48 | Rockson | Defensa | 210′ · 3 pj · 2 tit | **sí** |
 | 35 | Santos | Defensa | 90′ · 1 pj · 1 tit | — |
 | 15 | Rico | Defensa | 45′ · 1 pj · 1 tit | — |
@@ -762,11 +731,11 @@ no tapando huecos de equipo.
 
 ## RACING DE SANTANDER
 
-⛔ **4 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. ⏳ 1 que Panini no ha asignado.
+⛔ **4 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 8 (Javi Castro), 12 (Gustavo Puerta), 14 (Aldasoro), 15 (Suleiman)
-- **Sin asignar por Panini:** 3
-- **Piden cromo a gritos:** Agirrezabala (540′), Iván Martín (315′), Zabiri (311′), Prati (260′)
+- **BIS pendientes de numeración:** Pedro Felipe, Sergio Martínez, Zabiri. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Prati (260′)
 
 ### Huecos del álbum
 
@@ -774,7 +743,7 @@ no tapando huecos de equipo.
 | ---: | :---: | --- | --- | ---: | --- | --- |
 | 1 | 1 | Escudo | — | — | — | No aplica |
 | 2 | 2 | José Alberto López | José Alberto López Menéndez | — | — | **pegar** |
-| 3 | 3 | sin asignar | — | — | — | Pendiente |
+| 3 | 3 | Agirrezabala | Julen Agirrezabala | 13 | 540′ · 6 pj · 6 tit | **pegar** |
 | 4 | 4 | Eriksson | Simon Eriksson | 1 | 0′ · no ha jugado | **pegar** |
 | 5 | 5 | Mantilla | Álvaro Mantilla | 2 | 449′ · 5 pj · 5 tit | **pegar** |
 | 6 | 6 | Sangalli | — | — | — | **pegar** |
@@ -800,25 +769,23 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 13 | Agirrezabala | Portero | 540′ · 6 pj · 6 tit | **sí** |
-| 23 | Iván Martín | Centrocampista | 315′ · 4 pj · 3 tit | **sí** |
-| 21 | Zabiri | Delantero | 311′ · 6 pj · 3 tit · 6 g | **sí** |
 | 18 | Prati | Centrocampista | 260′ · 4 pj · 3 tit | **sí** |
 | 15 | Pablo G. | Delantero | 154′ · 2 pj · 2 tit · 1 g | — |
 | 24 | Belocian | Defensa | 125′ · 2 pj · 1 tit | — |
 | 3 | Aaron | Defensa | 91′ · 2 pj · 1 tit | — |
-| 22 | Pedro | Defensa | 76′ · 3 pj · 2 tit | — |
 | 8 | Almeida | Centrocampista | 59′ · 2 pj | — |
 | 19 | Iker Luque | Centrocampista | 47′ · 2 pj | — |
 | 29 | Vallecillo | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 38 | Hugo | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 33 | Castellanos | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 31 | Laro | Portero | 0′ · no ha jugado | no ha jugado |
 
 ## RAYO VALLECANO
 
 ⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 7 (Nobel Mendy), 10 (Pep Chavarría)
+- **BIS pendientes de numeración:** Pelayo, Vertrouwd. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
 - **Piden cromo a gritos:** Pedrosa (308′), G. Bouaré (186′), G.tsitaishvili (182′), Emil Audero (180′)
 
 ### Huecos del álbum
@@ -855,9 +822,7 @@ no tapando huecos de equipo.
 | 14 | G.tsitaishvili | Delantero | 182′ · 3 pj · 2 tit | **sí** |
 | 25 | Emil Audero | Portero | 180′ · 2 pj · 2 tit | **sí** |
 | 11 | Nteka | Centrocampista | 153′ · 3 pj · 1 tit | — |
-| 33 | Jozhua V. | Defensa | 122′ · 2 pj · 2 tit | — |
 | 15 | Mujaid | Defensa | 76′ · 2 pj · 1 tit | — |
-| 22 | Pelayo | Defensa | 67′ · 2 pj · 1 tit | — |
 | 37 | Rayane | Delantero | 23′ · 1 pj | — |
 | 30 | Adrián Molina | Portero | 0′ · no ha jugado | no ha jugado |
 | 34 | Alonso | Delantero | 0′ · no ha jugado | no ha jugado |
@@ -865,6 +830,7 @@ no tapando huecos de equipo.
 | 31 | M. Román | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 26 | De Las Sias | Defensa | 0′ · no ha jugado | no ha jugado |
 | — | Rdt | Delantero | 0′ · no ha jugado | no ha jugado |
+| 28 | Becerra | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 27 | Lozano | Defensa | 0′ · no ha jugado | no ha jugado |
 
 ## REAL SOCIEDAD
@@ -917,13 +883,13 @@ no tapando huecos de equipo.
 
 ## SEVILLA
 
-⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. 🔎 1 por revisar a mano. ⏳ 1 que Panini no ha asignado.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue. 🔎 1 por revisar a mano.
 
 - **Huecos sin solución:** 8 (Nianzou), 19 (Akor Adams)
 - **Variante recomendada por minutos:** 9 → **9A** (Castrín, 390′)
 - **Comprobar a mano:** 11 (Oso)
-- **Sin asignar por Panini:** 4
-- **Piden cromo a gritos:** Miguel Sierra (418′), Robbie Ure (307′), Fofana (197′), Stassin (195′), Felix (164′)
+- **BIS pendientes de numeración:** Julio Díaz, Miguel Sierra. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **Piden cromo a gritos:** Fofana (197′), Stassin (195′), Felix (164′)
 
 ### Huecos del álbum
 
@@ -932,7 +898,7 @@ no tapando huecos de equipo.
 | 1 | 1 | Escudo | — | — | — | No aplica |
 | 2 | 2 | Luis García | Luis García | — | — | **pegar** |
 | 3 | 3 | Vlachodimos | Odysseas Vlachodimos | 1 | 540′ · 6 pj · 6 tit | **pegar** |
-| 4 | 4 | sin asignar | — | — | — | Pendiente |
+| 4 | 4 | Fran González | Fran González | 13 | 0′ · no ha jugado | **pegar** |
 | 5 | 5 | Carmona | José Ángel Carmona | 22 | 41′ · 2 pj | **pegar** |
 | 6 | 6 | Juanlu | — | — | — | **pegar** |
 |  | 6BIS (2ª ed) | Iglesias | Juan Iglesias | 2 | 540′ · 6 pj · 6 tit · 1 g | **pegar** |
@@ -956,17 +922,12 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 30 | Miguel Sierra | Delantero | 418′ · 6 pj · 6 tit · 2 g | **sí** |
-| 9 | Robbie Ure | Delantero | 307′ · 6 pj · 3 tit · 1 a | **sí** |
 | 24 | Fofana | Centrocampista | 197′ · 3 pj · 2 tit | **sí** |
 | 19 | Stassin | Delantero | 195′ · 3 pj · 2 tit · 1 g | **sí** |
 | 20 | Felix | Delantero | 164′ · 2 pj · 2 tit | **sí** |
-| 8 | Kochorashvili | Centrocampista | 117′ · 4 pj · 1 tit · 1 a | — |
 | 27 | Nico Guillen | Centrocampista | 90′ · 2 pj · 1 tit | — |
-| 3 | Julio Díaz | Defensa | 83′ · 4 pj · 1 tit | — |
 | 7 | Alfon | Delantero | 10′ · 1 pj | — |
 | 39 | Edu Altozano | Centrocampista | 0′ · no ha jugado | no ha jugado |
-| 13 | Fran González | Portero | 0′ · no ha jugado | no ha jugado |
 | — | Cardoso | Defensa | 0′ · no ha jugado | no ha jugado |
 | 34 | Iker Muñoz | Defensa | 0′ · no ha jugado | no ha jugado |
 | 26 | Manuel Ángel | Defensa | 0′ · no ha jugado | no ha jugado |
@@ -974,17 +935,17 @@ no tapando huecos de equipo.
 
 ## VALENCIA
 
-⛔ **1 hueco sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
+⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
-- **Huecos sin solución:** 18 (Diego López)
-- **Piden cromo a gritos:** Arnau (242′), Maffeo (240′), Otorbi (218′)
+- **Huecos sin solución:** 2 (Carlos Corberán), 18 (Diego López)
+- **Piden cromo a gritos:** Arnau (242′), Otorbi (218′)
 
 ### Huecos del álbum
 
 | Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |
 | ---: | :---: | --- | --- | ---: | --- | --- |
 | 1 | 1 | Escudo | — | — | — | No aplica |
-| 2 | 2 | Carlos Corberán | Carlos Corberán | — | — | **pegar** |
+| 2 | 2 | Carlos Corberán | — | — | — | Sin jugador activo |
 | 3 | 3 | Dimitrievski | Stole Dimitrievski | 1 | 540′ · 6 pj · 6 tit | **pegar** |
 | 4 | 4 | Rivero | Cristian Rivero | 13 | 0′ · no ha jugado | **pegar** |
 | 5 | 5 | Foulquier | Dimitri Foulquier | 20 | 0′ · no ha jugado | **pegar** |
@@ -1013,7 +974,6 @@ no tapando huecos de equipo.
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
 | 22 | Arnau | Defensa | 242′ · 4 pj · 3 tit | **sí** |
-| 24 | Maffeo | Defensa | 240′ · 5 pj · 3 tit | **sí** |
 | 27 | Otorbi | Delantero | 218′ · 5 pj · 2 tit | **sí** |
 | 36 | I. Córdoba | Defensa | 102′ · 3 pj | — |
 | 33 | Mayol | Centrocampista | 90′ · 1 pj · 1 tit | — |
@@ -1073,6 +1033,9 @@ no tapando huecos de equipo.
 | 24 | Saliba | Centrocampista | 126′ · 2 pj · 1 tit | — |
 | 11 | I. Akhomach | Delantero | 51′ · 4 pj | — |
 | 5 | A. Diatta | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 29 | A. García | Delantero | 0′ · no ha jugado | no ha jugado |
 | 30 | Cheikh | Centrocampista | 0′ · no ha jugado | no ha jugado |
+| 32 | Bonafé | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 27 | Nizar | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 13 | Ruben Gomez | Portero | 0′ · no ha jugado | no ha jugado |
+| 35 | Kinareikin | Portero | 0′ · no ha jugado | no ha jugado |

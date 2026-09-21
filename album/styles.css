@@ -1178,6 +1178,13 @@ button {
   white-space: nowrap;
 }
 
+/* Cada edición lleva su color para no tener que leer el número. */
+.edition-badge[data-edition="3ed"] {
+  border-color: rgba(46, 95, 167, 0.5);
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
 .strategy-stick {
   color: var(--green-dark);
   background: var(--green-soft);

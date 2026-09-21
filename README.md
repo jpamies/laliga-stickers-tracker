@@ -30,7 +30,8 @@
 - Los cromos marcados `No pegar` salen del objetivo del álbum: no cuentan en el
   progreso ni como pendientes, y se resumen aparte.
 - Filtros por edición y un interruptor para ocultar los cromos que no vas a
-  pegar.
+  pegar. Cada cromo lleva la etiqueta de la edición en que se anunció, con un
+  color por edición, y se puede filtrar por ella o buscarla por texto.
 - Minutos de juego en la ficha de cada cromo: minutos, partidos y goles o
   asistencias, tomados de las estadísticas oficiales de LALIGA. El número va en
   verde para un titular, ámbar para un jugador de rotación y rojo cuando no ha
@@ -87,6 +88,7 @@ Regenerar los datos y el álbum:
 
 ```powershell
 .\.venv\Scripts\python.exe extraer_checklist.py
+.\.venv\Scripts\python.exe importar_tercera_edicion.py
 .\.venv\Scripts\python.exe comprobar_plantillas.py
 .\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
@@ -97,6 +99,14 @@ Regenerar los datos y el álbum:
 
 `generar_album.py` necesita `laliga_estadisticas.csv` para los minutos de cada
 ficha; si el archivo no está, el álbum se genera igual pero sin esa fila.
+
+`importar_tercera_edicion.py` añade los cromos anunciados en la tercera edición,
+que todavía no están en el PDF: los siete huecos de equipo que ya tienen
+jugador, los Últimos Fichajes del UF21 al UF40 y los BIS, que Panini ha
+publicado sin numerar. Va justo detrás de `extraer_checklist.py`, que rehace el
+checklist desde el PDF de la segunda edición y por tanto los borraría; como el
+paso es idempotente, se puede repetir sin miedo. Cuando salga el PDF de la
+tercera edición, el script sobra.
 
 `extraer_checklist.py` lee `Checklist_LALIGA_2026-27-2aED.pdf` y reutiliza los
 identificadores que ya existen en `coleccion_panini.csv`, de forma que los

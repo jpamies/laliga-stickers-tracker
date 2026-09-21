@@ -514,6 +514,7 @@
       sticker.club_objetivo,
       displayAction(sticker),
       sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
+      sticker.edicion === "3ed" ? "3ed 3a edicion tercera edicion" : "",
       sticker.coincidencia_laliga,
       sticker.notas,
     ].join(" "));
@@ -548,6 +549,9 @@
     }
     if (state.filter === "second-edition") {
       return sticker.edicion === "2ed";
+    }
+    if (state.filter === "third-edition") {
+      return sticker.edicion === "3ed";
     }
     if (state.filter === "wait") {
       return sticker.accion === "ESPERAR";
@@ -872,6 +876,18 @@
     popover.style.top = `${chip.offsetTop + chip.offsetHeight + 5}px`;
   }
 
+  const editionLabels = {
+    "2ed": "2ª ed",
+    "3ed": "3ª ed",
+  };
+
+  function editionBadge(sticker) {
+    const label = editionLabels[sticker.edicion];
+    if (!label) return "";
+    const title = `Cromo añadido en la ${label.replace("ed", "edición")} del checklist`;
+    return `<span class="edition-badge" data-edition="${escapeHtml(sticker.edicion)}" title="${escapeHtml(title)}">${escapeHtml(label)}</span>`;
+  }
+
   function stickerCard(sticker) {
     const progress = progressFor(sticker.id);
     const duplicates = Math.max(0, progress.copies - 1);
@@ -928,7 +944,7 @@
       <article class="sticker-card" data-id="${escapeHtml(sticker.id)}" data-personal-state="${progress.state}">
         <div class="card-top">
           <span class="sticker-number">${escapeHtml(sticker.numero)}</span>
-          ${sticker.edicion === "2ed" ? '<span class="edition-badge" title="Cromo añadido en la 2ª edición del checklist">2ª ed</span>' : ""}
+          ${editionBadge(sticker)}
           <span class="strategy-badge ${strategyClass(action)}">${escapeHtml(action)}</span>
         </div>
         ${visual}

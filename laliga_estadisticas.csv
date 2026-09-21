@@ -1,576 +1,584 @@
 ﻿clave,slug,seccion_album,equipo,nombre,apodo,dorsal,posicion,minutos,partidos,titularidades,sustituido,goles,asistencias,amarillas,rojas,partidos_equipo,minutos_por_partido_equipo,cromo_id,cromos,consultado_en
-athletic-club-84217,unai-simon,ATHLETIC CLUB DE BILBAO,Athletic Club,Unai Simón,Unai Simon,1,Portero,450,5,5,0,0,0,0,0,5,90.0,ATHLETIC-CLUB-DE-BILBAO-03,ATHLETIC CLUB DE BILBAO 3,2026-09-17
-athletic-club-84235,o-sancet-1,ATHLETIC CLUB DE BILBAO,Athletic Club,Oihan Sancet,O. Sancet,8,Centrocampista,425,5,5,1,1,0,0,0,5,85.0,ATHLETIC-CLUB-DE-BILBAO-16,ATHLETIC CLUB DE BILBAO 14,2026-09-17
-athletic-club-84226,laporte,ATHLETIC CLUB DE BILBAO,Athletic Club,Aymeric Laporte,Laporte,14,Defensa,392,5,4,0,0,0,0,0,5,78.4,ATHLETIC-CLUB-DE-BILBAO-09,ATHLETIC CLUB DE BILBAO 8,2026-09-17
-athletic-club-84243,benat-gerenabarrena,ATHLETIC CLUB DE BILBAO,Athletic Club,Beñat Gerenabarrena,Gerenabarrena,24,Centrocampista,373,5,4,1,0,0,2,0,5,74.6,,,2026-09-17
-athletic-club-84249,williams,ATHLETIC CLUB DE BILBAO,Athletic Club,Iñaki Williams,Williams,9,Delantero,330,5,5,5,0,2,0,0,5,66.0,,,2026-09-17
-athletic-club-84223,yeray-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Yeray Álvarez,Yeray,5,Defensa,315,4,4,1,0,1,0,0,5,63.0,ATHLETIC-CLUB-DE-BILBAO-07,ATHLETIC CLUB DE BILBAO 6B,2026-09-17
-athletic-club-84224,areso,ATHLETIC CLUB DE BILBAO,Athletic Club,Jesús Areso,Areso,12,Defensa,299,4,4,3,0,0,0,0,5,59.8,ATHLETIC-CLUB-DE-BILBAO-05,ATHLETIC CLUB DE BILBAO 5,2026-09-17
-athletic-club-84227,yuri-b,ATHLETIC CLUB DE BILBAO,Athletic Club,Yuri Berchiche,Yuri,17,Defensa,281,4,4,0,0,0,2,0,5,56.2,ATHLETIC-CLUB-DE-BILBAO-10,ATHLETIC CLUB DE BILBAO 9A,2026-09-17
-athletic-club-84250,williams-jr,ATHLETIC CLUB DE BILBAO,Athletic Club,Nico Williams,Williams Jr,10,Delantero,274,5,3,2,1,0,0,0,5,54.8,ATHLETIC-CLUB-DE-BILBAO-21,ATHLETIC CLUB DE BILBAO 18,2026-09-17
-athletic-club-84248,berenguer,ATHLETIC CLUB DE BILBAO,Athletic Club,Alex Berenguer,Berenguer,7,Delantero,252,5,2,0,1,0,1,0,5,50.4,ATHLETIC-CLUB-DE-BILBAO-18,ATHLETIC CLUB DE BILBAO 16,2026-09-17
-athletic-club-84240,navarro-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Robert Navarro,Navarro,23,Centrocampista,242,4,3,3,2,0,1,0,5,48.4,ATHLETIC-CLUB-DE-BILBAO-19,ATHLETIC CLUB DE BILBAO 17A,2026-09-17
-athletic-club-84222,paredes-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Aitor Paredes,Paredes,4,Defensa,209,3,2,1,1,0,0,0,5,41.8,ATHLETIC-CLUB-DE-BILBAO-06,ATHLETIC CLUB DE BILBAO 6A,2026-09-17
-athletic-club-84242,peio-canales,ATHLETIC CLUB DE BILBAO,Athletic Club,Peio Canales,Canales,28,Delantero,205,3,2,0,0,0,0,0,5,41.0,,,2026-09-17
-athletic-club-84237,r-de-galarreta,ATHLETIC CLUB DE BILBAO,Athletic Club,Íñigo Ruiz de Galarreta,R. De Galarreta,16,Centrocampista,197,4,3,3,0,1,1,0,5,39.4,ATHLETIC-CLUB-DE-BILBAO-13,ATHLETIC CLUB DE BILBAO 11,2026-09-17
-athletic-club-84252,guruzeta,ATHLETIC CLUB DE BILBAO,Athletic Club,Gorka Guruzeta,Guruzeta,11,Delantero,178,4,2,2,0,0,2,0,5,35.6,ATHLETIC-CLUB-DE-BILBAO-23,ATHLETIC CLUB DE BILBAO 20,2026-09-17
-athletic-club-84238,mikel-jauregizar,ATHLETIC CLUB DE BILBAO,Athletic Club,Mikel Jauregizar,Jauregizar,18,Centrocampista,150,4,1,1,0,0,0,0,5,30.0,ATHLETIC-CLUB-DE-BILBAO-12,ATHLETIC CLUB DE BILBAO 10,2026-09-17
-athletic-club-86487,johaneko-louis-jean,ATHLETIC CLUB DE BILBAO,Athletic Club,Johaneko Louis-Jean,Johaneko,31,Defensa,123,4,1,1,0,0,1,0,5,24.6,,,2026-09-17
-athletic-club-84230,hugo-rincon,ATHLETIC CLUB DE BILBAO,Athletic Club,Hugo Rincón,H. Rincón,15,Defensa,106,2,1,0,0,0,0,0,5,21.2,,,2026-09-17
-athletic-club-84253,maroan-sannadi,ATHLETIC CLUB DE BILBAO,Athletic Club,Maroan Sannadi,Maroan,21,Delantero,41,2,0,0,0,0,0,0,5,8.2,ATHLETIC-CLUB-DE-BILBAO-20,ATHLETIC CLUB DE BILBAO 17B,2026-09-17
-athletic-club-84251,alvaro-djalo,ATHLETIC CLUB DE BILBAO,Athletic Club,Álvaro Djaló Dias-Fernandes,Djalo,25,Delantero,9,1,0,0,0,0,0,0,5,1.8,,,2026-09-17
-athletic-club-84244,alejandro-rego,ATHLETIC CLUB DE BILBAO,Athletic Club,Alejandro Rego,Rego,20,Defensa,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-14,ATHLETIC CLUB DE BILBAO 12,2026-09-17
-athletic-club-84256,asier-hierro-1,ATHLETIC CLUB DE BILBAO,Athletic Club,Asier Hierro,Hierro,29,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-athletic-club-84241,benat-prados,ATHLETIC CLUB DE BILBAO,Athletic Club,Beñat Prados,Prados,6,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-24,ATHLETIC CLUB DE BILBAO 13BIS,2026-09-17
-athletic-club-84221,vivian,ATHLETIC CLUB DE BILBAO,Athletic Club,Dani Vivian,Vivian,3,Defensa,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-08,ATHLETIC CLUB DE BILBAO 7,2026-09-17
-athletic-club-84233,iker-monreal,ATHLETIC CLUB DE BILBAO,Athletic Club,Iker Monreal,Monreal,30,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-athletic-club-84254,nicolas-serrano,ATHLETIC CLUB DE BILBAO,Athletic Club,Nico Serrano,Nico Serrano,22,Delantero,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-17,ATHLETIC CLUB DE BILBAO 15,2026-09-17
-athletic-club-84246,selton-sanchez,ATHLETIC CLUB DE BILBAO,Athletic Club,Selton Sánchez,Selton,44,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-athletic-club-84219,alex-padilla,ATHLETIC CLUB DE BILBAO,Athletic Club,Álex Padilla,Padilla,13,Portero,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-04,ATHLETIC CLUB DE BILBAO 4,2026-09-17
-atletico-de-madrid-84264,oblak,ATLÉTICO DE MADRID,Atlético de Madrid,Jan Oblak,Oblak,13,Portero,540,6,6,0,0,0,0,0,6,90.0,ATLETICO-DE-MADRID-03,ATLÉTICO DE MADRID 3,2026-09-17
-atletico-de-madrid-84272,david-hancko,ATLÉTICO DE MADRID,Atlético de Madrid,Dávid Hancko,Hancko,17,Defensa,455,6,5,0,0,2,1,0,6,75.8,ATLETICO-DE-MADRID-10,ATLÉTICO DE MADRID 9,2026-09-17
-atletico-de-madrid-84268,grimaldo,ATLÉTICO DE MADRID,Atlético de Madrid,Alejandro Grimaldo,Grimaldo,22,Defensa,445,5,5,1,1,1,0,0,6,74.2,,,2026-09-17
-atletico-de-madrid-84299,ademola-lookman,ATLÉTICO DE MADRID,Atlético de Madrid,Ademola Lookman,Lookman,11,Delantero,437,6,6,5,1,0,1,0,6,72.8,ATLETICO-DE-MADRID-20,ATLÉTICO DE MADRID 18,2026-09-17
-atletico-de-madrid-84285,alex-b,ATLÉTICO DE MADRID,Atlético de Madrid,Álex Baena,Álex B.,10,Centrocampista,388,6,4,3,4,1,1,0,6,64.7,ATLETICO-DE-MADRID-17,ATLÉTICO DE MADRID 15,2026-09-17
-atletico-de-madrid-84298,giuliano-simeone,ATLÉTICO DE MADRID,Atlético de Madrid,Giuliano Simeone,Giuliano,20,Delantero,384,6,4,1,2,1,0,0,6,64.0,ATLETICO-DE-MADRID-19,ATLÉTICO DE MADRID 17,2026-09-17
-atletico-de-madrid-86054,kang-in,ATLÉTICO DE MADRID,Atlético de Madrid,Kang-In Lee,Kang In,7,Centrocampista,380,6,5,4,2,1,1,0,6,63.3,ULTIMOS-FICHAJES-20,ÚLTIMOS FICHAJES UF20,2026-09-17
-atletico-de-madrid-84288,m-llorente,ATLÉTICO DE MADRID,Atlético de Madrid,Marcos Llorente,M. Llorente,14,Centrocampista,375,6,4,2,0,1,1,0,6,62.5,ATLETICO-DE-MADRID-05,ATLÉTICO DE MADRID 5,2026-09-17
-atletico-de-madrid-84273,marc-pubill,ATLÉTICO DE MADRID,Atlético de Madrid,Marc Pubill,Marc Pubill,18,Defensa,358,5,4,1,1,0,1,0,6,59.7,ATLETICO-DE-MADRID-07,ATLÉTICO DE MADRID 7,2026-09-17
-atletico-de-madrid-85697,morten-hjulmand,ATLÉTICO DE MADRID,Atlético de Madrid,Morten Hjulmand,Hjulmand,23,Centrocampista,341,6,4,2,0,0,1,0,6,56.8,ULTIMOS-FICHAJES-05,ÚLTIMOS FICHAJES UF5,2026-09-17
-atletico-de-madrid-84283,koke,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Resurrección Merodio,Koke,6,Centrocampista,313,6,3,2,0,0,0,0,6,52.2,ATLETICO-DE-MADRID-12,ATLÉTICO DE MADRID 11,2026-09-17
-atletico-de-madrid-84284,pablo-barrios-rivas,ATLÉTICO DE MADRID,Atlético de Madrid,Pablo Barrios,Barrios,8,Centrocampista,294,4,3,0,0,1,0,0,6,49.0,ATLETICO-DE-MADRID-13,ATLÉTICO DE MADRID 12,2026-09-17
-atletico-de-madrid-84274,le-normand,ATLÉTICO DE MADRID,Atlético de Madrid,Robin Le Normand,Le Normand,24,Defensa,256,3,3,0,1,0,0,0,6,42.7,ATLETICO-DE-MADRID-08,ATLÉTICO DE MADRID 8A,2026-09-17
-atletico-de-madrid-86639,cristian-romero,ATLÉTICO DE MADRID,Atlético de Madrid,Cristian Romero,Romero,21,Defensa,189,3,2,1,0,0,0,0,6,31.5,,,2026-09-17
-atletico-de-madrid-86179,arnau-ortiz,ATLÉTICO DE MADRID,Atlético de Madrid,Arnau Ortiz,Arnau Ortiz,16,Centrocampista,149,5,1,1,0,0,0,0,6,24.8,,,2026-09-17
-atletico-de-madrid-84282,joao-cardoso,ATLÉTICO DE MADRID,Atlético de Madrid,Johnny Cardoso,Johnny,5,Centrocampista,135,4,1,1,0,1,1,0,6,22.5,ATLETICO-DE-MADRID-14,ATLÉTICO DE MADRID 13,2026-09-17
-atletico-de-madrid-84281,rodrigo-mendoza,ATLÉTICO DE MADRID,Atlético de Madrid,Rodrigo Mendoza,Mendoza,4,Centrocampista,107,3,2,2,0,0,0,0,6,17.8,ATLETICO-DE-MADRID-15,ATLÉTICO DE MADRID 14A,2026-09-17
-atletico-de-madrid-87093,jonathan-david,ATLÉTICO DE MADRID,Atlético de Madrid,Jonathan David,J.david,15,Delantero,98,2,1,1,2,1,0,0,6,16.3,,,2026-09-17
-atletico-de-madrid-84276,daniel-martinez-2,ATLÉTICO DE MADRID,Atlético de Madrid,Dani Martinez,D. Martínez,30,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-17
-atletico-de-madrid-84297,julian-alvarez,ATLÉTICO DE MADRID,Atlético de Madrid,Julián Alvarez,J.alvarez,19,Delantero,55,2,0,0,0,0,0,0,6,9.2,ATLETICO-DE-MADRID-22,ATLÉTICO DE MADRID 20,2026-09-17
-atletico-de-madrid-86175,jorge-dominguez-1,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Domínguez,Domínguez,27,Defensa,45,1,1,1,0,0,1,0,6,7.5,,,2026-09-17
-atletico-de-madrid-84295,alexander-sorloth,ATLÉTICO DE MADRID,Atlético de Madrid,Alexander Sørloth,Sørloth,9,Delantero,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-21,ATLÉTICO DE MADRID 19,2026-09-17
-atletico-de-madrid-86178,jorge-castillo-1,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Castillo,Castillo,46,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-atletico-de-madrid-84263,juan-musso,ATLÉTICO DE MADRID,Atlético de Madrid,Juan Musso,J. Musso,1,Portero,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-04,ATLÉTICO DE MADRID 4,2026-09-17
-atletico-de-madrid-84303,cubo,ATLÉTICO DE MADRID,Atlético de Madrid,Miguel Llorente Cubo,Cubo,29,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-atletico-de-madrid-84289,obed-vargas,ATLÉTICO DE MADRID,Atlético de Madrid,Obed Vargas,Obed Vargas,3,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-16,ATLÉTICO DE MADRID 14B,2026-09-17
-atletico-de-madrid-84265,salvi-esquivel,ATLÉTICO DE MADRID,Atlético de Madrid,Salvi Esquivel,Esquivel,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-deportivo-84383,leo-1,DEPORTIVO,RC Deportivo,Leo Román,Leo Román,13,Portero,540,6,6,0,0,0,0,0,6,90.0,ULTIMOS-FICHAJES-08,ÚLTIMOS FICHAJES UF8,2026-09-17
-rc-deportivo-85693,lorenzo-amatucci,DEPORTIVO,RC Deportivo,Lorenzo Amatucci,Amatucci,16,Centrocampista,540,6,6,0,0,1,3,0,6,90.0,,,2026-09-17
-rc-deportivo-85826,pierre-emerick-aubameyang,DEPORTIVO,RC Deportivo,Pierre-Emerick Aubameyang,Aubameyang,7,Delantero,535,6,6,1,5,2,0,0,6,89.2,ULTIMOS-FICHAJES-12,ÚLTIMOS FICHAJES UF12,2026-09-17
-rc-deportivo-84393,giacomo-quagliata,DEPORTIVO,RC Deportivo,Giacomo Quagliata,Quagliata,12,Defensa,479,6,5,0,0,0,1,0,6,79.8,DEPORTIVO-11,DEPORTIVO 10,2026-09-17
-rc-deportivo-84390,lucas-noubi,DEPORTIVO,RC Deportivo,Lucas Noubi,Noubi,4,Defensa,450,5,5,0,0,0,1,0,6,75.0,DEPORTIVO-07,DEPORTIVO 7,2026-09-17
-rc-deportivo-84395,x-navarro,DEPORTIVO,RC Deportivo,Joaquín Navarro Jiménez,X. Navarro,23,Defensa,443,5,5,1,0,0,2,0,6,73.8,,,2026-09-17
-rc-deportivo-84409,mario-s,DEPORTIVO,RC Deportivo,Mario Soriano,Mario S.,21,Centrocampista,418,6,5,4,0,1,1,0,6,69.7,DEPORTIVO-14,DEPORTIVO 13,2026-09-17
-rc-deportivo-84416,luismi-cruz,DEPORTIVO,RC Deportivo,Luismi Cruz,Luismi Cruz,19,Delantero,374,6,5,5,1,1,0,0,6,62.3,DEPORTIVO-16,DEPORTIVO 15,2026-09-17
-rc-deportivo-84420,bil-nsongo,DEPORTIVO,RC Deportivo,Bil Nsongo,Nsongo Bil,32,Delantero,330,6,5,5,0,0,1,0,6,55.0,DEPORTIVO-21,DEPORTIVO 20,2026-09-17
-rc-deportivo-84388,adria-altimira,DEPORTIVO,RC Deportivo,Adrià Alti,A. Alti,2,Defensa,240,4,3,2,0,0,0,0,6,40.0,DEPORTIVO-05,DEPORTIVO 5,2026-09-17
-rc-deportivo-87141,j-m-gimenez,DEPORTIVO,RC Deportivo,José María Giménez,J. M. Giménez,20,Defensa,239,3,3,2,0,0,0,0,6,39.8,,,2026-09-17
-rc-deportivo-85595,bright-ede,DEPORTIVO,RC Deportivo,Bright Ede,Ede,22,Defensa,196,3,2,0,0,0,0,0,6,32.7,,,2026-09-17
-rc-deportivo-84394,loureiro,DEPORTIVO,RC Deportivo,Miguel Loureiro,M. Loureiro,15,Defensa,195,4,2,1,0,0,0,0,6,32.5,DEPORTIVO-06,DEPORTIVO 6,2026-09-17
-rc-deportivo-84407,riki-1,DEPORTIVO,RC Deportivo,Riki Rodríguez,Riki,14,Centrocampista,175,3,3,3,0,0,0,0,6,29.2,DEPORTIVO-13,DEPORTIVO 12,2026-09-17
-rc-deportivo-85719,jonathan-asp-jensen,DEPORTIVO,RC Deportivo,Jonathan Asp Jensen,Asp - Jensen,18,Centrocampista,162,4,2,2,0,0,0,0,6,27.0,,,2026-09-17
-rc-deportivo-84414,peke,DEPORTIVO,RC Deportivo,Yeremay Hernández,Yeremay,10,Centrocampista,146,5,1,1,0,1,1,0,6,24.3,DEPORTIVO-19,DEPORTIVO 18,2026-09-17
-rc-deportivo-87028,adama,DEPORTIVO,RC Deportivo,Adama Traoré,Adama,24,Delantero,97,3,0,0,0,0,0,0,6,16.2,,,2026-09-17
-rc-deportivo-87142,marc-casado,DEPORTIVO,RC Deportivo,Marc Casadó,M. Casadó,6,Centrocampista,86,2,1,1,0,0,0,0,6,14.3,,,2026-09-17
-rc-deportivo-84413,zakaria-eddahchouri,DEPORTIVO,RC Deportivo,Zakaria Eddahchouri,Eddahchouri,9,Delantero,69,4,0,0,1,0,0,0,6,11.5,DEPORTIVO-20,DEPORTIVO 19,2026-09-17
-rc-deportivo-86354,angelino,DEPORTIVO,RC Deportivo,José Ángel Esmoris Tasende,Angeliño,17,Defensa,59,1,1,0,0,0,0,0,6,9.8,DEPORTIVO-15,DEPORTIVO 14,2026-09-17
-rc-deportivo-84406,diego-villares,DEPORTIVO,RC Deportivo,Diego Villares,D. Villares,8,Centrocampista,58,2,0,0,0,0,0,0,6,9.7,DEPORTIVO-12,DEPORTIVO 11,2026-09-17
-rc-deportivo-84415,david-mella,DEPORTIVO,RC Deportivo,David Mella,Mella,11,Centrocampista,47,2,0,0,0,0,0,0,6,7.8,DEPORTIVO-17,DEPORTIVO 16,2026-09-17
-rc-deportivo-84402,teun-gijselhart,DEPORTIVO,RC Deportivo,Teun Gijselhart,Gijselhart,34,Centrocampista,26,1,0,0,0,0,0,0,6,4.3,,,2026-09-17
-rc-deportivo-84421,kevin-sanchez-1,DEPORTIVO,RC Deportivo,Kevin Sánchez,Kevin,33,Delantero,5,1,0,0,0,0,0,0,6,0.8,,,2026-09-17
-rc-deportivo-84389,arnau-comas,DEPORTIVO,RC Deportivo,Arnau Comas,Comas,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-10,DEPORTIVO 9B,2026-09-17
-rc-deportivo-84391,dani-barcia,DEPORTIVO,RC Deportivo,Dani Barcia,Dani Barcia,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-08,DEPORTIVO 8,2026-09-17
-rc-deportivo-84384,german,DEPORTIVO,RC Deportivo,Germán Parreño,Germán,1,Portero,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-04,DEPORTIVO 4,2026-09-17
-rc-deportivo-84386,alvaro-fernandez,DEPORTIVO,RC Deportivo,Álvaro Fernández,A. Ferllo,25,Portero,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-03,DEPORTIVO 3,2026-09-17
-d-alaves-84179,sivera,DEPORTIVO ALAVÉS,Deportivo Alavés,Antonio Sivera,Sivera,1,Portero,540,6,6,0,0,1,1,0,6,90.0,DEPORTIVO-ALAVES-03,DEPORTIVO ALAVÉS 3,2026-09-17
-d-alaves-84184,ville-koski,DEPORTIVO ALAVÉS,Deportivo Alavés,Ville Koski,Koski,16,Defensa,530,6,6,1,1,0,0,0,6,88.3,DEPORTIVO-ALAVES-06,DEPORTIVO ALAVÉS 6,2026-09-17
-d-alaves-84201,antonio-blanco,DEPORTIVO ALAVÉS,Deportivo Alavés,Antonio Blanco,Blanco,8,Centrocampista,511,6,6,3,0,0,3,0,6,85.2,DEPORTIVO-ALAVES-12,DEPORTIVO ALAVÉS 12,2026-09-17
-d-alaves-84210,abderrahman-rebbach,DEPORTIVO ALAVÉS,Deportivo Alavés,Abde Rebbach,A. Rebbach,21,Centrocampista,496,6,6,4,0,0,3,0,6,82.7,DEPORTIVO-ALAVES-18,DEPORTIVO ALAVÉS 18A,2026-09-17
-d-alaves-84189,nahuel-tenaglia,DEPORTIVO ALAVÉS,Deportivo Alavés,Nahuel Tenaglia,N. Tenaglia,14,Defensa,495,6,6,1,1,0,2,0,6,82.5,DEPORTIVO-ALAVES-07,DEPORTIVO ALAVÉS 7,2026-09-17
-d-alaves-84203,pablo-ibanez,DEPORTIVO ALAVÉS,Deportivo Alavés,Pablo Ibáñez,Ibáñez,19,Centrocampista,495,6,6,1,1,0,1,0,6,82.5,DEPORTIVO-ALAVES-15,DEPORTIVO ALAVÉS 15,2026-09-17
-d-alaves-84187,angel-perez-1,DEPORTIVO ALAVÉS,Deportivo Alavés,Ángel Pérez,Ángel P.,7,Defensa,477,6,6,5,0,3,0,0,6,79.5,DEPORTIVO-ALAVES-17,DEPORTIVO ALAVÉS 17,2026-09-17
-d-alaves-84190,jonny,DEPORTIVO ALAVÉS,Deportivo Alavés,Jonny Otto,J. Otto,17,Defensa,420,5,5,2,0,0,0,0,6,70.0,DEPORTIVO-ALAVES-05,DEPORTIVO ALAVÉS 5,2026-09-17
-d-alaves-84208,lucas-boye,DEPORTIVO ALAVÉS,Deportivo Alavés,Lucas Boyé,Lucas Boyé,15,Delantero,409,5,5,3,4,0,0,0,6,68.2,DEPORTIVO-ALAVES-21,DEPORTIVO ALAVÉS 20,2026-09-17
-d-alaves-84207,t-martinez,DEPORTIVO ALAVÉS,Deportivo Alavés,Toni Martínez,T. Martínez,11,Delantero,324,5,4,2,0,0,0,0,6,54.0,DEPORTIVO-ALAVES-20,DEPORTIVO ALAVÉS 19,2026-09-17
-d-alaves-84199,denis-suarez,DEPORTIVO ALAVÉS,Deportivo Alavés,Denis Suárez,Denis Suárez,4,Centrocampista,280,6,3,2,0,0,1,0,6,46.7,DEPORTIVO-ALAVES-16,DEPORTIVO ALAVÉS 16,2026-09-17
-d-alaves-84206,mariano,DEPORTIVO ALAVÉS,Deportivo Alavés,Mariano Díaz,Mariano,9,Delantero,258,6,2,2,3,3,2,0,6,43.0,,,2026-09-17
-d-alaves-85802,mikel-rodriguez,DEPORTIVO ALAVÉS,Deportivo Alavés,Mikel Rodríguez,Mikel R.,18,Defensa,149,3,2,2,1,0,0,0,6,24.8,,,2026-09-17
-d-alaves-86395,nicolas-valentini,DEPORTIVO ALAVÉS,Deportivo Alavés,Nicolás Valentini,Valentini,2,Defensa,145,3,1,0,0,0,1,0,6,24.2,,,2026-09-17
-d-alaves-84186,youssef-lekhedim,DEPORTIVO ALAVÉS,Deportivo Alavés,Youssef Enriquez,Youssef,3,Defensa,123,5,0,0,0,0,0,0,6,20.5,DEPORTIVO-ALAVES-09,DEPORTIVO ALAVÉS 9,2026-09-17
-d-alaves-84202,alena,DEPORTIVO ALAVÉS,Deportivo Alavés,Carles Aleñá,C. Aleñá,10,Centrocampista,110,5,1,1,0,1,0,0,6,18.3,DEPORTIVO-ALAVES-14,DEPORTIVO ALAVÉS 14,2026-09-17
-d-alaves-84213,aitor-manas,DEPORTIVO ALAVÉS,Deportivo Alavés,Aitor Mañas,Mañas,20,Delantero,87,4,1,2,0,0,0,0,6,14.5,DEPORTIVO-ALAVES-19,DEPORTIVO ALAVÉS 18B,2026-09-17
-d-alaves-84204,carlos-benavidez,DEPORTIVO ALAVÉS,Deportivo Alavés,Carlos Protesoni,C. Protesoni,23,Centrocampista,64,2,0,0,0,0,0,0,6,10.7,DEPORTIVO-ALAVES-11,DEPORTIVO ALAVÉS 11,2026-09-17
-d-alaves-86053,miguel-4,DEPORTIVO ALAVÉS,Deportivo Alavés,Miguel Rodríguez,Miguel,22,Delantero,11,3,0,0,0,0,0,0,6,1.8,,,2026-09-17
-d-alaves-84195,xanet-olaiz,DEPORTIVO ALAVÉS,Deportivo Alavés,Xanet Oláiz,Xanet Olaiz,27,Defensa,10,1,0,0,0,0,0,0,6,1.7,,,2026-09-17
-d-alaves-84200,guevara,DEPORTIVO ALAVÉS,Deportivo Alavés,Ander Guevara,Guevara,6,Centrocampista,6,2,0,0,0,0,0,0,6,1.0,DEPORTIVO-ALAVES-13,DEPORTIVO ALAVÉS 13,2026-09-17
-d-alaves-84181,a-rodriguez-1,DEPORTIVO ALAVÉS,Deportivo Alavés,Adrián Rodríguez,A. Rodriguez,13,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-d-alaves-84185,facundo-garces,DEPORTIVO ALAVÉS,Deportivo Alavés,Facundo Garcés,F. Garcés,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-d-alaves-84182,gregoire-swiderski,DEPORTIVO ALAVÉS,Deportivo Alavés,Grégoire Swiderski,Swiderski,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-d-alaves-84209,hugo-novoa,DEPORTIVO ALAVÉS,Deportivo Alavés,Hugo Novoa,Novoa,12,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-d-alaves-84212,izei-hernandez,DEPORTIVO ALAVÉS,Deportivo Alavés,Izei Hernández,Izei,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-d-alaves-84198,selu-diallo,DEPORTIVO ALAVÉS,Deportivo Alavés,Selu Diallo,Selu Diallo,24,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-elche-c-f-84425,matias-dituro,ELCHE CF,Elche CF,Matías Dituro,M. Dituro,1,Portero,540,6,6,0,0,0,0,0,6,90.0,ELCHE-CF-03,ELCHE CF 3,2026-09-17
-elche-c-f-84429,chust,ELCHE CF,Elche CF,Víctor Chust,Victor Chust,23,Defensa,540,6,6,0,0,1,0,0,6,90.0,ELCHE-CF-06,ELCHE CF 6,2026-09-17
-elche-c-f-84439,g-villar,ELCHE CF,Elche CF,Gonzalo Villar,G. Villar,12,Centrocampista,513,6,6,2,0,1,2,0,6,85.5,ELCHE-CF-13,ELCHE CF 12,2026-09-17
-elche-c-f-84427,buba-sangare,ELCHE CF,Elche CF,Buba Sangaré,B. Sangare,2,Defensa,503,6,6,3,1,0,0,0,6,83.8,ELCHE-CF-10,ELCHE CF 9B,2026-09-17
-elche-c-f-84450,german-valera,ELCHE CF,Elche CF,Germán Valera,Germán V.,11,Centrocampista,482,6,6,4,0,0,1,0,6,80.3,ELCHE-CF-11,ELCHE CF 10,2026-09-17
-elche-c-f-86170,fer-nino,ELCHE CF,Elche CF,Fer Niño,F. Niño,14,Delantero,409,6,5,3,3,0,1,0,6,68.2,ULTIMOS-FICHAJES-15,ÚLTIMOS FICHAJES UF15,2026-09-17
-elche-c-f-84451,t-morente,ELCHE CF,Elche CF,José Antonio Morente Oliva,T. Morente,20,Centrocampista,385,6,4,3,0,2,1,0,6,64.2,ELCHE-CF-18,ELCHE CF 16,2026-09-17
-elche-c-f-84440,federico-redondo,ELCHE CF,Elche CF,Federico Redondo,Redondo,5,Centrocampista,321,4,4,2,0,0,1,0,6,53.5,ELCHE-CF-14,ELCHE CF 13A,2026-09-17
-elche-c-f-84441,marc-aguado,ELCHE CF,Elche CF,Marc Aguado,M. Aguado,8,Centrocampista,257,4,4,3,1,0,1,0,6,42.8,ELCHE-CF-16,ELCHE CF 14,2026-09-17
-elche-c-f-86428,facundo-buonanotte,ELCHE CF,Elche CF,Facundo Buonanotte,Buonanotte,10,Centrocampista,219,4,3,3,1,0,1,0,6,36.5,,,2026-09-17
-elche-c-f-86397,javier-morcillo,ELCHE CF,Elche CF,Javier Morcillo,Morcillo,47,Centrocampista,217,4,2,0,0,0,0,0,6,36.2,,,2026-09-17
-elche-c-f-84458,ali-houary,ELCHE CF,Elche CF,Ali Houary,Ali Houary,29,Delantero,190,3,3,3,0,0,1,0,6,31.7,ELCHE-CF-19,ELCHE CF 17,2026-09-17
-elche-c-f-87094,roy-revivo,ELCHE CF,Elche CF,Roy Revivo,Revivo,3,Defensa,189,3,2,0,0,0,0,0,6,31.5,,,2026-09-17
-elche-c-f-84442,martim-neto,ELCHE CF,Elche CF,Martim Carvalho Neto,M. Neto,16,Centrocampista,161,4,2,2,0,0,0,0,6,26.8,ELCHE-CF-12,ELCHE CF 11,2026-09-17
-elche-c-f-84431,r-bigas,ELCHE CF,Elche CF,Pedro Bigas,R.p. Bigas,6,Defensa,161,3,2,1,0,0,0,0,6,26.8,ELCHE-CF-07,ELCHE CF 7,2026-09-17
-elche-c-f-84447,abiel-osorio,ELCHE CF,Elche CF,Abiel Osorio,Osorio,24,Delantero,146,3,1,0,1,0,1,0,6,24.3,,,2026-09-17
-elche-c-f-84454,lucas-cepeda,ELCHE CF,Elche CF,Lucas Cepeda,Cepeda,21,Delantero,137,6,0,0,0,2,1,0,6,22.8,ELCHE-CF-20,ELCHE CF 18,2026-09-17
-elche-c-f-86643,ezequiel-ponce,ELCHE CF,Elche CF,Ezequiel Ponce,E. Ponce,9,Delantero,121,3,1,1,0,0,0,0,6,20.2,,,2026-09-17
-elche-c-f-87150,lemar,ELCHE CF,Elche CF,Thomas Lemar,Lemar,18,Centrocampista,88,3,0,0,1,0,1,0,6,14.7,,,2026-09-17
-elche-c-f-87079,ruben-sanchez-3,ELCHE CF,Elche CF,Rubén Sánchez,Rubén S.,22,Centrocampista,36,2,0,0,0,0,1,0,6,6.0,,,2026-09-17
-elche-c-f-84443,josan,ELCHE CF,Elche CF,José Antonio Ferrández Pomares,Josan,17,Centrocampista,25,3,0,0,0,1,1,0,6,4.2,ELCHE-CF-17,ELCHE CF 15,2026-09-17
-elche-c-f-86702,alvaro-padilla,ELCHE CF,Elche CF,Álvaro Padilla,Padilla,30,Centrocampista,9,1,0,0,0,0,0,0,6,1.5,,,2026-09-17
-elche-c-f-84426,alejandro-iturbe,ELCHE CF,Elche CF,Alejandro Iturbe,A. Iturbe,13,Portero,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-04,ELCHE CF 4,2026-09-17
-elche-c-f-84430,bambo-diaby,ELCHE CF,Elche CF,Bambo Diaby,Diaby,4,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-elche-c-f-84452,grady-diangana,ELCHE CF,Elche CF,Grady Diangana,Diang,19,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-21,ELCHE CF 19,2026-09-17
-elche-c-f-87152,kevin-lomonaco,ELCHE CF,Elche CF,Kevin Lomónaco,Kevin J.,15,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-elche-c-f-84428,matia-barzic,ELCHE CF,Elche CF,Matia Barzic,M. Baržić,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-elche-c-f-84457,nordin-al-lal,ELCHE CF,Elche CF,Nordin Al Lal,N. Al-Lal,33,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-elche-c-f-84448,yago-alonso,ELCHE CF,Elche CF,Yago Santiago,Santiago,7,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-22,ELCHE CF 20,2026-09-17
-fc-barcelona-84308,j-garcia,FC BARCELONA,FC Barcelona,Joan García,Joan Garcia,1,Portero,495,6,6,1,0,0,0,0,6,82.5,FC-BARCELONA-03,FC BARCELONA 3,2026-09-17
-fc-barcelona-84334,lamine-yamal,FC BARCELONA,FC Barcelona,Lamine Yamal Nasraoui Ebana,Lamine Yamal,10,Delantero,491,6,6,2,7,2,1,0,6,81.8,FC-BARCELONA-21,FC BARCELONA 20,2026-09-17
-fc-barcelona-84335,raphinha,FC BARCELONA,FC Barcelona,Raphael Dias Belloli,Raphinha,11,Delantero,478,6,6,4,9,3,0,0,6,79.7,FC-BARCELONA-20,FC BARCELONA 19,2026-09-17
-fc-barcelona-84321,xavi-espart,FC BARCELONA,FC Barcelona,Xavi Espart,Xavi Espart,12,Defensa,440,5,5,1,1,2,1,0,6,73.3,,,2026-09-17
-fc-barcelona-84323,pedri,FC BARCELONA,FC Barcelona,Pedro González López,Pedri,8,Centrocampista,416,6,5,5,1,1,0,0,6,69.3,FC-BARCELONA-16,FC BARCELONA 15,2026-09-17
-fc-barcelona-84315,gerard-2,FC BARCELONA,FC Barcelona,Gerard Martín,Gerard Martín,18,Defensa,405,5,5,1,0,0,1,0,6,67.5,FC-BARCELONA-09,FC BARCELONA 8,2026-09-17
-fc-barcelona-84317,eric-garcia,FC BARCELONA,FC Barcelona,Eric García,Eric,24,Defensa,379,5,5,2,0,0,0,0,6,63.2,FC-BARCELONA-12,FC BARCELONA 11,2026-09-17
-fc-barcelona-84324,fermin-lopez,FC BARCELONA,FC Barcelona,Fermín López,Fermin,7,Centrocampista,371,5,4,1,4,2,1,0,6,61.8,FC-BARCELONA-17,FC BARCELONA 16,2026-09-17
-fc-barcelona-84314,andreas-christensen,FC BARCELONA,FC Barcelona,Andreas Christensen,Christensen,15,Defensa,343,5,3,0,0,0,0,0,6,57.2,FC-BARCELONA-07,FC BARCELONA 6B,2026-09-17
-fc-barcelona-84313,pau-cubarsi,FC BARCELONA,FC Barcelona,Pau Cubarsí,Cubarsí,5,Defensa,332,4,4,1,0,0,1,0,6,55.3,FC-BARCELONA-08,FC BARCELONA 7,2026-09-17
-fc-barcelona-84332,anthony-gordon,FC BARCELONA,FC Barcelona,Anthony Gordon,Anthony Gordon,17,Delantero,311,5,4,4,0,4,0,0,6,51.8,,,2026-09-17
-fc-barcelona-84328,marc-bernal,FC BARCELONA,FC Barcelona,Marc Bernal,Bernal,22,Centrocampista,288,6,3,3,0,2,0,0,6,48.0,FC-BARCELONA-15,FC BARCELONA 14,2026-09-17
-fc-barcelona-86727,rodrigo-1,FC BARCELONA,FC Barcelona,Rodrigo Hernández Cascante,Rodrigo,16,Centrocampista,266,5,3,2,0,0,1,0,6,44.3,,,2026-09-17
-fc-barcelona-84326,dani-olmo,FC BARCELONA,FC Barcelona,Dani Olmo,Olmo,20,Centrocampista,245,6,2,1,0,3,0,0,6,40.8,FC-BARCELONA-18,FC BARCELONA 17,2026-09-17
-fc-barcelona-85909,karim-adeyemi,FC BARCELONA,FC Barcelona,Karim Adeyemi,Adeyemi,14,Delantero,229,6,2,1,2,2,1,0,6,38.2,ULTIMOS-FICHAJES-19,ÚLTIMOS FICHAJES UF19,2026-09-17
-fc-barcelona-84316,kounde,FC BARCELONA,FC Barcelona,Jules Koundé,Kounde,23,Defensa,171,4,1,0,0,0,0,0,6,28.5,FC-BARCELONA-05,FC BARCELONA 5,2026-09-17
-fc-barcelona-86787,cancelo,FC BARCELONA,FC Barcelona,João Pedro Cavaco Cancelo,Joao Cancelo,2,Defensa,116,5,1,1,1,0,1,0,6,19.3,FC-BARCELONA-10,FC BARCELONA 9,2026-09-17
-fc-barcelona-84322,gavi,FC BARCELONA,FC Barcelona,Pablo Páez Gavira,Gavi,6,Centrocampista,73,2,1,1,0,0,0,0,6,12.2,FC-BARCELONA-14,FC BARCELONA 13,2026-09-17
-fc-barcelona-84309,wojciech-szczesny,FC BARCELONA,FC Barcelona,Wojciech Szczesny,Szczesny,13,Portero,45,1,0,0,0,0,0,0,6,7.5,FC-BARCELONA-04,FC BARCELONA 4,2026-09-17
-fc-barcelona-87050,gabriel-jesus,FC BARCELONA,FC Barcelona,Gabriel Fernando de Jesus,Gabriel Jesus,9,Delantero,30,2,0,0,1,0,0,0,6,5.0,,,2026-09-17
-fc-barcelona-84311,alex-balde,FC BARCELONA,FC Barcelona,Alejandro Balde,Balde,3,Defensa,12,1,0,0,0,0,0,0,6,2.0,FC-BARCELONA-11,FC BARCELONA 10,2026-09-17
-fc-barcelona-86166,hamza-abdelkarim,FC BARCELONA,FC Barcelona,Hamza Mohamed Abdelkarim Elsayed Selim,Hamza Abdelkarim,29,Delantero,4,1,0,0,0,0,0,0,6,0.7,,,2026-09-17
-fc-barcelona-86164,brian-farinas,FC BARCELONA,FC Barcelona,Brian Fariñas,Brian,4,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-fc-barcelona-86901,dominik-livakovic,FC BARCELONA,FC Barcelona,Dominik Livakovic,Livakovic,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-fc-barcelona-84310,eder-aller,FC BARCELONA,FC Barcelona,Eder Aller,Eder Aller,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-fc-barcelona-84327,f-de-jong,FC BARCELONA,FC Barcelona,Frenkie de Jong,F. De Jong,21,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,FC-BARCELONA-13,FC BARCELONA 12,2026-09-17
-fc-barcelona-86161,jordi-pesquer,FC BARCELONA,FC Barcelona,Jordi Pesquer,Jordi Pesquer,33,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-fc-barcelona-84336,roony-bardghji,FC BARCELONA,FC Barcelona,Roony Bardghji,Roony,19,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-fc-barcelona-84320,alvaro-cortes-1,FC BARCELONA,FC Barcelona,Álvaro Cortés,Cortes,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-getafe-cf-84505,david-soria,GETAFE CF,Getafe CF,David Soria,David Soria,13,Portero,450,5,5,0,0,0,0,0,5,90.0,GETAFE-CF-03,GETAFE CF 3,2026-09-17
-getafe-cf-86430,orel-mangala,GETAFE CF,Getafe CF,Orel Mangala,Mangala,23,Centrocampista,448,5,5,2,0,0,1,0,5,89.6,,,2026-09-17
-getafe-cf-85600,r-terrats,GETAFE CF,Getafe CF,Ramón Terrats,R. Terrats,11,Centrocampista,442,5,5,3,1,0,1,0,5,88.4,GETAFE-CF-14,GETAFE CF 14,2026-09-17
-getafe-cf-84509,djene,GETAFE CF,Getafe CF,Djené Dakonam,Djene,2,Defensa,441,5,5,1,0,0,2,0,5,88.2,GETAFE-CF-06,GETAFE CF 6,2026-09-17
-getafe-cf-84527,martin-satriano,GETAFE CF,Getafe CF,Martín Satriano,Satriano,10,Delantero,410,5,5,5,1,0,0,0,5,82.0,GETAFE-CF-20,GETAFE CF 20,2026-09-17
-getafe-cf-86592,enes-unal,GETAFE CF,Getafe CF,Enes Ünal,Enes Ünal,19,Delantero,405,5,4,0,1,0,2,0,5,81.0,,,2026-09-17
-getafe-cf-86604,j-mojica,GETAFE CF,Getafe CF,Johan Mojica,Johan Mojica,22,Centrocampista,360,4,4,0,0,0,2,0,5,72.0,,,2026-09-17
-getafe-cf-85599,zaid-romero,GETAFE CF,Getafe CF,Zaid Romero,Z.romero,24,Defensa,337,4,4,0,0,0,0,0,5,67.4,GETAFE-CF-09,GETAFE CF 9,2026-09-17
-getafe-cf-85789,andres-garcia,GETAFE CF,Getafe CF,Andrés García,Andres Garcia,21,Centrocampista,313,4,3,3,0,0,0,0,5,62.6,ULTIMOS-FICHAJES-18,ÚLTIMOS FICHAJES UF18,2026-09-17
-getafe-cf-84520,mario-martin,GETAFE CF,Getafe CF,Mario Martín,Mario Martín,6,Centrocampista,246,3,3,1,0,0,2,0,5,49.2,GETAFE-CF-11,GETAFE CF 11,2026-09-17
-getafe-cf-86986,gudelj,GETAFE CF,Getafe CF,Nemanja Gudelj,Gudelj,8,Centrocampista,194,3,2,0,0,0,0,0,5,38.8,,,2026-09-17
-getafe-cf-86728,francho,GETAFE CF,Getafe CF,Francho Serrano,Francho,16,Centrocampista,180,3,2,1,0,0,0,0,5,36.0,,,2026-09-17
-getafe-cf-84513,kiko-femenia,GETAFE CF,Getafe CF,Francisco Femenía Far,Kiko F.,17,Defensa,140,3,3,1,0,0,0,0,5,28.0,GETAFE-CF-05,GETAFE CF 5,2026-09-17
-getafe-cf-86313,saba-sazonov,GETAFE CF,Getafe CF,Saba Sazonov,Sazonov,4,Defensa,105,3,1,0,0,0,1,0,5,21.0,,,2026-09-17
-getafe-cf-84508,sebastian-boselli,GETAFE CF,Getafe CF,Sebastián Boselli,Boselli,15,Defensa,99,4,1,1,0,0,0,0,5,19.8,GETAFE-CF-07,GETAFE CF 7,2026-09-17
-getafe-cf-87065,ivan,GETAFE CF,Getafe CF,Iván Azón,Ivan,20,Delantero,93,2,1,1,0,1,1,0,5,18.6,,,2026-09-17
-getafe-cf-84510,abqar,GETAFE CF,Getafe CF,Abdel Abqar,A. Abqar,5,Defensa,91,2,1,0,0,0,0,0,5,18.2,GETAFE-CF-08,GETAFE CF 8,2026-09-17
-getafe-cf-84523,alberto-risco,GETAFE CF,Getafe CF,Alberto Risco,Risco,28,Centrocampista,50,3,0,0,0,0,0,0,5,10.0,,,2026-09-17
-getafe-cf-84514,davinchi,GETAFE CF,Getafe CF,David Cordón Mancha,Davinchi,3,Defensa,46,2,1,1,0,0,1,0,5,9.2,GETAFE-CF-10,GETAFE CF 10,2026-09-17
-getafe-cf-85598,jean-valou,GETAFE CF,Getafe CF,Jean Valou,J. Ives Valou,26,Defensa,17,1,0,0,0,0,0,0,5,3.4,,,2026-09-17
-getafe-cf-84534,joselu-7,GETAFE CF,Getafe CF,José Luis Pérez del Amo,Joselu,32,Delantero,6,1,0,0,0,0,0,0,5,1.2,,,2026-09-17
-getafe-cf-84529,b-mayoral,GETAFE CF,Getafe CF,Borja Mayoral,B. Mayoral,9,Delantero,5,2,0,0,0,0,0,0,5,1.0,GETAFE-CF-18,GETAFE CF 18,2026-09-17
-getafe-cf-86432,oscar-lopez-2,GETAFE CF,Getafe CF,Óscar López,O. Lopez,30,Centrocampista,1,1,0,0,0,0,0,0,5,0.2,,,2026-09-17
-getafe-cf-84521,christantus-uche,GETAFE CF,Getafe CF,Christantus Uche,Uche,18,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-getafe-cf-84507,diego-ferrer,GETAFE CF,Getafe CF,Diego Ferrer,Ferrer,35,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-getafe-cf-86431,ebrahima-drammeh,GETAFE CF,Getafe CF,Ebrahima Drammeh,Ibra Drj,27,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-getafe-cf-86429,curro-burgos,GETAFE CF,Getafe CF,Francisco Burgos Barrionuevo,Curro,29,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-getafe-cf-84504,jiri-letacek,GETAFE CF,Getafe CF,Jirí Letácek,Letacek,1,Portero,0,0,0,0,0,0,0,0,5,0.0,GETAFE-CF-04,GETAFE CF 4,2026-09-17
-getafe-cf-84528,juanmi,GETAFE CF,Getafe CF,Juan Miguel Jiménez López,Juanmi,7,Delantero,0,0,0,0,0,0,0,0,5,0.0,GETAFE-CF-16,GETAFE CF 16,2026-09-17
-getafe-cf-86138,mohamed-hamdoune,GETAFE CF,Getafe CF,Mohamed Hamdoune,Moha,31,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-85790,mandi-1,LEVANTE UD,Levante UD,Aïssa Mandi,Mandi,2,Defensa,450,5,5,0,0,0,1,0,5,90.0,LEVANTE-UD-08,LEVANTE UD 8,2026-09-17
-levante-ud-86579,mathew-ryan,LEVANTE UD,Levante UD,Mathew Ryan,Ryan,13,Portero,450,5,5,0,0,0,0,0,5,90.0,LEVANTE-UD-03,LEVANTE UD 3,2026-09-17
-levante-ud-84543,de-la-fuente,LEVANTE UD,Levante UD,Adrián de la Fuente,Dela,4,Defensa,431,5,5,1,1,0,1,0,5,86.2,LEVANTE-UD-07,LEVANTE UD 7,2026-09-17
-levante-ud-86077,m-sanchez,LEVANTE UD,Levante UD,Manu Sánchez,Manu Sánchez,23,Defensa,431,5,5,1,0,0,0,0,5,86.2,LEVANTE-UD-09,LEVANTE UD 9,2026-09-17
-levante-ud-84554,jon-ander-olasagasti,LEVANTE UD,Levante UD,Jon Ander Olasagasti,Olasagasti,8,Centrocampista,415,5,5,2,1,1,0,0,5,83.0,LEVANTE-UD-12,LEVANTE UD 12,2026-09-17
-levante-ud-84556,o-rey,LEVANTE UD,Levante UD,Oriol Rey,O. Rey,20,Centrocampista,389,5,4,1,0,0,0,0,5,77.8,LEVANTE-UD-11,LEVANTE UD 11,2026-09-17
-levante-ud-84553,r-brugue,LEVANTE UD,Levante UD,Roger Brugué,R. Brugué,7,Delantero,354,4,4,1,3,0,0,0,5,70.8,LEVANTE-UD-18,LEVANTE UD 17,2026-09-17
-levante-ud-84562,ivan-2,LEVANTE UD,Levante UD,Iván Romero,I. Romero,9,Delantero,316,5,4,4,1,0,1,0,5,63.2,LEVANTE-UD-19,LEVANTE UD 18,2026-09-17
-levante-ud-84552,enzo-bardeli,LEVANTE UD,Levante UD,Enzo Bardeli,Enzo Bardeli,18,Centrocampista,308,5,3,2,1,1,0,0,5,61.6,ULTIMOS-FICHAJES-07,ÚLTIMOS FICHAJES UF7,2026-09-17
-levante-ud-84549,nacho-perez-1,LEVANTE UD,Levante UD,Nacho Pérez,Nacho Perez,29,Defensa,295,5,4,4,0,0,0,0,5,59.0,,,2026-09-17
-levante-ud-86545,thiago-fernandez,LEVANTE UD,Levante UD,Thiago Fernández,Thiago,24,Centrocampista,227,3,3,3,0,0,0,0,5,45.4,,,2026-09-17
-levante-ud-84546,victor-g-1,LEVANTE UD,Levante UD,Víctor García,Víctor G.,17,Defensa,196,4,2,1,0,0,0,0,5,39.2,LEVANTE-UD-14,LEVANTE UD 14A,2026-09-17
-levante-ud-84547,jeremy-toljan,LEVANTE UD,Levante UD,Jeremy Toljan,Toljan,22,Defensa,174,5,1,0,0,0,1,0,5,34.8,LEVANTE-UD-05,LEVANTE UD 5,2026-09-17
-levante-ud-85879,hugo-sotelo,LEVANTE UD,Levante UD,Hugo Sotelo,Hugo Sotelo,5,Centrocampista,99,4,1,1,0,0,1,0,5,19.8,,,2026-09-17
-levante-ud-85827,daniel-requena,LEVANTE UD,Levante UD,Dani Requena,Requena,6,Centrocampista,94,2,1,0,0,0,0,0,5,18.8,LEVANTE-UD-13,LEVANTE UD 13,2026-09-17
-levante-ud-84564,etta-eyong,LEVANTE UD,Levante UD,Karl Etta Eyong,Etta Eyong,21,Delantero,64,3,0,0,0,1,0,0,5,12.8,LEVANTE-UD-20,LEVANTE UD 19,2026-09-17
-levante-ud-84566,paco-cortes,LEVANTE UD,Levante UD,Paco Cortés,P. Cortes,27,Centrocampista,64,3,1,1,0,0,0,0,5,12.8,LEVANTE-UD-15,LEVANTE UD 14B,2026-09-17
-levante-ud-87151,petar-ratkov,LEVANTE UD,Levante UD,Petar Ratkov,Petar Ratkov,10,Delantero,59,1,1,1,0,0,0,0,5,11.8,,,2026-09-17
-levante-ud-86276,yanis-musuayi,LEVANTE UD,Levante UD,Yanis Musuayi,Yanis Musuayi,11,Delantero,30,1,0,0,0,0,0,0,5,6.0,LEVANTE-UD-22,LEVANTE UD 20BIS,2026-09-17
-levante-ud-86678,marc-santos,LEVANTE UD,Levante UD,Marc Santos,Marc Santos,33,Defensa,26,1,0,0,0,0,0,0,5,5.2,,,2026-09-17
-levante-ud-86837,ifeanyi-ndukwe,LEVANTE UD,Levante UD,Ifeanyi Ndukwe,Ndukwe,3,Defensa,19,1,0,0,0,0,0,0,5,3.8,,,2026-09-17
-levante-ud-86680,alberto-calatrava,LEVANTE UD,Levante UD,Alberto Calatrava,Calatrava,38,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-86993,axel-tape,LEVANTE UD,Levante UD,Axel Tape,Axel Tape,16,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-86677,ihor-galdin,LEVANTE UD,Levante UD,Ihor Galdin,Ihor Galdin,36,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-84545,jorge-cabello,LEVANTE UD,Levante UD,Jorge Cabello,Cabello,14,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-86679,manel-usedo,LEVANTE UD,Levante UD,Manel Usedo,Manel Usedo,34,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-levante-ud-84540,pablo-cunat,LEVANTE UD,Levante UD,Pablo Campos,P. Campos,1,Portero,0,0,0,0,0,0,0,0,5,0.0,LEVANTE-UD-04,LEVANTE UD 4,2026-09-17
-malaga-cf-84571,a-herrero,MALAGA CF,Málaga CF,Alfonso Herrero,A. Herrero,1,Portero,450,5,5,0,0,0,0,0,5,90.0,MALAGA-CF-03,MALAGA CF 3,2026-09-17
-malaga-cf-84590,chupete,MALAGA CF,Málaga CF,Carlos Ruiz Rubio,Chupe,9,Delantero,450,5,5,0,1,0,1,0,5,90.0,MALAGA-CF-21,MALAGA CF 20,2026-09-17
-malaga-cf-84581,angel-recio,MALAGA CF,Málaga CF,Ángel Recio,Recio,15,Defensa,450,5,5,0,0,0,0,0,5,90.0,,,2026-09-17
-malaga-cf-84580,rafa-garrido,MALAGA CF,Málaga CF,Rafael Garrido Hierro,Rafita,31,Defensa,427,5,5,1,0,0,1,0,5,85.4,MALAGA-CF-09,MALAGA CF 9,2026-09-17
-malaga-cf-84591,larrubia,MALAGA CF,Málaga CF,David Larrubia,D. Larrubia,10,Centrocampista,394,5,4,0,0,0,1,0,5,78.8,MALAGA-CF-17,MALAGA CF 16,2026-09-17
-malaga-cf-84576,einar-galilea,MALAGA CF,Málaga CF,Einar Galilea,Einar,4,Defensa,379,5,5,3,0,0,1,0,5,75.8,MALAGA-CF-08,MALAGA CF 8,2026-09-17
-malaga-cf-84586,izan-merino,MALAGA CF,Málaga CF,Izan Merino,Izan M.,23,Centrocampista,360,5,4,3,0,0,0,0,5,72.0,MALAGA-CF-11,MALAGA CF 11,2026-09-17
-malaga-cf-86058,carlos-dotor,MALAGA CF,Málaga CF,Carlos Dotor,Dotor,8,Centrocampista,316,4,4,3,0,0,0,0,5,63.2,MALAGA-CF-15,MALAGA CF 14,2026-09-17
-malaga-cf-84585,daniel-lorenzo,MALAGA CF,Málaga CF,Dani Lorenzo,Dani Lorenzo,22,Centrocampista,299,4,4,4,0,0,1,0,5,59.8,MALAGA-CF-12,MALAGA CF 12,2026-09-17
-malaga-cf-84592,joaquin-1,MALAGA CF,Málaga CF,Joaquín Muñoz,Joaquín,11,Delantero,293,5,4,4,0,0,0,0,5,58.6,MALAGA-CF-20,MALAGA CF 19,2026-09-17
-malaga-cf-84575,carlos-puga,MALAGA CF,Málaga CF,Carlos Puga,C. Puga,3,Defensa,268,5,3,2,0,0,2,0,5,53.6,MALAGA-CF-05,MALAGA CF 5,2026-09-17
-malaga-cf-86078,salinas-1,MALAGA CF,Málaga CF,José Salinas,Salinas,12,Defensa,225,4,2,1,0,0,0,0,5,45.0,MALAGA-CF-10,MALAGA CF 10,2026-09-17
-malaga-cf-85862,juan-cruz,MALAGA CF,Málaga CF,Juan Cruz,Cruz,19,Centrocampista,196,5,2,2,0,0,1,0,5,39.2,ULTIMOS-FICHAJES-11,ÚLTIMOS FICHAJES UF11,2026-09-17
-malaga-cf-86809,p-martinez,MALAGA CF,Málaga CF,Pablo Martínez,Martínez,18,Centrocampista,194,3,2,1,0,1,1,0,5,38.8,,,2026-09-17
-malaga-cf-84582,ramon-2,MALAGA CF,Málaga CF,Ramón Enríquez,Ramon,6,Centrocampista,86,5,0,0,0,0,2,0,5,17.2,,,2026-09-17
-malaga-cf-84588,rafa-rodriguez,MALAGA CF,Málaga CF,Rafa Rodríguez,Rafa R.,14,Centrocampista,85,3,1,1,0,0,0,0,5,17.0,MALAGA-CF-13,MALAGA CF 13A,2026-09-17
-malaga-cf-84589,haitam,MALAGA CF,Málaga CF,Haitam Abaida,Haitam,7,Delantero,33,2,0,0,0,0,0,0,5,6.6,,,2026-09-17
-malaga-cf-84594,adrian-nino,MALAGA CF,Málaga CF,Adrián Niño,Niño,21,Delantero,23,1,0,0,1,0,0,0,5,4.6,MALAGA-CF-19,MALAGA CF 18,2026-09-17
-malaga-cf-84593,eneko,MALAGA CF,Málaga CF,Eneko Jauregi,Jauregi,17,Delantero,10,1,0,0,0,0,0,0,5,2.0,,,2026-09-17
-malaga-cf-84595,lobete,MALAGA CF,Málaga CF,Julen Lobete,Lobete,24,Delantero,5,1,0,0,0,0,0,0,5,1.0,MALAGA-CF-18,MALAGA CF 17,2026-09-17
-malaga-cf-87170,jens-cajuste,MALAGA CF,Málaga CF,Jens Cajuste,Cajuste,2,Centrocampista,4,1,0,0,0,0,0,0,5,0.8,,,2026-09-17
-malaga-cf-87051,j-berrocal,MALAGA CF,Málaga CF,Juan Berrocal,J. Berrocal,25,Defensa,3,1,0,0,0,0,0,0,5,0.6,,,2026-09-17
-malaga-cf-87015,adam-aznou,MALAGA CF,Málaga CF,Adam Aznou,Aznou,39,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-malaga-cf-84572,carlos-lopez-2,MALAGA CF,Málaga CF,Carlos López,Carlos Lopez,13,Portero,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-04,MALAGA CF 4,2026-09-17
-malaga-cf-84577,diego-murillo,MALAGA CF,Málaga CF,Diego Murillo,Murillo,16,Defensa,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-06,MALAGA CF 6,2026-09-17
-malaga-cf-85749,calero,MALAGA CF,Málaga CF,Fernando Calero,F. Calero,20,Defensa,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-07,MALAGA CF 7,2026-09-17
-malaga-cf-86059,joseph-otunenche,MALAGA CF,Málaga CF,Joseph Otu,Otu Jr,28,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-malaga-cf-86060,juan-fernandez-2,MALAGA CF,Málaga CF,Juan Francisco Fernández Martin,Juani,32,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-malaga-cf-84574,alex-pastor,MALAGA CF,Málaga CF,Álex Pastor,Pastor,5,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-c-a-osasuna-84605,abel-bretones,OSASUNA,CA Osasuna,Abel Bretones,Abel Bretones,23,Centrocampista,495,6,5,0,0,0,2,0,6,82.5,OSASUNA-10,OSASUNA 9,2026-09-17
-c-a-osasuna-84609,inigo-arguibide,OSASUNA,CA Osasuna,Iñigo Arguibide,Arguibide,27,Defensa,476,6,6,4,0,0,0,0,6,79.3,OSASUNA-06,OSASUNA 5B,2026-09-17
-c-a-osasuna-84606,catena,OSASUNA,CA Osasuna,Alejandro Catena,Catena,24,Defensa,450,5,5,0,0,0,0,0,6,75.0,OSASUNA-09,OSASUNA 8,2026-09-17
-c-a-osasuna-84598,s-herrera,OSASUNA,CA Osasuna,Sergio Herrera,S. Herrera,1,Portero,450,5,5,0,0,0,2,0,6,75.0,OSASUNA-03,OSASUNA 3,2026-09-17
-c-a-osasuna-84612,moncayola,OSASUNA,CA Osasuna,Jon Moncayola,Moncayola,7,Centrocampista,424,6,5,1,0,0,1,0,6,70.7,OSASUNA-13,OSASUNA 12,2026-09-17
-c-a-osasuna-84623,budimir,OSASUNA,CA Osasuna,Ante Budimir,Budimir,17,Delantero,412,6,4,1,4,0,0,0,6,68.7,OSASUNA-22,OSASUNA 20,2026-09-17
-c-a-osasuna-84613,iker-munoz,OSASUNA,CA Osasuna,Iker Muñoz,Iker Muñoz,8,Centrocampista,386,5,4,1,0,0,1,0,6,64.3,OSASUNA-15,OSASUNA 13B,2026-09-17
-c-a-osasuna-84620,raul-4,OSASUNA,CA Osasuna,Raúl García,Raúl,9,Delantero,340,6,4,3,0,1,1,0,6,56.7,OSASUNA-20,OSASUNA 18,2026-09-17
-c-a-osasuna-84615,ruben-garcia,OSASUNA,CA Osasuna,Rubén García,Rubén García,14,Delantero,300,6,4,4,0,0,1,0,6,50.0,OSASUNA-16,OSASUNA 14,2026-09-17
-c-a-osasuna-84622,moi-gomez,OSASUNA,CA Osasuna,Moi Gómez,Moi Gómez,16,Centrocampista,240,4,3,3,0,1,0,0,6,40.0,OSASUNA-14,OSASUNA 13A,2026-09-17
-c-a-osasuna-86061,jonathan-dubasin,OSASUNA,CA Osasuna,Jonathan Dubasin,Dubasin,21,Centrocampista,232,6,2,2,0,0,1,0,6,38.7,,,2026-09-17
-c-a-osasuna-86576,rockson-yeboah,OSASUNA,CA Osasuna,Rockson Yeboah,Rockson,48,Defensa,210,3,2,0,0,0,1,0,6,35.0,,,2026-09-17
-c-a-osasuna-84611,torro,OSASUNA,CA Osasuna,Lucas Torró,Torró,6,Centrocampista,208,4,2,0,0,0,0,0,6,34.7,OSASUNA-12,OSASUNA 11,2026-09-17
-c-a-osasuna-84604,boyomo,OSASUNA,CA Osasuna,Enzo Boyomo,Boyomo,22,Defensa,201,3,2,1,0,0,0,0,6,33.5,OSASUNA-07,OSASUNA 6,2026-09-17
-c-a-osasuna-84618,asier-osambela,OSASUNA,CA Osasuna,Asier Osambela,A. Osambela,29,Centrocampista,200,4,2,1,0,0,0,0,6,33.3,OSASUNA-11,OSASUNA 10,2026-09-17
-c-a-osasuna-84602,herrando,OSASUNA,CA Osasuna,Jorge Herrando,Herrando,5,Defensa,187,3,3,2,0,0,1,0,6,31.2,OSASUNA-08,OSASUNA 7,2026-09-17
-c-a-osasuna-84621,kike-barja,OSASUNA,CA Osasuna,Kike Barja,Kike Barja,11,Delantero,181,5,2,2,1,0,3,0,6,30.2,OSASUNA-21,OSASUNA 19,2026-09-17
-c-a-osasuna-84614,aimar-1,OSASUNA,CA Osasuna,Aimar Oroz,Aimar,10,Delantero,151,3,2,2,0,0,0,0,6,25.2,OSASUNA-17,OSASUNA 15,2026-09-17
-c-a-osasuna-84624,raul-moro,OSASUNA,CA Osasuna,Raúl Moro,Moro,18,Centrocampista,137,4,1,1,0,0,0,0,6,22.8,OSASUNA-19,OSASUNA 17,2026-09-17
-c-a-osasuna-84599,aitor-fdez,OSASUNA,CA Osasuna,Aitor Fernández,Aitor Fdez.,13,Portero,90,1,1,0,0,0,0,0,6,15.0,OSASUNA-04,OSASUNA 4,2026-09-17
-c-a-osasuna-84608,unai-santos-1,OSASUNA,CA Osasuna,Unai Santos,Santos,35,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-17
-c-a-osasuna-86560,rico,OSASUNA,CA Osasuna,Diego Rico,Rico,15,Defensa,45,1,1,1,0,0,0,0,6,7.5,,,2026-09-17
-c-a-osasuna-87040,romain-del-castillo,OSASUNA,CA Osasuna,Romain Del Castillo,Del Castillo,20,Centrocampista,35,2,0,0,0,0,0,0,6,5.8,,,2026-09-17
-c-a-osasuna-86916,asier-bonel-1,OSASUNA,CA Osasuna,Asier Bonel,A. Bonel,30,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-c-a-osasuna-84616,mauro-echegoyen,OSASUNA,CA Osasuna,Mauro Echegoyen,Mauro,26,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-c-a-osasuna-84601,rafa-fernandez,OSASUNA,CA Osasuna,Rafa Fernández,Rafa Fdez.,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-c-a-osasuna-84603,valentin-rosier,OSASUNA,CA Osasuna,Valentin Rosier,V. Rosier,19,Defensa,0,0,0,0,0,0,0,0,6,0.0,OSASUNA-05,OSASUNA 5A,2026-09-17
-r-racing-club-86488,julen-agirrezabala,RACING DE SANTANDER,R. Racing Club,Julen Agirrezabala,Agirrezabala,13,Portero,540,6,6,0,0,0,0,0,6,90.0,,,2026-09-17
-r-racing-club-84643,canales,RACING DE SANTANDER,R. Racing Club,Sergio Canales,Canales,20,Centrocampista,480,6,6,4,1,0,0,0,6,80.0,ULTIMOS-FICHAJES-01,ÚLTIMOS FICHAJES UF1,2026-09-17
-r-racing-club-84656,i-vicente,RACING DE SANTANDER,R. Racing Club,Iñigo Vicente,Vicente,10,Delantero,454,6,5,2,0,2,1,0,6,75.7,RACING-DE-SANTANDER-20,RACING DE SANTANDER 18,2026-09-17
-r-racing-club-84639,jorge-salinas,RACING DE SANTANDER,R. Racing Club,Jorge Salinas,Salinas,17,Defensa,454,6,5,0,0,1,2,0,6,75.7,RACING-DE-SANTANDER-11,RACING DE SANTANDER 10,2026-09-17
-r-racing-club-84635,alvaro-mantilla,RACING DE SANTANDER,R. Racing Club,Álvaro Mantilla,Mantilla,2,Defensa,449,5,5,1,0,0,2,0,6,74.8,RACING-DE-SANTANDER-05,RACING DE SANTANDER 5,2026-09-17
-r-racing-club-84637,m-hernando,RACING DE SANTANDER,R. Racing Club,José Manuel Hernando Riol,Manu H.,4,Defensa,397,5,4,2,0,0,1,0,6,66.2,RACING-DE-SANTANDER-09,RACING DE SANTANDER 9A,2026-09-17
-r-racing-club-86803,ivan-martin,RACING DE SANTANDER,R. Racing Club,Iván Martín,Iván Martín,23,Centrocampista,315,4,3,0,0,0,0,0,6,52.5,,,2026-09-17
-r-racing-club-86143,yassir-zabiri,RACING DE SANTANDER,R. Racing Club,Yassir Zabiri,Zabiri,21,Delantero,311,6,3,2,6,0,3,0,6,51.8,,,2026-09-17
-r-racing-club-86348,pablo-ramon,RACING DE SANTANDER,R. Racing Club,Pablo Ramón,Pablo Ramón,5,Centrocampista,292,4,3,1,0,0,1,0,6,48.7,RACING-DE-SANTANDER-23,RACING DE SANTANDER 6BIS,2026-09-17
-r-racing-club-86897,matteo-prati,RACING DE SANTANDER,R. Racing Club,Matteo Prati,Prati,18,Centrocampista,260,4,3,2,0,0,0,0,6,43.3,,,2026-09-17
-r-racing-club-84634,facundo-gonzalez,RACING DE SANTANDER,R. Racing Club,Facu González,Facu,16,Defensa,246,5,3,2,0,0,1,0,6,41.0,RACING-DE-SANTANDER-07,RACING DE SANTANDER 7,2026-09-17
-r-racing-club-84657,andres-2,RACING DE SANTANDER,R. Racing Club,Andrés Martín,Andrés,11,Delantero,239,3,3,1,1,0,0,0,6,39.8,RACING-DE-SANTANDER-18,RACING DE SANTANDER 16,2026-09-17
-r-racing-club-84653,villalibre,RACING DE SANTANDER,R. Racing Club,Asier Villalibre,Villalibre,12,Delantero,219,5,3,3,0,1,0,0,6,36.5,RACING-DE-SANTANDER-22,RACING DE SANTANDER 20,2026-09-17
-r-racing-club-87089,pablo-garcia-5,RACING DE SANTANDER,R. Racing Club,Pablo García,Pablo G.,15,Delantero,154,2,2,2,1,0,0,0,6,25.7,,,2026-09-17
-r-racing-club-84647,maguette-gueye,RACING DE SANTANDER,R. Racing Club,Maguette Gueye,Maguette,14,Centrocampista,148,5,1,0,1,0,0,0,6,24.7,RACING-DE-SANTANDER-12,RACING DE SANTANDER 11A,2026-09-17
-r-racing-club-87067,jeanuel-belocian,RACING DE SANTANDER,R. Racing Club,Jeanuël Belocian,Belocian,24,Defensa,125,2,1,0,0,0,0,0,6,20.8,,,2026-09-17
-r-racing-club-87032,aaron-1,RACING DE SANTANDER,R. Racing Club,Aarón Martín,Aaron,3,Defensa,91,2,1,0,0,0,0,0,6,15.2,,,2026-09-17
-r-racing-club-84644,inigo,RACING DE SANTANDER,R. Racing Club,Íñigo Sainz-Maza,Iñigo,6,Defensa,78,1,1,1,0,0,0,0,6,13.0,RACING-DE-SANTANDER-15,RACING DE SANTANDER 13,2026-09-17
-r-racing-club-86322,pedro-felipe,RACING DE SANTANDER,R. Racing Club,Pedro Felipe de Jesus Gomes,Pedro,22,Defensa,76,3,2,2,0,0,1,0,6,12.7,,,2026-09-17
-r-racing-club-84655,juan-carlos-arana,RACING DE SANTANDER,R. Racing Club,Juan Carlos Arana,Arana,9,Delantero,62,3,1,1,0,0,0,0,6,10.3,RACING-DE-SANTANDER-21,RACING DE SANTANDER 19,2026-09-17
-r-racing-club-87078,andre-almeida-1,RACING DE SANTANDER,R. Racing Club,Domingos André Ribeiro Almeida,Almeida,8,Centrocampista,59,2,0,0,0,0,0,0,6,9.8,,,2026-09-17
-r-racing-club-84654,giorgi-guliashvili,RACING DE SANTANDER,R. Racing Club,Giorgi Guliashvili,Guliashvili,7,Delantero,48,3,0,1,0,0,0,0,6,8.0,RACING-DE-SANTANDER-19,RACING DE SANTANDER 17,2026-09-17
-r-racing-club-87033,iker-luque-1,RACING DE SANTANDER,R. Racing Club,Iker Luque,Iker Luque,19,Centrocampista,47,2,0,0,0,0,0,0,6,7.8,,,2026-09-17
-r-racing-club-84652,andres-vallecillo,RACING DE SANTANDER,R. Racing Club,Andrés Vallecillo,Vallecillo,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-r-racing-club-86729,hugo-perez-2,RACING DE SANTANDER,R. Racing Club,Hugo Pérez,Hugo,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-r-racing-club-86674,jorge-castellanos,RACING DE SANTANDER,R. Racing Club,Jorge Castellanos,Castellanos,33,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-r-racing-club-84631,simon-eriksson,RACING DE SANTANDER,R. Racing Club,Simon Eriksson,Eriksson,1,Portero,0,0,0,0,0,0,0,0,6,0.0,RACING-DE-SANTANDER-04,RACING DE SANTANDER 4,2026-09-17
-rayo-vallecano-84674,lejeune,RAYO VALLECANO,Rayo Vallecano,Florian Lejeune,Lejeune,24,Defensa,540,6,6,0,0,0,1,0,6,90.0,RAYO-VALLECANO-08,RAYO VALLECANO 8,2026-09-17
-rayo-vallecano-84679,pathe-ciss,RAYO VALLECANO,Rayo Vallecano,Pathé Ciss,Pathé I. Ciss,6,Centrocampista,540,6,6,0,0,0,3,0,6,90.0,RAYO-VALLECANO-12,RAYO VALLECANO 12,2026-09-17
-rayo-vallecano-84682,unai-lopez,RAYO VALLECANO,Rayo Vallecano,Unai López,Unai Lopez,8,Centrocampista,469,6,6,4,0,3,2,0,6,78.2,RAYO-VALLECANO-14,RAYO VALLECANO 14,2026-09-17
-rayo-vallecano-84669,andrei,RAYO VALLECANO,Rayo Vallecano,Andrei Ratiu,Andrei,2,Defensa,450,5,5,0,1,0,0,0,6,75.0,RAYO-VALLECANO-05,RAYO VALLECANO 5,2026-09-17
-rayo-vallecano-84683,alvaro-1,RAYO VALLECANO,Rayo Vallecano,Álvaro García,Álvaro,18,Centrocampista,443,6,5,3,2,2,1,0,6,73.8,RAYO-VALLECANO-18,RAYO VALLECANO 18,2026-09-17
-rayo-vallecano-84691,camello,RAYO VALLECANO,Rayo Vallecano,Sergio Camello,Camello,10,Delantero,399,6,5,4,6,1,2,0,6,66.5,RAYO-VALLECANO-19,RAYO VALLECANO 19,2026-09-17
-rayo-vallecano-84685,oscar-5,RAYO VALLECANO,Rayo Vallecano,Óscar Valentín,Óscar V.,23,Centrocampista,312,6,3,2,0,0,1,0,6,52.0,RAYO-VALLECANO-13,RAYO VALLECANO 13,2026-09-17
-rayo-vallecano-86943,pedrosa-1,RAYO VALLECANO,Rayo Vallecano,Adrià Pedrosa,Pedrosa,17,Defensa,308,4,3,2,1,0,1,0,6,51.3,,,2026-09-17
-rayo-vallecano-84692,de-frutos-1,RAYO VALLECANO,Rayo Vallecano,Jorge de Frutos,De Frutos,19,Centrocampista,302,4,4,2,0,1,0,0,6,50.3,RAYO-VALLECANO-16,RAYO VALLECANO 16,2026-09-17
-rayo-vallecano-84678,pedro-diaz,RAYO VALLECANO,Rayo Vallecano,Pedro Díaz,Pedro Díaz,4,Centrocampista,292,5,3,1,0,0,0,0,6,48.7,RAYO-VALLECANO-11,RAYO VALLECANO 11,2026-09-17
-rayo-vallecano-84662,cardenas,RAYO VALLECANO,Rayo Vallecano,Dani Cárdenas,Cárdenas,1,Portero,210,3,2,0,0,0,0,0,6,35.0,RAYO-VALLECANO-04,RAYO VALLECANO 4,2026-09-17
-rayo-vallecano-84673,balliu,RAYO VALLECANO,Rayo Vallecano,Iván Balliu,Balliu,20,Defensa,206,5,2,0,0,0,0,0,6,34.3,RAYO-VALLECANO-06,RAYO VALLECANO 6,2026-09-17
-rayo-vallecano-86918,gnangoro,RAYO VALLECANO,Rayo Vallecano,Gnangoro Bouare Samake,G. Bouaré,36,Centrocampista,186,4,2,2,0,0,1,0,6,31.0,,,2026-09-17
-rayo-vallecano-86580,heorhii-tsitaishvili,RAYO VALLECANO,Rayo Vallecano,Giorgi Tsitaishvili,G.tsitaishvili,14,Delantero,182,3,2,1,0,0,1,0,6,30.3,,,2026-09-17
-rayo-vallecano-87172,emil-audero,RAYO VALLECANO,Rayo Vallecano,Emil Audero,Emil Audero,25,Portero,180,2,2,0,0,0,0,0,6,30.0,,,2026-09-17
-rayo-vallecano-84681,nteka,RAYO VALLECANO,Rayo Vallecano,Randy Nteka,Nteka,11,Centrocampista,153,3,1,1,0,0,0,0,6,25.5,,,2026-09-17
-rayo-vallecano-84663,augusto-batalla,RAYO VALLECANO,Rayo Vallecano,Augusto Batalla,A. Batalla,13,Portero,150,2,2,1,0,0,0,0,6,25.0,RAYO-VALLECANO-03,RAYO VALLECANO 3,2026-09-17
-rayo-vallecano-84684,francisco-martinez-1,RAYO VALLECANO,Rayo Vallecano,Fran Pérez,Fran Pérez,21,Centrocampista,142,5,1,1,0,0,1,0,6,23.7,RAYO-VALLECANO-17,RAYO VALLECANO 17,2026-09-17
-rayo-vallecano-84668,jozhua-vertrouwd,RAYO VALLECANO,Rayo Vallecano,Jozhua Vertrouwd,Jozhua V.,33,Defensa,122,2,2,1,0,0,0,0,6,20.3,,,2026-09-17
-rayo-vallecano-84690,alemao-1,RAYO VALLECANO,Rayo Vallecano,Alexandre Zurawski,Alemâo,9,Delantero,102,5,0,0,0,0,1,0,6,17.0,RAYO-VALLECANO-20,RAYO VALLECANO 20,2026-09-17
-rayo-vallecano-84680,isi-2,RAYO VALLECANO,Rayo Vallecano,Isi Palazón,Isi,7,Centrocampista,81,2,2,2,0,0,0,0,6,13.5,RAYO-VALLECANO-15,RAYO VALLECANO 15,2026-09-17
-rayo-vallecano-87090,mujaid,RAYO VALLECANO,Rayo Vallecano,Mujaid Sadick,Mujaid,15,Defensa,76,2,1,1,0,0,0,0,6,12.7,,,2026-09-17
-rayo-vallecano-84677,pelayo-fernandez,RAYO VALLECANO,Rayo Vallecano,Pelayo Fernández,Pelayo,22,Defensa,67,2,1,1,0,0,0,0,6,11.2,,,2026-09-17
-rayo-vallecano-87186,rayane-belaid,RAYO VALLECANO,Rayo Vallecano,Rayane Belaid,Rayane,37,Delantero,23,1,0,0,0,0,0,0,6,3.8,,,2026-09-17
-rayo-vallecano-84666,adrian-molina,RAYO VALLECANO,Rayo Vallecano,Adrián Molina,Adrián Molina,30,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-86662,ivan-alonso-1,RAYO VALLECANO,Rayo Vallecano,Iván Alonso,Alonso,34,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-84671,luiz-felipe,RAYO VALLECANO,Rayo Vallecano,Luiz Felipe Ramos Marchi,Luiz Felipe,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,RAYO-VALLECANO-09,RAYO VALLECANO 9,2026-09-17
-rayo-vallecano-86435,marash-kumbulla,RAYO VALLECANO,Rayo Vallecano,Marash Kumbulla,Kumbulla,3,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-84688,marco-roman,RAYO VALLECANO,Rayo Vallecano,Marco Román,M. Román,31,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-84675,marco-de-las-sias,RAYO VALLECANO,Rayo Vallecano,Marco de Las Sias,De Las Sias,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-84689,r-d-t,RAYO VALLECANO,Rayo Vallecano,Raúl de Tomás,Rdt,,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rayo-vallecano-84676,sergio-lozano,RAYO VALLECANO,Rayo Vallecano,Sergio Lozano,Lozano,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-celta-84344,ionut-radu,RC CELTA DE VIGO,Celta,Ionut Radu,Radu,13,Portero,540,6,6,0,0,0,1,0,6,90.0,RC-CELTA-DE-VIGO-03,RC CELTA DE VIGO 3,2026-09-17
-rc-celta-84364,miguel-roman,RC CELTA DE VIGO,Celta,Miguel Román,M. Román,8,Centrocampista,495,6,5,0,0,1,0,0,6,82.5,RC-CELTA-DE-VIGO-13,RC CELTA DE VIGO 12,2026-09-17
-rc-celta-84356,yoel-lago,RC CELTA DE VIGO,Celta,Yoel Lago,Yoel Lago,18,Defensa,495,6,5,0,0,0,2,0,6,82.5,RC-CELTA-DE-VIGO-10,RC CELTA DE VIGO 9B,2026-09-17
-rc-celta-84354,marcos-alonso,RC CELTA DE VIGO,Celta,Marcos Alonso,M. Alonso,3,Defensa,411,5,5,0,0,0,2,0,6,68.5,RC-CELTA-DE-VIGO-09,RC CELTA DE VIGO 9A,2026-09-17
-rc-celta-84350,s-carreira,RC CELTA DE VIGO,Celta,Sergio Carreira,Carreira,5,Defensa,411,6,4,0,0,0,1,0,6,68.5,RC-CELTA-DE-VIGO-11,RC CELTA DE VIGO 10,2026-09-17
-rc-celta-84360,ilaix,RC CELTA DE VIGO,Celta,Moriba Kourouma Kourouma,Moriba,6,Centrocampista,402,6,5,2,0,0,0,0,6,67.0,RC-CELTA-DE-VIGO-12,RC CELTA DE VIGO 11,2026-09-17
-rc-celta-84353,javier-rueda,RC CELTA DE VIGO,Celta,Javi Rueda,Javi Rueda,17,Defensa,331,6,3,3,0,0,1,0,6,55.2,RC-CELTA-DE-VIGO-06,RC CELTA DE VIGO 6,2026-09-17
-rc-celta-84372,ferran-1,RC CELTA DE VIGO,Celta,Ferran Jutglà,Jutgla,9,Delantero,325,6,4,3,1,0,0,0,6,54.2,RC-CELTA-DE-VIGO-21,RC CELTA DE VIGO 19,2026-09-17
-rc-celta-84365,williot-swedberg,RC CELTA DE VIGO,Celta,Williot Swedberg,Williot,19,Centrocampista,246,5,3,3,0,0,0,0,6,41.0,RC-CELTA-DE-VIGO-17,RC CELTA DE VIGO 16,2026-09-17
-rc-celta-84358,javier-rodriguez-1,RC CELTA DE VIGO,Celta,Javi Rodríguez,Javi Rguez,20,Defensa,231,4,3,1,0,0,0,0,6,38.5,RC-CELTA-DE-VIGO-07,RC CELTA DE VIGO 7,2026-09-17
-rc-celta-84373,iago-aspas,RC CELTA DE VIGO,Celta,Iago Aspas,Iago Aspas,10,Delantero,220,6,2,2,1,0,0,0,6,36.7,RC-CELTA-DE-VIGO-18,RC CELTA DE VIGO 17,2026-09-17
-rc-celta-84349,carl-starfelt,RC CELTA DE VIGO,Celta,Carl Starfelt,Starfelt,2,Defensa,218,3,2,0,1,0,1,0,6,36.3,RC-CELTA-DE-VIGO-08,RC CELTA DE VIGO 8,2026-09-17
-rc-celta-84347,javi-galan,RC CELTA DE VIGO,Celta,Javi Galán,Javi Galán,22,Centrocampista,205,5,3,3,0,0,0,0,6,34.2,,,2026-09-17
-rc-celta-84374,pablo-duran,RC CELTA DE VIGO,Celta,Pablo Durán,P. Durán,11,Delantero,201,4,2,2,0,0,0,0,6,33.5,RC-CELTA-DE-VIGO-19,RC CELTA DE VIGO 18A,2026-09-17
-rc-celta-84376,hugo-gonzalez-1,RC CELTA DE VIGO,Celta,Hugo González,H. González,16,Centrocampista,190,3,3,3,0,2,0,0,6,31.7,,,2026-09-17
-rc-celta-84367,hugo-alvarez-1,RC CELTA DE VIGO,Celta,Hugo Álvarez,Hugo A.,23,Centrocampista,189,4,2,2,0,0,0,0,6,31.5,RC-CELTA-DE-VIGO-14,RC CELTA DE VIGO 13,2026-09-17
-rc-celta-84352,alvaro-nunez,RC CELTA DE VIGO,Celta,Álvaro Núñez,Álvaro N.c.,15,Defensa,174,2,2,1,0,0,0,0,6,29.0,RC-CELTA-DE-VIGO-05,RC CELTA DE VIGO 5,2026-09-17
-rc-celta-84359,febas,RC CELTA DE VIGO,Celta,Aleix Febas,Febas,14,Centrocampista,167,2,2,1,0,0,0,0,6,27.8,ULTIMOS-FICHAJES-10,ÚLTIMOS FICHAJES UF10,2026-09-17
-rc-celta-87149,sebastian-caceres,RC CELTA DE VIGO,Celta,Sebastián Cáceres,S. Caceres,21,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-17
-rc-celta-86878,couhaib-driouech,RC CELTA DE VIGO,Celta,Couhaib Driouech,Driouech,24,Delantero,63,3,0,0,0,0,1,0,6,10.5,,,2026-09-17
-rc-celta-86290,abdoulaye-faye,RC CELTA DE VIGO,Celta,Abdoulaye Faye,Faye,4,Defensa,45,1,1,1,0,0,0,0,6,7.5,,,2026-09-17
-rc-celta-84370,b-iglesias,RC CELTA DE VIGO,Celta,Borja Iglesias,B. Iglesias,7,Delantero,21,1,0,0,0,0,0,0,6,3.5,RC-CELTA-DE-VIGO-22,RC CELTA DE VIGO 20,2026-09-17
-rc-celta-86396,altay-bayindir,RC CELTA DE VIGO,Celta,Altay Bayindir,Altay Bayindir,1,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-celta-84368,andres-antanon-1,RC CELTA DE VIGO,Celta,Andrés Antañón,Antañon,28,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-celta-86960,quique-ribes-1,RC CELTA DE VIGO,Celta,Enrique Ribes,Ribes,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-celta-84369,hugo-burcio-1,RC CELTA DE VIGO,Celta,Hugo Burcio,Burcio,30,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rc-celta-84343,ivan-villar,RC CELTA DE VIGO,Celta,Iván Villar,Iván Villar,25,Portero,0,0,0,0,0,0,0,0,6,0.0,RC-CELTA-DE-VIGO-04,RC CELTA DE VIGO 4,2026-09-17
-rc-celta-84378,jones-el-abdellaoui,RC CELTA DE VIGO,Celta,Jones El Abdellaoui,El-Abdellaoui,39,Delantero,0,0,0,0,0,0,0,0,6,0.0,RC-CELTA-DE-VIGO-20,RC CELTA DE VIGO 18B,2026-09-17
-rcd-espanyol-84465,dmitrovic,RCD ESPANYOL,RCD Espanyol de Barcelona,Marko Dmitrovic,Dmitrovic,13,Portero,540,6,6,0,0,0,0,0,6,90.0,RCD-ESPANYOL-03,RCD ESPANYOL 3,2026-09-17
-rcd-espanyol-84475,omar-1,RCD ESPANYOL,RCD Espanyol de Barcelona,Omar El Hilali,El Hilali,23,Defensa,525,6,6,1,0,1,1,0,6,87.5,RCD-ESPANYOL-05,RCD ESPANYOL 5,2026-09-17
-rcd-espanyol-84492,roberto-fernandez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Roberto Fernández,Roberto,9,Delantero,523,6,6,2,6,0,0,0,6,87.2,RCD-ESPANYOL-20,RCD ESPANYOL 20,2026-09-17
-rcd-espanyol-84476,roger-hinojo,RCD ESPANYOL,RCD Espanyol de Barcelona,Roger Hinojo,R. Hinojo,21,Defensa,491,6,6,2,0,0,2,0,6,81.8,,,2026-09-17
-rcd-espanyol-84486,javi-hernandez-1,RCD ESPANYOL,RCD Espanyol de Barcelona,Javi Hernández,Javi H.,28,Delantero,471,6,6,5,0,4,1,0,6,78.5,,,2026-09-17
-rcd-espanyol-84480,edu-exposito,RCD ESPANYOL,RCD Espanyol de Barcelona,Edu Expósito,Edu Expósito,8,Centrocampista,468,6,5,4,0,0,1,0,6,78.0,RCD-ESPANYOL-13,RCD ESPANYOL 13,2026-09-17
-rcd-espanyol-84497,tyrhys-dolan,RCD ESPANYOL,RCD Espanyol de Barcelona,Tyrhys Dolan,Dolan,24,Delantero,410,5,5,3,1,0,0,0,6,68.3,RCD-ESPANYOL-16,RCD ESPANYOL 16,2026-09-17
-rcd-espanyol-84479,gonzalez-de-zarate,RCD ESPANYOL,RCD Espanyol de Barcelona,Urko González de Zárate Quirós,Urko,4,Defensa,397,6,5,4,0,0,2,0,6,66.2,RCD-ESPANYOL-12,RCD ESPANYOL 12,2026-09-17
-rcd-espanyol-86398,nunez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Unai Núñez,Nuñez,14,Defensa,356,4,4,1,0,0,0,0,6,59.3,,,2026-09-17
-rcd-espanyol-84477,clemens-riedel,RCD ESPANYOL,RCD Espanyol de Barcelona,Clemens Riedel,Riedel,5,Defensa,340,5,4,1,0,0,2,0,6,56.7,RCD-ESPANYOL-07,RCD ESPANYOL 7,2026-09-17
-rcd-espanyol-84478,cala,RCD ESPANYOL,RCD Espanyol de Barcelona,Álex Calatrava Torrado,Cala,22,Delantero,327,6,4,3,1,0,3,0,6,54.5,ULTIMOS-FICHAJES-02,ÚLTIMOS FICHAJES UF2,2026-09-17
-rcd-espanyol-84472,cabrera,RCD ESPANYOL,RCD Espanyol de Barcelona,Leandro Cabrera,Cabrera,6,Defensa,270,3,3,0,0,0,0,0,6,45.0,RCD-ESPANYOL-08,RCD ESPANYOL 8,2026-09-17
-rcd-espanyol-85597,gabriel-moscardo,RCD ESPANYOL,RCD Espanyol de Barcelona,Gabriel Silva Moscardo de Salles,G. Moscardo,20,Centrocampista,173,4,2,2,0,0,1,0,6,28.8,ULTIMOS-FICHAJES-16,ÚLTIMOS FICHAJES UF16,2026-09-17
-rcd-espanyol-84490,marcos-fernandez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Marcos Fernández,Marcos,18,Delantero,166,5,1,1,1,1,2,0,6,27.7,RCD-ESPANYOL-15,RCD ESPANYOL 15,2026-09-17
-rcd-espanyol-86632,vanja-drkusic,RCD ESPANYOL,RCD Espanyol de Barcelona,Vanja Drkusic,Vanja,16,Defensa,115,3,1,0,0,0,0,0,6,19.2,,,2026-09-17
-rcd-espanyol-84487,rafael-bauza,RCD ESPANYOL,RCD Espanyol de Barcelona,Rafel Bauzà,Bauza,26,Centrocampista,107,4,1,1,0,1,1,0,6,17.8,,,2026-09-17
-rcd-espanyol-85596,quilindschy-hartman,RCD ESPANYOL,RCD Espanyol de Barcelona,Quilindschy Hartman,Quilindschy,3,Defensa,94,2,1,0,0,0,0,0,6,15.7,RCD-ESPANYOL-10,RCD ESPANYOL 10,2026-09-17
-rcd-espanyol-86917,bryan-zaragoza,RCD ESPANYOL,RCD Espanyol de Barcelona,Bryan Zaragoza,Bryan,15,Centrocampista,70,3,0,0,0,0,0,0,6,11.7,,,2026-09-17
-rcd-espanyol-84482,pere-milla,RCD ESPANYOL,RCD Espanyol de Barcelona,Pere Milla,Pere Milla,11,Delantero,40,4,0,0,0,0,1,0,6,6.7,RCD-ESPANYOL-17,RCD ESPANYOL 17,2026-09-17
-rcd-espanyol-84481,pol-lozano,RCD ESPANYOL,RCD Espanyol de Barcelona,Pol Lozano,Pol Lozano,10,Centrocampista,39,3,0,0,0,0,1,0,6,6.5,RCD-ESPANYOL-11,RCD ESPANYOL 11,2026-09-17
-rcd-espanyol-84494,j-carreras,RCD ESPANYOL,RCD Espanyol de Barcelona,Jofre Carreras,Jofre,17,Delantero,18,3,0,0,0,0,0,0,6,3.0,RCD-ESPANYOL-14,RCD ESPANYOL 14,2026-09-17
-rcd-espanyol-84498,adama-timera,RCD ESPANYOL,RCD Espanyol de Barcelona,Adama Timera,Timera,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rcd-espanyol-87081,gorosabel,RCD ESPANYOL,RCD Espanyol de Barcelona,Andoni Gorosabel,Gorosabel,2,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rcd-espanyol-84491,puado,RCD ESPANYOL,RCD Espanyol de Barcelona,Javi Puado,Puado,7,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-18,RCD ESPANYOL 18,2026-09-17
-rcd-espanyol-84468,jose-angel-lopez,RCD ESPANYOL,RCD Espanyol de Barcelona,José Ángel López Gálvez,Jose Angel,32,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rcd-espanyol-84495,kike-g,RCD ESPANYOL,RCD Espanyol de Barcelona,Kike García,Kike G.,19,Delantero,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-19,RCD ESPANYOL 19,2026-09-17
-rcd-espanyol-84467,llorenc-serred,RCD ESPANYOL,RCD Espanyol de Barcelona,Llorenç Serred Martínez,Llorenç,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-rcd-espanyol-84464,angel-f,RCD ESPANYOL,RCD Espanyol de Barcelona,Ángel Fortuño,Àngel Fortuño,1,Portero,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-04,RCD ESPANYOL 4,2026-09-17
-real-betis-84696,a-valles,REAL BETIS,Real Betis,Álvaro Valles,Á.valles,1,Portero,450,5,5,0,0,0,0,0,5,90.0,REAL-BETIS-03,REAL BETIS 3,2026-09-17
-real-betis-85601,fran-garcia-1,REAL BETIS,Real Betis,Fran García,Fran García,11,Defensa,391,5,4,0,0,1,1,0,5,78.2,,,2026-09-17
-real-betis-84701,hector-bellerin,REAL BETIS,Real Betis,Héctor Bellerín,Bellerín,2,Defensa,379,5,4,0,0,0,1,0,5,75.8,REAL-BETIS-06,REAL BETIS 5B,2026-09-17
-real-betis-84710,p-fornals,REAL BETIS,Real Betis,Pablo Fornals,P. Fornals,8,Centrocampista,376,5,4,2,0,0,0,0,5,75.2,REAL-BETIS-16,REAL BETIS 15,2026-09-17
-real-betis-84719,antony,REAL BETIS,Real Betis,Antony Matheus dos Santos,Antony,7,Delantero,371,5,4,1,0,0,0,0,5,74.2,REAL-BETIS-19,REAL BETIS 18,2026-09-17
-real-betis-84703,natan,REAL BETIS,Real Betis,Natan Bernardo de Souza,Natan,4,Defensa,360,4,4,0,1,0,2,0,5,72.0,REAL-BETIS-09,REAL BETIS 8,2026-09-17
-real-betis-84716,marc-roca,REAL BETIS,Real Betis,Marc Roca,Marc Roca,21,Centrocampista,337,4,4,1,0,1,1,0,5,67.4,REAL-BETIS-11,REAL BETIS 10,2026-09-17
-real-betis-84721,cucho,REAL BETIS,Real Betis,Cucho Hernández,C. Hernández,9,Delantero,336,5,4,4,1,1,0,0,5,67.2,REAL-BETIS-20,REAL BETIS 19,2026-09-17
-real-betis-84704,bartra,REAL BETIS,Real Betis,Marc Bartra,Bartra,5,Defensa,321,4,3,0,1,0,0,0,5,64.2,REAL-BETIS-08,REAL BETIS 7,2026-09-17
-real-betis-85602,facundo-bernal,REAL BETIS,Real Betis,Facundo Bernal,F. Bernal,6,Centrocampista,296,5,4,3,0,0,1,0,5,59.2,REAL-BETIS-14,REAL BETIS 13,2026-09-17
-real-betis-84713,riquelme,REAL BETIS,Real Betis,Rodrigo Riquelme,Riquelme,17,Centrocampista,279,5,4,4,2,0,0,0,5,55.8,REAL-BETIS-18,REAL BETIS 17,2026-09-17
-real-betis-84717,isco,REAL BETIS,Real Betis,Francisco Román Alarcón Suárez,Isco,22,Centrocampista,237,5,3,3,0,0,0,0,5,47.4,REAL-BETIS-17,REAL BETIS 16,2026-09-17
-real-betis-84714,nelson-deossa,REAL BETIS,Real Betis,Nelson Deossa,N. Deossa,18,Centrocampista,168,5,1,0,0,0,0,0,5,33.6,,,2026-09-17
-real-betis-84702,llorente-r,REAL BETIS,Real Betis,Diego Llorente,Llorente R.,3,Defensa,129,2,2,1,0,0,0,0,5,25.8,REAL-BETIS-07,REAL BETIS 6,2026-09-17
-real-betis-86802,troy-parrott,REAL BETIS,Real Betis,Troy Parrott,Parrott,19,Delantero,98,3,1,1,1,0,0,0,5,19.6,,,2026-09-17
-real-betis-84705,valentin-gomez,REAL BETIS,Real Betis,Valentín Gómez,V. Gómez,16,Defensa,90,1,1,0,0,0,0,0,5,18.0,REAL-BETIS-10,REAL BETIS 9,2026-09-17
-real-betis-84720,abdessamad-ezzalzouli,REAL BETIS,Real Betis,Abde Ezzalzouli,Ez Abde,10,Delantero,82,2,1,1,0,0,0,0,5,16.4,REAL-BETIS-21,REAL BETIS 20,2026-09-17
-real-betis-84708,angel-ortiz,REAL BETIS,Real Betis,Ángel Ortiz,Á. Ortiz,12,Centrocampista,71,1,1,1,0,0,0,0,5,14.2,,,2026-09-17
-real-betis-84706,junior,REAL BETIS,Real Betis,Junior Firpo,J. Firpo,23,Defensa,59,1,1,1,0,0,1,0,5,11.8,,,2026-09-17
-real-betis-87171,d-ceballos,REAL BETIS,Real Betis,Dani Ceballos,D. Ceballos,25,Centrocampista,33,1,0,0,0,0,0,0,5,6.6,,,2026-09-17
-real-betis-84712,fidalgo,REAL BETIS,Real Betis,Álvaro Fidalgo,Fidalgo,15,Centrocampista,30,1,0,0,0,0,0,0,5,6.0,REAL-BETIS-13,REAL BETIS 12,2026-09-17
-real-betis-84715,lo-celso,REAL BETIS,Real Betis,Giovani Lo Celso,Lo Celso,20,Centrocampista,6,1,0,0,0,0,0,0,5,1.2,REAL-BETIS-15,REAL BETIS 14,2026-09-17
-real-betis-84722,aitor-r,REAL BETIS,Real Betis,Aitor Ruibal,Aitor Ruibal,24,Delantero,0,0,0,0,0,0,0,0,5,0.0,REAL-BETIS-05,REAL BETIS 5A,2026-09-17
-real-betis-85894,diego-conde,REAL BETIS,Real Betis,Diego Conde,Diego Conde,13,Portero,0,0,0,0,0,0,0,0,5,0.0,REAL-BETIS-22,REAL BETIS 4BIS,2026-09-17
-real-betis-84711,losada,REAL BETIS,Real Betis,Iker Losada,Iker,14,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-real-betis-84723,jose-morante,REAL BETIS,Real Betis,José Antonio Morante,Morante,27,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-real-betis-84700,manu-gonzalez,REAL BETIS,Real Betis,Manu González,Manu G.,31,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-real-betis-86870,alvaro-de-pablo,REAL BETIS,Real Betis,Álvaro de Pablo,Á. De Pablo,40,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-real-madrid-84767,kylian-mbappe-lottin,REAL MADRID CF,Real Madrid,Kylian Mbappé,Mbappé,10,Delantero,540,6,6,0,7,2,0,0,6,90.0,REAL-MADRID-CF-23,REAL MADRID CF 20,2026-09-17
-real-madrid-84728,courtois,REAL MADRID CF,Real Madrid,Thibaut Courtois,Courtois,1,Portero,540,6,6,0,0,0,0,0,6,90.0,REAL-MADRID-CF-03,REAL MADRID CF 3,2026-09-17
-real-madrid-84765,vini-jr,REAL MADRID CF,Real Madrid,Vinícius José Paixão de Oliveira Júnior,Vini Jr.,7,Delantero,511,6,6,3,1,3,2,0,6,85.2,REAL-MADRID-CF-22,REAL MADRID CF 19,2026-09-17
-real-madrid-84755,valverde-1,REAL MADRID CF,Real Madrid,Federico Valverde,Valverde,8,Centrocampista,474,6,6,3,0,1,0,0,6,79.0,REAL-MADRID-CF-13,REAL MADRID CF 12,2026-09-17
-real-madrid-84743,dean-huijsen,REAL MADRID CF,Real Madrid,Dean Huijsen,Huijsen,4,Defensa,450,5,5,0,0,0,0,0,6,75.0,REAL-MADRID-CF-09,REAL MADRID CF 9,2026-09-17
-real-madrid-84735,ibrahima-konate,REAL MADRID CF,Real Madrid,Ibrahima Konaté,Konaté,16,Defensa,450,5,5,0,0,0,3,0,6,75.0,,,2026-09-17
-real-madrid-84753,jude-bellingham,REAL MADRID CF,Real Madrid,Jude Bellingham,Bellingham,5,Centrocampista,447,6,5,3,3,2,0,0,6,74.5,REAL-MADRID-CF-15,REAL MADRID CF 14,2026-09-17
-real-madrid-84734,cucurella,REAL MADRID CF,Real Madrid,Marc Cucurella,Cucurella,17,Defensa,340,6,3,1,0,0,0,0,6,56.7,,,2026-09-17
-real-madrid-85545,denzel-dumfries,REAL MADRID CF,Real Madrid,Denzel Dumfries,Dumfries,24,Defensa,325,5,4,2,0,0,0,0,6,54.2,ULTIMOS-FICHAJES-03,ÚLTIMOS FICHAJES UF3,2026-09-17
-real-madrid-84757,arda-guler,REAL MADRID CF,Real Madrid,Arda Güler,Arda Güler,15,Centrocampista,295,6,4,4,1,2,1,0,6,49.2,REAL-MADRID-CF-16,REAL MADRID CF 15A,2026-09-17
-real-madrid-84752,bernardo-silva,REAL MADRID CF,Real Madrid,Bernardo Mota Veiga de Carvalho e Silva,Bernardo,20,Centrocampista,274,5,3,3,0,0,0,0,6,45.7,,,2026-09-17
-real-madrid-86389,yan-diomande,REAL MADRID CF,Real Madrid,Yan Diomande,Yan Diomande,25,Delantero,244,6,2,2,0,1,1,0,6,40.7,,,2026-09-17
-real-madrid-84754,eduardo-camavinga,REAL MADRID CF,Real Madrid,Eduardo Camavinga,Camavinga,6,Centrocampista,221,5,2,1,0,0,2,0,6,36.8,REAL-MADRID-CF-14,REAL MADRID CF 13,2026-09-17
-real-madrid-84737,trent-alexander-arnold,REAL MADRID CF,Real Madrid,Trent Alexander-Arnold,Trent,12,Defensa,213,4,2,1,0,1,0,0,6,35.5,REAL-MADRID-CF-05,REAL MADRID CF 5,2026-09-17
-real-madrid-84739,alvaro-fernandez-1,REAL MADRID CF,Real Madrid,Álvaro Carreras,Á. Carreras,18,Defensa,201,4,3,2,1,0,1,0,6,33.5,REAL-MADRID-CF-10,REAL MADRID CF 10A,2026-09-17
-real-madrid-84741,antonio-rudiger,REAL MADRID CF,Real Madrid,Antonio Rüdiger,Rüdiger,22,Defensa,180,2,2,0,0,0,0,0,6,30.0,REAL-MADRID-CF-08,REAL MADRID CF 8,2026-09-17
-real-madrid-84756,aurelien-tchouameni,REAL MADRID CF,Real Madrid,Aurélien Tchouaméni,Tchouameni,14,Centrocampista,107,2,1,1,0,0,0,0,6,17.8,REAL-MADRID-CF-12,REAL MADRID CF 11,2026-09-17
-real-madrid-84758,brahim,REAL MADRID CF,Real Madrid,Brahim Díaz,Brahim,21,Centrocampista,99,3,1,1,0,0,0,0,6,16.5,REAL-MADRID-CF-19,REAL MADRID CF 16B,2026-09-17
-real-madrid-86180,carlos-espi,REAL MADRID CF,Real Madrid,Carlos Espí,C. Espí,19,Delantero,25,4,0,0,2,0,0,0,6,4.2,REAL-MADRID-CF-24,REAL MADRID CF 17BIS,2026-09-17
-real-madrid-84766,endrick,REAL MADRID CF,Real Madrid,Endrick Felipe Moreira de Sousa,Endrick,9,Delantero,4,1,0,0,0,0,0,0,6,0.7,,,2026-09-17
-real-madrid-86211,alexis-ciria,REAL MADRID CF,Real Madrid,Alexis Ciria,Alexis Ciria,36,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84729,lunin,REAL MADRID CF,Real Madrid,Andrii Lunin,Lunin,13,Portero,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-04,REAL MADRID CF 4,2026-09-17
-real-madrid-84742,f-mendy,REAL MADRID CF,Real Madrid,Ferland Mendy,F. Mendy,23,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-11,REAL MADRID CF 10B,2026-09-17
-real-madrid-84731,javier-navarro-1,REAL MADRID CF,Real Madrid,Javi Navarro,Javi Navarro,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84759,jorge-cestero-1,REAL MADRID CF,Real Madrid,Jorge Cestero Sancho,Cestero,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84750,mario-rivas-1,REAL MADRID CF,Real Madrid,Mario Rivas,Mario Rivas,33,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84738,raul,REAL MADRID CF,Real Madrid,Raúl Asencio,Asencio,2,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-07,REAL MADRID CF 7,2026-09-17
-real-madrid-84768,rodrygo,REAL MADRID CF,Real Madrid,Rodrygo Silva de Goes,Rodrygo,11,Delantero,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-21,REAL MADRID CF 18,2026-09-17
-real-madrid-87182,sergio-martinez-2,REAL MADRID CF,Real Madrid,Sergio Martínez,Sergio,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84732,sergio-mestre,REAL MADRID CF,Real Madrid,Sergio Mestre,Mestre,26,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-madrid-84763,thiago-pitarch,REAL MADRID CF,Real Madrid,Thiago Pitarch,Thiago,27,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-17,REAL MADRID CF 15B,2026-09-17
-real-madrid-84736,e-militao,REAL MADRID CF,Real Madrid,Éder Gabriel Militão Pinheiro,E. Militão,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-06,REAL MADRID CF 6,2026-09-17
-real-sociedad-84810,sergio-gomez,REAL SOCIEDAD,Real Sociedad,Sergio Gómez,Sergio Gómez,17,Defensa,522,6,6,1,0,0,1,0,6,87.0,REAL-SOCIEDAD-08,REAL SOCIEDAD 8,2026-09-17
-real-sociedad-84782,jon-aramburu,REAL SOCIEDAD,Real Sociedad,Jon Aramburu,Aramburu,2,Defensa,507,6,6,1,0,0,3,0,6,84.5,REAL-SOCIEDAD-05,REAL SOCIEDAD 5,2026-09-17
-real-sociedad-84799,luka-sucic,REAL SOCIEDAD,Real Sociedad,Luka Sucic,Sucic,24,Centrocampista,464,6,5,2,2,0,1,0,6,77.3,REAL-SOCIEDAD-16,REAL SOCIEDAD 15,2026-09-17
-real-sociedad-84777,a-remiro,REAL SOCIEDAD,Real Sociedad,Álex Remiro,A. Remiro,1,Portero,450,5,5,0,0,0,0,0,6,75.0,REAL-SOCIEDAD-03,REAL SOCIEDAD 3,2026-09-17
-real-sociedad-84807,oyarzabal,REAL SOCIEDAD,Real Sociedad,Mikel Oyarzabal,Oyarzabal,10,Delantero,417,6,5,4,0,2,1,0,6,69.5,REAL-SOCIEDAD-21,REAL SOCIEDAD 20,2026-09-17
-real-sociedad-84784,zubeldia,REAL SOCIEDAD,Real Sociedad,Igor Zubeldia,Zubeldia,5,Defensa,393,5,4,0,0,0,2,0,6,65.5,REAL-SOCIEDAD-06,REAL SOCIEDAD 6,2026-09-17
-real-sociedad-84793,herrera-1,REAL SOCIEDAD,Real Sociedad,Yangel Herrera,Herrera,21,Centrocampista,382,6,5,5,1,0,3,0,6,63.7,REAL-SOCIEDAD-13,REAL SOCIEDAD 13A,2026-09-17
-real-sociedad-84795,c-soler,REAL SOCIEDAD,Real Sociedad,Carlos Soler,C.soler,18,Centrocampista,374,6,4,1,0,1,0,0,6,62.3,REAL-SOCIEDAD-15,REAL SOCIEDAD 14,2026-09-17
-real-sociedad-84788,jon-martin,REAL SOCIEDAD,Real Sociedad,Jon Martín,Jon Martín,6,Defensa,366,5,4,0,0,0,0,0,6,61.0,REAL-SOCIEDAD-07,REAL SOCIEDAD 7,2026-09-17
-real-sociedad-84805,barrenetxea,REAL SOCIEDAD,Real Sociedad,Ander Barrenetxea,Barrene,7,Centrocampista,288,5,4,4,1,0,0,0,6,48.0,REAL-SOCIEDAD-17,REAL SOCIEDAD 16,2026-09-17
-real-sociedad-84806,orri-oskarsson,REAL SOCIEDAD,Real Sociedad,Orri Óskarsson,Oskarsson,9,Delantero,283,5,3,2,1,0,0,0,6,47.2,REAL-SOCIEDAD-20,REAL SOCIEDAD 19,2026-09-17
-real-sociedad-84792,benat-turrientes,REAL SOCIEDAD,Real Sociedad,Beñat Turrientes,Turrientes,8,Centrocampista,258,4,3,2,0,0,1,0,6,43.0,REAL-SOCIEDAD-12,REAL SOCIEDAD 12,2026-09-17
-real-sociedad-84809,take,REAL SOCIEDAD,Real Sociedad,Takefusa Kubo,Take,14,Centrocampista,223,5,3,3,0,0,0,0,6,37.2,REAL-SOCIEDAD-18,REAL SOCIEDAD 17,2026-09-17
-real-sociedad-84808,guedes,REAL SOCIEDAD,Real Sociedad,Gonçalo Manuel Ganchinho Guedes,Guedes,11,Centrocampista,177,5,2,2,0,0,0,0,6,29.5,REAL-SOCIEDAD-19,REAL SOCIEDAD 18,2026-09-17
-real-sociedad-84816,job-ochieng,REAL SOCIEDAD,Real Sociedad,Job Ochieng,Ochieng,12,Centrocampista,174,3,2,1,1,2,0,0,6,29.0,,,2026-09-17
-real-sociedad-86944,mamadou-sarr,REAL SOCIEDAD,Real Sociedad,Mamadou Sarr,M.sarr,19,Defensa,148,2,2,1,0,0,0,0,6,24.7,,,2026-09-17
-real-sociedad-84778,marrero,REAL SOCIEDAD,Real Sociedad,Unai Marrero,Marrero,13,Portero,90,1,1,0,0,0,0,0,6,15.0,REAL-SOCIEDAD-04,REAL SOCIEDAD 4,2026-09-17
-real-sociedad-84791,jon-gorrotxategi,REAL SOCIEDAD,Real Sociedad,Jon Gorrotxategi,Gorrotxa,4,Centrocampista,62,4,0,0,0,0,0,0,6,10.3,REAL-SOCIEDAD-10,REAL SOCIEDAD 10,2026-09-17
-real-sociedad-84786,pacheco-3,REAL SOCIEDAD,Real Sociedad,Jon Pacheco,J. Pacheco,16,Defensa,20,1,0,0,0,0,0,0,6,3.3,,,2026-09-17
-real-sociedad-84783,aihen,REAL SOCIEDAD,Real Sociedad,Aihen Muñoz,Aihen,3,Defensa,18,1,0,0,0,0,0,0,6,3.0,REAL-SOCIEDAD-09,REAL SOCIEDAD 9,2026-09-17
-real-sociedad-86978,hector-fort,REAL SOCIEDAD,Real Sociedad,Héctor Fort,H. Fort,22,Defensa,9,1,0,0,0,0,0,0,6,1.5,,,2026-09-17
-real-sociedad-84796,arsen-zakharyan,REAL SOCIEDAD,Real Sociedad,Arsen Zakharyan,Zakharyan,23,Centrocampista,8,2,0,0,0,0,0,0,6,1.3,REAL-SOCIEDAD-14,REAL SOCIEDAD 13B,2026-09-17
-real-sociedad-84800,alex-lebarbier,REAL SOCIEDAD,Real Sociedad,Alex Lebarbier,Lebarbier,28,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-sociedad-84814,alex-marchal,REAL SOCIEDAD,Real Sociedad,Alex Marchal,Marchal,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-sociedad-84815,gorka-carrera,REAL SOCIEDAD,Real Sociedad,Gorka Carrera,Carrera,27,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-sociedad-84803,ibai-aguirre,REAL SOCIEDAD,Real Sociedad,Ibai Aguirre,Aguirre,26,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-sociedad-84790,luken-beitia,REAL SOCIEDAD,Real Sociedad,Luken Beitia,Beitia,34,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-real-sociedad-84794,pablo-marin,REAL SOCIEDAD,Real Sociedad,Pablo Marín,Marin,15,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,REAL-SOCIEDAD-11,REAL SOCIEDAD 11,2026-09-17
-real-sociedad-84787,odriozola,REAL SOCIEDAD,Real Sociedad,Álvaro Odriozola,Odriozola,20,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-84829,gabriel-suazo,SEVILLA,Sevilla FC,Gabriel Suazo,Suazo,17,Defensa,540,6,6,0,0,0,2,0,6,90.0,SEVILLA-11,SEVILLA 10,2026-09-17
-sevilla-fc-84823,iglesias,SEVILLA,Sevilla FC,Juan Iglesias,Iglesias,2,Defensa,540,6,6,0,1,0,1,0,6,90.0,SEVILLA-22,SEVILLA 6BIS,2026-09-17
-sevilla-fc-84840,lucien-agoume,SEVILLA,Sevilla FC,Lucien Agoumé,Agoumé,6,Centrocampista,540,6,6,0,0,0,1,0,6,90.0,SEVILLA-13,SEVILLA 12,2026-09-17
-sevilla-fc-85943,odisseas-vlachodimos,SEVILLA,Sevilla FC,Odysseas Vlachodimos,Odysseas,1,Portero,540,6,6,0,0,0,0,0,6,90.0,SEVILLA-03,SEVILLA 3,2026-09-17
-sevilla-fc-84827,kike-salas,SEVILLA,Sevilla FC,Kike Salas,Kike Salas,4,Defensa,448,5,5,0,0,0,1,0,6,74.7,SEVILLA-07,SEVILLA 7,2026-09-17
-sevilla-fc-84853,miguel-sierra,SEVILLA,Sevilla FC,Miguel Sierra,Miguel Sierra,30,Delantero,418,6,6,6,2,0,2,0,6,69.7,,,2026-09-17
-sevilla-fc-84833,castrin,SEVILLA,Sevilla FC,Andrés López Gallo,A. Castrin,5,Defensa,390,5,4,0,0,0,0,0,6,65.0,SEVILLA-09,SEVILLA 9A,2026-09-17
-sevilla-fc-84836,guridi,SEVILLA,Sevilla FC,Jon Guridi,Guridi,18,Centrocampista,341,6,5,5,1,0,3,0,6,56.8,SEVILLA-14,SEVILLA 13,2026-09-17
-sevilla-fc-86508,robbie-ure,SEVILLA,Sevilla FC,Robbie Ure,Robbie Ure,9,Delantero,307,6,3,1,0,1,1,0,6,51.2,,,2026-09-17
-sevilla-fc-84824,arouna-sangante,SEVILLA,Sevilla FC,Arouna Sangante,Sangante,12,Defensa,214,3,3,1,0,0,0,0,6,35.7,ULTIMOS-FICHAJES-17,ÚLTIMOS FICHAJES UF17,2026-09-17
-sevilla-fc-87153,youssouf-fofana,SEVILLA,Sevilla FC,Youssouf Fofana,Fofana,24,Centrocampista,197,3,2,1,0,0,0,0,6,32.8,,,2026-09-17
-sevilla-fc-87095,lucas-stassin,SEVILLA,Sevilla FC,Lucas Stassin,Stassin,19,Delantero,195,3,2,2,1,0,0,0,6,32.5,,,2026-09-17
-sevilla-fc-84846,isaac-romero,SEVILLA,Sevilla FC,Isaac Romero,Isaac,16,Delantero,189,5,2,2,1,1,3,0,6,31.5,SEVILLA-21,SEVILLA 20,2026-09-17
-sevilla-fc-84851,chidera-ejuke,SEVILLA,Sevilla FC,Chidera Ejuke,Ejuke,21,Delantero,179,5,1,1,1,0,1,0,6,29.8,SEVILLA-19,SEVILLA 18,2026-09-17
-sevilla-fc-87096,felix-correia,SEVILLA,Sevilla FC,Félix Alexandre Andrade Sanches Correia,Felix,20,Delantero,164,2,2,2,0,0,0,0,6,27.3,,,2026-09-17
-sevilla-fc-84849,peque-1,SEVILLA,Sevilla FC,Gerard Fernández Castellano,Peque,10,Delantero,158,3,2,2,1,0,1,0,6,26.3,SEVILLA-18,SEVILLA 17,2026-09-17
-sevilla-fc-86815,giorgi,SEVILLA,Sevilla FC,Giorgi Kochorashvili,Kochorashvili,8,Centrocampista,117,4,1,1,0,1,1,0,6,19.5,,,2026-09-17
-sevilla-fc-84844,nico-guillen-1,SEVILLA,Sevilla FC,Nico Guillén,Nico Guillen,27,Centrocampista,90,2,1,1,0,0,1,0,6,15.0,,,2026-09-17
-sevilla-fc-86125,julio-diaz-1,SEVILLA,Sevilla FC,Julio Díaz,Julio Díaz,3,Defensa,83,4,1,1,0,0,0,0,6,13.8,,,2026-09-17
-sevilla-fc-84825,jose-angel-carmona,SEVILLA,Sevilla FC,José Ángel Carmona,Carmona,22,Defensa,41,2,0,0,0,0,0,0,6,6.8,SEVILLA-05,SEVILLA 5,2026-09-17
-sevilla-fc-84843,manu-bueno,SEVILLA,Sevilla FC,Manu Bueno,Manu Bueno,14,Centrocampista,27,2,0,0,0,0,0,0,6,4.5,SEVILLA-17,SEVILLA 16,2026-09-17
-sevilla-fc-84838,ruben-vargas,SEVILLA,Sevilla FC,Rubén Vargas,Vargas,11,Delantero,20,1,0,0,0,0,0,0,6,3.3,SEVILLA-16,SEVILLA 15,2026-09-17
-sevilla-fc-84850,alfonso-1,SEVILLA,Sevilla FC,Alfon González,Alfon,7,Delantero,10,1,0,0,0,0,0,0,6,1.7,,,2026-09-17
-sevilla-fc-84845,edu-altozano,SEVILLA,Sevilla FC,Edu Altozano,Edu Altozano,39,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-86277,francisco-gonzalez,SEVILLA,Sevilla FC,Fran González,Fran González,13,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-84830,fabio-cardoso,SEVILLA,Sevilla FC,Fábio Rafael Rodrigues Cardoso,Cardoso,,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-86394,ibrahima-sow,SEVILLA,Sevilla FC,Ibrahima Sow,Ibra,37,Delantero,0,0,0,0,0,0,0,0,6,0.0,SEVILLA-15,SEVILLA 14,2026-09-17
-sevilla-fc-84835,iker-ortin,SEVILLA,Sevilla FC,Iker Munoz,Iker Muñoz,34,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-86828,manuel-angel-castillo,SEVILLA,Sevilla FC,Manuel Ángel Castillo,Manuel Ángel,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-sevilla-fc-84832,marcao,SEVILLA,Sevilla FC,Marcos do Nascimento Teixeira,Marcao,23,Defensa,0,0,0,0,0,0,0,0,6,0.0,SEVILLA-10,SEVILLA 9B,2026-09-17
-sevilla-fc-84821,rafa-romero,SEVILLA,Sevilla FC,Rafael Romero,Rafa Romero,33,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84857,dimitrievski,VALENCIA,Valencia CF,Stole Dimitrievski,Dimitrievski,1,Portero,540,6,6,0,0,0,1,0,6,90.0,VALENCIA-03,VALENCIA 3,2026-09-17
-valencia-cf-84884,pepelu,VALENCIA,Valencia CF,José Luis García Vayá,Pepelu,18,Centrocampista,478,6,6,3,0,0,1,0,6,79.7,VALENCIA-12,VALENCIA 11,2026-09-17
-valencia-cf-84882,javier-guerra,VALENCIA,Valencia CF,Javi Guerra,Javi Guerra,8,Centrocampista,475,6,6,3,0,1,1,0,6,79.2,VALENCIA-14,VALENCIA 13,2026-09-17
-valencia-cf-84886,filip-ugrinic,VALENCIA,Valencia CF,Filip Ugrinic,Ugrinic,23,Centrocampista,464,6,5,1,0,0,0,0,6,77.3,VALENCIA-16,VALENCIA 15,2026-09-17
-valencia-cf-84889,arnaut-danjuma,VALENCIA,Valencia CF,Arnaut Danjuma,Danjuma,7,Centrocampista,438,6,5,2,0,0,0,0,6,73.0,VALENCIA-24,VALENCIA 19BIS,2026-09-17
-valencia-cf-84871,j-vazquez-1,VALENCIA,Valencia CF,Jesús Vázquez,J. Vázquez,21,Defensa,339,6,4,1,0,0,0,0,6,56.5,VALENCIA-11,VALENCIA 10,2026-09-17
-valencia-cf-84867,cesar-tarrega,VALENCIA,Valencia CF,César Tárrega,Tárrega,5,Defensa,330,5,4,1,0,0,0,0,6,55.0,VALENCIA-07,VALENCIA 7,2026-09-17
-valencia-cf-85603,ryunosuke-sato,VALENCIA,Valencia CF,Ryunosuke Sato,Ryunosuke,39,Centrocampista,297,5,4,3,0,0,2,0,6,49.5,ULTIMOS-FICHAJES-14,ÚLTIMOS FICHAJES UF14,2026-09-17
-valencia-cf-84861,diakhaby,VALENCIA,Valencia CF,Mouctar Diakhaby,Diakhaby,4,Defensa,287,4,3,1,0,0,2,0,6,47.8,VALENCIA-09,VALENCIA 8B,2026-09-17
-valencia-cf-84868,gaya,VALENCIA,Valencia CF,José Gayà,Gayà,14,Defensa,278,4,3,2,0,0,0,0,6,46.3,VALENCIA-10,VALENCIA 9,2026-09-17
-valencia-cf-84881,g-rodriguez,VALENCIA,Valencia CF,Guido Rodríguez,G. Rodriguez,2,Centrocampista,248,3,3,2,0,0,1,0,6,41.3,VALENCIA-13,VALENCIA 12,2026-09-17
-valencia-cf-86902,arnau-1,VALENCIA,Valencia CF,Arnau Martínez,Arnau,22,Defensa,242,4,3,2,0,0,1,0,6,40.3,,,2026-09-17
-valencia-cf-86791,maffeo,VALENCIA,Valencia CF,Pablo Maffeo,Maffeo,24,Defensa,240,5,3,3,0,0,1,0,6,40.0,,,2026-09-17
-valencia-cf-85604,aliou-dieng,VALENCIA,Valencia CF,Aliou Dieng,Dieng,15,Centrocampista,227,5,2,0,0,0,0,0,6,37.8,VALENCIA-23,VALENCIA 16BIS,2026-09-17
-valencia-cf-84895,david-otorbi,VALENCIA,Valencia CF,David Otorbi,Otorbi,27,Delantero,218,5,2,1,0,0,0,0,6,36.3,,,2026-09-17
-valencia-cf-84890,hugo-duro,VALENCIA,Valencia CF,Hugo Duro,Hugo Duro,9,Delantero,176,6,2,2,0,0,0,0,6,29.3,VALENCIA-18,VALENCIA 17,2026-09-17
-valencia-cf-84888,sadiq,VALENCIA,Valencia CF,Umar Sadiq,Sadiq,6,Delantero,158,3,1,0,1,0,0,0,6,26.3,VALENCIA-21,VALENCIA 20A,2026-09-17
-valencia-cf-84862,justin-de-haas,VALENCIA,Valencia CF,Justin de Haas,De Haas,12,Defensa,127,2,2,2,0,0,1,0,6,21.2,ULTIMOS-FICHAJES-09,ÚLTIMOS FICHAJES UF9,2026-09-17
-valencia-cf-84891,l-rioja,VALENCIA,Valencia CF,Luis Rioja,L. Rioja,11,Centrocampista,114,3,1,2,1,0,0,0,6,19.0,VALENCIA-15,VALENCIA 14,2026-09-17
-valencia-cf-84876,iker-cordoba,VALENCIA,Valencia CF,Iker Córdoba,I. Córdoba,36,Defensa,102,3,0,0,0,0,0,0,6,17.0,,,2026-09-17
-valencia-cf-84878,aaron-mayol,VALENCIA,Valencia CF,Aaron Mayol,Mayol,33,Centrocampista,90,1,1,0,0,0,1,0,6,15.0,,,2026-09-17
-valencia-cf-87068,harvey-elliott,VALENCIA,Valencia CF,Harvey Elliott,Elliott,10,Centrocampista,64,2,0,0,0,0,0,0,6,10.7,,,2026-09-17
-valencia-cf-84894,dani-raba,VALENCIA,Valencia CF,Dani Raba,Raba,19,Delantero,8,1,0,0,0,0,0,0,6,1.3,,,2026-09-17
-valencia-cf-84896,aimar-blazquez,VALENCIA,Valencia CF,Aimar Blázquez,Aimar,37,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84874,alex-panach,VALENCIA,Valencia CF,Alejandro Panach Olmo,Panach,29,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84858,c-rivero,VALENCIA,Valencia CF,Cristian Rivero,C.rivero,13,Portero,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-04,VALENCIA 4,2026-09-17
-valencia-cf-84863,foulquier,VALENCIA,Valencia CF,Dimitri Foulquier,Foulquier,20,Defensa,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-05,VALENCIA 5,2026-09-17
-valencia-cf-86456,jaume-dura,VALENCIA,Valencia CF,Jaume Durá,Jaume Durà,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84866,copete,VALENCIA,Valencia CF,José Manuel Arias Copete,Copete,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-06,VALENCIA 6,2026-09-17
-valencia-cf-86864,kayne-van-oevelen,VALENCIA,Valencia CF,Kayne van Oevelen,Van Oevelen,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84875,marcos-navarro,VALENCIA,Valencia CF,Marcos Navarro,M. Navarro,41,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-86455,rodrigo-gamon,VALENCIA,Valencia CF,Rodrigo Gamón,Gamón,31,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-valencia-cf-84880,sergi-canos,VALENCIA,Valencia CF,Sergi Canós,Tenés,,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-17
-villarreal-cf-84917,renato-veiga,VILLARREAL,Villarreal CF,Renato Palma Veiga,Renato Veiga,12,Defensa,450,5,5,0,0,1,1,0,5,90.0,VILLARREAL-12,VILLARREAL 9,2026-09-17
-villarreal-cf-84929,nicolas-pepe,VILLARREAL,Villarreal CF,Nicolas Pépé,Pepe,19,Centrocampista,412,5,5,3,2,0,1,0,5,82.4,VILLARREAL-21,VILLARREAL 18,2026-09-17
-villarreal-cf-84920,pape-alassane-gueye,VILLARREAL,Villarreal CF,Pape Gueye,Gueye,18,Centrocampista,386,5,5,2,1,0,1,0,5,77.2,VILLARREAL-14,VILLARREAL 11,2026-09-17
-villarreal-cf-84926,georges-mikautadze,VILLARREAL,Villarreal CF,Georges Mikautadze,Mikautadze,9,Delantero,369,5,4,2,1,1,0,0,5,73.8,VILLARREAL-22,VILLARREAL 19,2026-09-17
-villarreal-cf-84915,carlos-romero,VILLARREAL,Villarreal CF,Carlos Romero,C. Romero,20,Defensa,360,4,4,0,0,0,1,0,5,72.0,,,2026-09-17
-villarreal-cf-84901,luiz-junior-1,VILLARREAL,Villarreal CF,Luiz Lúcio Reis Júnior,Júnior R.,1,Portero,360,4,4,0,0,0,0,0,5,72.0,VILLARREAL-03,VILLARREAL 3,2026-09-17
-villarreal-cf-84918,santi-c-v,VILLARREAL,Villarreal CF,Santi Comesaña,Santi C.v.,14,Centrocampista,320,5,4,3,0,0,1,0,5,64.0,VILLARREAL-15,VILLARREAL 12,2026-09-17
-villarreal-cf-84910,santiago-mourino,VILLARREAL,Villarreal CF,Santiago Mouriño,Mouriño,15,Defensa,316,4,4,3,0,0,2,0,5,63.2,VILLARREAL-05,VILLARREAL 5,2026-09-17
-villarreal-cf-84925,gerard,VILLARREAL,Villarreal CF,Gerard Moreno,Gerard,7,Delantero,273,5,3,3,2,0,0,0,5,54.6,VILLARREAL-23,VILLARREAL 20,2026-09-17
-villarreal-cf-84909,foyth,VILLARREAL,Villarreal CF,Juan Foyth,Foyth,8,Defensa,270,3,3,0,0,0,2,0,5,54.0,VILLARREAL-08,VILLARREAL 7A,2026-09-17
-villarreal-cf-84922,a-moleiro,VILLARREAL,Villarreal CF,Alberto Moleiro,A. Moleiro,10,Centrocampista,240,5,3,3,0,1,0,0,5,48.0,VILLARREAL-17,VILLARREAL 14,2026-09-17
-villarreal-cf-84931,ayoze-perez,VILLARREAL,Villarreal CF,Ayoze Pérez,Ayoze,22,Delantero,221,5,3,3,0,1,0,0,5,44.2,VILLARREAL-20,VILLARREAL 17,2026-09-17
-villarreal-cf-84928,tajon-buchanan,VILLARREAL,Villarreal CF,Tajon Buchanan,Buchanan,17,Centrocampista,209,5,2,2,0,0,1,0,5,41.8,VILLARREAL-18,VILLARREAL 15,2026-09-17
-villarreal-cf-84906,alexander-freeman,VILLARREAL,Villarreal CF,Alex Freeman,Freeman,3,Defensa,134,4,1,0,0,0,0,0,5,26.8,VILLARREAL-09,VILLARREAL 7B,2026-09-17
-villarreal-cf-86898,nathan-saliba,VILLARREAL,Villarreal CF,Nathan Saliba,Saliba,24,Centrocampista,126,2,1,0,0,0,0,0,5,25.2,,,2026-09-17
-villarreal-cf-84908,pau-navarro,VILLARREAL,Villarreal CF,Pau Navarro,Pau Navarro,6,Defensa,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-06,VILLARREAL 6A,2026-09-17
-villarreal-cf-86291,peter-gulacsi,VILLARREAL,Villarreal CF,Péter Gulácsi,Gulácsi,25,Portero,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-24,VILLARREAL 4BIS,2026-09-17
-villarreal-cf-84911,sergi-cardona,VILLARREAL,Villarreal CF,Sergi Cardona,S. Cardona,23,Defensa,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-13,VILLARREAL 10,2026-09-17
-villarreal-cf-84905,logan-costa,VILLARREAL,Villarreal CF,Logan Evans Costa,Costa,2,Defensa,83,1,1,1,0,0,0,0,5,16.6,VILLARREAL-07,VILLARREAL 6B,2026-09-17
-villarreal-cf-84930,tani-oluwaseyi,VILLARREAL,Villarreal CF,Tani Oluwaseyi,Oluwaseyi,21,Delantero,55,4,0,0,0,0,0,0,5,11.0,VILLARREAL-19,VILLARREAL 16,2026-09-17
-villarreal-cf-84927,ilias-akhomach,VILLARREAL,Villarreal CF,Ilias Akhomach,I. Akhomach,11,Delantero,51,4,0,0,0,0,0,0,5,10.2,,,2026-09-17
-villarreal-cf-84923,carlos-macia-1,VILLARREAL,Villarreal CF,Carlos Maciá,Macia,16,Centrocampista,45,2,0,0,0,0,0,0,5,9.0,VILLARREAL-16,VILLARREAL 13,2026-09-17
-villarreal-cf-84924,alassane-diatta,VILLARREAL,Villarreal CF,Alassane Diatta,A. Diatta,5,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-villarreal-cf-86066,cheikh-thiam,VILLARREAL,Villarreal CF,Cheikh Thiam,Cheikh,30,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-villarreal-cf-86067,nizar-jmili,VILLARREAL,Villarreal CF,Nizar El Jmili Ben Hamou,Nizar,27,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
-villarreal-cf-84904,ruben-gomez-peris,VILLARREAL,Villarreal CF,Rubén Gómez,Ruben Gomez,13,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-17
+athletic-club-84217,unai-simon,ATHLETIC CLUB DE BILBAO,Athletic Club,Unai Simón,Unai Simon,1,Portero,450,5,5,0,0,0,0,0,5,90.0,ATHLETIC-CLUB-DE-BILBAO-03,ATHLETIC CLUB DE BILBAO 3,2026-09-21
+athletic-club-84235,o-sancet-1,ATHLETIC CLUB DE BILBAO,Athletic Club,Oihan Sancet,O. Sancet,8,Centrocampista,425,5,5,1,1,0,0,0,5,85.0,ATHLETIC-CLUB-DE-BILBAO-16,ATHLETIC CLUB DE BILBAO 14,2026-09-21
+athletic-club-84226,laporte,ATHLETIC CLUB DE BILBAO,Athletic Club,Aymeric Laporte,Laporte,14,Defensa,392,5,4,0,0,0,0,0,5,78.4,ATHLETIC-CLUB-DE-BILBAO-09,ATHLETIC CLUB DE BILBAO 8,2026-09-21
+athletic-club-84243,benat-gerenabarrena,ATHLETIC CLUB DE BILBAO,Athletic Club,Beñat Gerenabarrena,Gerenabarrena,24,Centrocampista,373,5,4,1,0,0,2,0,5,74.6,,,2026-09-21
+athletic-club-84249,williams,ATHLETIC CLUB DE BILBAO,Athletic Club,Iñaki Williams,Williams,9,Delantero,330,5,5,5,0,2,0,0,5,66.0,,,2026-09-21
+athletic-club-84223,yeray-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Yeray Álvarez,Yeray,5,Defensa,315,4,4,1,0,1,0,0,5,63.0,ATHLETIC-CLUB-DE-BILBAO-07,ATHLETIC CLUB DE BILBAO 6B,2026-09-21
+athletic-club-84224,areso,ATHLETIC CLUB DE BILBAO,Athletic Club,Jesús Areso,Areso,12,Defensa,299,4,4,3,0,0,0,0,5,59.8,ATHLETIC-CLUB-DE-BILBAO-05,ATHLETIC CLUB DE BILBAO 5,2026-09-21
+athletic-club-84227,yuri-b,ATHLETIC CLUB DE BILBAO,Athletic Club,Yuri Berchiche,Yuri,17,Defensa,281,4,4,0,0,0,2,0,5,56.2,ATHLETIC-CLUB-DE-BILBAO-10,ATHLETIC CLUB DE BILBAO 9A,2026-09-21
+athletic-club-84250,williams-jr,ATHLETIC CLUB DE BILBAO,Athletic Club,Nico Williams,Williams Jr,10,Delantero,274,5,3,2,1,0,0,0,5,54.8,ATHLETIC-CLUB-DE-BILBAO-21,ATHLETIC CLUB DE BILBAO 18,2026-09-21
+athletic-club-84248,berenguer,ATHLETIC CLUB DE BILBAO,Athletic Club,Alex Berenguer,Berenguer,7,Delantero,252,5,2,0,1,0,1,0,5,50.4,ATHLETIC-CLUB-DE-BILBAO-18,ATHLETIC CLUB DE BILBAO 16,2026-09-21
+athletic-club-84240,navarro-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Robert Navarro,Navarro,23,Centrocampista,242,4,3,3,2,0,1,0,5,48.4,ATHLETIC-CLUB-DE-BILBAO-19,ATHLETIC CLUB DE BILBAO 17A,2026-09-21
+athletic-club-84222,paredes-2,ATHLETIC CLUB DE BILBAO,Athletic Club,Aitor Paredes,Paredes,4,Defensa,209,3,2,1,1,0,0,0,5,41.8,ATHLETIC-CLUB-DE-BILBAO-06,ATHLETIC CLUB DE BILBAO 6A,2026-09-21
+athletic-club-84242,peio-canales,ATHLETIC CLUB DE BILBAO,Athletic Club,Peio Canales,Canales,28,Delantero,205,3,2,0,0,0,0,0,5,41.0,ULTIMOS-FICHAJES-35,ÚLTIMOS FICHAJES UF35,2026-09-21
+athletic-club-84237,r-de-galarreta,ATHLETIC CLUB DE BILBAO,Athletic Club,Íñigo Ruiz de Galarreta,R. De Galarreta,16,Centrocampista,197,4,3,3,0,1,1,0,5,39.4,ATHLETIC-CLUB-DE-BILBAO-13,ATHLETIC CLUB DE BILBAO 11,2026-09-21
+athletic-club-84252,guruzeta,ATHLETIC CLUB DE BILBAO,Athletic Club,Gorka Guruzeta,Guruzeta,11,Delantero,178,4,2,2,0,0,2,0,5,35.6,ATHLETIC-CLUB-DE-BILBAO-23,ATHLETIC CLUB DE BILBAO 20,2026-09-21
+athletic-club-84238,mikel-jauregizar,ATHLETIC CLUB DE BILBAO,Athletic Club,Mikel Jauregizar,Jauregizar,18,Centrocampista,150,4,1,1,0,0,0,0,5,30.0,ATHLETIC-CLUB-DE-BILBAO-12,ATHLETIC CLUB DE BILBAO 10,2026-09-21
+athletic-club-86487,johaneko-louis-jean,ATHLETIC CLUB DE BILBAO,Athletic Club,Johaneko Louis-Jean,Johaneko,31,Defensa,123,4,1,1,0,0,1,0,5,24.6,,,2026-09-21
+athletic-club-84230,hugo-rincon,ATHLETIC CLUB DE BILBAO,Athletic Club,Hugo Rincón,H. Rincón,15,Defensa,106,2,1,0,0,0,0,0,5,21.2,,,2026-09-21
+athletic-club-84253,maroan-sannadi,ATHLETIC CLUB DE BILBAO,Athletic Club,Maroan Sannadi,Maroan,21,Delantero,41,2,0,0,0,0,0,0,5,8.2,ATHLETIC-CLUB-DE-BILBAO-20,ATHLETIC CLUB DE BILBAO 17B,2026-09-21
+athletic-club-84251,alvaro-djalo,ATHLETIC CLUB DE BILBAO,Athletic Club,Álvaro Djaló Dias-Fernandes,Djalo,25,Delantero,9,1,0,0,0,0,0,0,5,1.8,,,2026-09-21
+athletic-club-84244,alejandro-rego,ATHLETIC CLUB DE BILBAO,Athletic Club,Alejandro Rego,Rego,20,Defensa,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-14,ATHLETIC CLUB DE BILBAO 12,2026-09-21
+athletic-club-84241,benat-prados,ATHLETIC CLUB DE BILBAO,Athletic Club,Beñat Prados,Prados,6,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-24,ATHLETIC CLUB DE BILBAO 13BIS,2026-09-21
+athletic-club-84221,vivian,ATHLETIC CLUB DE BILBAO,Athletic Club,Dani Vivian,Vivian,3,Defensa,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-08,ATHLETIC CLUB DE BILBAO 7,2026-09-21
+athletic-club-84233,iker-monreal,ATHLETIC CLUB DE BILBAO,Athletic Club,Iker Monreal,Monreal,30,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+athletic-club-84254,nicolas-serrano,ATHLETIC CLUB DE BILBAO,Athletic Club,Nico Serrano,Nico Serrano,22,Delantero,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-17,ATHLETIC CLUB DE BILBAO 15,2026-09-21
+athletic-club-84246,selton-sanchez,ATHLETIC CLUB DE BILBAO,Athletic Club,Selton Sánchez,Selton,44,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+athletic-club-84219,alex-padilla,ATHLETIC CLUB DE BILBAO,Athletic Club,Álex Padilla,Padilla,13,Portero,0,0,0,0,0,0,0,0,5,0.0,ATHLETIC-CLUB-DE-BILBAO-04,ATHLETIC CLUB DE BILBAO 4,2026-09-21
+atletico-de-madrid-84264,oblak,ATLÉTICO DE MADRID,Atlético de Madrid,Jan Oblak,Oblak,13,Portero,540,6,6,0,0,0,0,0,6,90.0,ATLETICO-DE-MADRID-03,ATLÉTICO DE MADRID 3,2026-09-21
+atletico-de-madrid-84272,david-hancko,ATLÉTICO DE MADRID,Atlético de Madrid,Dávid Hancko,Hancko,17,Defensa,455,6,5,0,0,2,1,0,6,75.8,ATLETICO-DE-MADRID-10,ATLÉTICO DE MADRID 9,2026-09-21
+atletico-de-madrid-84268,grimaldo,ATLÉTICO DE MADRID,Atlético de Madrid,Alejandro Grimaldo,Grimaldo,22,Defensa,445,5,5,1,1,1,0,0,6,74.2,ATLETICO-DE-MADRID-BIS-1,ATLÉTICO DE MADRID BIS,2026-09-21
+atletico-de-madrid-84299,ademola-lookman,ATLÉTICO DE MADRID,Atlético de Madrid,Ademola Lookman,Lookman,11,Delantero,437,6,6,5,1,0,1,0,6,72.8,ATLETICO-DE-MADRID-20,ATLÉTICO DE MADRID 18,2026-09-21
+atletico-de-madrid-84285,alex-b,ATLÉTICO DE MADRID,Atlético de Madrid,Álex Baena,Álex B.,10,Centrocampista,388,6,4,3,4,1,1,0,6,64.7,ATLETICO-DE-MADRID-17,ATLÉTICO DE MADRID 15,2026-09-21
+atletico-de-madrid-84298,giuliano-simeone,ATLÉTICO DE MADRID,Atlético de Madrid,Giuliano Simeone,Giuliano,20,Delantero,384,6,4,1,2,1,0,0,6,64.0,ATLETICO-DE-MADRID-19,ATLÉTICO DE MADRID 17,2026-09-21
+atletico-de-madrid-86054,kang-in,ATLÉTICO DE MADRID,Atlético de Madrid,Kang-In Lee,Kang In,7,Centrocampista,380,6,5,4,2,1,1,0,6,63.3,ULTIMOS-FICHAJES-20,ÚLTIMOS FICHAJES UF20,2026-09-21
+atletico-de-madrid-84288,m-llorente,ATLÉTICO DE MADRID,Atlético de Madrid,Marcos Llorente,M. Llorente,14,Centrocampista,375,6,4,2,0,1,1,0,6,62.5,ATLETICO-DE-MADRID-05,ATLÉTICO DE MADRID 5,2026-09-21
+atletico-de-madrid-84273,marc-pubill,ATLÉTICO DE MADRID,Atlético de Madrid,Marc Pubill,Marc Pubill,18,Defensa,358,5,4,1,1,0,1,0,6,59.7,ATLETICO-DE-MADRID-07,ATLÉTICO DE MADRID 7,2026-09-21
+atletico-de-madrid-85697,morten-hjulmand,ATLÉTICO DE MADRID,Atlético de Madrid,Morten Hjulmand,Hjulmand,23,Centrocampista,341,6,4,2,0,0,1,0,6,56.8,ULTIMOS-FICHAJES-05,ÚLTIMOS FICHAJES UF5,2026-09-21
+atletico-de-madrid-84283,koke,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Resurrección Merodio,Koke,6,Centrocampista,313,6,3,2,0,0,0,0,6,52.2,ATLETICO-DE-MADRID-12,ATLÉTICO DE MADRID 11,2026-09-21
+atletico-de-madrid-84284,pablo-barrios-rivas,ATLÉTICO DE MADRID,Atlético de Madrid,Pablo Barrios,Barrios,8,Centrocampista,294,4,3,0,0,1,0,0,6,49.0,ATLETICO-DE-MADRID-13,ATLÉTICO DE MADRID 12,2026-09-21
+atletico-de-madrid-84274,le-normand,ATLÉTICO DE MADRID,Atlético de Madrid,Robin Le Normand,Le Normand,24,Defensa,256,3,3,0,1,0,0,0,6,42.7,ATLETICO-DE-MADRID-08,ATLÉTICO DE MADRID 8A,2026-09-21
+atletico-de-madrid-86639,cristian-romero,ATLÉTICO DE MADRID,Atlético de Madrid,Cristian Romero,Romero,21,Defensa,189,3,2,1,0,0,0,0,6,31.5,,,2026-09-21
+atletico-de-madrid-86179,arnau-ortiz,ATLÉTICO DE MADRID,Atlético de Madrid,Arnau Ortiz,Arnau Ortiz,16,Centrocampista,149,5,1,1,0,0,0,0,6,24.8,ATLETICO-DE-MADRID-BIS-2,ATLÉTICO DE MADRID BIS,2026-09-21
+atletico-de-madrid-84282,joao-cardoso,ATLÉTICO DE MADRID,Atlético de Madrid,Johnny Cardoso,Johnny,5,Centrocampista,135,4,1,1,0,1,1,0,6,22.5,ATLETICO-DE-MADRID-14,ATLÉTICO DE MADRID 13,2026-09-21
+atletico-de-madrid-84281,rodrigo-mendoza,ATLÉTICO DE MADRID,Atlético de Madrid,Rodrigo Mendoza,Mendoza,4,Centrocampista,107,3,2,2,0,0,0,0,6,17.8,ATLETICO-DE-MADRID-15,ATLÉTICO DE MADRID 14A,2026-09-21
+atletico-de-madrid-87093,jonathan-david,ATLÉTICO DE MADRID,Atlético de Madrid,Jonathan David,J.david,15,Delantero,98,2,1,1,2,1,0,0,6,16.3,,,2026-09-21
+atletico-de-madrid-84276,daniel-martinez-2,ATLÉTICO DE MADRID,Atlético de Madrid,Dani Martinez,D. Martínez,30,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-21
+atletico-de-madrid-84297,julian-alvarez,ATLÉTICO DE MADRID,Atlético de Madrid,Julián Alvarez,J.alvarez,19,Delantero,55,2,0,0,0,0,0,0,6,9.2,ATLETICO-DE-MADRID-22,ATLÉTICO DE MADRID 20,2026-09-21
+atletico-de-madrid-86175,jorge-dominguez-1,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Domínguez,Domínguez,27,Defensa,45,1,1,1,0,0,1,0,6,7.5,,,2026-09-21
+atletico-de-madrid-84295,alexander-sorloth,ATLÉTICO DE MADRID,Atlético de Madrid,Alexander Sørloth,Sørloth,9,Delantero,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-21,ATLÉTICO DE MADRID 19,2026-09-21
+atletico-de-madrid-87223,javier-gil,ATLÉTICO DE MADRID,Atlético de Madrid,Javier Gil,Javier Gil,45,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+atletico-de-madrid-86178,jorge-castillo-1,ATLÉTICO DE MADRID,Atlético de Madrid,Jorge Castillo,Castillo,46,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+atletico-de-madrid-84263,juan-musso,ATLÉTICO DE MADRID,Atlético de Madrid,Juan Musso,J. Musso,1,Portero,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-04,ATLÉTICO DE MADRID 4,2026-09-21
+atletico-de-madrid-84303,cubo,ATLÉTICO DE MADRID,Atlético de Madrid,Miguel Llorente Cubo,Cubo,29,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+atletico-de-madrid-84289,obed-vargas,ATLÉTICO DE MADRID,Atlético de Madrid,Obed Vargas,Obed Vargas,3,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ATLETICO-DE-MADRID-16,ATLÉTICO DE MADRID 14B,2026-09-21
+atletico-de-madrid-84265,salvi-esquivel,ATLÉTICO DE MADRID,Atlético de Madrid,Salvi Esquivel,Esquivel,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-deportivo-84383,leo-1,DEPORTIVO,RC Deportivo,Leo Román,Leo Román,13,Portero,540,6,6,0,0,0,0,0,6,90.0,ULTIMOS-FICHAJES-08,ÚLTIMOS FICHAJES UF8,2026-09-21
+rc-deportivo-85693,lorenzo-amatucci,DEPORTIVO,RC Deportivo,Lorenzo Amatucci,Amatucci,16,Centrocampista,540,6,6,0,0,1,3,0,6,90.0,ULTIMOS-FICHAJES-22,ÚLTIMOS FICHAJES UF22,2026-09-21
+rc-deportivo-85826,pierre-emerick-aubameyang,DEPORTIVO,RC Deportivo,Pierre-Emerick Aubameyang,Aubameyang,7,Delantero,535,6,6,1,5,2,0,0,6,89.2,ULTIMOS-FICHAJES-12,ÚLTIMOS FICHAJES UF12,2026-09-21
+rc-deportivo-84393,giacomo-quagliata,DEPORTIVO,RC Deportivo,Giacomo Quagliata,Quagliata,12,Defensa,479,6,5,0,0,0,1,0,6,79.8,DEPORTIVO-11,DEPORTIVO 10,2026-09-21
+rc-deportivo-84390,lucas-noubi,DEPORTIVO,RC Deportivo,Lucas Noubi,Noubi,4,Defensa,450,5,5,0,0,0,1,0,6,75.0,DEPORTIVO-07,DEPORTIVO 7,2026-09-21
+rc-deportivo-84395,x-navarro,DEPORTIVO,RC Deportivo,Joaquín Navarro Jiménez,X. Navarro,23,Defensa,443,5,5,1,0,0,2,0,6,73.8,,,2026-09-21
+rc-deportivo-84409,mario-s,DEPORTIVO,RC Deportivo,Mario Soriano,Mario S.,21,Centrocampista,418,6,5,4,0,1,1,0,6,69.7,DEPORTIVO-14,DEPORTIVO 13,2026-09-21
+rc-deportivo-84416,luismi-cruz,DEPORTIVO,RC Deportivo,Luismi Cruz,Luismi Cruz,19,Delantero,374,6,5,5,1,1,0,0,6,62.3,DEPORTIVO-16,DEPORTIVO 15,2026-09-21
+rc-deportivo-84420,bil-nsongo,DEPORTIVO,RC Deportivo,Bil Nsongo,Nsongo Bil,32,Delantero,330,6,5,5,0,0,1,0,6,55.0,DEPORTIVO-21,DEPORTIVO 20,2026-09-21
+rc-deportivo-84388,adria-altimira,DEPORTIVO,RC Deportivo,Adrià Alti,A. Alti,2,Defensa,240,4,3,2,0,0,0,0,6,40.0,DEPORTIVO-05,DEPORTIVO 5,2026-09-21
+rc-deportivo-87141,j-m-gimenez,DEPORTIVO,RC Deportivo,José María Giménez,J. M. Giménez,20,Defensa,239,3,3,2,0,0,0,0,6,39.8,,,2026-09-21
+rc-deportivo-85595,bright-ede,DEPORTIVO,RC Deportivo,Bright Ede,Ede,22,Defensa,196,3,2,0,0,0,0,0,6,32.7,DEPORTIVO-BIS-1,DEPORTIVO BIS,2026-09-21
+rc-deportivo-84394,loureiro,DEPORTIVO,RC Deportivo,Miguel Loureiro,M. Loureiro,15,Defensa,195,4,2,1,0,0,0,0,6,32.5,DEPORTIVO-06,DEPORTIVO 6,2026-09-21
+rc-deportivo-84407,riki-1,DEPORTIVO,RC Deportivo,Riki Rodríguez,Riki,14,Centrocampista,175,3,3,3,0,0,0,0,6,29.2,DEPORTIVO-13,DEPORTIVO 12,2026-09-21
+rc-deportivo-85719,jonathan-asp-jensen,DEPORTIVO,RC Deportivo,Jonathan Asp Jensen,Asp - Jensen,18,Centrocampista,162,4,2,2,0,0,0,0,6,27.0,DEPORTIVO-18,DEPORTIVO 17,2026-09-21
+rc-deportivo-84414,peke,DEPORTIVO,RC Deportivo,Yeremay Hernández,Yeremay,10,Centrocampista,146,5,1,1,0,1,1,0,6,24.3,DEPORTIVO-19,DEPORTIVO 18,2026-09-21
+rc-deportivo-87028,adama,DEPORTIVO,RC Deportivo,Adama Traoré,Adama,24,Delantero,97,3,0,0,0,0,0,0,6,16.2,,,2026-09-21
+rc-deportivo-87142,marc-casado,DEPORTIVO,RC Deportivo,Marc Casadó,M. Casadó,6,Centrocampista,86,2,1,1,0,0,0,0,6,14.3,,,2026-09-21
+rc-deportivo-84413,zakaria-eddahchouri,DEPORTIVO,RC Deportivo,Zakaria Eddahchouri,Eddahchouri,9,Delantero,69,4,0,0,1,0,0,0,6,11.5,DEPORTIVO-20,DEPORTIVO 19,2026-09-21
+rc-deportivo-86354,angelino,DEPORTIVO,RC Deportivo,José Ángel Esmoris Tasende,Angeliño,17,Defensa,59,1,1,0,0,0,0,0,6,9.8,DEPORTIVO-15,DEPORTIVO 14; ÚLTIMOS FICHAJES UF33,2026-09-21
+rc-deportivo-84406,diego-villares,DEPORTIVO,RC Deportivo,Diego Villares,D. Villares,8,Centrocampista,58,2,0,0,0,0,0,0,6,9.7,DEPORTIVO-12,DEPORTIVO 11,2026-09-21
+rc-deportivo-84415,david-mella,DEPORTIVO,RC Deportivo,David Mella,Mella,11,Centrocampista,47,2,0,0,0,0,0,0,6,7.8,DEPORTIVO-17,DEPORTIVO 16,2026-09-21
+rc-deportivo-84421,kevin-sanchez-1,DEPORTIVO,RC Deportivo,Kevin Sánchez,Kevin,33,Delantero,5,1,0,0,0,0,0,0,6,0.8,,,2026-09-21
+rc-deportivo-84389,arnau-comas,DEPORTIVO,RC Deportivo,Arnau Comas,Comas,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-10,DEPORTIVO 9B,2026-09-21
+rc-deportivo-84391,dani-barcia,DEPORTIVO,RC Deportivo,Dani Barcia,Dani Barcia,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-08,DEPORTIVO 8,2026-09-21
+rc-deportivo-84384,german,DEPORTIVO,RC Deportivo,Germán Parreño,Germán,1,Portero,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-04,DEPORTIVO 4,2026-09-21
+rc-deportivo-84386,alvaro-fernandez,DEPORTIVO,RC Deportivo,Álvaro Fernández,A. Ferllo,25,Portero,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-03,DEPORTIVO 3,2026-09-21
+d-alaves-84179,sivera,DEPORTIVO ALAVÉS,Deportivo Alavés,Antonio Sivera,Sivera,1,Portero,540,6,6,0,0,1,1,0,6,90.0,DEPORTIVO-ALAVES-03,DEPORTIVO ALAVÉS 3,2026-09-21
+d-alaves-84184,ville-koski,DEPORTIVO ALAVÉS,Deportivo Alavés,Ville Koski,Koski,16,Defensa,530,6,6,1,1,0,0,0,6,88.3,DEPORTIVO-ALAVES-06,DEPORTIVO ALAVÉS 6,2026-09-21
+d-alaves-84201,antonio-blanco,DEPORTIVO ALAVÉS,Deportivo Alavés,Antonio Blanco,Blanco,8,Centrocampista,511,6,6,3,0,0,3,0,6,85.2,DEPORTIVO-ALAVES-12,DEPORTIVO ALAVÉS 12,2026-09-21
+d-alaves-84210,abderrahman-rebbach,DEPORTIVO ALAVÉS,Deportivo Alavés,Abde Rebbach,A. Rebbach,21,Centrocampista,496,6,6,4,0,0,3,0,6,82.7,DEPORTIVO-ALAVES-18,DEPORTIVO ALAVÉS 18A,2026-09-21
+d-alaves-84189,nahuel-tenaglia,DEPORTIVO ALAVÉS,Deportivo Alavés,Nahuel Tenaglia,N. Tenaglia,14,Defensa,495,6,6,1,1,0,2,0,6,82.5,DEPORTIVO-ALAVES-07,DEPORTIVO ALAVÉS 7,2026-09-21
+d-alaves-84203,pablo-ibanez,DEPORTIVO ALAVÉS,Deportivo Alavés,Pablo Ibáñez,Ibáñez,19,Centrocampista,495,6,6,1,1,0,1,0,6,82.5,DEPORTIVO-ALAVES-15,DEPORTIVO ALAVÉS 15,2026-09-21
+d-alaves-84187,angel-perez-1,DEPORTIVO ALAVÉS,Deportivo Alavés,Ángel Pérez,Ángel P.,7,Defensa,477,6,6,5,0,3,0,0,6,79.5,DEPORTIVO-ALAVES-17,DEPORTIVO ALAVÉS 17,2026-09-21
+d-alaves-84190,jonny,DEPORTIVO ALAVÉS,Deportivo Alavés,Jonny Otto,J. Otto,17,Defensa,420,5,5,2,0,0,0,0,6,70.0,DEPORTIVO-ALAVES-05,DEPORTIVO ALAVÉS 5,2026-09-21
+d-alaves-84208,lucas-boye,DEPORTIVO ALAVÉS,Deportivo Alavés,Lucas Boyé,Lucas Boyé,15,Delantero,409,5,5,3,4,0,0,0,6,68.2,DEPORTIVO-ALAVES-21,DEPORTIVO ALAVÉS 20,2026-09-21
+d-alaves-84207,t-martinez,DEPORTIVO ALAVÉS,Deportivo Alavés,Toni Martínez,T. Martínez,11,Delantero,324,5,4,2,0,0,0,0,6,54.0,DEPORTIVO-ALAVES-20,DEPORTIVO ALAVÉS 19,2026-09-21
+d-alaves-84199,denis-suarez,DEPORTIVO ALAVÉS,Deportivo Alavés,Denis Suárez,Denis Suárez,4,Centrocampista,280,6,3,2,0,0,1,0,6,46.7,DEPORTIVO-ALAVES-16,DEPORTIVO ALAVÉS 16,2026-09-21
+d-alaves-84206,mariano,DEPORTIVO ALAVÉS,Deportivo Alavés,Mariano Díaz,Mariano,9,Delantero,258,6,2,2,3,3,2,0,6,43.0,DEPORTIVO-ALAVES-BIS-2,DEPORTIVO ALAVÉS BIS,2026-09-21
+d-alaves-85802,mikel-rodriguez,DEPORTIVO ALAVÉS,Deportivo Alavés,Mikel Rodríguez,Mikel R.,18,Defensa,149,3,2,2,1,0,0,0,6,24.8,DEPORTIVO-ALAVES-10,DEPORTIVO ALAVÉS 10,2026-09-21
+d-alaves-86395,nicolas-valentini,DEPORTIVO ALAVÉS,Deportivo Alavés,Nicolás Valentini,Valentini,2,Defensa,145,3,1,0,0,0,1,0,6,24.2,ULTIMOS-FICHAJES-30,ÚLTIMOS FICHAJES UF30,2026-09-21
+d-alaves-84186,youssef-lekhedim,DEPORTIVO ALAVÉS,Deportivo Alavés,Youssef Enriquez,Youssef,3,Defensa,123,5,0,0,0,0,0,0,6,20.5,DEPORTIVO-ALAVES-09,DEPORTIVO ALAVÉS 9,2026-09-21
+d-alaves-84202,alena,DEPORTIVO ALAVÉS,Deportivo Alavés,Carles Aleñá,C. Aleñá,10,Centrocampista,110,5,1,1,0,1,0,0,6,18.3,DEPORTIVO-ALAVES-14,DEPORTIVO ALAVÉS 14,2026-09-21
+d-alaves-84213,aitor-manas,DEPORTIVO ALAVÉS,Deportivo Alavés,Aitor Mañas,Mañas,20,Delantero,87,4,1,2,0,0,0,0,6,14.5,DEPORTIVO-ALAVES-19,DEPORTIVO ALAVÉS 18B,2026-09-21
+d-alaves-84204,carlos-benavidez,DEPORTIVO ALAVÉS,Deportivo Alavés,Carlos Protesoni,C. Protesoni,23,Centrocampista,64,2,0,0,0,0,0,0,6,10.7,DEPORTIVO-ALAVES-11,DEPORTIVO ALAVÉS 11,2026-09-21
+d-alaves-86053,miguel-4,DEPORTIVO ALAVÉS,Deportivo Alavés,Miguel Rodríguez,Miguel,22,Delantero,11,3,0,0,0,0,0,0,6,1.8,,,2026-09-21
+d-alaves-84195,xanet-olaiz,DEPORTIVO ALAVÉS,Deportivo Alavés,Xanet Oláiz,Xanet Olaiz,27,Defensa,10,1,0,0,0,0,0,0,6,1.7,,,2026-09-21
+d-alaves-84200,guevara,DEPORTIVO ALAVÉS,Deportivo Alavés,Ander Guevara,Guevara,6,Centrocampista,6,2,0,0,0,0,0,0,6,1.0,DEPORTIVO-ALAVES-13,DEPORTIVO ALAVÉS 13,2026-09-21
+d-alaves-84181,a-rodriguez-1,DEPORTIVO ALAVÉS,Deportivo Alavés,Adrián Rodríguez,A. Rodriguez,13,Portero,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-ALAVES-04,DEPORTIVO ALAVÉS 4,2026-09-21
+d-alaves-84185,facundo-garces,DEPORTIVO ALAVÉS,Deportivo Alavés,Facundo Garcés,F. Garcés,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,DEPORTIVO-ALAVES-BIS-1,DEPORTIVO ALAVÉS BIS,2026-09-21
+d-alaves-84182,gregoire-swiderski,DEPORTIVO ALAVÉS,Deportivo Alavés,Grégoire Swiderski,Swiderski,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+d-alaves-84209,hugo-novoa,DEPORTIVO ALAVÉS,Deportivo Alavés,Hugo Novoa,Novoa,12,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+d-alaves-84212,izei-hernandez,DEPORTIVO ALAVÉS,Deportivo Alavés,Izei Hernández,Izei,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+d-alaves-84198,selu-diallo,DEPORTIVO ALAVÉS,Deportivo Alavés,Selu Diallo,Selu Diallo,24,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+elche-c-f-84425,matias-dituro,ELCHE CF,Elche CF,Matías Dituro,M. Dituro,1,Portero,540,6,6,0,0,0,0,0,6,90.0,ELCHE-CF-03,ELCHE CF 3,2026-09-21
+elche-c-f-84429,chust,ELCHE CF,Elche CF,Víctor Chust,Victor Chust,23,Defensa,540,6,6,0,0,1,0,0,6,90.0,ELCHE-CF-06,ELCHE CF 6,2026-09-21
+elche-c-f-84439,g-villar,ELCHE CF,Elche CF,Gonzalo Villar,G. Villar,12,Centrocampista,513,6,6,2,0,1,2,0,6,85.5,ELCHE-CF-13,ELCHE CF 12,2026-09-21
+elche-c-f-84427,buba-sangare,ELCHE CF,Elche CF,Buba Sangaré,B. Sangare,2,Defensa,503,6,6,3,1,0,0,0,6,83.8,ELCHE-CF-10,ELCHE CF 9B,2026-09-21
+elche-c-f-84450,german-valera,ELCHE CF,Elche CF,Germán Valera,Germán V.,11,Centrocampista,482,6,6,4,0,0,1,0,6,80.3,ELCHE-CF-11,ELCHE CF 10,2026-09-21
+elche-c-f-86170,fer-nino,ELCHE CF,Elche CF,Fer Niño,F. Niño,14,Delantero,409,6,5,3,3,0,1,0,6,68.2,ULTIMOS-FICHAJES-15,ÚLTIMOS FICHAJES UF15,2026-09-21
+elche-c-f-84451,t-morente,ELCHE CF,Elche CF,José Antonio Morente Oliva,T. Morente,20,Centrocampista,385,6,4,3,0,2,1,0,6,64.2,ELCHE-CF-18,ELCHE CF 16,2026-09-21
+elche-c-f-84440,federico-redondo,ELCHE CF,Elche CF,Federico Redondo,Redondo,5,Centrocampista,321,4,4,2,0,0,1,0,6,53.5,ELCHE-CF-14,ELCHE CF 13A,2026-09-21
+elche-c-f-84441,marc-aguado,ELCHE CF,Elche CF,Marc Aguado,M. Aguado,8,Centrocampista,257,4,4,3,1,0,1,0,6,42.8,ELCHE-CF-16,ELCHE CF 14,2026-09-21
+elche-c-f-86428,facundo-buonanotte,ELCHE CF,Elche CF,Facundo Buonanotte,Buonanotte,10,Centrocampista,219,4,3,3,1,0,1,0,6,36.5,ULTIMOS-FICHAJES-32,ÚLTIMOS FICHAJES UF32,2026-09-21
+elche-c-f-86397,javier-morcillo,ELCHE CF,Elche CF,Javier Morcillo,Morcillo,47,Centrocampista,217,4,2,0,0,0,0,0,6,36.2,ULTIMOS-FICHAJES-26,ÚLTIMOS FICHAJES UF26,2026-09-21
+elche-c-f-84458,ali-houary,ELCHE CF,Elche CF,Ali Houary,Ali Houary,29,Delantero,190,3,3,3,0,0,1,0,6,31.7,ELCHE-CF-19,ELCHE CF 17,2026-09-21
+elche-c-f-87094,roy-revivo,ELCHE CF,Elche CF,Roy Revivo,Revivo,3,Defensa,189,3,2,0,0,0,0,0,6,31.5,,,2026-09-21
+elche-c-f-84442,martim-neto,ELCHE CF,Elche CF,Martim Carvalho Neto,M. Neto,16,Centrocampista,161,4,2,2,0,0,0,0,6,26.8,ELCHE-CF-12,ELCHE CF 11,2026-09-21
+elche-c-f-84431,r-bigas,ELCHE CF,Elche CF,Pedro Bigas,R.p. Bigas,6,Defensa,161,3,2,1,0,0,0,0,6,26.8,ELCHE-CF-07,ELCHE CF 7,2026-09-21
+elche-c-f-84447,abiel-osorio,ELCHE CF,Elche CF,Abiel Osorio,Osorio,24,Delantero,146,3,1,0,1,0,1,0,6,24.3,,,2026-09-21
+elche-c-f-84454,lucas-cepeda,ELCHE CF,Elche CF,Lucas Cepeda,Cepeda,21,Delantero,137,6,0,0,0,2,1,0,6,22.8,ELCHE-CF-20,ELCHE CF 18,2026-09-21
+elche-c-f-86643,ezequiel-ponce,ELCHE CF,Elche CF,Ezequiel Ponce,E. Ponce,9,Delantero,121,3,1,1,0,0,0,0,6,20.2,,,2026-09-21
+elche-c-f-87150,lemar,ELCHE CF,Elche CF,Thomas Lemar,Lemar,18,Centrocampista,88,3,0,0,1,0,1,0,6,14.7,,,2026-09-21
+elche-c-f-87079,ruben-sanchez-3,ELCHE CF,Elche CF,Rubén Sánchez,Rubén S.,22,Centrocampista,36,2,0,0,0,0,1,0,6,6.0,,,2026-09-21
+elche-c-f-84443,josan,ELCHE CF,Elche CF,José Antonio Ferrández Pomares,Josan,17,Centrocampista,25,3,0,0,0,1,1,0,6,4.2,ELCHE-CF-17,ELCHE CF 15,2026-09-21
+elche-c-f-86702,alvaro-padilla,ELCHE CF,Elche CF,Álvaro Padilla,Padilla,30,Centrocampista,9,1,0,0,0,0,0,0,6,1.5,,,2026-09-21
+elche-c-f-84426,alejandro-iturbe,ELCHE CF,Elche CF,Alejandro Iturbe,A. Iturbe,13,Portero,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-04,ELCHE CF 4,2026-09-21
+elche-c-f-84430,bambo-diaby,ELCHE CF,Elche CF,Bambo Diaby,Diaby,4,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+elche-c-f-84452,grady-diangana,ELCHE CF,Elche CF,Grady Diangana,Diang,19,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-21,ELCHE CF 19,2026-09-21
+elche-c-f-87152,kevin-lomonaco,ELCHE CF,Elche CF,Kevin Lomónaco,Kevin J.,15,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+elche-c-f-84428,matia-barzic,ELCHE CF,Elche CF,Matia Barzic,M. Baržić,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+elche-c-f-84457,nordin-al-lal,ELCHE CF,Elche CF,Nordin Al Lal,N. Al-Lal,33,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+elche-c-f-84448,yago-alonso,ELCHE CF,Elche CF,Yago Santiago,Santiago,7,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,ELCHE-CF-22,ELCHE CF 20,2026-09-21
+fc-barcelona-84308,j-garcia,FC BARCELONA,FC Barcelona,Joan García,Joan Garcia,1,Portero,495,6,6,1,0,0,0,0,6,82.5,FC-BARCELONA-03,FC BARCELONA 3,2026-09-21
+fc-barcelona-84334,lamine-yamal,FC BARCELONA,FC Barcelona,Lamine Yamal Nasraoui Ebana,Lamine Yamal,10,Delantero,491,6,6,2,7,2,1,0,6,81.8,FC-BARCELONA-21,FC BARCELONA 20,2026-09-21
+fc-barcelona-84335,raphinha,FC BARCELONA,FC Barcelona,Raphael Dias Belloli,Raphinha,11,Delantero,478,6,6,4,9,3,0,0,6,79.7,FC-BARCELONA-20,FC BARCELONA 19,2026-09-21
+fc-barcelona-84321,xavi-espart,FC BARCELONA,FC Barcelona,Xavi Espart,Xavi Espart,12,Defensa,440,5,5,1,1,2,1,0,6,73.3,,,2026-09-21
+fc-barcelona-84323,pedri,FC BARCELONA,FC Barcelona,Pedro González López,Pedri,8,Centrocampista,416,6,5,5,1,1,0,0,6,69.3,FC-BARCELONA-16,FC BARCELONA 15,2026-09-21
+fc-barcelona-84315,gerard-2,FC BARCELONA,FC Barcelona,Gerard Martín,Gerard Martín,18,Defensa,405,5,5,1,0,0,1,0,6,67.5,FC-BARCELONA-09,FC BARCELONA 8,2026-09-21
+fc-barcelona-84317,eric-garcia,FC BARCELONA,FC Barcelona,Eric García,Eric,24,Defensa,379,5,5,2,0,0,0,0,6,63.2,FC-BARCELONA-12,FC BARCELONA 11,2026-09-21
+fc-barcelona-84324,fermin-lopez,FC BARCELONA,FC Barcelona,Fermín López,Fermin,7,Centrocampista,371,5,4,1,4,2,1,0,6,61.8,FC-BARCELONA-17,FC BARCELONA 16,2026-09-21
+fc-barcelona-84314,andreas-christensen,FC BARCELONA,FC Barcelona,Andreas Christensen,Christensen,15,Defensa,343,5,3,0,0,0,0,0,6,57.2,FC-BARCELONA-07,FC BARCELONA 6B,2026-09-21
+fc-barcelona-84313,pau-cubarsi,FC BARCELONA,FC Barcelona,Pau Cubarsí,Cubarsí,5,Defensa,332,4,4,1,0,0,1,0,6,55.3,FC-BARCELONA-08,FC BARCELONA 7,2026-09-21
+fc-barcelona-84332,anthony-gordon,FC BARCELONA,FC Barcelona,Anthony Gordon,Anthony Gordon,17,Delantero,311,5,4,4,0,4,0,0,6,51.8,ULTIMOS-FICHAJES-24,ÚLTIMOS FICHAJES UF24,2026-09-21
+fc-barcelona-84328,marc-bernal,FC BARCELONA,FC Barcelona,Marc Bernal,Bernal,22,Centrocampista,288,6,3,3,0,2,0,0,6,48.0,FC-BARCELONA-15,FC BARCELONA 14,2026-09-21
+fc-barcelona-86727,rodrigo-1,FC BARCELONA,FC Barcelona,Rodrigo Hernández Cascante,Rodrigo,16,Centrocampista,266,5,3,2,0,0,1,0,6,44.3,ULTIMOS-FICHAJES-40,ÚLTIMOS FICHAJES UF40,2026-09-21
+fc-barcelona-84326,dani-olmo,FC BARCELONA,FC Barcelona,Dani Olmo,Olmo,20,Centrocampista,245,6,2,1,0,3,0,0,6,40.8,FC-BARCELONA-18,FC BARCELONA 17,2026-09-21
+fc-barcelona-85909,karim-adeyemi,FC BARCELONA,FC Barcelona,Karim Adeyemi,Adeyemi,14,Delantero,229,6,2,1,2,2,1,0,6,38.2,ULTIMOS-FICHAJES-19,ÚLTIMOS FICHAJES UF19,2026-09-21
+fc-barcelona-84316,kounde,FC BARCELONA,FC Barcelona,Jules Koundé,Kounde,23,Defensa,171,4,1,0,0,0,0,0,6,28.5,FC-BARCELONA-05,FC BARCELONA 5,2026-09-21
+fc-barcelona-86787,cancelo,FC BARCELONA,FC Barcelona,João Pedro Cavaco Cancelo,Joao Cancelo,2,Defensa,116,5,1,1,1,0,1,0,6,19.3,FC-BARCELONA-10,FC BARCELONA 9,2026-09-21
+fc-barcelona-84322,gavi,FC BARCELONA,FC Barcelona,Pablo Páez Gavira,Gavi,6,Centrocampista,73,2,1,1,0,0,0,0,6,12.2,FC-BARCELONA-14,FC BARCELONA 13,2026-09-21
+fc-barcelona-84309,wojciech-szczesny,FC BARCELONA,FC Barcelona,Wojciech Szczesny,Szczesny,13,Portero,45,1,0,0,0,0,0,0,6,7.5,FC-BARCELONA-04,FC BARCELONA 4,2026-09-21
+fc-barcelona-87050,gabriel-jesus,FC BARCELONA,FC Barcelona,Gabriel Fernando de Jesus,Gabriel Jesus,9,Delantero,30,2,0,0,1,0,0,0,6,5.0,,,2026-09-21
+fc-barcelona-84311,alex-balde,FC BARCELONA,FC Barcelona,Alejandro Balde,Balde,3,Defensa,12,1,0,0,0,0,0,0,6,2.0,FC-BARCELONA-11,FC BARCELONA 10,2026-09-21
+fc-barcelona-86166,hamza-abdelkarim,FC BARCELONA,FC Barcelona,Hamza Mohamed Abdelkarim Elsayed Selim,Hamza Abdelkarim,29,Delantero,4,1,0,0,0,0,0,0,6,0.7,FC-BARCELONA-BIS-1,FC BARCELONA 18BIS,2026-09-21
+fc-barcelona-86164,brian-farinas,FC BARCELONA,FC Barcelona,Brian Fariñas,Brian,4,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+fc-barcelona-86901,dominik-livakovic,FC BARCELONA,FC Barcelona,Dominik Livakovic,Livakovic,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+fc-barcelona-84310,eder-aller,FC BARCELONA,FC Barcelona,Eder Aller,Eder Aller,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+fc-barcelona-84327,f-de-jong,FC BARCELONA,FC Barcelona,Frenkie de Jong,F. De Jong,21,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,FC-BARCELONA-13,FC BARCELONA 12,2026-09-21
+fc-barcelona-86159,iker-rodriguez,FC BARCELONA,FC Barcelona,Iker Rodríguez,Iker Rodriguez,35,Portero,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+fc-barcelona-86161,jordi-pesquer,FC BARCELONA,FC Barcelona,Jordi Pesquer,Jordi Pesquer,33,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+fc-barcelona-84336,roony-bardghji,FC BARCELONA,FC Barcelona,Roony Bardghji,Roony,19,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+fc-barcelona-84320,alvaro-cortes-1,FC BARCELONA,FC Barcelona,Álvaro Cortés,Cortes,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+getafe-cf-84505,david-soria,GETAFE CF,Getafe CF,David Soria,David Soria,13,Portero,450,5,5,0,0,0,0,0,5,90.0,GETAFE-CF-03,GETAFE CF 3,2026-09-21
+getafe-cf-86430,orel-mangala,GETAFE CF,Getafe CF,Orel Mangala,Mangala,23,Centrocampista,448,5,5,2,0,0,1,0,5,89.6,GETAFE-CF-15,GETAFE CF 15,2026-09-21
+getafe-cf-85600,r-terrats,GETAFE CF,Getafe CF,Ramón Terrats,R. Terrats,11,Centrocampista,442,5,5,3,1,0,1,0,5,88.4,GETAFE-CF-14,GETAFE CF 14,2026-09-21
+getafe-cf-84509,djene,GETAFE CF,Getafe CF,Djené Dakonam,Djene,2,Defensa,441,5,5,1,0,0,2,0,5,88.2,GETAFE-CF-06,GETAFE CF 6,2026-09-21
+getafe-cf-84527,martin-satriano,GETAFE CF,Getafe CF,Martín Satriano,Satriano,10,Delantero,410,5,5,5,1,0,0,0,5,82.0,GETAFE-CF-20,GETAFE CF 20,2026-09-21
+getafe-cf-86592,enes-unal,GETAFE CF,Getafe CF,Enes Ünal,Enes Ünal,19,Delantero,405,5,4,0,1,0,2,0,5,81.0,GETAFE-CF-BIS-1,GETAFE CF BIS,2026-09-21
+getafe-cf-86604,j-mojica,GETAFE CF,Getafe CF,Johan Mojica,Johan Mojica,22,Centrocampista,360,4,4,0,0,0,2,0,5,72.0,ULTIMOS-FICHAJES-23,ÚLTIMOS FICHAJES UF23,2026-09-21
+getafe-cf-85599,zaid-romero,GETAFE CF,Getafe CF,Zaid Romero,Z.romero,24,Defensa,337,4,4,0,0,0,0,0,5,67.4,GETAFE-CF-09,GETAFE CF 9,2026-09-21
+getafe-cf-85789,andres-garcia,GETAFE CF,Getafe CF,Andrés García,Andres Garcia,21,Centrocampista,313,4,3,3,0,0,0,0,5,62.6,ULTIMOS-FICHAJES-18,ÚLTIMOS FICHAJES UF18,2026-09-21
+getafe-cf-84520,mario-martin,GETAFE CF,Getafe CF,Mario Martín,Mario Martín,6,Centrocampista,246,3,3,1,0,0,2,0,5,49.2,GETAFE-CF-11,GETAFE CF 11,2026-09-21
+getafe-cf-86986,gudelj,GETAFE CF,Getafe CF,Nemanja Gudelj,Gudelj,8,Centrocampista,194,3,2,0,0,0,0,0,5,38.8,,,2026-09-21
+getafe-cf-86728,francho,GETAFE CF,Getafe CF,Francho Serrano,Francho,16,Centrocampista,180,3,2,1,0,0,0,0,5,36.0,GETAFE-CF-13,GETAFE CF 13,2026-09-21
+getafe-cf-84513,kiko-femenia,GETAFE CF,Getafe CF,Francisco Femenía Far,Kiko F.,17,Defensa,140,3,3,1,0,0,0,0,5,28.0,GETAFE-CF-05,GETAFE CF 5,2026-09-21
+getafe-cf-86313,saba-sazonov,GETAFE CF,Getafe CF,Saba Sazonov,Sazonov,4,Defensa,105,3,1,0,0,0,1,0,5,21.0,ULTIMOS-FICHAJES-31,ÚLTIMOS FICHAJES UF31,2026-09-21
+getafe-cf-84508,sebastian-boselli,GETAFE CF,Getafe CF,Sebastián Boselli,Boselli,15,Defensa,99,4,1,1,0,0,0,0,5,19.8,GETAFE-CF-07,GETAFE CF 7,2026-09-21
+getafe-cf-87065,ivan,GETAFE CF,Getafe CF,Iván Azón,Ivan,20,Delantero,93,2,1,1,0,1,1,0,5,18.6,,,2026-09-21
+getafe-cf-84510,abqar,GETAFE CF,Getafe CF,Abdel Abqar,A. Abqar,5,Defensa,91,2,1,0,0,0,0,0,5,18.2,GETAFE-CF-08,GETAFE CF 8,2026-09-21
+getafe-cf-84523,alberto-risco,GETAFE CF,Getafe CF,Alberto Risco,Risco,28,Centrocampista,50,3,0,0,0,0,0,0,5,10.0,,,2026-09-21
+getafe-cf-84514,davinchi,GETAFE CF,Getafe CF,David Cordón Mancha,Davinchi,3,Defensa,46,2,1,1,0,0,1,0,5,9.2,GETAFE-CF-10,GETAFE CF 10,2026-09-21
+getafe-cf-85598,jean-valou,GETAFE CF,Getafe CF,Jean Valou,J. Ives Valou,26,Defensa,17,1,0,0,0,0,0,0,5,3.4,,,2026-09-21
+getafe-cf-84534,joselu-7,GETAFE CF,Getafe CF,José Luis Pérez del Amo,Joselu,32,Delantero,6,1,0,0,0,0,0,0,5,1.2,,,2026-09-21
+getafe-cf-84529,b-mayoral,GETAFE CF,Getafe CF,Borja Mayoral,B. Mayoral,9,Delantero,5,2,0,0,0,0,0,0,5,1.0,GETAFE-CF-18,GETAFE CF 18,2026-09-21
+getafe-cf-86432,oscar-lopez-2,GETAFE CF,Getafe CF,Óscar López,O. Lopez,30,Centrocampista,1,1,0,0,0,0,0,0,5,0.2,,,2026-09-21
+getafe-cf-84521,christantus-uche,GETAFE CF,Getafe CF,Christantus Uche,Uche,18,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+getafe-cf-84507,diego-ferrer,GETAFE CF,Getafe CF,Diego Ferrer,Ferrer,35,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+getafe-cf-86431,ebrahima-drammeh,GETAFE CF,Getafe CF,Ebrahima Drammeh,Ibra Drj,27,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+getafe-cf-86429,curro-burgos,GETAFE CF,Getafe CF,Francisco Burgos Barrionuevo,Curro,29,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+getafe-cf-84504,jiri-letacek,GETAFE CF,Getafe CF,Jirí Letácek,Letacek,1,Portero,0,0,0,0,0,0,0,0,5,0.0,GETAFE-CF-04,GETAFE CF 4,2026-09-21
+getafe-cf-84528,juanmi,GETAFE CF,Getafe CF,Juan Miguel Jiménez López,Juanmi,7,Delantero,0,0,0,0,0,0,0,0,5,0.0,GETAFE-CF-16,GETAFE CF 16,2026-09-21
+getafe-cf-87222,moha-achraf,GETAFE CF,Getafe CF,Moha Achraf,M. Achraf,33,Delantero,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+getafe-cf-86138,mohamed-hamdoune,GETAFE CF,Getafe CF,Mohamed Hamdoune,Moha,31,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-85790,mandi-1,LEVANTE UD,Levante UD,Aïssa Mandi,Mandi,2,Defensa,450,5,5,0,0,0,1,0,5,90.0,LEVANTE-UD-08,LEVANTE UD 8,2026-09-21
+levante-ud-86579,mathew-ryan,LEVANTE UD,Levante UD,Mathew Ryan,Ryan,13,Portero,450,5,5,0,0,0,0,0,5,90.0,LEVANTE-UD-03,LEVANTE UD 3,2026-09-21
+levante-ud-84543,de-la-fuente,LEVANTE UD,Levante UD,Adrián de la Fuente,Dela,4,Defensa,431,5,5,1,1,0,1,0,5,86.2,LEVANTE-UD-07,LEVANTE UD 7,2026-09-21
+levante-ud-86077,m-sanchez,LEVANTE UD,Levante UD,Manu Sánchez,Manu Sánchez,23,Defensa,431,5,5,1,0,0,0,0,5,86.2,LEVANTE-UD-09,LEVANTE UD 9,2026-09-21
+levante-ud-84554,jon-ander-olasagasti,LEVANTE UD,Levante UD,Jon Ander Olasagasti,Olasagasti,8,Centrocampista,415,5,5,2,1,1,0,0,5,83.0,LEVANTE-UD-12,LEVANTE UD 12,2026-09-21
+levante-ud-84556,o-rey,LEVANTE UD,Levante UD,Oriol Rey,O. Rey,20,Centrocampista,389,5,4,1,0,0,0,0,5,77.8,LEVANTE-UD-11,LEVANTE UD 11,2026-09-21
+levante-ud-84553,r-brugue,LEVANTE UD,Levante UD,Roger Brugué,R. Brugué,7,Delantero,354,4,4,1,3,0,0,0,5,70.8,LEVANTE-UD-18,LEVANTE UD 17,2026-09-21
+levante-ud-84562,ivan-2,LEVANTE UD,Levante UD,Iván Romero,I. Romero,9,Delantero,316,5,4,4,1,0,1,0,5,63.2,LEVANTE-UD-19,LEVANTE UD 18,2026-09-21
+levante-ud-84552,enzo-bardeli,LEVANTE UD,Levante UD,Enzo Bardeli,Enzo Bardeli,18,Centrocampista,308,5,3,2,1,1,0,0,5,61.6,ULTIMOS-FICHAJES-07,ÚLTIMOS FICHAJES UF7,2026-09-21
+levante-ud-84549,nacho-perez-1,LEVANTE UD,Levante UD,Nacho Pérez,Nacho Perez,29,Defensa,295,5,4,4,0,0,0,0,5,59.0,LEVANTE-UD-BIS-1,LEVANTE UD BIS,2026-09-21
+levante-ud-86545,thiago-fernandez,LEVANTE UD,Levante UD,Thiago Fernández,Thiago,24,Centrocampista,227,3,3,3,0,0,0,0,5,45.4,LEVANTE-UD-BIS-2,LEVANTE UD BIS,2026-09-21
+levante-ud-84546,victor-g-1,LEVANTE UD,Levante UD,Víctor García,Víctor G.,17,Defensa,196,4,2,1,0,0,0,0,5,39.2,LEVANTE-UD-14,LEVANTE UD 14A,2026-09-21
+levante-ud-84547,jeremy-toljan,LEVANTE UD,Levante UD,Jeremy Toljan,Toljan,22,Defensa,174,5,1,0,0,0,1,0,5,34.8,LEVANTE-UD-05,LEVANTE UD 5,2026-09-21
+levante-ud-85879,hugo-sotelo,LEVANTE UD,Levante UD,Hugo Sotelo,Hugo Sotelo,5,Centrocampista,99,4,1,1,0,0,1,0,5,19.8,,,2026-09-21
+levante-ud-85827,daniel-requena,LEVANTE UD,Levante UD,Dani Requena,Requena,6,Centrocampista,94,2,1,0,0,0,0,0,5,18.8,LEVANTE-UD-13,LEVANTE UD 13,2026-09-21
+levante-ud-84564,etta-eyong,LEVANTE UD,Levante UD,Karl Etta Eyong,Etta Eyong,21,Delantero,64,3,0,0,0,1,0,0,5,12.8,LEVANTE-UD-20,LEVANTE UD 19,2026-09-21
+levante-ud-84566,paco-cortes,LEVANTE UD,Levante UD,Paco Cortés,P. Cortes,27,Centrocampista,64,3,1,1,0,0,0,0,5,12.8,LEVANTE-UD-15,LEVANTE UD 14B,2026-09-21
+levante-ud-87151,petar-ratkov,LEVANTE UD,Levante UD,Petar Ratkov,Petar Ratkov,10,Delantero,59,1,1,1,0,0,0,0,5,11.8,,,2026-09-21
+levante-ud-86276,yanis-musuayi,LEVANTE UD,Levante UD,Yanis Musuayi,Yanis Musuayi,11,Delantero,30,1,0,0,0,0,0,0,5,6.0,LEVANTE-UD-22,LEVANTE UD 20BIS,2026-09-21
+levante-ud-86678,marc-santos,LEVANTE UD,Levante UD,Marc Santos,Marc Santos,33,Defensa,26,1,0,0,0,0,0,0,5,5.2,,,2026-09-21
+levante-ud-86837,ifeanyi-ndukwe,LEVANTE UD,Levante UD,Ifeanyi Ndukwe,Ndukwe,3,Defensa,19,1,0,0,0,0,0,0,5,3.8,,,2026-09-21
+levante-ud-86680,alberto-calatrava,LEVANTE UD,Levante UD,Alberto Calatrava,Calatrava,38,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-86993,axel-tape,LEVANTE UD,Levante UD,Axel Tape,Axel Tape,16,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-86677,ihor-galdin,LEVANTE UD,Levante UD,Ihor Galdin,Ihor Galdin,36,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-84545,jorge-cabello,LEVANTE UD,Levante UD,Jorge Cabello,Cabello,14,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-86679,manel-usedo,LEVANTE UD,Levante UD,Manel Usedo,Manel Usedo,34,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+levante-ud-84540,pablo-cunat,LEVANTE UD,Levante UD,Pablo Campos,P. Campos,1,Portero,0,0,0,0,0,0,0,0,5,0.0,LEVANTE-UD-04,LEVANTE UD 4,2026-09-21
+malaga-cf-84571,a-herrero,MALAGA CF,Málaga CF,Alfonso Herrero,A. Herrero,1,Portero,450,5,5,0,0,0,0,0,5,90.0,MALAGA-CF-03,MALAGA CF 3,2026-09-21
+malaga-cf-84590,chupete,MALAGA CF,Málaga CF,Carlos Ruiz Rubio,Chupe,9,Delantero,450,5,5,0,1,0,1,0,5,90.0,MALAGA-CF-21,MALAGA CF 20,2026-09-21
+malaga-cf-84581,angel-recio,MALAGA CF,Málaga CF,Ángel Recio,Recio,15,Defensa,450,5,5,0,0,0,0,0,5,90.0,MALAGA-CF-BIS-1,MALAGA CF BIS,2026-09-21
+malaga-cf-84580,rafa-garrido,MALAGA CF,Málaga CF,Rafael Garrido Hierro,Rafita,31,Defensa,427,5,5,1,0,0,1,0,5,85.4,MALAGA-CF-09,MALAGA CF 9,2026-09-21
+malaga-cf-84591,larrubia,MALAGA CF,Málaga CF,David Larrubia,D. Larrubia,10,Centrocampista,394,5,4,0,0,0,1,0,5,78.8,MALAGA-CF-17,MALAGA CF 16,2026-09-21
+malaga-cf-84576,einar-galilea,MALAGA CF,Málaga CF,Einar Galilea,Einar,4,Defensa,379,5,5,3,0,0,1,0,5,75.8,MALAGA-CF-08,MALAGA CF 8,2026-09-21
+malaga-cf-84586,izan-merino,MALAGA CF,Málaga CF,Izan Merino,Izan M.,23,Centrocampista,360,5,4,3,0,0,0,0,5,72.0,MALAGA-CF-11,MALAGA CF 11,2026-09-21
+malaga-cf-86058,carlos-dotor,MALAGA CF,Málaga CF,Carlos Dotor,Dotor,8,Centrocampista,316,4,4,3,0,0,0,0,5,63.2,MALAGA-CF-15,MALAGA CF 14,2026-09-21
+malaga-cf-84585,daniel-lorenzo,MALAGA CF,Málaga CF,Dani Lorenzo,Dani Lorenzo,22,Centrocampista,299,4,4,4,0,0,1,0,5,59.8,MALAGA-CF-12,MALAGA CF 12,2026-09-21
+malaga-cf-84592,joaquin-1,MALAGA CF,Málaga CF,Joaquín Muñoz,Joaquín,11,Delantero,293,5,4,4,0,0,0,0,5,58.6,MALAGA-CF-20,MALAGA CF 19,2026-09-21
+malaga-cf-84575,carlos-puga,MALAGA CF,Málaga CF,Carlos Puga,C. Puga,3,Defensa,268,5,3,2,0,0,2,0,5,53.6,MALAGA-CF-05,MALAGA CF 5,2026-09-21
+malaga-cf-86078,salinas-1,MALAGA CF,Málaga CF,José Salinas,Salinas,12,Defensa,225,4,2,1,0,0,0,0,5,45.0,MALAGA-CF-10,MALAGA CF 10,2026-09-21
+malaga-cf-85862,juan-cruz,MALAGA CF,Málaga CF,Juan Cruz,Cruz,19,Centrocampista,196,5,2,2,0,0,1,0,5,39.2,ULTIMOS-FICHAJES-11,ÚLTIMOS FICHAJES UF11,2026-09-21
+malaga-cf-86809,p-martinez,MALAGA CF,Málaga CF,Pablo Martínez,Martínez,18,Centrocampista,194,3,2,1,0,1,1,0,5,38.8,,,2026-09-21
+malaga-cf-84582,ramon-2,MALAGA CF,Málaga CF,Ramón Enríquez,Ramon,6,Centrocampista,86,5,0,0,0,0,2,0,5,17.2,,,2026-09-21
+malaga-cf-84588,rafa-rodriguez,MALAGA CF,Málaga CF,Rafa Rodríguez,Rafa R.,14,Centrocampista,85,3,1,1,0,0,0,0,5,17.0,MALAGA-CF-13,MALAGA CF 13A,2026-09-21
+malaga-cf-84589,haitam,MALAGA CF,Málaga CF,Haitam Abaida,Haitam,7,Delantero,33,2,0,0,0,0,0,0,5,6.6,,,2026-09-21
+malaga-cf-84594,adrian-nino,MALAGA CF,Málaga CF,Adrián Niño,Niño,21,Delantero,23,1,0,0,1,0,0,0,5,4.6,MALAGA-CF-19,MALAGA CF 18,2026-09-21
+malaga-cf-84593,eneko,MALAGA CF,Málaga CF,Eneko Jauregi,Jauregi,17,Delantero,10,1,0,0,0,0,0,0,5,2.0,,,2026-09-21
+malaga-cf-84595,lobete,MALAGA CF,Málaga CF,Julen Lobete,Lobete,24,Delantero,5,1,0,0,0,0,0,0,5,1.0,MALAGA-CF-18,MALAGA CF 17,2026-09-21
+malaga-cf-87170,jens-cajuste,MALAGA CF,Málaga CF,Jens Cajuste,Cajuste,2,Centrocampista,4,1,0,0,0,0,0,0,5,0.8,,,2026-09-21
+malaga-cf-87051,j-berrocal,MALAGA CF,Málaga CF,Juan Berrocal,J. Berrocal,25,Defensa,3,1,0,0,0,0,0,0,5,0.6,,,2026-09-21
+malaga-cf-87015,adam-aznou,MALAGA CF,Málaga CF,Adam Aznou,Aznou,39,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+malaga-cf-84573,andres-cespedes,MALAGA CF,Málaga CF,Andrés Céspedes,Andrés,30,Portero,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+malaga-cf-84572,carlos-lopez-2,MALAGA CF,Málaga CF,Carlos López,Carlos Lopez,13,Portero,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-04,MALAGA CF 4,2026-09-21
+malaga-cf-84577,diego-murillo,MALAGA CF,Málaga CF,Diego Murillo,Murillo,16,Defensa,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-06,MALAGA CF 6,2026-09-21
+malaga-cf-85749,calero,MALAGA CF,Málaga CF,Fernando Calero,F. Calero,20,Defensa,0,0,0,0,0,0,0,0,5,0.0,MALAGA-CF-07,MALAGA CF 7,2026-09-21
+malaga-cf-86059,joseph-otunenche,MALAGA CF,Málaga CF,Joseph Otu,Otu Jr,28,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+malaga-cf-86060,juan-fernandez-2,MALAGA CF,Málaga CF,Juan Francisco Fernández Martin,Juani,32,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+malaga-cf-84574,alex-pastor,MALAGA CF,Málaga CF,Álex Pastor,Pastor,5,Defensa,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+c-a-osasuna-84605,abel-bretones,OSASUNA,CA Osasuna,Abel Bretones,Abel Bretones,23,Centrocampista,495,6,5,0,0,0,2,0,6,82.5,OSASUNA-10,OSASUNA 9,2026-09-21
+c-a-osasuna-84609,inigo-arguibide,OSASUNA,CA Osasuna,Iñigo Arguibide,Arguibide,27,Defensa,476,6,6,4,0,0,0,0,6,79.3,OSASUNA-06,OSASUNA 5B,2026-09-21
+c-a-osasuna-84606,catena,OSASUNA,CA Osasuna,Alejandro Catena,Catena,24,Defensa,450,5,5,0,0,0,0,0,6,75.0,OSASUNA-09,OSASUNA 8,2026-09-21
+c-a-osasuna-84598,s-herrera,OSASUNA,CA Osasuna,Sergio Herrera,S. Herrera,1,Portero,450,5,5,0,0,0,2,0,6,75.0,OSASUNA-03,OSASUNA 3,2026-09-21
+c-a-osasuna-84612,moncayola,OSASUNA,CA Osasuna,Jon Moncayola,Moncayola,7,Centrocampista,424,6,5,1,0,0,1,0,6,70.7,OSASUNA-13,OSASUNA 12,2026-09-21
+c-a-osasuna-84623,budimir,OSASUNA,CA Osasuna,Ante Budimir,Budimir,17,Delantero,412,6,4,1,4,0,0,0,6,68.7,OSASUNA-22,OSASUNA 20,2026-09-21
+c-a-osasuna-84613,iker-munoz,OSASUNA,CA Osasuna,Iker Muñoz,Iker Muñoz,8,Centrocampista,386,5,4,1,0,0,1,0,6,64.3,OSASUNA-15,OSASUNA 13B,2026-09-21
+c-a-osasuna-84620,raul-4,OSASUNA,CA Osasuna,Raúl García,Raúl,9,Delantero,340,6,4,3,0,1,1,0,6,56.7,OSASUNA-20,OSASUNA 18,2026-09-21
+c-a-osasuna-84615,ruben-garcia,OSASUNA,CA Osasuna,Rubén García,Rubén García,14,Delantero,300,6,4,4,0,0,1,0,6,50.0,OSASUNA-16,OSASUNA 14,2026-09-21
+c-a-osasuna-84622,moi-gomez,OSASUNA,CA Osasuna,Moi Gómez,Moi Gómez,16,Centrocampista,240,4,3,3,0,1,0,0,6,40.0,OSASUNA-14,OSASUNA 13A,2026-09-21
+c-a-osasuna-86061,jonathan-dubasin,OSASUNA,CA Osasuna,Jonathan Dubasin,Dubasin,21,Centrocampista,232,6,2,2,0,0,1,0,6,38.7,OSASUNA-BIS-1,OSASUNA BIS,2026-09-21
+c-a-osasuna-86576,rockson-yeboah,OSASUNA,CA Osasuna,Rockson Yeboah,Rockson,48,Defensa,210,3,2,0,0,0,1,0,6,35.0,,,2026-09-21
+c-a-osasuna-84611,torro,OSASUNA,CA Osasuna,Lucas Torró,Torró,6,Centrocampista,208,4,2,0,0,0,0,0,6,34.7,OSASUNA-12,OSASUNA 11,2026-09-21
+c-a-osasuna-84604,boyomo,OSASUNA,CA Osasuna,Enzo Boyomo,Boyomo,22,Defensa,201,3,2,1,0,0,0,0,6,33.5,OSASUNA-07,OSASUNA 6,2026-09-21
+c-a-osasuna-84618,asier-osambela,OSASUNA,CA Osasuna,Asier Osambela,A. Osambela,29,Centrocampista,200,4,2,1,0,0,0,0,6,33.3,OSASUNA-11,OSASUNA 10,2026-09-21
+c-a-osasuna-84602,herrando,OSASUNA,CA Osasuna,Jorge Herrando,Herrando,5,Defensa,187,3,3,2,0,0,1,0,6,31.2,OSASUNA-08,OSASUNA 7,2026-09-21
+c-a-osasuna-84621,kike-barja,OSASUNA,CA Osasuna,Kike Barja,Kike Barja,11,Delantero,181,5,2,2,1,0,3,0,6,30.2,OSASUNA-21,OSASUNA 19,2026-09-21
+c-a-osasuna-84614,aimar-1,OSASUNA,CA Osasuna,Aimar Oroz,Aimar,10,Delantero,151,3,2,2,0,0,0,0,6,25.2,OSASUNA-17,OSASUNA 15,2026-09-21
+c-a-osasuna-84624,raul-moro,OSASUNA,CA Osasuna,Raúl Moro,Moro,18,Centrocampista,137,4,1,1,0,0,0,0,6,22.8,OSASUNA-19,OSASUNA 17,2026-09-21
+c-a-osasuna-84599,aitor-fdez,OSASUNA,CA Osasuna,Aitor Fernández,Aitor Fdez.,13,Portero,90,1,1,0,0,0,0,0,6,15.0,OSASUNA-04,OSASUNA 4,2026-09-21
+c-a-osasuna-84608,unai-santos-1,OSASUNA,CA Osasuna,Unai Santos,Santos,35,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-21
+c-a-osasuna-86560,rico,OSASUNA,CA Osasuna,Diego Rico,Rico,15,Defensa,45,1,1,1,0,0,0,0,6,7.5,,,2026-09-21
+c-a-osasuna-87040,romain-del-castillo,OSASUNA,CA Osasuna,Romain Del Castillo,Del Castillo,20,Centrocampista,35,2,0,0,0,0,0,0,6,5.8,,,2026-09-21
+c-a-osasuna-86916,asier-bonel-1,OSASUNA,CA Osasuna,Asier Bonel,A. Bonel,30,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+c-a-osasuna-84616,mauro-echegoyen,OSASUNA,CA Osasuna,Mauro Echegoyen,Mauro,26,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+c-a-osasuna-84601,rafa-fernandez,OSASUNA,CA Osasuna,Rafa Fernández,Rafa Fdez.,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+c-a-osasuna-84603,valentin-rosier,OSASUNA,CA Osasuna,Valentin Rosier,V. Rosier,19,Defensa,0,0,0,0,0,0,0,0,6,0.0,OSASUNA-05,OSASUNA 5A,2026-09-21
+r-racing-club-86488,julen-agirrezabala,RACING DE SANTANDER,R. Racing Club,Julen Agirrezabala,Agirrezabala,13,Portero,540,6,6,0,0,0,0,0,6,90.0,RACING-DE-SANTANDER-03,RACING DE SANTANDER 3,2026-09-21
+r-racing-club-84643,canales,RACING DE SANTANDER,R. Racing Club,Sergio Canales,Canales,20,Centrocampista,480,6,6,4,1,0,0,0,6,80.0,ULTIMOS-FICHAJES-01,ÚLTIMOS FICHAJES UF1,2026-09-21
+r-racing-club-84656,i-vicente,RACING DE SANTANDER,R. Racing Club,Iñigo Vicente,Vicente,10,Delantero,454,6,5,2,0,2,1,0,6,75.7,RACING-DE-SANTANDER-20,RACING DE SANTANDER 18,2026-09-21
+r-racing-club-84639,jorge-salinas,RACING DE SANTANDER,R. Racing Club,Jorge Salinas,Salinas,17,Defensa,454,6,5,0,0,1,2,0,6,75.7,RACING-DE-SANTANDER-11,RACING DE SANTANDER 10,2026-09-21
+r-racing-club-84635,alvaro-mantilla,RACING DE SANTANDER,R. Racing Club,Álvaro Mantilla,Mantilla,2,Defensa,449,5,5,1,0,0,2,0,6,74.8,RACING-DE-SANTANDER-05,RACING DE SANTANDER 5,2026-09-21
+r-racing-club-84637,m-hernando,RACING DE SANTANDER,R. Racing Club,José Manuel Hernando Riol,Manu H.,4,Defensa,397,5,4,2,0,0,1,0,6,66.2,RACING-DE-SANTANDER-09,RACING DE SANTANDER 9A,2026-09-21
+r-racing-club-86803,ivan-martin,RACING DE SANTANDER,R. Racing Club,Iván Martín,Iván Martín,23,Centrocampista,315,4,3,0,0,0,0,0,6,52.5,ULTIMOS-FICHAJES-34,ÚLTIMOS FICHAJES UF34,2026-09-21
+r-racing-club-86143,yassir-zabiri,RACING DE SANTANDER,R. Racing Club,Yassir Zabiri,Zabiri,21,Delantero,311,6,3,2,6,0,3,0,6,51.8,RACING-DE-SANTANDER-BIS-3,RACING DE SANTANDER BIS,2026-09-21
+r-racing-club-86348,pablo-ramon,RACING DE SANTANDER,R. Racing Club,Pablo Ramón,Pablo Ramón,5,Centrocampista,292,4,3,1,0,0,1,0,6,48.7,RACING-DE-SANTANDER-23,RACING DE SANTANDER 6BIS,2026-09-21
+r-racing-club-86897,matteo-prati,RACING DE SANTANDER,R. Racing Club,Matteo Prati,Prati,18,Centrocampista,260,4,3,2,0,0,0,0,6,43.3,,,2026-09-21
+r-racing-club-84634,facundo-gonzalez,RACING DE SANTANDER,R. Racing Club,Facu González,Facu,16,Defensa,246,5,3,2,0,0,1,0,6,41.0,RACING-DE-SANTANDER-07,RACING DE SANTANDER 7,2026-09-21
+r-racing-club-84657,andres-2,RACING DE SANTANDER,R. Racing Club,Andrés Martín,Andrés,11,Delantero,239,3,3,1,1,0,0,0,6,39.8,RACING-DE-SANTANDER-18,RACING DE SANTANDER 16,2026-09-21
+r-racing-club-84653,villalibre,RACING DE SANTANDER,R. Racing Club,Asier Villalibre,Villalibre,12,Delantero,219,5,3,3,0,1,0,0,6,36.5,RACING-DE-SANTANDER-22,RACING DE SANTANDER 20,2026-09-21
+r-racing-club-87089,pablo-garcia-5,RACING DE SANTANDER,R. Racing Club,Pablo García,Pablo G.,15,Delantero,154,2,2,2,1,0,0,0,6,25.7,,,2026-09-21
+r-racing-club-84647,maguette-gueye,RACING DE SANTANDER,R. Racing Club,Maguette Gueye,Maguette,14,Centrocampista,148,5,1,0,1,0,0,0,6,24.7,RACING-DE-SANTANDER-12,RACING DE SANTANDER 11A,2026-09-21
+r-racing-club-87067,jeanuel-belocian,RACING DE SANTANDER,R. Racing Club,Jeanuël Belocian,Belocian,24,Defensa,125,2,1,0,0,0,0,0,6,20.8,,,2026-09-21
+r-racing-club-87032,aaron-1,RACING DE SANTANDER,R. Racing Club,Aarón Martín,Aaron,3,Defensa,91,2,1,0,0,0,0,0,6,15.2,,,2026-09-21
+r-racing-club-84644,inigo,RACING DE SANTANDER,R. Racing Club,Íñigo Sainz-Maza,Iñigo,6,Defensa,78,1,1,1,0,0,0,0,6,13.0,RACING-DE-SANTANDER-15,RACING DE SANTANDER 13,2026-09-21
+r-racing-club-86322,pedro-felipe,RACING DE SANTANDER,R. Racing Club,Pedro Felipe de Jesus Gomes,Pedro,22,Defensa,76,3,2,2,0,0,1,0,6,12.7,RACING-DE-SANTANDER-BIS-1,RACING DE SANTANDER BIS,2026-09-21
+r-racing-club-84655,juan-carlos-arana,RACING DE SANTANDER,R. Racing Club,Juan Carlos Arana,Arana,9,Delantero,62,3,1,1,0,0,0,0,6,10.3,RACING-DE-SANTANDER-21,RACING DE SANTANDER 19,2026-09-21
+r-racing-club-87078,andre-almeida-1,RACING DE SANTANDER,R. Racing Club,Domingos André Ribeiro Almeida,Almeida,8,Centrocampista,59,2,0,0,0,0,0,0,6,9.8,,,2026-09-21
+r-racing-club-84654,giorgi-guliashvili,RACING DE SANTANDER,R. Racing Club,Giorgi Guliashvili,Guliashvili,7,Delantero,48,3,0,1,0,0,0,0,6,8.0,RACING-DE-SANTANDER-19,RACING DE SANTANDER 17,2026-09-21
+r-racing-club-87033,iker-luque-1,RACING DE SANTANDER,R. Racing Club,Iker Luque,Iker Luque,19,Centrocampista,47,2,0,0,0,0,0,0,6,7.8,,,2026-09-21
+r-racing-club-84652,andres-vallecillo,RACING DE SANTANDER,R. Racing Club,Andrés Vallecillo,Vallecillo,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+r-racing-club-86729,hugo-perez-2,RACING DE SANTANDER,R. Racing Club,Hugo Pérez,Hugo,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+r-racing-club-86674,jorge-castellanos,RACING DE SANTANDER,R. Racing Club,Jorge Castellanos,Castellanos,33,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+r-racing-club-84633,laro-gomez,RACING DE SANTANDER,R. Racing Club,Laro Gómez,Laro,31,Portero,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+r-racing-club-84631,simon-eriksson,RACING DE SANTANDER,R. Racing Club,Simon Eriksson,Eriksson,1,Portero,0,0,0,0,0,0,0,0,6,0.0,RACING-DE-SANTANDER-04,RACING DE SANTANDER 4,2026-09-21
+rayo-vallecano-84674,lejeune,RAYO VALLECANO,Rayo Vallecano,Florian Lejeune,Lejeune,24,Defensa,540,6,6,0,0,0,1,0,6,90.0,RAYO-VALLECANO-08,RAYO VALLECANO 8,2026-09-21
+rayo-vallecano-84679,pathe-ciss,RAYO VALLECANO,Rayo Vallecano,Pathé Ciss,Pathé I. Ciss,6,Centrocampista,540,6,6,0,0,0,3,0,6,90.0,RAYO-VALLECANO-12,RAYO VALLECANO 12,2026-09-21
+rayo-vallecano-84682,unai-lopez,RAYO VALLECANO,Rayo Vallecano,Unai López,Unai Lopez,8,Centrocampista,469,6,6,4,0,3,2,0,6,78.2,RAYO-VALLECANO-14,RAYO VALLECANO 14,2026-09-21
+rayo-vallecano-84669,andrei,RAYO VALLECANO,Rayo Vallecano,Andrei Ratiu,Andrei,2,Defensa,450,5,5,0,1,0,0,0,6,75.0,RAYO-VALLECANO-05,RAYO VALLECANO 5,2026-09-21
+rayo-vallecano-84683,alvaro-1,RAYO VALLECANO,Rayo Vallecano,Álvaro García,Álvaro,18,Centrocampista,443,6,5,3,2,2,1,0,6,73.8,RAYO-VALLECANO-18,RAYO VALLECANO 18,2026-09-21
+rayo-vallecano-84691,camello,RAYO VALLECANO,Rayo Vallecano,Sergio Camello,Camello,10,Delantero,399,6,5,4,6,1,2,0,6,66.5,RAYO-VALLECANO-19,RAYO VALLECANO 19,2026-09-21
+rayo-vallecano-84685,oscar-5,RAYO VALLECANO,Rayo Vallecano,Óscar Valentín,Óscar V.,23,Centrocampista,312,6,3,2,0,0,1,0,6,52.0,RAYO-VALLECANO-13,RAYO VALLECANO 13,2026-09-21
+rayo-vallecano-86943,pedrosa-1,RAYO VALLECANO,Rayo Vallecano,Adrià Pedrosa,Pedrosa,17,Defensa,308,4,3,2,1,0,1,0,6,51.3,,,2026-09-21
+rayo-vallecano-84692,de-frutos-1,RAYO VALLECANO,Rayo Vallecano,Jorge de Frutos,De Frutos,19,Centrocampista,302,4,4,2,0,1,0,0,6,50.3,RAYO-VALLECANO-16,RAYO VALLECANO 16,2026-09-21
+rayo-vallecano-84678,pedro-diaz,RAYO VALLECANO,Rayo Vallecano,Pedro Díaz,Pedro Díaz,4,Centrocampista,292,5,3,1,0,0,0,0,6,48.7,RAYO-VALLECANO-11,RAYO VALLECANO 11,2026-09-21
+rayo-vallecano-84662,cardenas,RAYO VALLECANO,Rayo Vallecano,Dani Cárdenas,Cárdenas,1,Portero,210,3,2,0,0,0,0,0,6,35.0,RAYO-VALLECANO-04,RAYO VALLECANO 4,2026-09-21
+rayo-vallecano-84673,balliu,RAYO VALLECANO,Rayo Vallecano,Iván Balliu,Balliu,20,Defensa,206,5,2,0,0,0,0,0,6,34.3,RAYO-VALLECANO-06,RAYO VALLECANO 6,2026-09-21
+rayo-vallecano-86918,gnangoro,RAYO VALLECANO,Rayo Vallecano,Gnangoro Bouare Samake,G. Bouaré,36,Centrocampista,186,4,2,2,0,0,1,0,6,31.0,,,2026-09-21
+rayo-vallecano-86580,heorhii-tsitaishvili,RAYO VALLECANO,Rayo Vallecano,Giorgi Tsitaishvili,G.tsitaishvili,14,Delantero,182,3,2,1,0,0,1,0,6,30.3,,,2026-09-21
+rayo-vallecano-87172,emil-audero,RAYO VALLECANO,Rayo Vallecano,Emil Audero,Emil Audero,25,Portero,180,2,2,0,0,0,0,0,6,30.0,,,2026-09-21
+rayo-vallecano-84681,nteka,RAYO VALLECANO,Rayo Vallecano,Randy Nteka,Nteka,11,Centrocampista,153,3,1,1,0,0,0,0,6,25.5,,,2026-09-21
+rayo-vallecano-84663,augusto-batalla,RAYO VALLECANO,Rayo Vallecano,Augusto Batalla,A. Batalla,13,Portero,150,2,2,1,0,0,0,0,6,25.0,RAYO-VALLECANO-03,RAYO VALLECANO 3,2026-09-21
+rayo-vallecano-84684,francisco-martinez-1,RAYO VALLECANO,Rayo Vallecano,Fran Pérez,Fran Pérez,21,Centrocampista,142,5,1,1,0,0,1,0,6,23.7,RAYO-VALLECANO-17,RAYO VALLECANO 17,2026-09-21
+rayo-vallecano-84668,jozhua-vertrouwd,RAYO VALLECANO,Rayo Vallecano,Jozhua Vertrouwd,Jozhua V.,33,Defensa,122,2,2,1,0,0,0,0,6,20.3,RAYO-VALLECANO-BIS-1,RAYO VALLECANO BIS,2026-09-21
+rayo-vallecano-84690,alemao-1,RAYO VALLECANO,Rayo Vallecano,Alexandre Zurawski,Alemâo,9,Delantero,102,5,0,0,0,0,1,0,6,17.0,RAYO-VALLECANO-20,RAYO VALLECANO 20,2026-09-21
+rayo-vallecano-84680,isi-2,RAYO VALLECANO,Rayo Vallecano,Isi Palazón,Isi,7,Centrocampista,81,2,2,2,0,0,0,0,6,13.5,RAYO-VALLECANO-15,RAYO VALLECANO 15,2026-09-21
+rayo-vallecano-87090,mujaid,RAYO VALLECANO,Rayo Vallecano,Mujaid Sadick,Mujaid,15,Defensa,76,2,1,1,0,0,0,0,6,12.7,,,2026-09-21
+rayo-vallecano-84677,pelayo-fernandez,RAYO VALLECANO,Rayo Vallecano,Pelayo Fernández,Pelayo,22,Defensa,67,2,1,1,0,0,0,0,6,11.2,RAYO-VALLECANO-BIS-2,RAYO VALLECANO BIS,2026-09-21
+rayo-vallecano-87186,rayane-belaid,RAYO VALLECANO,Rayo Vallecano,Rayane Belaid,Rayane,37,Delantero,23,1,0,0,0,0,0,0,6,3.8,,,2026-09-21
+rayo-vallecano-84666,adrian-molina,RAYO VALLECANO,Rayo Vallecano,Adrián Molina,Adrián Molina,30,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-86662,ivan-alonso-1,RAYO VALLECANO,Rayo Vallecano,Iván Alonso,Alonso,34,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-84671,luiz-felipe,RAYO VALLECANO,Rayo Vallecano,Luiz Felipe Ramos Marchi,Luiz Felipe,5,Defensa,0,0,0,0,0,0,0,0,6,0.0,RAYO-VALLECANO-09,RAYO VALLECANO 9,2026-09-21
+rayo-vallecano-86435,marash-kumbulla,RAYO VALLECANO,Rayo Vallecano,Marash Kumbulla,Kumbulla,3,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-84688,marco-roman,RAYO VALLECANO,Rayo Vallecano,Marco Román,M. Román,31,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-84675,marco-de-las-sias,RAYO VALLECANO,Rayo Vallecano,Marco de Las Sias,De Las Sias,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-84689,r-d-t,RAYO VALLECANO,Rayo Vallecano,Raúl de Tomás,Rdt,,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rayo-vallecano-84686,samu-becerra,RAYO VALLECANO,Rayo Vallecano,Samu Becerra,Becerra,28,Centrocampista,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+rayo-vallecano-84676,sergio-lozano,RAYO VALLECANO,Rayo Vallecano,Sergio Lozano,Lozano,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-celta-84344,ionut-radu,RC CELTA DE VIGO,Celta,Ionut Radu,Radu,13,Portero,540,6,6,0,0,0,1,0,6,90.0,RC-CELTA-DE-VIGO-03,RC CELTA DE VIGO 3,2026-09-21
+rc-celta-84364,miguel-roman,RC CELTA DE VIGO,Celta,Miguel Román,M. Román,8,Centrocampista,495,6,5,0,0,1,0,0,6,82.5,RC-CELTA-DE-VIGO-13,RC CELTA DE VIGO 12,2026-09-21
+rc-celta-84356,yoel-lago,RC CELTA DE VIGO,Celta,Yoel Lago,Yoel Lago,18,Defensa,495,6,5,0,0,0,2,0,6,82.5,RC-CELTA-DE-VIGO-10,RC CELTA DE VIGO 9B,2026-09-21
+rc-celta-84354,marcos-alonso,RC CELTA DE VIGO,Celta,Marcos Alonso,M. Alonso,3,Defensa,411,5,5,0,0,0,2,0,6,68.5,RC-CELTA-DE-VIGO-09,RC CELTA DE VIGO 9A,2026-09-21
+rc-celta-84350,s-carreira,RC CELTA DE VIGO,Celta,Sergio Carreira,Carreira,5,Defensa,411,6,4,0,0,0,1,0,6,68.5,RC-CELTA-DE-VIGO-11,RC CELTA DE VIGO 10,2026-09-21
+rc-celta-84360,ilaix,RC CELTA DE VIGO,Celta,Moriba Kourouma Kourouma,Moriba,6,Centrocampista,402,6,5,2,0,0,0,0,6,67.0,RC-CELTA-DE-VIGO-12,RC CELTA DE VIGO 11,2026-09-21
+rc-celta-84353,javier-rueda,RC CELTA DE VIGO,Celta,Javi Rueda,Javi Rueda,17,Defensa,331,6,3,3,0,0,1,0,6,55.2,RC-CELTA-DE-VIGO-06,RC CELTA DE VIGO 6,2026-09-21
+rc-celta-84372,ferran-1,RC CELTA DE VIGO,Celta,Ferran Jutglà,Jutgla,9,Delantero,325,6,4,3,1,0,0,0,6,54.2,RC-CELTA-DE-VIGO-21,RC CELTA DE VIGO 19,2026-09-21
+rc-celta-84365,williot-swedberg,RC CELTA DE VIGO,Celta,Williot Swedberg,Williot,19,Centrocampista,246,5,3,3,0,0,0,0,6,41.0,RC-CELTA-DE-VIGO-17,RC CELTA DE VIGO 16,2026-09-21
+rc-celta-84358,javier-rodriguez-1,RC CELTA DE VIGO,Celta,Javi Rodríguez,Javi Rguez,20,Defensa,231,4,3,1,0,0,0,0,6,38.5,RC-CELTA-DE-VIGO-07,RC CELTA DE VIGO 7,2026-09-21
+rc-celta-84373,iago-aspas,RC CELTA DE VIGO,Celta,Iago Aspas,Iago Aspas,10,Delantero,220,6,2,2,1,0,0,0,6,36.7,RC-CELTA-DE-VIGO-18,RC CELTA DE VIGO 17,2026-09-21
+rc-celta-84349,carl-starfelt,RC CELTA DE VIGO,Celta,Carl Starfelt,Starfelt,2,Defensa,218,3,2,0,1,0,1,0,6,36.3,RC-CELTA-DE-VIGO-08,RC CELTA DE VIGO 8,2026-09-21
+rc-celta-84347,javi-galan,RC CELTA DE VIGO,Celta,Javi Galán,Javi Galán,22,Centrocampista,205,5,3,3,0,0,0,0,6,34.2,ULTIMOS-FICHAJES-37,ÚLTIMOS FICHAJES UF37,2026-09-21
+rc-celta-84374,pablo-duran,RC CELTA DE VIGO,Celta,Pablo Durán,P. Durán,11,Delantero,201,4,2,2,0,0,0,0,6,33.5,RC-CELTA-DE-VIGO-19,RC CELTA DE VIGO 18A,2026-09-21
+rc-celta-84376,hugo-gonzalez-1,RC CELTA DE VIGO,Celta,Hugo González,H. González,16,Centrocampista,190,3,3,3,0,2,0,0,6,31.7,RC-CELTA-DE-VIGO-BIS-1,RC CELTA DE VIGO BIS,2026-09-21
+rc-celta-84367,hugo-alvarez-1,RC CELTA DE VIGO,Celta,Hugo Álvarez,Hugo A.,23,Centrocampista,189,4,2,2,0,0,0,0,6,31.5,RC-CELTA-DE-VIGO-14,RC CELTA DE VIGO 13,2026-09-21
+rc-celta-84352,alvaro-nunez,RC CELTA DE VIGO,Celta,Álvaro Núñez,Álvaro N.c.,15,Defensa,174,2,2,1,0,0,0,0,6,29.0,RC-CELTA-DE-VIGO-05,RC CELTA DE VIGO 5,2026-09-21
+rc-celta-84359,febas,RC CELTA DE VIGO,Celta,Aleix Febas,Febas,14,Centrocampista,167,2,2,1,0,0,0,0,6,27.8,ULTIMOS-FICHAJES-10,ÚLTIMOS FICHAJES UF10,2026-09-21
+rc-celta-87149,sebastian-caceres,RC CELTA DE VIGO,Celta,Sebastián Cáceres,S. Caceres,21,Defensa,90,1,1,0,0,0,0,0,6,15.0,,,2026-09-21
+rc-celta-86878,couhaib-driouech,RC CELTA DE VIGO,Celta,Couhaib Driouech,Driouech,24,Delantero,63,3,0,0,0,0,1,0,6,10.5,,,2026-09-21
+rc-celta-86290,abdoulaye-faye,RC CELTA DE VIGO,Celta,Abdoulaye Faye,Faye,4,Defensa,45,1,1,1,0,0,0,0,6,7.5,,,2026-09-21
+rc-celta-84370,b-iglesias,RC CELTA DE VIGO,Celta,Borja Iglesias,B. Iglesias,7,Delantero,21,1,0,0,0,0,0,0,6,3.5,RC-CELTA-DE-VIGO-22,RC CELTA DE VIGO 20,2026-09-21
+rc-celta-86396,altay-bayindir,RC CELTA DE VIGO,Celta,Altay Bayindir,Altay Bayindir,1,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-celta-84368,andres-antanon-1,RC CELTA DE VIGO,Celta,Andrés Antañón,Antañon,28,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-celta-86960,quique-ribes-1,RC CELTA DE VIGO,Celta,Enrique Ribes,Ribes,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-celta-84369,hugo-burcio-1,RC CELTA DE VIGO,Celta,Hugo Burcio,Burcio,30,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rc-celta-84343,ivan-villar,RC CELTA DE VIGO,Celta,Iván Villar,Iván Villar,25,Portero,0,0,0,0,0,0,0,0,6,0.0,RC-CELTA-DE-VIGO-04,RC CELTA DE VIGO 4,2026-09-21
+rc-celta-84378,jones-el-abdellaoui,RC CELTA DE VIGO,Celta,Jones El Abdellaoui,El-Abdellaoui,39,Delantero,0,0,0,0,0,0,0,0,6,0.0,RC-CELTA-DE-VIGO-20,RC CELTA DE VIGO 18B,2026-09-21
+rcd-espanyol-84465,dmitrovic,RCD ESPANYOL,RCD Espanyol de Barcelona,Marko Dmitrovic,Dmitrovic,13,Portero,540,6,6,0,0,0,0,0,6,90.0,RCD-ESPANYOL-03,RCD ESPANYOL 3,2026-09-21
+rcd-espanyol-84475,omar-1,RCD ESPANYOL,RCD Espanyol de Barcelona,Omar El Hilali,El Hilali,23,Defensa,525,6,6,1,0,1,1,0,6,87.5,RCD-ESPANYOL-05,RCD ESPANYOL 5,2026-09-21
+rcd-espanyol-84492,roberto-fernandez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Roberto Fernández,Roberto,9,Delantero,523,6,6,2,6,0,0,0,6,87.2,RCD-ESPANYOL-20,RCD ESPANYOL 20,2026-09-21
+rcd-espanyol-84476,roger-hinojo,RCD ESPANYOL,RCD Espanyol de Barcelona,Roger Hinojo,R. Hinojo,21,Defensa,491,6,6,2,0,0,2,0,6,81.8,RCD-ESPANYOL-BIS-2,RCD ESPANYOL BIS,2026-09-21
+rcd-espanyol-84486,javi-hernandez-1,RCD ESPANYOL,RCD Espanyol de Barcelona,Javi Hernández,Javi H.,28,Delantero,471,6,6,5,0,4,1,0,6,78.5,RCD-ESPANYOL-BIS-3,RCD ESPANYOL BIS,2026-09-21
+rcd-espanyol-84480,edu-exposito,RCD ESPANYOL,RCD Espanyol de Barcelona,Edu Expósito,Edu Expósito,8,Centrocampista,468,6,5,4,0,0,1,0,6,78.0,RCD-ESPANYOL-13,RCD ESPANYOL 13,2026-09-21
+rcd-espanyol-84497,tyrhys-dolan,RCD ESPANYOL,RCD Espanyol de Barcelona,Tyrhys Dolan,Dolan,24,Delantero,410,5,5,3,1,0,0,0,6,68.3,RCD-ESPANYOL-16,RCD ESPANYOL 16,2026-09-21
+rcd-espanyol-84479,gonzalez-de-zarate,RCD ESPANYOL,RCD Espanyol de Barcelona,Urko González de Zárate Quirós,Urko,4,Defensa,397,6,5,4,0,0,2,0,6,66.2,RCD-ESPANYOL-12,RCD ESPANYOL 12,2026-09-21
+rcd-espanyol-86398,nunez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Unai Núñez,Nuñez,14,Defensa,356,4,4,1,0,0,0,0,6,59.3,ULTIMOS-FICHAJES-27,ÚLTIMOS FICHAJES UF27,2026-09-21
+rcd-espanyol-84477,clemens-riedel,RCD ESPANYOL,RCD Espanyol de Barcelona,Clemens Riedel,Riedel,5,Defensa,340,5,4,1,0,0,2,0,6,56.7,RCD-ESPANYOL-07,RCD ESPANYOL 7,2026-09-21
+rcd-espanyol-84478,cala,RCD ESPANYOL,RCD Espanyol de Barcelona,Álex Calatrava Torrado,Cala,22,Delantero,327,6,4,3,1,0,3,0,6,54.5,ULTIMOS-FICHAJES-02,ÚLTIMOS FICHAJES UF2,2026-09-21
+rcd-espanyol-84472,cabrera,RCD ESPANYOL,RCD Espanyol de Barcelona,Leandro Cabrera,Cabrera,6,Defensa,270,3,3,0,0,0,0,0,6,45.0,RCD-ESPANYOL-08,RCD ESPANYOL 8,2026-09-21
+rcd-espanyol-85597,gabriel-moscardo,RCD ESPANYOL,RCD Espanyol de Barcelona,Gabriel Silva Moscardo de Salles,G. Moscardo,20,Centrocampista,173,4,2,2,0,0,1,0,6,28.8,ULTIMOS-FICHAJES-16,ÚLTIMOS FICHAJES UF16,2026-09-21
+rcd-espanyol-84490,marcos-fernandez-2,RCD ESPANYOL,RCD Espanyol de Barcelona,Marcos Fernández,Marcos,18,Delantero,166,5,1,1,1,1,2,0,6,27.7,RCD-ESPANYOL-15,RCD ESPANYOL 15,2026-09-21
+rcd-espanyol-86632,vanja-drkusic,RCD ESPANYOL,RCD Espanyol de Barcelona,Vanja Drkusic,Vanja,16,Defensa,115,3,1,0,0,0,0,0,6,19.2,RCD-ESPANYOL-BIS-1,RCD ESPANYOL BIS,2026-09-21
+rcd-espanyol-84487,rafael-bauza,RCD ESPANYOL,RCD Espanyol de Barcelona,Rafel Bauzà,Bauza,26,Centrocampista,107,4,1,1,0,1,1,0,6,17.8,,,2026-09-21
+rcd-espanyol-85596,quilindschy-hartman,RCD ESPANYOL,RCD Espanyol de Barcelona,Quilindschy Hartman,Quilindschy,3,Defensa,94,2,1,0,0,0,0,0,6,15.7,RCD-ESPANYOL-10,RCD ESPANYOL 10,2026-09-21
+rcd-espanyol-86917,bryan-zaragoza,RCD ESPANYOL,RCD Espanyol de Barcelona,Bryan Zaragoza,Bryan,15,Centrocampista,70,3,0,0,0,0,0,0,6,11.7,,,2026-09-21
+rcd-espanyol-84482,pere-milla,RCD ESPANYOL,RCD Espanyol de Barcelona,Pere Milla,Pere Milla,11,Delantero,40,4,0,0,0,0,1,0,6,6.7,RCD-ESPANYOL-17,RCD ESPANYOL 17,2026-09-21
+rcd-espanyol-84481,pol-lozano,RCD ESPANYOL,RCD Espanyol de Barcelona,Pol Lozano,Pol Lozano,10,Centrocampista,39,3,0,0,0,0,1,0,6,6.5,RCD-ESPANYOL-11,RCD ESPANYOL 11,2026-09-21
+rcd-espanyol-84494,j-carreras,RCD ESPANYOL,RCD Espanyol de Barcelona,Jofre Carreras,Jofre,17,Delantero,18,3,0,0,0,0,0,0,6,3.0,RCD-ESPANYOL-14,RCD ESPANYOL 14,2026-09-21
+rcd-espanyol-84498,adama-timera,RCD ESPANYOL,RCD Espanyol de Barcelona,Adama Timera,Timera,27,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rcd-espanyol-87081,gorosabel,RCD ESPANYOL,RCD Espanyol de Barcelona,Andoni Gorosabel,Gorosabel,2,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rcd-espanyol-84491,puado,RCD ESPANYOL,RCD Espanyol de Barcelona,Javi Puado,Puado,7,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-18,RCD ESPANYOL 18,2026-09-21
+rcd-espanyol-84468,jose-angel-lopez,RCD ESPANYOL,RCD Espanyol de Barcelona,José Ángel López Gálvez,Jose Angel,32,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rcd-espanyol-84495,kike-g,RCD ESPANYOL,RCD Espanyol de Barcelona,Kike García,Kike G.,19,Delantero,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-19,RCD ESPANYOL 19,2026-09-21
+rcd-espanyol-84467,llorenc-serred,RCD ESPANYOL,RCD Espanyol de Barcelona,Llorenç Serred Martínez,Llorenç,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+rcd-espanyol-87242,victor-mullerat,RCD ESPANYOL,RCD Espanyol de Barcelona,Victor Mullerat,Mullerat,29,Delantero,0,0,0,0,0,0,0,0,7,0.0,,,2026-09-21
+rcd-espanyol-84464,angel-f,RCD ESPANYOL,RCD Espanyol de Barcelona,Ángel Fortuño,Àngel Fortuño,1,Portero,0,0,0,0,0,0,0,0,6,0.0,RCD-ESPANYOL-04,RCD ESPANYOL 4,2026-09-21
+real-betis-84696,a-valles,REAL BETIS,Real Betis,Álvaro Valles,Á.valles,1,Portero,450,5,5,0,0,0,0,0,5,90.0,REAL-BETIS-03,REAL BETIS 3,2026-09-21
+real-betis-85601,fran-garcia-1,REAL BETIS,Real Betis,Fran García,Fran García,11,Defensa,391,5,4,0,0,1,1,0,5,78.2,,,2026-09-21
+real-betis-84701,hector-bellerin,REAL BETIS,Real Betis,Héctor Bellerín,Bellerín,2,Defensa,379,5,4,0,0,0,1,0,5,75.8,REAL-BETIS-06,REAL BETIS 5B,2026-09-21
+real-betis-84710,p-fornals,REAL BETIS,Real Betis,Pablo Fornals,P. Fornals,8,Centrocampista,376,5,4,2,0,0,0,0,5,75.2,REAL-BETIS-16,REAL BETIS 15,2026-09-21
+real-betis-84719,antony,REAL BETIS,Real Betis,Antony Matheus dos Santos,Antony,7,Delantero,371,5,4,1,0,0,0,0,5,74.2,REAL-BETIS-19,REAL BETIS 18,2026-09-21
+real-betis-84703,natan,REAL BETIS,Real Betis,Natan Bernardo de Souza,Natan,4,Defensa,360,4,4,0,1,0,2,0,5,72.0,REAL-BETIS-09,REAL BETIS 8,2026-09-21
+real-betis-84716,marc-roca,REAL BETIS,Real Betis,Marc Roca,Marc Roca,21,Centrocampista,337,4,4,1,0,1,1,0,5,67.4,REAL-BETIS-11,REAL BETIS 10,2026-09-21
+real-betis-84721,cucho,REAL BETIS,Real Betis,Cucho Hernández,C. Hernández,9,Delantero,336,5,4,4,1,1,0,0,5,67.2,REAL-BETIS-20,REAL BETIS 19,2026-09-21
+real-betis-84704,bartra,REAL BETIS,Real Betis,Marc Bartra,Bartra,5,Defensa,321,4,3,0,1,0,0,0,5,64.2,REAL-BETIS-08,REAL BETIS 7,2026-09-21
+real-betis-85602,facundo-bernal,REAL BETIS,Real Betis,Facundo Bernal,F. Bernal,6,Centrocampista,296,5,4,3,0,0,1,0,5,59.2,REAL-BETIS-14,REAL BETIS 13,2026-09-21
+real-betis-84713,riquelme,REAL BETIS,Real Betis,Rodrigo Riquelme,Riquelme,17,Centrocampista,279,5,4,4,2,0,0,0,5,55.8,REAL-BETIS-18,REAL BETIS 17,2026-09-21
+real-betis-84717,isco,REAL BETIS,Real Betis,Francisco Román Alarcón Suárez,Isco,22,Centrocampista,237,5,3,3,0,0,0,0,5,47.4,REAL-BETIS-17,REAL BETIS 16,2026-09-21
+real-betis-84714,nelson-deossa,REAL BETIS,Real Betis,Nelson Deossa,N. Deossa,18,Centrocampista,168,5,1,0,0,0,0,0,5,33.6,REAL-BETIS-BIS-1,REAL BETIS BIS,2026-09-21
+real-betis-84702,llorente-r,REAL BETIS,Real Betis,Diego Llorente,Llorente R.,3,Defensa,129,2,2,1,0,0,0,0,5,25.8,REAL-BETIS-07,REAL BETIS 6,2026-09-21
+real-betis-86802,troy-parrott,REAL BETIS,Real Betis,Troy Parrott,Parrott,19,Delantero,98,3,1,1,1,0,0,0,5,19.6,ULTIMOS-FICHAJES-38,ÚLTIMOS FICHAJES UF38,2026-09-21
+real-betis-84705,valentin-gomez,REAL BETIS,Real Betis,Valentín Gómez,V. Gómez,16,Defensa,90,1,1,0,0,0,0,0,5,18.0,REAL-BETIS-10,REAL BETIS 9,2026-09-21
+real-betis-84720,abdessamad-ezzalzouli,REAL BETIS,Real Betis,Abde Ezzalzouli,Ez Abde,10,Delantero,82,2,1,1,0,0,0,0,5,16.4,REAL-BETIS-21,REAL BETIS 20,2026-09-21
+real-betis-84708,angel-ortiz,REAL BETIS,Real Betis,Ángel Ortiz,Á. Ortiz,12,Centrocampista,71,1,1,1,0,0,0,0,5,14.2,,,2026-09-21
+real-betis-84706,junior,REAL BETIS,Real Betis,Junior Firpo,J. Firpo,23,Defensa,59,1,1,1,0,0,1,0,5,11.8,,,2026-09-21
+real-betis-87171,d-ceballos,REAL BETIS,Real Betis,Dani Ceballos,D. Ceballos,25,Centrocampista,33,1,0,0,0,0,0,0,5,6.6,,,2026-09-21
+real-betis-84712,fidalgo,REAL BETIS,Real Betis,Álvaro Fidalgo,Fidalgo,15,Centrocampista,30,1,0,0,0,0,0,0,5,6.0,REAL-BETIS-13,REAL BETIS 12,2026-09-21
+real-betis-84715,lo-celso,REAL BETIS,Real Betis,Giovani Lo Celso,Lo Celso,20,Centrocampista,6,1,0,0,0,0,0,0,5,1.2,REAL-BETIS-15,REAL BETIS 14,2026-09-21
+real-betis-84722,aitor-r,REAL BETIS,Real Betis,Aitor Ruibal,Aitor Ruibal,24,Delantero,0,0,0,0,0,0,0,0,5,0.0,REAL-BETIS-05,REAL BETIS 5A,2026-09-21
+real-betis-85894,diego-conde,REAL BETIS,Real Betis,Diego Conde,Diego Conde,13,Portero,0,0,0,0,0,0,0,0,5,0.0,REAL-BETIS-22,REAL BETIS 4BIS,2026-09-21
+real-betis-84711,losada,REAL BETIS,Real Betis,Iker Losada,Iker,14,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+real-betis-84723,jose-morante,REAL BETIS,Real Betis,José Antonio Morante,Morante,27,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+real-betis-84700,manu-gonzalez,REAL BETIS,Real Betis,Manu González,Manu G.,31,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+real-betis-86870,alvaro-de-pablo,REAL BETIS,Real Betis,Álvaro de Pablo,Á. De Pablo,40,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+real-madrid-84767,kylian-mbappe-lottin,REAL MADRID CF,Real Madrid,Kylian Mbappé,Mbappé,10,Delantero,540,6,6,0,7,2,0,0,6,90.0,REAL-MADRID-CF-23,REAL MADRID CF 20,2026-09-21
+real-madrid-84728,courtois,REAL MADRID CF,Real Madrid,Thibaut Courtois,Courtois,1,Portero,540,6,6,0,0,0,0,0,6,90.0,REAL-MADRID-CF-03,REAL MADRID CF 3,2026-09-21
+real-madrid-84765,vini-jr,REAL MADRID CF,Real Madrid,Vinícius José Paixão de Oliveira Júnior,Vini Jr.,7,Delantero,511,6,6,3,1,3,2,0,6,85.2,REAL-MADRID-CF-22,REAL MADRID CF 19,2026-09-21
+real-madrid-84755,valverde-1,REAL MADRID CF,Real Madrid,Federico Valverde,Valverde,8,Centrocampista,474,6,6,3,0,1,0,0,6,79.0,REAL-MADRID-CF-13,REAL MADRID CF 12,2026-09-21
+real-madrid-84743,dean-huijsen,REAL MADRID CF,Real Madrid,Dean Huijsen,Huijsen,4,Defensa,450,5,5,0,0,0,0,0,6,75.0,REAL-MADRID-CF-09,REAL MADRID CF 9,2026-09-21
+real-madrid-84735,ibrahima-konate,REAL MADRID CF,Real Madrid,Ibrahima Konaté,Konaté,16,Defensa,450,5,5,0,0,0,3,0,6,75.0,REAL-MADRID-CF-BIS-1,REAL MADRID CF BIS,2026-09-21
+real-madrid-84753,jude-bellingham,REAL MADRID CF,Real Madrid,Jude Bellingham,Bellingham,5,Centrocampista,447,6,5,3,3,2,0,0,6,74.5,REAL-MADRID-CF-15,REAL MADRID CF 14,2026-09-21
+real-madrid-84734,cucurella,REAL MADRID CF,Real Madrid,Marc Cucurella,Cucurella,17,Defensa,340,6,3,1,0,0,0,0,6,56.7,ULTIMOS-FICHAJES-29,ÚLTIMOS FICHAJES UF29,2026-09-21
+real-madrid-85545,denzel-dumfries,REAL MADRID CF,Real Madrid,Denzel Dumfries,Dumfries,24,Defensa,325,5,4,2,0,0,0,0,6,54.2,ULTIMOS-FICHAJES-03,ÚLTIMOS FICHAJES UF3,2026-09-21
+real-madrid-84757,arda-guler,REAL MADRID CF,Real Madrid,Arda Güler,Arda Güler,15,Centrocampista,295,6,4,4,1,2,1,0,6,49.2,REAL-MADRID-CF-16,REAL MADRID CF 15A,2026-09-21
+real-madrid-84752,bernardo-silva,REAL MADRID CF,Real Madrid,Bernardo Mota Veiga de Carvalho e Silva,Bernardo,20,Centrocampista,274,5,3,3,0,0,0,0,6,45.7,ULTIMOS-FICHAJES-21,ÚLTIMOS FICHAJES UF21,2026-09-21
+real-madrid-86389,yan-diomande,REAL MADRID CF,Real Madrid,Yan Diomande,Yan Diomande,25,Delantero,244,6,2,2,0,1,1,0,6,40.7,ULTIMOS-FICHAJES-39,ÚLTIMOS FICHAJES UF39,2026-09-21
+real-madrid-84754,eduardo-camavinga,REAL MADRID CF,Real Madrid,Eduardo Camavinga,Camavinga,6,Centrocampista,221,5,2,1,0,0,2,0,6,36.8,REAL-MADRID-CF-14,REAL MADRID CF 13,2026-09-21
+real-madrid-84737,trent-alexander-arnold,REAL MADRID CF,Real Madrid,Trent Alexander-Arnold,Trent,12,Defensa,213,4,2,1,0,1,0,0,6,35.5,REAL-MADRID-CF-05,REAL MADRID CF 5,2026-09-21
+real-madrid-84739,alvaro-fernandez-1,REAL MADRID CF,Real Madrid,Álvaro Carreras,Á. Carreras,18,Defensa,201,4,3,2,1,0,1,0,6,33.5,REAL-MADRID-CF-10,REAL MADRID CF 10A,2026-09-21
+real-madrid-84741,antonio-rudiger,REAL MADRID CF,Real Madrid,Antonio Rüdiger,Rüdiger,22,Defensa,180,2,2,0,0,0,0,0,6,30.0,REAL-MADRID-CF-08,REAL MADRID CF 8,2026-09-21
+real-madrid-84756,aurelien-tchouameni,REAL MADRID CF,Real Madrid,Aurélien Tchouaméni,Tchouameni,14,Centrocampista,107,2,1,1,0,0,0,0,6,17.8,REAL-MADRID-CF-12,REAL MADRID CF 11,2026-09-21
+real-madrid-84758,brahim,REAL MADRID CF,Real Madrid,Brahim Díaz,Brahim,21,Centrocampista,99,3,1,1,0,0,0,0,6,16.5,REAL-MADRID-CF-19,REAL MADRID CF 16B,2026-09-21
+real-madrid-86180,carlos-espi,REAL MADRID CF,Real Madrid,Carlos Espí,C. Espí,19,Delantero,25,4,0,0,2,0,0,0,6,4.2,REAL-MADRID-CF-24,REAL MADRID CF 17BIS,2026-09-21
+real-madrid-84766,endrick,REAL MADRID CF,Real Madrid,Endrick Felipe Moreira de Sousa,Endrick,9,Delantero,4,1,0,0,0,0,0,0,6,0.7,,,2026-09-21
+real-madrid-86211,alexis-ciria,REAL MADRID CF,Real Madrid,Alexis Ciria,Alexis Ciria,36,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84729,lunin,REAL MADRID CF,Real Madrid,Andrii Lunin,Lunin,13,Portero,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-04,REAL MADRID CF 4,2026-09-21
+real-madrid-84742,f-mendy,REAL MADRID CF,Real Madrid,Ferland Mendy,F. Mendy,23,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-11,REAL MADRID CF 10B,2026-09-21
+real-madrid-84731,javier-navarro-1,REAL MADRID CF,Real Madrid,Javi Navarro,Javi Navarro,31,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84759,jorge-cestero-1,REAL MADRID CF,Real Madrid,Jorge Cestero Sancho,Cestero,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84750,mario-rivas-1,REAL MADRID CF,Real Madrid,Mario Rivas,Mario Rivas,33,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84738,raul,REAL MADRID CF,Real Madrid,Raúl Asencio,Asencio,2,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-07,REAL MADRID CF 7,2026-09-21
+real-madrid-84768,rodrygo,REAL MADRID CF,Real Madrid,Rodrygo Silva de Goes,Rodrygo,11,Delantero,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-21,REAL MADRID CF 18,2026-09-21
+real-madrid-87182,sergio-martinez-2,REAL MADRID CF,Real Madrid,Sergio Martínez,Sergio,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84732,sergio-mestre,REAL MADRID CF,Real Madrid,Sergio Mestre,Mestre,26,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-madrid-84763,thiago-pitarch,REAL MADRID CF,Real Madrid,Thiago Pitarch,Thiago,27,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-17,REAL MADRID CF 15B,2026-09-21
+real-madrid-84736,e-militao,REAL MADRID CF,Real Madrid,Éder Gabriel Militão Pinheiro,E. Militão,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,REAL-MADRID-CF-06,REAL MADRID CF 6,2026-09-21
+real-sociedad-84810,sergio-gomez,REAL SOCIEDAD,Real Sociedad,Sergio Gómez,Sergio Gómez,17,Defensa,522,6,6,1,0,0,1,0,6,87.0,REAL-SOCIEDAD-08,REAL SOCIEDAD 8,2026-09-21
+real-sociedad-84782,jon-aramburu,REAL SOCIEDAD,Real Sociedad,Jon Aramburu,Aramburu,2,Defensa,507,6,6,1,0,0,3,0,6,84.5,REAL-SOCIEDAD-05,REAL SOCIEDAD 5,2026-09-21
+real-sociedad-84799,luka-sucic,REAL SOCIEDAD,Real Sociedad,Luka Sucic,Sucic,24,Centrocampista,464,6,5,2,2,0,1,0,6,77.3,REAL-SOCIEDAD-16,REAL SOCIEDAD 15,2026-09-21
+real-sociedad-84777,a-remiro,REAL SOCIEDAD,Real Sociedad,Álex Remiro,A. Remiro,1,Portero,450,5,5,0,0,0,0,0,6,75.0,REAL-SOCIEDAD-03,REAL SOCIEDAD 3,2026-09-21
+real-sociedad-84807,oyarzabal,REAL SOCIEDAD,Real Sociedad,Mikel Oyarzabal,Oyarzabal,10,Delantero,417,6,5,4,0,2,1,0,6,69.5,REAL-SOCIEDAD-21,REAL SOCIEDAD 20,2026-09-21
+real-sociedad-84784,zubeldia,REAL SOCIEDAD,Real Sociedad,Igor Zubeldia,Zubeldia,5,Defensa,393,5,4,0,0,0,2,0,6,65.5,REAL-SOCIEDAD-06,REAL SOCIEDAD 6,2026-09-21
+real-sociedad-84793,herrera-1,REAL SOCIEDAD,Real Sociedad,Yangel Herrera,Herrera,21,Centrocampista,382,6,5,5,1,0,3,0,6,63.7,REAL-SOCIEDAD-13,REAL SOCIEDAD 13A,2026-09-21
+real-sociedad-84795,c-soler,REAL SOCIEDAD,Real Sociedad,Carlos Soler,C.soler,18,Centrocampista,374,6,4,1,0,1,0,0,6,62.3,REAL-SOCIEDAD-15,REAL SOCIEDAD 14,2026-09-21
+real-sociedad-84788,jon-martin,REAL SOCIEDAD,Real Sociedad,Jon Martín,Jon Martín,6,Defensa,366,5,4,0,0,0,0,0,6,61.0,REAL-SOCIEDAD-07,REAL SOCIEDAD 7,2026-09-21
+real-sociedad-84805,barrenetxea,REAL SOCIEDAD,Real Sociedad,Ander Barrenetxea,Barrene,7,Centrocampista,288,5,4,4,1,0,0,0,6,48.0,REAL-SOCIEDAD-17,REAL SOCIEDAD 16,2026-09-21
+real-sociedad-84806,orri-oskarsson,REAL SOCIEDAD,Real Sociedad,Orri Óskarsson,Oskarsson,9,Delantero,283,5,3,2,1,0,0,0,6,47.2,REAL-SOCIEDAD-20,REAL SOCIEDAD 19,2026-09-21
+real-sociedad-84792,benat-turrientes,REAL SOCIEDAD,Real Sociedad,Beñat Turrientes,Turrientes,8,Centrocampista,258,4,3,2,0,0,1,0,6,43.0,REAL-SOCIEDAD-12,REAL SOCIEDAD 12,2026-09-21
+real-sociedad-84809,take,REAL SOCIEDAD,Real Sociedad,Takefusa Kubo,Take,14,Centrocampista,223,5,3,3,0,0,0,0,6,37.2,REAL-SOCIEDAD-18,REAL SOCIEDAD 17,2026-09-21
+real-sociedad-84808,guedes,REAL SOCIEDAD,Real Sociedad,Gonçalo Manuel Ganchinho Guedes,Guedes,11,Centrocampista,177,5,2,2,0,0,0,0,6,29.5,REAL-SOCIEDAD-19,REAL SOCIEDAD 18,2026-09-21
+real-sociedad-84816,job-ochieng,REAL SOCIEDAD,Real Sociedad,Job Ochieng,Ochieng,12,Centrocampista,174,3,2,1,1,2,0,0,6,29.0,,,2026-09-21
+real-sociedad-86944,mamadou-sarr,REAL SOCIEDAD,Real Sociedad,Mamadou Sarr,M.sarr,19,Defensa,148,2,2,1,0,0,0,0,6,24.7,,,2026-09-21
+real-sociedad-84778,marrero,REAL SOCIEDAD,Real Sociedad,Unai Marrero,Marrero,13,Portero,90,1,1,0,0,0,0,0,6,15.0,REAL-SOCIEDAD-04,REAL SOCIEDAD 4,2026-09-21
+real-sociedad-84791,jon-gorrotxategi,REAL SOCIEDAD,Real Sociedad,Jon Gorrotxategi,Gorrotxa,4,Centrocampista,62,4,0,0,0,0,0,0,6,10.3,REAL-SOCIEDAD-10,REAL SOCIEDAD 10,2026-09-21
+real-sociedad-84786,pacheco-3,REAL SOCIEDAD,Real Sociedad,Jon Pacheco,J. Pacheco,16,Defensa,20,1,0,0,0,0,0,0,6,3.3,,,2026-09-21
+real-sociedad-84783,aihen,REAL SOCIEDAD,Real Sociedad,Aihen Muñoz,Aihen,3,Defensa,18,1,0,0,0,0,0,0,6,3.0,REAL-SOCIEDAD-09,REAL SOCIEDAD 9,2026-09-21
+real-sociedad-86978,hector-fort,REAL SOCIEDAD,Real Sociedad,Héctor Fort,H. Fort,22,Defensa,9,1,0,0,0,0,0,0,6,1.5,,,2026-09-21
+real-sociedad-84796,arsen-zakharyan,REAL SOCIEDAD,Real Sociedad,Arsen Zakharyan,Zakharyan,23,Centrocampista,8,2,0,0,0,0,0,0,6,1.3,REAL-SOCIEDAD-14,REAL SOCIEDAD 13B,2026-09-21
+real-sociedad-84800,alex-lebarbier,REAL SOCIEDAD,Real Sociedad,Alex Lebarbier,Lebarbier,28,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-sociedad-84814,alex-marchal,REAL SOCIEDAD,Real Sociedad,Alex Marchal,Marchal,29,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-sociedad-84815,gorka-carrera,REAL SOCIEDAD,Real Sociedad,Gorka Carrera,Carrera,27,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-sociedad-84803,ibai-aguirre,REAL SOCIEDAD,Real Sociedad,Ibai Aguirre,Aguirre,26,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-sociedad-84790,luken-beitia,REAL SOCIEDAD,Real Sociedad,Luken Beitia,Beitia,34,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+real-sociedad-84794,pablo-marin,REAL SOCIEDAD,Real Sociedad,Pablo Marín,Marin,15,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,REAL-SOCIEDAD-11,REAL SOCIEDAD 11,2026-09-21
+real-sociedad-84787,odriozola,REAL SOCIEDAD,Real Sociedad,Álvaro Odriozola,Odriozola,20,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+sevilla-fc-84829,gabriel-suazo,SEVILLA,Sevilla FC,Gabriel Suazo,Suazo,17,Defensa,540,6,6,0,0,0,2,0,6,90.0,SEVILLA-11,SEVILLA 10,2026-09-21
+sevilla-fc-84823,iglesias,SEVILLA,Sevilla FC,Juan Iglesias,Iglesias,2,Defensa,540,6,6,0,1,0,1,0,6,90.0,SEVILLA-22,SEVILLA 6BIS,2026-09-21
+sevilla-fc-84840,lucien-agoume,SEVILLA,Sevilla FC,Lucien Agoumé,Agoumé,6,Centrocampista,540,6,6,0,0,0,1,0,6,90.0,SEVILLA-13,SEVILLA 12,2026-09-21
+sevilla-fc-85943,odisseas-vlachodimos,SEVILLA,Sevilla FC,Odysseas Vlachodimos,Odysseas,1,Portero,540,6,6,0,0,0,0,0,6,90.0,SEVILLA-03,SEVILLA 3,2026-09-21
+sevilla-fc-84827,kike-salas,SEVILLA,Sevilla FC,Kike Salas,Kike Salas,4,Defensa,448,5,5,0,0,0,1,0,6,74.7,SEVILLA-07,SEVILLA 7,2026-09-21
+sevilla-fc-84853,miguel-sierra,SEVILLA,Sevilla FC,Miguel Sierra,Miguel Sierra,30,Delantero,418,6,6,6,2,0,2,0,6,69.7,SEVILLA-BIS-2,SEVILLA BIS,2026-09-21
+sevilla-fc-84833,castrin,SEVILLA,Sevilla FC,Andrés López Gallo,A. Castrin,5,Defensa,390,5,4,0,0,0,0,0,6,65.0,SEVILLA-09,SEVILLA 9A,2026-09-21
+sevilla-fc-84836,guridi,SEVILLA,Sevilla FC,Jon Guridi,Guridi,18,Centrocampista,341,6,5,5,1,0,3,0,6,56.8,SEVILLA-14,SEVILLA 13,2026-09-21
+sevilla-fc-86508,robbie-ure,SEVILLA,Sevilla FC,Robbie Ure,Robbie Ure,9,Delantero,307,6,3,1,0,1,1,0,6,51.2,ULTIMOS-FICHAJES-25,ÚLTIMOS FICHAJES UF25,2026-09-21
+sevilla-fc-84824,arouna-sangante,SEVILLA,Sevilla FC,Arouna Sangante,Sangante,12,Defensa,214,3,3,1,0,0,0,0,6,35.7,ULTIMOS-FICHAJES-17,ÚLTIMOS FICHAJES UF17,2026-09-21
+sevilla-fc-87153,youssouf-fofana,SEVILLA,Sevilla FC,Youssouf Fofana,Fofana,24,Centrocampista,197,3,2,1,0,0,0,0,6,32.8,,,2026-09-21
+sevilla-fc-87095,lucas-stassin,SEVILLA,Sevilla FC,Lucas Stassin,Stassin,19,Delantero,195,3,2,2,1,0,0,0,6,32.5,,,2026-09-21
+sevilla-fc-84846,isaac-romero,SEVILLA,Sevilla FC,Isaac Romero,Isaac,16,Delantero,189,5,2,2,1,1,3,0,6,31.5,SEVILLA-21,SEVILLA 20,2026-09-21
+sevilla-fc-84851,chidera-ejuke,SEVILLA,Sevilla FC,Chidera Ejuke,Ejuke,21,Delantero,179,5,1,1,1,0,1,0,6,29.8,SEVILLA-19,SEVILLA 18,2026-09-21
+sevilla-fc-87096,felix-correia,SEVILLA,Sevilla FC,Félix Alexandre Andrade Sanches Correia,Felix,20,Delantero,164,2,2,2,0,0,0,0,6,27.3,,,2026-09-21
+sevilla-fc-84849,peque-1,SEVILLA,Sevilla FC,Gerard Fernández Castellano,Peque,10,Delantero,158,3,2,2,1,0,1,0,6,26.3,SEVILLA-18,SEVILLA 17,2026-09-21
+sevilla-fc-86815,giorgi,SEVILLA,Sevilla FC,Giorgi Kochorashvili,Kochorashvili,8,Centrocampista,117,4,1,1,0,1,1,0,6,19.5,ULTIMOS-FICHAJES-36,ÚLTIMOS FICHAJES UF36,2026-09-21
+sevilla-fc-84844,nico-guillen-1,SEVILLA,Sevilla FC,Nico Guillén,Nico Guillen,27,Centrocampista,90,2,1,1,0,0,1,0,6,15.0,,,2026-09-21
+sevilla-fc-86125,julio-diaz-1,SEVILLA,Sevilla FC,Julio Díaz,Julio Díaz,3,Defensa,83,4,1,1,0,0,0,0,6,13.8,SEVILLA-BIS-1,SEVILLA BIS,2026-09-21
+sevilla-fc-84825,jose-angel-carmona,SEVILLA,Sevilla FC,José Ángel Carmona,Carmona,22,Defensa,41,2,0,0,0,0,0,0,6,6.8,SEVILLA-05,SEVILLA 5,2026-09-21
+sevilla-fc-84843,manu-bueno,SEVILLA,Sevilla FC,Manu Bueno,Manu Bueno,14,Centrocampista,27,2,0,0,0,0,0,0,6,4.5,SEVILLA-17,SEVILLA 16,2026-09-21
+sevilla-fc-84838,ruben-vargas,SEVILLA,Sevilla FC,Rubén Vargas,Vargas,11,Delantero,20,1,0,0,0,0,0,0,6,3.3,SEVILLA-16,SEVILLA 15,2026-09-21
+sevilla-fc-84850,alfonso-1,SEVILLA,Sevilla FC,Alfon González,Alfon,7,Delantero,10,1,0,0,0,0,0,0,6,1.7,,,2026-09-21
+sevilla-fc-84845,edu-altozano,SEVILLA,Sevilla FC,Edu Altozano,Edu Altozano,39,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+sevilla-fc-86277,francisco-gonzalez,SEVILLA,Sevilla FC,Fran González,Fran González,13,Portero,0,0,0,0,0,0,0,0,6,0.0,SEVILLA-04,SEVILLA 4,2026-09-21
+sevilla-fc-84830,fabio-cardoso,SEVILLA,Sevilla FC,Fábio Rafael Rodrigues Cardoso,Cardoso,,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+sevilla-fc-86394,ibrahima-sow,SEVILLA,Sevilla FC,Ibrahima Sow,Ibra,37,Delantero,0,0,0,0,0,0,0,0,6,0.0,SEVILLA-15,SEVILLA 14,2026-09-21
+sevilla-fc-84835,iker-ortin,SEVILLA,Sevilla FC,Iker Munoz,Iker Muñoz,34,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+sevilla-fc-86828,manuel-angel-castillo,SEVILLA,Sevilla FC,Manuel Ángel Castillo,Manuel Ángel,26,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+sevilla-fc-84832,marcao,SEVILLA,Sevilla FC,Marcos do Nascimento Teixeira,Marcao,23,Defensa,0,0,0,0,0,0,0,0,6,0.0,SEVILLA-10,SEVILLA 9B,2026-09-21
+sevilla-fc-84821,rafa-romero,SEVILLA,Sevilla FC,Rafael Romero,Rafa Romero,33,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84857,dimitrievski,VALENCIA,Valencia CF,Stole Dimitrievski,Dimitrievski,1,Portero,540,6,6,0,0,0,1,0,6,90.0,VALENCIA-03,VALENCIA 3,2026-09-21
+valencia-cf-84884,pepelu,VALENCIA,Valencia CF,José Luis García Vayá,Pepelu,18,Centrocampista,478,6,6,3,0,0,1,0,6,79.7,VALENCIA-12,VALENCIA 11,2026-09-21
+valencia-cf-84882,javier-guerra,VALENCIA,Valencia CF,Javi Guerra,Javi Guerra,8,Centrocampista,475,6,6,3,0,1,1,0,6,79.2,VALENCIA-14,VALENCIA 13,2026-09-21
+valencia-cf-84886,filip-ugrinic,VALENCIA,Valencia CF,Filip Ugrinic,Ugrinic,23,Centrocampista,464,6,5,1,0,0,0,0,6,77.3,VALENCIA-16,VALENCIA 15,2026-09-21
+valencia-cf-84889,arnaut-danjuma,VALENCIA,Valencia CF,Arnaut Danjuma,Danjuma,7,Centrocampista,438,6,5,2,0,0,0,0,6,73.0,VALENCIA-24,VALENCIA 19BIS,2026-09-21
+valencia-cf-84871,j-vazquez-1,VALENCIA,Valencia CF,Jesús Vázquez,J. Vázquez,21,Defensa,339,6,4,1,0,0,0,0,6,56.5,VALENCIA-11,VALENCIA 10,2026-09-21
+valencia-cf-84867,cesar-tarrega,VALENCIA,Valencia CF,César Tárrega,Tárrega,5,Defensa,330,5,4,1,0,0,0,0,6,55.0,VALENCIA-07,VALENCIA 7,2026-09-21
+valencia-cf-85603,ryunosuke-sato,VALENCIA,Valencia CF,Ryunosuke Sato,Ryunosuke,39,Centrocampista,297,5,4,3,0,0,2,0,6,49.5,ULTIMOS-FICHAJES-14,ÚLTIMOS FICHAJES UF14,2026-09-21
+valencia-cf-84861,diakhaby,VALENCIA,Valencia CF,Mouctar Diakhaby,Diakhaby,4,Defensa,287,4,3,1,0,0,2,0,6,47.8,VALENCIA-09,VALENCIA 8B,2026-09-21
+valencia-cf-84868,gaya,VALENCIA,Valencia CF,José Gayà,Gayà,14,Defensa,278,4,3,2,0,0,0,0,6,46.3,VALENCIA-10,VALENCIA 9,2026-09-21
+valencia-cf-84881,g-rodriguez,VALENCIA,Valencia CF,Guido Rodríguez,G. Rodriguez,2,Centrocampista,248,3,3,2,0,0,1,0,6,41.3,VALENCIA-13,VALENCIA 12,2026-09-21
+valencia-cf-86902,arnau-1,VALENCIA,Valencia CF,Arnau Martínez,Arnau,22,Defensa,242,4,3,2,0,0,1,0,6,40.3,,,2026-09-21
+valencia-cf-86791,maffeo,VALENCIA,Valencia CF,Pablo Maffeo,Maffeo,24,Defensa,240,5,3,3,0,0,1,0,6,40.0,ULTIMOS-FICHAJES-28,ÚLTIMOS FICHAJES UF28,2026-09-21
+valencia-cf-85604,aliou-dieng,VALENCIA,Valencia CF,Aliou Dieng,Dieng,15,Centrocampista,227,5,2,0,0,0,0,0,6,37.8,VALENCIA-23,VALENCIA 16BIS,2026-09-21
+valencia-cf-84895,david-otorbi,VALENCIA,Valencia CF,David Otorbi,Otorbi,27,Delantero,218,5,2,1,0,0,0,0,6,36.3,,,2026-09-21
+valencia-cf-84890,hugo-duro,VALENCIA,Valencia CF,Hugo Duro,Hugo Duro,9,Delantero,176,6,2,2,0,0,0,0,6,29.3,VALENCIA-18,VALENCIA 17,2026-09-21
+valencia-cf-84888,sadiq,VALENCIA,Valencia CF,Umar Sadiq,Sadiq,6,Delantero,158,3,1,0,1,0,0,0,6,26.3,VALENCIA-21,VALENCIA 20A,2026-09-21
+valencia-cf-84862,justin-de-haas,VALENCIA,Valencia CF,Justin de Haas,De Haas,12,Defensa,127,2,2,2,0,0,1,0,6,21.2,ULTIMOS-FICHAJES-09,ÚLTIMOS FICHAJES UF9,2026-09-21
+valencia-cf-84891,l-rioja,VALENCIA,Valencia CF,Luis Rioja,L. Rioja,11,Centrocampista,114,3,1,2,1,0,0,0,6,19.0,VALENCIA-15,VALENCIA 14,2026-09-21
+valencia-cf-84876,iker-cordoba,VALENCIA,Valencia CF,Iker Córdoba,I. Córdoba,36,Defensa,102,3,0,0,0,0,0,0,6,17.0,,,2026-09-21
+valencia-cf-84878,aaron-mayol,VALENCIA,Valencia CF,Aaron Mayol,Mayol,33,Centrocampista,90,1,1,0,0,0,1,0,6,15.0,,,2026-09-21
+valencia-cf-87068,harvey-elliott,VALENCIA,Valencia CF,Harvey Elliott,Elliott,10,Centrocampista,64,2,0,0,0,0,0,0,6,10.7,,,2026-09-21
+valencia-cf-84894,dani-raba,VALENCIA,Valencia CF,Dani Raba,Raba,19,Delantero,8,1,0,0,0,0,0,0,6,1.3,,,2026-09-21
+valencia-cf-84896,aimar-blazquez,VALENCIA,Valencia CF,Aimar Blázquez,Aimar,37,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84874,alex-panach,VALENCIA,Valencia CF,Alejandro Panach Olmo,Panach,29,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84858,c-rivero,VALENCIA,Valencia CF,Cristian Rivero,C.rivero,13,Portero,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-04,VALENCIA 4,2026-09-21
+valencia-cf-84863,foulquier,VALENCIA,Valencia CF,Dimitri Foulquier,Foulquier,20,Defensa,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-05,VALENCIA 5,2026-09-21
+valencia-cf-86456,jaume-dura,VALENCIA,Valencia CF,Jaume Durá,Jaume Durà,38,Centrocampista,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84866,copete,VALENCIA,Valencia CF,José Manuel Arias Copete,Copete,3,Defensa,0,0,0,0,0,0,0,0,6,0.0,VALENCIA-06,VALENCIA 6,2026-09-21
+valencia-cf-86864,kayne-van-oevelen,VALENCIA,Valencia CF,Kayne van Oevelen,Van Oevelen,25,Portero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84875,marcos-navarro,VALENCIA,Valencia CF,Marcos Navarro,M. Navarro,41,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-86455,rodrigo-gamon,VALENCIA,Valencia CF,Rodrigo Gamón,Gamón,31,Defensa,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+valencia-cf-84880,sergi-canos,VALENCIA,Valencia CF,Sergi Canós,Tenés,,Delantero,0,0,0,0,0,0,0,0,6,0.0,,,2026-09-21
+villarreal-cf-84917,renato-veiga,VILLARREAL,Villarreal CF,Renato Palma Veiga,Renato Veiga,12,Defensa,450,5,5,0,0,1,1,0,5,90.0,VILLARREAL-12,VILLARREAL 9,2026-09-21
+villarreal-cf-84929,nicolas-pepe,VILLARREAL,Villarreal CF,Nicolas Pépé,Pepe,19,Centrocampista,412,5,5,3,2,0,1,0,5,82.4,VILLARREAL-21,VILLARREAL 18,2026-09-21
+villarreal-cf-84920,pape-alassane-gueye,VILLARREAL,Villarreal CF,Pape Gueye,Gueye,18,Centrocampista,386,5,5,2,1,0,1,0,5,77.2,VILLARREAL-14,VILLARREAL 11,2026-09-21
+villarreal-cf-84926,georges-mikautadze,VILLARREAL,Villarreal CF,Georges Mikautadze,Mikautadze,9,Delantero,369,5,4,2,1,1,0,0,5,73.8,VILLARREAL-22,VILLARREAL 19,2026-09-21
+villarreal-cf-84915,carlos-romero,VILLARREAL,Villarreal CF,Carlos Romero,C. Romero,20,Defensa,360,4,4,0,0,0,1,0,5,72.0,,,2026-09-21
+villarreal-cf-84901,luiz-junior-1,VILLARREAL,Villarreal CF,Luiz Lúcio Reis Júnior,Júnior R.,1,Portero,360,4,4,0,0,0,0,0,5,72.0,VILLARREAL-03,VILLARREAL 3,2026-09-21
+villarreal-cf-84918,santi-c-v,VILLARREAL,Villarreal CF,Santi Comesaña,Santi C.v.,14,Centrocampista,320,5,4,3,0,0,1,0,5,64.0,VILLARREAL-15,VILLARREAL 12,2026-09-21
+villarreal-cf-84910,santiago-mourino,VILLARREAL,Villarreal CF,Santiago Mouriño,Mouriño,15,Defensa,316,4,4,3,0,0,2,0,5,63.2,VILLARREAL-05,VILLARREAL 5,2026-09-21
+villarreal-cf-84925,gerard,VILLARREAL,Villarreal CF,Gerard Moreno,Gerard,7,Delantero,273,5,3,3,2,0,0,0,5,54.6,VILLARREAL-23,VILLARREAL 20,2026-09-21
+villarreal-cf-84909,foyth,VILLARREAL,Villarreal CF,Juan Foyth,Foyth,8,Defensa,270,3,3,0,0,0,2,0,5,54.0,VILLARREAL-08,VILLARREAL 7A,2026-09-21
+villarreal-cf-84922,a-moleiro,VILLARREAL,Villarreal CF,Alberto Moleiro,A. Moleiro,10,Centrocampista,240,5,3,3,0,1,0,0,5,48.0,VILLARREAL-17,VILLARREAL 14,2026-09-21
+villarreal-cf-84931,ayoze-perez,VILLARREAL,Villarreal CF,Ayoze Pérez,Ayoze,22,Delantero,221,5,3,3,0,1,0,0,5,44.2,VILLARREAL-20,VILLARREAL 17,2026-09-21
+villarreal-cf-84928,tajon-buchanan,VILLARREAL,Villarreal CF,Tajon Buchanan,Buchanan,17,Centrocampista,209,5,2,2,0,0,1,0,5,41.8,VILLARREAL-18,VILLARREAL 15,2026-09-21
+villarreal-cf-84906,alexander-freeman,VILLARREAL,Villarreal CF,Alex Freeman,Freeman,3,Defensa,134,4,1,0,0,0,0,0,5,26.8,VILLARREAL-09,VILLARREAL 7B,2026-09-21
+villarreal-cf-86898,nathan-saliba,VILLARREAL,Villarreal CF,Nathan Saliba,Saliba,24,Centrocampista,126,2,1,0,0,0,0,0,5,25.2,,,2026-09-21
+villarreal-cf-84908,pau-navarro,VILLARREAL,Villarreal CF,Pau Navarro,Pau Navarro,6,Defensa,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-06,VILLARREAL 6A,2026-09-21
+villarreal-cf-86291,peter-gulacsi,VILLARREAL,Villarreal CF,Péter Gulácsi,Gulácsi,25,Portero,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-24,VILLARREAL 4BIS,2026-09-21
+villarreal-cf-84911,sergi-cardona,VILLARREAL,Villarreal CF,Sergi Cardona,S. Cardona,23,Defensa,90,1,1,0,0,0,0,0,5,18.0,VILLARREAL-13,VILLARREAL 10,2026-09-21
+villarreal-cf-84905,logan-costa,VILLARREAL,Villarreal CF,Logan Evans Costa,Costa,2,Defensa,83,1,1,1,0,0,0,0,5,16.6,VILLARREAL-07,VILLARREAL 6B,2026-09-21
+villarreal-cf-84930,tani-oluwaseyi,VILLARREAL,Villarreal CF,Tani Oluwaseyi,Oluwaseyi,21,Delantero,55,4,0,0,0,0,0,0,5,11.0,VILLARREAL-19,VILLARREAL 16,2026-09-21
+villarreal-cf-84927,ilias-akhomach,VILLARREAL,Villarreal CF,Ilias Akhomach,I. Akhomach,11,Delantero,51,4,0,0,0,0,0,0,5,10.2,,,2026-09-21
+villarreal-cf-84923,carlos-macia-1,VILLARREAL,Villarreal CF,Carlos Maciá,Macia,16,Centrocampista,45,2,0,0,0,0,0,0,5,9.0,VILLARREAL-16,VILLARREAL 13,2026-09-21
+villarreal-cf-84924,alassane-diatta,VILLARREAL,Villarreal CF,Alassane Diatta,A. Diatta,5,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-86906,albert-garcia,VILLARREAL,Villarreal CF,Albert García,A. García,29,Delantero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-86066,cheikh-thiam,VILLARREAL,Villarreal CF,Cheikh Thiam,Cheikh,30,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-86065,cesar-bonafe,VILLARREAL,Villarreal CF,César Bonafé,Bonafé,32,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-86067,nizar-jmili,VILLARREAL,Villarreal CF,Nizar El Jmili Ben Hamou,Nizar,27,Centrocampista,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-84904,ruben-gomez-peris,VILLARREAL,Villarreal CF,Rubén Gómez,Ruben Gomez,13,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21
+villarreal-cf-86062,yakiv-kinareykin,VILLARREAL,Villarreal CF,Yakiv Kinareikin,Kinareikin,35,Portero,0,0,0,0,0,0,0,0,5,0.0,,,2026-09-21

@@ -1,14 +1,14 @@
-﻿id,seccion,numero,hueco_album,variante,nombre,tipo,club_objetivo,edicion,estado_plantilla,accion,coincidencia_transfermarkt,confianza,comprobado_en,notas
+id,seccion,numero,hueco_album,variante,nombre,tipo,club_objetivo,edicion,estado_plantilla,accion,coincidencia_transfermarkt,confianza,comprobado_en,notas
 DEPORTIVO-ALAVES-01,DEPORTIVO ALAVÉS,1,1,,Escudo,,Deportivo Alavés,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 DEPORTIVO-ALAVES-02,DEPORTIVO ALAVÉS,2,2,,Quique Sánchez Flores,entrenador,Deportivo Alavés,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 DEPORTIVO-ALAVES-03,DEPORTIVO ALAVÉS,3,3,,Sivera,portero,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
-DEPORTIVO-ALAVES-04,DEPORTIVO ALAVÉS,4,4,,,,Deportivo Alavés,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-ALAVES-04,DEPORTIVO ALAVÉS,4,4,,Adrián Rodríguez,portero,Deportivo Alavés,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 DEPORTIVO-ALAVES-05,DEPORTIVO ALAVÉS,5,5,,Jonny,defensa,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-06,DEPORTIVO ALAVÉS,6,6,,Koski,defensa,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-07,DEPORTIVO ALAVÉS,7,7,,Tenaglia,defensa,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-08,DEPORTIVO ALAVÉS,8,8,,Parada,defensa,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-09,DEPORTIVO ALAVÉS,9,9,,Yusi,defensa,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
-DEPORTIVO-ALAVES-10,DEPORTIVO ALAVÉS,10,10,,,,Deportivo Alavés,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-ALAVES-10,DEPORTIVO ALAVÉS,10,10,,Mikel Rodríguez,defensa,Deportivo Alavés,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 DEPORTIVO-ALAVES-11,DEPORTIVO ALAVÉS,11,11,,Benavidez,medio,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-12,DEPORTIVO ALAVÉS,12,12,,Blanco,medio,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-13,DEPORTIVO ALAVÉS,13,13,,Guevara,medio,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
@@ -20,6 +20,8 @@ DEPORTIVO-ALAVES-18,DEPORTIVO ALAVÉS,18A,18,A,Abde,delantero,Deportivo Alavés,
 DEPORTIVO-ALAVES-19,DEPORTIVO ALAVÉS,18B,18,B,Mañas,delantero,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-20,DEPORTIVO ALAVÉS,19,19,,Toni Martínez,delantero,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-ALAVES-21,DEPORTIVO ALAVÉS,20,20,,Boyé,delantero,Deportivo Alavés,,sin_comprobar,PEGAR,,,,
+DEPORTIVO-ALAVES-BIS-1,DEPORTIVO ALAVÉS,BIS,,BIS,Garcés,defensa,Deportivo Alavés,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+DEPORTIVO-ALAVES-BIS-2,DEPORTIVO ALAVÉS,BIS,,BIS,Mariano Díaz,delantero,Deportivo Alavés,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 ATHLETIC-CLUB-DE-BILBAO-01,ATHLETIC CLUB DE BILBAO,1,1,,Escudo,,Athletic Club,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 ATHLETIC-CLUB-DE-BILBAO-02,ATHLETIC CLUB DE BILBAO,2,2,,Edin Terzic,entrenador,Athletic Club,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 ATHLETIC-CLUB-DE-BILBAO-03,ATHLETIC CLUB DE BILBAO,3,3,,Unai Simón,portero,Athletic Club,,sin_comprobar,PEGAR,,,,
@@ -66,6 +68,8 @@ ATLETICO-DE-MADRID-19,ATLÉTICO DE MADRID,17,17,,Giuliano,delantero,Atlético de
 ATLETICO-DE-MADRID-20,ATLÉTICO DE MADRID,18,18,,Lookman,delantero,Atlético de Madrid,,sin_comprobar,PEGAR,,,,
 ATLETICO-DE-MADRID-21,ATLÉTICO DE MADRID,19,19,,Sorloth,delantero,Atlético de Madrid,,sin_comprobar,PEGAR,,,,
 ATLETICO-DE-MADRID-22,ATLÉTICO DE MADRID,20,20,,Julián Alvarez,delantero,Atlético de Madrid,,sin_comprobar,PEGAR,,,,
+ATLETICO-DE-MADRID-BIS-1,ATLÉTICO DE MADRID,BIS,,BIS,Alejandro Grimaldo,defensa,Atlético de Madrid,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+ATLETICO-DE-MADRID-BIS-2,ATLÉTICO DE MADRID,BIS,,BIS,Arnau Ortiz,defensa,Atlético de Madrid,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 FC-BARCELONA-01,FC BARCELONA,1,1,,Escudo,,FC Barcelona,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 FC-BARCELONA-02,FC BARCELONA,2,2,,Hansi Flick,entrenador,FC Barcelona,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 FC-BARCELONA-03,FC BARCELONA,3,3,,Joan García,portero,FC Barcelona,,sin_comprobar,PEGAR,,,,
@@ -87,6 +91,7 @@ FC-BARCELONA-18,FC BARCELONA,17,17,,Dani Olmo,delantero,FC Barcelona,,sin_compro
 FC-BARCELONA-19,FC BARCELONA,18,18,,Ferran Torres,delantero,FC Barcelona,,sin_comprobar,PEGAR,,,,
 FC-BARCELONA-20,FC BARCELONA,19,19,,Raphinha,delantero,FC Barcelona,,sin_comprobar,PEGAR,,,,
 FC-BARCELONA-21,FC BARCELONA,20,20,,Lamine Yamal,delantero,FC Barcelona,,sin_comprobar,PEGAR,,,,
+FC-BARCELONA-BIS-1,FC BARCELONA,18BIS,18,BIS,Hamza Abdelkarim,delantero,FC Barcelona,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 REAL-BETIS-01,REAL BETIS,1,1,,Escudo,,Real Betis,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-BETIS-02,REAL BETIS,2,2,,Manuel Pellegrini,entrenador,Real Betis,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-BETIS-03,REAL BETIS,3,3,,Valles,portero,Real Betis,,sin_comprobar,PEGAR,,,,
@@ -109,6 +114,7 @@ REAL-BETIS-18,REAL BETIS,17,17,,Riquelme,delantero,Real Betis,,sin_comprobar,PEG
 REAL-BETIS-19,REAL BETIS,18,18,,Antony,delantero,Real Betis,,sin_comprobar,PEGAR,,,,
 REAL-BETIS-20,REAL BETIS,19,19,,Cucho Hernández,delantero,Real Betis,,sin_comprobar,PEGAR,,,,
 REAL-BETIS-21,REAL BETIS,20,20,,Abde,delantero,Real Betis,,sin_comprobar,PEGAR,,,,
+REAL-BETIS-BIS-1,REAL BETIS,BIS,,BIS,Deossa,medio,Real Betis,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 RC-CELTA-DE-VIGO-01,RC CELTA DE VIGO,1,1,,Escudo,,RC Celta de Vigo,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 RC-CELTA-DE-VIGO-02,RC CELTA DE VIGO,2,2,,Claudio Giráldez,entrenador,RC Celta de Vigo,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 RC-CELTA-DE-VIGO-03,RC CELTA DE VIGO,3,3,,Radu,portero,RC Celta de Vigo,,sin_comprobar,PEGAR,,,,
@@ -132,6 +138,7 @@ RC-CELTA-DE-VIGO-19,RC CELTA DE VIGO,18A,18,A,Pablo Durán,delantero,RC Celta de
 RC-CELTA-DE-VIGO-20,RC CELTA DE VIGO,18B,18,B,El-Abdellaoui,delantero,RC Celta de Vigo,,sin_comprobar,PEGAR,,,,
 RC-CELTA-DE-VIGO-21,RC CELTA DE VIGO,19,19,,Jutglà,delantero,RC Celta de Vigo,,sin_comprobar,PEGAR,,,,
 RC-CELTA-DE-VIGO-22,RC CELTA DE VIGO,20,20,,Borja Iglesias,delantero,RC Celta de Vigo,,sin_comprobar,PEGAR,,,,
+RC-CELTA-DE-VIGO-BIS-1,RC CELTA DE VIGO,BIS,,BIS,Hugo González,portero,RC Celta de Vigo,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 DEPORTIVO-01,DEPORTIVO,1,1,,Escudo,,Deportivo de La Coruña,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 DEPORTIVO-02,DEPORTIVO,2,2,,Antonio Hidalgo,entrenador,Deportivo de La Coruña,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 DEPORTIVO-03,DEPORTIVO,3,3,,Álvaro Fernández,portero,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
@@ -149,10 +156,12 @@ DEPORTIVO-14,DEPORTIVO,13,13,,Mario Soriano,medio,Deportivo de La Coruña,,sin_c
 DEPORTIVO-15,DEPORTIVO,14,14,,José Ángel,medio,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-16,DEPORTIVO,15,15,,Luismi Cruz,medio,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-17,DEPORTIVO,16,16,,Mella,medio,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
-DEPORTIVO-18,DEPORTIVO,17,17,,,,Deportivo de La Coruña,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+DEPORTIVO-18,DEPORTIVO,17,17,,Asp Jensen,delantero,Deportivo de La Coruña,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 DEPORTIVO-19,DEPORTIVO,18,18,,Yeremay,delantero,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-20,DEPORTIVO,19,19,,Eddahchouri,delantero,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
 DEPORTIVO-21,DEPORTIVO,20,20,,Nsongo,delantero,Deportivo de La Coruña,,sin_comprobar,PEGAR,,,,
+DEPORTIVO-BIS-1,DEPORTIVO,BIS,,BIS,Bright Ede,delantero,Deportivo de La Coruña,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+DEPORTIVO-BIS-2,DEPORTIVO,BIS,,BIS,Gijselhart,defensa,Deportivo de La Coruña,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 ELCHE-CF-01,ELCHE CF,1,1,,Escudo,,Elche CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 ELCHE-CF-02,ELCHE CF,2,2,,Martín Anselmi,entrenador,Elche CF,2ed,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 ELCHE-CF-03,ELCHE CF,3,3,,Dituro,portero,Elche CF,,sin_comprobar,PEGAR,,,,
@@ -195,6 +204,9 @@ RCD-ESPANYOL-17,RCD ESPANYOL,17,17,,Pere Milla,delantero,RCD Espanyol,,sin_compr
 RCD-ESPANYOL-18,RCD ESPANYOL,18,18,,Puado,delantero,RCD Espanyol,,sin_comprobar,PEGAR,,,,
 RCD-ESPANYOL-19,RCD ESPANYOL,19,19,,Kike García,delantero,RCD Espanyol,,sin_comprobar,PEGAR,,,,
 RCD-ESPANYOL-20,RCD ESPANYOL,20,20,,Roberto Fernández,delantero,RCD Espanyol,,sin_comprobar,PEGAR,,,,
+RCD-ESPANYOL-BIS-1,RCD ESPANYOL,BIS,,BIS,Drkusic,defensa,RCD Espanyol,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+RCD-ESPANYOL-BIS-2,RCD ESPANYOL,BIS,,BIS,Hinojo,medio,RCD Espanyol,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+RCD-ESPANYOL-BIS-3,RCD ESPANYOL,BIS,,BIS,Javi Hernández,defensa,RCD Espanyol,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 GETAFE-CF-01,GETAFE CF,1,1,,Escudo,,Getafe CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 GETAFE-CF-02,GETAFE CF,2,2,,Jose Bordalás,entrenador,Getafe CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 GETAFE-CF-03,GETAFE CF,3,3,,David Soria,portero,Getafe CF,,sin_comprobar,PEGAR,,,,
@@ -207,14 +219,15 @@ GETAFE-CF-09,GETAFE CF,9,9,,Zaid Romero,defensa,Getafe CF,,sin_comprobar,PEGAR,,
 GETAFE-CF-10,GETAFE CF,10,10,,Davinchi,defensa,Getafe CF,,sin_comprobar,PEGAR,,,,
 GETAFE-CF-11,GETAFE CF,11,11,,Mario Martín,medio,Getafe CF,,sin_comprobar,PEGAR,,,,
 GETAFE-CF-12,GETAFE CF,12,12,,Javi Muñoz,medio,Getafe CF,,sin_comprobar,PEGAR,,,,
-GETAFE-CF-13,GETAFE CF,13,13,,,,Getafe CF,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-13,GETAFE CF,13,13,,Francho,medio,Getafe CF,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 GETAFE-CF-14,GETAFE CF,14,14,,Terrats,medio,Getafe CF,2ed,sin_comprobar,PEGAR,,,,
-GETAFE-CF-15,GETAFE CF,15,15,,,,Getafe CF,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+GETAFE-CF-15,GETAFE CF,15,15,,Mangala,medio,Getafe CF,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 GETAFE-CF-16,GETAFE CF,16,16,,Juanmi,delantero,Getafe CF,2ed,sin_comprobar,PEGAR,,,,
 GETAFE-CF-17,GETAFE CF,17,17,,Álex Sancris,delantero,Getafe CF,,sin_comprobar,PEGAR,,,,
 GETAFE-CF-18,GETAFE CF,18,18,,Borja Mayoral,delantero,Getafe CF,,sin_comprobar,PEGAR,,,,
 GETAFE-CF-19,GETAFE CF,19,19,,Luis Vázquez,delantero,Getafe CF,,sin_comprobar,PEGAR,,,,
 GETAFE-CF-20,GETAFE CF,20,20,,Satriano,delantero,Getafe CF,,sin_comprobar,PEGAR,,,,
+GETAFE-CF-BIS-1,GETAFE CF,BIS,,BIS,Enes Ünal,delantero,Getafe CF,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 LEVANTE-UD-01,LEVANTE UD,1,1,,Escudo,,Levante UD,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 LEVANTE-UD-02,LEVANTE UD,2,2,,Luís Castro,entrenador,Levante UD,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 LEVANTE-UD-03,LEVANTE UD,3,3,,Ryan,portero,Levante UD,,sin_comprobar,PEGAR,,,,
@@ -237,6 +250,8 @@ LEVANTE-UD-19,LEVANTE UD,18,18,,Iván Romero,delantero,Levante UD,,sin_comprobar
 LEVANTE-UD-20,LEVANTE UD,19,19,,Etta Eyong,delantero,Levante UD,,sin_comprobar,PEGAR,,,,
 LEVANTE-UD-21,LEVANTE UD,20,20,,Carlos Espí,delantero,Levante UD,,sin_comprobar,PEGAR,,,,
 LEVANTE-UD-22,LEVANTE UD,20BIS,20,BIS,Musuayi,delantero,Levante UD,2ed,sin_comprobar,PEGAR,,,,
+LEVANTE-UD-BIS-1,LEVANTE UD,BIS,,BIS,Nacho Pérez,defensa,Levante UD,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+LEVANTE-UD-BIS-2,LEVANTE UD,BIS,,BIS,Thiago Fernández,medio,Levante UD,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 REAL-MADRID-CF-01,REAL MADRID CF,1,1,,Escudo,,Real Madrid,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-MADRID-CF-02,REAL MADRID CF,2,2,,José Mourinho,entrenador,Real Madrid,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-MADRID-CF-03,REAL MADRID CF,3,3,,Courtois,portero,Real Madrid,,sin_comprobar,PEGAR,,,,
@@ -261,6 +276,7 @@ REAL-MADRID-CF-24,REAL MADRID CF,17BIS,17,BIS,Carlos Espí,delantero,Real Madrid
 REAL-MADRID-CF-21,REAL MADRID CF,18,18,,Rodrygo,delantero,Real Madrid,,sin_comprobar,PEGAR,,,,
 REAL-MADRID-CF-22,REAL MADRID CF,19,19,,Vinícius,delantero,Real Madrid,,sin_comprobar,PEGAR,,,,
 REAL-MADRID-CF-23,REAL MADRID CF,20,20,,Mbappé,delantero,Real Madrid,,sin_comprobar,PEGAR,,,,
+REAL-MADRID-CF-BIS-1,REAL MADRID CF,BIS,,BIS,Konaté,defensa,Real Madrid,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 MALAGA-CF-01,MALAGA CF,1,1,,Escudo,,Málaga CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 MALAGA-CF-02,MALAGA CF,2,2,,Juan Franisco Funes,entrenador,Málaga CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 MALAGA-CF-03,MALAGA CF,3,3,,Alfonso Herrero,portero,Málaga CF,,sin_comprobar,PEGAR,,,,
@@ -282,6 +298,7 @@ MALAGA-CF-18,MALAGA CF,17,17,,Lobete,delantero,Málaga CF,,sin_comprobar,PEGAR,,
 MALAGA-CF-19,MALAGA CF,18,18,,Adrián Niño,delantero,Málaga CF,,sin_comprobar,PEGAR,,,,
 MALAGA-CF-20,MALAGA CF,19,19,,Joaquín,delantero,Málaga CF,,sin_comprobar,PEGAR,,,,
 MALAGA-CF-21,MALAGA CF,20,20,,Chupe,delantero,Málaga CF,,sin_comprobar,PEGAR,,,,
+MALAGA-CF-BIS-1,MALAGA CF,BIS,,BIS,Ángel Recio,medio,Málaga CF,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 OSASUNA-01,OSASUNA,1,1,,Escudo,,CA Osasuna,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 OSASUNA-02,OSASUNA,2,2,,Luis Miguel Ramis,entrenador,CA Osasuna,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 OSASUNA-03,OSASUNA,3,3,,Sergio Herrera,portero,CA Osasuna,,sin_comprobar,PEGAR,,,,
@@ -304,9 +321,10 @@ OSASUNA-19,OSASUNA,17,17,,Raúl Moro,delantero,CA Osasuna,,sin_comprobar,PEGAR,,
 OSASUNA-20,OSASUNA,18,18,,Raúl García,delantero,CA Osasuna,,sin_comprobar,PEGAR,,,,
 OSASUNA-21,OSASUNA,19,19,,Kike Barja,delantero,CA Osasuna,,sin_comprobar,PEGAR,,,,
 OSASUNA-22,OSASUNA,20,20,,Budimir,delantero,CA Osasuna,,sin_comprobar,PEGAR,,,,
+OSASUNA-BIS-1,OSASUNA,BIS,,BIS,Jonathan Dubasin,delantero,CA Osasuna,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 RACING-DE-SANTANDER-01,RACING DE SANTANDER,1,1,,Escudo,,Racing de Santander,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 RACING-DE-SANTANDER-02,RACING DE SANTANDER,2,2,,José Alberto López,entrenador,Racing de Santander,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
-RACING-DE-SANTANDER-03,RACING DE SANTANDER,3,3,,,,Racing de Santander,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+RACING-DE-SANTANDER-03,RACING DE SANTANDER,3,3,,Agirrezabala,portero,Racing de Santander,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 RACING-DE-SANTANDER-04,RACING DE SANTANDER,4,4,,Eriksson,portero,Racing de Santander,,sin_comprobar,PEGAR,,,,
 RACING-DE-SANTANDER-05,RACING DE SANTANDER,5,5,,Mantilla,defensa,Racing de Santander,,sin_comprobar,PEGAR,,,,
 RACING-DE-SANTANDER-06,RACING DE SANTANDER,6,6,,Sangalli,defensa,Racing de Santander,,sin_comprobar,PEGAR,,,,
@@ -327,6 +345,9 @@ RACING-DE-SANTANDER-19,RACING DE SANTANDER,17,17,,Guliashvili,delantero,Racing d
 RACING-DE-SANTANDER-20,RACING DE SANTANDER,18,18,,Íñigo Vicente,delantero,Racing de Santander,,sin_comprobar,PEGAR,,,,
 RACING-DE-SANTANDER-21,RACING DE SANTANDER,19,19,,Arana,delantero,Racing de Santander,,sin_comprobar,PEGAR,,,,
 RACING-DE-SANTANDER-22,RACING DE SANTANDER,20,20,,Villalibre,delantero,Racing de Santander,,sin_comprobar,PEGAR,,,,
+RACING-DE-SANTANDER-BIS-1,RACING DE SANTANDER,BIS,,BIS,Pedro Felipe,defensa,Racing de Santander,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+RACING-DE-SANTANDER-BIS-2,RACING DE SANTANDER,BIS,,BIS,Sergio Martínez,medio,Racing de Santander,3ed,sin_comprobar,PEGAR,,,,Fichó por el Real Madrid Castilla y no tiene ficha del primer equipo.
+RACING-DE-SANTANDER-BIS-3,RACING DE SANTANDER,BIS,,BIS,Zabiri,delantero,Racing de Santander,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 RAYO-VALLECANO-01,RAYO VALLECANO,1,1,,Escudo,,Rayo Vallecano,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 RAYO-VALLECANO-02,RAYO VALLECANO,2,2,,Beñat San José,entrenador,Rayo Vallecano,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 RAYO-VALLECANO-03,RAYO VALLECANO,3,3,,Batalla,portero,Rayo Vallecano,,sin_comprobar,PEGAR,,,,
@@ -347,6 +368,8 @@ RAYO-VALLECANO-17,RAYO VALLECANO,17,17,,Fran Pérez,delantero,Rayo Vallecano,,si
 RAYO-VALLECANO-18,RAYO VALLECANO,18,18,,Álvaro García,delantero,Rayo Vallecano,,sin_comprobar,PEGAR,,,,
 RAYO-VALLECANO-19,RAYO VALLECANO,19,19,,Camello,delantero,Rayo Vallecano,,sin_comprobar,PEGAR,,,,
 RAYO-VALLECANO-20,RAYO VALLECANO,20,20,,Alemao,delantero,Rayo Vallecano,,sin_comprobar,PEGAR,,,,
+RAYO-VALLECANO-BIS-1,RAYO VALLECANO,BIS,,BIS,Vertrouwd,defensa,Rayo Vallecano,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+RAYO-VALLECANO-BIS-2,RAYO VALLECANO,BIS,,BIS,Pelayo,defensa,Rayo Vallecano,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 REAL-SOCIEDAD-01,REAL SOCIEDAD,1,1,,Escudo,,Real Sociedad,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-SOCIEDAD-02,REAL SOCIEDAD,2,2,,Pellegrino Matarazzo,entrenador,Real Sociedad,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 REAL-SOCIEDAD-03,REAL SOCIEDAD,3,3,,Remiro,portero,Real Sociedad,,sin_comprobar,PEGAR,,,,
@@ -371,7 +394,7 @@ REAL-SOCIEDAD-21,REAL SOCIEDAD,20,20,,Oyarzabal,delantero,Real Sociedad,,sin_com
 SEVILLA-01,SEVILLA,1,1,,Escudo,,Sevilla FC,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 SEVILLA-02,SEVILLA,2,2,,Luis García,entrenador,Sevilla FC,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 SEVILLA-03,SEVILLA,3,3,,Vlachodimos,portero,Sevilla FC,,sin_comprobar,PEGAR,,,,
-SEVILLA-04,SEVILLA,4,4,,,,Sevilla FC,,pendiente_publicacion,ESPERAR,,,,Hueco sin jugador en el checklist.
+SEVILLA-04,SEVILLA,4,4,,Fran González,portero,Sevilla FC,3ed,sin_comprobar,PEGAR,,,,Jugador anunciado en la 3ª edición del checklist.
 SEVILLA-05,SEVILLA,5,5,,Carmona,defensa,Sevilla FC,,sin_comprobar,PEGAR,,,,
 SEVILLA-06,SEVILLA,6,6,,Juanlu,defensa,Sevilla FC,,sin_comprobar,PEGAR,,,,
 SEVILLA-22,SEVILLA,6BIS,6,BIS,Iglesias,defensa,Sevilla FC,2ed,sin_comprobar,PEGAR,,,,
@@ -390,6 +413,8 @@ SEVILLA-18,SEVILLA,17,17,,Peque,delantero,Sevilla FC,,sin_comprobar,PEGAR,,,,
 SEVILLA-19,SEVILLA,18,18,,Ejuke,delantero,Sevilla FC,,sin_comprobar,PEGAR,,,,
 SEVILLA-20,SEVILLA,19,19,,Akor Adams,delantero,Sevilla FC,,sin_comprobar,PEGAR,,,,
 SEVILLA-21,SEVILLA,20,20,,Isaac Romero,delantero,Sevilla FC,,sin_comprobar,PEGAR,,,,
+SEVILLA-BIS-1,SEVILLA,BIS,,BIS,Julio Díaz,defensa,Sevilla FC,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
+SEVILLA-BIS-2,SEVILLA,BIS,,BIS,Miguel Sierra,defensa,Sevilla FC,3ed,sin_comprobar,PEGAR,,,,"Cromo BIS de la 3ª edición, pendiente de numeración."
 VALENCIA-01,VALENCIA,1,1,,Escudo,,Valencia CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 VALENCIA-02,VALENCIA,2,2,,Carlos Corberán,entrenador,Valencia CF,,no_aplica,PEGAR,,,,La comprobación de plantilla solo cubre jugadores.
 VALENCIA-03,VALENCIA,3,3,,Dimitrievski,portero,Valencia CF,,sin_comprobar,PEGAR,,,,
@@ -458,6 +483,26 @@ ULTIMOS-FICHAJES-17,ÚLTIMOS FICHAJES,UF17,17,,Sangante,defensa,Sevilla FC,2ed,s
 ULTIMOS-FICHAJES-18,ÚLTIMOS FICHAJES,UF18,18,,Andrés García,defensa,Getafe CF,2ed,sin_comprobar,PEGAR,,,,
 ULTIMOS-FICHAJES-19,ÚLTIMOS FICHAJES,UF19,19,,Adeyemi,delantero,FC Barcelona,2ed,sin_comprobar,PEGAR,,,,
 ULTIMOS-FICHAJES-20,ÚLTIMOS FICHAJES,UF20,20,,Kang-In Lee,medio,Atlético de Madrid,2ed,sin_comprobar,PEGAR,,,,
+ULTIMOS-FICHAJES-21,ÚLTIMOS FICHAJES,UF21,21,,Bernardo Silva,medio,Real Madrid,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-22,ÚLTIMOS FICHAJES,UF22,22,,Amatucci,medio,Deportivo de La Coruña,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-23,ÚLTIMOS FICHAJES,UF23,23,,Mojica,defensa,Getafe CF,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-24,ÚLTIMOS FICHAJES,UF24,24,,Gordon,delantero,FC Barcelona,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-25,ÚLTIMOS FICHAJES,UF25,25,,Robbie Ure,delantero,Sevilla FC,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-26,ÚLTIMOS FICHAJES,UF26,26,,Javi Morcillo,delantero,Elche CF,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-27,ÚLTIMOS FICHAJES,UF27,27,,Núñez,delantero,RCD Espanyol,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-28,ÚLTIMOS FICHAJES,UF28,28,,Maffeo,defensa,Valencia CF,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-29,ÚLTIMOS FICHAJES,UF29,29,,Cucurella,defensa,Real Madrid,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-30,ÚLTIMOS FICHAJES,UF30,30,,Valentini,defensa,Deportivo Alavés,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-31,ÚLTIMOS FICHAJES,UF31,31,,Sazonov,defensa,Getafe CF,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-32,ÚLTIMOS FICHAJES,UF32,32,,Buonanotte,medio,Elche CF,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-33,ÚLTIMOS FICHAJES,UF33,33,,Angeliño,defensa,Deportivo de La Coruña,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-34,ÚLTIMOS FICHAJES,UF34,34,,Iván Martín,medio,Racing de Santander,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-35,ÚLTIMOS FICHAJES,UF35,35,,Peio Canales,medio,Athletic Club,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-36,ÚLTIMOS FICHAJES,UF36,36,,Kochorashvili,medio,Sevilla FC,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-37,ÚLTIMOS FICHAJES,UF37,37,,Javi Galán,defensa,RC Celta de Vigo,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-38,ÚLTIMOS FICHAJES,UF38,38,,Parrott,delantero,Real Betis,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-39,ÚLTIMOS FICHAJES,UF39,39,,Diomande,delantero,Real Madrid,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
+ULTIMOS-FICHAJES-40,ÚLTIMOS FICHAJES,UF40,40,,Rodri,medio,FC Barcelona,3ed,sin_comprobar,PEGAR,,,,Último fichaje anunciado en la 3ª edición del checklist.
 ADN-LALIGA-PRIME-01,ADN / LALIGA PRIME,1,1,,Antony,delantero,Real Betis,,sin_comprobar,PEGAR,,,,
 ADN-LALIGA-PRIME-02,ADN / LALIGA PRIME,2,2,,Bellingham,medio,Real Madrid,,sin_comprobar,PEGAR,,,,
 ADN-LALIGA-PRIME-03,ADN / LALIGA PRIME,3,3,,Courtois,portero,Real Madrid,,sin_comprobar,PEGAR,,,,

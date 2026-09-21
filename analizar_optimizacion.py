@@ -176,6 +176,7 @@ class TeamReport:
     club: str
     slots: list[Slot]
     without_sticker: list[dict[str, str]]
+    unnumbered: list[str] = field(default_factory=list)
 
     @property
     def player_slots(self) -> list[Slot]:
@@ -256,6 +257,12 @@ class TeamReport:
         if pending:
             names = ", ".join(slot.hueco for slot in pending)
             lines.append(f"- **Sin asignar por Panini:** {names}")
+        if self.unnumbered:
+            names = ", ".join(markdown_escape(name) for name in self.unnumbered)
+            lines.append(
+                f"- **BIS pendientes de numeración:** {names}. Panini los ha"
+                " anunciado sin número, así que no se sabe a qué hueco van."
+            )
         merecen = self.deserve_sticker
         if merecen:
             names = ", ".join(
@@ -314,11 +321,18 @@ def build_reports(
 ) -> list[TeamReport]:
     stats = {row["clave"]: stats_for(row) for row in stats_rows or []}
     by_section: dict[str, dict[str, Slot]] = defaultdict(dict)
+    unnumbered: dict[str, list[str]] = defaultdict(list)
 
     for row in collection:
         # Los Últimos Fichajes se pegan en su propia sección, así que no
         # participan en el recuento de huecos de equipo.
         if row["seccion"] not in CLUB_CANONICAL:
+            continue
+        # Un BIS que Panini aún no ha numerado no se puede asignar a un hueco.
+        # Agruparlos por su hueco vacío los convertiría en variantes del mismo
+        # cromo, que es justo lo contrario de lo que son.
+        if not row["hueco_album"]:
+            unnumbered[row["seccion"]].append(row["nombre"])
             continue
         slots = by_section[row["seccion"]]
         slot = slots.setdefault(
@@ -348,6 +362,7 @@ def build_reports(
                     orphans[section],
                     key=lambda row: (-as_number(row.get("minutos")), row["nombre"]),
                 ),
+                unnumbered=sorted(unnumbered[section]),
             )
         )
     return reports

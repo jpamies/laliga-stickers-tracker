@@ -31,28 +31,28 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertIsNotNone(themes_match)
         themes = json.loads(themes_match.group(1))
-        self.assertEqual(total, 593)
-        self.assertEqual(len(stickers), 593)
-        self.assertEqual(len({sticker["id"] for sticker in stickers}), 593)
+        self.assertEqual(total, 618)
+        self.assertEqual(len(stickers), 618)
+        self.assertEqual(len({sticker["id"] for sticker in stickers}), 618)
         self.assertEqual(len({sticker["seccion"] for sticker in stickers}), 29)
         self.assertEqual(
             sum(sticker["imagen_provisional"] != "true" for sticker in stickers),
-            423,
+            424,
         )
         self.assertEqual(
             sum(sticker["imagen_provisional"] == "true" for sticker in stickers),
-            170,
+            194,
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            89,
+            141,
         )
         # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
         # que sólo quedan donde LALIGA no ha emparejado al jugador.
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 76, "transfermarkt": 13}))
+        self.assertEqual(fuentes, Counter({"laliga": 132, "transfermarkt": 9}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]
@@ -71,7 +71,7 @@ class AlbumGenerationTests(unittest.TestCase):
         # recomendación pública de no pegar.
         self.assertEqual(
             sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
-            62,
+            65,
         )
         self.assertTrue(
             all(
@@ -83,6 +83,10 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertEqual(
             sum(sticker["edicion"] == "2ed" for sticker in stickers),
             44,
+        )
+        self.assertEqual(
+            sum(sticker["edicion"] == "3ed" for sticker in stickers),
+            52,
         )
         alaves_placeholder = next(
             sticker for sticker in stickers if sticker["id"] == "ATHLETIC-CLUB-DE-BILBAO-11"
@@ -113,9 +117,11 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         published = [sticker for sticker in updates if sticker["nombre"]]
         pending = [sticker for sticker in updates if not sticker["nombre"]]
-        self.assertEqual(len(published), 20)
-        self.assertEqual(len(pending), 49)
-        self.assertTrue(all(sticker["edicion"] == "2ed" for sticker in published))
+        self.assertEqual(len(published), 40)
+        self.assertEqual(len(pending), 29)
+        self.assertTrue(
+            all(sticker["edicion"] in {"2ed", "3ed"} for sticker in published)
+        )
         self.assertTrue(all(sticker["accion"] == "PEGAR" for sticker in published))
         self.assertTrue(
             all(sticker["estado_plantilla"] == "pendiente_publicacion" for sticker in pending)
@@ -137,14 +143,15 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="section-clear"', html)
         self.assertIn('id="import-json"', html)
         self.assertIn('data-filter="second-edition"', html)
+        self.assertIn('data-filter="third-edition"', html)
         self.assertIn('id="hide-dont-stick"', html)
         self.assertIn('id="summary-skipped"', html)
         self.assertIn('id="density-switch"', html)
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=50"', html)
-        self.assertIn('href="styles.css?v=32"', html)
+        self.assertIn('src="app.js?v=51"', html)
+        self.assertIn('href="styles.css?v=33"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=15"', html)
         self.assertIn('src="social.js?v=16"', html)
@@ -319,19 +326,36 @@ class TradeViewTests(unittest.TestCase):
 
     def test_the_stickers_without_a_number_are_told_apart_by_name(self) -> None:
         # Los Extra Sticker comparten el texto «Extra Sticker» como número, así
-        # que sin el nombre serían quince chapas idénticas.
-        unnumbered = [
+        # que sin el nombre serían quince chapas idénticas. Hay que mirarlos por
+        # su sección: los BIS que Panini aún no ha numerado también salen sin
+        # número, y son jugadores distintos entre sí.
+        extra = [
             sticker
             for sticker in self.stickers()
-            if not re.search(r"\d", sticker["numero"])
+            if sticker["seccion"].startswith("EXTRA STICKER")
         ]
 
-        self.assertTrue(unnumbered, "Ya no hay cromos sin número que distinguir")
+        self.assertTrue(extra, "Ya no hay Extra Sticker que distinguir")
+        self.assertTrue(all(sticker["nombre"].strip() for sticker in extra))
         self.assertEqual(
-            len({sticker["nombre"] for sticker in unnumbered}),
-            len({sticker["id"] for sticker in unnumbered}) // 3,
+            len({sticker["nombre"] for sticker in extra}),
+            len(extra) // 3,
             "Los Extra Sticker deberían repetir los mismos jugadores en bronce, plata y oro",
         )
+
+    def test_the_unnumbered_bis_are_told_apart_by_name(self) -> None:
+        # Un BIS sin numerar sólo se reconoce por el jugador, así que dos del
+        # mismo equipo no pueden compartir nombre.
+        bis = [
+            sticker
+            for sticker in self.stickers()
+            if sticker["numero"] == "BIS"
+        ]
+
+        self.assertTrue(bis, "Ya no hay cromos BIS sin numerar")
+        self.assertTrue(all(sticker["nombre"].strip() for sticker in bis))
+        pairs = {(sticker["seccion"], sticker["nombre"]) for sticker in bis}
+        self.assertEqual(len(pairs), len(bis))
 
     def test_the_chip_falls_back_to_the_name(self) -> None:
         source = self.app()
@@ -396,6 +420,46 @@ class TradeViewTests(unittest.TestCase):
         source = self.app()
 
         self.assertIn('new Set(["cards", "list", "trade"])', source)
+
+
+class EditionBadgeTests(unittest.TestCase):
+    """Cada edición del checklist se marca en el cromo y se puede filtrar, que
+    es como se distingue lo que acaba de salir de lo que ya estaba."""
+
+    def app(self) -> str:
+        return Path("album/app.js").read_text(encoding="utf-8")
+
+    def test_every_edition_in_the_data_has_a_label(self) -> None:
+        # Un cromo de una edición sin etiqueta saldría indistinguible de los
+        # originales, que es justo lo que la etiqueta evita.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(
+            re.search(r"window\.ALBUM_DATA = (\[.*?\]);", html, flags=re.DOTALL).group(1)
+        )
+        editions = {sticker["edicion"] for sticker in stickers if sticker["edicion"]}
+        labels = re.search(
+            r"const editionLabels = \{(.*?)\};", self.app(), flags=re.DOTALL
+        )
+        self.assertIsNotNone(labels, "Falta la tabla de etiquetas de edición")
+        labelled = set(re.findall(r'"(\w+)":', labels.group(1)))
+
+        self.assertTrue(editions)
+        self.assertEqual(editions - labelled, set())
+
+    def test_each_edition_can_be_filtered(self) -> None:
+        source = self.app()
+
+        self.assertIn('state.filter === "second-edition"', source)
+        self.assertIn('state.filter === "third-edition"', source)
+
+    def test_each_edition_is_searchable_by_words(self) -> None:
+        source = self.app()
+
+        self.assertIn("2a edicion segunda edicion", source)
+        self.assertIn("3a edicion tercera edicion", source)
 
 
 class FiguritasSectionTests(unittest.TestCase):
