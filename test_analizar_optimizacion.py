@@ -288,6 +288,82 @@ class ReportFileTests(unittest.TestCase):
         self.assertIn("′ ·", text)
         self.assertTrue(any(report.deserve_sticker for report in reports))
 
+    def test_the_unnumbered_bis_close_the_slot_table(self) -> None:
+        """Son cromos de esa página, así que se leen con el resto de huecos."""
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "informe.md"
+            reports = generate(
+                Path("coleccion_panini_revisada.csv"),
+                Path("comprobacion_laliga.csv"),
+                Path("laliga_plantillas.csv"),
+                output,
+                Path("laliga_estadisticas.csv"),
+                date(2026, 9, 21),
+            )
+            text = output.read_text(encoding="utf-8")
+
+        con_bis = [report for report in reports if report.unnumbered]
+        self.assertTrue(con_bis, "Ya no hay BIS sin numerar en los datos")
+
+        racing = next(r for r in reports if r.section == "RACING DE SANTANDER")
+        bloque = text.split(f"## {racing.section}")[1].split("\n## ")[0]
+        tabla = bloque.split("### Huecos del álbum")[1].split("### Plantilla")[0]
+        filas = [line for line in tabla.strip().splitlines() if line.startswith("|")]
+
+        # La columna «Hueco» sólo lleva la palabra en la primera de las filas
+        # nuevas, igual que un hueco con dos variantes.
+        self.assertTrue(filas[-1].startswith("| "))
+        ultimas = filas[-len(racing.unnumbered) :]
+        self.assertEqual(ultimas[0].split("|")[1].strip(), "BIS")
+        for fila in ultimas[1:]:
+            self.assertEqual(fila.split("|")[1].strip(), "")
+        for option in racing.unnumbered:
+            self.assertIn(option.nombre, "".join(ultimas))
+
+    def test_a_numbered_bis_stays_in_its_slot(self) -> None:
+        # Hamza es el único BIS numerado: va en el hueco 18, no al final.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "informe.md"
+            reports = generate(
+                Path("coleccion_panini_revisada.csv"),
+                Path("comprobacion_laliga.csv"),
+                Path("laliga_plantillas.csv"),
+                output,
+                Path("laliga_estadisticas.csv"),
+                date(2026, 9, 21),
+            )
+
+        barcelona = next(r for r in reports if r.section == "FC BARCELONA")
+        nombres = [option.nombre for option in barcelona.unnumbered]
+
+        self.assertNotIn("Hamza Abdelkarim", nombres)
+        slot = next(slot for slot in barcelona.slots if slot.hueco == "18")
+        self.assertIn(
+            "Hamza Abdelkarim", [option.nombre for option in slot.options]
+        )
+
+    def test_a_bis_of_someone_who_left_is_marked(self) -> None:
+        # El cromo salió con la camiseta del Racing, pero el jugador ya no
+        # está: pegarlo sería tirar el hueco.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "informe.md"
+            generate(
+                Path("coleccion_panini_revisada.csv"),
+                Path("comprobacion_laliga.csv"),
+                Path("laliga_plantillas.csv"),
+                output,
+                Path("laliga_estadisticas.csv"),
+                date(2026, 9, 21),
+            )
+            text = output.read_text(encoding="utf-8")
+
+        fila = next(
+            line
+            for line in text.splitlines()
+            if line.startswith("|") and "Sergio Martínez" in line
+        )
+        self.assertIn("ya no está", fila)
+
 
 if __name__ == "__main__":
     unittest.main()

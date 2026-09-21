@@ -176,7 +176,7 @@ class TeamReport:
     club: str
     slots: list[Slot]
     without_sticker: list[dict[str, str]]
-    unnumbered: list[str] = field(default_factory=list)
+    unnumbered: list[Option] = field(default_factory=list)
 
     @property
     def player_slots(self) -> list[Slot]:
@@ -258,10 +258,12 @@ class TeamReport:
             names = ", ".join(slot.hueco for slot in pending)
             lines.append(f"- **Sin asignar por Panini:** {names}")
         if self.unnumbered:
-            names = ", ".join(markdown_escape(name) for name in self.unnumbered)
+            names = ", ".join(
+                markdown_escape(option.nombre) for option in self.unnumbered
+            )
             lines.append(
-                f"- **BIS pendientes de numeración:** {names}. Panini los ha"
-                " anunciado sin número, así que no se sabe a qué hueco van."
+                f"- **BIS pendientes de numeración:** {names}. Van al final de"
+                " la tabla porque Panini no ha dicho a qué hueco pertenecen."
             )
         merecen = self.deserve_sticker
         if merecen:
@@ -321,24 +323,25 @@ def build_reports(
 ) -> list[TeamReport]:
     stats = {row["clave"]: stats_for(row) for row in stats_rows or []}
     by_section: dict[str, dict[str, Slot]] = defaultdict(dict)
-    unnumbered: dict[str, list[str]] = defaultdict(list)
+    unnumbered: dict[str, list[Option]] = defaultdict(list)
 
     for row in collection:
         # Los Últimos Fichajes se pegan en su propia sección, así que no
         # participan en el recuento de huecos de equipo.
         if row["seccion"] not in CLUB_CANONICAL:
             continue
+        option = option_for(row, checks.get(row["id"], {}), stats)
         # Un BIS que Panini aún no ha numerado no se puede asignar a un hueco.
         # Agruparlos por su hueco vacío los convertiría en variantes del mismo
         # cromo, que es justo lo contrario de lo que son.
         if not row["hueco_album"]:
-            unnumbered[row["seccion"]].append(row["nombre"])
+            unnumbered[row["seccion"]].append(option)
             continue
         slots = by_section[row["seccion"]]
         slot = slots.setdefault(
             row["hueco_album"], Slot(row["hueco_album"], slot_kind(row))
         )
-        slot.options.append(option_for(row, checks.get(row["id"], {}), stats))
+        slot.options.append(option)
 
     stats_by_key = {row["clave"]: row for row in stats_rows or []}
     orphans: dict[str, list[dict[str, str]]] = defaultdict(list)
@@ -362,7 +365,7 @@ def build_reports(
                     orphans[section],
                     key=lambda row: (-as_number(row.get("minutos")), row["nombre"]),
                 ),
-                unnumbered=sorted(unnumbered[section]),
+                unnumbered=sorted(unnumbered[section], key=lambda o: o.nombre),
             )
         )
     return reports
@@ -414,6 +417,31 @@ def slot_mark(slot: Slot, option: Option) -> str:
     return "**pegar**" if option is slot.pick else "descartar"
 
 
+def option_row(hueco: str, option: Option, mark: str) -> str:
+    details = (
+        option.ficha
+        if option.estado == IN_SQUAD
+        else "sin ficha, sigue en el club"
+        if option.estado == UNLISTED
+        else "—"
+    )
+    return (
+        "| "
+        + " | ".join(
+            [
+                hueco,
+                markdown_escape(option_cell(option)),
+                markdown_escape(option.nombre or "sin asignar"),
+                markdown_escape(details),
+                option.dorsal or "—",
+                markdown_escape(option.stats.summary()),
+                mark,
+            ]
+        )
+        + " |"
+    )
+
+
 def slot_rows(report: TeamReport) -> list[str]:
     lines = [
         "| Hueco | Cromo | Nombre | Ficha en LALIGA | Dorsal | Minutos | Estado |",
@@ -421,28 +449,14 @@ def slot_rows(report: TeamReport) -> list[str]:
     ]
     for slot in report.slots:
         for index, option in enumerate(slot.options):
-            details = (
-                option.ficha
-                if option.estado == IN_SQUAD
-                else "sin ficha, sigue en el club"
-                if option.estado == UNLISTED
-                else "—"
-            )
             lines.append(
-                "| "
-                + " | ".join(
-                    [
-                        slot.hueco if not index else "",
-                        markdown_escape(option_cell(option)),
-                        markdown_escape(option.nombre or "sin asignar"),
-                        markdown_escape(details),
-                        option.dorsal or "—",
-                        markdown_escape(option.stats.summary()),
-                        slot_mark(slot, option),
-                    ]
-                )
-                + " |"
+                option_row(slot.hueco if not index else "", option, slot_mark(slot, option))
             )
+    # Los BIS sin numerar cierran la tabla: son cromos de esta página, pero
+    # Panini no ha dicho todavía en qué hueco van.
+    for index, option in enumerate(report.unnumbered):
+        mark = "🆕 sin numerar" if option.active else "⛔ ya no está"
+        lines.append(option_row("BIS" if not index else "", option, mark))
     return lines
 
 
@@ -520,6 +534,8 @@ def render(reports: list[TeamReport], generated_on: date) -> str:
         "  uno juega al menos el doble que el otro, se recomienda ese.",
         "- **Piden cromo:** jugadores inscritos y sin cromo que han disputado al",
         f"  menos el {IMPORTANT_SHARE:.0%} de los minutos de su equipo.",
+        "- **BIS sin numerar:** cierran la tabla de huecos. Panini los ha",
+        "  anunciado sin número, así que todavía no se sabe a qué hueco van.",
         "",
         "> El entrenador cuenta como hueco comprobable porque LALIGA también",
         "> publica su ficha. El escudo queda fuera del recuento.",

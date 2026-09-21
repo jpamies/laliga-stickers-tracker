@@ -24,6 +24,8 @@ no tapando huecos de equipo.
   uno juega al menos el doble que el otro, se recomienda ese.
 - **Piden cromo:** jugadores inscritos y sin cromo que han disputado al
   menos el 30% de los minutos de su equipo.
+- **BIS sin numerar:** cierran la tabla de huecos. Panini los ha
+  anunciado sin número, así que todavía no se sabe a qué hueco van.
 
 > El entrenador cuenta como hueco comprobable porque LALIGA también
 > publica su ficha. El escudo queda fuera del recuento.
@@ -64,7 +66,7 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 8 (Parada)
 - **Variante recomendada por minutos:** 18 → **18A** (Abde, 496′)
-- **BIS pendientes de numeración:** Garcés, Mariano Díaz. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Garcés, Mariano Díaz. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 
 ### Huecos del álbum
 
@@ -91,6 +93,8 @@ no tapando huecos de equipo.
 |  | 18B | Mañas | Aitor Mañas | 20 | 87′ · 4 pj · 1 tit | descartar |
 | 19 | 19 | Toni Martínez | Toni Martínez | 11 | 324′ · 5 pj · 4 tit | **pegar** |
 | 20 | 20 | Boyé | Lucas Boyé | 15 | 409′ · 5 pj · 5 tit · 4 g | **pegar** |
+| BIS | BIS | Garcés | Facundo Garcés | 5 | 0′ · no ha jugado | 🆕 sin numerar |
+|  | BIS | Mariano Díaz | Mariano Díaz | 9 | 258′ · 6 pj · 2 tit · 3 g · 3 a | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -159,7 +163,7 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 6 (Nahuel Molina), 10 (Ruggeri), 16 (Almada)
 - **Variante recomendada por minutos:** 14 → **14A** (Rodri Mendoza, 107′)
-- **BIS pendientes de numeración:** Alejandro Grimaldo, Arnau Ortiz. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Alejandro Grimaldo, Arnau Ortiz. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Romero (189′)
 
 ### Huecos del álbum
@@ -188,6 +192,8 @@ no tapando huecos de equipo.
 | 18 | 18 | Lookman | Ademola Lookman | 11 | 437′ · 6 pj · 6 tit · 1 g | **pegar** |
 | 19 | 19 | Sorloth | Alexander Sørloth | 9 | 0′ · no ha jugado | **pegar** |
 | 20 | 20 | Julián Alvarez | Julián Alvarez | 19 | 55′ · 2 pj | **pegar** |
+| BIS | BIS | Alejandro Grimaldo | Alejandro Grimaldo | 22 | 445′ · 5 pj · 5 tit · 1 g · 1 a | 🆕 sin numerar |
+|  | BIS | Arnau Ortiz | Arnau Ortiz | 16 | 149′ · 5 pj · 1 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -255,7 +261,7 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 11 (Amrabat)
 - **Variante recomendada por minutos:** 5 → **5B** (Bellerín, 379′)
-- **BIS pendientes de numeración:** Deossa. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Deossa. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Fran García (391′)
 
 ### Huecos del álbum
@@ -284,6 +290,7 @@ no tapando huecos de equipo.
 | 18 | 18 | Antony | Antony Matheus dos Santos | 7 | 371′ · 5 pj · 4 tit | **pegar** |
 | 19 | 19 | Cucho Hernández | Cucho Hernández | 9 | 336′ · 5 pj · 4 tit · 1 g · 1 a | **pegar** |
 | 20 | 20 | Abde | Abde Ezzalzouli | 10 | 82′ · 2 pj · 1 tit | **pegar** |
+| BIS | BIS | Deossa | Nelson Deossa | 18 | 168′ · 5 pj · 1 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -306,7 +313,7 @@ no tapando huecos de equipo.
 - **Variante recomendada por minutos:** 18 → **18A** (Pablo Durán, 201′)
 - **Elección abierta:** 9 (9A o 9B)
 - **Comprobar a mano:** 15 (Fer López)
-- **BIS pendientes de numeración:** Hugo González. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Hugo González. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 
 ### Huecos del álbum
 
@@ -335,6 +342,7 @@ no tapando huecos de equipo.
 |  | 18B | El-Abdellaoui | Jones El Abdellaoui | 39 | 0′ · no ha jugado | descartar |
 | 19 | 19 | Jutglà | Ferran Jutglà | 9 | 325′ · 6 pj · 4 tit · 1 g | **pegar** |
 | 20 | 20 | Borja Iglesias | Borja Iglesias | 7 | 21′ · 1 pj | **pegar** |
+| BIS | BIS | Hugo González | Hugo González | 16 | 190′ · 3 pj · 3 tit · 2 a | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -352,7 +360,7 @@ no tapando huecos de equipo.
 
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **BIS pendientes de numeración:** Bright Ede, Gijselhart. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Bright Ede, Gijselhart. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** X. Navarro (443′), J. M. Giménez (239′)
 
 ### Huecos del álbum
@@ -380,6 +388,8 @@ no tapando huecos de equipo.
 | 18 | 18 | Yeremay | Yeremay Hernández | 10 | 146′ · 5 pj · 1 tit · 1 a | **pegar** |
 | 19 | 19 | Eddahchouri | Zakaria Eddahchouri | 9 | 69′ · 4 pj · 1 g | **pegar** |
 | 20 | 20 | Nsongo | Bil Nsongo | 32 | 330′ · 6 pj · 5 tit | **pegar** |
+| BIS | BIS | Bright Ede | Bright Ede | 22 | 196′ · 3 pj · 2 tit | 🆕 sin numerar |
+|  | BIS | Gijselhart | — | — | — | ⛔ ya no está |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -445,7 +455,7 @@ no tapando huecos de equipo.
 ⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 6 (Rubén Sánchez), 9 (Miguel Rubio)
-- **BIS pendientes de numeración:** Drkusic, Hinojo, Javi Hernández. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Drkusic, Hinojo, Javi Hernández. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 
 ### Huecos del álbum
 
@@ -471,6 +481,9 @@ no tapando huecos de equipo.
 | 18 | 18 | Puado | Javi Puado | 7 | 0′ · no ha jugado | **pegar** |
 | 19 | 19 | Kike García | Kike García | 19 | 0′ · no ha jugado | **pegar** |
 | 20 | 20 | Roberto Fernández | Roberto Fernández | 9 | 523′ · 6 pj · 6 tit · 6 g | **pegar** |
+| BIS | BIS | Drkusic | Vanja Drkusic | 16 | 115′ · 3 pj · 1 tit | 🆕 sin numerar |
+|  | BIS | Hinojo | Roger Hinojo | 21 | 491′ · 6 pj · 6 tit | 🆕 sin numerar |
+|  | BIS | Javi Hernández | Javi Hernández | 28 | 471′ · 6 pj · 6 tit · 4 a | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -489,7 +502,7 @@ no tapando huecos de equipo.
 ⛔ **3 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 12 (Javi Muñoz), 17 (Álex Sancris), 19 (Luis Vázquez)
-- **BIS pendientes de numeración:** Enes Ünal. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Enes Ünal. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Gudelj (194′)
 
 ### Huecos del álbum
@@ -516,6 +529,7 @@ no tapando huecos de equipo.
 | 18 | 18 | Borja Mayoral | Borja Mayoral | 9 | 5′ · 2 pj | **pegar** |
 | 19 | 19 | Luis Vázquez | — | — | — | Sin jugador activo |
 | 20 | 20 | Satriano | Martín Satriano | 10 | 410′ · 5 pj · 5 tit · 1 g | **pegar** |
+| BIS | BIS | Enes Ünal | Enes Ünal | 19 | 405′ · 5 pj · 4 tit · 1 g | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -540,7 +554,7 @@ no tapando huecos de equipo.
 
 - **Huecos sin solución:** 6 (Elgezabal), 10 (Arriaga), 15 (Carlos Álvarez), 16 (Tunde)
 - **Variante recomendada por minutos:** 14 → **14A** (Victor García, 196′)
-- **BIS pendientes de numeración:** Nacho Pérez, Thiago Fernández. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Nacho Pérez, Thiago Fernández. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 
 ### Huecos del álbum
 
@@ -568,6 +582,8 @@ no tapando huecos de equipo.
 | 19 | 19 | Etta Eyong | Karl Etta Eyong | 21 | 64′ · 3 pj · 1 a | **pegar** |
 | 20 | 20 | Carlos Espí | — | — | — | **pegar** |
 |  | 20BIS (2ª ed) | Musuayi | Yanis Musuayi | 11 | 30′ · 1 pj | **pegar** |
+| BIS | BIS | Nacho Pérez | Nacho Pérez | 29 | 295′ · 5 pj · 4 tit | 🆕 sin numerar |
+|  | BIS | Thiago Fernández | Thiago Fernández | 24 | 227′ · 3 pj · 3 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -588,7 +604,7 @@ no tapando huecos de equipo.
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
 - **Variante recomendada por minutos:** 10 → **10A** (Carreras, 201′), 15 → **15A** (Güler, 295′)
-- **BIS pendientes de numeración:** Konaté. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Konaté. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 
 ### Huecos del álbum
 
@@ -618,6 +634,7 @@ no tapando huecos de equipo.
 | 18 | 18 | Rodrygo | Rodrygo Silva de Goes | 11 | 0′ · no ha jugado | **pegar** |
 | 19 | 19 | Vinícius | Vinícius José Paixão de Oliveira Júnior | 7 | 511′ · 6 pj · 6 tit · 1 g · 3 a | **pegar** |
 | 20 | 20 | Mbappé | Kylian Mbappé | 10 | 540′ · 6 pj · 6 tit · 7 g · 2 a | **pegar** |
+| BIS | BIS | Konaté | Ibrahima Konaté | 16 | 450′ · 5 pj · 5 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -635,7 +652,7 @@ no tapando huecos de equipo.
 
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **BIS pendientes de numeración:** Ángel Recio. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Ángel Recio. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Martínez (194′)
 
 ### Huecos del álbum
@@ -663,6 +680,7 @@ no tapando huecos de equipo.
 | 18 | 18 | Adrián Niño | Adrián Niño | 21 | 23′ · 1 pj · 1 g | **pegar** |
 | 19 | 19 | Joaquín | Joaquín Muñoz | 11 | 293′ · 5 pj · 4 tit | **pegar** |
 | 20 | 20 | Chupe | Carlos Ruiz Rubio | 9 | 450′ · 5 pj · 5 tit · 1 g | **pegar** |
+| BIS | BIS | Ángel Recio | Ángel Recio | 15 | 450′ · 5 pj · 5 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -687,7 +705,7 @@ no tapando huecos de equipo.
 - **Huecos sin solución:** 16 (Iker Benito)
 - **Variante recomendada por minutos:** 5 → **5B** (Arguibide, 476′)
 - **Elección abierta:** 13 (13A o 13B)
-- **BIS pendientes de numeración:** Jonathan Dubasin. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Jonathan Dubasin. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Rockson (210′)
 
 ### Huecos del álbum
@@ -716,6 +734,7 @@ no tapando huecos de equipo.
 | 18 | 18 | Raúl García | Raúl García | 9 | 340′ · 6 pj · 4 tit · 1 a | **pegar** |
 | 19 | 19 | Kike Barja | Kike Barja | 11 | 181′ · 5 pj · 2 tit · 1 g | **pegar** |
 | 20 | 20 | Budimir | Ante Budimir | 17 | 412′ · 6 pj · 4 tit · 4 g | **pegar** |
+| BIS | BIS | Jonathan Dubasin | Jonathan Dubasin | 21 | 232′ · 6 pj · 2 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -734,7 +753,7 @@ no tapando huecos de equipo.
 ⛔ **4 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 8 (Javi Castro), 12 (Gustavo Puerta), 14 (Aldasoro), 15 (Suleiman)
-- **BIS pendientes de numeración:** Pedro Felipe, Sergio Martínez, Zabiri. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Pedro Felipe, Sergio Martínez, Zabiri. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Prati (260′)
 
 ### Huecos del álbum
@@ -764,6 +783,9 @@ no tapando huecos de equipo.
 | 18 | 18 | Íñigo Vicente | Iñigo Vicente | 10 | 454′ · 6 pj · 5 tit · 2 a | **pegar** |
 | 19 | 19 | Arana | Juan Carlos Arana | 9 | 62′ · 3 pj · 1 tit | **pegar** |
 | 20 | 20 | Villalibre | Asier Villalibre | 12 | 219′ · 5 pj · 3 tit · 1 a | **pegar** |
+| BIS | BIS | Pedro Felipe | Pedro Felipe de Jesus Gomes | 22 | 76′ · 3 pj · 2 tit | 🆕 sin numerar |
+|  | BIS | Sergio Martínez | — | — | — | ⛔ ya no está |
+|  | BIS | Zabiri | Yassir Zabiri | 21 | 311′ · 6 pj · 3 tit · 6 g | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -785,7 +807,7 @@ no tapando huecos de equipo.
 ⛔ **2 huecos sin jugador activo:** o lo dejas vacío, o pegas a alguien que ya se fue.
 
 - **Huecos sin solución:** 7 (Nobel Mendy), 10 (Pep Chavarría)
-- **BIS pendientes de numeración:** Pelayo, Vertrouwd. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Pelayo, Vertrouwd. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Pedrosa (308′), G. Bouaré (186′), G.tsitaishvili (182′), Emil Audero (180′)
 
 ### Huecos del álbum
@@ -812,6 +834,8 @@ no tapando huecos de equipo.
 | 18 | 18 | Álvaro García | Álvaro García | 18 | 443′ · 6 pj · 5 tit · 2 g · 2 a | **pegar** |
 | 19 | 19 | Camello | Sergio Camello | 10 | 399′ · 6 pj · 5 tit · 6 g · 1 a | **pegar** |
 | 20 | 20 | Alemao | Alexandre Zurawski | 9 | 102′ · 5 pj | **pegar** |
+| BIS | BIS | Pelayo | Pelayo Fernández | 22 | 67′ · 2 pj · 1 tit | 🆕 sin numerar |
+|  | BIS | Vertrouwd | Jozhua Vertrouwd | 33 | 122′ · 2 pj · 2 tit | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
@@ -888,7 +912,7 @@ no tapando huecos de equipo.
 - **Huecos sin solución:** 8 (Nianzou), 19 (Akor Adams)
 - **Variante recomendada por minutos:** 9 → **9A** (Castrín, 390′)
 - **Comprobar a mano:** 11 (Oso)
-- **BIS pendientes de numeración:** Julio Díaz, Miguel Sierra. Panini los ha anunciado sin número, así que no se sabe a qué hueco van.
+- **BIS pendientes de numeración:** Julio Díaz, Miguel Sierra. Van al final de la tabla porque Panini no ha dicho a qué hueco pertenecen.
 - **Piden cromo a gritos:** Fofana (197′), Stassin (195′), Felix (164′)
 
 ### Huecos del álbum
@@ -917,6 +941,8 @@ no tapando huecos de equipo.
 | 18 | 18 | Ejuke | Chidera Ejuke | 21 | 179′ · 5 pj · 1 tit · 1 g | **pegar** |
 | 19 | 19 | Akor Adams | — | — | — | Sin jugador activo |
 | 20 | 20 | Isaac Romero | Isaac Romero | 16 | 189′ · 5 pj · 2 tit · 1 g · 1 a | **pegar** |
+| BIS | BIS | Julio Díaz | Julio Díaz | 3 | 83′ · 4 pj · 1 tit | 🆕 sin numerar |
+|  | BIS | Miguel Sierra | Miguel Sierra | 30 | 418′ · 6 pj · 6 tit · 2 g | 🆕 sin numerar |
 
 ### Plantilla de LALIGA sin cromo
 
