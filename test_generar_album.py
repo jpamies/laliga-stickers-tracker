@@ -45,14 +45,14 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            141,
+            137,
         )
         # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
         # que sólo quedan donde LALIGA no ha emparejado al jugador.
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 132, "transfermarkt": 9}))
+        self.assertEqual(fuentes, Counter({"laliga": 133, "transfermarkt": 4}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]
@@ -71,7 +71,7 @@ class AlbumGenerationTests(unittest.TestCase):
         # recomendación pública de no pegar.
         self.assertEqual(
             sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
-            65,
+            64,
         )
         self.assertTrue(
             all(
@@ -86,13 +86,17 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(sticker["edicion"] == "3ed" for sticker in stickers),
-            52,
+            51,
         )
-        alaves_placeholder = next(
-            sticker for sticker in stickers if sticker["id"] == "ATHLETIC-CLUB-DE-BILBAO-11"
+        # Aarón Ochoa sigue en el Málaga pero está lesionado y sin ficha, así
+        # que LALIGA no tiene su retrato y se recurre al de Transfermarkt.
+        transfermarkt_fallback = next(
+            sticker for sticker in stickers if sticker["id"] == "MALAGA-CF-16"
         )
-        self.assertIn("img.a.transfermarkt.technology", alaves_placeholder["foto_url"])
-        self.assertIn("tmssl.akamaized.net", alaves_placeholder["escudo_url"])
+        self.assertIn(
+            "img.a.transfermarkt.technology", transfermarkt_fallback["foto_url"]
+        )
+        self.assertIn("tmssl.akamaized.net", transfermarkt_fallback["escudo_url"])
         weak_match = next(
             sticker for sticker in stickers if sticker["id"] == "DEPORTIVO-ALAVES-08"
         )
@@ -343,19 +347,23 @@ class TradeViewTests(unittest.TestCase):
             "Los Extra Sticker deberían repetir los mismos jugadores en bronce, plata y oro",
         )
 
-    def test_the_unnumbered_bis_are_told_apart_by_name(self) -> None:
-        # Un BIS sin numerar sólo se reconoce por el jugador, así que dos del
-        # mismo equipo no pueden compartir nombre.
+    def test_the_bis_stickers_carry_their_slot(self) -> None:
+        # Desde la tercera edición Panini numera los BIS, así que cada uno sabe
+        # en qué casilla se pega. Sin número el álbum no podría colocarlos.
         bis = [
             sticker
             for sticker in self.stickers()
-            if sticker["numero"] == "BIS"
+            if sticker["variante"] == "BIS"
         ]
 
-        self.assertTrue(bis, "Ya no hay cromos BIS sin numerar")
-        self.assertTrue(all(sticker["nombre"].strip() for sticker in bis))
-        pairs = {(sticker["seccion"], sticker["nombre"]) for sticker in bis}
-        self.assertEqual(len(pairs), len(bis))
+        self.assertTrue(bis, "Ya no hay cromos BIS")
+        for sticker in bis:
+            self.assertTrue(sticker["nombre"].strip())
+            self.assertTrue(
+                sticker["hueco_album"],
+                f"{sticker['id']} se quedó sin casilla",
+            )
+            self.assertTrue(sticker["numero"].endswith("BIS"))
 
     def test_the_chip_falls_back_to_the_name(self) -> None:
         source = self.app()

@@ -85,8 +85,11 @@ SPECIAL_CLUB_ALIASES = {
     "Málaga": "Málaga CF",
     "Osasuna": "CA Osasuna",
     "Racing de Santander": "Racing de Santander",
+    # La tercera edición abrevia algunos clubes.
+    "Racing": "Racing de Santander",
     "Rayo Vallecano": "Rayo Vallecano",
     "Real Madrid": "Real Madrid",
+    "R. Madrid": "Real Madrid",
     "Real Sociedad": "Real Sociedad",
     "Sevilla": "Sevilla FC",
     "Valencia": "Valencia CF",
@@ -94,9 +97,12 @@ SPECIAL_CLUB_ALIASES = {
 }
 
 POSITIONS = {"entrenador", "portero", "defensa", "medio", "delantero"}
-NUMBER_RE = re.compile(r"^(?:\d+(?:BIS|[AB])?|UF\d+|K\d+)$")
+# La tercera edición separa el prefijo y la variante con un espacio («UF 21»,
+# «8 BIS»); la segunda los pegaba.
+NUMBER_RE = re.compile(r"^(?:\d+\s?(?:BIS|[AB])?|UF\s?\d+|K\s?\d+)$")
 SPECIAL_NAME_RE = re.compile(r"^(.*?)\s+\(([^()]*)\)$")
-EDITION_MARKER_RE = re.compile(r"^2[ªa]\s*ed\.?$")
+# Panini marca cada cromo con la edición en que apareció: «2ª ed», «3ª ed»…
+EDITION_MARKER_RE = re.compile(r"^(\d)[ªa]\s*ed\.?$")
 SECOND_EDITION = "2ed"
 
 # Los huecos de ÚLTIMOS FICHAJES existían como marcadores generados por
@@ -105,6 +111,60 @@ SECOND_EDITION = "2ed"
 LEGACY_ID_ALIASES = {
     ("ÚLTIMOS FICHAJES", f"UF{number}"): f"ULTIMOS-FICHAJES-{number:02d}"
     for number in range(1, 67)
+}
+
+# Antes de que Panini numerase los BIS de la tercera edición los registramos
+# con un identificador propio. Ahora que tienen número hay que reconocerlos por
+# él, o el progreso ya guardado apuntaría a un cromo distinto.
+LEGACY_ID_ALIASES.update(
+    {
+        ("DEPORTIVO ALAVÉS", "8BIS"): "DEPORTIVO-ALAVES-BIS-1",
+        ("DEPORTIVO ALAVÉS", "20BIS"): "DEPORTIVO-ALAVES-BIS-2",
+        ("ATLÉTICO DE MADRID", "10BIS"): "ATLETICO-DE-MADRID-BIS-1",
+        ("ATLÉTICO DE MADRID", "16BIS"): "ATLETICO-DE-MADRID-BIS-2",
+        ("REAL BETIS", "11BIS"): "REAL-BETIS-BIS-1",
+        ("RC CELTA DE VIGO", "19BIS"): "RC-CELTA-DE-VIGO-BIS-1",
+        ("DEPORTIVO", "8BIS"): "DEPORTIVO-BIS-1",
+        ("DEPORTIVO", "14BIS"): "DEPORTIVO-BIS-2",
+        ("RCD ESPANYOL", "6BIS"): "RCD-ESPANYOL-BIS-1",
+        ("RCD ESPANYOL", "9BIS"): "RCD-ESPANYOL-BIS-2",
+        ("RCD ESPANYOL", "15BIS"): "RCD-ESPANYOL-BIS-3",
+        ("GETAFE CF", "19BIS"): "GETAFE-CF-BIS-1",
+        ("LEVANTE UD", "6BIS"): "LEVANTE-UD-BIS-1",
+        ("LEVANTE UD", "16BIS"): "LEVANTE-UD-BIS-2",
+        ("REAL MADRID CF", "7BIS"): "REAL-MADRID-CF-BIS-1",
+        ("MALAGA CF", "6BIS"): "MALAGA-CF-BIS-1",
+        ("OSASUNA", "16BIS"): "OSASUNA-BIS-1",
+        ("RACING DE SANTANDER", "8BIS"): "RACING-DE-SANTANDER-BIS-1",
+        ("RACING DE SANTANDER", "13BIS"): "RACING-DE-SANTANDER-BIS-2",
+        ("RACING DE SANTANDER", "15BIS"): "RACING-DE-SANTANDER-BIS-3",
+        ("RAYO VALLECANO", "7BIS"): "RAYO-VALLECANO-BIS-1",
+        ("RAYO VALLECANO", "10BIS"): "RAYO-VALLECANO-BIS-2",
+        ("SEVILLA", "8BIS"): "SEVILLA-BIS-1",
+        ("SEVILLA", "19BIS"): "SEVILLA-BIS-2",
+    }
+)
+
+# La tercera edición reordena el hueco 11 de dos equipos: el del Racing deja de
+# tener variantes y el del Rayo pasa a tenerlas, porque Nteka cambió de club.
+# Sin estos alias, el identificador de Maguette pasaría a Pedro Felipe y el de
+# Pedro Díaz a Vertrouwd, que es justo lo que no puede ocurrir.
+LEGACY_ID_ALIASES.update(
+    {
+        ("RACING DE SANTANDER", "11"): "RACING-DE-SANTANDER-12",
+        ("RAYO VALLECANO", "11A"): "RAYO-VALLECANO-11",
+    }
+)
+
+# Erratas del checklist impreso, comprobadas contra las plantillas oficiales de
+# LALIGA. Sólo se corrige lo que es un error de dato, no las abreviaturas ni la
+# forma de escribir un nombre.
+CHECKLIST_FIXES = {
+    # Al apellido le falta una letra: LALIGA lo inscribió como Teun Gijselhart.
+    ("DEPORTIVO", "14BIS"): {"nombre": "Gijselhart"},
+    # Morcillo juega en el Elche con el dorsal 47; el checklist lo manda al
+    # Sevilla, y con ese club el cromo no encontraría su ficha.
+    ("ÚLTIMOS FICHAJES", "UF26"): {"club_objetivo": "Elche CF"},
 }
 
 CSV_FIELDS = [
@@ -204,6 +264,10 @@ def is_number(line: str) -> bool:
     return bool(NUMBER_RE.fullmatch(line)) or line == "Extra Sticker"
 
 
+def canonical_number(number: str) -> str:
+    """«8 BIS» y «8BIS» son el mismo cromo; el CSV usa la forma sin espacio."""
+    return number.replace(" ", "") if number != "Extra Sticker" else number
+
 def parse_number(number: str) -> tuple[str, str]:
     match = re.fullmatch(r"(\d+)(BIS|[AB])?", number)
     if match:
@@ -240,18 +304,20 @@ def parse_entries(section: str, lines: list[str]) -> list[Entry]:
         name_parts = []
 
     for line in lines:
-        if EDITION_MARKER_RE.fullmatch(normalize(line).strip()):
+        marker = EDITION_MARKER_RE.fullmatch(normalize(line).strip())
+        if marker:
+            edition = f"{marker.group(1)}ed"
             if pending_number is not None:
-                pending_edition = SECOND_EDITION
+                pending_edition = edition
             elif entries:
-                entries[-1].edicion = SECOND_EDITION
+                entries[-1].edicion = edition
             else:
                 raise ValueError(f"Marca de edición sin cromo en {section}: {line!r}")
             continue
 
         if is_number(line):
             flush()
-            pending_number = line
+            pending_number = canonical_number(line)
             continue
 
         normalized_line = normalize(line)
@@ -351,22 +417,23 @@ def build_stickers(
         slot, variant = parse_number(entry.numero)
         club, name = club_and_name(section, entry.nombre)
         status, action, notes = initial_status(name, entry.tipo)
-        stickers.append(
-            Sticker(
-                id=str(identifier),
-                seccion=section,
-                numero=entry.numero,
-                hueco_album=slot,
-                variante=variant,
-                nombre=name,
-                tipo=entry.tipo,
-                club_objetivo=club,
-                edicion=entry.edicion,
-                estado_plantilla=status,
-                accion=action,
-                notas=notes,
-            )
+        sticker = Sticker(
+            id=str(identifier),
+            seccion=section,
+            numero=entry.numero,
+            hueco_album=slot,
+            variante=variant,
+            nombre=name,
+            tipo=entry.tipo,
+            club_objetivo=club,
+            edicion=entry.edicion,
+            estado_plantilla=status,
+            accion=action,
+            notas=notes,
         )
+        for field, value in CHECKLIST_FIXES.get((section, entry.numero), {}).items():
+            setattr(sticker, field, value)
+        stickers.append(sticker)
     return stickers
 
 
@@ -466,7 +533,7 @@ def main() -> None:
     parser.add_argument(
         "--pdf",
         type=Path,
-        default=Path("Checklist_LALIGA_2026-27-2aED.pdf"),
+        default=Path("Checklist_LALIGA_2026-27-3aED.pdf"),
     )
     parser.add_argument("--csv", type=Path, default=Path("coleccion_panini.csv"))
     parser.add_argument(

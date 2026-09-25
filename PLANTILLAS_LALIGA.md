@@ -1,6 +1,6 @@
 # Plantillas oficiales de LALIGA EA SPORTS 2026-27
 
-Generado el 2026-09-21 por `generar_plantillas_markdown.py` a partir de `laliga_plantillas.csv`.
+Generado el 2026-09-25 por `generar_plantillas_markdown.py` a partir de `laliga_plantillas.csv`.
 
 Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugador impreso no aparece aquí, es que ya no está en el club.
 
@@ -11,8 +11,8 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | Equipos | 20 |
 | **Jugadores registrados** | **583** |
 | Fichas totales (con cuerpo técnico) | 623 |
-| Jugadores con cromo en el álbum | 402 |
-| Jugadores sin cromo | 181 |
+| Jugadores con cromo en el álbum | 403 |
+| Jugadores sin cromo | 180 |
 | Cedidos | 47 |
 | Sin dorsal asignado | 3 |
 
@@ -44,7 +44,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | [Málaga CF](#malaga-cf) | 30 | 19 | 11 | 5 |
 | [CA Osasuna](#osasuna) | 27 | 20 | 7 | 0 |
 | [R. Racing Club](#racing-de-santander) | 28 | 18 | 10 | 4 |
-| [Rayo Vallecano](#rayo-vallecano) | 33 | 18 | 15 | 4 |
+| [Rayo Vallecano](#rayo-vallecano) | 33 | 19 | 14 | 4 |
 | [Real Sociedad](#real-sociedad) | 29 | 19 | 10 | 1 |
 | [Sevilla FC](#sevilla) | 31 | 21 | 10 | 4 |
 | [Valencia CF](#valencia) | 33 | 20 | 13 | 3 |
@@ -63,7 +63,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 31 | Swiderski | Grégoire Swiderski | Portero | 20 | CA | — |  |
 | 2 | Valentini | Nicolás Valentini | Defensa | 25 | AR | ÚLTIMOS FICHAJES UF30 |  |
 | 3 | Youssef | Youssef Enriquez | Defensa | 20 | MA | DEPORTIVO ALAVÉS 9 |  |
-| 5 | F. Garcés | Facundo Garcés | Defensa | 27 | MY | DEPORTIVO ALAVÉS BIS |  |
+| 5 | F. Garcés | Facundo Garcés | Defensa | 27 | MY | DEPORTIVO ALAVÉS 8BIS |  |
 | 7 | Ángel P. | Ángel Pérez | Defensa | 24 | ES | DEPORTIVO ALAVÉS 17 |  |
 | 12 | Novoa | Hugo Novoa | Defensa | 23 | ES | — |  |
 | 14 | N. Tenaglia | Nahuel Tenaglia | Defensa | 30 | AR | DEPORTIVO ALAVÉS 7 |  |
@@ -80,7 +80,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 23 | C. Protesoni | Carlos Protesoni | Centrocampista | 28 | UY | DEPORTIVO ALAVÉS 11 |  |
 | 24 | Selu Diallo | Selu Diallo | Centrocampista | 22 | GN | — |  |
 | 29 | Izei | Izei Hernández | Centrocampista | 19 | ES | — |  |
-| 9 | Mariano | Mariano Díaz | Delantero | 33 | DO | DEPORTIVO ALAVÉS BIS |  |
+| 9 | Mariano | Mariano Díaz | Delantero | 33 | DO | DEPORTIVO ALAVÉS 20BIS |  |
 | 11 | T. Martínez | Toni Martínez | Delantero | 29 | ES | DEPORTIVO ALAVÉS 19 |  |
 | 15 | Lucas Boyé | Lucas Boyé | Delantero | 30 | AR | DEPORTIVO ALAVÉS 20 |  |
 | 20 | Mañas | Aitor Mañas | Delantero | 23 | ES | DEPORTIVO ALAVÉS 18B |  |
@@ -136,7 +136,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 17 | Hancko | Dávid Hancko | Defensa | 28 | SK | ATLÉTICO DE MADRID 9 |  |
 | 18 | Marc Pubill | Marc Pubill | Defensa | 23 | ES | ATLÉTICO DE MADRID 7 |  |
 | 21 | Romero | Cristian Romero | Defensa | 28 | AR | — |  |
-| 22 | Grimaldo | Alejandro Grimaldo | Defensa | 31 | ES | ATLÉTICO DE MADRID BIS |  |
+| 22 | Grimaldo | Alejandro Grimaldo | Defensa | 31 | ES | ATLÉTICO DE MADRID 10BIS |  |
 | 24 | Le Normand | Robin Le Normand | Defensa | 29 | ES | ATLÉTICO DE MADRID 8A |  |
 | 27 | Domínguez | Jorge Domínguez | Defensa | 16 | ES | — |  |
 | 30 | D. Martínez | Dani Martinez | Defensa | 22 | ES | — |  |
@@ -149,7 +149,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 8 | Barrios | Pablo Barrios | Centrocampista | 23 | ES | ATLÉTICO DE MADRID 12 |  |
 | 10 | Álex B. | Álex Baena | Centrocampista | 25 | ES | ATLÉTICO DE MADRID 15 |  |
 | 14 | M. Llorente | Marcos Llorente | Centrocampista | 31 | ES | ATLÉTICO DE MADRID 5 |  |
-| 16 | Arnau Ortiz | Arnau Ortiz | Centrocampista | 24 | ES | ATLÉTICO DE MADRID BIS |  |
+| 16 | Arnau Ortiz | Arnau Ortiz | Centrocampista | 24 | ES | ATLÉTICO DE MADRID 16BIS |  |
 | 23 | Hjulmand | Morten Hjulmand | Centrocampista | 27 | DK | ÚLTIMOS FICHAJES UF5 |  |
 | 46 | Castillo | Jorge Castillo | Centrocampista | 20 | ES | — |  |
 | 9 | Sørloth | Alexander Sørloth | Delantero | 30 | NO | ATLÉTICO DE MADRID 19 |  |
@@ -223,7 +223,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 14 | Iker | Iker Losada | Centrocampista | 25 | ES | — |  |
 | 15 | Fidalgo | Álvaro Fidalgo | Centrocampista | 29 | MX | REAL BETIS 12 |  |
 | 17 | Riquelme | Rodrigo Riquelme | Centrocampista | 26 | ES | REAL BETIS 17 |  |
-| 18 | N. Deossa | Nelson Deossa | Centrocampista | 26 | CO | REAL BETIS BIS |  |
+| 18 | N. Deossa | Nelson Deossa | Centrocampista | 26 | CO | REAL BETIS 11BIS |  |
 | 20 | Lo Celso | Giovani Lo Celso | Centrocampista | 30 | AR | REAL BETIS 14 |  |
 | 21 | Marc Roca | Marc Roca | Centrocampista | 29 | ES | REAL BETIS 10 |  |
 | 22 | Isco | Francisco Román Alarcón Suárez | Centrocampista | 34 | ES | REAL BETIS 16 |  |
@@ -248,7 +248,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 25 | Iván Villar | Iván Villar | Portero | 29 | ES | RC CELTA DE VIGO 4 |  |
 | 2 | Starfelt | Carl Starfelt | Defensa | 31 | SE | RC CELTA DE VIGO 8 |  |
 | 3 | M. Alonso | Marcos Alonso | Defensa | 35 | ES | RC CELTA DE VIGO 9A |  |
-| 4 | Faye | Abdoulaye Faye | Defensa | 21 | SN | — | cedido |
+| 4 | Faye | Abdoulaye Faye | Defensa | 22 | SN | — | cedido |
 | 5 | Carreira | Sergio Carreira | Defensa | 25 | ES | RC CELTA DE VIGO 10 |  |
 | 15 | Álvaro N.c. | Álvaro Núñez | Defensa | 26 | ES | RC CELTA DE VIGO 5 |  |
 | 17 | Javi Rueda | Javi Rueda | Defensa | 24 | ES | RC CELTA DE VIGO 6 |  |
@@ -259,7 +259,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 6 | Moriba | Moriba Kourouma Kourouma | Centrocampista | 23 | GN | RC CELTA DE VIGO 11 |  |
 | 8 | M. Román | Miguel Román | Centrocampista | 23 | ES | RC CELTA DE VIGO 12 |  |
 | 14 | Febas | Aleix Febas | Centrocampista | 30 | ES | ÚLTIMOS FICHAJES UF10 |  |
-| 16 | H. González | Hugo González | Centrocampista | 23 | ES | RC CELTA DE VIGO BIS |  |
+| 16 | H. González | Hugo González | Centrocampista | 23 | ES | RC CELTA DE VIGO 19BIS |  |
 | 19 | Williot | Williot Swedberg | Centrocampista | 22 | SE | RC CELTA DE VIGO 16 |  |
 | 22 | Javi Galán | Javi Galán | Centrocampista | 31 | ES | ÚLTIMOS FICHAJES UF37 |  |
 | 23 | Hugo A. | Hugo Álvarez | Centrocampista | 23 | ES | RC CELTA DE VIGO 13 |  |
@@ -291,13 +291,13 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 15 | M. Loureiro | Miguel Loureiro | Defensa | 29 | ES | DEPORTIVO 6 |  |
 | 17 | Angeliño | José Ángel Esmoris Tasende | Defensa | 29 | ES | DEPORTIVO 14; ÚLTIMOS FICHAJES UF33 | cedido |
 | 20 | J. M. Giménez | José María Giménez | Defensa | 31 | UY | — | cedido |
-| 22 | Ede | Bright Ede | Defensa | 19 | PL | DEPORTIVO BIS |  |
+| 22 | Ede | Bright Ede | Defensa | 19 | PL | DEPORTIVO 8BIS |  |
 | 23 | X. Navarro | Joaquín Navarro Jiménez | Defensa | 36 | ES | — |  |
 | 6 | M. Casadó | Marc Casadó | Centrocampista | 23 | ES | — | cedido |
 | 8 | D. Villares | Diego Villares | Centrocampista | 30 | ES | DEPORTIVO 11 |  |
 | 10 | Yeremay | Yeremay Hernández | Centrocampista | 23 | ES | DEPORTIVO 18 |  |
 | 11 | Mella | David Mella | Centrocampista | 21 | ES | DEPORTIVO 16 |  |
-| 14 | Riki | Riki Rodríguez | Centrocampista | 28 | ES | DEPORTIVO 12 |  |
+| 14 | Riki | Riki Rodríguez | Centrocampista | 29 | ES | DEPORTIVO 12 |  |
 | 16 | Amatucci | Lorenzo Amatucci | Centrocampista | 22 | IT | ÚLTIMOS FICHAJES UF22 |  |
 | 18 | Asp - Jensen | Jonathan Asp Jensen | Centrocampista | 20 | DK | DEPORTIVO 17 |  |
 | 21 | Mario S. | Mario Soriano | Centrocampista | 24 | ES | DEPORTIVO 13 |  |
@@ -363,8 +363,8 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 5 | Riedel | Clemens Riedel | Defensa | 23 | DE | RCD ESPANYOL 7 |  |
 | 6 | Cabrera | Leandro Cabrera | Defensa | 35 | UY | RCD ESPANYOL 8 |  |
 | 14 | Nuñez | Unai Núñez | Defensa | 29 | ES | ÚLTIMOS FICHAJES UF27 | cedido |
-| 16 | Vanja | Vanja Drkusic | Defensa | 26 | SI | RCD ESPANYOL BIS | cedido |
-| 21 | R. Hinojo | Roger Hinojo | Defensa | 21 | ES | RCD ESPANYOL BIS |  |
+| 16 | Vanja | Vanja Drkusic | Defensa | 26 | SI | RCD ESPANYOL 6BIS | cedido |
+| 21 | R. Hinojo | Roger Hinojo | Defensa | 21 | ES | RCD ESPANYOL 9BIS |  |
 | 23 | El Hilali | Omar El Hilali | Defensa | 23 | MA | RCD ESPANYOL 5 |  |
 | 27 | Timera | Adama Timera | Defensa | 21 | FR | — |  |
 | 32 | Jose Angel | José Ángel López Gálvez | Defensa | 20 | ES | — |  |
@@ -375,13 +375,13 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 20 | G. Moscardo | Gabriel Silva Moscardo de Salles | Centrocampista | 20 | BR | ÚLTIMOS FICHAJES UF16 | cedido |
 | 26 | Bauza | Rafel Bauzà | Centrocampista | 21 | ES | — |  |
 | 9 | Roberto | Roberto Fernández | Delantero | 24 | ES | RCD ESPANYOL 20 |  |
-| 11 | Pere Milla | Pere Milla | Delantero | 33 | ES | RCD ESPANYOL 17 |  |
+| 11 | Pere Milla | Pere Milla | Delantero | 34 | ES | RCD ESPANYOL 17 |  |
 | 17 | Jofre | Jofre Carreras | Delantero | 25 | ES | RCD ESPANYOL 14 |  |
 | 18 | Marcos | Marcos Fernández | Delantero | 23 | ES | RCD ESPANYOL 15 |  |
 | 19 | Kike G. | Kike García | Delantero | 36 | ES | RCD ESPANYOL 19 |  |
 | 22 | Cala | Álex Calatrava Torrado | Delantero | 26 | ES | ÚLTIMOS FICHAJES UF2 |  |
 | 24 | Dolan | Tyrhys Dolan | Delantero | 24 | GB-ENG | RCD ESPANYOL 16 |  |
-| 28 | Javi H. | Javi Hernández | Delantero | 22 | ES | RCD ESPANYOL BIS |  |
+| 28 | Javi H. | Javi Hernández | Delantero | 22 | ES | RCD ESPANYOL 15BIS |  |
 | 29 | Mullerat | Victor Mullerat | Delantero | 18 | ES | — |  |
 
 ## GETAFE CF
@@ -418,7 +418,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 7 | Juanmi | Juan Miguel Jiménez López | Delantero | 33 | ES | GETAFE CF 16 |  |
 | 9 | B. Mayoral | Borja Mayoral | Delantero | 29 | ES | GETAFE CF 18 |  |
 | 10 | Satriano | Martín Satriano | Delantero | 25 | UY | GETAFE CF 20 |  |
-| 19 | Enes Ünal | Enes Ünal | Delantero | 29 | TR | GETAFE CF BIS |  |
+| 19 | Enes Ünal | Enes Ünal | Delantero | 29 | TR | GETAFE CF 19BIS |  |
 | 20 | Ivan | Iván Azón | Delantero | 23 | ES | — | cedido |
 | 27 | Ibra Drj | Ebrahima Drammeh | Delantero | 19 | GM | — |  |
 | 32 | Joselu | José Luis Pérez del Amo | Delantero | 22 | ES | — |  |
@@ -442,7 +442,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 17 | Víctor G. | Víctor García | Defensa | 29 | ES | LEVANTE UD 14A |  |
 | 22 | Toljan | Jeremy Toljan | Defensa | 32 | DE | LEVANTE UD 5 |  |
 | 23 | Manu Sánchez | Manu Sánchez | Defensa | 26 | ES | LEVANTE UD 9 | cedido |
-| 29 | Nacho Perez | Nacho Pérez | Defensa | 18 | ES | LEVANTE UD BIS |  |
+| 29 | Nacho Perez | Nacho Pérez | Defensa | 18 | ES | LEVANTE UD 6BIS |  |
 | 33 | Marc Santos | Marc Santos | Defensa | 15 | ES | — |  |
 | 5 | Hugo Sotelo | Hugo Sotelo | Centrocampista | 22 | ES | — | cedido |
 | 6 | Requena | Dani Requena | Centrocampista | 22 | ES | LEVANTE UD 13 | cedido |
@@ -450,7 +450,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 16 | Axel Tape | Axel Tape | Centrocampista | 19 | FR | — | cedido |
 | 18 | Enzo Bardeli | Enzo Bardeli | Centrocampista | 25 | FR | ÚLTIMOS FICHAJES UF7 |  |
 | 20 | O. Rey | Oriol Rey | Centrocampista | 28 | ES | LEVANTE UD 11 |  |
-| 24 | Thiago | Thiago Fernández | Centrocampista | 22 | AR | LEVANTE UD BIS | cedido |
+| 24 | Thiago | Thiago Fernández | Centrocampista | 22 | AR | LEVANTE UD 16BIS | cedido |
 | 27 | P. Cortes | Paco Cortés | Centrocampista | 19 | ES | LEVANTE UD 14B |  |
 | 34 | Manel Usedo | Manel Usedo | Centrocampista | 19 | ES | — |  |
 | 38 | Calatrava | Alberto Calatrava | Centrocampista | 21 | ES | — |  |
@@ -476,7 +476,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 3 | E. Militão | Éder Gabriel Militão Pinheiro | Defensa | 28 | BR | REAL MADRID CF 6 |  |
 | 4 | Huijsen | Dean Huijsen | Defensa | 21 | ES | REAL MADRID CF 9 |  |
 | 12 | Trent | Trent Alexander-Arnold | Defensa | 27 | GB-ENG | REAL MADRID CF 5 |  |
-| 16 | Konaté | Ibrahima Konaté | Defensa | 27 | FR | REAL MADRID CF BIS |  |
+| 16 | Konaté | Ibrahima Konaté | Defensa | 27 | FR | REAL MADRID CF 7BIS |  |
 | 17 | Cucurella | Marc Cucurella | Defensa | 28 | ES | ÚLTIMOS FICHAJES UF29 |  |
 | 18 | Á. Carreras | Álvaro Carreras | Defensa | 23 | ES | REAL MADRID CF 10A |  |
 | 22 | Rüdiger | Antonio Rüdiger | Defensa | 33 | DE | REAL MADRID CF 8 |  |
@@ -516,7 +516,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 4 | Einar | Einar Galilea | Defensa | 32 | ES | MALAGA CF 8 |  |
 | 5 | Pastor | Álex Pastor | Defensa | 26 | ES | — |  |
 | 12 | Salinas | José Salinas | Defensa | 25 | ES | MALAGA CF 10 | cedido |
-| 15 | Recio | Ángel Recio | Defensa | 23 | ES | MALAGA CF BIS |  |
+| 15 | Recio | Ángel Recio | Defensa | 23 | ES | MALAGA CF 6BIS |  |
 | 16 | Murillo | Diego Murillo | Defensa | 25 | ES | MALAGA CF 6 |  |
 | 20 | F. Calero | Fernando Calero | Defensa | 31 | ES | MALAGA CF 7 |  |
 | 25 | J. Berrocal | Juan Berrocal | Defensa | 27 | ES | — |  |
@@ -565,7 +565,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 16 | Moi Gómez | Moi Gómez | Centrocampista | 32 | ES | OSASUNA 13A |  |
 | 18 | Moro | Raúl Moro | Centrocampista | 23 | ES | OSASUNA 17 |  |
 | 20 | Del Castillo | Romain Del Castillo | Centrocampista | 30 | FR | — |  |
-| 21 | Dubasin | Jonathan Dubasin | Centrocampista | 26 | ES | OSASUNA BIS |  |
+| 21 | Dubasin | Jonathan Dubasin | Centrocampista | 26 | ES | OSASUNA 16BIS |  |
 | 23 | Abel Bretones | Abel Bretones | Centrocampista | 26 | ES | OSASUNA 9 |  |
 | 26 | Mauro | Mauro Echegoyen | Centrocampista | 21 | ES | — |  |
 | 29 | A. Osambela | Asier Osambela | Centrocampista | 21 | ES | OSASUNA 10 |  |
@@ -593,11 +593,11 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 6 | Iñigo | Íñigo Sainz-Maza | Defensa | 28 | ES | RACING DE SANTANDER 13 |  |
 | 16 | Facu | Facu González | Defensa | 23 | UY | RACING DE SANTANDER 7 |  |
 | 17 | Salinas | Jorge Salinas | Defensa | 19 | ES | RACING DE SANTANDER 10 |  |
-| 22 | Pedro | Pedro Felipe de Jesus Gomes | Defensa | 22 | BR | RACING DE SANTANDER BIS |  |
+| 22 | Pedro | Pedro Felipe de Jesus Gomes | Defensa | 22 | BR | RACING DE SANTANDER 8BIS |  |
 | 24 | Belocian | Jeanuël Belocian | Defensa | 21 | FR | — | cedido |
 | 5 | Pablo Ramón | Pablo Ramón | Centrocampista | 25 | ES | RACING DE SANTANDER 6BIS |  |
 | 8 | Almeida | Domingos André Ribeiro Almeida | Centrocampista | 26 | PT | — | cedido |
-| 14 | Maguette | Maguette Gueye | Centrocampista | 23 | SN | RACING DE SANTANDER 11A |  |
+| 14 | Maguette | Maguette Gueye | Centrocampista | 23 | SN | RACING DE SANTANDER 11 |  |
 | 18 | Prati | Matteo Prati | Centrocampista | 22 | IT | — | cedido |
 | 19 | Iker Luque | Iker Luque | Centrocampista | 21 | ES | — |  |
 | 20 | Canales | Sergio Canales | Centrocampista | 35 | ES | ÚLTIMOS FICHAJES UF1 |  |
@@ -611,7 +611,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 11 | Andrés | Andrés Martín | Delantero | 27 | ES | RACING DE SANTANDER 16 |  |
 | 12 | Villalibre | Asier Villalibre | Delantero | 28 | ES | RACING DE SANTANDER 20 |  |
 | 15 | Pablo G. | Pablo García | Delantero | 20 | ES | — |  |
-| 21 | Zabiri | Yassir Zabiri | Delantero | 21 | MA | RACING DE SANTANDER BIS | cedido |
+| 21 | Zabiri | Yassir Zabiri | Delantero | 21 | MA | RACING DE SANTANDER 15BIS | cedido |
 
 ## RAYO VALLECANO
 
@@ -619,7 +619,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 
 | Dorsal | Jugador | Nombre completo | Demarcación | Edad | País | Cromo | Notas |
 | ---: | --- | --- | --- | ---: | :---: | --- | --- |
-| — | Beñat San José | Beñat San José | Entrenador | 46 | ES | RAYO VALLECANO 2 |  |
+| — | Beñat San José | Beñat San José | Entrenador | 47 | ES | RAYO VALLECANO 2 |  |
 | — | Fagoaga | Iban Fagoaga | Segundo entrenador | 46 | ES | — |  |
 | 1 | Cárdenas | Dani Cárdenas | Portero | 29 | ES | RAYO VALLECANO 4 |  |
 | 13 | A. Batalla | Augusto Batalla | Portero | 30 | AR | RAYO VALLECANO 3 |  |
@@ -630,17 +630,17 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 15 | Mujaid | Mujaid Sadick | Defensa | 26 | ES | — | cedido |
 | 17 | Pedrosa | Adrià Pedrosa | Defensa | 28 | ES | — | cedido |
 | 20 | Balliu | Iván Balliu | Defensa | 34 | AL | RAYO VALLECANO 6 |  |
-| 22 | Pelayo | Pelayo Fernández | Defensa | 23 | ES | RAYO VALLECANO BIS |  |
+| 22 | Pelayo | Pelayo Fernández | Defensa | 23 | ES | RAYO VALLECANO 10BIS |  |
 | 24 | Lejeune | Florian Lejeune | Defensa | 35 | FR | RAYO VALLECANO 8 |  |
 | 26 | De Las Sias | Marco de Las Sias | Defensa | 20 | ES | — |  |
 | 27 | Lozano | Sergio Lozano | Defensa | 20 | ES | — |  |
-| 33 | Jozhua V. | Jozhua Vertrouwd | Defensa | 22 | NL | RAYO VALLECANO BIS |  |
+| 33 | Jozhua V. | Jozhua Vertrouwd | Defensa | 22 | NL | RAYO VALLECANO 7BIS |  |
 | 3 | Kumbulla | Marash Kumbulla | Centrocampista | 26 | AL | — | cedido |
-| 4 | Pedro Díaz | Pedro Díaz | Centrocampista | 28 | ES | RAYO VALLECANO 11 |  |
+| 4 | Pedro Díaz | Pedro Díaz | Centrocampista | 28 | ES | RAYO VALLECANO 11A |  |
 | 6 | Pathé I. Ciss | Pathé Ciss | Centrocampista | 32 | SN | RAYO VALLECANO 12 |  |
 | 7 | Isi | Isi Palazón | Centrocampista | 31 | ES | RAYO VALLECANO 15 |  |
 | 8 | Unai Lopez | Unai López | Centrocampista | 30 | ES | RAYO VALLECANO 14 |  |
-| 11 | Nteka | Randy Nteka | Centrocampista | 28 | AO | — |  |
+| 11 | Nteka | Randy Nteka | Centrocampista | 28 | AO | RAYO VALLECANO 11B |  |
 | 18 | Álvaro | Álvaro García | Centrocampista | 33 | ES | RAYO VALLECANO 18 |  |
 | 19 | De Frutos | Jorge de Frutos | Centrocampista | 29 | ES | RAYO VALLECANO 16 |  |
 | 21 | Fran Pérez | Fran Pérez | Centrocampista | 24 | ES | RAYO VALLECANO 17 |  |
@@ -705,7 +705,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 13 | Fran González | Fran González | Portero | 21 | ES | SEVILLA 4 |  |
 | 33 | Rafa Romero | Rafael Romero | Portero | 23 | ES | — |  |
 | 2 | Iglesias | Juan Iglesias | Defensa | 28 | ES | SEVILLA 6BIS |  |
-| 3 | Julio Díaz | Julio Díaz | Defensa | 21 | ES | SEVILLA BIS |  |
+| 3 | Julio Díaz | Julio Díaz | Defensa | 21 | ES | SEVILLA 8BIS |  |
 | 4 | Kike Salas | Kike Salas | Defensa | 24 | ES | SEVILLA 7 |  |
 | 5 | A. Castrin | Andrés López Gallo | Defensa | 23 | ES | SEVILLA 9A |  |
 | 12 | Sangante | Arouna Sangante | Defensa | 24 | SN | ÚLTIMOS FICHAJES UF17 |  |
@@ -730,7 +730,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 19 | Stassin | Lucas Stassin | Delantero | 21 | BE | — | cedido |
 | 20 | Felix | Félix Alexandre Andrade Sanches Correia | Delantero | 25 | PT | — | cedido |
 | 21 | Ejuke | Chidera Ejuke | Delantero | 28 | NG | SEVILLA 18 |  |
-| 30 | Miguel Sierra | Miguel Sierra | Delantero | 22 | ES | SEVILLA BIS |  |
+| 30 | Miguel Sierra | Miguel Sierra | Delantero | 22 | ES | SEVILLA 19BIS |  |
 | 37 | Ibra | Ibrahima Sow | Delantero | 19 | SN | SEVILLA 14 |  |
 
 ## VALENCIA

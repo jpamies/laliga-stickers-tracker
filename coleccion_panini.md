@@ -1,11 +1,11 @@
 # Checklist Panini LALIGA 2026-27
 
-- **Entradas y variantes del checklist:** 544
-- **Cromos con nombre o contenido asignado:** 537
-- **Huecos de álbum:** 493
-- **Cromos con variante A/B/BIS:** 68
+- **Entradas y variantes del checklist:** 589
+- **Cromos con nombre o contenido asignado:** 589
+- **Huecos de álbum:** 513
+- **Cromos con variante A/B/BIS:** 93
 - **Cromos añadidos en la 2ª edición:** 44
-- **Cromos todavía sin nombre:** 7
+- **Cromos todavía sin nombre:** 0
 
 ## Leyenda de estrategia
 
@@ -23,13 +23,14 @@
 | 1 | — | Escudo | — | Deportivo Alavés | 1ª | no_aplica | PEGAR |
 | 2 | — | Quique Sánchez Flores | entrenador | Deportivo Alavés | 1ª | no_aplica | PEGAR |
 | 3 | — | Sivera | portero | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
-| 4 | — | — | — | Deportivo Alavés | 1ª | pendiente_publicacion | ESPERAR |
+| 4 | — | Adrián Rodríguez | portero | Deportivo Alavés | 3ed | sin_comprobar | PEGAR |
 | 5 | — | Jonny | defensa | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Koski | defensa | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 7 | — | Tenaglia | defensa | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Parada | defensa | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
+| 8BIS | BIS | Garcés | defensa | Deportivo Alavés | 3ed | sin_comprobar | PEGAR |
 | 9 | — | Yusi | defensa | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
-| 10 | — | — | — | Deportivo Alavés | 1ª | pendiente_publicacion | ESPERAR |
+| 10 | — | Mikel Rodríguez | medio | Deportivo Alavés | 3ed | sin_comprobar | PEGAR |
 | 11 | — | Benavidez | medio | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Blanco | medio | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Guevara | medio | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
@@ -41,6 +42,7 @@
 | 18B | B | Mañas | delantero | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Toni Martínez | delantero | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 | 20 | — | Boyé | delantero | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
+| 20BIS | BIS | Mariano | delantero | Deportivo Alavés | 1ª | sin_comprobar | PEGAR |
 
 ## ATHLETIC CLUB DE BILBAO
 
@@ -86,6 +88,7 @@
 | 8B | B | Giménez | defensa | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 9 | — | Hancko | defensa | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Ruggeri | defensa | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
+| 10BIS | BIS | Grimaldo | defensa | Atlético de Madrid | 3ed | sin_comprobar | PEGAR |
 | 11 | — | Koke | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Barrios | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Johnny Cardoso | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
@@ -93,6 +96,7 @@
 | 14B | B | Obed Vargas | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 15 | — | Álex Baena | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 16 | — | Almada | medio | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
+| 16BIS | BIS | Arnau Ortiz | delantero | Atlético de Madrid | 3ed | sin_comprobar | PEGAR |
 | 17 | — | Giuliano | delantero | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Lookman | delantero | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Sorloth | delantero | Atlético de Madrid | 1ª | sin_comprobar | PEGAR |
@@ -121,6 +125,7 @@
 | 16 | — | Fermín | medio | FC Barcelona | 1ª | sin_comprobar | PEGAR |
 | 17 | — | Dani Olmo | delantero | FC Barcelona | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Ferran Torres | delantero | FC Barcelona | 1ª | sin_comprobar | PEGAR |
+| 18BIS | BIS | Abdelkarim | delantero | FC Barcelona | 3ed | sin_comprobar | PEGAR |
 | 19 | — | Raphinha | delantero | FC Barcelona | 1ª | sin_comprobar | PEGAR |
 | 20 | — | Lamine Yamal | delantero | FC Barcelona | 1ª | sin_comprobar | PEGAR |
 
@@ -141,6 +146,7 @@
 | 9 | — | Valentín Gómez | defensa | Real Betis | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Marc Roca | medio | Real Betis | 1ª | sin_comprobar | PEGAR |
 | 11 | — | Amrabat | medio | Real Betis | 1ª | sin_comprobar | PEGAR |
+| 11BIS | BIS | Deossa | medio | Real Betis | 3ed | sin_comprobar | PEGAR |
 | 12 | — | Fidalgo | medio | Real Betis | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Facundo Bernal | medio | Real Betis | 2ed | sin_comprobar | PEGAR |
 | 14 | — | Lo Celso | medio | Real Betis | 1ª | sin_comprobar | PEGAR |
@@ -177,6 +183,7 @@
 | 18A | A | Pablo Durán | delantero | RC Celta de Vigo | 1ª | sin_comprobar | PEGAR |
 | 18B | B | El-Abdellaoui | delantero | RC Celta de Vigo | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Jutglà | delantero | RC Celta de Vigo | 1ª | sin_comprobar | PEGAR |
+| 19BIS | BIS | Hugo González | delantero | RC Celta de Vigo | 3ed | sin_comprobar | PEGAR |
 | 20 | — | Borja Iglesias | delantero | RC Celta de Vigo | 1ª | sin_comprobar | PEGAR |
 
 ## DEPORTIVO
@@ -191,6 +198,7 @@
 | 6 | — | Loureiro | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 7 | — | Noubi | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Dani Barcia | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
+| 8BIS | BIS | Bright Ede | defensa | Deportivo de La Coruña | 3ed | sin_comprobar | PEGAR |
 | 9A | A | Ximo Navarro | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 9B | B | Arnau Comas | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Quagliata | defensa | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
@@ -198,9 +206,10 @@
 | 12 | — | Riki | medio | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Mario Soriano | medio | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 14 | — | José Ángel | medio | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
+| 14BIS | BIS | Gijselhart | medio | Deportivo de La Coruña | 3ed | sin_comprobar | PEGAR |
 | 15 | — | Luismi Cruz | medio | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 16 | — | Mella | medio | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
-| 17 | — | — | — | Deportivo de La Coruña | 1ª | pendiente_publicacion | ESPERAR |
+| 17 | — | Asp Jensen | delantero | Deportivo de La Coruña | 3ed | sin_comprobar | PEGAR |
 | 18 | — | Yeremay | delantero | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Eddahchouri | delantero | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
 | 20 | — | Nsongo | delantero | Deportivo de La Coruña | 1ª | sin_comprobar | PEGAR |
@@ -242,15 +251,18 @@
 | 4 | — | Fortuño | portero | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 5 | — | El Hilali | defensa | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Rubén Sánchez | defensa | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
+| 6BIS | BIS | Drkusic | defensa | RCD Espanyol | 3ed | sin_comprobar | PEGAR |
 | 7 | — | Riedel | defensa | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Cabrera | defensa | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 9 | — | Miguel Rubio | defensa | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
+| 9BIS | BIS | Hinojo | defensa | RCD Espanyol | 3ed | sin_comprobar | PEGAR |
 | 10 | — | Hartman | defensa | RCD Espanyol | 2ed | sin_comprobar | PEGAR |
 | 11 | — | Pol Lozano | medio | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Urko | medio | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Edu Expósito | medio | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 14 | — | Jofre | medio | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 15 | — | Marcos Fernández | delantero | RCD Espanyol | 2ed | sin_comprobar | PEGAR |
+| 15BIS | BIS | Javi Hernández | delantero | RCD Espanyol | 3ed | sin_comprobar | PEGAR |
 | 16 | — | Dolan | delantero | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 17 | — | Pere Milla | delantero | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Puado | delantero | RCD Espanyol | 1ª | sin_comprobar | PEGAR |
@@ -273,13 +285,14 @@
 | 10 | — | Davinchi | defensa | Getafe CF | 1ª | sin_comprobar | PEGAR |
 | 11 | — | Mario Martín | medio | Getafe CF | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Javi Muñoz | medio | Getafe CF | 1ª | sin_comprobar | PEGAR |
-| 13 | — | — | — | Getafe CF | 1ª | pendiente_publicacion | ESPERAR |
+| 13 | — | Francho | medio | Getafe CF | 3ed | sin_comprobar | PEGAR |
 | 14 | — | Terrats | medio | Getafe CF | 2ed | sin_comprobar | PEGAR |
-| 15 | — | — | — | Getafe CF | 1ª | pendiente_publicacion | ESPERAR |
+| 15 | — | Mangala | medio | Getafe CF | 3ed | sin_comprobar | PEGAR |
 | 16 | — | Juanmi | delantero | Getafe CF | 2ed | sin_comprobar | PEGAR |
 | 17 | — | Álex Sancris | delantero | Getafe CF | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Borja Mayoral | delantero | Getafe CF | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Luis Vázquez | delantero | Getafe CF | 1ª | sin_comprobar | PEGAR |
+| 19BIS | BIS | Ünal | delantero | Getafe CF | 3ed | sin_comprobar | PEGAR |
 | 20 | — | Satriano | delantero | Getafe CF | 1ª | sin_comprobar | PEGAR |
 
 ## LEVANTE UD
@@ -292,6 +305,7 @@
 | 4 | — | Pablo Campos | portero | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 5 | — | Toljan | defensa | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Elgezabal | defensa | Levante UD | 1ª | sin_comprobar | PEGAR |
+| 6BIS | BIS | Nacho Pérez | defensa | Levante UD | 3ed | sin_comprobar | PEGAR |
 | 7 | — | Dela | defensa | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Mandi | defensa | Levante UD | 2ed | sin_comprobar | PEGAR |
 | 9 | — | Manu Sánchez | defensa | Levante UD | 1ª | sin_comprobar | PEGAR |
@@ -303,6 +317,7 @@
 | 14B | B | Paco Cortés | medio | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 15 | — | Carlos Álvarez | medio | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 16 | — | Tunde | delantero | Levante UD | 1ª | sin_comprobar | PEGAR |
+| 16BIS | BIS | Thiago Fernández | delantero | Levante UD | 3ed | sin_comprobar | PEGAR |
 | 17 | — | Brugué | delantero | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Iván Romero | delantero | Levante UD | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Etta Eyong | delantero | Levante UD | 1ª | sin_comprobar | PEGAR |
@@ -320,6 +335,7 @@
 | 5 | — | Trent | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Militao | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
 | 7 | — | Asencio | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
+| 7BIS | BIS | Konaté | defensa | Real Madrid | 3ed | sin_comprobar | PEGAR |
 | 8 | — | Rüdiger | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
 | 9 | — | Huijsen | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
 | 10A | A | Carreras | defensa | Real Madrid | 1ª | sin_comprobar | PEGAR |
@@ -348,6 +364,7 @@
 | 4 | — | Carlos López | portero | Málaga CF | 1ª | sin_comprobar | PEGAR |
 | 5 | — | Puga | defensa | Málaga CF | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Murillo | defensa | Málaga CF | 1ª | sin_comprobar | PEGAR |
+| 6BIS | BIS | Recio | defensa | Málaga CF | 3ed | sin_comprobar | PEGAR |
 | 7 | — | Calero | defensa | Málaga CF | 2ed | sin_comprobar | PEGAR |
 | 8 | — | Einar Galilea | defensa | Málaga CF | 1ª | sin_comprobar | PEGAR |
 | 9 | — | Rafita | defensa | Málaga CF | 1ª | sin_comprobar | PEGAR |
@@ -386,6 +403,7 @@
 | 14 | — | Rubén García | medio | CA Osasuna | 1ª | sin_comprobar | PEGAR |
 | 15 | — | Aimar Oroz | medio | CA Osasuna | 1ª | sin_comprobar | PEGAR |
 | 16 | — | Iker Benito | medio | CA Osasuna | 1ª | sin_comprobar | PEGAR |
+| 16BIS | BIS | Dubasin | delantero | CA Osasuna | 3ed | sin_comprobar | PEGAR |
 | 17 | — | Raúl Moro | delantero | CA Osasuna | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Raúl García | delantero | CA Osasuna | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Kike Barja | delantero | CA Osasuna | 1ª | sin_comprobar | PEGAR |
@@ -397,22 +415,24 @@
 |---:|:---:|---|---|---|:---:|---|:---:|
 | 1 | — | Escudo | — | Racing de Santander | 1ª | no_aplica | PEGAR |
 | 2 | — | José Alberto López | entrenador | Racing de Santander | 1ª | no_aplica | PEGAR |
-| 3 | — | — | — | Racing de Santander | 1ª | pendiente_publicacion | ESPERAR |
+| 3 | — | Agirrezabala | portero | Racing de Santander | 3ed | sin_comprobar | PEGAR |
 | 4 | — | Eriksson | portero | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 5 | — | Mantilla | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Sangalli | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 6BIS | BIS | Pablo Ramón | defensa | Racing de Santander | 2ed | sin_comprobar | PEGAR |
 | 7 | — | Facu González | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Javi Castro | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
+| 8BIS | BIS | Pedro Felipe | defensa | Racing de Santander | 3ed | sin_comprobar | PEGAR |
 | 9A | A | Manu Hernando | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 9B | B | Mario García | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Jorge Salinas | defensa | Racing de Santander | 1ª | sin_comprobar | PEGAR |
-| 11A | A | Maguette | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
-| 11B | B | Nteka | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
+| 11 | — | Maguette | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Gustavo Puerta | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Íñigo | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
+| 13BIS | BIS | Sergio Martínez | medio | Racing de Santander | 3ed | sin_comprobar | PEGAR |
 | 14 | — | Aldasoro | medio | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 15 | — | Suleiman | delantero | Racing de Santander | 1ª | sin_comprobar | PEGAR |
+| 15BIS | BIS | Zabiri | delantero | Racing de Santander | 3ed | sin_comprobar | PEGAR |
 | 16 | — | Andrés Martín | delantero | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 17 | — | Guliashvili | delantero | Racing de Santander | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Íñigo Vicente | delantero | Racing de Santander | 1ª | sin_comprobar | PEGAR |
@@ -430,10 +450,13 @@
 | 5 | — | Ratiu | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Balliu | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 7 | — | Nobel Mendy | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
+| 7BIS | BIS | Vertrouwd | defensa | Rayo Vallecano | 3ed | sin_comprobar | PEGAR |
 | 8 | — | Lejeune | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 9 | — | Luiz Felipe | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Pep Chavarría | defensa | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
-| 11 | — | Pedro Díaz | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
+| 10BIS | BIS | Pelayo | defensa | Rayo Vallecano | 3ed | sin_comprobar | PEGAR |
+| 11A | A | Pedro Díaz | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
+| 11B | B | Nteka | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 12 | — | Pathé Ciss | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 13 | — | Óscar Valentín | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
 | 14 | — | Unai López | medio | Rayo Vallecano | 1ª | sin_comprobar | PEGAR |
@@ -477,12 +500,13 @@
 | 1 | — | Escudo | — | Sevilla FC | 1ª | no_aplica | PEGAR |
 | 2 | — | Luis García | entrenador | Sevilla FC | 1ª | no_aplica | PEGAR |
 | 3 | — | Vlachodimos | portero | Sevilla FC | 1ª | sin_comprobar | PEGAR |
-| 4 | — | — | — | Sevilla FC | 1ª | pendiente_publicacion | ESPERAR |
+| 4 | — | Fran González | portero | Sevilla FC | 3ed | sin_comprobar | PEGAR |
 | 5 | — | Carmona | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 6 | — | Juanlu | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 6BIS | BIS | Iglesias | defensa | Sevilla FC | 2ed | sin_comprobar | PEGAR |
 | 7 | — | Kike Salas | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 8 | — | Nianzou | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
+| 8BIS | BIS | Julio Díaz | defensa | Sevilla FC | 3ed | sin_comprobar | PEGAR |
 | 9A | A | Castrín | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 9B | B | Marcao | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 10 | — | Suazo | defensa | Sevilla FC | 1ª | sin_comprobar | PEGAR |
@@ -495,6 +519,7 @@
 | 17 | — | Peque | delantero | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 18 | — | Ejuke | delantero | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 | 19 | — | Akor Adams | delantero | Sevilla FC | 1ª | sin_comprobar | PEGAR |
+| 19BIS | BIS | Miguel Sierra | delantero | Sevilla FC | 3ed | sin_comprobar | PEGAR |
 | 20 | — | Isaac Romero | delantero | Sevilla FC | 1ª | sin_comprobar | PEGAR |
 
 ## VALENCIA
@@ -579,6 +604,26 @@
 | UF18 | — | Andrés García | defensa | Getafe CF | 2ed | sin_comprobar | PEGAR |
 | UF19 | — | Adeyemi | delantero | FC Barcelona | 2ed | sin_comprobar | PEGAR |
 | UF20 | — | Kang-In Lee | medio | Atlético de Madrid | 2ed | sin_comprobar | PEGAR |
+| UF21 | — | Bernardo Silva | medio | Real Madrid | 3ed | sin_comprobar | PEGAR |
+| UF22 | — | Amatucci | medio | Deportivo de La Coruña | 3ed | sin_comprobar | PEGAR |
+| UF23 | — | Mojica | defensa | Getafe CF | 3ed | sin_comprobar | PEGAR |
+| UF24 | — | Gordon | delantero | FC Barcelona | 3ed | sin_comprobar | PEGAR |
+| UF25 | — | Robbie Ure | delantero | Sevilla FC | 3ed | sin_comprobar | PEGAR |
+| UF26 | — | Javi Morcillo | medio | Elche CF | 3ed | sin_comprobar | PEGAR |
+| UF27 | — | Nuñez | defensa | RCD Espanyol | 3ed | sin_comprobar | PEGAR |
+| UF28 | — | Maffeo | defensa | Valencia CF | 3ed | sin_comprobar | PEGAR |
+| UF29 | — | Cucurella | defensa | Real Madrid | 3ed | sin_comprobar | PEGAR |
+| UF30 | — | Valentini | defensa | Deportivo Alavés | 3ed | sin_comprobar | PEGAR |
+| UF31 | — | Sazonov | defensa | Getafe CF | 3ed | sin_comprobar | PEGAR |
+| UF32 | — | Buonanotte | medio | Elche CF | 3ed | sin_comprobar | PEGAR |
+| UF33 | — | Angeliño | defensa | Deportivo de La Coruña | 3ed | sin_comprobar | PEGAR |
+| UF34 | — | Iván Martín | medio | Racing de Santander | 3ed | sin_comprobar | PEGAR |
+| UF35 | — | Peio Canales | medio | Athletic Club | 3ed | sin_comprobar | PEGAR |
+| UF36 | — | Kochorashvili | medio | Sevilla FC | 3ed | sin_comprobar | PEGAR |
+| UF37 | — | Galán | defensa | RC Celta de Vigo | 3ed | sin_comprobar | PEGAR |
+| UF38 | — | Parrott | delantero | Real Betis | 3ed | sin_comprobar | PEGAR |
+| UF39 | — | Diomande | delantero | Real Madrid | 3ed | sin_comprobar | PEGAR |
+| UF40 | — | Rodri | medio | FC Barcelona | 3ed | sin_comprobar | PEGAR |
 
 ## ADN / LALIGA PRIME
 

@@ -288,63 +288,59 @@ class ReportFileTests(unittest.TestCase):
         self.assertIn("′ ·", text)
         self.assertTrue(any(report.deserve_sticker for report in reports))
 
-    def test_the_unnumbered_bis_close_the_slot_table(self) -> None:
-        """Son cromos de esa página, así que se leen con el resto de huecos."""
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / "informe.md"
-            reports = generate(
-                Path("coleccion_panini_revisada.csv"),
-                Path("comprobacion_laliga.csv"),
-                Path("laliga_plantillas.csv"),
-                output,
-                Path("laliga_estadisticas.csv"),
-                date(2026, 9, 21),
-            )
-            text = output.read_text(encoding="utf-8")
-
-        con_bis = [report for report in reports if report.unnumbered]
-        self.assertTrue(con_bis, "Ya no hay BIS sin numerar en los datos")
-
-        racing = next(r for r in reports if r.section == "RACING DE SANTANDER")
-        bloque = text.split(f"## {racing.section}")[1].split("\n## ")[0]
-        tabla = bloque.split("### Huecos del álbum")[1].split("### Plantilla")[0]
-        filas = [line for line in tabla.strip().splitlines() if line.startswith("|")]
-
-        # La columna «Hueco» sólo lleva la palabra en la primera de las filas
-        # nuevas, igual que un hueco con dos variantes.
-        self.assertTrue(filas[-1].startswith("| "))
-        ultimas = filas[-len(racing.unnumbered) :]
-        self.assertEqual(ultimas[0].split("|")[1].strip(), "BIS")
-        for fila in ultimas[1:]:
-            self.assertEqual(fila.split("|")[1].strip(), "")
-        for option in racing.unnumbered:
-            self.assertIn(option.nombre, "".join(ultimas))
-
-    def test_a_numbered_bis_stays_in_its_slot(self) -> None:
-        # Hamza es el único BIS numerado: va en el hueco 18, no al final.
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / "informe.md"
-            reports = generate(
-                Path("coleccion_panini_revisada.csv"),
-                Path("comprobacion_laliga.csv"),
-                Path("laliga_plantillas.csv"),
-                output,
-                Path("laliga_estadisticas.csv"),
-                date(2026, 9, 21),
-            )
-
-        barcelona = next(r for r in reports if r.section == "FC BARCELONA")
-        nombres = [option.nombre for option in barcelona.unnumbered]
-
-        self.assertNotIn("Hamza Abdelkarim", nombres)
-        slot = next(slot for slot in barcelona.slots if slot.hueco == "18")
-        self.assertIn(
-            "Hamza Abdelkarim", [option.nombre for option in slot.options]
+    def test_a_sticker_without_a_slot_does_not_break_the_report(self) -> None:
+        """Panini anunció la tercera edición sin numerar los BIS, y volverá a
+        pasar. Sin este tratamiento el informe revienta al ordenar los huecos,
+        porque el número llega vacío."""
+        reports = build_reports(
+            [
+                {
+                    "id": "SEV-01", "seccion": "SEVILLA", "numero": "1",
+                    "hueco_album": "1", "variante": "", "nombre": "Escudo",
+                    "tipo": "", "club_objetivo": "Sevilla FC", "edicion": "",
+                },
+                {
+                    "id": "SEV-BIS-1", "seccion": "SEVILLA", "numero": "BIS",
+                    "hueco_album": "", "variante": "BIS", "nombre": "Por numerar",
+                    "tipo": "defensa", "club_objetivo": "Sevilla FC",
+                    "edicion": "3ed",
+                },
+            ],
+            {},
+            [],
         )
 
-    def test_a_bis_of_someone_who_left_is_marked(self) -> None:
-        # El cromo salió con la camiseta del Racing, pero el jugador ya no
-        # está: pegarlo sería tirar el hueco.
+        sevilla = next(r for r in reports if r.section == "SEVILLA")
+        self.assertEqual([o.nombre for o in sevilla.unnumbered], ["Por numerar"])
+        # No se cuela en ningún hueco: eso lo convertiría en una variante.
+        self.assertTrue(all(slot.hueco for slot in sevilla.slots))
+
+    def test_a_numbered_bis_sits_in_its_slot(self) -> None:
+        # Desde la tercera edición todos los BIS llevan número, así que compiten
+        # por el hueco en lugar de quedar sueltos al final.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "informe.md"
+            reports = generate(
+                Path("coleccion_panini_revisada.csv"),
+                Path("comprobacion_laliga.csv"),
+                Path("laliga_plantillas.csv"),
+                output,
+                Path("laliga_estadisticas.csv"),
+                date(2026, 9, 25),
+            )
+
+        self.assertEqual([r.section for r in reports if r.unnumbered], [])
+        barcelona = next(r for r in reports if r.section == "FC BARCELONA")
+        slot = next(slot for slot in barcelona.slots if slot.hueco == "18")
+
+        self.assertEqual(
+            [option.numero for option in slot.options], ["18", "18BIS"]
+        )
+
+    def test_a_sticker_of_someone_who_left_is_never_recommended(self) -> None:
+        # Un hueco con dos cromos donde sólo uno sigue en el club no es una
+        # elección, pero el que se fue tampoco se pega: decía «pegar» en las dos
+        # filas.
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "informe.md"
             generate(
@@ -353,7 +349,7 @@ class ReportFileTests(unittest.TestCase):
                 Path("laliga_plantillas.csv"),
                 output,
                 Path("laliga_estadisticas.csv"),
-                date(2026, 9, 21),
+                date(2026, 9, 25),
             )
             text = output.read_text(encoding="utf-8")
 
@@ -363,6 +359,7 @@ class ReportFileTests(unittest.TestCase):
             if line.startswith("|") and "Sergio Martínez" in line
         )
         self.assertIn("ya no está", fila)
+        self.assertNotIn("**pegar**", fila)
 
 
 if __name__ == "__main__":

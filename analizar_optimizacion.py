@@ -410,6 +410,11 @@ def summary_table(reports: list[TeamReport]) -> list[str]:
 def slot_mark(slot: Slot, option: Option) -> str:
     if slot.state != READY:
         return SLOT_LABEL[slot.state]
+    # Un cromo de alguien que ya no está nunca se recomienda, aunque su hueco
+    # esté resuelto por la otra variante. Es el caso de los BIS que sustituyen
+    # a un jugador traspasado.
+    if not option.active:
+        return "⛔ ya no está"
     if not slot.is_choice:
         return "**pegar**"
     if not slot.decided_by_minutes:

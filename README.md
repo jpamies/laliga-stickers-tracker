@@ -88,7 +88,6 @@ Regenerar los datos y el álbum:
 
 ```powershell
 .\.venv\Scripts\python.exe extraer_checklist.py
-.\.venv\Scripts\python.exe importar_tercera_edicion.py
 .\.venv\Scripts\python.exe comprobar_plantillas.py
 .\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
@@ -100,13 +99,11 @@ Regenerar los datos y el álbum:
 `generar_album.py` necesita `laliga_estadisticas.csv` para los minutos de cada
 ficha; si el archivo no está, el álbum se genera igual pero sin esa fila.
 
-`importar_tercera_edicion.py` añade los cromos anunciados en la tercera edición,
-que todavía no están en el PDF: los siete huecos de equipo que ya tienen
-jugador, los Últimos Fichajes del UF21 al UF40 y los BIS, que Panini ha
-publicado sin numerar. Va justo detrás de `extraer_checklist.py`, que rehace el
-checklist desde el PDF de la segunda edición y por tanto los borraría; como el
-paso es idempotente, se puede repetir sin miedo. Cuando salga el PDF de la
-tercera edición, el script sobra.
+`extraer_checklist.py` lee por defecto el PDF de la tercera edición. Ese
+documento no se versiona, pero sí todo lo que sale de él, así que el resto del
+proceso funciona sin tenerlo. En
+[TERCERA_EDICION.md](TERCERA_EDICION.md) están las diferencias que trajo esa
+edición, incluidas las dos erratas del checklist que se corrigen al extraerlo.
 
 `extraer_checklist.py` lee `Checklist_LALIGA_2026-27-2aED.pdf` y reutiliza los
 identificadores que ya existen en `coleccion_panini.csv`, de forma que los
