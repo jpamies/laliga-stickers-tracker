@@ -11,8 +11,8 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | Equipos | 20 |
 | **Jugadores registrados** | **583** |
 | Fichas totales (con cuerpo técnico) | 623 |
-| Jugadores con cromo en el álbum | 403 |
-| Jugadores sin cromo | 180 |
+| Jugadores con cromo en el álbum | 405 |
+| Jugadores sin cromo | 178 |
 | Cedidos | 47 |
 | Sin dorsal asignado | 3 |
 
@@ -30,12 +30,12 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | Equipo | Jugadores | Con cromo | Sin cromo | Cedidos |
 | --- | ---: | ---: | ---: | ---: |
 | [Deportivo Alavés](#deportivo-alavés) | 27 | 21 | 6 | 0 |
-| [Athletic Club](#athletic-club-de-bilbao) | 27 | 20 | 7 | 0 |
+| [Athletic Club](#athletic-club-de-bilbao) | 27 | 21 | 6 | 0 |
 | [Atlético de Madrid](#atlético-de-madrid) | 28 | 20 | 8 | 1 |
 | [FC Barcelona](#fc-barcelona) | 30 | 21 | 9 | 0 |
 | [Real Betis](#real-betis) | 28 | 20 | 8 | 1 |
 | [Celta](#rc-celta-de-vigo) | 28 | 21 | 7 | 2 |
-| [RC Deportivo](#deportivo) | 27 | 22 | 5 | 3 |
+| [RC Deportivo](#deportivo) | 27 | 23 | 4 | 3 |
 | [Elche CF](#elche-cf) | 29 | 19 | 10 | 2 |
 | [RCD Espanyol de Barcelona](#rcd-espanyol) | 29 | 22 | 7 | 6 |
 | [Getafe CF](#getafe-cf) | 31 | 19 | 12 | 4 |
@@ -114,7 +114,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 24 | Gerenabarrena | Beñat Gerenabarrena | Centrocampista | 23 | ES | — |  |
 | 44 | Selton | Selton Sánchez | Centrocampista | 19 | ES | — |  |
 | 7 | Berenguer | Alex Berenguer | Delantero | 31 | ES | ATHLETIC CLUB DE BILBAO 16 |  |
-| 9 | Williams | Iñaki Williams | Delantero | 32 | GH | — |  |
+| 9 | Williams | Iñaki Williams | Delantero | 32 | GH | ATHLETIC CLUB DE BILBAO 19 |  |
 | 10 | Williams Jr | Nico Williams | Delantero | 24 | ES | ATHLETIC CLUB DE BILBAO 18 |  |
 | 11 | Guruzeta | Gorka Guruzeta | Delantero | 30 | ES | ATHLETIC CLUB DE BILBAO 20 |  |
 | 21 | Maroan | Maroan Sannadi | Delantero | 25 | MA | ATHLETIC CLUB DE BILBAO 17B |  |
@@ -292,7 +292,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 17 | Angeliño | José Ángel Esmoris Tasende | Defensa | 29 | ES | DEPORTIVO 14; ÚLTIMOS FICHAJES UF33 | cedido |
 | 20 | J. M. Giménez | José María Giménez | Defensa | 31 | UY | — | cedido |
 | 22 | Ede | Bright Ede | Defensa | 19 | PL | DEPORTIVO 8BIS |  |
-| 23 | X. Navarro | Joaquín Navarro Jiménez | Defensa | 36 | ES | — |  |
+| 23 | X. Navarro | Joaquín Navarro Jiménez | Defensa | 36 | ES | DEPORTIVO 9A |  |
 | 6 | M. Casadó | Marc Casadó | Centrocampista | 23 | ES | — | cedido |
 | 8 | D. Villares | Diego Villares | Centrocampista | 30 | ES | DEPORTIVO 11 |  |
 | 10 | Yeremay | Yeremay Hernández | Centrocampista | 23 | ES | DEPORTIVO 18 |  |

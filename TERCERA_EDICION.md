@@ -128,6 +128,33 @@ pero el álbum los marca para no pegarlos:
 - **Gijselhart** (Deportivo, 14BIS): desapareció de la plantilla oficial entre
   el 17 y el 21 de septiembre.
 
+## Nombres que no encuentran su ficha
+
+Panini imprime el nombre por el que se conoce al jugador y LALIGA lo inscribe
+con el del registro civil, así que algunos cromos no casan por parecido de
+texto. Cuando se ha comprobado a mano a quién corresponde, el emparejamiento se
+fija con un alias en `LALIGA_ALIASES`:
+
+| Cromo | Lo inscribe LALIGA como | |
+| --- | --- | --- |
+| Ximo Navarro (Deportivo 9A) | Joaquín Navarro Jiménez, dorsal 23 | «Ximo» es su apodo |
+| Williams (Athletic 19) | Iñaki Williams, dorsal 9 | Nico tiene el cromo 18 |
+
+El segundo caso obligó además a cambiar el orden en que se busca. Un nombre que
+encaja con dos jugadores se daba por ambiguo de inmediato, antes de mirar los
+alias, que son justo lo que dice a cuál de los dos se refiere.
+
+Quedan cuatro cromos por confirmar. En todos ellos el jugador ha desaparecido
+de la plantilla oficial, pero el nombre es demasiado corto o demasiado común
+para darlo por perdido sin verlo:
+
+| Cromo | Se parece a |
+| --- | --- |
+| Giménez (Atlético 8B) | Diego Simeone |
+| Fer López (Celta 15) | Rober Fernández |
+| Juanpe (Málaga 13B) | Juan Francisco Fernández Martín |
+| Oso (Sevilla 11) | Ibrahima Sow |
+
 ## Cómo se lee el PDF
 
 La tercera edición cambia dos detalles de formato respecto a la segunda, y

@@ -44,7 +44,7 @@ ATHLETIC-CLUB-DE-BILBAO-18,ATHLETIC CLUB DE BILBAO,16,Berenguer,Athletic Club,en
 ATHLETIC-CLUB-DE-BILBAO-19,ATHLETIC CLUB DE BILBAO,17A,Robert Navarro,Athletic Club,en_plantilla,athletic-club-84240,Robert Navarro,23,Centrocampista,1.0000,2026-09-25,Coincidencia exacta.
 ATHLETIC-CLUB-DE-BILBAO-20,ATHLETIC CLUB DE BILBAO,17B,Maroan,Athletic Club,en_plantilla,athletic-club-84253,Maroan Sannadi,21,Delantero,1.0000,2026-09-25,Coincidencia exacta.
 ATHLETIC-CLUB-DE-BILBAO-21,ATHLETIC CLUB DE BILBAO,18,Nico Williams,Athletic Club,en_plantilla,athletic-club-84250,Nico Williams,10,Delantero,1.0000,2026-09-25,Coincidencia exacta.
-ATHLETIC-CLUB-DE-BILBAO-22,ATHLETIC CLUB DE BILBAO,19,Williams,Athletic Club,coincidencia_dudosa,,"Iñaki Williams, Nico Williams",,,0.5000,2026-09-25,El nombre coincide con varios jugadores de la plantilla.
+ATHLETIC-CLUB-DE-BILBAO-22,ATHLETIC CLUB DE BILBAO,19,Williams,Athletic Club,en_plantilla,athletic-club-84249,Iñaki Williams,9,Delantero,0.9900,2026-09-25,Coincidencia por alias conocido.
 ATHLETIC-CLUB-DE-BILBAO-23,ATHLETIC CLUB DE BILBAO,20,Guruzeta,Athletic Club,en_plantilla,athletic-club-84252,Gorka Guruzeta,11,Delantero,1.0000,2026-09-25,Coincidencia exacta.
 ATLETICO-DE-MADRID-01,ATLÉTICO DE MADRID,1,Escudo,Atlético de Madrid,no_aplica,,,,,0.0000,2026-09-25,El escudo no es un jugador.
 ATLETICO-DE-MADRID-02,ATLÉTICO DE MADRID,2,Cholo Simeone,Atlético de Madrid,en_plantilla,atletico-de-madrid-84305,Diego Simeone,,Entrenador,0.9900,2026-09-25,Coincidencia por alias conocido.
@@ -148,7 +148,7 @@ DEPORTIVO-06,DEPORTIVO,6,Loureiro,Deportivo de La Coruña,en_plantilla,rc-deport
 DEPORTIVO-07,DEPORTIVO,7,Noubi,Deportivo de La Coruña,en_plantilla,rc-deportivo-84390,Lucas Noubi,4,Defensa,1.0000,2026-09-25,Coincidencia exacta.
 DEPORTIVO-08,DEPORTIVO,8,Dani Barcia,Deportivo de La Coruña,en_plantilla,rc-deportivo-84391,Dani Barcia,5,Defensa,1.0000,2026-09-25,Coincidencia exacta.
 DEPORTIVO-BIS-1,DEPORTIVO,8BIS,Bright Ede,Deportivo de La Coruña,en_plantilla,rc-deportivo-85595,Bright Ede,22,Defensa,1.0000,2026-09-25,Coincidencia exacta.
-DEPORTIVO-09,DEPORTIVO,9A,Ximo Navarro,Deportivo de La Coruña,coincidencia_dudosa,,Joaquín Navarro Jiménez,,,0.8571,2026-09-25,Posible coincidencia; confírmala antes de descartar el cromo.
+DEPORTIVO-09,DEPORTIVO,9A,Ximo Navarro,Deportivo de La Coruña,en_plantilla,rc-deportivo-84395,Joaquín Navarro Jiménez,23,Defensa,0.9900,2026-09-25,Coincidencia por alias conocido.
 DEPORTIVO-10,DEPORTIVO,9B,Arnau Comas,Deportivo de La Coruña,en_plantilla,rc-deportivo-84389,Arnau Comas,3,Defensa,1.0000,2026-09-25,Coincidencia exacta.
 DEPORTIVO-11,DEPORTIVO,10,Quagliata,Deportivo de La Coruña,en_plantilla,rc-deportivo-84393,Giacomo Quagliata,12,Defensa,1.0000,2026-09-25,Coincidencia exacta.
 DEPORTIVO-12,DEPORTIVO,11,Villares,Deportivo de La Coruña,en_plantilla,rc-deportivo-84406,Diego Villares,8,Centrocampista,1.0000,2026-09-25,Coincidencia exacta.

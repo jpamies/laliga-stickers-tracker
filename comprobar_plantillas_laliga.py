@@ -49,6 +49,12 @@ LALIGA_ALIASES = {
     # «Rodri» a secas se parece tanto a Rodrigo Hernández como al canterano
     # Iker Rodríguez, así que hay que decir de cuál se trata.
     "rodri": "rodrigo hernandez cascante",
+    # Ximo es el apodo de Joaquín Navarro, y LALIGA lo inscribe con su nombre
+    # civil completo.
+    "ximo navarro": "joaquin navarro jimenez",
+    # El cromo 19 del Athletic es Iñaki: Nico tiene el suyo en el hueco 18 y
+    # LALIGA lo apoda «Williams Jr».
+    "williams": "inaki williams",
 }
 
 # Cromos que el emparejamiento por texto no puede resolver: o comparten
@@ -241,18 +247,24 @@ def match_member(name: str, squad: list[SquadMember]) -> Match:
         if alias and alias not in targets:
             targets.append(alias)
 
+    # Un nombre ambiguo no se descarta hasta haber probado los alias, que
+    # existen precisamente para decir a cuál de los dos jugadores se refiere:
+    # el cromo «Williams» del Athletic encaja con Iñaki y con Nico.
+    ambiguous: list[SquadMember] = []
     for index, target in enumerate(targets):
         exact = [member for member in squad if target in member.keys]
         if len(exact) == 1:
             notes = "Coincidencia exacta." if not index else "Coincidencia por alias conocido."
             return hit(exact[0], 1.0 if not index else 0.99, notes)
-        if len(exact) > 1:
-            return miss(
-                DOUBTFUL,
-                ", ".join(member.nombre for member in exact),
-                0.5,
-                "El nombre coincide con varios jugadores de la plantilla.",
-            )
+        if len(exact) > 1 and not ambiguous:
+            ambiguous = exact
+    if ambiguous:
+        return miss(
+            DOUBTFUL,
+            ", ".join(member.nombre for member in ambiguous),
+            0.5,
+            "El nombre coincide con varios jugadores de la plantilla.",
+        )
 
     for target in targets:
         if len(target) < MIN_PARTIAL_LENGTH:

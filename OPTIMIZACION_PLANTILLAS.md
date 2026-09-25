@@ -32,20 +32,20 @@ no tapando huecos de equipo.
 
 ## Resumen
 
-- **Equipos con la página completable:** 10 de 20
+- **Equipos con la página completable:** 11 de 20
 - **Huecos sin ningún jugador activo:** 13
-- **Huecos con dos variantes válidas:** 23 (17 con una recomendación clara por minutos)
-- **Jugadores que piden cromo:** 28
+- **Huecos con dos variantes válidas:** 24 (18 con una recomendación clara por minutos)
+- **Jugadores que piden cromo:** 26
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Variantes a elegir | Piden cromo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [Deportivo Alavés](#deportivo-alavés) | 19/19 | 0 | 0 | 0 | 2 | 0 |
-| [Athletic Club](#athletic-club-de-bilbao) | 18/19 | 0 | 1 | 0 | 2 | 3 |
+| [Athletic Club](#athletic-club-de-bilbao) | 19/19 | 0 | 0 | 0 | 2 | 2 |
 | [Atlético de Madrid](#atlético-de-madrid) | 18/19 | 1 | 0 | 0 | 1 | 1 |
 | [FC Barcelona](#fc-barcelona) | 19/19 | 0 | 0 | 0 | 0 | 1 |
 | [Real Betis](#real-betis) | 19/19 | 0 | 0 | 0 | 1 | 1 |
 | [RC Celta de Vigo](#rc-celta-de-vigo) | 17/19 | 1 | 1 | 0 | 3 | 0 |
-| [Deportivo de La Coruña](#deportivo) | 19/19 | 0 | 0 | 0 | 1 | 2 |
+| [Deportivo de La Coruña](#deportivo) | 19/19 | 0 | 0 | 0 | 2 | 1 |
 | [Elche CF](#elche-cf) | 17/19 | 2 | 0 | 0 | 0 | 1 |
 | [RCD Espanyol](#rcd-espanyol) | 19/19 | 0 | 0 | 0 | 1 | 0 |
 | [Getafe CF](#getafe-cf) | 17/19 | 2 | 0 | 0 | 0 | 2 |
@@ -108,12 +108,11 @@ no tapando huecos de equipo.
 
 ## ATHLETIC CLUB DE BILBAO
 
-🔎 1 por revisar a mano.
+✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
 - **Variante recomendada por minutos:** 17 → **17A** (Robert Navarro, 317′)
 - **Elección abierta:** 6 (6A o 6B)
-- **Comprobar a mano:** 19 (Williams)
-- **Piden cromo a gritos:** Williams (392′), Gerenabarrena (373′), Johaneko (168′)
+- **Piden cromo a gritos:** Gerenabarrena (373′), Johaneko (168′)
 
 ### Huecos del álbum
 
@@ -141,14 +140,13 @@ no tapando huecos de equipo.
 | 17 | 17A | Robert Navarro | Robert Navarro | 23 | 317′ · 5 pj · 4 tit · 2 g | **pegar** |
 |  | 17B | Maroan | Maroan Sannadi | 21 | 69′ · 3 pj | descartar |
 | 18 | 18 | Nico Williams | Nico Williams | 10 | 364′ · 6 pj · 4 tit · 1 g | **pegar** |
-| 19 | 19 | Williams | — | — | — | Por revisar |
+| 19 | 19 | Williams | Iñaki Williams | 9 | 392′ · 6 pj · 6 tit · 2 a | **pegar** |
 | 20 | 20 | Guruzeta | Gorka Guruzeta | 11 | 178′ · 4 pj · 2 tit | **pegar** |
 
 ### Plantilla de LALIGA sin cromo
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 9 | Williams | Delantero | 392′ · 6 pj · 6 tit · 2 a | **sí** |
 | 24 | Gerenabarrena | Centrocampista | 373′ · 5 pj · 4 tit | **sí** |
 | 31 | Johaneko | Defensa | 168′ · 5 pj · 2 tit | **sí** |
 | 15 | H. Rincón | Defensa | 106′ · 2 pj · 1 tit | — |
@@ -355,8 +353,8 @@ no tapando huecos de equipo.
 
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
-- **Variante recomendada por minutos:** 8 → **8BIS** (Bright Ede, 286′)
-- **Piden cromo a gritos:** X. Navarro (533′), J. M. Giménez (329′)
+- **Variante recomendada por minutos:** 8 → **8BIS** (Bright Ede, 286′), 9 → **9A** (Ximo Navarro, 533′)
+- **Piden cromo a gritos:** J. M. Giménez (329′)
 
 ### Huecos del álbum
 
@@ -371,8 +369,8 @@ no tapando huecos de equipo.
 | 7 | 7 | Noubi | Lucas Noubi | 4 | 450′ · 5 pj · 5 tit | **pegar** |
 | 8 | 8 | Dani Barcia | Dani Barcia | 5 | 0′ · no ha jugado | descartar |
 |  | 8BIS | Bright Ede | Bright Ede | 22 | 286′ · 4 pj · 3 tit | **pegar** |
-| 9 | 9A | Ximo Navarro | — | — | — | ⛔ ya no está |
-|  | 9B | Arnau Comas | Arnau Comas | 3 | 0′ · no ha jugado | **pegar** |
+| 9 | 9A | Ximo Navarro | Joaquín Navarro Jiménez | 23 | 533′ · 6 pj · 6 tit | **pegar** |
+|  | 9B | Arnau Comas | Arnau Comas | 3 | 0′ · no ha jugado | descartar |
 | 10 | 10 | Quagliata | Giacomo Quagliata | 12 | 569′ · 7 pj · 6 tit | **pegar** |
 | 11 | 11 | Villares | Diego Villares | 8 | 114′ · 3 pj · 1 g | **pegar** |
 | 12 | 12 | Riki | Riki Rodríguez | 14 | 240′ · 4 pj · 4 tit | **pegar** |
@@ -390,7 +388,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 23 | X. Navarro | Defensa | 533′ · 6 pj · 6 tit | **sí** |
 | 20 | J. M. Giménez | Defensa | 329′ · 4 pj · 4 tit | **sí** |
 | 6 | M. Casadó | Centrocampista | 120′ · 3 pj · 2 tit | — |
 | 24 | Adama | Delantero | 112′ · 4 pj | — |

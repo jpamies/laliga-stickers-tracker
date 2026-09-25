@@ -52,7 +52,7 @@ class AlbumGenerationTests(unittest.TestCase):
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 133, "transfermarkt": 4}))
+        self.assertEqual(fuentes, Counter({"laliga": 134, "transfermarkt": 3}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]

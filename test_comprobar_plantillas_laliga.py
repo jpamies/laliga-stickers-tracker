@@ -89,12 +89,14 @@ class MatchTests(unittest.TestCase):
         # Sin ficha oficial no hay clave con la que enlazar el cromo.
         self.assertEqual(match.clave, "")
 
-    def test_ambiguous_surname_is_never_reported_as_gone(self) -> None:
+    def test_an_ambiguous_surname_is_settled_by_its_alias(self) -> None:
+        # El cromo 19 del Athletic dice «Williams» a secas y en la plantilla
+        # hay dos. El alias dice a cuál se refiere; antes se descartaba por
+        # ambiguo sin llegar a mirarlo.
         match = match_member("Williams", SQUAD)
 
-        self.assertEqual(match.estado, DOUBTFUL)
-        self.assertIn("Iñaki Williams", match.candidato)
-        self.assertIn("Nico Williams", match.candidato)
+        self.assertEqual(match.estado, IN_SQUAD)
+        self.assertEqual(match.candidato, "Iñaki Williams")
 
     def test_very_short_nicknames_are_never_reported_as_gone(self) -> None:
         # «Oso» o «Yusi» se parecen a demasiados nombres para descartarlos.
@@ -121,6 +123,35 @@ class MatchTests(unittest.TestCase):
 
         self.assertEqual(match.estado, IN_SQUAD)
         self.assertEqual(match.candidato, "Carlos Protesoni")
+
+
+    def test_an_ambiguous_name_without_an_alias_stays_doubtful(self) -> None:
+        # Sin alias que lo resuelva, dos candidatos siguen siendo dos: no se
+        # elige uno al azar ni se da por perdido el cromo.
+        squad = [
+            member("Mikel Rodríguez", "Mikel R.", "Mikel", "Rodríguez"),
+            member("Miguel Rodríguez", "Miguel", "Miguel", "Rodríguez"),
+        ]
+
+        match = match_member("Rodríguez", squad)
+
+        self.assertEqual(match.estado, DOUBTFUL)
+        self.assertIn("Mikel Rodríguez", match.candidato)
+        self.assertIn("Miguel Rodríguez", match.candidato)
+
+    def test_a_nickname_reaches_the_civil_name(self) -> None:
+        # LALIGA inscribe a Ximo Navarro como Joaquín Navarro Jiménez, y el
+        # parecido entre los dos textos se queda por debajo del umbral.
+        squad = [
+            member(
+                "Joaquín Navarro Jiménez", "X. Navarro", "Joaquín", "Navarro"
+            ),
+        ]
+
+        match = match_member("Ximo Navarro", squad)
+
+        self.assertEqual(match.estado, IN_SQUAD)
+        self.assertEqual(match.candidato, "Joaquín Navarro Jiménez")
 
 
 class ManualVerdictTests(unittest.TestCase):
