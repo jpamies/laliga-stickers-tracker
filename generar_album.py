@@ -157,9 +157,9 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=51"></script>
+  <script src="app.js?v=52"></script>
   <script src="cloud-sync.js?v=15"></script>
-  <script src="social.js?v=16"></script>
+  <script src="social.js?v=18"></script>
 </body>
 </html>
 """

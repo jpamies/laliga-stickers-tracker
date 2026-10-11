@@ -79,6 +79,10 @@
   y un registro detallado de los números que no se han reconocido.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
+- En los intercambios, «Te puede dar» y sus contadores excluyen los cromos que
+  tu álbum considera «No pegar», incluida la sugerencia privada de jugadores
+  fuera de plantilla. Si eliges «Pegar» expresamente, vuelven a incluirse.
+  Esto no cambia lo que puedes ofrecer ni comparte tus decisiones privadas.
 - Sección «Amigos» con el resumen de cada amigo, acceso directo al intercambio y
   vista de su álbum en modo sólo lectura.
 
@@ -189,6 +193,12 @@ Ejecutar las pruebas:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest -v
+```
+
+Pruebas de comportamiento del filtro de intercambios (con Node.js):
+
+```powershell
+node --test test_social.js
 ```
 
 Generar el CSV maestro de estrategia con las plantillas actuales de

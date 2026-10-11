@@ -14,6 +14,7 @@
   let profile = null;
   let friends = [];
   let activeTab = "share";
+  let comparisonFriendId = null;
 
   function escapeHtml(value) {
     const holder = document.createElement("div");
@@ -111,11 +112,12 @@
 
   function comparisons(friend) {
     const mine = album.getSocialProgress();
+    const unwanted = album.getUnwantedStickerIds();
     const theirs = friend.progress || {};
     const friendCanGive = [];
     const iCanGive = [];
     for (const [id, entry] of Object.entries(theirs)) {
-      if (entry.copies >= 2 && !mine[id]) friendCanGive.push(id);
+      if (entry.copies >= 2 && !mine[id] && !unwanted.has(id)) friendCanGive.push(id);
     }
     for (const [id, entry] of Object.entries(mine)) {
       if (entry.copies >= 2 && !theirs[id]) iCanGive.push(id);
@@ -206,6 +208,8 @@
   }
 
   function renderComparison(friend) {
+    if (!friend) return;
+    comparisonFriendId = friend.user_id;
     const { friendCanGive, iCanGive } = comparisons(friend);
     content.innerHTML = `
       <div class="social-header">
@@ -498,6 +502,7 @@
       return;
     }
     if (event.target.closest("[data-social-back]")) {
+      comparisonFriendId = null;
       await renderFriends();
       return;
     }
@@ -539,6 +544,19 @@
 
   document.addEventListener("panini:friends-render", (event) => {
     refreshFriendsPanel(event.detail.container);
+  });
+
+  document.addEventListener("panini:progress-changed", () => {
+    if (!user) return;
+    const panel = document.querySelector("#friends-panel");
+    if (panel) {
+      renderFriendsPanel(panel);
+    }
+    if (!dialog.open || activeTab !== "friends" || !comparisonFriendId) return;
+    const friend = friends.find((item) => item.user_id === comparisonFriendId);
+    if (friend) {
+      renderComparison(friend);
+    }
   });
 
   document.addEventListener("click", async (event) => {

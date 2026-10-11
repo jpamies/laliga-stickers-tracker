@@ -236,17 +236,17 @@
     return source[id] || defaultEntry();
   }
 
-  function shouldNotStick(sticker, progress = progressFor(sticker.id)) {
+  function shouldNotStick(sticker, progress = progressFor(sticker.id), { ownAlbum = false } = {}) {
     if (progress.stickDecision === "dont-stick") return true;
     if (progress.stickDecision === "stick") return false;
     // La recomendación automática nunca descarta un cromo salvo para el dueño
     // del álbum, que sí ve marcados los jugadores que LALIGA ya no lista.
-    return leftTheSquad(sticker);
+    return leftTheSquad(sticker, { ownAlbum });
   }
 
-  function leftTheSquad(sticker) {
+  function leftTheSquad(sticker, { ownAlbum = false } = {}) {
     return state.privateStrategy
-      && !state.preview
+      && (ownAlbum || !state.preview)
       && !state.readOnly
       && sticker.estado_laliga === "fuera_plantilla";
   }
@@ -1512,6 +1512,15 @@
 
   window.PaniniAlbum = {
     getProgress: () => structuredClone(state.progress),
+    getUnwantedStickerIds() {
+      return new Set(data
+        .filter((sticker) => shouldNotStick(
+          sticker,
+          state.progress[sticker.id] || defaultEntry(),
+          { ownAlbum: true },
+        ))
+        .map((sticker) => sticker.id));
+    },
     isReadOnly: () => state.readOnly,
     isPreviewing: () => Boolean(state.preview),
     previewFriend(ownerName, progress) {
