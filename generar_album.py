@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=34">
 </head>
 <body>
   <header class="topbar">
@@ -36,8 +36,8 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="account-panel">
         <img class="account-avatar hidden" id="account-avatar" alt="">
         <div class="account-copy">
-          <strong id="account-name">Modo local</strong>
-          <small id="sync-status">Guardado en este dispositivo</small>
+          <strong id="account-name">Catálogo</strong>
+          <small id="sync-status">Haz login para ver tu álbum</small>
         </div>
         <button class="button account-button" id="auth-button" type="button">Iniciar sesión</button>
       </div>
@@ -157,8 +157,8 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=52"></script>
-  <script src="cloud-sync.js?v=15"></script>
+  <script src="app.js?v=53"></script>
+  <script src="cloud-sync.js?v=16"></script>
   <script src="social.js?v=18"></script>
 </body>
 </html>

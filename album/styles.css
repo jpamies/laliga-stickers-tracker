@@ -1660,6 +1660,39 @@ button {
   background: var(--green-soft);
 }
 
+.auth-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--amber-soft);
+}
+
+.auth-banner strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.auth-banner small {
+  color: var(--muted);
+}
+
+.auth-required .copy-row,
+.auth-required .state-controls,
+.auth-required .stick-toggle,
+.auth-required .copy-control {
+  display: none !important;
+}
+
+.auth-required .sticker-visual {
+  cursor: default;
+}
+
 .preview-banner strong {
   display: block;
   font-size: 1.05rem;

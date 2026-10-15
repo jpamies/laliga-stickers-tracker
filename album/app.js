@@ -115,6 +115,7 @@
     progress: {},
     preview: null,
     readOnly: false,
+    authRequired: false,
     privateStrategy: false,
     hideDontStick: false,
     density: loadDensity(),
@@ -232,8 +233,40 @@
   }
 
   function progressFor(id) {
+    if (state.authRequired && !state.preview) {
+      return defaultEntry();
+    }
     const source = state.preview ? state.preview.progress : state.progress;
     return source[id] || defaultEntry();
+  }
+
+  function requestLogin() {
+    showToast("Haz login para ver y editar tu álbum.");
+    window.PaniniCloud?.signIn?.();
+  }
+
+  function setAuthRequired(required) {
+    const next = Boolean(required) && !state.readOnly;
+    if (next === state.authRequired) return;
+    state.authRequired = next;
+    if (state.authRequired) {
+      state.preview = null;
+      state.view = "album";
+      state.filter = "all";
+      state.query = "";
+      state.openChip = null;
+      elements.search.value = "";
+      elements.navTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.view === "album");
+      });
+      elements.filterChips.querySelectorAll("[data-filter]").forEach((item) => {
+        item.classList.toggle("active", item.dataset.filter === "all");
+      });
+      if (elements.importDialog.open) {
+        elements.importDialog.close();
+      }
+    }
+    render();
   }
 
   function shouldNotStick(sticker, progress = progressFor(sticker.id), { ownAlbum = false } = {}) {
@@ -1008,6 +1041,16 @@
 
   function render() {
     document.body.classList.toggle("previewing", Boolean(state.preview));
+    document.body.classList.toggle("auth-required", state.authRequired);
+    const authBanner = state.authRequired && !state.preview
+      ? `<div class="auth-banner">
+          <div>
+            <strong>Haz login para ver tu álbum</strong>
+            <small>Sin iniciar sesión sólo puedes consultar la colección completa.</small>
+          </div>
+          <button class="button" type="button" data-login-required>Iniciar sesión</button>
+        </div>`
+      : "";
     if (state.view === "friends" && !state.preview) {
       elements.collection.innerHTML = '<div class="friends-panel" id="friends-panel"></div>';
       document.dispatchEvent(new CustomEvent("panini:friends-render", {
@@ -1035,7 +1078,7 @@
       grouped.get(sticker.seccion).push(sticker);
     }
 
-    elements.collection.innerHTML = (state.preview
+    elements.collection.innerHTML = authBanner + (state.preview
       ? `<div class="preview-banner">
           <div>
             <strong>Álbum de ${escapeHtml(state.preview.ownerName)}</strong>
@@ -1204,7 +1247,7 @@
   }
 
   function updateSticker(id, updater) {
-    if (state.preview || state.readOnly) return;
+    if (state.preview || state.readOnly || state.authRequired) return;
     const current = { ...progressFor(id) };
     const next = { ...updater(current), updatedAt: new Date().toISOString() };
     if (next.state === "missing") {
@@ -1304,12 +1347,17 @@
   });
 
   document.addEventListener("panini:cloud-ready", (event) => {
+    setAuthRequired(!event.detail?.user);
     updatePrivateStrategy(event.detail?.user);
   });
 
   elements.filterChips.addEventListener("click", (event) => {
     const chip = event.target.closest("[data-filter]");
     if (!chip) return;
+    if (state.authRequired && chip.dataset.filter !== "all") {
+      requestLogin();
+      return;
+    }
     state.filter = chip.dataset.filter;
     elements.filterChips.querySelectorAll("[data-filter]").forEach((item) => {
       item.classList.toggle("active", item === chip);
@@ -1341,6 +1389,10 @@
 
   elements.navTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      if (state.authRequired && tab.dataset.view !== "album") {
+        requestLogin();
+        return;
+      }
       state.preview = null;
       state.view = tab.dataset.view;
       state.filter = "all";
@@ -1353,11 +1405,15 @@
   });
 
   elements.collection.addEventListener("click", (event) => {
+    if (event.target.closest("[data-login-required]")) {
+      requestLogin();
+      return;
+    }
     if (event.target.closest("[data-exit-preview]")) {
       window.PaniniAlbum.exitPreview();
       return;
     }
-    if (state.readOnly || state.preview) return;
+    if (state.readOnly || state.preview || state.authRequired) return;
     const popoverCopy = event.target.closest("[data-popover-copy]");
     if (popoverCopy) {
       changeCopies(state.openChip, Number(popoverCopy.dataset.popoverCopy));
@@ -1422,6 +1478,10 @@
   });
 
   elements.exportButton.addEventListener("click", () => {
+    if (state.authRequired) {
+      requestLogin();
+      return;
+    }
     const payload = {
       album: "Panini LALIGA 2026-27",
       exportedAt: new Date().toISOString(),
@@ -1437,6 +1497,10 @@
   });
 
   elements.importButton.addEventListener("click", () => {
+    if (state.authRequired) {
+      requestLogin();
+      return;
+    }
     pendingFiguritasImport = null;
     elements.figuritasText.value = "";
     elements.figuritasPreview.replaceChildren();
@@ -1476,6 +1540,10 @@
   });
 
   elements.figuritasPreview.addEventListener("click", (event) => {
+    if (state.authRequired) {
+      requestLogin();
+      return;
+    }
     if (!event.target.closest("[data-apply-figuritas]") || !pendingFiguritasImport) return;
     window.PaniniAlbum.replaceProgress({
       ...state.progress,
@@ -1489,6 +1557,11 @@
   });
 
   elements.importInput.addEventListener("change", async () => {
+    if (state.authRequired) {
+      requestLogin();
+      elements.importInput.value = "";
+      return;
+    }
     const file = elements.importInput.files[0];
     if (!file) return;
     try {
@@ -1522,6 +1595,8 @@
         .map((sticker) => sticker.id));
     },
     isReadOnly: () => state.readOnly,
+    isAuthRequired: () => state.authRequired,
+    setAuthRequired,
     isPreviewing: () => Boolean(state.preview),
     previewFriend(ownerName, progress) {
       state.preview = { ownerName, progress: cleanProgress(progress) };
@@ -1565,6 +1640,7 @@
       }
     },
     getSocialProgress() {
+      if (state.authRequired) return {};
       const socialProgress = {};
       for (const [id, entry] of Object.entries(state.progress)) {
         if (entry.state === "owned" || entry.copies > 0) {
@@ -1578,6 +1654,7 @@
     },
     showReadOnly(progress, ownerName) {
       state.readOnly = true;
+      state.authRequired = false;
       state.progress = cleanProgress(progress);
       document.body.classList.add("read-only");
       document.querySelector(".brand strong").textContent = `Álbum de ${ownerName}`;

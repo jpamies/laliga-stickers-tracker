@@ -56,10 +56,9 @@
   fuera. En el móvil las chapas crecen hasta los 40 píxeles para que el dedo no
   se equivoque de cromo. Los Extra Sticker, que no llevan número, se muestran
   por el nombre del jugador.
-- Progreso local sin conexión y sincronización opcional por cuenta. El progreso
-  de invitado y el de cada cuenta se guardan por separado, así que iniciar
-  sesión nunca sobrescribe lo que ya tienes en la nube. Para llevar el progreso
-  de invitado a tu cuenta, expórtalo e impórtalo tras iniciar sesión.
+- Modo catálogo sin login: si no inicias sesión, el álbum se abre sin marcas y
+  sólo deja consultar la colección completa. Para ver y editar tu progreso hay
+  que entrar con cuenta, y entonces se carga únicamente el álbum de la nube.
 - Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
   foto oficial se dibujan en la propia web con el escudo del equipo, sus colores
   y el retrato oficial de LALIGA, ampliado hasta un encuadre parecido al de un
@@ -248,7 +247,9 @@ no tapando huecos de equipo.
 ## Sincronización gratuita
 
 La web reutiliza Clerk para iniciar sesión con Google o GitHub y sincroniza el
-progreso con Supabase. Si la nube no está configurada o no está disponible, el
+progreso con Supabase. Con la nube configurada, sin login se muestra sólo el
+catálogo (sin progreso); al iniciar sesión se carga y se edita el álbum de esa
+cuenta en Supabase. Si la nube no está configurada o no está disponible, el
 álbum sigue funcionando con `localStorage`.
 
 1. Crea un proyecto en Supabase Free.

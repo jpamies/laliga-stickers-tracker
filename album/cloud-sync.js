@@ -67,12 +67,12 @@
   function displayUser(user) {
     currentUser = user || null;
     if (!user) {
-      elements.name.textContent = "Modo local";
+      elements.name.textContent = "Catálogo";
       elements.button.textContent = "Iniciar sesión";
       elements.avatar.classList.add("hidden");
       elements.avatar.removeAttribute("src");
       elements.avatar.alt = "";
-      setStatus("Guardado en este dispositivo");
+      setStatus("Haz login para ver tu álbum");
       return;
     }
     const name = user.fullName || user.firstName || "Mi cuenta";
@@ -207,15 +207,9 @@
       }));
       return;
     }
-    const previousScope = album.getStorageScope();
+    album.setAuthRequired(!user);
     const nextScope = scopeFor(user);
-    const scopeChanged = album.setStorageScope(nextScope);
-    if (scopeChanged && user && previousScope === guestScope
-      && album.hasStoredProgress(guestScope)) {
-      album.showToast(
-        "El progreso de invitado se ha guardado aparte. Expórtalo e impórtalo si quieres unirlo a tu cuenta.",
-      );
-    }
+    album.setStorageScope(nextScope);
     if (user) {
       await synchronize();
     }

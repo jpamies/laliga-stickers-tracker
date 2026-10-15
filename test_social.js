@@ -149,6 +149,17 @@ test("keeps No pegar decisions out of shared progress", () => {
   assert.equal(shared.offer.copies, 2);
 });
 
+test("auth-required mode shows only the catalog without deleting saved progress", () => {
+  const { album } = fixture();
+  const before = album.getProgress();
+  album.setAuthRequired(true);
+  assert.equal(album.isAuthRequired(), true);
+  assert.equal(Object.keys(album.getSocialProgress()).length, 0);
+  album.setAuthRequired(false);
+  assert.equal(album.isAuthRequired(), false);
+  assert.deepEqual(album.getProgress(), before);
+});
+
 test("comparison options and all friend counters use the filtered result", async () => {
   const { window, friend, nodes } = fixture();
   window.testState.privateStrategy = true;
