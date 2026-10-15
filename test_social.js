@@ -6,6 +6,7 @@ const vm = require("node:vm");
 
 const appSource = readFileSync(path.join(__dirname, "album", "app.js"), "utf8");
 const socialSource = readFileSync(path.join(__dirname, "album", "social.js"), "utf8");
+const cloudSyncSource = readFileSync(path.join(__dirname, "album", "cloud-sync.js"), "utf8");
 
 function fixture() {
   const nodes = new Map();
@@ -188,4 +189,17 @@ test("published scripts keep the versions from the generation template", () => {
     assert.equal(html.match(pattern)?.[0], template.match(pattern)?.[0]);
     assert.ok(html.match(pattern));
   }
+});
+
+test("invite dialog exposes login and signup actions and closes before auth", () => {
+  assert.match(socialSource, /data-social-login/);
+  assert.match(socialSource, /data-social-signup/);
+  assert.match(socialSource, /dialog\.close\(\);\s*window\.PaniniCloud\.signIn\(\);/);
+  assert.match(socialSource, /dialog\.close\(\);\s*window\.PaniniCloud\.signUp\?\.\(\);/);
+});
+
+test("cloud sync exposes signUp with Clerk fallback", () => {
+  assert.match(cloudSyncSource, /signUp:\s*\(\)\s*=>/);
+  assert.match(cloudSyncSource, /window\.Clerk\.openSignUp/);
+  assert.match(cloudSyncSource, /window\.Clerk\.openSignIn/);
 });

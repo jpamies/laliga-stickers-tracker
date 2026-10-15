@@ -245,6 +245,20 @@
         getClient: () => client,
         getUser: () => currentUser,
         signIn: () => elements.button.click(),
+        signUp: () => {
+          if (!window.Clerk) return;
+          if (typeof window.Clerk.openSignUp === "function") {
+            window.Clerk.openSignUp({
+              fallbackRedirectUrl: window.location.href,
+              signInFallbackRedirectUrl: window.location.href,
+            });
+            return;
+          }
+          window.Clerk.openSignIn({
+            fallbackRedirectUrl: window.location.href,
+            signUpFallbackRedirectUrl: window.location.href,
+          });
+        },
         syncNow: saveToCloud,
       };
       await handleUser(window.Clerk.user);

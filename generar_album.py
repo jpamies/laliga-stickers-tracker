@@ -158,8 +158,8 @@ HTML_TEMPLATE = """<!doctype html>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
   <script src="app.js?v=53"></script>
-  <script src="cloud-sync.js?v=16"></script>
-  <script src="social.js?v=18"></script>
+  <script src="cloud-sync.js?v=17"></script>
+  <script src="social.js?v=19"></script>
 </body>
 </html>
 """

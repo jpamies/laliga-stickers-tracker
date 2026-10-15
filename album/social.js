@@ -426,7 +426,10 @@
           <section class="social-card social-intro">
             <strong>${escapeHtml(inviter)} quiere añadirte como amigo</strong>
             <p>Inicia sesión para comparar colecciones y proponer intercambios.</p>
-            <button class="social-primary" type="button" data-social-login>Iniciar sesión</button>
+            <div class="social-row-actions">
+              <button class="social-primary" type="button" data-social-login>Iniciar sesión</button>
+              <button type="button" data-social-signup>Registrarse</button>
+            </div>
           </section>
         `);
         dialog.showModal();
@@ -460,7 +463,13 @@
       return;
     }
     if (event.target.closest("[data-social-login]")) {
+      dialog.close();
       window.PaniniCloud.signIn();
+      return;
+    }
+    if (event.target.closest("[data-social-signup]")) {
+      dialog.close();
+      window.PaniniCloud.signUp?.();
       return;
     }
     if (event.target.closest("[data-accept-invite]")) {
