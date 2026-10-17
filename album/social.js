@@ -15,6 +15,10 @@
   let friends = [];
   let activeTab = "share";
   let comparisonFriendId = null;
+  let poolSelection = new Set();
+  let poolPlan = null;
+  let poolJob = null;
+  let poolViewVersion = 0;
 
   function escapeHtml(value) {
     const holder = document.createElement("div");
@@ -76,6 +80,7 @@
         <button class="${activeTab === "share" ? "active" : ""}" type="button" data-social-tab="share">Enlaces</button>
         <button class="${activeTab === "friends" ? "active" : ""}" type="button" data-social-tab="friends">Amigos</button>
         <button class="${activeTab === "trades" ? "active" : ""}" type="button" data-social-tab="trades">Propuestas</button>
+        <button class="${activeTab === "pool" ? "active" : ""}" type="button" data-social-tab="pool">Grupal</button>
       </div>
       <div class="social-notice" id="social-notice" role="status"></div>
       <div class="social-body">${body}</div>
@@ -193,6 +198,7 @@
       <section>
         <h3>Propuestas de intercambio</h3>
         <p class="social-help">Aceptar no cambia automáticamente ningún álbum. Confirmad el intercambio y actualizad después las copias.</p>
+        <button class="social-primary" type="button" data-open-pool>Crear Intercambio Grupal</button>
         ${rows || '<p class="social-empty">No hay propuestas todavía.</p>'}
       </section>
     `);
@@ -235,16 +241,282 @@
     `;
   }
 
+  function poolInventory(id, progress, excluded = new Set()) {
+    const offered = {};
+    const missing = [];
+    let ownedCount = 0;
+    for (const stickerId of stickers.keys()) {
+      const entry = progress[stickerId];
+      if (!entry) {
+        if (!excluded.has(stickerId)) missing.push(stickerId);
+        continue;
+      }
+      if (!Number.isSafeInteger(entry.copies) || entry.copies < 0) {
+        throw new Error("Hay un inventario con un número de copias no válido.");
+      }
+      if (entry.state === "owned" || entry.copies > 0) {
+        ownedCount += 1;
+        if (entry.copies > 1) offered[stickerId] = entry.copies - 1;
+      } else if (!excluded.has(stickerId)) {
+        missing.push(stickerId);
+      }
+    }
+    return { id, offered, missing, ownedCount };
+  }
+
+  function poolMembers(ids) {
+    if (!user || album.isAuthRequired() || album.isReadOnly()) {
+      throw new Error("Inicia sesión en tu propio álbum para calcular un intercambio grupal.");
+    }
+    const members = [{
+      name: user.fullName || user.firstName || "Mi cuenta",
+      inventory: poolInventory(user.id, album.getSocialProgress(), album.getUnwantedStickerIds()),
+    }];
+    for (const id of ids) {
+      const friend = friends.find((item) => item.user_id === id);
+      if (!friend || id === user.id) {
+        throw new Error("La lista de amigos ha cambiado. Vuelve a elegir los participantes.");
+      }
+      members.push({
+        name: friend.display_name,
+        inventory: poolInventory(id, friend.progress || {}),
+      });
+    }
+    return members;
+  }
+
+  function cancelPoolJob() {
+    const job = poolJob;
+    poolJob = null;
+    if (job?.cancel) job.cancel();
+    job?.worker?.terminate();
+  }
+
+  function updatePoolControls() {
+    const calculate = content.querySelector("[data-calculate-pool]");
+    if (calculate) calculate.disabled = Boolean(poolJob) || !poolSelection.size;
+    const cancel = content.querySelector("[data-cancel-pool]");
+    if (cancel) cancel.classList.toggle("hidden", !poolJob);
+  }
+
+  function setPoolStatus(message) {
+    const status = content.querySelector("#pool-status");
+    if (status) status.textContent = message;
+  }
+
+  function invalidatePool(message) {
+    cancelPoolJob();
+    poolPlan = null;
+    if (activeTab !== "pool") return;
+    content.querySelector("#social-notice")?.classList.remove("visible");
+    const results = content.querySelector("#pool-results");
+    if (results) results.replaceChildren();
+    setPoolStatus(message);
+    updatePoolControls();
+  }
+
+  async function renderPool() {
+    const version = ++poolViewVersion;
+    invalidatePool("");
+    content.innerHTML = modalShell('<p class="social-empty">Cargando inventarios de tus amigos…</p>');
+    await loadFriends();
+    if (version !== poolViewVersion || activeTab !== "pool" || !user) return;
+    const availableIds = new Set(friends.map((friend) => friend.user_id));
+    poolSelection = new Set([...poolSelection].filter((id) => availableIds.has(id)));
+    const members = poolMembers(friends.map((friend) => friend.user_id));
+    const options = members.map((member, index) => {
+      const inventory = member.inventory;
+      const copies = Object.values(inventory.offered).reduce((total, quantity) => total + quantity, 0);
+      return `
+        <label class="pool-member">
+          <input type="checkbox" data-pool-member="${escapeHtml(inventory.id)}"
+            ${index === 0 ? "checked disabled" : poolSelection.has(inventory.id) ? "checked" : ""}>
+          <span><strong>${escapeHtml(member.name)}${index === 0 ? " (tú)" : ""}</strong>
+            <small>${copies} ${copies === 1 ? "copia repetida" : "copias repetidas"} · ${inventory.missing.length} ${inventory.missing.length === 1 ? "falta" : "faltas"}</small></span>
+        </label>
+      `;
+    }).join("");
+    content.innerHTML = modalShell(`
+      <section class="social-card social-intro">
+        <strong>Crear Intercambio Grupal</strong>
+        <p>Elige los amigos que participan contigo. Buscaremos el máximo total de cromos que pueden cambiar de dueño, también en ciclos de tres o más personas.</p>
+        <p>Solo cuenta lo que se entrega a otro participante: todos dan y reciben la misma cantidad. Conservas una copia de cada cromo y solo recibes cromos que te faltan.</p>
+      </section>
+      <p class="social-help">Tus «No pegar» se excluyen de lo que recibes. Las faltas de los amigos se deducen de su colección; sus decisiones «No pegar» siguen siendo privadas.</p>
+      <fieldset class="pool-members">
+        <legend>Participantes</legend>
+        ${options}
+      </fieldset>
+      ${friends.length ? "" : '<p class="social-empty">Añade algún amigo para crear un intercambio grupal.</p>'}
+      <div class="pool-actions">
+        <button class="social-primary" type="button" data-calculate-pool ${poolSelection.size ? "" : "disabled"}>Calcular reparto óptimo</button>
+        <button class="button secondary hidden" type="button" data-cancel-pool>Cancelar cálculo</button>
+      </div>
+      <p class="social-help" id="pool-status" role="status">Selecciona al menos un amigo. No se cambiará ningún álbum.</p>
+      <div id="pool-results" aria-live="polite"></div>
+    `);
+  }
+
+  function solvePool(job, participants) {
+    return new Promise((resolve, reject) => {
+      if (typeof Worker !== "function") {
+        reject(new Error("Este navegador no permite el cálculo en segundo plano. Prueba con un navegador actualizado."));
+        return;
+      }
+      const worker = new Worker("pool-worker.js?v=1");
+      job.worker = worker;
+      job.cancel = () => {
+        const error = new Error("Cálculo cancelado.");
+        error.name = "AbortError";
+        reject(error);
+      };
+      worker.addEventListener("message", (event) => {
+        if (event.data.error) reject(new Error(event.data.error));
+        else resolve(event.data.result);
+      });
+      worker.addEventListener("error", () => reject(new Error("No se pudo ejecutar el optimizador del intercambio.")));
+      worker.addEventListener("messageerror", () => reject(new Error("No se pudo leer el resultado del optimizador.")));
+      worker.postMessage({ participants });
+    });
+  }
+
+  function renderPoolResult(plan) {
+    const names = new Map(plan.members.map((member) => [member.inventory.id, member.name]));
+    const rows = plan.result.participants.map((member) => `
+      <tr>
+        <th scope="row">${escapeHtml(names.get(member.id))}</th>
+        <td>${member.given}</td><td>${member.received}</td>
+        <td>${member.balance}</td><td>${member.available - member.given}</td>
+      </tr>
+    `).join("");
+    const deliveries = new Map();
+    for (const transfer of plan.result.transfers) {
+      const key = JSON.stringify([transfer.from, transfer.to]);
+      if (!deliveries.has(key)) deliveries.set(key, []);
+      deliveries.get(key).push(transfer);
+    }
+    const routes = [...deliveries.values()].map((items) => `
+      <details class="pool-delivery">
+        <summary>${escapeHtml(names.get(items[0].from))} → ${escapeHtml(names.get(items[0].to))} · ${items.length} ${items.length === 1 ? "cromo" : "cromos"}</summary>
+        <ul>${items.map((item) => `<li>${escapeHtml(stickerName(item.stickerId))}</li>`).join("")}</ul>
+      </details>
+    `).join("");
+    content.querySelector("#pool-results").innerHTML = `
+      <section class="pool-result">
+        <h3>${plan.result.totalTransfers} cromos pueden cambiar de dueño</h3>
+        <p class="social-help">${plan.result.totalTransfers
+          ? "Depositad primero las aportaciones indicadas y repartid después. El total cuenta cada copia transferida una sola vez."
+          : "No existe un reparto 1:1 con estos inventarios. Un repetido que nadie recibe no genera saldo."}</p>
+        <div class="pool-table-wrap">
+          <table class="pool-table">
+            <caption>Saldo por participante</caption>
+            <thead><tr><th scope="col">Participante</th><th scope="col">Aporta</th><th scope="col">Recibe</th><th scope="col">Saldo</th><th scope="col">Sin usar</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        ${routes}
+        <p class="social-help">Calculado el ${escapeHtml(new Date(plan.computedAt).toLocaleString("es"))}. Es un plan, no una reserva ni una propuesta enviada. Recalculad si cambian los inventarios y actualizad las copias manualmente tras el intercambio.</p>
+        <button class="button" type="button" data-download-pool>Descargar plan para compartir</button>
+      </section>
+    `;
+  }
+
+  async function calculatePool() {
+    if (!requireUser()) return;
+    if (!poolSelection.size) {
+      showNotice("Selecciona al menos un amigo para el intercambio.", true);
+      return;
+    }
+    invalidatePool("Actualizando los inventarios…");
+    const job = { userId: user.id, worker: null, cancel: null };
+    poolJob = job;
+    const selectedIds = [...poolSelection];
+    updatePoolControls();
+    try {
+      await loadFriends();
+      if (poolJob !== job || activeTab !== "pool" || user?.id !== job.userId) return;
+      const members = poolMembers(selectedIds);
+      setPoolStatus("Calculando el máximo global… Puedes cancelar sin modificar ningún álbum.");
+      const result = await solvePool(job, members.map((member) => member.inventory));
+      if (poolJob !== job) return;
+      poolPlan = { members, result, computedAt: new Date().toISOString() };
+      renderPoolResult(poolPlan);
+      setPoolStatus("Cálculo óptimo completado. No se ha modificado ningún álbum.");
+    } catch (error) {
+      if (poolJob !== job) return;
+      poolPlan = null;
+      content.querySelector("#pool-results")?.replaceChildren();
+      console.error("No se pudo calcular el intercambio grupal.", error);
+      setPoolStatus("El cálculo no se ha completado.");
+      showNotice(error instanceof Error ? error.message : "No se pudo calcular el intercambio grupal.", true);
+    } finally {
+      job.worker?.terminate();
+      if (poolJob === job) {
+        poolJob = null;
+        updatePoolControls();
+      }
+    }
+  }
+
+  function poolPlanText(plan) {
+    const names = new Map(plan.members.map((member) => [member.inventory.id, member.name]));
+    const lines = [
+      "Intercambio grupal - Panini LALIGA 2026-27",
+      `Calculado: ${new Date(plan.computedAt).toLocaleString("es")}`,
+      `Cromos transferidos: ${plan.result.totalTransfers}`,
+      "Depositad primero las aportaciones indicadas y repartid despues.",
+      "",
+      ...plan.result.participants.map((member) =>
+        `${names.get(member.id)}: aporta ${member.given}, recibe ${member.received}, saldo ${member.balance}`),
+      "",
+      ...plan.result.transfers.map((item) =>
+        `${names.get(item.from)} -> ${names.get(item.to)}: ${stickerName(item.stickerId)}`),
+      "",
+      "Plan sin reservas. Recalcular si cambian los inventarios. Actualizad las copias manualmente.",
+    ];
+    return lines.join("\n");
+  }
+
+  function downloadPoolPlan() {
+    if (!poolPlan) {
+      showNotice("Calcula un reparto actualizado antes de descargarlo.", true);
+      return;
+    }
+    const blob = new Blob([poolPlanText(poolPlan)], { type: "text/plain;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "intercambio-grupal-panini.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  }
+
+  async function openPool() {
+    if (!requireUser()) return;
+    activeTab = "pool";
+    dialog.showModal();
+    await renderActiveTab();
+  }
+
   async function renderActiveTab() {
     if (!requireUser()) return;
+    comparisonFriendId = null;
+    if (activeTab !== "pool") {
+      poolViewVersion += 1;
+      invalidatePool("");
+    }
     try {
       if (activeTab === "friends") await renderFriends();
       else if (activeTab === "trades") await renderTrades();
+      else if (activeTab === "pool") await renderPool();
       else await renderShare();
     } catch (error) {
       console.error("No se pudo cargar la sección social.", error);
       content.innerHTML = modalShell('<p class="social-empty">No se pudo cargar esta sección.</p>');
-      showNotice("Comprueba que la migración social está instalada.", true);
+      showNotice(activeTab === "pool"
+        ? error instanceof Error
+          ? error.message
+          : "No se pudieron cargar los inventarios. Comprueba tu conexión y vuelve a abrir Grupal."
+        : "Comprueba que la migración social está instalada.", true);
     }
   }
 
@@ -306,6 +578,7 @@
         <div class="friends-toolbar-actions">
           ${inviteUrl ? `<button class="button secondary" type="button" data-share-url="${escapeHtml(inviteUrl)}">Invitar</button>` : ""}
           <button class="button" type="button" data-open-trades>Propuestas</button>
+          <button class="button" type="button" data-open-pool>Crear Intercambio Grupal</button>
         </div>
       </div>
       ${cards || '<div class="friends-empty"><strong>Todavía no tienes amigos</strong><p>Comparte tu invitación para comparar colecciones y proponer intercambios.</p></div>'}
@@ -415,6 +688,9 @@
   }
 
   async function initialize(event) {
+    poolViewVersion += 1;
+    invalidatePool("La sesión o el álbum ha cambiado. Vuelve a calcular el reparto.");
+    if (user?.id !== event.detail.user?.id) poolSelection.clear();
     client = event.detail.client;
     user = event.detail.user;
     if (await loadPublicShare()) return;
@@ -451,6 +727,19 @@
     dialog.showModal();
   });
 
+  dialog.addEventListener("close", () => {
+    poolViewVersion += 1;
+    invalidatePool("");
+  });
+
+  dialog.addEventListener("change", (event) => {
+    const member = event.target.closest("[data-pool-member]");
+    if (!member || member.disabled) return;
+    if (member.checked) poolSelection.add(member.dataset.poolMember);
+    else poolSelection.delete(member.dataset.poolMember);
+    invalidatePool("El grupo ha cambiado. Calcula el reparto para esta selección.");
+  });
+
   dialog.addEventListener("click", async (event) => {
     if (event.target === dialog || event.target.closest("[data-social-close]")) {
       dialog.close();
@@ -470,6 +759,22 @@
     if (event.target.closest("[data-social-signup]")) {
       dialog.close();
       window.PaniniCloud.signUp?.();
+      return;
+    }
+    if (event.target.closest("[data-open-pool]")) {
+      await openPool();
+      return;
+    }
+    if (event.target.closest("[data-calculate-pool]")) {
+      await calculatePool();
+      return;
+    }
+    if (event.target.closest("[data-cancel-pool]")) {
+      invalidatePool("Cálculo cancelado. No se ha modificado ningún álbum.");
+      return;
+    }
+    if (event.target.closest("[data-download-pool]")) {
+      downloadPoolPlan();
       return;
     }
     if (event.target.closest("[data-accept-invite]")) {
@@ -556,6 +861,7 @@
   });
 
   document.addEventListener("panini:progress-changed", () => {
+    invalidatePool("Tu álbum ha cambiado. Vuelve a calcular el reparto.");
     if (!user) return;
     const panel = document.querySelector("#friends-panel");
     if (panel) {
@@ -588,6 +894,10 @@
       activeTab = "trades";
       await renderActiveTab();
       dialog.showModal();
+      return;
+    }
+    if (event.target.closest("#friends-panel [data-open-pool]")) {
+      await openPool();
       return;
     }
     const panelShare = event.target.closest("#friends-panel [data-share-url]");

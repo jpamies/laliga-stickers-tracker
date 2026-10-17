@@ -155,10 +155,10 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
         self.assertIn('src="app.js?v=53"', html)
-        self.assertIn('href="styles.css?v=34"', html)
+        self.assertIn('href="styles.css?v=35"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=17"', html)
-        self.assertIn('src="social.js?v=19"', html)
+        self.assertIn('src="social.js?v=20"', html)
         self.assertIn('data-view="friends"', html)
 
 

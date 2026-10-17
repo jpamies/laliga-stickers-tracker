@@ -84,8 +84,22 @@
   Esto no cambia lo que puedes ofrecer ni comparte tus decisiones privadas.
 - Sección «Amigos» con el resumen de cada amigo, acceso directo al intercambio y
   vista de su álbum en modo sólo lectura.
+- Intercambio grupal desde «Propuestas» o «Amigos»: selecciona los participantes
+  y calcula un plan de reparto que maximiza los cromos transferidos, también en
+  ciclos entre tres o más personas, con saldo 1:1 por participante.
 
 ## Desarrollo
+
+Para abrir la web local, ejecuta la tarea de VS Code **Web local (album)** o:
+
+```powershell
+.\.venv\Scripts\python.exe -m http.server 8000 --bind 127.0.0.1 --directory album
+```
+
+La aplicación estará en http://127.0.0.1:8000/. Se sirven directamente los
+archivos de `album/`, sin build. La clave de producción de Clerk sólo admite
+el dominio publicado: para probar autenticación en localhost hace falta una
+instancia de desarrollo y su integración correspondiente con Supabase.
 
 Regenerar los datos y el álbum:
 
@@ -194,11 +208,14 @@ Ejecutar las pruebas:
 .\.venv\Scripts\python.exe -m unittest -v
 ```
 
-Pruebas de comportamiento del filtro de intercambios (con Node.js):
+Pruebas de comportamiento de los intercambios y su optimizador (con Node.js):
 
 ```powershell
-node --test test_social.js
+node --test test_social.js test_pool_optimizer.js
 ```
+
+El optimizador se contrasta con enumeración exhaustiva de inventarios pequeños
+y con casos de tamaño equivalente al álbum completo.
 
 Generar el CSV maestro de estrategia con las plantillas actuales de
 Transfermarkt y las altas/bajas de BeSoccer:
@@ -288,6 +305,49 @@ enlaces públicos ni comparaciones entre amigos. Esa copia
 que no puede quedarse obsoleta aunque el álbum se reinicie desde el panel de
 Supabase o desde otro dispositivo. Las propuestas aceptadas no modifican
 automáticamente el álbum: cada usuario confirma después sus copias.
+
+### Intercambio grupal
+
+Abre «Crear Intercambio Grupal» desde «Amigos» o «Propuestas», o la pestaña
+«Grupal» del cuadro de intercambios. Tú participas siempre y puedes elegir uno
+o varios amigos. No necesitan ser amigos entre sí: sólo se usan inventarios que
+ya puedes consultar. Al calcular se vuelven a obtener sus colecciones.
+
+- Cada cromo ofrece como máximo `copias - 1`: nadie entrega su última copia.
+- Cada participante sólo recibe cromos que le faltan, una copia de cada uno y
+  nunca una copia aportada por él mismo.
+- **Sólo las copias entregadas a otra persona generan saldo.** Los repetidos
+  que quedan sin usar no dan crédito. Como no hay saldo externo, al completar
+  el reparto todos aportan exactamente lo mismo que reciben, aunque sus
+  entregas y recogidas sean con personas distintas. Primero se depositan las
+  aportaciones indicadas y después se reparten.
+- Se excluyen tus «No pegar», tanto manuales como sugeridos, respetando «Pegar»
+  explícito. Las decisiones privadas de tus amigos no se consultan ni se
+  comparten: sus faltas se deducen de la posesión.
+
+El grafo es una **circulación integral** entre participantes y tipos de cromo.
+La conservación del flujo impone el saldo 1:1 y las capacidades respetan las
+copias disponibles y las faltas. El objetivo principal es el número total de
+copias que cambian de dueño, no el de parejas ni el de propuestas.
+Se resuelve como flujo de coste mínimo con potenciales de Dijkstra y flujos
+bloqueantes de **Dinic** en la red residual. Los costes usan `BigInt` para que
+la cantidad de transferencias tenga prioridad exacta sobre cualquier desempate.
+Entre planes con el mismo máximo se priorizan los cromos con un único receptor
+posible; después se comparan las aportaciones útiles que desbloquea cada
+receptor, el total de sus repetidos y el avance de su álbum. Los empates finales
+son deterministas. Estas prioridades nunca sacrifican el máximo: una asignación
+local irreversible podría impedir un ciclo más largo.
+
+El cálculo se ejecuta en un Web Worker para no bloquear la interfaz. Se puede
+cancelar y sólo se presenta como óptimo cuando termina. Cambiar participantes,
+cambiar tu progreso, cerrar el cuadro o cambiar de sesión invalida el plan o
+cancela el cálculo pendiente.
+
+El resultado muestra aportaciones, recepciones, saldo y entregas por pareja, y
+se puede descargar como texto para compartirlo. **No reserva copias, no envía
+propuestas ni modifica los álbumes**, `localStorage` o las tablas de Supabase.
+Es una foto de los inventarios consultados: si alguien cambia su colección hay
+que recalcular. No requiere migraciones.
 
 Clerk Hobby y Supabase Free no requieren tarjeta para este uso. Supabase puede
 pausar un proyecto gratuito tras una semana sin actividad y lo reactiva cuando

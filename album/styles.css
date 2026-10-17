@@ -1985,7 +1985,7 @@ button {
 
 .social-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   padding: 0 22px 14px;
 }
@@ -2195,6 +2195,114 @@ button {
 
 .comparison-columns h3 span {
   color: var(--muted);
+}
+
+.pool-members {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.pool-members legend {
+  padding: 0 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.pool-member {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px;
+  border-radius: 9px;
+  background: #f3f4f0;
+  font-size: 0.8rem;
+}
+
+.pool-member input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  accent-color: var(--green);
+}
+
+.pool-member strong,
+.pool-member small {
+  display: block;
+}
+
+.pool-member small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.pool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pool-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pool-result {
+  margin-top: 16px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.pool-table-wrap {
+  margin: 14px 0;
+  overflow-x: auto;
+}
+
+.pool-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.pool-table caption {
+  padding-bottom: 8px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.pool-table th,
+.pool-table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+
+.pool-table th:first-child {
+  text-align: left;
+}
+
+.pool-delivery {
+  margin: 8px 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  font-size: 0.8rem;
+}
+
+.pool-delivery summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.pool-delivery ul {
+  padding-left: 18px;
+  line-height: 1.6;
 }
 
 .trade-options {

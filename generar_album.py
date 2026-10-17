@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
   <header class="topbar">
@@ -159,7 +159,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
   <script src="app.js?v=53"></script>
   <script src="cloud-sync.js?v=17"></script>
-  <script src="social.js?v=19"></script>
+  <script src="social.js?v=20"></script>
 </body>
 </html>
 """
