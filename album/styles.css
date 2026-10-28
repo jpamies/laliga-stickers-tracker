@@ -2058,6 +2058,51 @@ button {
   background: var(--green-dark);
 }
 
+.share-list-card {
+  margin-bottom: 16px;
+}
+
+.share-list-label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.share-list-card select,
+.share-list-card textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  background: white;
+  font-size: 0.8rem;
+}
+
+.share-list-card select {
+  margin-bottom: 8px;
+}
+
+.share-list-card textarea {
+  display: block;
+  min-height: 210px;
+  resize: vertical;
+  font: 0.78rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.share-list-card textarea:focus,
+.share-list-card select:focus {
+  outline: 2px solid rgba(20, 122, 82, 0.3);
+}
+
+.share-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
 .social-row,
 .friend-row {
   display: flex;

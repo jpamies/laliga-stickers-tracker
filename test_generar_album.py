@@ -7,7 +7,7 @@ import unittest
 from collections import Counter
 from pathlib import Path
 
-from generar_album import STAT_FIELDS, generate, load_stats
+from generar_album import STAT_FIELDS, generate, generic_photo, load_laliga_photos, load_stats
 
 
 class AlbumGenerationTests(unittest.TestCase):
@@ -37,22 +37,22 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertEqual(len({sticker["seccion"] for sticker in stickers}), 29)
         self.assertEqual(
             sum(sticker["imagen_provisional"] != "true" for sticker in stickers),
-            433,
+            418,
         )
         self.assertEqual(
             sum(sticker["imagen_provisional"] == "true" for sticker in stickers),
-            228,
+            243,
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            189,
+            195,
         )
         # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
         # que sólo quedan donde LALIGA no ha emparejado al jugador.
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 182, "transfermarkt": 7}))
+        self.assertEqual(fuentes, Counter({"laliga": 194, "transfermarkt": 1}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]
@@ -159,12 +159,68 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=54"', html)
-        self.assertIn('href="styles.css?v=36"', html)
+        self.assertIn('src="app.js?v=55"', html)
+        self.assertIn('href="styles.css?v=37"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=17"', html)
-        self.assertIn('src="social.js?v=20"', html)
+        self.assertIn('src="social.js?v=21"', html)
         self.assertIn('data-view="friends"', html)
+
+    def test_junior_firpo_and_all_barcelona_rodri_cards_use_their_official_portraits(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(re.search(r"window\.ALBUM_DATA = (.*?);</script>", html).group(1))
+        expected = {
+            "REAL-BETIS-23": ("Junior Firpo", "p443967"),
+            "ULTIMOS-FICHAJES-40": ("Rodrigo Hernández Cascante", "p220566"),
+            "TOP-FICHAJES-67": ("Rodrigo Hernández Cascante", "p220566"),
+            "EXTRA-STICKER-BRONCE-06": ("Rodrigo Hernández Cascante", "p220566"),
+            "EXTRA-STICKER-PLATA-06": ("Rodrigo Hernández Cascante", "p220566"),
+            "EXTRA-STICKER-ORO-06": ("Rodrigo Hernández Cascante", "p220566"),
+        }
+        for sticker in stickers:
+            if sticker["id"] not in expected:
+                continue
+            with self.subTest(id=sticker["id"]):
+                full_name, photo_id = expected[sticker["id"]]
+                self.assertEqual(sticker["coincidencia_laliga"], full_name)
+                self.assertEqual(sticker["imagen_url"], "")
+                self.assertEqual(sticker["foto_fuente"], "laliga")
+                self.assertIn(photo_id, sticker["foto_url"])
+                self.assertNotIn("MENDOZA", sticker["digital_label"])
+                self.assertNotIn("LUIZ", sticker["digital_label"])
+        self.assertTrue(set(expected) <= {sticker["id"] for sticker in stickers})
+
+    def test_later_editions_never_use_panini_images_or_transfermarkt_portraits(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(re.search(r"window\.ALBUM_DATA = (.*?);</script>", html).group(1))
+        later = [sticker for sticker in stickers if sticker["edicion"] in {"2ed", "3ed", "4ed"}]
+        self.assertEqual(len(later), 168)
+        self.assertEqual(sum(bool(sticker["foto_url"]) for sticker in later), 144)
+        squads = load_laliga_photos(Path("laliga_plantillas.csv"))
+        for sticker in later:
+            with self.subTest(id=sticker["id"]):
+                self.assertEqual(sticker["imagen_url"], "")
+                self.assertEqual(sticker["imagen_provisional"], "true")
+                self.assertEqual(sticker["digital_label"], "")
+                self.assertEqual(sticker["digital_group"], "")
+                self.assertIn(sticker["foto_fuente"], {"laliga", ""})
+                player = squads.get(sticker["clave_laliga"])
+                if (
+                    sticker["estado_laliga"] == "en_plantilla"
+                    and player
+                    and not generic_photo(player["foto_url"])
+                ):
+                    self.assertEqual(sticker["foto_url"], player["foto_url"])
+                    self.assertEqual(sticker["foto_fuente"], "laliga")
+                else:
+                    self.assertEqual(sticker["foto_url"], "")
+                    self.assertEqual(sticker["foto_fuente"], "")
 
 
 class CompactListViewTests(unittest.TestCase):

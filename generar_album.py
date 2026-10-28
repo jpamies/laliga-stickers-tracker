@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
   <header class="topbar">
@@ -158,9 +158,9 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=54"></script>
+  <script src="app.js?v=55"></script>
   <script src="cloud-sync.js?v=17"></script>
-  <script src="social.js?v=20"></script>
+  <script src="social.js?v=21"></script>
 </body>
 </html>
 """
@@ -420,6 +420,10 @@ def generate(
     }
     used_sections: set[str] = set()
     for sticker in stickers:
+        official_only = sticker["edicion"] in {"2ed", "3ed", "4ed"}
+        if official_only:
+            for field in ("imagen_url", "digital_label", "digital_group", "metodo_coincidencia"):
+                sticker[field] = ""
         if sticker["imagen_url"]:
             continue
         sticker["imagen_provisional"] = "true"
@@ -429,7 +433,7 @@ def generate(
             sticker["foto_url"] = oficial["foto_url"]
             sticker["foto_fuente"] = "laliga"
             sticker["dorsal"] = oficial["dorsal"]
-        else:
+        elif not official_only:
             player = (
                 photos.get(normalize_name(sticker["coincidencia_transfermarkt"]))
                 if reliable_match(sticker)

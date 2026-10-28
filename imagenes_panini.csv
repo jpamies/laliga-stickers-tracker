@@ -107,7 +107,7 @@ REAL-BETIS-07,https://assets.paninidigitalcollections.com/assets/22/stickers/150
 REAL-BETIS-08,https://assets.paninidigitalcollections.com/assets/22/stickers/149-aadd32bb371c0ff27cd75853c2375738b879b84f.png,8526,149,MARC BARTRA,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 REAL-BETIS-09,https://assets.paninidigitalcollections.com/assets/22/stickers/151-4bdfcebacccab0f206cd912e50e132d74e6cec66.png,8528,151,NATAN DE SOUZA,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 REAL-BETIS-10,https://assets.paninidigitalcollections.com/assets/22/stickers/152-14b8059886605e711fd6cb3ea9d496da2a9ecb42.png,8529,152,VALENTÍN GÓMEZ,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
-REAL-BETIS-23,https://assets.paninidigitalcollections.com/assets/22/stickers/51-e523849d592c3af157c453f1bab92dea5b90f4af.png,8428,51,LUIZ JÚNIOR_SZ,SUPER ZAMORAS,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+REAL-BETIS-23,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 REAL-BETIS-11,https://assets.paninidigitalcollections.com/assets/22/stickers/153-1ed59e3301604024a962030465bac49892f517ab.png,8530,153,MARC ROCA,REAL BETIS,exacta_grupo,1.0000,Nombre exacto normalizado.
 REAL-BETIS-12,https://assets.paninidigitalcollections.com/assets/22/stickers/154-094abbae7f92eaff73e0e2b4400930e11609320f.png,8531,154,SOFYAN AMRABAT,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 REAL-BETIS-BIS-1,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
@@ -539,7 +539,7 @@ ULTIMOS-FICHAJES-36,,,,,,sin_coincidencia_segura,,No hay una coincidencia sufici
 ULTIMOS-FICHAJES-37,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-38,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-39,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
-ULTIMOS-FICHAJES-40,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+ULTIMOS-FICHAJES-40,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-41,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-42,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-43,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
@@ -566,7 +566,7 @@ ULTIMOS-FICHAJES-63,,,,,,sin_coincidencia_segura,,No hay una coincidencia sufici
 ULTIMOS-FICHAJES-64,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-65,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ULTIMOS-FICHAJES-66,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
-TOP-FICHAJES-67,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+TOP-FICHAJES-67,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 TOP-FICHAJES-68,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 TOP-FICHAJES-69,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 ADN-LALIGA-PRIME-01,https://assets.paninidigitalcollections.com/assets/22/stickers/160-5cebe6a6d163c6114b98979cd37109e20817291c.png,8537,160,ANTONY DOS SANTOS,REAL BETIS,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
@@ -644,19 +644,19 @@ EXTRA-STICKER-BRONCE-02,https://assets.paninidigitalcollections.com/assets/22/st
 EXTRA-STICKER-BRONCE-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-BRONCE-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-BRONCE-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
-EXTRA-STICKER-BRONCE-06,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-BRONCE-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 EXTRA-STICKER-BRONCE-07,https://assets.paninidigitalcollections.com/assets/22/stickers/268-1ba9566eb021956a44836688255c6a204c942e52.png,8645,268,JUDE BELLINGHAM,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 EXTRA-STICKER-PLATA-01,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-PLATA-02,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 EXTRA-STICKER-PLATA-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-PLATA-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-PLATA-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
-EXTRA-STICKER-PLATA-06,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-PLATA-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 EXTRA-STICKER-PLATA-07,https://assets.paninidigitalcollections.com/assets/22/stickers/268-1ba9566eb021956a44836688255c6a204c942e52.png,8645,268,JUDE BELLINGHAM,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 EXTRA-STICKER-ORO-01,https://assets.paninidigitalcollections.com/assets/22/stickers/145-dea6363a68b6f533701f04a8bb4927888c0cad2b.png,8522,145,LAMINE YAMAL,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-ORO-02,https://assets.paninidigitalcollections.com/assets/22/stickers/272-9b6eeebf2af57fbb1a9b4eed310e4f5eb07d9f5b.png,8649,272,KYLIAN MBAPPÉ,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
 EXTRA-STICKER-ORO-03,https://assets.paninidigitalcollections.com/assets/22/stickers/114-77858e64d4fc990a1adb3dacca5b2658075442ec.png,8491,114,NICO WILLIAMS,ATHLETIC CLUB,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-ORO-04,https://assets.paninidigitalcollections.com/assets/22/stickers/141-83126f042909e4b9a86f70ae45a42fd8de3c472c.png,8518,141,PEDRI,FC BARCELONA,exacta_grupo,1.0000,Nombre exacto normalizado.
 EXTRA-STICKER-ORO-05,https://assets.paninidigitalcollections.com/assets/22/stickers/115-23c39d706213dffc3c44d2f4b8d1b245d052e384.png,8492,115,JAN OBLAK,ATLÉTICO DE MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.
-EXTRA-STICKER-ORO-06,https://assets.paninidigitalcollections.com/assets/22/stickers/81-f6282e4c0d57251f1284240d8582f8eec2175326.png,8458,81,RODRI MENDOZA_SR,SUPER ROOKIES,parcial_catalogo,0.9700,Coincidencia única por nombre parcial.
+EXTRA-STICKER-ORO-06,,,,,,sin_coincidencia_segura,,No hay una coincidencia suficientemente segura en el catálogo digital.
 EXTRA-STICKER-ORO-07,https://assets.paninidigitalcollections.com/assets/22/stickers/268-1ba9566eb021956a44836688255c6a204c942e52.png,8645,268,JUDE BELLINGHAM,REAL MADRID,parcial_grupo,0.9700,Coincidencia única por nombre parcial.

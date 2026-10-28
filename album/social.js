@@ -19,6 +19,8 @@
   let poolPlan = null;
   let poolJob = null;
   let poolViewVersion = 0;
+  let shareListKind = "missing";
+  let shareViewVersion = 0;
 
   function escapeHtml(value) {
     const holder = document.createElement("div");
@@ -77,7 +79,7 @@
         <button class="social-close" type="button" data-social-close aria-label="Cerrar">×</button>
       </div>
       <div class="social-tabs" role="tablist">
-        <button class="${activeTab === "share" ? "active" : ""}" type="button" data-social-tab="share">Enlaces</button>
+        <button class="${activeTab === "share" ? "active" : ""}" type="button" data-social-tab="share">Compartir</button>
         <button class="${activeTab === "friends" ? "active" : ""}" type="button" data-social-tab="friends">Amigos</button>
         <button class="${activeTab === "trades" ? "active" : ""}" type="button" data-social-tab="trades">Propuestas</button>
         <button class="${activeTab === "pool" ? "active" : ""}" type="button" data-social-tab="pool">Grupal</button>
@@ -87,22 +89,137 @@
     `;
   }
 
+  function collectionListText(kind) {
+    if (!["missing", "duplicates", "both"].includes(kind)) {
+      throw new Error("Elige faltantes, repetidos o ambas listas.");
+    }
+    if (!user || album.isAuthRequired() || album.isReadOnly()) {
+      throw new Error("Inicia sesión en tu álbum para compartir tus listas.");
+    }
+    const mine = album.getSocialProgress();
+    const unwanted = album.getUnwantedStickerIds();
+    const numberCounts = new Map();
+    for (const sticker of stickers.values()) {
+      const key = JSON.stringify([sticker.seccion, sticker.numero]);
+      numberCounts.set(key, (numberCounts.get(key) || 0) + 1);
+    }
+    const missing = new Map();
+    const duplicates = new Map();
+    let missingCount = 0;
+    let duplicateCount = 0;
+    let extraCopies = 0;
+    for (const sticker of stickers.values()) {
+      if (!sticker.nombre || sticker.accion === "ESPERAR") continue;
+      const entry = mine[sticker.id];
+      let label = sticker.numero;
+      if (!label || sticker.seccion.startsWith("EXTRA STICKER ")) {
+        label = sticker.nombre;
+      } else if (numberCounts.get(JSON.stringify([sticker.seccion, sticker.numero])) > 1) {
+        const edition = /^(\d+)ed$/.exec(sticker.edicion || "1ed");
+        label += ` ${sticker.nombre}${edition ? ` (${edition[1]}ª ed)` : ""}`;
+      }
+      if (!entry && !unwanted.has(sticker.id)) {
+        if (!missing.has(sticker.seccion)) missing.set(sticker.seccion, []);
+        missing.get(sticker.seccion).push(label);
+        missingCount += 1;
+      }
+      if (entry?.copies > 1) {
+        if (!duplicates.has(sticker.seccion)) duplicates.set(sticker.seccion, []);
+        const spare = entry.copies - 1;
+        duplicates.get(sticker.seccion).push(`${label} (×${spare})`);
+        duplicateCount += 1;
+        extraCopies += spare;
+      }
+    }
+    const sections = (groups) => [...groups]
+      .map(([section, labels]) => `*${section}*\n${labels.join(", ")}`)
+      .join("\n\n");
+    const parts = ["*Mi álbum LALIGA 2026-27*"];
+    if (kind !== "duplicates") {
+      parts.push(
+        `*ME FALTAN: ${missingCount} ${missingCount === 1 ? "cromo" : "cromos"}*\n\n`
+        + (missingCount ? sections(missing) : "No me falta ningún cromo de los que colecciono."),
+      );
+    }
+    if (kind !== "missing") {
+      parts.push(
+        `*REPETIDOS: ${duplicateCount} ${duplicateCount === 1 ? "cromo" : "cromos"}, `
+        + `${extraCopies} ${extraCopies === 1 ? "copia disponible" : "copias disponibles"}*\n`
+        + "Las cantidades (×N) son copias sobrantes para cambiar; conservo una.\n\n"
+        + (duplicateCount ? sections(duplicates) : "No tengo cromos repetidos para ofrecer."),
+      );
+    }
+    return parts.join("\n\n");
+  }
+
+  function updateShareList() {
+    const preview = content.querySelector("#share-list-text");
+    if (!preview || activeTab !== "share") return;
+    preview.value = collectionListText(shareListKind);
+    content.querySelector("#share-list-kind").value = shareListKind;
+    content.querySelector("[data-share-list-native]")
+      .classList.toggle("hidden", typeof navigator.share !== "function");
+  }
+
+  function selectShareList() {
+    const preview = content.querySelector("#share-list-text");
+    if (!preview) return;
+    preview.focus();
+    preview.select();
+  }
+
+  async function shareCollectionList(native) {
+    if (!requireUser()) return;
+    try {
+      updateShareList();
+      const text = collectionListText(shareListKind);
+      if (native) {
+        if (typeof navigator.share !== "function") {
+          selectShareList();
+          showNotice("Usa «Copiar para WhatsApp» o copia el texto de la vista previa.", true);
+          return;
+        }
+        await navigator.share({ text });
+        showNotice("Lista compartida.");
+      } else {
+        if (!navigator.clipboard?.writeText) {
+          selectShareList();
+          showNotice("Tu navegador no permite copiar automáticamente. Copia el texto seleccionado y pégalo en WhatsApp.", true);
+          return;
+        }
+        await navigator.clipboard.writeText(text);
+        showNotice("Lista copiada. Pégala en el chat de WhatsApp que quieras.");
+      }
+    } catch (error) {
+      if (native && error?.name === "AbortError") return;
+      console.error("No se pudo compartir la lista de cromos.", error);
+      selectShareList();
+      showNotice("No se pudo compartir automáticamente. Puedes copiar el texto seleccionado y pegarlo en WhatsApp.", true);
+    }
+  }
+
   async function renderShare() {
-    const { data, error } = await client.rpc("list_album_shares");
-    if (error) throw error;
-    const links = (data || []).map((share) => {
-      const url = `${baseUrl()}?share=${share.id}`;
-      return `
-        <div class="social-row">
-          <div><strong>Álbum público</strong><small>${formatDate(share.created_at)}</small></div>
-          <div class="social-row-actions">
-            <button type="button" data-share-url="${escapeHtml(url)}">Compartir</button>
-            <button class="danger" type="button" data-revoke-share="${share.id}">Revocar</button>
-          </div>
-        </div>
-      `;
-    }).join("");
+    const version = ++shareViewVersion;
+    const ownerId = user?.id;
     content.innerHTML = modalShell(`
+      <section class="social-card social-intro share-list-card">
+        <strong>Listas para WhatsApp</strong>
+        <p>Envía tus faltantes o repetidos a cualquiera, aunque no use esta web. Se comparte todo tu álbum, sin aplicar los filtros de pantalla.</p>
+        <label class="share-list-label" for="share-list-kind">Qué quieres compartir</label>
+        <select id="share-list-kind">
+          <option value="missing">Los que me faltan</option>
+          <option value="duplicates">Mis repetidos</option>
+          <option value="both">Faltantes y repetidos</option>
+        </select>
+        <p>Tus «No pegar» no aparecen como faltantes. En repetidos, ×N indica las copias que puedes ofrecer, guardándote una.</p>
+        <label class="share-list-label" for="share-list-text">Vista previa del mensaje</label>
+        <textarea id="share-list-text" readonly spellcheck="false"></textarea>
+        <div class="share-list-actions">
+          <button class="social-primary" type="button" data-copy-collection-list>Copiar para WhatsApp</button>
+          <button class="button secondary hidden" type="button" data-share-list-native>Compartir texto…</button>
+        </div>
+        <p>Con «Compartir texto…» puedes elegir WhatsApp si tu dispositivo lo permite. Si no aparece, copia y pega el mensaje; no se envía nada automáticamente.</p>
+      </section>
       <section class="social-card social-intro">
         <strong>Enlace de sólo lectura</strong>
         <p>Muestra qué cromos tienes y cuántas copias, sin revelar «No pegar», tu correo ni tu cuenta.</p>
@@ -110,9 +227,35 @@
       </section>
       <section>
         <h3>Enlaces activos</h3>
-        ${links || '<p class="social-empty">No tienes enlaces públicos activos.</p>'}
+        <div id="share-links"><p class="social-empty">Cargando enlaces…</p></div>
       </section>
     `);
+    updateShareList();
+    try {
+      const { data, error } = await client.rpc("list_album_shares");
+      if (error) throw error;
+      if (version !== shareViewVersion || user?.id !== ownerId || activeTab !== "share") return;
+      const links = (data || []).map((share) => {
+        const url = `${baseUrl()}?share=${share.id}`;
+        return `
+          <div class="social-row">
+            <div><strong>Álbum público</strong><small>${formatDate(share.created_at)}</small></div>
+            <div class="social-row-actions">
+              <button type="button" data-share-url="${escapeHtml(url)}">Compartir</button>
+              <button class="danger" type="button" data-revoke-share="${share.id}">Revocar</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+      content.querySelector("#share-links").innerHTML =
+        links || '<p class="social-empty">No tienes enlaces públicos activos.</p>';
+    } catch (error) {
+      if (version !== shareViewVersion || user?.id !== ownerId || activeTab !== "share") return;
+      console.error("No se pudieron cargar los enlaces del álbum.", error);
+      content.querySelector("#share-links").innerHTML =
+        '<p class="social-empty">No se pudieron cargar los enlaces. Las listas de texto siguen disponibles.</p>';
+      showNotice("No se pudieron cargar los enlaces. Puedes seguir copiando o compartiendo tus listas.", true);
+    }
   }
 
   function comparisons(friend) {
@@ -690,7 +833,12 @@
   async function initialize(event) {
     poolViewVersion += 1;
     invalidatePool("La sesión o el álbum ha cambiado. Vuelve a calcular el reparto.");
-    if (user?.id !== event.detail.user?.id) poolSelection.clear();
+    if (user?.id !== event.detail.user?.id) {
+      poolSelection.clear();
+      shareViewVersion += 1;
+      if (dialog.open) dialog.close();
+      content.replaceChildren();
+    }
     client = event.detail.client;
     user = event.detail.user;
     if (await loadPublicShare()) return;
@@ -723,16 +871,23 @@
 
   openButton.addEventListener("click", async () => {
     if (!requireUser()) return;
-    await renderActiveTab();
+    activeTab = "share";
     dialog.showModal();
+    await renderActiveTab();
   });
 
   dialog.addEventListener("close", () => {
     poolViewVersion += 1;
+    shareViewVersion += 1;
     invalidatePool("");
   });
 
   dialog.addEventListener("change", (event) => {
+    if (event.target.closest("#share-list-kind")) {
+      shareListKind = event.target.value;
+      updateShareList();
+      return;
+    }
     const member = event.target.closest("[data-pool-member]");
     if (!member || member.disabled) return;
     if (member.checked) poolSelection.add(member.dataset.poolMember);
@@ -759,6 +914,14 @@
     if (event.target.closest("[data-social-signup]")) {
       dialog.close();
       window.PaniniCloud.signUp?.();
+      return;
+    }
+    if (event.target.closest("[data-copy-collection-list]")) {
+      await shareCollectionList(false);
+      return;
+    }
+    if (event.target.closest("[data-share-list-native]")) {
+      await shareCollectionList(true);
       return;
     }
     if (event.target.closest("[data-open-pool]")) {
@@ -863,6 +1026,7 @@
   document.addEventListener("panini:progress-changed", () => {
     invalidatePool("Tu álbum ha cambiado. Vuelve a calcular el reparto.");
     if (!user) return;
+    if (dialog.open && activeTab === "share") updateShareList();
     const panel = document.querySelector("#friends-panel");
     if (panel) {
       renderFriendsPanel(panel);

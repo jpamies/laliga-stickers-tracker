@@ -64,11 +64,21 @@
 - Modo catálogo sin login: si no inicias sesión, el álbum se abre sin marcas y
   sólo deja consultar la colección completa. Para ver y editar tu progreso hay
   que entrar con cuenta, y entonces se carga únicamente el álbum de la nube.
-- Imágenes asociadas de forma conservadora por jugador y equipo. Los cromos sin
-  foto oficial se dibujan en la propia web con el escudo del equipo, sus colores
-  y el retrato oficial de LALIGA, ampliado hasta un encuadre parecido al de un
-  cromo real. Cuando LALIGA no ha emparejado al jugador se recurre a la foto de
-  Transfermarkt, y si tampoco la hay se dibuja una silueta.
+- Los cromos de 2ª, 3ª y 4ª edición usan exclusivamente el retrato oficial
+  de LALIGA, con el escudo y los colores del equipo. No se muestran imágenes
+  Panini ni retratos de Transfermarkt para estas ediciones; si no hay una foto
+  oficial fiable se dibuja una silueta.
+  Los de 1ª edición conservan las imágenes Panini disponibles. Cuando no las
+  hay, se dibujan con el retrato de LALIGA, ampliado hasta un encuadre parecido
+  al de un cromo real; Transfermarkt queda como alternativa sólo para esta
+  primera edición, y si tampoco hay foto se usa una silueta.
+  Los retratos de LALIGA usan un zoom `×2,44`, el doble del encuadre anterior
+  (`×1,22`), dentro del mismo hueco de foto. Se centran horizontalmente y se
+  anclan arriba para no cortar la cabeza. El
+  recorte no afecta al escudo, el nombre ni las imágenes Panini o Transfermarkt.
+  Los nombres cortos ambiguos se resuelven por identidad: «Junior» es Júnior
+  Firpo y «Rodri» es Rodrigo Hernández Cascante, no Luiz Júnior ni Rodri Mendoza.
+  Si el catálogo digital no incluye al jugador correcto se usa su retrato oficial.
 - Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
   información: la decisión de no pegar la tomas tú.
 - Ficha oficial de LALIGA en cada cromo (nombre completo, dorsal y
@@ -84,6 +94,15 @@
   Los BIS compartidos por dos jugadores (Celta y Deportivo, `14BIS`) se
   conservan sin cambios y se notifican para revisarlos a mano.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
+- En «Compartir», listas de faltantes, repetidos o ambas para copiar y pegar
+  en WhatsApp, sin que quien las recibe necesite usar la web. El texto se agrupa
+  por equipo/sección, excluye tus «No pegar» de los faltantes y expresa los
+  repetidos en copias sobrantes (`×N`), conservando una para ti. Los BIS
+  compartidos se distinguen por jugador y edición; los Extra Sticker, por nombre.
+  Se comparte todo tu álbum, no sólo el filtro de pantalla. El móvil puede
+  ofrecer «Compartir texto…» para elegir WhatsApp u otra aplicación; copiar
+  sigue disponible en los demás navegadores. No se envía nada automáticamente
+  ni se incluyen decisiones privadas, identificadores o enlaces en el texto.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 - En los intercambios, «Te puede dar» y sus contadores excluyen los cromos que
   tu álbum considera «No pegar», incluida la sugerencia privada de jugadores

@@ -655,7 +655,7 @@
   // Los retratos de LALIGA son de cuerpo medio y dejan al jugador pequeño, así
   // que se amplían hasta un encuadre parecido al de un cromo real. Los de
   // Transfermarkt ya vienen recortados a la cara y se dejan como están.
-  const LALIGA_PHOTO_ZOOM = 1.22;
+  const LALIGA_PHOTO_ZOOM = 2.44;
 
   function photoTag(sticker, id) {
     const zoom = sticker.foto_fuente === "laliga" ? LALIGA_PHOTO_ZOOM : 1;
@@ -666,7 +666,7 @@
     // recortan por abajo; las de Transfermarkt se apoyan en el borde inferior,
     // como hasta ahora.
     const anchor = zoom === 1 ? "xMidYMax meet" : "xMidYMin slice";
-    return `<image href="${escapeHtml(sticker.foto_url)}" x="${x}" y="${PHOTO_BOX.y}" width="${width}" height="${height}" clip-path="url(#photo-${id})" preserveAspectRatio="${anchor}"/>`;
+    return `<g clip-path="url(#photo-${id})"><image href="${escapeHtml(sticker.foto_url)}" x="${x}" y="${PHOTO_BOX.y}" width="${width}" height="${height}" preserveAspectRatio="${anchor}"/></g>`;
   }
 
   function placeholderSticker(sticker) {

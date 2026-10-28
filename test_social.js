@@ -25,6 +25,8 @@ function eventNode(properties = {}) {
       return true;
     },
     querySelectorAll: () => [],
+    focus() { this.focused = true; },
+    select() { this.selected = true; },
     replaceChildren() { this.innerHTML = ""; },
     classList: {
       add: (name) => classes.add(name),
@@ -89,6 +91,7 @@ function fixture(options = {}) {
     URLSearchParams,
     structuredClone,
     Worker: options.Worker,
+    navigator: options.navigator || {},
     CustomEvent: class {
       constructor(type, { detail } = {}) {
         this.type = type;
@@ -103,7 +106,7 @@ function fixture(options = {}) {
   // Run the real modules, stubbing only DOM rendering and exposing closure state.
   vm.runInContext(appSource.replace(
     /\n  initializeSections\(\);[\s\S]*$/,
-    "\n  render = () => {};\n  window.testState = state;\n  window.testAlbumFunctions = {matchesFilter, matchesSearch, editionBadge};\n})();",
+    "\n  render = () => {};\n  window.testState = state;\n  window.testAlbumFunctions = {matchesFilter, matchesSearch, editionBadge, photoTag, placeholderSticker};\n})();",
   ), context);
   vm.runInContext(socialSource.replace(
     /\n  document\.addEventListener\("panini:cloud-ready", initialize\);/,
@@ -133,6 +136,16 @@ function fixture(options = {}) {
     plan: () => poolPlan,
     job: () => poolJob,
     text: poolPlanText,
+  };
+  window.testShare = {
+    configure(rpc) {
+      user = { id: "me", fullName: "Private account name" };
+      client = { rpc: rpc || (async () => ({ data: [], error: null })) };
+      activeTab = "share";
+    },
+    text: collectionListText,
+    render: renderShare,
+    update: updateShareList,
   };`,
   ), context);
   const album = window.PaniniAlbum;
@@ -177,6 +190,37 @@ test("fourth edition filters, searches and badges use the same edition without c
   assert.match(window.testAlbumFunctions.editionBadge(sticker), /data-edition="4ed"/);
   assert.match(window.testAlbumFunctions.editionBadge(sticker), /4ª ed/);
   assert.deepEqual(album.getProgress(), before);
+});
+
+test("LALIGA portraits double the previous 1.22 framing within the original photo box", () => {
+  const { window } = fixture();
+  const sticker = {
+    id: "portrait", seccion: "REAL BETIS", numero: "9BIS", nombre: "Junior",
+    tipo: "defensa", foto_fuente: "laliga", foto_url: "https://example.test/portrait.png",
+  };
+  const image = window.testAlbumFunctions.photoTag(sticker, "portrait");
+  const attributes = Object.fromEntries(
+    [...image.matchAll(/\b(x|y|width|height)="([^"]+)"/g)]
+      .map((match) => [match[1], Number(match[2])]),
+  );
+  assert.ok(Math.abs(attributes.width / (172 * 1.22) - 2) < 1e-10);
+  assert.ok(Math.abs(attributes.height / (204 * 1.22) - 2) < 1e-10);
+  assert.equal(attributes.y, 66);
+  assert.ok(Math.abs(attributes.x + attributes.width / 2 - 138) < 1e-10);
+  assert.match(image, /^<g clip-path="url\(#photo-portrait\)"><image /);
+  assert.match(image, /preserveAspectRatio="xMidYMin slice"/);
+  const card = window.testAlbumFunctions.placeholderSticker(sticker);
+  assert.match(card, /viewBox="0 0 232 308"/);
+  assert.match(card, /<clipPath id="photo-portrait">\s*<rect x="52" y="66" width="172" height="204"/);
+});
+
+test("Transfermarkt portraits retain their original size and bottom anchoring", () => {
+  const { window } = fixture();
+  const image = window.testAlbumFunctions.photoTag({
+    foto_fuente: "transfermarkt", foto_url: "https://example.test/portrait.jpg",
+  }, "portrait");
+  assert.match(image, /x="52" y="66" width="172" height="204"/);
+  assert.match(image, /preserveAspectRatio="xMidYMax meet"/);
 });
 
 test("Figuritas cannot overwrite two different stickers that share a BIS number", () => {
@@ -295,6 +339,178 @@ test("cloud sync exposes signUp with Clerk fallback", () => {
   assert.match(cloudSyncSource, /signUp:\s*\(\)\s*=>/);
   assert.match(cloudSyncSource, /window\.Clerk\.openSignUp/);
   assert.match(cloudSyncSource, /window\.Clerk\.openSignIn/);
+});
+
+test("WhatsApp missing list uses own preferences and never includes private account data", () => {
+  const { window } = fixture();
+  window.testShare.configure();
+  window.testState.privateStrategy = true;
+  const missing = window.testShare.text("missing");
+  assert.equal(
+    missing,
+    "*Mi álbum LALIGA 2026-27*\n\n*ME FALTAN: 3 cromos*\n\n*Team*\nnormal, override, single",
+  );
+  assert.doesNotMatch(missing, /manual|automatic|owned|offer|Private account|stickDecision|user_id|https?:/);
+  assert.throws(() => window.testShare.text("invalid"), /Elige faltantes/);
+});
+
+test("WhatsApp duplicates report spare copies, including those marked No pegar", () => {
+  const { window, album } = fixture();
+  window.testShare.configure();
+  const progress = album.getProgress();
+  progress.offer.copies = 4;
+  album.replaceProgress(progress);
+  const text = window.testShare.text("duplicates");
+  assert.match(text, /\*REPETIDOS: 1 cromo, 3 copias disponibles\*/);
+  assert.match(text, /offer \(×3\)/);
+  assert.doesNotMatch(text, /ME FALTAN|owned/);
+  const both = window.testShare.text("both");
+  assert.match(both, /ME FALTAN/);
+  assert.match(both, /REPETIDOS/);
+});
+
+test("WhatsApp text distinguishes duplicate BIS identities and names Extra Stickers", () => {
+  const { window, album } = fixture({ data: [
+    { id: "old", seccion: "DEPORTIVO", numero: "14BIS", nombre: "Gijselhart", edicion: "3ed" },
+    { id: "new", seccion: "DEPORTIVO", numero: "14BIS", nombre: "Casadó", edicion: "4ed" },
+    { id: "extra", seccion: "EXTRA STICKER ORO", numero: "Extra Sticker", nombre: "Rodri" },
+    { id: "pending", seccion: "TOP FICHAJES", numero: "70", nombre: "", accion: "ESPERAR" },
+  ] });
+  window.testShare.configure();
+  album.replaceProgress({});
+  const text = window.testShare.text("missing");
+  assert.match(text, /ME FALTAN: 3 cromos/);
+  assert.match(text, /14BIS Gijselhart \(3ª ed\), 14BIS Casadó \(4ª ed\)/);
+  assert.match(text, /\*EXTRA STICKER ORO\*\nRodri/);
+  assert.doesNotMatch(text, /TOP FICHAJES|pending|Extra Sticker/);
+});
+
+test("WhatsApp text comes from the owner's album even while previewing a friend", () => {
+  const { window, album } = fixture();
+  window.testShare.configure();
+  const before = window.testShare.text("both");
+  album.previewFriend("Friend", { normal: { state: "owned", copies: 20 } });
+  assert.equal(window.testShare.text("both"), before);
+});
+
+test("WhatsApp copying does not mutate progress and refreshes the selected preview", async () => {
+  const copied = [];
+  const state = fixture({ navigator: { clipboard: { writeText: async (text) => copied.push(text) } } });
+  state.window.testShare.configure();
+  await state.window.testShare.render();
+  const before = new Map(state.storage);
+  const dialog = state.nodes.get("#social-dialog");
+  await dialog.emit("change", {
+    target: targetFor("#share-list-kind", { value: "both" }),
+  });
+  await dialog.emit("click", { target: targetFor("[data-copy-collection-list]") });
+  assert.equal(copied.length, 1);
+  assert.equal(copied[0], state.window.testShare.text("both"));
+  assert.equal(state.nodes.get("#share-list-text").value, copied[0]);
+  assert.match(state.nodes.get("#social-notice").textContent, /Lista copiada/);
+  assert.deepEqual(state.storage, before);
+  dialog.showModal();
+  state.album.replaceProgress({ normal: { state: "owned", copies: 5 } }, { notify: true });
+  assert.match(state.nodes.get("#share-list-text").value, /normal \(×4\)/);
+});
+
+test("WhatsApp native sharing sends only complete text, not an album link", async () => {
+  const shared = [];
+  const state = fixture({ navigator: { share: async (payload) => shared.push(payload) } });
+  state.window.testShare.configure();
+  await state.window.testShare.render();
+  assert.equal(state.nodes.get("[data-share-list-native]").classList.contains("hidden"), false);
+  await state.nodes.get("#social-dialog").emit("click", {
+    target: targetFor("[data-share-list-native]"),
+  });
+  assert.equal(shared.length, 1);
+  assert.deepEqual(Object.keys(shared[0]), ["text"]);
+  assert.equal(shared[0].text, state.window.testShare.text("missing"));
+});
+
+test("copy failures keep the complete text selectable and report the error", async () => {
+  const errors = [];
+  const state = fixture({
+    navigator: { clipboard: { writeText: async () => { throw new Error("Permission denied"); } } },
+    console: { ...console, error: (...args) => errors.push(args) },
+  });
+  state.window.testShare.configure();
+  await state.window.testShare.render();
+  await state.nodes.get("#social-dialog").emit("click", {
+    target: targetFor("[data-copy-collection-list]"),
+  });
+  assert.equal(errors.length, 1);
+  assert.equal(state.nodes.get("#share-list-text").selected, true);
+  assert.equal(state.nodes.get("#social-notice").classList.contains("error"), true);
+  assert.match(state.nodes.get("#social-notice").textContent, /texto seleccionado/);
+});
+
+test("unsupported clipboard and cancelled sharing never claim a successful copy", async () => {
+  const state = fixture({ navigator: {
+    share: async () => { const error = new Error("Cancelled"); error.name = "AbortError"; throw error; },
+  } });
+  state.window.testShare.configure();
+  await state.window.testShare.render();
+  await state.nodes.get("#social-dialog").emit("click", {
+    target: targetFor("[data-share-list-native]"),
+  });
+  assert.equal(state.nodes.get("#social-notice")?.textContent, undefined);
+  await state.nodes.get("#social-dialog").emit("click", {
+    target: targetFor("[data-copy-collection-list]"),
+  });
+  assert.match(state.nodes.get("#social-notice").textContent, /no permite copiar/);
+  assert.equal(state.nodes.get("#share-list-text").selected, true);
+});
+
+test("public link failures do not block WhatsApp text from the local album", async () => {
+  const errors = [];
+  const state = fixture({ console: { ...console, error: (...args) => errors.push(args) } });
+  state.window.testShare.configure(async () => ({ data: null, error: new Error("Offline") }));
+  await state.window.testShare.render();
+  assert.equal(state.nodes.get("#share-list-text").value, state.window.testShare.text("missing"));
+  assert.match(state.nodes.get("#share-links").innerHTML, /siguen disponibles/);
+  assert.equal(errors.length, 1);
+});
+
+test("signed-out and public albums cannot export another person's private lists", () => {
+  const state = fixture();
+  state.window.testShare.configure();
+  state.album.setAuthRequired(true);
+  assert.throws(() => state.window.testShare.text("both"), /Inicia sesión/);
+  state.album.setAuthRequired(false);
+  state.window.testState.readOnly = true;
+  assert.throws(() => state.window.testShare.text("both"), /Inicia sesión/);
+});
+
+test("session changes clear private share content and stale link responses cannot restore it", async () => {
+  let resolveLinks;
+  const state = fixture();
+  state.window.testShare.configure(() => new Promise((resolve) => { resolveLinks = resolve; }));
+  const pending = state.window.testShare.render();
+  const dialog = state.nodes.get("#social-dialog");
+  dialog.showModal();
+  await state.window.testPool.initialize({ detail: { user: null, client: {} } });
+  assert.equal(dialog.open, false);
+  assert.equal(state.nodes.get("#social-content").innerHTML, "");
+  resolveLinks({ data: [{ id: "private-old-share", created_at: "2026-10-29" }], error: null });
+  await pending;
+  assert.doesNotMatch(state.nodes.get("#share-links")?.innerHTML || "", /private-old-share/);
+});
+
+test("full-size WhatsApp lists are not truncated and completed albums have explicit empty messages", () => {
+  const html = readFileSync(path.join(__dirname, "album", "index.html"), "utf8");
+  const data = JSON.parse(html.match(/window\.ALBUM_DATA = (.*?);<\/script>/)[1]);
+  const { window, album } = fixture({ data });
+  window.testShare.configure();
+  album.replaceProgress({});
+  const missing = window.testShare.text("missing");
+  assert.match(missing, /ME FALTAN: 661 cromos/);
+  assert.match(missing, /14BIS Burcio \(4ª ed\)/);
+  assert.match(missing, /\*EXTRA STICKER ORO\*/);
+  assert.match(missing, /Bellingham/);
+  album.replaceProgress(Object.fromEntries(data.map((sticker) => [sticker.id, { state: "owned", copies: 1 }])));
+  assert.match(window.testShare.text("missing"), /No me falta ningún cromo/);
+  assert.match(window.testShare.text("duplicates"), /No tengo cromos repetidos/);
 });
 
 function targetFor(selector, properties = {}) {
