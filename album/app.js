@@ -425,6 +425,17 @@
       const knownNumbers = new Set(
         sectionStickers.map((sticker, index) => figuritasNumber(sticker, index)),
       );
+      const numberCounts = new Map();
+      sectionStickers.forEach((sticker, index) => {
+        const number = figuritasNumber(sticker, index);
+        numberCounts.set(number, (numberCounts.get(number) || 0) + 1);
+      });
+      const ambiguousNumbers = new Set(
+        [...numberCounts].filter(([, count]) => count > 1).map(([number]) => number),
+      );
+      for (const number of ambiguousNumbers) {
+        unmatched.push(`${section}:${number} (número compartido; sin modificar)`);
+      }
 
       const sectionMissing = new Set();
       for (const number of missing.get(section) || []) {
@@ -447,6 +458,7 @@
 
       sectionStickers.forEach((sticker, index) => {
         const number = figuritasNumber(sticker, index);
+        if (ambiguousNumbers.has(number)) return;
         const previous = progressFor(sticker.id);
         let copies = hasMissingList ? 1 : previous.copies;
         if (sectionMissing.has(number)) copies = 0;
@@ -548,6 +560,7 @@
       displayAction(sticker),
       sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
       sticker.edicion === "3ed" ? "3ed 3a edicion tercera edicion" : "",
+      sticker.edicion === "4ed" ? "4ed 4ª edicion 4a edicion cuarta edicion" : "",
       sticker.coincidencia_laliga,
       sticker.notas,
     ].join(" "));
@@ -585,6 +598,9 @@
     }
     if (state.filter === "third-edition") {
       return sticker.edicion === "3ed";
+    }
+    if (state.filter === "fourth-edition") {
+      return sticker.edicion === "4ed";
     }
     if (state.filter === "wait") {
       return sticker.accion === "ESPERAR";
@@ -912,6 +928,7 @@
   const editionLabels = {
     "2ed": "2ª ed",
     "3ed": "3ª ed",
+    "4ed": "4ª ed",
   };
 
   function editionBadge(sticker) {

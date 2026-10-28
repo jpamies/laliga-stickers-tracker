@@ -1,13 +1,24 @@
 from __future__ import annotations
 
 import unittest
+import tempfile
+from pathlib import Path
+
+import pymupdf
 
 from extraer_checklist import (
     Entry,
+    CLUB_SECTIONS,
+    SPECIAL_SECTIONS,
+    WITHDRAWN_MARKER,
     build_stickers,
     club_and_name,
+    extract_lines,
+    load_known_ids,
     parse_entries,
     parse_number,
+    split_sections,
+    write_csv,
 )
 
 
@@ -127,6 +138,93 @@ class ThirdEditionFormatTests(unittest.TestCase):
             club_and_name("ÚLTIMOS FICHAJES", "IVÁN MARTÍN (Racing)"),
             ("Racing de Santander", "Iván Martín"),
         )
+
+
+class FourthEditionTests(unittest.TestCase):
+    def sections(self) -> dict[str, list[str]]:
+        return {section: [] for section in CLUB_SECTIONS + SPECIAL_SECTIONS}
+
+    def test_reads_fourth_edition_and_keeps_withdrawal_separate_from_action(self) -> None:
+        sections = self.sections()
+        sections["SEVILLA"] = [
+            "14", WITHDRAWN_MARKER, "Sow", "medio",
+            "14BIS", "Nico Guillén", "medio", "4ªed",
+        ]
+        old, new = build_stickers(sections)
+
+        self.assertEqual(old.baja_panini, "true")
+        self.assertEqual(old.accion, "PEGAR")
+        self.assertEqual(new.edicion, "4ed")
+        self.assertEqual(new.baja_panini, "")
+        self.assertEqual(new.accion, "PEGAR")
+
+    def test_repeated_bis_names_do_not_replace_the_original_sticker(self) -> None:
+        sections = self.sections()
+        sections["DEPORTIVO"] = [
+            "14 BIS", "Gijselhat", "medio", "3ª ed",
+            "14BIS", "Casadó", "medio", "4ªed",
+        ]
+        known = {("DEPORTIVO", "14BIS", 1): "DEPORTIVO-BIS-2"}
+        old, new = build_stickers(sections, known)
+
+        self.assertEqual((old.id, old.nombre), ("DEPORTIVO-BIS-2", "Gijselhart"))
+        self.assertEqual((new.nombre, new.edicion), ("Casadó", "4ed"))
+        self.assertNotEqual(old.id, new.id)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "previous.csv"
+            write_csv([old, new], path)
+            regenerated = build_stickers(sections, load_known_ids(path))
+        self.assertEqual([sticker.id for sticker in regenerated], [old.id, new.id])
+
+    def test_top_signings_reuse_the_published_placeholder_identifiers(self) -> None:
+        sections = self.sections()
+        sections["TOP FICHAJES"] = ["67", "Rodri", "medio", "4ªed"]
+        sections["ÚLTIMOS FICHAJES"] = ["UF 60", "Romero", "defensa", "4ªed"]
+        stickers = build_stickers(sections, load_known_ids(None))
+        by_number = {sticker.numero: sticker for sticker in stickers}
+        self.assertEqual(by_number["67"].id, "TOP-FICHAJES-67")
+        self.assertEqual(by_number["67"].club_objetivo, "FC Barcelona")
+        self.assertEqual(by_number["UF60"].id, "ULTIMOS-FICHAJES-60")
+        self.assertEqual(by_number["UF60"].club_objetivo, "Atlético de Madrid")
+
+    def test_unlabelled_signing_needs_a_verified_name_not_just_a_number(self) -> None:
+        sections = self.sections()
+        sections["ÚLTIMOS FICHAJES"] = ["UF60", "Otro Romero", "defensa", "4ªed"]
+        with self.assertRaisesRegex(ValueError, "Falta comprobar el club"):
+            build_stickers(sections)
+
+    def test_top_heading_is_separate_and_optional_for_older_editions(self) -> None:
+        lines = [*CLUB_SECTIONS, *(s for s in SPECIAL_SECTIONS if s != "TOP FICHAJES")]
+        self.assertNotIn("TOP FICHAJES", split_sections(lines))
+        sections = split_sections([*lines, "3 TOP FICHAJES", "67", "Rodri", "medio", "4ªed"])
+        self.assertEqual(parse_entries("TOP FICHAJES", sections["TOP FICHAJES"])[0].numero, "67")
+
+    def test_madrid_abbreviation_uses_the_canonical_club(self) -> None:
+        self.assertEqual(
+            club_and_name("EXTRA STICKER ORO", "Bellingham (Madrid)"),
+            ("Real Madrid", "Bellingham"),
+        )
+
+    def test_separated_red_rectangles_do_not_mark_the_white_rows_between_them(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "checklist.pdf"
+            with pymupdf.open() as document:
+                page = document.new_page()
+                shape = page.new_shape()
+                for baseline in (110, 170):
+                    shape.draw_rect(pymupdf.Rect(20, baseline - 14, 270, baseline + 4))
+                shape.finish(fill=(0.875, 0.412, 0.392), color=None)
+                shape.commit()
+                page.insert_text((20, 70), "DEPORTIVO")
+                for number, name, baseline in ((1, "Baja", 110), (2, "Sigue", 140), (3, "Otra baja", 170)):
+                    page.insert_text((30, baseline), str(number))
+                    page.insert_text((90, baseline), name)
+                    page.insert_text((220, baseline), "medio")
+                document.save(path)
+            lines = extract_lines(path)
+        entries = parse_entries("DEPORTIVO", lines[1:])
+        self.assertEqual([entry.baja_panini for entry in entries], [True, False, True])
+        self.assertEqual([entry.nombre for entry in entries], ["Baja", "Sigue", "Otra baja"])
 
 
 class IdentifierTests(unittest.TestCase):

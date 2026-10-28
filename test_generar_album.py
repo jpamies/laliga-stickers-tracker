@@ -31,28 +31,28 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertIsNotNone(themes_match)
         themes = json.loads(themes_match.group(1))
-        self.assertEqual(total, 618)
-        self.assertEqual(len(stickers), 618)
-        self.assertEqual(len({sticker["id"] for sticker in stickers}), 618)
+        self.assertEqual(total, 661)
+        self.assertEqual(len(stickers), 661)
+        self.assertEqual(len({sticker["id"] for sticker in stickers}), 661)
         self.assertEqual(len({sticker["seccion"] for sticker in stickers}), 29)
         self.assertEqual(
             sum(sticker["imagen_provisional"] != "true" for sticker in stickers),
-            424,
+            433,
         )
         self.assertEqual(
             sum(sticker["imagen_provisional"] == "true" for sticker in stickers),
-            194,
+            228,
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            137,
+            189,
         )
         # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
         # que sólo quedan donde LALIGA no ha emparejado al jugador.
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 134, "transfermarkt": 3}))
+        self.assertEqual(fuentes, Counter({"laliga": 182, "transfermarkt": 7}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]
@@ -66,12 +66,12 @@ class AlbumGenerationTests(unittest.TestCase):
             sum(sticker["accion"] == "NO PEGAR" for sticker in stickers),
             0,
         )
-        self.assertEqual({sticker["accion"] for sticker in stickers}, {"PEGAR", "ESPERAR"})
+        self.assertEqual({sticker["accion"] for sticker in stickers}, {"PEGAR"})
         # La ausencia en la plantilla oficial viaja como dato, nunca como una
         # recomendación pública de no pegar.
         self.assertEqual(
             sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
-            64,
+            69,
         )
         self.assertTrue(
             all(
@@ -86,8 +86,12 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(sticker["edicion"] == "3ed" for sticker in stickers),
-            51,
+            52,
         )
+        self.assertEqual(sum(sticker["edicion"] == "4ed" for sticker in stickers), 72)
+        red = [sticker for sticker in stickers if sticker.get("baja_panini") == "true"]
+        self.assertEqual(len(red), 44)
+        self.assertTrue(all(sticker["estado_laliga"] == "fuera_plantilla" for sticker in red))
         # Aarón Ochoa sigue en el Málaga pero está lesionado y sin ficha, así
         # que LALIGA no tiene su retrato y se recurre al de Transfermarkt.
         transfermarkt_fallback = next(
@@ -121,10 +125,10 @@ class AlbumGenerationTests(unittest.TestCase):
         )
         published = [sticker for sticker in updates if sticker["nombre"]]
         pending = [sticker for sticker in updates if not sticker["nombre"]]
-        self.assertEqual(len(published), 40)
-        self.assertEqual(len(pending), 29)
+        self.assertEqual(len(published), 69)
+        self.assertEqual(len(pending), 0)
         self.assertTrue(
-            all(sticker["edicion"] in {"2ed", "3ed"} for sticker in published)
+            all(sticker["edicion"] in {"2ed", "3ed", "4ed"} for sticker in published)
         )
         self.assertTrue(all(sticker["accion"] == "PEGAR" for sticker in published))
         self.assertTrue(
@@ -148,14 +152,15 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('id="import-json"', html)
         self.assertIn('data-filter="second-edition"', html)
         self.assertIn('data-filter="third-edition"', html)
+        self.assertIn('data-filter="fourth-edition"', html)
         self.assertIn('id="hide-dont-stick"', html)
         self.assertIn('id="summary-skipped"', html)
         self.assertIn('id="density-switch"', html)
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=53"', html)
-        self.assertIn('href="styles.css?v=35"', html)
+        self.assertIn('src="app.js?v=54"', html)
+        self.assertIn('href="styles.css?v=36"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=17"', html)
         self.assertIn('src="social.js?v=20"', html)
@@ -462,12 +467,14 @@ class EditionBadgeTests(unittest.TestCase):
 
         self.assertIn('state.filter === "second-edition"', source)
         self.assertIn('state.filter === "third-edition"', source)
+        self.assertIn('state.filter === "fourth-edition"', source)
 
     def test_each_edition_is_searchable_by_words(self) -> None:
         source = self.app()
 
         self.assertIn("2a edicion segunda edicion", source)
         self.assertIn("3a edicion tercera edicion", source)
+        self.assertIn("4a edicion cuarta edicion", source)
 
 
 class FiguritasSectionTests(unittest.TestCase):

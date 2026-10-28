@@ -68,7 +68,7 @@ function fixture(options = {}) {
     },
   });
   const window = {
-    ALBUM_DATA: ["normal", "manual", "automatic", "override", "owned", "single", "offer"]
+    ALBUM_DATA: options.data || ["normal", "manual", "automatic", "override", "owned", "single", "offer"]
       .map((id) => ({
         id,
         seccion: "Team",
@@ -103,7 +103,7 @@ function fixture(options = {}) {
   // Run the real modules, stubbing only DOM rendering and exposing closure state.
   vm.runInContext(appSource.replace(
     /\n  initializeSections\(\);[\s\S]*$/,
-    "\n  render = () => {};\n  window.testState = state;\n})();",
+    "\n  render = () => {};\n  window.testState = state;\n  window.testAlbumFunctions = {matchesFilter, matchesSearch, editionBadge};\n})();",
   ), context);
   vm.runInContext(socialSource.replace(
     /\n  document\.addEventListener\("panini:cloud-ready", initialize\);/,
@@ -160,6 +160,45 @@ test("excludes manual No pegar, owned stickers and non-duplicates without changi
   assert.deepEqual(Array.from(result.iCanGive), ["offer"]);
 });
 
+test("fourth edition filters, searches and badges use the same edition without changing progress", () => {
+  const { window, album } = fixture();
+  const sticker = {
+    id: "fourth", numero: "14BIS", nombre: "Casadó", edicion: "4ed",
+    seccion: "DEPORTIVO", accion: "PEGAR",
+  };
+  const before = album.getProgress();
+  window.testState.filter = "fourth-edition";
+  assert.equal(window.testAlbumFunctions.matchesFilter(sticker), true);
+  assert.equal(window.testAlbumFunctions.matchesFilter({ ...sticker, edicion: "3ed" }), false);
+  for (const query of ["4ed", "4ª edición", "cuarta edición"]) {
+    window.testState.query = query;
+    assert.equal(window.testAlbumFunctions.matchesSearch(sticker), true, query);
+  }
+  assert.match(window.testAlbumFunctions.editionBadge(sticker), /data-edition="4ed"/);
+  assert.match(window.testAlbumFunctions.editionBadge(sticker), /4ª ed/);
+  assert.deepEqual(album.getProgress(), before);
+});
+
+test("Figuritas cannot overwrite two different stickers that share a BIS number", () => {
+  const { album } = fixture({ data: [
+    { id: "old", seccion: "DEPORTIVO", numero: "14BIS", nombre: "Gijselhart" },
+    { id: "new", seccion: "DEPORTIVO", numero: "14BIS", nombre: "Casadó" },
+    { id: "normal", seccion: "DEPORTIVO", numero: "15", nombre: "Jugador" },
+  ] });
+  album.replaceProgress({
+    old: { copies: 3, state: "owned", stickDecision: "dont-stick" },
+    new: { copies: 1, state: "owned", stickDecision: "stick" },
+  });
+  const before = album.getProgress();
+  const parsed = album.parseFiguritasList(
+    "Figuritas App - Lista\nLaLiga 26/27\nMe faltan\nDeportivo: 14BIS\nRepetidas\nDeportivo: 15",
+  );
+  assert.equal(parsed.progress.old, undefined);
+  assert.equal(parsed.progress.new, undefined);
+  assert.equal(parsed.progress.normal.copies, 2);
+  assert.ok(parsed.unmatched.includes("DEPORTIVO:14BIS (número compartido; sin modificar)"));
+  assert.deepEqual(album.getProgress(), before);
+});
 test("excludes private suggestions but respects an explicit Pegar decision", () => {
   const { window, friend } = fixture();
   window.testState.privateStrategy = true;

@@ -21,8 +21,8 @@ class ImageMappingTests(unittest.TestCase):
                 rows = {row["id"]: row for row in csv.DictReader(source)}
 
         matched = sum(bool(row["imagen_url"]) for row in rows.values())
-        self.assertEqual(len(rows), 589)
-        self.assertEqual(matched, 424)
+        self.assertEqual(len(rows), 661)
+        self.assertEqual(matched, 433)
         self.assertEqual(
             rows["FC-BARCELONA-08"]["digital_label"],
             "PAU CUBARSÍ",
@@ -40,7 +40,7 @@ class ImageMappingTests(unittest.TestCase):
             rows["FC-BARCELONA-01"]["metodo_coincidencia"],
             "escudo_transfermarkt",
         )
-        self.assertEqual(methods["sin_coincidencia_segura"], 165)
+        self.assertEqual(methods["sin_coincidencia_segura"], 228)
 
 
 if __name__ == "__main__":

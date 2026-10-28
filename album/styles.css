@@ -1185,6 +1185,12 @@ button {
   background: var(--blue-soft);
 }
 
+.edition-badge[data-edition="4ed"] {
+  border-color: rgba(20, 122, 82, 0.5);
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
 .strategy-stick {
   color: var(--green-dark);
   background: var(--green-soft);

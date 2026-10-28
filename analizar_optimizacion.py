@@ -110,11 +110,12 @@ class Option:
     dorsal: str
     posicion: str
     stats: Stats = field(default_factory=Stats)
+    baja_panini: bool = False
 
     @property
     def active(self) -> bool:
         """Sigue en el club, aunque LALIGA no siempre le dé ficha."""
-        return self.estado in AT_THE_CLUB
+        return not self.baja_panini and self.estado in AT_THE_CLUB
 
 
 @dataclass
@@ -301,11 +302,12 @@ def option_for(
         nombre=row["nombre"],
         variante=row["variante"],
         edicion=row.get("edicion", ""),
-        estado=check.get("estado_laliga", ""),
+        estado=OUT_OF_SQUAD if row.get("baja_panini") == "true" else check.get("estado_laliga", ""),
         ficha=check.get("coincidencia_laliga", ""),
         dorsal=check.get("dorsal_laliga", ""),
         posicion=check.get("posicion_laliga", ""),
         stats=stats.get(check.get("clave_laliga", ""), Stats()),
+        baja_panini=row.get("baja_panini") == "true",
     )
 
 
@@ -377,8 +379,9 @@ def anchor(section: str) -> str:
 
 def option_cell(option: Option) -> str:
     label = option.numero
-    if option.edicion == "2ed":
-        label += " (2ª ed)"
+    edition = option.edicion.removesuffix("ed")
+    if edition.isdigit() and option.edicion.endswith("ed"):
+        label += f" ({edition}ª ed)"
     return label
 
 
@@ -408,6 +411,8 @@ def summary_table(reports: list[TeamReport]) -> list[str]:
 
 
 def slot_mark(slot: Slot, option: Option) -> str:
+    if option.baja_panini:
+        return "⛔ baja indicada por Panini"
     if slot.state != READY:
         return SLOT_LABEL[slot.state]
     # Un cromo de alguien que ya no está nunca se recomienda, aunque su hueco
@@ -539,8 +544,11 @@ def render(reports: list[TeamReport], generated_on: date) -> str:
         "  uno juega al menos el doble que el otro, se recomienda ese.",
         "- **Piden cromo:** jugadores inscritos y sin cromo que han disputado al",
         f"  menos el {IMPORTANT_SHARE:.0%} de los minutos de su equipo.",
-        "- **BIS sin numerar:** cierran la tabla de huecos. Panini los ha",
-        "  anunciado sin número, así que todavía no se sabe a qué hueco van.",
+        "- **Edición:** cada cromo añadido lleva su etiqueta `2ª ed`, `3ª ed` o `4ª ed`.",
+        "- **Baja Panini:** una fila roja en el checklist no se recomienda para",
+        "  completar el equipo, aunque el nombre se parezca al de otro jugador.",
+        "- **BIS sin numerar:** si Panini anuncia alguno sin casilla, se añade al",
+        "  final de la tabla. Los BIS del checklist actual ya tienen número.",
         "",
         "> El entrenador cuenta como hueco comprobable porque LALIGA también",
         "> publica su ficha. El escudo queda fuera del recuento.",

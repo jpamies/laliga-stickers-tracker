@@ -6,10 +6,11 @@
 
 ## Funciones
 
-- 544 cromos y variantes del checklist físico (1ª y 2ª edición), más 46 huecos
-  provisionales de Últimos Fichajes y 3 de Top Fichajes.
-- Cromos añadidos en la 2ª edición marcados con la etiqueta `2ª ed`, incluidos
-  los números `BIS` y la sección `ÚLTIMOS FICHAJES` (UF1-UF20).
+- 661 cromos y variantes del checklist físico hasta la 4ª edición, incluidos
+  los 66 Últimos Fichajes y los 3 Top Fichajes, ya todos con nombre.
+- Etiquetas y filtros de `2ª ed`, `3ª ed` y `4ª ed`. La cuarta incorpora
+  72 cromos: 37 variantes de equipos, UF41-UF66, los 3 Top Fichajes y
+  6 Extra Sticker (Rodri y Bellingham en bronce, plata y oro).
 - Buscador y filtros por equipo, sección y estado, con botón para borrar la
   sección seleccionada.
 - Estados `No lo tengo` y `Lo tengo`, también con clic directo en la imagen.
@@ -19,6 +20,10 @@
   todavía no ha asignado). Nunca se descarta ni se marca para revisar un cromo
   por ti; el detalle de la comprobación queda en `estado_plantilla` y en las
   notas de cada cromo.
+- Las 44 filas rojas del checklist de 4ª edición se conservan como
+  `baja_panini`: son bajas indicadas por Panini, usadas en la optimización
+  y en la comprobación para evitar confundir a dos jugadores con el mismo
+  apellido. No cambian las decisiones personales ni la acción pública `PEGAR`.
 - Sugerencia privada de `No pegar` para los jugadores que ya no aparecen en la
   plantilla oficial de LALIGA. Solo la ve la cuenta dueña del álbum: para el
   resto de visitantes, para los enlaces públicos y al mirar el álbum de un
@@ -48,7 +53,7 @@
   impresa.
 - El modo `Intercambio` aprieta todavía más: escudo y número en una chapa de
   22 píxeles de alto, sin cabeceras de sección porque el escudo ya dice de qué
-  equipo es. Los 593 cromos caben en una sola pantalla. Tocar una chapa no
+  equipo es. Los 661 cromos se muestran de forma compacta. Tocar una chapa no
   cambia nada: abre un globo con el nombre del jugador, la sección y los
   botones `−` y `+`, que se queda abierto para encadenar varias copias. Así el
   nombre se lee también en el móvil, donde no hay ratón que enseñe el tooltip,
@@ -76,6 +81,8 @@
 - Importación mediante el texto de «Compartir lista» de Figuritas App, con
   revisión previa de faltantes, conseguidos y repetidos, incluidos `UF` y `TOP`,
   y un registro detallado de los números que no se han reconocido.
+  Los BIS compartidos por dos jugadores (Celta y Deportivo, `14BIS`) se
+  conservan sin cambios y se notifican para revisarlos a mano.
 - Enlaces públicos revocables del álbum en modo sólo lectura.
 - Amigos mediante invitación, comparación de repetidos y propuestas de intercambio.
 - En los intercambios, «Te puede dar» y sus contadores excluyen los cromos que
@@ -106,27 +113,40 @@ Regenerar los datos y el álbum:
 ```powershell
 .\.venv\Scripts\python.exe extraer_checklist.py
 .\.venv\Scripts\python.exe comprobar_plantillas.py
+.\.venv\Scripts\python.exe generar_plantillas_laliga.py --refrescar
 .\.venv\Scripts\python.exe comprobar_plantillas_laliga.py
 .\.venv\Scripts\python.exe generar_mapeo_imagenes.py
 .\.venv\Scripts\python.exe generar_fotos_transfermarkt.py
-.\.venv\Scripts\python.exe generar_estadisticas_laliga.py
+.\.venv\Scripts\python.exe generar_estadisticas_laliga.py --refrescar
 .\.venv\Scripts\python.exe generar_album.py
+.\.venv\Scripts\python.exe analizar_optimizacion.py
 ```
 
 `generar_album.py` necesita `laliga_estadisticas.csv` para los minutos de cada
 ficha; si el archivo no está, el álbum se genera igual pero sin esa fila.
 
-`extraer_checklist.py` lee por defecto el PDF de la tercera edición. Ese
+`extraer_checklist.py` lee por defecto `Checklist_LALIGA_2026-27-4aED.pdf`. Ese
 documento no se versiona, pero sí todo lo que sale de él, así que el resto del
 proceso funciona sin tenerlo. En
 [TERCERA_EDICION.md](TERCERA_EDICION.md) están las diferencias que trajo esa
 edición, incluidas las dos erratas del checklist que se corrigen al extraerlo.
 
-`extraer_checklist.py` lee `Checklist_LALIGA_2026-27-2aED.pdf` y reutiliza los
-identificadores que ya existen en `coleccion_panini.csv`, de forma que los
-cromos nuevos se añaden al final de su sección sin desplazar los IDs anteriores.
+El extractor reutiliza los identificadores que ya existen en
+`coleccion_panini.csv`, sin desplazar los IDs anteriores. Los 29 huecos
+provisionales de UF41-UF66 y Top Fichajes también conservan su identificador.
+Cuando dos cromos comparten número BIS se distinguen por su repetición en
+el checklist: Casadó no sustituye al ID de Gijselhart ni Burcio al de Vecino.
 El progreso del álbum se guarda por identificador, así que ese detalle es lo que
 evita perderlo al publicarse una edición nueva del checklist.
+
+La cuarta edición marca en rojo el fondo de las filas de las bajas. El
+extractor lee las celdas individuales, no el rectángulo de un trazado que puede
+agrupar filas separadas. Tampoco basta con leer el color de la letra: es negro.
+Los clubes omitidos en UF41-UF66 y Top Fichajes están contrastados con las
+plantillas oficiales actuales en `UNLABELLED_SIGNINGS`, con el nombre como
+comprobación para no reutilizar el dato si Panini cambia el jugador.
+El PDF corrige Mariano (Alavés 20BIS) a `3ª ed`, de modo que esa edición pasa
+de 51 a 52 etiquetas sin añadir ni cambiar su cromo.
 
 `generar_fotos_transfermarkt.py` lee las plantillas ya cacheadas en
 `.cache_transfermarkt/` y produce `fotos_transfermarkt.csv` con el escudo, el
@@ -143,7 +163,7 @@ y aprovecha el mismo recorrido para escribir los dos índices:
 - las columnas `cromo_id`, `cromo_seccion`, `cromo_numero`, `cromo_nombre` y
   `cromos` que devuelve a `laliga_plantillas.csv` y al SQL, para saber qué
   cromo representa a cada jugador de la plantilla real. Sólo se cruzan las
-  secciones de equipo y Últimos Fichajes; las temáticas (ADN, Fantasy, Draft y
+  secciones de equipo, Últimos y Top Fichajes; las temáticas (ADN, Fantasy, Draft y
   Extra Sticker) repiten jugadores con otro diseño y quedan fuera.
 
 El emparejamiento es deliberadamente conservador: ante un nombre corto, un
@@ -245,7 +265,7 @@ qué página de equipo se puede completar sin pegar jugadores que ya se fueron e
 ### Optimización de la página de cada equipo
 
 ```powershell
-.\.venv\Scripts\python.exe generar_estadisticas_laliga.py
+.\.venv\Scripts\python.exe generar_estadisticas_laliga.py --refrescar
 .\.venv\Scripts\python.exe analizar_optimizacion.py
 ```
 
@@ -259,7 +279,9 @@ las dos variantes conviene pegar cuando ambas siguen en plantilla, y qué
 jugadores inscritos sin cromo se lo han ganado a base de minutos.
 
 Los Últimos Fichajes no entran en ese recuento: se pegan en su propia sección,
-no tapando huecos de equipo.
+no tapando huecos de equipo. Tampoco los Top Fichajes. El informe etiqueta
+también la 3ª y la 4ª edición y excluye las bajas marcadas por Panini de las
+variantes recomendadas, sin convertirlas en decisiones personales del álbum.
 
 ## Sincronización gratuita
 

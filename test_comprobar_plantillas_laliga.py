@@ -180,6 +180,18 @@ class ManualVerdictTests(unittest.TestCase):
         self.assertIn(UNLISTED, AT_THE_CLUB)
         self.assertNotIn(OUT_OF_SQUAD, AT_THE_CLUB)
 
+    def test_a_red_panini_row_cannot_match_another_player_with_the_same_surname(self) -> None:
+        row = {
+            **self._fila("Sevilla FC", "Sow"),
+            "seccion": "SEVILLA", "baja_panini": "true",
+        }
+        [result] = check_rows(
+            [row], {"SEVILLA": [member("Ibrahima Sow", "Sow")]}, date(2026, 10, 29)
+        )
+        self.assertEqual(result["estado_laliga"], OUT_OF_SQUAD)
+        self.assertEqual(result["clave_laliga"], "")
+        self.assertIn("Panini", result["notas_laliga"])
+
     def test_a_shared_surname_is_not_enough_to_claim_the_same_player(self) -> None:
         # «Mario García» no es «Pablo García» sólo por compartir apellido.
         squad = [member("Pablo García", "Pablo G.", "Pablo", "García")]
@@ -246,6 +258,17 @@ class ReverseIndexTests(unittest.TestCase):
         )
         self.assertEqual(linked[1]["cromo_id"], "UF-02")
         self.assertEqual(linked[1]["cromo_numero"], "UF2")
+
+    def test_top_signings_link_to_the_player_but_do_not_displace_the_club_sticker(self) -> None:
+        linked = link_stickers(
+            [{"clave": "equipo-1"}],
+            [
+                self._result("TOP-FICHAJES-67", "TOP FICHAJES", "67", "equipo-1"),
+                self._result("BAR-05", "FC BARCELONA", "5", "equipo-1"),
+            ],
+        )
+        self.assertEqual(linked[0]["cromo_id"], "BAR-05")
+        self.assertIn("TOP FICHAJES 67", linked[0]["cromos"])
 
     def test_ignores_themed_sections_and_unmatched_stickers(self) -> None:
         squad_rows = [{"clave": "equipo-1"}, {"clave": "equipo-2"}]

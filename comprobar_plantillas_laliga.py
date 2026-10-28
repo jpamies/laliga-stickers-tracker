@@ -32,10 +32,10 @@ from generar_plantillas_laliga import (
 
 SECTION_BY_CLUB = {club: section for section, club in CLUB_CANONICAL.items()}
 
-# Sólo los cromos del equipo y los de Últimos Fichajes representan a un
+# Sólo los cromos del equipo, Últimos y Top Fichajes representan a un
 # jugador en su club. Las secciones temáticas (ADN, Fantasy, Draft, Extra)
 # repiten jugadores con otro diseño y ensuciarían el índice inverso.
-SQUAD_SECTIONS = frozenset(CLUB_SECTIONS) | {"ÚLTIMOS FICHAJES"}
+SQUAD_SECTIONS = frozenset(CLUB_SECTIONS) | {"ÚLTIMOS FICHAJES", "TOP FICHAJES"}
 
 # LALIGA usa el nombre del registro civil y Panini el nombre deportivo.
 LALIGA_ALIASES = {
@@ -339,6 +339,11 @@ def check_rows(
             match = miss(UNPUBLISHED, "", 0.0, "Hueco sin jugador.")
         elif name == "Escudo":
             match = miss(NOT_APPLICABLE, "", 0.0, "El escudo no es un jugador.")
+        elif row.get("baja_panini") == "true":
+            match = miss(
+                OUT_OF_SQUAD, "", 1.0,
+                "Baja indicada en rojo en el checklist oficial de Panini.",
+            )
         elif club in KNOWN_ABSENCES:
             match = miss(
                 OUT_OF_SQUAD,
@@ -383,7 +388,7 @@ def check_rows(
 def stickers_by_member(results: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
     """Índice inverso: qué cromos representan a cada ficha de LALIGA.
 
-    Un jugador puede tener el cromo de su equipo y además el de Últimos
+    Un jugador puede tener el cromo de su equipo y además el de Últimos o Top
     Fichajes; el del equipo manda porque es el hueco fijo del álbum."""
     by_member: dict[str, list[dict[str, str]]] = {}
     for result in results:
@@ -391,7 +396,7 @@ def stickers_by_member(results: list[dict[str, str]]) -> dict[str, list[dict[str
             continue
         by_member.setdefault(result["clave_laliga"], []).append(result)
     for stickers in by_member.values():
-        stickers.sort(key=lambda item: item["seccion"] == "ÚLTIMOS FICHAJES")
+        stickers.sort(key=lambda item: item["seccion"] not in CLUB_SECTIONS)
     return by_member
 
 

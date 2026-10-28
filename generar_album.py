@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
   <meta name="theme-color" content="#0d5639">
   <meta name="description" content="Álbum interactivo Panini LALIGA 2026-27">
   <title>Mi álbum Panini LALIGA 2026-27</title>
-  <link rel="stylesheet" href="styles.css?v=35">
+  <link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body>
   <header class="topbar">
@@ -104,6 +104,7 @@ HTML_TEMPLATE = """<!doctype html>
         <button class="filter-chip" type="button" data-filter="dont-stick">No pegar</button>
         <button class="filter-chip" type="button" data-filter="second-edition">2ª edición</button>
         <button class="filter-chip" type="button" data-filter="third-edition">3ª edición</button>
+        <button class="filter-chip" type="button" data-filter="fourth-edition">4ª edición</button>
         <button class="filter-chip" type="button" data-filter="wait">Esperar</button>
         <label class="filter-toggle" for="hide-dont-stick">
           <input type="checkbox" id="hide-dont-stick">
@@ -157,7 +158,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=53"></script>
+  <script src="app.js?v=54"></script>
   <script src="cloud-sync.js?v=17"></script>
   <script src="social.js?v=20"></script>
 </body>
@@ -226,6 +227,7 @@ def pending_update_stickers(
                     "tipo": sticker_type,
                     "club_objetivo": "",
                     "edicion": "",
+                    "baja_panini": "",
                     "estado_plantilla": "pendiente_publicacion",
                     "accion": "ESPERAR",
                     "coincidencia_transfermarkt": "",
@@ -291,6 +293,7 @@ def load_stickers(
         image = mapping.get(row["id"], {})
         check = laliga.get(row["id"], {})
         row.setdefault("edicion", "")
+        row.setdefault("baja_panini", "")
         row["imagen_url"] = image.get("imagen_url", "")
         row["digital_label"] = image.get("digital_label", "")
         row["digital_group"] = image.get("digital_group", "")

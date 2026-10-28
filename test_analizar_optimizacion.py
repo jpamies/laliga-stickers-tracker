@@ -15,6 +15,9 @@ from analizar_optimizacion import (
     Stats,
     build_reports,
     generate,
+    option_cell,
+    option_for,
+    slot_mark,
 )
 
 
@@ -98,6 +101,26 @@ class SlotStateTests(unittest.TestCase):
         slot = Slot("1", "escudo", [option("Escudo", "no_aplica", "1")])
 
         self.assertEqual(slot.state, "no_aplica")
+
+    def test_red_panini_row_does_not_compete_with_its_fourth_edition_replacement(self) -> None:
+        row = {
+            "numero": "14", "nombre": "Sow", "variante": "",
+            "edicion": "", "baja_panini": "true",
+        }
+        departed = option_for(row, {"estado_laliga": "en_plantilla"}, {})
+        replacement = option("Nico Guillén", "en_plantilla", "14BIS", minutos=0)
+        slot = Slot("14", "medio", [departed, replacement])
+        self.assertEqual(slot.state, READY)
+        self.assertIs(slot.pick, replacement)
+        self.assertFalse(slot.is_choice)
+        self.assertIn("Panini", slot_mark(slot, departed))
+
+    def test_all_known_editions_are_labelled_in_the_report(self) -> None:
+        for edition in ("2ed", "3ed", "4ed"):
+            with self.subTest(edition=edition):
+                sticker = option("Jugador", "en_plantilla", "14BIS")
+                sticker.edicion = edition
+                self.assertEqual(option_cell(sticker), f"14BIS ({edition[0]}ª ed)")
 
 
 class VariantChoiceTests(unittest.TestCase):

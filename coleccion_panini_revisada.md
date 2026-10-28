@@ -1,8 +1,8 @@
 # Estrategia Panini LALIGA 2026-27
 
-Comprobación realizada: **2026-09-25**.
+Comprobación realizada: **2026-10-29**.
 
-- **PEGAR:** 589
+- **PEGAR:** 661
 - **ESPERAR:** 0
 
 > La recomendación automática es siempre **PEGAR**: no descartamos ningún cromo por nosotros. Si un jugador ya no está en el club o la coincidencia es dudosa, se anota en `estado_plantilla` y en las notas, pero marcar «No pegar» es una decisión personal que se toma a mano en el álbum.
@@ -33,7 +33,7 @@ Comprobación realizada: **2026-09-25**.
 | 18B | Mañas | Deportivo Alavés | 1ª | en_plantilla | PEGAR | Aitor Mañas | 96% |
 | 19 | Toni Martínez | Deportivo Alavés | 1ª | en_plantilla | PEGAR | Toni Martínez | 100% |
 | 20 | Boyé | Deportivo Alavés | 1ª | en_plantilla | PEGAR | Lucas Boyé | 96% |
-| 20BIS | Mariano | Deportivo Alavés | 1ª | en_plantilla | PEGAR | Mariano Díaz | 96% |
+| 20BIS | Mariano | Deportivo Alavés | 3ed | en_plantilla | PEGAR | Mariano Díaz | 96% |
 
 ## ATHLETIC CLUB DE BILBAO
 
@@ -44,6 +44,7 @@ Comprobación realizada: **2026-09-25**.
 | 3 | Unai Simón | Athletic Club | 1ª | en_plantilla | PEGAR | Unai Simón | 100% |
 | 4 | Padilla | Athletic Club | 1ª | en_plantilla | PEGAR | Álex Padilla | 96% |
 | 5 | Areso | Athletic Club | 1ª | en_plantilla | PEGAR | Jesús Areso | 96% |
+| 5BIS | Hugo Rincón | Athletic Club | 4ed | en_plantilla | PEGAR | Hugo Rincón | 100% |
 | 6A | Paredes | Athletic Club | 1ª | en_plantilla | PEGAR | Aitor Paredes | 96% |
 | 6B | Yeray | Athletic Club | 1ª | en_plantilla | PEGAR | Yeray Álvarez | 96% |
 | 7 | Vivian | Athletic Club | 1ª | en_plantilla | PEGAR | Dani Vivian | 96% |
@@ -53,6 +54,7 @@ Comprobación realizada: **2026-09-25**.
 | 10 | Jauregizar | Athletic Club | 1ª | en_plantilla | PEGAR | Mikel Jauregizar | 96% |
 | 11 | Ruiz de Galarreta | Athletic Club | 1ª | en_plantilla | PEGAR | Iñigo Ruiz de Galarreta | 96% |
 | 12 | Rego | Athletic Club | 1ª | en_plantilla | PEGAR | Alejandro Rego | 96% |
+| 12BIS | Gerenabarrena | Athletic Club | 4ed | en_plantilla | PEGAR | Beñat Gerenabarrena | 96% |
 | 13 | Unai Gómez | Athletic Club | 1ª | no_encontrado | PEGAR | Unai Egiluz | 67% |
 | 13BIS | Prados | Athletic Club | 2ed | en_plantilla | PEGAR | Beñat Prados | 96% |
 | 14 | Sancet | Athletic Club | 1ª | en_plantilla | PEGAR | Oihan Sancet | 96% |
@@ -74,6 +76,7 @@ Comprobación realizada: **2026-09-25**.
 | 4 | Musso | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Juan Musso | 96% |
 | 5 | Marcos Llorente | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Marcos Llorente | 100% |
 | 6 | Nahuel Molina | Atlético de Madrid | 1ª | no_encontrado | PEGAR | Arnau Ortiz | 50% |
+| 6BIS | Dani Martínez | Atlético de Madrid | 4ed | en_plantilla | PEGAR | Dani Martinez | 100% |
 | 7 | Pubill | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Marc Pubill | 96% |
 | 8A | Le Normand | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Robin Le Normand | 96% |
 | 8B | Giménez | Atlético de Madrid | 1ª | no_encontrado | PEGAR | Giuliano Simeone | 52% |
@@ -108,6 +111,7 @@ Comprobación realizada: **2026-09-25**.
 | 8 | Gerard Martín | FC Barcelona | 1ª | en_plantilla | PEGAR | Gerard Martín | 100% |
 | 9 | Joao Cancelo | FC Barcelona | 1ª | en_plantilla | PEGAR | João Cancelo | 100% |
 | 10 | Balde | FC Barcelona | 1ª | en_plantilla | PEGAR | Alejandro Balde | 96% |
+| 10BIS | Xavi Espart | FC Barcelona | 4ed | en_plantilla | PEGAR | Xavi Espart | 100% |
 | 11 | Eric García | FC Barcelona | 1ª | en_plantilla | PEGAR | Eric García | 100% |
 | 12 | De Jong | FC Barcelona | 1ª | en_plantilla | PEGAR | Frenkie de Jong | 96% |
 | 13 | Gavi | FC Barcelona | 1ª | en_plantilla | PEGAR | Gavi | 100% |
@@ -135,6 +139,7 @@ Comprobación realizada: **2026-09-25**.
 | 7 | Bartra | Real Betis | 1ª | en_plantilla | PEGAR | Marc Bartra | 96% |
 | 8 | Natan | Real Betis | 1ª | en_plantilla | PEGAR | Natan | 100% |
 | 9 | Valentín Gómez | Real Betis | 1ª | en_plantilla | PEGAR | Valentín Gómez | 100% |
+| 9BIS | Junior | Real Betis | 4ed | en_plantilla | PEGAR | Junior Firpo | 96% |
 | 10 | Marc Roca | Real Betis | 1ª | en_plantilla | PEGAR | Marc Roca | 100% |
 | 11 | Amrabat | Real Betis | 1ª | no_encontrado | PEGAR | Aitor Ruibal | 42% |
 | 11BIS | Deossa | Real Betis | 3ed | en_plantilla | PEGAR | Nelson Deossa | 96% |
@@ -156,6 +161,7 @@ Comprobación realizada: **2026-09-25**.
 | 2 | Claudio Giráldez | RC Celta de Vigo | 1ª | no_aplica | PEGAR | — | — |
 | 3 | Radu | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Ionuț Radu | 96% |
 | 4 | Iván Villar | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Iván Villar | 100% |
+| 4BIS | Bayindir | RC Celta de Vigo | 4ed | no_encontrado | PEGAR | Altay Bayındır | 55% |
 | 5 | Álvaro Núñez | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Álvaro Núñez | 100% |
 | 6 | Javi Rueda | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Javi Rueda | 100% |
 | 7 | Javi Rodríguez | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Javi Rodríguez | 100% |
@@ -168,7 +174,9 @@ Comprobación realizada: **2026-09-25**.
 | 13 | Hugo Álvarez | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Hugo Álvarez | 100% |
 | 14 | Sotelo | RC Celta de Vigo | 1ª | no_encontrado | PEGAR | Yoel Lago | 53% |
 | 14BIS | Vecino | RC Celta de Vigo | 2ed | no_encontrado | PEGAR | Javi Galán | 38% |
+| 14BIS | Burcio | RC Celta de Vigo | 4ed | no_encontrado | PEGAR | Couhaib Driouech | 36% |
 | 15 | Fer López | RC Celta de Vigo | 1ª | no_encontrado | PEGAR | Ferran Jutglà | 52% |
+| 15BIS | Driouech | RC Celta de Vigo | 4ed | en_plantilla | PEGAR | Couhaib Driouech | 96% |
 | 16 | Swedberg | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Williot Swedberg | 96% |
 | 17 | Iago Aspas | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Iago Aspas | 100% |
 | 18A | Pablo Durán | RC Celta de Vigo | 1ª | en_plantilla | PEGAR | Pablo Durán | 100% |
@@ -198,6 +206,7 @@ Comprobación realizada: **2026-09-25**.
 | 13 | Mario Soriano | Deportivo de La Coruña | 1ª | en_plantilla | PEGAR | Mario Soriano | 100% |
 | 14 | José Ángel | Deportivo de La Coruña | 1ª | no_encontrado | PEGAR | José María Giménez | 57% |
 | 14BIS | Gijselhart | Deportivo de La Coruña | 3ed | no_encontrado | PEGAR | Diego Villares | 42% |
+| 14BIS | Casadó | Deportivo de La Coruña | 4ed | en_plantilla | PEGAR | Marc Casadó | 96% |
 | 15 | Luismi Cruz | Deportivo de La Coruña | 1ª | en_plantilla | PEGAR | Luismi Cruz | 100% |
 | 16 | Mella | Deportivo de La Coruña | 1ª | en_plantilla | PEGAR | David Mella | 96% |
 | 17 | Asp Jensen | Deportivo de La Coruña | 3ed | en_plantilla | PEGAR | Jonathan Asp Jensen | 96% |
@@ -214,9 +223,11 @@ Comprobación realizada: **2026-09-25**.
 | 3 | Dituro | Elche CF | 1ª | en_plantilla | PEGAR | Matías Dituro | 96% |
 | 4 | Iturbe | Elche CF | 2ed | en_plantilla | PEGAR | Alejandro Iturbe | 96% |
 | 5 | Pétrot | Elche CF | 1ª | no_encontrado | PEGAR | Pedro Bigas | 47% |
+| 5BIS | Rubén Sánchez | Elche CF | 4ed | en_plantilla | PEGAR | Rubén Sánchez | 100% |
 | 6 | Chust | Elche CF | 1ª | en_plantilla | PEGAR | Víctor Chust | 96% |
 | 7 | Bigas | Elche CF | 1ª | en_plantilla | PEGAR | Pedro Bigas | 96% |
 | 8 | Affengruber | Elche CF | 1ª | no_encontrado | PEGAR | Alejandro Iturbe | 52% |
+| 8BIS | Revivo | Elche CF | 4ed | en_plantilla | PEGAR | Roy Revivo | 96% |
 | 9A | Pedrosa | Elche CF | 1ª | no_encontrado | PEGAR | Pedro Bigas | 67% |
 | 9B | Sangaré | Elche CF | 1ª | en_plantilla | PEGAR | Buba Sangaré | 96% |
 | 10 | Germán Valera | Elche CF | 1ª | en_plantilla | PEGAR | Germán Valera | 100% |
@@ -226,6 +237,7 @@ Comprobación realizada: **2026-09-25**.
 | 13B | Jon Chetauya | Elche CF | 1ª | no_encontrado | PEGAR | Víctor Chust | 42% |
 | 14 | Marc Aguado | Elche CF | 1ª | en_plantilla | PEGAR | Marc Aguado | 100% |
 | 15 | Josan | Elche CF | 1ª | en_plantilla | PEGAR | Josan | 100% |
+| 15BIS | Lemar | Elche CF | 4ed | en_plantilla | PEGAR | Thomas Lemar | 96% |
 | 16 | Morente | Elche CF | 1ª | en_plantilla | PEGAR | Tete Morente | 96% |
 | 17 | Ali Houary | Elche CF | 2ed | en_plantilla | PEGAR | Ali Houary | 100% |
 | 18 | Cepeda | Elche CF | 1ª | en_plantilla | PEGAR | Lucas Cepeda | 96% |
@@ -276,11 +288,13 @@ Comprobación realizada: **2026-09-25**.
 | 10 | Davinchi | Getafe CF | 1ª | en_plantilla | PEGAR | Davinchi | 100% |
 | 11 | Mario Martín | Getafe CF | 1ª | en_plantilla | PEGAR | Mario Martín | 100% |
 | 12 | Javi Muñoz | Getafe CF | 1ª | no_encontrado | PEGAR | Zaid Romero | 48% |
+| 12BIS | Uche | Getafe CF | 4ed | en_plantilla | PEGAR | Christantus Uche | 96% |
 | 13 | Francho | Getafe CF | 3ed | en_plantilla | PEGAR | Francho Serrano | 96% |
 | 14 | Terrats | Getafe CF | 2ed | en_plantilla | PEGAR | Ramón Terrats | 96% |
 | 15 | Mangala | Getafe CF | 3ed | en_plantilla | PEGAR | Orel Mangala | 96% |
 | 16 | Juanmi | Getafe CF | 2ed | en_plantilla | PEGAR | Juanmi | 100% |
 | 17 | Álex Sancris | Getafe CF | 1ª | no_encontrado | PEGAR | Saba Sazonov | 40% |
+| 17BIS | Iván Azón | Getafe CF | 4ed | en_plantilla | PEGAR | Iván Azón | 100% |
 | 18 | Borja Mayoral | Getafe CF | 1ª | en_plantilla | PEGAR | Borja Mayoral | 100% |
 | 19 | Luis Vázquez | Getafe CF | 1ª | no_encontrado | PEGAR | Jean Ives Valou | 44% |
 | 19BIS | Ünal | Getafe CF | 3ed | en_plantilla | PEGAR | Enes Ünal | 96% |
@@ -301,12 +315,14 @@ Comprobación realizada: **2026-09-25**.
 | 8 | Mandi | Levante UD | 2ed | en_plantilla | PEGAR | Aïssa Mandi | 96% |
 | 9 | Manu Sánchez | Levante UD | 1ª | en_plantilla | PEGAR | Manu Sánchez | 100% |
 | 10 | Arriaga | Levante UD | 1ª | no_encontrado | PEGAR | Adrián Dela | 56% |
+| 10BIS | Ndukwe | Levante UD | 4ed | en_plantilla | PEGAR | Ifeanyi Ndukwe | 96% |
 | 11 | Oriol Rey | Levante UD | 1ª | en_plantilla | PEGAR | Oriol Rey | 100% |
 | 12 | Olasagasti | Levante UD | 1ª | en_plantilla | PEGAR | Jon Ander Olasagasti | 96% |
 | 13 | Dani Requena | Levante UD | 2ed | en_plantilla | PEGAR | Dani Requena | 100% |
 | 14A | Victor García | Levante UD | 1ª | en_plantilla | PEGAR | Víctor García | 100% |
 | 14B | Paco Cortés | Levante UD | 1ª | en_plantilla | PEGAR | Paco Cortés | 100% |
 | 15 | Carlos Álvarez | Levante UD | 1ª | no_encontrado | PEGAR | Nacho Pérez | 48% |
+| 15BIS | Ratkov | Levante UD | 4ed | en_plantilla | PEGAR | Petar Ratkov | 96% |
 | 16 | Tunde | Levante UD | 1ª | no_encontrado | PEGAR | Thiago Fernández | 38% |
 | 16BIS | Thiago Fernández | Levante UD | 3ed | en_plantilla | PEGAR | Thiago Fernández | 100% |
 | 17 | Brugué | Levante UD | 1ª | en_plantilla | PEGAR | Roger Brugué | 96% |
@@ -342,6 +358,7 @@ Comprobación realizada: **2026-09-25**.
 | 17 | Gonzalo | Real Madrid | 1ª | no_encontrado | PEGAR | Álvaro Carreras | 48% |
 | 17BIS | Carlos Espí | Real Madrid | 2ed | en_plantilla | PEGAR | Carlos Espí | 100% |
 | 18 | Rodrygo | Real Madrid | 1ª | en_plantilla | PEGAR | Rodrygo | 100% |
+| 18BIS | Endrick | Real Madrid | 4ed | en_plantilla | PEGAR | Endrick | 100% |
 | 19 | Vinícius | Real Madrid | 1ª | en_plantilla | PEGAR | Vinicius Junior | 99% |
 | 20 | Mbappé | Real Madrid | 1ª | en_plantilla | PEGAR | Kylian Mbappé | 96% |
 
@@ -358,6 +375,7 @@ Comprobación realizada: **2026-09-25**.
 | 6BIS | Recio | Málaga CF | 3ed | en_plantilla | PEGAR | Ángel Recio | 96% |
 | 7 | Calero | Málaga CF | 2ed | en_plantilla | PEGAR | Fernando Calero | 96% |
 | 8 | Einar Galilea | Málaga CF | 1ª | en_plantilla | PEGAR | Einar Galilea | 100% |
+| 8BIS | Berrocal | Málaga CF | 4ed | en_plantilla | PEGAR | Juan Berrocal | 96% |
 | 9 | Rafita | Málaga CF | 1ª | en_plantilla | PEGAR | Rafita Garrido | 96% |
 | 10 | Salinas | Málaga CF | 2ed | en_plantilla | PEGAR | José Salinas | 96% |
 | 11 | Izan Mérino | Málaga CF | 1ª | en_plantilla | PEGAR | Izan Merino | 100% |
@@ -366,6 +384,7 @@ Comprobación realizada: **2026-09-25**.
 | 13B | Juanpe | Málaga CF | 1ª | no_encontrado | PEGAR | Chupe | 55% |
 | 14 | Dotor | Málaga CF | 1ª | en_plantilla | PEGAR | Carlos Dotor | 96% |
 | 15 | Aarón Ochoa | Málaga CF | 1ª | en_plantilla | PEGAR | Aarón Ochoa | 100% |
+| 15BIS | Cajuste | Málaga CF | 4ed | en_plantilla | PEGAR | Jens Cajuste | 96% |
 | 16 | Larrubia | Málaga CF | 1ª | en_plantilla | PEGAR | David Larrubia | 96% |
 | 17 | Lobete | Málaga CF | 1ª | en_plantilla | PEGAR | Julen Lobete | 96% |
 | 18 | Adrián Niño | Málaga CF | 1ª | en_plantilla | PEGAR | Adrián Niño | 100% |
@@ -384,8 +403,10 @@ Comprobación realizada: **2026-09-25**.
 | 5B | Arguibide | CA Osasuna | 1ª | en_plantilla | PEGAR | Iñigo Arguibide | 96% |
 | 6 | Boyomo | CA Osasuna | 1ª | en_plantilla | PEGAR | Enzo Boyomo | 96% |
 | 7 | Herrando | CA Osasuna | 1ª | en_plantilla | PEGAR | Jorge Herrando | 96% |
+| 7BIS | Yeboah | CA Osasuna | 4ed | en_plantilla | PEGAR | Rockson Yeboah | 96% |
 | 8 | Catena | CA Osasuna | 1ª | en_plantilla | PEGAR | Alejandro Catena | 96% |
 | 9 | Abel Bretones | CA Osasuna | 1ª | en_plantilla | PEGAR | Abel Bretones | 100% |
+| 9BIS | Diego Rico | CA Osasuna | 4ed | en_plantilla | PEGAR | Diego Rico | 100% |
 | 10 | Osambela | CA Osasuna | 1ª | en_plantilla | PEGAR | Asier Osambela | 96% |
 | 11 | Torró | CA Osasuna | 1ª | en_plantilla | PEGAR | Lucas Torró | 96% |
 | 12 | Moncayola | CA Osasuna | 1ª | en_plantilla | PEGAR | Jon Moncayola | 96% |
@@ -417,17 +438,21 @@ Comprobación realizada: **2026-09-25**.
 | 9A | Manu Hernando | Racing de Santander | 1ª | en_plantilla | PEGAR | Manu Hernando | 100% |
 | 9B | Mario García | Racing de Santander | 1ª | coincidencia_dudosa | PEGAR | Pablo García | 75% |
 | 10 | Jorge Salinas | Racing de Santander | 1ª | en_plantilla | PEGAR | Jorge Salinas | 100% |
+| 10BIS | Aarón Martín | Racing de Santander | 4ed | en_plantilla | PEGAR | Aarón Martín | 100% |
 | 11 | Maguette | Racing de Santander | 1ª | en_plantilla | PEGAR | Maguette Gueye | 96% |
 | 12 | Gustavo Puerta | Racing de Santander | 1ª | no_encontrado | PEGAR | Matteo Prati | 46% |
+| 12BIS | Prati | Racing de Santander | 4ed | en_plantilla | PEGAR | Matteo Prati | 96% |
 | 13 | Íñigo | Racing de Santander | 1ª | coincidencia_ambigua | PEGAR | Íñigo Sainz-Maza, Iñigo Vicente | 50% |
 | 13BIS | Sergio Martínez | Racing de Santander | 3ed | coincidencia_dudosa | PEGAR | Sergio Canales | 69% |
 | 14 | Aldasoro | Racing de Santander | 1ª | no_encontrado | PEGAR | Álvaro Mantilla | 43% |
+| 14BIS | André Almeida | Racing de Santander | 4ed | en_plantilla | PEGAR | André Almeida | 100% |
 | 15 | Suleiman | Racing de Santander | 1ª | no_encontrado | PEGAR | Iván Martín | 42% |
 | 15BIS | Zabiri | Racing de Santander | 3ed | en_plantilla | PEGAR | Yassir Zabiri | 96% |
 | 16 | Andrés Martín | Racing de Santander | 1ª | en_plantilla | PEGAR | Andrés Martín | 100% |
 | 17 | Guliashvili | Racing de Santander | 1ª | en_plantilla | PEGAR | Giorgi Guliashvili | 96% |
 | 18 | Íñigo Vicente | Racing de Santander | 1ª | en_plantilla | PEGAR | Iñigo Vicente | 100% |
 | 19 | Arana | Racing de Santander | 1ª | en_plantilla | PEGAR | Juan Carlos Arana | 96% |
+| 19BIS | Iker Luque | Racing de Santander | 4ed | en_plantilla | PEGAR | Iker Luque | 100% |
 | 20 | Villalibre | Racing de Santander | 1ª | en_plantilla | PEGAR | Asier Villalibre | 96% |
 
 ## RAYO VALLECANO
@@ -438,6 +463,7 @@ Comprobación realizada: **2026-09-25**.
 | 2 | Beñat San José | Rayo Vallecano | 1ª | no_aplica | PEGAR | — | — |
 | 3 | Batalla | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Augusto Batalla | 96% |
 | 4 | Cárdenas | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Dani Cárdenas | 96% |
+| 4BIS | Audero | Rayo Vallecano | 4ed | en_plantilla | PEGAR | Emil Audero | 96% |
 | 5 | Ratiu | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Andrei Rațiu | 96% |
 | 6 | Balliu | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Iván Balliu | 96% |
 | 7 | Nobel Mendy | Rayo Vallecano | 1ª | no_encontrado | PEGAR | Pelayo Fernández | 44% |
@@ -449,11 +475,13 @@ Comprobación realizada: **2026-09-25**.
 | 11A | Pedro Díaz | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Pedro Díaz | 100% |
 | 11B | Nteka | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Randy Nteka | 96% |
 | 12 | Pathé Ciss | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Pathé Ciss | 100% |
+| 12BIS | Bouare | Rayo Vallecano | 4ed | en_plantilla | PEGAR | Gnangoro Bouare | 96% |
 | 13 | Óscar Valentín | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Óscar Valentín | 100% |
 | 14 | Unai López | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Unai López | 100% |
 | 15 | Isi | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Isi Palazón | 99% |
 | 16 | De Frutos | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Jorge de Frutos | 96% |
 | 17 | Fran Pérez | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Fran Pérez | 100% |
+| 17BIS | Tsitaishvili | Rayo Vallecano | 4ed | en_plantilla | PEGAR | Giorgi Tsitaishvili | 96% |
 | 18 | Álvaro García | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Álvaro García | 100% |
 | 19 | Camello | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Sergio Camello | 96% |
 | 20 | Alemao | Rayo Vallecano | 1ª | en_plantilla | PEGAR | Alemão | 100% |
@@ -478,6 +506,7 @@ Comprobación realizada: **2026-09-25**.
 | 13B | Zakharyan | Real Sociedad | 2ed | en_plantilla | PEGAR | Arsen Zakharyan | 96% |
 | 14 | Carlos Soler | Real Sociedad | 1ª | en_plantilla | PEGAR | Carlos Soler | 100% |
 | 15 | Sucic | Real Sociedad | 1ª | en_plantilla | PEGAR | Luka Sucic | 96% |
+| 15BIS | Ochieng | Real Sociedad | 4ed | en_plantilla | PEGAR | Job Ochieng | 96% |
 | 16 | Barrenetxea | Real Sociedad | 1ª | en_plantilla | PEGAR | Ander Barrenetxea | 96% |
 | 17 | Kubo | Real Sociedad | 1ª | en_plantilla | PEGAR | Takefusa Kubo | 96% |
 | 18 | Guedes | Real Sociedad | 1ª | en_plantilla | PEGAR | Gonçalo Guedes | 96% |
@@ -502,11 +531,14 @@ Comprobación realizada: **2026-09-25**.
 | 9B | Marcao | Sevilla FC | 1ª | en_plantilla | PEGAR | Marcão | 100% |
 | 10 | Suazo | Sevilla FC | 1ª | en_plantilla | PEGAR | Gabriel Suazo | 96% |
 | 11 | Oso | Sevilla FC | 1ª | no_encontrado | PEGAR | Fábio Cardoso | 38% |
+| 11BIS | Fofana | Sevilla FC | 4ed | en_plantilla | PEGAR | Youssouf Fofana | 96% |
 | 12 | Agoumé | Sevilla FC | 1ª | en_plantilla | PEGAR | Lucien Agoumé | 96% |
 | 13 | Guridi | Sevilla FC | 2ed | en_plantilla | PEGAR | Jon Guridi | 96% |
 | 14 | Sow | Sevilla FC | 1ª | no_encontrado | PEGAR | Isaac Romero | 27% |
+| 14BIS | Nico Guillén | Sevilla FC | 4ed | en_plantilla | PEGAR | Nico Guillén | 100% |
 | 15 | Vargas | Sevilla FC | 1ª | en_plantilla | PEGAR | Rubén Vargas | 96% |
 | 16 | Manu Bueno | Sevilla FC | 1ª | en_plantilla | PEGAR | Manu Bueno | 100% |
+| 16BIS | Alfon | Sevilla FC | 4ed | en_plantilla | PEGAR | Alfon González | 96% |
 | 17 | Peque | Sevilla FC | 1ª | en_plantilla | PEGAR | Peque Fernández | 96% |
 | 18 | Ejuke | Sevilla FC | 1ª | en_plantilla | PEGAR | Chidera Ejuke | 96% |
 | 19 | Akor Adams | Sevilla FC | 1ª | no_encontrado | PEGAR | Fábio Cardoso | 43% |
@@ -519,8 +551,10 @@ Comprobación realizada: **2026-09-25**.
 |---:|---|---|:---:|---|:---:|---|---:|
 | 1 | Escudo | Valencia CF | 1ª | no_aplica | PEGAR | — | — |
 | 2 | Carlos Corberán | Valencia CF | 1ª | no_aplica | PEGAR | — | — |
+| 2BIS | Javier Aguirre | Valencia CF | 4ed | no_aplica | PEGAR | — | — |
 | 3 | Dimitrievski | Valencia CF | 1ª | en_plantilla | PEGAR | Stole Dimitrievski | 96% |
 | 4 | Rivero | Valencia CF | 1ª | en_plantilla | PEGAR | Cristian Rivero | 96% |
+| 4BIS | Van Oevelen | Valencia CF | 4ed | en_plantilla | PEGAR | Kayne van Oevelen | 96% |
 | 5 | Foulquier | Valencia CF | 1ª | en_plantilla | PEGAR | Dimitri Foulquier | 96% |
 | 6 | Copete | Valencia CF | 1ª | en_plantilla | PEGAR | José Copete | 96% |
 | 7 | Tárrega | Valencia CF | 1ª | en_plantilla | PEGAR | César Tárrega | 96% |
@@ -537,6 +571,7 @@ Comprobación realizada: **2026-09-25**.
 | 16BIS | Dieng | Valencia CF | 2ed | en_plantilla | PEGAR | Aliou Dieng | 96% |
 | 17 | Hugo Duro | Valencia CF | 1ª | en_plantilla | PEGAR | Hugo Duro | 100% |
 | 18 | Diego López | Valencia CF | 1ª | en_plantilla | PEGAR | Diego López | 100% |
+| 18BIS | Otorbi | Valencia CF | 4ed | en_plantilla | PEGAR | David Otorbi | 96% |
 | 19 | Ramazani | Valencia CF | 1ª | no_encontrado | PEGAR | Arnau Martínez | 45% |
 | 19BIS | Danjuma | Valencia CF | 2ed | en_plantilla | PEGAR | Arnaut Danjuma | 96% |
 | 20A | Sadiq | Valencia CF | 1ª | en_plantilla | PEGAR | Umar Sadiq | 96% |
@@ -557,6 +592,7 @@ Comprobación realizada: **2026-09-25**.
 | 7A | Foyth | Villarreal CF | 1ª | en_plantilla | PEGAR | Juan Foyth | 96% |
 | 7B | Freeman | Villarreal CF | 1ª | en_plantilla | PEGAR | Alex Freeman | 96% |
 | 8A | Kambwala | Villarreal CF | 1ª | no_encontrado | PEGAR | Carlos Macià | 40% |
+| 8BIS | Diatta | Villarreal CF | 4ed | en_plantilla | PEGAR | Alassane Diatta | 96% |
 | 8B | Rafa Marín | Villarreal CF | 1ª | no_encontrado | PEGAR | Santiago Mouriño | 54% |
 | 9 | Renato Veiga | Villarreal CF | 1ª | en_plantilla | PEGAR | Renato Veiga | 100% |
 | 10 | Sergi Cardona | Villarreal CF | 1ª | en_plantilla | PEGAR | Sergi Cardona | 100% |
@@ -566,6 +602,7 @@ Comprobación realizada: **2026-09-25**.
 | 14 | Moleiro | Villarreal CF | 1ª | en_plantilla | PEGAR | Alberto Moleiro | 96% |
 | 15 | Buchanan | Villarreal CF | 1ª | en_plantilla | PEGAR | Tajon Buchanan | 96% |
 | 16 | Oluwaseyi | Villarreal CF | 1ª | en_plantilla | PEGAR | Tani Oluwaseyi | 96% |
+| 16BIS | Ilias | Villarreal CF | 4ed | en_plantilla | PEGAR | Ilias Akhomach | 96% |
 | 17 | Ayoze | Villarreal CF | 1ª | en_plantilla | PEGAR | Ayoze Pérez | 96% |
 | 18 | Pépé | Villarreal CF | 1ª | en_plantilla | PEGAR | Nicolas Pépé | 99% |
 | 19 | Mikautadze | Villarreal CF | 1ª | en_plantilla | PEGAR | Georges Mikautadze | 96% |
@@ -615,6 +652,40 @@ Comprobación realizada: **2026-09-25**.
 | UF38 | Parrott | Real Betis | 3ed | en_plantilla | PEGAR | Troy Parrott | 96% |
 | UF39 | Diomande | Real Madrid | 3ed | en_plantilla | PEGAR | Yan Diomande | 96% |
 | UF40 | Rodri | FC Barcelona | 3ed | en_plantilla | PEGAR | Rodri | 100% |
+| UF41 | Ezequiel Ponce | Elche CF | 4ed | en_plantilla | PEGAR | Ezequiel Ponce | 100% |
+| UF42 | Gudelj | Getafe CF | 4ed | en_plantilla | PEGAR | Nemanja Gudelj | 96% |
+| UF43 | Sarr | Real Sociedad | 4ed | en_plantilla | PEGAR | Mamadou Sarr | 96% |
+| UF44 | Miguel Rodríguez | Deportivo Alavés | 4ed | en_plantilla | PEGAR | Miguel Rodríguez | 100% |
+| UF45 | Pablo Martínez | Málaga CF | 4ed | en_plantilla | PEGAR | Pablo Martínez | 100% |
+| UF46 | Del Castillo | CA Osasuna | 4ed | en_plantilla | PEGAR | Romain Del Castillo | 96% |
+| UF47 | Belocian | Racing de Santander | 4ed | en_plantilla | PEGAR | Jeanuël Belocian | 96% |
+| UF48 | Stassin | Sevilla FC | 4ed | en_plantilla | PEGAR | Lucas Stassin | 96% |
+| UF49 | Sadick | Rayo Vallecano | 4ed | en_plantilla | PEGAR | Mujaid Sadick | 96% |
+| UF50 | Bryan Zaragoza | RCD Espanyol | 4ed | en_plantilla | PEGAR | Bryan Zaragoza | 100% |
+| UF51 | Saliba | Villarreal CF | 4ed | en_plantilla | PEGAR | Nathan Saliba | 96% |
+| UF52 | Giménez | Deportivo de La Coruña | 4ed | en_plantilla | PEGAR | José María Giménez | 96% |
+| UF53 | Pedrosa | Rayo Vallecano | 4ed | en_plantilla | PEGAR | Adrià Pedrosa | 96% |
+| UF54 | Cáceres | RC Celta de Vigo | 4ed | en_plantilla | PEGAR | Sebastián Cáceres | 96% |
+| UF55 | Livakovic | FC Barcelona | 4ed | en_plantilla | PEGAR | Dominik Livakovic | 96% |
+| UF56 | Pablo García | Racing de Santander | 4ed | en_plantilla | PEGAR | Pablo García | 100% |
+| UF57 | Arnau | Valencia CF | 4ed | coincidencia_ambigua | PEGAR | Arnau Martínez, Arnaut Danjuma | 50% |
+| UF58 | Osorio | Elche CF | 4ed | en_plantilla | PEGAR | Abiel Osorio | 96% |
+| UF59 | Héctor Fort | Real Sociedad | 4ed | en_plantilla | PEGAR | Héctor Fort | 100% |
+| UF60 | Romero | Atlético de Madrid | 4ed | en_plantilla | PEGAR | Cristian Romero | 96% |
+| UF61 | Félix Correia | Sevilla FC | 4ed | en_plantilla | PEGAR | Félix Correia | 100% |
+| UF62 | Adama Traoré | Deportivo de La Coruña | 4ed | en_plantilla | PEGAR | Adama Traoré | 100% |
+| UF63 | Gabriel Jesus | FC Barcelona | 4ed | en_plantilla | PEGAR | Gabriel Jesus | 100% |
+| UF64 | Elliott | Valencia CF | 4ed | en_plantilla | PEGAR | Harvey Elliott | 96% |
+| UF65 | Dani Ceballos | Real Betis | 4ed | en_plantilla | PEGAR | Dani Ceballos | 100% |
+| UF66 | Jonathan David | Atlético de Madrid | 4ed | en_plantilla | PEGAR | Jonathan David | 100% |
+
+## TOP FICHAJES
+
+| Nº | Nombre | Club | Ed. | Estado | Acción | Coincidencia | Confianza |
+|---:|---|---|:---:|---|:---:|---|---:|
+| 67 | Rodri | FC Barcelona | 4ed | en_plantilla | PEGAR | Rodri | 100% |
+| 68 | Cucurella | Real Madrid | 4ed | en_plantilla | PEGAR | Marc Cucurella | 96% |
+| 69 | Kang-in Lee | Atlético de Madrid | 4ed | en_plantilla | PEGAR | Kang-in Lee | 100% |
 
 ## ADN / LALIGA PRIME
 
@@ -715,6 +786,8 @@ Comprobación realizada: **2026-09-25**.
 | Extra Sticker | Nico Williams | Athletic Club | 1ª | en_plantilla | PEGAR | Nico Williams | 100% |
 | Extra Sticker | Pedri | FC Barcelona | 1ª | en_plantilla | PEGAR | Pedri | 100% |
 | Extra Sticker | Oblak | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Jan Oblak | 96% |
+| Extra Sticker | Rodri | FC Barcelona | 4ed | en_plantilla | PEGAR | Rodri | 100% |
+| Extra Sticker | Bellingham | Real Madrid | 4ed | en_plantilla | PEGAR | Jude Bellingham | 96% |
 
 ## EXTRA STICKER PLATA
 
@@ -725,6 +798,8 @@ Comprobación realizada: **2026-09-25**.
 | Extra Sticker | Nico Williams | Athletic Club | 1ª | en_plantilla | PEGAR | Nico Williams | 100% |
 | Extra Sticker | Pedri | FC Barcelona | 1ª | en_plantilla | PEGAR | Pedri | 100% |
 | Extra Sticker | Oblak | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Jan Oblak | 96% |
+| Extra Sticker | Rodri | FC Barcelona | 4ed | en_plantilla | PEGAR | Rodri | 100% |
+| Extra Sticker | Bellingham | Real Madrid | 4ed | en_plantilla | PEGAR | Jude Bellingham | 96% |
 
 ## EXTRA STICKER ORO
 
@@ -735,3 +810,5 @@ Comprobación realizada: **2026-09-25**.
 | Extra Sticker | Nico Williams | Athletic Club | 1ª | en_plantilla | PEGAR | Nico Williams | 100% |
 | Extra Sticker | Pedri | FC Barcelona | 1ª | en_plantilla | PEGAR | Pedri | 100% |
 | Extra Sticker | Oblak | Atlético de Madrid | 1ª | en_plantilla | PEGAR | Jan Oblak | 96% |
+| Extra Sticker | Rodri | FC Barcelona | 4ed | en_plantilla | PEGAR | Rodri | 100% |
+| Extra Sticker | Bellingham | Real Madrid | 4ed | en_plantilla | PEGAR | Jude Bellingham | 96% |
