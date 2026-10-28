@@ -73,8 +73,9 @@
   al de un cromo real; Transfermarkt queda como alternativa sólo para esta
   primera edición, y si tampoco hay foto se usa una silueta.
   Los retratos de LALIGA usan un zoom `×2,44`, el doble del encuadre anterior
-  (`×1,22`), dentro del mismo hueco de foto. Se centran horizontalmente y se
-  anclan arriba para no cortar la cabeza. El
+  (`×1,22`). Se centran horizontalmente y se elevan hacia el borde superior,
+  ampliando el recorte por arriba sin cambiar el tamaño de la cara. Así quedan
+  visibles la cabeza y los hombros, en vez de cortar el retrato por el cuello. El
   recorte no afecta al escudo, el nombre ni las imágenes Panini o Transfermarkt.
   Los nombres cortos ambiguos se resuelven por identidad: «Junior» es Júnior
   Firpo y «Rodri» es Rodrigo Hernández Cascante, no Luiz Júnior ni Rodri Mendoza.

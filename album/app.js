@@ -656,17 +656,19 @@
   // que se amplían hasta un encuadre parecido al de un cromo real. Los de
   // Transfermarkt ya vienen recortados a la cara y se dejan como están.
   const LALIGA_PHOTO_ZOOM = 2.44;
+  const LALIGA_PHOTO_TOP = 8;
 
   function photoTag(sticker, id) {
     const zoom = sticker.foto_fuente === "laliga" ? LALIGA_PHOTO_ZOOM : 1;
     const width = PHOTO_BOX.width * zoom;
     const height = PHOTO_BOX.height * zoom;
     const x = PHOTO_BOX.x - (width - PHOTO_BOX.width) / 2;
+    const y = zoom === 1 ? PHOTO_BOX.y : LALIGA_PHOTO_TOP;
     // Las fotos de LALIGA traen la cabeza pegada al borde superior, así que se
     // recortan por abajo; las de Transfermarkt se apoyan en el borde inferior,
     // como hasta ahora.
     const anchor = zoom === 1 ? "xMidYMax meet" : "xMidYMin slice";
-    return `<g clip-path="url(#photo-${id})"><image href="${escapeHtml(sticker.foto_url)}" x="${x}" y="${PHOTO_BOX.y}" width="${width}" height="${height}" preserveAspectRatio="${anchor}"/></g>`;
+    return `<g clip-path="url(#photo-${id})"><image href="${escapeHtml(sticker.foto_url)}" x="${x}" y="${y}" width="${width}" height="${height}" preserveAspectRatio="${anchor}"/></g>`;
   }
 
   function placeholderSticker(sticker) {
@@ -674,6 +676,9 @@
     const id = normalize(sticker.id).replace(/[^a-z0-9]+/g, "-");
     const name = (sticker.nombre || "").toUpperCase();
     const role = placeholderRole(sticker);
+    const photoTop = sticker.foto_url && sticker.foto_fuente === "laliga"
+      ? LALIGA_PHOTO_TOP : PHOTO_BOX.y;
+    const photoHeight = PHOTO_BOX.y + PHOTO_BOX.height - photoTop;
     const photo = sticker.foto_url
       ? photoTag(sticker, id)
       : `
@@ -700,7 +705,7 @@
             <line x1="0" y1="0" x2="0" y2="9" stroke="${theme.primary}" stroke-width="2.5" opacity=".07"/>
           </pattern>
           <clipPath id="photo-${id}">
-            <rect x="${PHOTO_BOX.x}" y="${PHOTO_BOX.y}" width="${PHOTO_BOX.width}" height="${PHOTO_BOX.height}" rx="10"/>
+            <rect x="${PHOTO_BOX.x}" y="${photoTop}" width="${PHOTO_BOX.width}" height="${photoHeight}" rx="10"/>
           </clipPath>
         </defs>
         <rect width="232" height="308" fill="#f6f5f1"/>

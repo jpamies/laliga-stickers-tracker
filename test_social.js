@@ -192,7 +192,7 @@ test("fourth edition filters, searches and badges use the same edition without c
   assert.deepEqual(album.getProgress(), before);
 });
 
-test("LALIGA portraits double the previous 1.22 framing within the original photo box", () => {
+test("LALIGA portraits retain the zoom while moving upward and keeping the same lower edge", () => {
   const { window } = fixture();
   const sticker = {
     id: "portrait", seccion: "REAL BETIS", numero: "9BIS", nombre: "Junior",
@@ -205,13 +205,13 @@ test("LALIGA portraits double the previous 1.22 framing within the original phot
   );
   assert.ok(Math.abs(attributes.width / (172 * 1.22) - 2) < 1e-10);
   assert.ok(Math.abs(attributes.height / (204 * 1.22) - 2) < 1e-10);
-  assert.equal(attributes.y, 66);
+  assert.equal(attributes.y, 8);
   assert.ok(Math.abs(attributes.x + attributes.width / 2 - 138) < 1e-10);
   assert.match(image, /^<g clip-path="url\(#photo-portrait\)"><image /);
   assert.match(image, /preserveAspectRatio="xMidYMin slice"/);
   const card = window.testAlbumFunctions.placeholderSticker(sticker);
   assert.match(card, /viewBox="0 0 232 308"/);
-  assert.match(card, /<clipPath id="photo-portrait">\s*<rect x="52" y="66" width="172" height="204"/);
+  assert.match(card, /<clipPath id="photo-portrait">\s*<rect x="52" y="8" width="172" height="262"/);
 });
 
 test("Transfermarkt portraits retain their original size and bottom anchoring", () => {
@@ -221,6 +221,16 @@ test("Transfermarkt portraits retain their original size and bottom anchoring", 
   }, "portrait");
   assert.match(image, /x="52" y="66" width="172" height="204"/);
   assert.match(image, /preserveAspectRatio="xMidYMax meet"/);
+});
+
+test("silhouettes retain their previous clipping and do not move into the upper portrait area", () => {
+  const { window } = fixture();
+  const card = window.testAlbumFunctions.placeholderSticker({
+    id: "silhouette", seccion: "REAL BETIS", numero: "9BIS",
+    nombre: "Junior", tipo: "defensa", foto_url: "", foto_fuente: "",
+  });
+  assert.match(card, /<clipPath id="photo-silhouette">\s*<rect x="52" y="66" width="172" height="204"/);
+  assert.match(card, /<circle cx="138" cy="146" r="34"/);
 });
 
 test("Figuritas cannot overwrite two different stickers that share a BIS number", () => {
