@@ -16,10 +16,12 @@ from comprobar_plantillas_laliga import (
     UNLISTED,
     SquadMember,
     check_rows,
+    link_statistics,
     link_stickers,
     load_squads,
     match_member,
     member_keys,
+    read_csv,
 )
 
 
@@ -230,6 +232,99 @@ class SquadLoadingTests(unittest.TestCase):
             all(member.keys and member.clave for squad in squads.values() for member in squad)
         )
 
+class CurrentClubTests(unittest.TestCase):
+    def test_special_stickers_follow_confirmed_transfers_without_changing_the_printed_club(self) -> None:
+        squads = {
+            "RCD ESPANYOL": [member("Otro jugador")],
+            "REAL MADRID CF": [member("Otro delantero")],
+            "RC CELTA DE VIGO": [member("Otro defensa")],
+            "VILLARREAL": [member("Carlos Romero")],
+            "REAL BETIS": [member("Fran García")],
+            "LEVANTE UD": [member("Hugo Sotelo")],
+        }
+        cases = [
+            ("Carlos Romero", "RCD Espanyol", "Villarreal CF"),
+            ("Fran García", "Real Madrid", "Real Betis"),
+            ("Sotelo", "RC Celta de Vigo", "Levante UD"),
+        ]
+        for name, printed, current in cases:
+            row = {
+                "id": name, "seccion": "ÚLTIMOS FICHAJES",
+                "numero": "UF1", "nombre": name, "club_objetivo": printed,
+            }
+            [result] = check_rows([row], squads, date(2026, 10, 29))
+            self.assertEqual(result["club_objetivo"], printed)
+            self.assertEqual(result["club_actual"], current)
+            self.assertEqual(result["estado_laliga"], IN_SQUAD)
+            self.assertTrue(result["clave_laliga"])
+            self.assertNotIn("club_actual", row)
+            team_row = {**row, "seccion": next(
+                section for section, club in {
+                    "RCD ESPANYOL": "RCD Espanyol",
+                    "REAL MADRID CF": "Real Madrid",
+                    "RC CELTA DE VIGO": "RC Celta de Vigo",
+                }.items() if club == printed
+            )}
+            [team_result] = check_rows([team_row], squads, date(2026, 10, 29))
+            self.assertNotEqual(team_result["estado_laliga"], IN_SQUAD)
+            self.assertEqual(team_result["club_actual"], "")
+
+    def test_global_approximate_or_ambiguous_names_do_not_assign_a_current_club(self) -> None:
+        for name, squads in (
+            ("Romero", {
+                "VILLARREAL": [member("Carlos Romero", apellidos="Romero")],
+                "GETAFE CF": [member("Zaid Romero", apellidos="Romero")],
+            }),
+            ("Fran García", {"REAL BETIS": [member("Fran Garcés")]}),
+        ):
+            with self.subTest(name=name):
+                row = {
+                    "id": "UF-1", "seccion": "ÚLTIMOS FICHAJES", "numero": "UF1",
+                    "nombre": name, "club_objetivo": "RCD Espanyol",
+                }
+                [result] = check_rows([row], squads, date(2026, 10, 29))
+                self.assertEqual(result["club_actual"], "")
+                self.assertEqual(result["clave_laliga"], "")
+
+    def test_global_alias_identifies_barcelona_rodri_instead_of_rodri_mendoza(self) -> None:
+        row = {
+            "id": "TOP-67", "seccion": "TOP FICHAJES", "numero": "67",
+            "nombre": "Rodri", "club_objetivo": "",
+        }
+        [result] = check_rows([row], {
+            "ATLÉTICO DE MADRID": [member("Rodri Mendoza", "Rodri")],
+            "FC BARCELONA": [member("Rodrigo Hernández Cascante", "Rodrigo")],
+        }, date(2026, 10, 29))
+        self.assertEqual(result["club_actual"], "FC Barcelona")
+        self.assertEqual(result["coincidencia_laliga"], "Rodrigo Hernández Cascante")
+
+    def test_a_historical_departure_does_not_hide_a_confirmed_current_special_player(self) -> None:
+        row = {
+            "id": "special", "seccion": "ÚLTIMOS FICHAJES", "numero": "UF1",
+            "nombre": "Sergio Martínez", "club_objetivo": "Racing de Santander",
+        }
+        squads = {"REAL MADRID CF": [member("Sergio Martínez")]}
+        [result] = check_rows([row], squads, date(2026, 10, 29))
+        self.assertEqual(result["club_actual"], "Real Madrid")
+        self.assertEqual(result["estado_laliga"], IN_SQUAD)
+        [team] = check_rows([{**row, "seccion": "RACING DE SANTANDER"}], squads, date(2026, 10, 29))
+        self.assertEqual(team["estado_laliga"], OUT_OF_SQUAD)
+        self.assertEqual(team["club_actual"], "")
+
+    def test_current_data_resolves_the_reported_players(self) -> None:
+        collection = read_csv(Path("coleccion_panini_revisada.csv"))
+        _, squads = load_squads(Path("laliga_plantillas.csv"))
+        expected = {
+            "ULTIMOS-FICHAJES-04": "Villarreal CF",
+            "ULTIMOS-FICHAJES-06": "Real Betis",
+            "ULTIMOS-FICHAJES-13": "Levante UD",
+        }
+        selected = [row for row in collection if row["id"] in expected]
+        self.assertEqual(len(selected), 3)
+        for result in check_rows(selected, squads, date(2026, 10, 29)):
+            self.assertEqual(result["club_actual"], expected[result["id"]])
+            self.assertEqual(result["estado_laliga"], IN_SQUAD)
+
 
 class ReverseIndexTests(unittest.TestCase):
     def _result(self, sticker_id: str, section: str, numero: str, clave: str) -> dict[str, str]:
@@ -284,6 +379,22 @@ class ReverseIndexTests(unittest.TestCase):
 
         self.assertTrue(all(not row["cromo_id"] for row in linked))
         self.assertTrue(all(not row["cromos"] for row in linked))
+
+    def test_statistics_links_change_without_redownloading_or_changing_dates_and_metrics(self) -> None:
+        rows = [{
+            "clave": "villarreal-1", "cromo_id": "", "cromos": "",
+            "minutos": "900", "partidos": "10", "consultado_en": "2026-10-28",
+        }]
+        linked = link_statistics(rows, [{
+            "clave": "villarreal-1", "cromo_id": "ULTIMOS-FICHAJES-04",
+            "cromos": "ÚLTIMOS FICHAJES UF4",
+        }])
+        self.assertEqual(linked[0]["cromo_id"], "ULTIMOS-FICHAJES-04")
+        for field in ("minutos", "partidos", "consultado_en"):
+            self.assertEqual(linked[0][field], rows[0][field])
+        self.assertEqual(rows[0]["cromo_id"], "")
+        with self.assertRaises(ValueError):
+            link_statistics([], [])
 
 
 if __name__ == "__main__":

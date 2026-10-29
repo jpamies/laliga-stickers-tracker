@@ -557,6 +557,7 @@
       sticker.tipo,
       sticker.seccion,
       sticker.club_objetivo,
+      sticker.club_actual,
       displayAction(sticker),
       sticker.edicion === "2ed" ? "2ed 2a edicion segunda edicion" : "",
       sticker.edicion === "3ed" ? "3ed 3a edicion tercera edicion" : "",
@@ -688,12 +689,13 @@
         </g>
         <text x="138" y="160" text-anchor="middle" fill="${theme.primary}" font-family="Trebuchet MS, Arial, sans-serif" font-size="44" font-weight="900" opacity=".45">?</text>
       `;
-    const crestTitle = `Escudo de ${sticker.club_objetivo || sticker.seccion}`;
+    const club = sticker.club_actual || (sticker.escudo_url ? sticker.club_objetivo : "");
+    const crestTitle = `Escudo de ${club || sticker.seccion}`;
     const crest = sticker.escudo_url
       ? `<image href="${escapeHtml(sticker.escudo_url)}" x="8" y="7" width="56" height="56" preserveAspectRatio="xMidYMid meet"><title>${escapeHtml(crestTitle)}</title></image>`
       : `<text x="36" y="44" text-anchor="middle" fill="#ffffff" font-family="Trebuchet MS, Arial, sans-serif" font-size="20" font-weight="900">${escapeHtml(theme.code)}</text>`;
     const cardLabel = `Cromo provisional de ${sticker.seccion}`
-      + (sticker.club_objetivo ? `. Equipo: ${sticker.club_objetivo}` : "");
+      + (club ? `. Equipo: ${club}` : "");
     const label = name || "POR CONFIRMAR";
     const labelSize = label.length > 15 ? 13 : label.length > 11 ? 15 : 18;
 
@@ -748,7 +750,8 @@
         title: laligaReasons[sticker.estado_laliga] || "Sin ficha en LALIGA",
       };
     }
-    const details = [sticker.dorsal_laliga, sticker.posicion_laliga]
+    const currentClub = sticker.club_actual !== sticker.club_objetivo ? sticker.club_actual : "";
+    const details = [currentClub, sticker.dorsal_laliga, sticker.posicion_laliga]
       .filter(Boolean)
       .join(" · ");
     return {
@@ -971,7 +974,8 @@
     ].filter(Boolean).join(" ");
     const imageAlt = provisionalImage
       ? `Imagen provisional de ${sticker.seccion}`
-        + (sticker.club_objetivo ? `. Equipo: ${sticker.club_objetivo}` : "")
+        + (sticker.club_actual || sticker.escudo_url
+          ? `. Equipo: ${sticker.club_actual || sticker.club_objetivo}` : "")
       : name;
     const visual = placeholderMarkup
       ? `

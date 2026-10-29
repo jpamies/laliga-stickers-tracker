@@ -37,22 +37,22 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertEqual(len({sticker["seccion"] for sticker in stickers}), 29)
         self.assertEqual(
             sum(sticker["imagen_provisional"] != "true" for sticker in stickers),
-            418,
+            416,
         )
         self.assertEqual(
             sum(sticker["imagen_provisional"] == "true" for sticker in stickers),
-            243,
+            245,
         )
         self.assertEqual(
             sum(bool(sticker["foto_url"]) for sticker in stickers),
-            195,
+            200,
         )
         # Los retratos oficiales de LALIGA mandan sobre los de Transfermarkt,
         # que sólo quedan donde LALIGA no ha emparejado al jugador.
         fuentes = Counter(
             sticker["foto_fuente"] for sticker in stickers if sticker["foto_url"]
         )
-        self.assertEqual(fuentes, Counter({"laliga": 194, "transfermarkt": 1}))
+        self.assertEqual(fuentes, Counter({"laliga": 199, "transfermarkt": 1}))
         self.assertTrue(
             all(
                 "/default/" not in sticker["foto_url"]
@@ -71,7 +71,7 @@ class AlbumGenerationTests(unittest.TestCase):
         # recomendación pública de no pegar.
         self.assertEqual(
             sum(sticker["estado_laliga"] == "fuera_plantilla" for sticker in stickers),
-            69,
+            64,
         )
         self.assertTrue(
             all(
@@ -159,7 +159,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=57"', html)
+        self.assertIn('src="app.js?v=58"', html)
         self.assertIn('href="styles.css?v=37"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=17"', html)
@@ -201,7 +201,7 @@ class AlbumGenerationTests(unittest.TestCase):
         stickers = json.loads(re.search(r"window\.ALBUM_DATA = (.*?);</script>", html).group(1))
         later = [sticker for sticker in stickers if sticker["edicion"] in {"2ed", "3ed", "4ed"}]
         self.assertEqual(len(later), 168)
-        self.assertEqual(sum(bool(sticker["foto_url"]) for sticker in later), 144)
+        self.assertEqual(sum(bool(sticker["foto_url"]) for sticker in later), 147)
         squads = load_laliga_photos(Path("laliga_plantillas.csv"))
         for sticker in later:
             with self.subTest(id=sticker["id"]):
@@ -242,11 +242,44 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertTrue(special)
         for sticker in special:
             with self.subTest(id=sticker["id"]):
-                self.assertIn(sticker["club_objetivo"], crests)
-                self.assertEqual(sticker["escudo_url"], crests[sticker["club_objetivo"]])
+                if sticker["club_actual"]:
+                    self.assertIn(sticker["club_actual"], crests)
+                    self.assertEqual(sticker["escudo_url"], crests[sticker["club_actual"]])
+                else:
+                    self.assertEqual(sticker["escudo_url"], "")
         by_id = {sticker["id"]: sticker for sticker in stickers}
         for sticker_id in ("ULTIMOS-FICHAJES-40", "TOP-FICHAJES-67", "EXTRA-STICKER-ORO-06"):
             self.assertEqual(by_id[sticker_id]["escudo_url"], crests["FC Barcelona"])
+
+    def test_transferred_special_players_use_their_current_clubs_photos_and_stats(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(re.search(r"window\.ALBUM_DATA = (.*?);</script>", html).group(1))
+        stats = json.loads(re.search(r"window\.ALBUM_STATS = (.*?);</script>", html).group(1))
+        by_id = {sticker["id"]: sticker for sticker in stickers}
+        crests = {
+            sticker["club_objetivo"]: sticker["imagen_url"]
+            for sticker in stickers if sticker["digital_group"] == "ESCUDO"
+        }
+        for sticker_id, club in (
+            ("ULTIMOS-FICHAJES-04", "Villarreal CF"),
+            ("ULTIMOS-FICHAJES-06", "Real Betis"),
+            ("ULTIMOS-FICHAJES-13", "Levante UD"),
+            ("DRAFT-23-04", "Real Madrid"),
+            ("DRAFT-23-KROMIX-04", "Real Madrid"),
+        ):
+            with self.subTest(id=sticker_id):
+                sticker = by_id[sticker_id]
+                self.assertEqual(sticker["club_actual"], club)
+                self.assertNotEqual(sticker["club_objetivo"], club)
+                self.assertEqual(sticker["estado_laliga"], "en_plantilla")
+                self.assertEqual(sticker["escudo_url"], crests[club])
+                self.assertEqual(sticker["foto_fuente"], "laliga")
+                self.assertTrue(sticker["foto_url"])
+                self.assertEqual(sticker["imagen_url"], "")
+                self.assertIn(sticker_id, stats)
 
 
 class CompactListViewTests(unittest.TestCase):

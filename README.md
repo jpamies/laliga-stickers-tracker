@@ -68,9 +68,10 @@
   de LALIGA, con el escudo y los colores del equipo. No se muestran imágenes
   Panini ni retratos de Transfermarkt para estas ediciones; si no hay una foto
   oficial fiable se dibuja una silueta.
-  Los de 1ª edición conservan las imágenes Panini disponibles. Cuando no las
-  hay, se dibujan con el retrato de LALIGA, ampliado hasta un encuadre parecido
-  al de un cromo real; Transfermarkt queda como alternativa sólo para esta
+  Los de 1ª edición conservan las imágenes Panini disponibles, salvo especiales
+  con un cambio de equipo confirmado: éstos usan el retrato y escudo actuales.
+  Cuando no hay imagen Panini, se dibujan con el retrato de LALIGA, ampliado
+  hasta un encuadre parecido al de un cromo real; Transfermarkt queda como alternativa sólo para esta
   primera edición, y si tampoco hay foto se usa una silueta.
   Los retratos de LALIGA usan un zoom `×2,44`, el doble del encuadre anterior
   (`×1,22`). Se centran horizontalmente y se elevan hacia el borde superior,
@@ -81,10 +82,14 @@
   Firpo y «Rodri» es Rodrigo Hernández Cascante, no Luiz Júnior ni Rodri Mendoza.
   Si el catálogo digital no incluye al jugador correcto se usa su retrato oficial.
   Los cromos generados de secciones especiales (UF, Top Fichajes, Extra Sticker,
-  etc.) muestran el escudo del club del jugador en lugar de las siglas de la
-  sección, con el nombre del equipo al pasar el ratón y en la descripción
-  accesible. Se mantienen el número y la sección originales. Si no hay un club
-  o escudo conocido se conserva el identificador de sección.
+  etc.) muestran el escudo de su **equipo actual**, no el club antiguo del
+  checklist, con el nombre al pasar el ratón y en la descripción accesible.
+  También usan la foto, ficha y estadísticas del jugador en su equipo actual.
+  Cambiar de club no genera por sí solo la sugerencia «No pegar» en esas
+  secciones; las decisiones manuales se respetan. Las páginas de equipo siguen
+  comprobándose contra el club impreso. Se mantienen los números e IDs.
+  Si no se confirma un club actual sin ambigüedad se conserva el identificador
+  de sección, sin atribuir al jugador un escudo antiguo o aproximado.
 - Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
   información: la decisión de no pegar la tomas tú.
 - Ficha oficial de LALIGA en cada cromo (nombre completo, dorsal y
@@ -184,7 +189,8 @@ y aprovecha el mismo recorrido para escribir los dos índices:
 
 - `comprobacion_laliga.csv`, por identificador de cromo, con el estado de cada
   jugador (`en_plantilla`, `fuera_plantilla`, `coincidencia_dudosa`…) y su
-  ficha oficial.
+  ficha oficial. `club_objetivo` conserva el club del checklist; `club_actual`
+  identifica el equipo actual confirmado en las secciones especiales.
 - las columnas `cromo_id`, `cromo_seccion`, `cromo_numero`, `cromo_nombre` y
   `cromos` que devuelve a `laliga_plantillas.csv` y al SQL, para saber qué
   cromo representa a cada jugador de la plantilla real. Sólo se cruzan las
@@ -194,6 +200,12 @@ y aprovecha el mismo recorrido para escribir los dos índices:
 El emparejamiento es deliberadamente conservador: ante un nombre corto, un
 apellido compartido o un parecido razonable prefiere `coincidencia_dudosa`
 antes que afirmar que alguien se ha ido.
+En especiales, si ya no está en el club impreso, se busca en las plantillas
+actuales usando sólo nombres exactos, alias conocidos o coincidencias parciales
+únicas, nunca una aproximación entre todos los equipos. Por ejemplo, Carlos
+Romero se vincula al Villarreal, Fran García al Betis y Sotelo al Levante.
+El mismo recorrido actualiza los enlaces de `laliga_estadisticas.csv` por
+`clave`, sin cambiar minutos, partidos ni la fecha de consulta de sus métricas.
 
 En la ficha de cada cromo el álbum muestra los datos oficiales de LALIGA
 (nombre completo, dorsal y demarcación) en lugar de la coincidencia de

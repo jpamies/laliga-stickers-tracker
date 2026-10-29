@@ -38,7 +38,7 @@ no tapando huecos de equipo.
 - **Equipos con la página completable:** 19 de 20
 - **Huecos sin ningún jugador activo:** 1
 - **Huecos con dos variantes válidas:** 45 (32 con una recomendación clara por minutos)
-- **Jugadores que piden cromo:** 3
+- **Jugadores que piden cromo:** 1
 
 | Equipo | Resueltos | Sin jugador activo | Por revisar | Pendientes | Variantes a elegir | Piden cromo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -46,7 +46,7 @@ no tapando huecos de equipo.
 | [Athletic Club](#athletic-club-de-bilbao) | 19/19 | 0 | 0 | 0 | 4 | 1 |
 | [Atlético de Madrid](#atlético-de-madrid) | 19/19 | 0 | 0 | 0 | 1 | 0 |
 | [FC Barcelona](#fc-barcelona) | 19/19 | 0 | 0 | 0 | 1 | 0 |
-| [Real Betis](#real-betis) | 19/19 | 0 | 0 | 0 | 2 | 1 |
+| [Real Betis](#real-betis) | 19/19 | 0 | 0 | 0 | 2 | 0 |
 | [RC Celta de Vigo](#rc-celta-de-vigo) | 19/19 | 0 | 0 | 0 | 4 | 0 |
 | [Deportivo de La Coruña](#deportivo) | 19/19 | 0 | 0 | 0 | 3 | 0 |
 | [Elche CF](#elche-cf) | 19/19 | 0 | 0 | 0 | 1 | 0 |
@@ -61,7 +61,7 @@ no tapando huecos de equipo.
 | [Real Sociedad](#real-sociedad) | 19/19 | 0 | 0 | 0 | 2 | 0 |
 | [Sevilla FC](#sevilla) | 19/19 | 0 | 0 | 0 | 2 | 0 |
 | [Valencia CF](#valencia) | 19/19 | 0 | 0 | 0 | 1 | 0 |
-| [Villarreal CF](#villarreal) | 19/19 | 0 | 0 | 0 | 3 | 1 |
+| [Villarreal CF](#villarreal) | 19/19 | 0 | 0 | 0 | 3 | 0 |
 
 ## DEPORTIVO ALAVÉS
 
@@ -257,7 +257,6 @@ no tapando huecos de equipo.
 ✅ **Página completable.** Todos los huecos tienen un cromo de alguien que sigue en el club.
 
 - **Variante recomendada por minutos:** 5 → **5B** (Bellerín, 674′), 9 → **9** (Valentín Gómez, 438′)
-- **Piden cromo a gritos:** Fran García (661′)
 
 ### Huecos del álbum
 
@@ -292,7 +291,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 11 | Fran García | Defensa | 661′ · 8 pj · 7 tit · 1 a | **sí** |
 | 12 | Á. Ortiz | Centrocampista | 226′ · 4 pj · 3 tit | — |
 | 27 | Morante | Delantero | 1′ · 1 pj · 1 g | — |
 | 14 | Iker | Centrocampista | 0′ · no ha jugado | no ha jugado |
@@ -574,7 +572,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 5 | Hugo Sotelo | Centrocampista | 99′ · 4 pj · 1 tit | — |
 | 16 | Axel Tape | Centrocampista | 28′ · 1 pj | — |
 | 33 | Marc Santos | Defensa | 26′ · 1 pj | — |
 | 38 | Calatrava | Centrocampista | 0′ · no ha jugado | no ha jugado |
@@ -983,7 +980,6 @@ no tapando huecos de equipo.
 
 - **Variante recomendada por minutos:** 6 → **6A** (Pau Navarro, 352′), 16 → **16BIS** (Ilias, 388′)
 - **Elección abierta:** 7 (7A o 7B)
-- **Piden cromo a gritos:** C. Romero (421′)
 
 ### Huecos del álbum
 
@@ -1020,7 +1016,6 @@ no tapando huecos de equipo.
 
 | Dorsal | Jugador | Posición | Minutos | ¿Merece cromo? |
 | ---: | --- | --- | --- | :---: |
-| 20 | C. Romero | Defensa | 421′ · 6 pj · 4 tit | **sí** |
 | 27 | Nizar | Centrocampista | 10′ · 2 pj | — |
 | 30 | Cheikh | Centrocampista | 0′ · no ha jugado | no ha jugado |
 | 32 | Bonafé | Centrocampista | 0′ · no ha jugado | no ha jugado |

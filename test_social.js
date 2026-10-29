@@ -271,6 +271,30 @@ test("club crest descriptions are escaped and unknown clubs retain the section f
   assert.doesNotMatch(fallback, /<title>Escudo/);
 });
 
+test("transferred special players display and search their current club without overriding manual No pegar", () => {
+  const sticker = {
+    id: "carlos-romero", seccion: "ÚLTIMOS FICHAJES", numero: "UF4",
+    nombre: "Carlos Romero", tipo: "defensa", club_objetivo: "RCD Espanyol",
+    club_actual: "Villarreal CF", estado_laliga: "en_plantilla",
+    coincidencia_laliga: "Carlos Romero", dorsal_laliga: "24", posicion_laliga: "Defensa",
+    escudo_url: "https://example.test/villarreal.png", foto_url: "",
+    imagen_provisional: "true", accion: "PEGAR", edicion: "2ed",
+  };
+  const { window, album } = fixture({ data: [sticker] });
+  album.replaceProgress({});
+  window.testState.privateStrategy = true;
+  assert.equal(album.getUnwantedStickerIds().has(sticker.id), false);
+  const card = window.testAlbumFunctions.stickerCard(sticker);
+  assert.match(card, /<title>Escudo de Villarreal CF<\/title>/);
+  assert.match(card, /Equipo: Villarreal CF/);
+  assert.doesNotMatch(card, /Escudo de RCD Espanyol|Equipo: RCD Espanyol/);
+  assert.match(card, /Villarreal CF · 24 · Defensa/);
+  window.testState.query = "Villarreal";
+  assert.equal(window.testAlbumFunctions.matchesSearch(sticker), true);
+  album.replaceProgress({ [sticker.id]: { state: "missing", copies: 0, stickDecision: "dont-stick" } });
+  assert.equal(album.getUnwantedStickerIds().has(sticker.id), true);
+});
+
 test("Figuritas cannot overwrite two different stickers that share a BIS number", () => {
   const { album } = fixture({ data: [
     { id: "old", seccion: "DEPORTIVO", numero: "14BIS", nombre: "Gijselhart" },

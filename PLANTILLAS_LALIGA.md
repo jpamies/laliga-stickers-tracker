@@ -11,8 +11,8 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | Equipos | 20 |
 | **Jugadores registrados** | **601** |
 | Fichas totales (con cuerpo técnico) | 642 |
-| Jugadores con cromo en el álbum | 466 |
-| Jugadores sin cromo | 135 |
+| Jugadores con cromo en el álbum | 469 |
+| Jugadores sin cromo | 132 |
 | Cedidos | 47 |
 | Sin dorsal asignado | 2 |
 
@@ -33,13 +33,13 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | [Athletic Club](#athletic-club-de-bilbao) | 29 | 23 | 6 | 0 |
 | [Atlético de Madrid](#atlético-de-madrid) | 28 | 23 | 5 | 1 |
 | [FC Barcelona](#fc-barcelona) | 32 | 24 | 8 | 0 |
-| [Real Betis](#real-betis) | 28 | 22 | 6 | 1 |
+| [Real Betis](#real-betis) | 28 | 23 | 5 | 1 |
 | [Celta](#rc-celta-de-vigo) | 29 | 25 | 4 | 2 |
 | [RC Deportivo](#deportivo) | 31 | 26 | 5 | 3 |
 | [Elche CF](#elche-cf) | 30 | 24 | 6 | 2 |
 | [RCD Espanyol de Barcelona](#rcd-espanyol) | 29 | 23 | 6 | 6 |
 | [Getafe CF](#getafe-cf) | 33 | 22 | 11 | 4 |
-| [Levante UD](#levante-ud) | 28 | 20 | 8 | 7 |
+| [Levante UD](#levante-ud) | 28 | 21 | 7 | 7 |
 | [Real Madrid](#real-madrid-cf) | 33 | 26 | 7 | 0 |
 | [Málaga CF](#malaga-cf) | 30 | 22 | 8 | 5 |
 | [CA Osasuna](#osasuna) | 28 | 23 | 5 | 0 |
@@ -48,7 +48,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | [Real Sociedad](#real-sociedad) | 29 | 22 | 7 | 1 |
 | [Sevilla FC](#sevilla) | 32 | 25 | 7 | 4 |
 | [Valencia CF](#valencia) | 33 | 24 | 9 | 3 |
-| [Villarreal CF](#villarreal) | 30 | 22 | 8 | 0 |
+| [Villarreal CF](#villarreal) | 30 | 23 | 7 | 0 |
 
 ## DEPORTIVO ALAVÉS
 
@@ -219,7 +219,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 3 | Llorente R. | Diego Llorente | Defensa | 33 | ES | REAL BETIS 6 |  |
 | 4 | Natan | Natan Bernardo de Souza | Defensa | 25 | BR | REAL BETIS 8 |  |
 | 5 | Bartra | Marc Bartra | Defensa | 35 | ES | REAL BETIS 7 |  |
-| 11 | Fran García | Fran García | Defensa | 27 | ES | — |  |
+| 11 | Fran García | Fran García | Defensa | 27 | ES | ÚLTIMOS FICHAJES UF6 |  |
 | 16 | V. Gómez | Valentín Gómez | Defensa | 23 | AR | REAL BETIS 9 |  |
 | 23 | J. Firpo | Junior Firpo | Defensa | 30 | DO | REAL BETIS 9BIS |  |
 | 6 | F. Bernal | Facundo Bernal | Centrocampista | 23 | UY | REAL BETIS 13 |  |
@@ -458,7 +458,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 23 | Manu Sánchez | Manu Sánchez | Defensa | 26 | ES | LEVANTE UD 9 | cedido |
 | 29 | Nacho Perez | Nacho Pérez | Defensa | 18 | ES | LEVANTE UD 6BIS |  |
 | 33 | Marc Santos | Marc Santos | Defensa | 15 | ES | — |  |
-| 5 | Hugo Sotelo | Hugo Sotelo | Centrocampista | 22 | ES | — | cedido |
+| 5 | Hugo Sotelo | Hugo Sotelo | Centrocampista | 22 | ES | ÚLTIMOS FICHAJES UF13 | cedido |
 | 6 | Requena | Dani Requena | Centrocampista | 22 | ES | LEVANTE UD 13 | cedido |
 | 8 | Olasagasti | Jon Ander Olasagasti | Centrocampista | 26 | ES | LEVANTE UD 12 |  |
 | 16 | Axel Tape | Axel Tape | Centrocampista | 19 | FR | — | cedido |
@@ -810,7 +810,7 @@ Esta es la fuente que decide si un cromo del álbum se puede pegar: si el jugado
 | 8 | Foyth | Juan Foyth | Defensa | 28 | AR | VILLARREAL 7A |  |
 | 12 | Renato Veiga | Renato Palma Veiga | Defensa | 23 | PT | VILLARREAL 9 |  |
 | 15 | Mouriño | Santiago Mouriño | Defensa | 24 | UY | VILLARREAL 5 |  |
-| 20 | C. Romero | Carlos Romero | Defensa | 25 | ES | — |  |
+| 20 | C. Romero | Carlos Romero | Defensa | 25 | ES | ÚLTIMOS FICHAJES UF4 |  |
 | 23 | S. Cardona | Sergi Cardona | Defensa | 27 | ES | VILLARREAL 10 |  |
 | 5 | A. Diatta | Alassane Diatta | Centrocampista | 21 | SN | VILLARREAL 8BIS |  |
 | 10 | A. Moleiro | Alberto Moleiro | Centrocampista | 23 | ES | VILLARREAL 14 |  |

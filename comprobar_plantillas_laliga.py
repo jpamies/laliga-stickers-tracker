@@ -7,6 +7,8 @@ recorrido produce los dos índices:
   sigue en su club. El álbum lo consume para mostrar la ficha oficial y, sólo
   al dueño, la sugerencia de no pegar. El CSV maestro no se toca: la
   recomendación pública sigue siendo siempre «pegar».
+  Las páginas de equipo se contrastan con el club impreso; los especiales
+  pueden enlazarse a un equipo actual distinto, sin sugerir una baja por ello.
 - `laliga_plantillas.csv` recibe de vuelta el cromo asociado a cada ficha, para
   saber quién de la plantilla real tiene cromo y cuál es.
 """
@@ -16,7 +18,7 @@ from __future__ import annotations
 import argparse
 import csv
 import difflib
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -87,6 +89,7 @@ CSV_FIELDS = [
     "numero",
     "nombre",
     "club_objetivo",
+    "club_actual",
     "estado_laliga",
     "clave_laliga",
     "coincidencia_laliga",
@@ -331,6 +334,10 @@ def check_rows(
     checked_on: date,
 ) -> list[dict[str, str]]:
     checked_on_text = checked_on.isoformat()
+    all_members = [member for squad in squads.values() for member in squad]
+    section_by_key = {
+        member.clave: section for section, squad in squads.items() for member in squad
+    }
     results: list[dict[str, str]] = []
     for row in rows:
         name = row.get("nombre", "")
@@ -362,9 +369,26 @@ def check_rows(
             section = section_for(row, squads)
             match = (
                 match_member(name, squads[section])
-                if section
+                if section in squads
                 else miss(NO_SQUAD, "", 0.0, "Sin club que comprobar.")
             )
+        if (
+            row["seccion"] not in CLUB_SECTIONS
+            and name and name != "Escudo"
+            and match.estado != IN_SQUAD
+        ):
+            target = normalize_name(name)
+            identity = LALIGA_ALIASES.get(target) or NAME_ALIASES.get(target) or name
+            current = match_member(identity, all_members)
+            # Fuera del club impreso sólo valen coincidencias exactas o
+            # parciales únicas, nunca la mejor aproximación entre 20 clubes.
+            if current.estado == IN_SQUAD and current.confianza >= 0.96:
+                current_club = CLUB_CANONICAL[section_by_key[current.clave]]
+                match = replace(
+                    current,
+                    notas=f"{current.notas} Equipo actual: {current_club}; "
+                    f"el checklist indica {row.get('club_objetivo') or 'club sin asignar'}.",
+                )
         results.append(
             {
                 "id": row["id"],
@@ -372,6 +396,11 @@ def check_rows(
                 "numero": row["numero"],
                 "nombre": name,
                 "club_objetivo": row.get("club_objetivo", ""),
+                "club_actual": (
+                    CLUB_CANONICAL.get(section_by_key.get(match.clave, ""), "")
+                    if row["seccion"] not in CLUB_SECTIONS and match.estado == IN_SQUAD
+                    else ""
+                ),
                 "estado_laliga": match.estado,
                 "clave_laliga": match.clave,
                 "coincidencia_laliga": match.candidato,
@@ -437,6 +466,23 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(source))
 
 
+def link_statistics(
+    stats_rows: list[dict[str, str]],
+    squad_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    if not stats_rows or not {"clave", "cromo_id", "cromos"} <= stats_rows[0].keys():
+        raise ValueError("El CSV de estadísticas no contiene las columnas de vinculación.")
+    by_key = {row["clave"]: row for row in squad_rows}
+    return [
+        {
+            **row,
+            "cromo_id": by_key.get(row["clave"], {}).get("cromo_id", ""),
+            "cromos": by_key.get(row["clave"], {}).get("cromos", ""),
+        }
+        for row in stats_rows
+    ]
+
+
 def generate(
     collection_path: Path,
     squads_path: Path,
@@ -444,14 +490,20 @@ def generate(
     teams_path: Path | None = None,
     sql_path: Path | None = None,
     checked_on: date | None = None,
+    stats_path: Path | None = None,
 ) -> dict[str, int]:
     rows = read_csv(collection_path)
     squad_rows, squads = load_squads(squads_path)
     results = check_rows(rows, squads, checked_on or date.today())
-    write_csv(results, output_path)
-
     linked = link_stickers(squad_rows, results)
+    stats_rows = (
+        link_statistics(read_csv(stats_path), linked)
+        if stats_path and stats_path.exists() else None
+    )
+    write_csv(results, output_path)
     write_squad_csv(linked, PLAYER_FIELDS, squads_path)
+    if stats_path and stats_rows is not None:
+        write_squad_csv(stats_rows, list(stats_rows[0]), stats_path)
     if teams_path and sql_path and teams_path.exists():
         write_sql(
             read_csv(teams_path), linked, sql_path, datetime.now(timezone.utc)
@@ -483,10 +535,15 @@ def main() -> None:
     parser.add_argument(
         "--sql", type=Path, default=Path("supabase/laliga_plantillas.sql")
     )
+    parser.add_argument(
+        "--estadisticas", type=Path, default=Path("laliga_estadisticas.csv"),
+        help="Actualiza sólo los vínculos a cromos, conservando métricas y fechas.",
+    )
     args = parser.parse_args()
 
     counts = generate(
-        args.coleccion, args.plantillas, args.salida, args.equipos, args.sql
+        args.coleccion, args.plantillas, args.salida, args.equipos, args.sql,
+        stats_path=args.estadisticas,
     )
     print(f"Generados {args.salida}, {args.plantillas} y {args.sql}:")
     for estado, total in sorted(counts.items()):

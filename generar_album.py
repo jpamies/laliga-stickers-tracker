@@ -158,7 +158,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=57"></script>
+  <script src="app.js?v=58"></script>
   <script src="cloud-sync.js?v=17"></script>
   <script src="social.js?v=21"></script>
 </body>
@@ -226,6 +226,7 @@ def pending_update_stickers(
                     "nombre": "",
                     "tipo": sticker_type,
                     "club_objetivo": "",
+                    "club_actual": "",
                     "edicion": "",
                     "baja_panini": "",
                     "estado_plantilla": "pendiente_publicacion",
@@ -303,6 +304,7 @@ def load_stickers(
         row["dorsal_laliga"] = check.get("dorsal_laliga", "")
         row["posicion_laliga"] = check.get("posicion_laliga", "")
         row["clave_laliga"] = check.get("clave_laliga", "")
+        row["club_actual"] = check.get("club_actual", "")
         row["imagen_provisional"] = ""
         row["foto_url"] = ""
         row["foto_fuente"] = ""
@@ -348,20 +350,27 @@ def load_laliga_photos(path: Path | None) -> dict[str, dict[str, str]]:
 STAT_FIELDS = ("minutos", "partidos", "goles", "asistencias", "partidos_equipo")
 
 
-def load_stats(path: Path | None) -> dict[str, list[int]]:
+def load_stats(
+    path: Path | None,
+    extra_stickers: dict[str, list[str]] | None = None,
+) -> dict[str, list[int]]:
     """Minutos y aportación de cada cromo emparejado con su ficha de LALIGA.
 
-    Va en una tabla aparte indexada por cromo porque sólo 353 de los 593
-    cromos son jugadores con estadísticas; meterla dentro de cada cromo
-    obligaría a escribir campos vacíos en los escudos, los entrenadores y las
-    secciones especiales."""
+    La tabla aparte evita campos vacíos en escudos y entrenadores.
+    extra_stickers vincula también los especiales traspasados a la ficha
+    actual, aunque no sean el cromo principal del índice inverso."""
     if not path or not path.exists():
         return {}
     stats: dict[str, list[int]] = {}
     with path.open(encoding="utf-8-sig", newline="") as source:
         for row in csv.DictReader(source):
-            sticker_id = row.get("cromo_id")
-            if not sticker_id:
+            sticker_ids = [
+                identifier for identifier in (
+                    row.get("cromo_id", ""),
+                    *(extra_stickers or {}).get(row.get("clave", ""), []),
+                ) if identifier
+            ]
+            if not sticker_ids:
                 continue
             try:
                 values = [int(row[field] or 0) for field in STAT_FIELDS]
@@ -371,7 +380,8 @@ def load_stats(path: Path | None) -> dict[str, list[int]]:
             # que ese cromo se queda sin ficha en lugar de mostrar un dato suelto.
             if values[-1] <= 0:
                 continue
-            stats[sticker_id] = values
+            for sticker_id in sticker_ids:
+                stats[sticker_id] = values
     return stats
 
 
@@ -408,9 +418,17 @@ def generate(
     photos = load_player_photos(photo_mapping_path)
     squads = load_laliga_photos(laliga_squads_path)
     known = {sticker["id"] for sticker in stickers}
+    transferred_stickers: dict[str, list[str]] = {}
+    for sticker in stickers:
+        if (
+            sticker["clave_laliga"]
+            and sticker["club_actual"]
+            and sticker["club_actual"] != sticker["club_objetivo"]
+        ):
+            transferred_stickers.setdefault(sticker["clave_laliga"], []).append(sticker["id"])
     stats = {
         sticker_id: values
-        for sticker_id, values in load_stats(stats_path).items()
+        for sticker_id, values in load_stats(stats_path, transferred_stickers).items()
         if sticker_id in known
     }
     crests_by_section: dict[str, str] = {}
@@ -422,16 +440,21 @@ def generate(
                 crests_by_club[sticker["club_objetivo"]] = sticker["imagen_url"]
     used_sections: set[str] = set()
     for sticker in stickers:
-        official_only = sticker["edicion"] in {"2ed", "3ed", "4ed"}
+        official_only = sticker["edicion"] in {"2ed", "3ed", "4ed"} or (
+            bool(sticker["club_actual"])
+            and sticker["club_actual"] != sticker["club_objetivo"]
+        )
         if official_only:
             for field in ("imagen_url", "digital_label", "digital_group", "metodo_coincidencia"):
                 sticker[field] = ""
         if sticker["imagen_url"]:
             continue
         sticker["imagen_provisional"] = "true"
-        sticker["escudo_url"] = crests_by_club.get(
-            sticker["club_objetivo"], crests_by_section.get(sticker["seccion"], "")
+        crest_club = (
+            sticker["club_objetivo"]
+            if sticker["seccion"] in crests_by_section else sticker["club_actual"]
         )
+        sticker["escudo_url"] = crests_by_club.get(crest_club, "")
         oficial = laliga_photo(sticker, squads)
         if oficial:
             sticker["foto_url"] = oficial["foto_url"]
