@@ -158,7 +158,7 @@ HTML_TEMPLATE = """<!doctype html>
   <script>window.ALBUM_STATS = __ALBUM_STATS__;</script>
   <script src="cloud-config.js?v=15"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=56"></script>
+  <script src="app.js?v=57"></script>
   <script src="cloud-sync.js?v=17"></script>
   <script src="social.js?v=21"></script>
 </body>
@@ -413,11 +413,13 @@ def generate(
         for sticker_id, values in load_stats(stats_path).items()
         if sticker_id in known
     }
-    crests_by_section = {
-        sticker["seccion"]: sticker["imagen_url"]
-        for sticker in stickers
-        if sticker["digital_group"] == "ESCUDO" and sticker["imagen_url"]
-    }
+    crests_by_section: dict[str, str] = {}
+    crests_by_club: dict[str, str] = {}
+    for sticker in stickers:
+        if sticker["digital_group"] == "ESCUDO" and sticker["imagen_url"]:
+            crests_by_section[sticker["seccion"]] = sticker["imagen_url"]
+            if sticker["club_objetivo"]:
+                crests_by_club[sticker["club_objetivo"]] = sticker["imagen_url"]
     used_sections: set[str] = set()
     for sticker in stickers:
         official_only = sticker["edicion"] in {"2ed", "3ed", "4ed"}
@@ -427,7 +429,9 @@ def generate(
         if sticker["imagen_url"]:
             continue
         sticker["imagen_provisional"] = "true"
-        sticker["escudo_url"] = crests_by_section.get(sticker["seccion"], "")
+        sticker["escudo_url"] = crests_by_club.get(
+            sticker["club_objetivo"], crests_by_section.get(sticker["seccion"], "")
+        )
         oficial = laliga_photo(sticker, squads)
         if oficial:
             sticker["foto_url"] = oficial["foto_url"]

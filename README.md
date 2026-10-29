@@ -80,6 +80,11 @@
   Los nombres cortos ambiguos se resuelven por identidad: «Junior» es Júnior
   Firpo y «Rodri» es Rodrigo Hernández Cascante, no Luiz Júnior ni Rodri Mendoza.
   Si el catálogo digital no incluye al jugador correcto se usa su retrato oficial.
+  Los cromos generados de secciones especiales (UF, Top Fichajes, Extra Sticker,
+  etc.) muestran el escudo del club del jugador en lugar de las siglas de la
+  sección, con el nombre del equipo al pasar el ratón y en la descripción
+  accesible. Se mantienen el número y la sección originales. Si no hay un club
+  o escudo conocido se conserva el identificador de sección.
 - Estrategia de pegado basada en plantillas de Transfermarkt, siempre como
   información: la decisión de no pegar la tomas tú.
 - Ficha oficial de LALIGA en cada cromo (nombre completo, dorsal y

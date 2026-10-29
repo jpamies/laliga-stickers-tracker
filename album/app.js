@@ -688,14 +688,17 @@
         </g>
         <text x="138" y="160" text-anchor="middle" fill="${theme.primary}" font-family="Trebuchet MS, Arial, sans-serif" font-size="44" font-weight="900" opacity=".45">?</text>
       `;
+    const crestTitle = `Escudo de ${sticker.club_objetivo || sticker.seccion}`;
     const crest = sticker.escudo_url
-      ? `<image href="${escapeHtml(sticker.escudo_url)}" x="8" y="7" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>`
+      ? `<image href="${escapeHtml(sticker.escudo_url)}" x="8" y="7" width="56" height="56" preserveAspectRatio="xMidYMid meet"><title>${escapeHtml(crestTitle)}</title></image>`
       : `<text x="36" y="44" text-anchor="middle" fill="#ffffff" font-family="Trebuchet MS, Arial, sans-serif" font-size="20" font-weight="900">${escapeHtml(theme.code)}</text>`;
+    const cardLabel = `Cromo provisional de ${sticker.seccion}`
+      + (sticker.club_objetivo ? `. Equipo: ${sticker.club_objetivo}` : "");
     const label = name || "POR CONFIRMAR";
     const labelSize = label.length > 15 ? 13 : label.length > 11 ? 15 : 18;
 
     return `
-      <svg viewBox="0 0 232 308" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cromo provisional de ${escapeHtml(sticker.seccion)}">
+      <svg viewBox="0 0 232 308" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeHtml(cardLabel)}">
         <defs>
           <linearGradient id="swoosh-${id}" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="${theme.primary}"/>
@@ -968,6 +971,7 @@
     ].filter(Boolean).join(" ");
     const imageAlt = provisionalImage
       ? `Imagen provisional de ${sticker.seccion}`
+        + (sticker.club_objetivo ? `. Equipo: ${sticker.club_objetivo}` : "")
       : name;
     const visual = placeholderMarkup
       ? `

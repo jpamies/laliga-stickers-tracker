@@ -159,7 +159,7 @@ class AlbumGenerationTests(unittest.TestCase):
         self.assertIn('data-density="cards"', html)
         self.assertIn('data-density="list"', html)
         self.assertIn('data-density="trade"', html)
-        self.assertIn('src="app.js?v=56"', html)
+        self.assertIn('src="app.js?v=57"', html)
         self.assertIn('href="styles.css?v=37"', html)
         self.assertIn('src="cloud-config.js?v=15"', html)
         self.assertIn('src="cloud-sync.js?v=17"', html)
@@ -221,6 +221,32 @@ class AlbumGenerationTests(unittest.TestCase):
                 else:
                     self.assertEqual(sticker["foto_url"], "")
                     self.assertEqual(sticker["foto_fuente"], "")
+
+    def test_generated_special_cards_use_the_players_club_crest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "index.html"
+            generate(Path("coleccion_panini_revisada.csv"), output)
+            html = output.read_text(encoding="utf-8")
+        stickers = json.loads(re.search(r"window\.ALBUM_DATA = (.*?);</script>", html).group(1))
+        crests = {
+            sticker["club_objetivo"]: sticker["imagen_url"]
+            for sticker in stickers if sticker["digital_group"] == "ESCUDO"
+        }
+        team_sections = {
+            sticker["seccion"] for sticker in stickers if sticker["digital_group"] == "ESCUDO"
+        }
+        special = [
+            sticker for sticker in stickers
+            if sticker["imagen_provisional"] == "true" and sticker["seccion"] not in team_sections
+        ]
+        self.assertTrue(special)
+        for sticker in special:
+            with self.subTest(id=sticker["id"]):
+                self.assertIn(sticker["club_objetivo"], crests)
+                self.assertEqual(sticker["escudo_url"], crests[sticker["club_objetivo"]])
+        by_id = {sticker["id"]: sticker for sticker in stickers}
+        for sticker_id in ("ULTIMOS-FICHAJES-40", "TOP-FICHAJES-67", "EXTRA-STICKER-ORO-06"):
+            self.assertEqual(by_id[sticker_id]["escudo_url"], crests["FC Barcelona"])
 
 
 class CompactListViewTests(unittest.TestCase):

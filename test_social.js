@@ -106,7 +106,7 @@ function fixture(options = {}) {
   // Run the real modules, stubbing only DOM rendering and exposing closure state.
   vm.runInContext(appSource.replace(
     /\n  initializeSections\(\);[\s\S]*$/,
-    "\n  render = () => {};\n  window.testState = state;\n  window.testAlbumFunctions = {matchesFilter, matchesSearch, editionBadge, photoTag, placeholderSticker};\n})();",
+    "\n  render = () => {};\n  window.testState = state;\n  window.testAlbumFunctions = {matchesFilter, matchesSearch, editionBadge, photoTag, placeholderSticker, stickerCard};\n})();",
   ), context);
   vm.runInContext(socialSource.replace(
     /\n  document\.addEventListener\("panini:cloud-ready", initialize\);/,
@@ -231,6 +231,44 @@ test("silhouettes retain their previous clipping and do not move into the upper 
   });
   assert.match(card, /<clipPath id="photo-silhouette">\s*<rect x="52" y="66" width="172" height="204"/);
   assert.match(card, /<circle cx="138" cy="146" r="34"/);
+});
+
+test("generated special cards show their actual club crest without replacing their section or number", () => {
+  const { window } = fixture();
+  const sticker = {
+    id: "rodri-top", seccion: "TOP FICHAJES", numero: "67",
+    nombre: "Rodri", tipo: "medio", club_objetivo: "FC Barcelona",
+    escudo_url: "https://example.test/barcelona.png", foto_url: "",
+    imagen_provisional: "true", accion: "PEGAR", edicion: "4ed",
+  };
+  const card = window.testAlbumFunctions.placeholderSticker(sticker);
+  assert.match(card, /href="https:\/\/example\.test\/barcelona\.png" x="8" y="7" width="56" height="56"/);
+  assert.match(card, /<title>Escudo de FC Barcelona<\/title>/);
+  assert.match(card, /aria-label="Cromo provisional de TOP FICHAJES\. Equipo: FC Barcelona"/);
+  assert.match(card, />67<\/text>/);
+  assert.doesNotMatch(card, />TOP<\/text>/);
+  const fullCard = window.testAlbumFunctions.stickerCard(sticker);
+  assert.match(fullCard, /role="img" aria-label="Imagen provisional de TOP FICHAJES\. Equipo: FC Barcelona"/);
+});
+
+test("club crest descriptions are escaped and unknown clubs retain the section fallback", () => {
+  const { window } = fixture();
+  const sticker = {
+    id: "unknown", seccion: "ÚLTIMOS FICHAJES", numero: "UF1",
+    nombre: "Jugador", club_objetivo: 'Club <script>"test"</script>',
+    escudo_url: "https://example.test/crest.png", foto_url: "",
+  };
+  const card = window.testAlbumFunctions.placeholderSticker(sticker);
+  assert.doesNotMatch(card, /<script>/);
+  assert.match(card, /Club &lt;script&gt;&quot;test&quot;&lt;\/script&gt;/);
+  window.ALBUM_PLACEHOLDERS = {
+    "ÚLTIMOS FICHAJES": { code: "UF", primary: "#147a52", secondary: "#dff3e9", accent: "#0d5639" },
+  };
+  const fallback = window.testAlbumFunctions.placeholderSticker({
+    ...sticker, club_objetivo: "", escudo_url: "",
+  });
+  assert.match(fallback, />UF<\/text>/);
+  assert.doesNotMatch(fallback, /<title>Escudo/);
 });
 
 test("Figuritas cannot overwrite two different stickers that share a BIS number", () => {
